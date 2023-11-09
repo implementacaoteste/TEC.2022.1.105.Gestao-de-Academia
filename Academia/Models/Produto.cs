@@ -7,6 +7,6 @@
         public string Marca { get; set; }
         public double Preco { get; set; }
         public int Quantidade { get; set; }
-        public int CodigoDeBarras { get; set; }
+        public string CodigoDeBarras { get; set; }
     }
 }
