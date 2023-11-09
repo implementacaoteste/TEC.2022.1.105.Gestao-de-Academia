@@ -106,7 +106,7 @@ GO
 CREATE TABLE Venda_Direta
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	funcionarioId INT,
+	FuncionarioId INT,
 	ProdutoId INT,
 	Nome_produto VARCHAR(100),
 	Quantidade INT,
