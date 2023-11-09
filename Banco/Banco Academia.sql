@@ -1,3 +1,14 @@
+USE master
+GO
+
+IF(EXISTS(SELECT 1 FROM master.sys.databases WHERE name = 'Academia'))
+ALTER DATABASE Academia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
+GO
+
+IF(EXISTS(SELECT 1 FROM master.sys.databases WHERE name = 'Academia'))
+DROP DATABASE Academia
+GO
+
 CREATE DATABASE GestaoDeAcademia
 GO
 
@@ -52,20 +63,19 @@ CREATE TABLE PermissaoGrupoUsuario
 GO
 CREATE TABLE Cliente
 (
-	Id_cliente INT PRIMARY KEY IDENTITY(1,1),
+	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
 	Aluno BIT,
-	Cod_Plano INT,
 	CPF CHAR(14),
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
-	DataCadastro SMALLDATETIME
+	Data_cadastro SMALLDATETIME
 )
 GO
 CREATE TABLE Fornecedor
 (
-	Id_fornecedor INT PRIMARY KEY IDENTITY(1,1),
+	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
 	CPF_CNPJ VARCHAR(15),
 	Email VARCHAR(200),
@@ -73,6 +83,7 @@ CREATE TABLE Fornecedor
 	Endereco VARCHAR(100)
 )
 GO
+
 CREATE TABLE Produto
 (
 	Id_produto INT PRIMARY KEY IDENTITY(1,1),
@@ -85,47 +96,64 @@ CREATE TABLE Produto
 GO
 CREATE TABLE Venda
 (
-	Id_venda INT PRIMARY KEY IDENTITY(1,1),
-	Cod_funcionario INT,
-	Cod_cliente INT,
-	Cod_produto INT,
-	Preco FLOAT,
-	Quantidade INT,
-	DataVenda SMALLDATETIME,
-	Desconto FLOAT,
-	TotalVenda FLOAT
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	funcionarioId INT,
+	ClienteId INT,
+	Data_Venda SMALLDATETIME,
+	Total_Venda FLOAT
 )
 GO
 CREATE TABLE Venda_Direta
 (
-	Id_venda INT PRIMARY KEY IDENTITY(1,1),
-	Cod_funcionario INT,
-	DataVenda SMALLDATETIME,
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	funcionarioId INT,
+	ProdutoId INT,
+	Nome_produto VARCHAR(100),
 	Quantidade INT,
-	Desconto FLOAT,
-	TotalVenda FLOAT
+	Preco_unitario FLOAT,
+	Data_Venda SMALLDATETIME,
+	Preco_total FLOAT
 )
 GO
 CREATE TABLE Itens_Venda
 (
-	Cod_venda INT,
-	Cod_produto INT,
-	Preco_unitario FLOAT,
+	VendaId INT,
+	ProdutoId INT,
 	Quantidade INT,
-	Valor_totaL FLOAT
+	Preco_unitario FLOAT,
+	Preco_total FLOAT
 )
 GO
-CREATE TABLE ControleEstoque
+CREATE TABLE Financas
 (
-	Id_ControleEstoque INT PRIMARY KEY IDENTITY(1,1),
-	Cod_Produto INT,
-	DataEntrada SMALLDATETIME,
-	DataSaida SMALLDATETIME,
-	Quantidade FLOAT,
-	SaldoTotal FLOAT
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Forma_pagamento VARCHAR(30),
+	Valor_transacao FLOAT,
+	Descricao_transacao VARCHAR(200),
+	Data_Financa SMALLDATETIME,
+	Fornecedor VARCHAR(100),
+	Cliente VARCHAR(100),
+	Numero_do_documento INT,
+	Impostos_pagos FLOAT,
+	Retencao_de_imposto FLOAT,
+	Conta FLOAT,
+	Saldo FLOAT
 )
 GO
-Create Table Exercicios
+CREATE TABLE Controle_Debito
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	ClienteId INT,
+	Estatus BIT,
+	Valor_debito FLOAT,
+	Forma_pagamento VARCHAR(30),
+	Data_lancamento SMALLDATETIME,
+	Data_vencimento SMALLDATETIME,
+	Data_pagamento SMALLDATETIME
+	
+)
+GO
+CREATE TABLE Exercicios
 (
 	Id_Exercicio INT PRIMARY KEY IDENTITY(1,1),
 	Nome Varchar(20)
@@ -147,11 +175,13 @@ CREATE TABLE PagamentoAluno
  Debitado BIT
 )
 GO
-Create Table PagamentoFuncionario
+CREATE TABLE PagamentoFuncionario
 (
 	Id_Pagamento INT PRIMARY KEY IDENTITY(1,1),
 	Cod_Funcionario Int,
-	Salario
+	Valor FLOAT,
+	Desconto FLOAT,
+	Hora_extra INT
 )
 GO
 CREATE TABLE Funcionario
@@ -164,6 +194,18 @@ CREATE TABLE Funcionario
 	Endereco VARCHAR(100),
 )
 GO
+CREATE TABLE ControleEstoque
+(
+	Id_ControleEstoque INT PRIMARY KEY IDENTITY(1,1),
+	Cod_Produto INT,
+	DataEntrada SMALLDATETIME,
+	DataSaida SMALLDATETIME,
+	Quantidade FLOAT,
+	SaldoTotal FLOAT
+)
+GO
+
+
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
