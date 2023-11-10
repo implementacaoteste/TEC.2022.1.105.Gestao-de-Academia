@@ -1,3 +1,6 @@
+use master
+go
+
 CREATE DATABASE GestaoDeAcademia
 GO
 
@@ -72,14 +75,21 @@ CREATE TABLE Fornecedor
 	Endereco VARCHAR(100)
 )
 GO
+CREATE TABLE CompraProduto
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Nome VARCHAR(100),
+	Marca VARCHAR(100),
+	Quantidade INT,
+	FornecedorId INT,
+	ValorTotal FLOAT
+)
 
 CREATE TABLE Produto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Nome VARCHAR(100),
-	Marca VARCHAR(30),
+	CompraProdutoId INT,
 	Preco FLOAT,
-	Quantidade INT,
 	CodigoDeBarras VARCHAR(20)
 )
 GO
@@ -104,13 +114,11 @@ GO
 CREATE TABLE Financas
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	FormaPagamento VARCHAR(30),
+	NumeroDoDocumento INT,
+	FornecedorId INT,
 	ValorTransacao FLOAT,
 	DescricaoTransacao VARCHAR(200),
 	DataFinanca SMALLDATETIME,
-	Fornecedor VARCHAR(100),
-	Cliente VARCHAR(100),
-	NumeroDoDocumento INT,
 	ImpostosPagos FLOAT,
 	RetencaoDeImposto FLOAT,
 	Conta FLOAT,
@@ -175,11 +183,30 @@ CREATE TABLE ControleEstoque
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	ProdutoId INT,
+	CompraProdutoId INT,
 	DataEntrada SMALLDATETIME,
 	DataSaida SMALLDATETIME,
 	Quantidade FLOAT,
 	SaldoTotal FLOAT
 )
+GO
+
+ALTER TABLE Produto
+ADD CONSTRAINT FK_CompraProduto_Produto
+FOREIGN KEY (CompraProdutoId)
+REFERENCES CompraProduto(Id);
+GO
+
+ALTER TABLE CompraProduto
+ADD CONSTRAINT FK_Fornedor_CompraProduto
+FOREIGN KEY (FornecedorId)
+REFERENCES Fornecedor(Id);
+GO
+
+ALTER TABLE Financas
+ADD CONSTRAINT FK_Fornecedor_Financas
+FOREIGN KEY (FornecedorId)
+REFERENCES Fornecedor(ID)
 GO
 
 ALTER TABLE Venda
@@ -203,18 +230,6 @@ ALTER TABLE Itens_Venda
 ADD CONSTRAINT FK_ItensVenda_Produto
 FOREIGN KEY (ProdutoId)
 REFERENCES Produto(Id);
-GO
-
-ALTER TABLE Financas
-ADD CONSTRAINT FK_Financas_Fornecedor
-FOREIGN KEY (Fornecedor)
-REFERENCES Fornecedor(Nome);
-GO
-
-ALTER TABLE Financas
-ADD CONSTRAINT FK_Financas_Cliente
-FOREIGN KEY (Cliente)
-REFERENCES Cliente(Nome);
 GO
 
 ALTER TABLE Controle_Debito
