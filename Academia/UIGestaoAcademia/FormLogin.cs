@@ -52,5 +52,10 @@ namespace UIGestaoAcademia
             if (e.KeyCode == Keys.Enter)
                 buttonEntrar_Click(null, null);
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -108,7 +108,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("ocorreu um erro ao tentar buscar id do usuário do banco de dados", ex);
+                throw new Exception("ocorreu um erro ao tentar buscar usuário por nome de usuário no banco de dados", ex);
             }
             finally
             {
