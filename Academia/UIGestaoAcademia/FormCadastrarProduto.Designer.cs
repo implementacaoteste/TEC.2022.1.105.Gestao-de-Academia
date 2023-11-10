@@ -130,7 +130,7 @@
             // 
             // textBoxEstoque
             // 
-            this.textBoxEstoque.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Quantidade", true));
+            this.textBoxEstoque.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "QuantidadeEstoque", true));
             this.textBoxEstoque.Location = new System.Drawing.Point(7, 206);
             this.textBoxEstoque.Name = "textBoxEstoque";
             this.textBoxEstoque.Size = new System.Drawing.Size(193, 27);
