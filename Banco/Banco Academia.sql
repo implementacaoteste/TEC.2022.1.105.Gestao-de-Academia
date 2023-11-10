@@ -86,7 +86,7 @@ GO
 
 CREATE TABLE Produto
 (
-	Id_produto INT PRIMARY KEY IDENTITY(1,1),
+	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
 	Marca VARCHAR(30),
 	Preco FLOAT,
@@ -99,8 +99,8 @@ CREATE TABLE Venda
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	funcionarioId INT,
 	ClienteId INT,
-	Data_Venda SMALLDATETIME,
-	Total_Venda FLOAT
+	DataVenda SMALLDATETIME,
+	TotalVenda FLOAT
 )
 GO
 CREATE TABLE Venda_Direta
@@ -108,11 +108,11 @@ CREATE TABLE Venda_Direta
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	FuncionarioId INT,
 	ProdutoId INT,
-	Nome_produto VARCHAR(100),
+	NomeProduto VARCHAR(100),
 	Quantidade INT,
-	Preco_unitario FLOAT,
-	Data_Venda SMALLDATETIME,
-	Preco_total FLOAT
+	PrecoUnitario FLOAT,
+	DataVenda SMALLDATETIME,
+	PrecoTotal FLOAT
 )
 GO
 CREATE TABLE Itens_Venda
@@ -120,22 +120,22 @@ CREATE TABLE Itens_Venda
 	VendaId INT,
 	ProdutoId INT,
 	Quantidade INT,
-	Preco_unitario FLOAT,
-	Preco_total FLOAT
+	PrecoUnitario FLOAT,
+	PrecoTotal FLOAT
 )
 GO
 CREATE TABLE Financas
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Forma_pagamento VARCHAR(30),
-	Valor_transacao FLOAT,
-	Descricao_transacao VARCHAR(200),
-	Data_Financa SMALLDATETIME,
+	FormaPagamento VARCHAR(30),
+	ValorTransacao FLOAT,
+	DescricaoTransacao VARCHAR(200),
+	DataFinanca SMALLDATETIME,
 	Fornecedor VARCHAR(100),
 	Cliente VARCHAR(100),
-	Numero_do_documento INT,
-	Impostos_pagos FLOAT,
-	Retencao_de_imposto FLOAT,
+	NumeroDoDocumento INT,
+	ImpostosPagos FLOAT,
+	RetencaoDeImposto FLOAT,
 	Conta FLOAT,
 	Saldo FLOAT
 )
@@ -145,23 +145,23 @@ CREATE TABLE Controle_Debito
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	ClienteId INT,
 	Estatus BIT,
-	Valor_debito FLOAT,
-	Forma_pagamento VARCHAR(30),
-	Data_lancamento SMALLDATETIME,
-	Data_vencimento SMALLDATETIME,
-	Data_pagamento SMALLDATETIME
+	ValorDebito FLOAT,
+	FormaPagamento VARCHAR(30),
+	DataLancamento SMALLDATETIME,
+	DataVencimento SMALLDATETIME,
+	DataPagamento SMALLDATETIME
 	
 )
 GO
 CREATE TABLE Exercicios
 (
-	Id_Exercicio INT PRIMARY KEY IDENTITY(1,1),
+	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome Varchar(20)
 )
 GO
 CREATE TABLE PlanoAssinatura
 (
- Id_Plano INT PRIMARY KEY IDENTITY(1,1),
+ Id INT PRIMARY KEY IDENTITY(1,1),
  TipoPlano VARCHAR(15),
  ValorPlano FLOAT,
  Desconto FLOAT
@@ -169,24 +169,24 @@ CREATE TABLE PlanoAssinatura
 GO
 CREATE TABLE PagamentoAluno
 (
- Id_PagamentoAluno INT PRIMARY KEY IDENTITY(1,1),
- Cod_Aluno INT,
- Cod_Plano INT,
+ Id INT PRIMARY KEY IDENTITY(1,1),
+ AlunoId INT,
+ PlanoAssinaturaId INT,
  Debitado BIT
 )
 GO
 CREATE TABLE PagamentoFuncionario
 (
-	Id_Pagamento INT PRIMARY KEY IDENTITY(1,1),
-	Cod_Funcionario Int,
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	FuncionarioId Int,
 	Valor FLOAT,
 	Desconto FLOAT,
-	Hora_extra INT
+	HoraExtra INT
 )
 GO
 CREATE TABLE Funcionario
 (
-	Id_Funcionario INT PRIMARY KEY IDENTITY(1,1),
+	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
 	CPF CHAR(14),
 	Telefone CHAR(14),
@@ -196,8 +196,8 @@ CREATE TABLE Funcionario
 GO
 CREATE TABLE ControleEstoque
 (
-	Id_ControleEstoque INT PRIMARY KEY IDENTITY(1,1),
-	Cod_Produto INT,
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	ProdutoId INT,
 	DataEntrada SMALLDATETIME,
 	DataSaida SMALLDATETIME,
 	Quantidade FLOAT,
