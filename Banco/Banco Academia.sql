@@ -98,7 +98,7 @@ CREATE TABLE Venda
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	funcionarioId INT,
 	ClienteId INT,
-	DataVenda SMALLDATETIME,
+	DataVenda DATETIME,
 	TotalVenda FLOAT
 )
 GO
@@ -118,7 +118,7 @@ CREATE TABLE Financas
 	FornecedorId INT,
 	ValorTransacao FLOAT,
 	DescricaoTransacao VARCHAR(200),
-	DataFinanca SMALLDATETIME,
+	DataFinanca DATETIME,
 	ImpostosPagos FLOAT,
 	RetencaoDeImposto FLOAT,
 	Conta FLOAT,
@@ -132,9 +132,12 @@ CREATE TABLE ControleDebito
 	Estatus BIT,
 	ValorDebito FLOAT,
 	FormaPagamento VARCHAR(30),
-	DataLancamento SMALLDATETIME,
-	DataVencimento SMALLDATETIME,
-	DataPagamento SMALLDATETIME
+	DataLancamento DATETIME,
+	DataVencimento DATETIME,
+	DataPagamento DATETIME,
+	Juros FLOAT,
+	Desconto FLOAT,
+	Acrescimo FLOAT
 	
 )
 GO
@@ -184,8 +187,8 @@ CREATE TABLE ControleEstoque
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	ProdutoId INT,
 	CompraProdutoId INT,
-	DataEntrada SMALLDATETIME,
-	DataSaida SMALLDATETIME,
+	DataEntrada DATETIME,
+	DataSaida DATETIME,
 	Quantidade FLOAT,
 	SaldoTotal FLOAT
 )
@@ -221,18 +224,18 @@ FOREIGN KEY (ClienteId)
 REFERENCES Cliente(Id);
 GO
 
-ALTER TABLE Itens_Venda
+ALTER TABLE ItensVenda
 ADD CONSTRAINT FK_ItensVenda_Venda
 FOREIGN KEY (VendaId)
 REFERENCES Venda(Id);
 
-ALTER TABLE Itens_Venda
+ALTER TABLE ItensVenda
 ADD CONSTRAINT FK_ItensVenda_Produto
 FOREIGN KEY (ProdutoId)
 REFERENCES Produto(Id);
 GO
 
-ALTER TABLE Controle_Debito
+ALTER TABLE ControleDebito
 ADD CONSTRAINT FK_ControleDebito_Cliente
 FOREIGN KEY (ClienteId)
 REFERENCES Cliente(Id);

@@ -9,5 +9,9 @@ namespace BLL
         {
             return new ControleDebitoDAL().BuscarDebitos();
         }
+        public void BuscarDebitoVencido(string _buscarDebitoVencido)
+        {
+            new ControleDebitoDAL().BuscarDebitoVencido(_buscarDebitoVencido);
+        }
     }
 }

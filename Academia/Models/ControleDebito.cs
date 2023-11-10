@@ -10,5 +10,8 @@
         public DateTime DataLancamento { get; set; }
         public DateTime DataVencimento { get; set; }
         public DateTime DataPagamento { get; set; }
+        public double Juros { get; set; }
+        public double Desconto { get; set; }
+        public double Acrescimo { get; set; }
     }
 }
