@@ -103,18 +103,6 @@ CREATE TABLE Venda
 	TotalVenda FLOAT
 )
 GO
-CREATE TABLE Venda_Direta
-(
-	Id INT PRIMARY KEY IDENTITY(1,1),
-	FuncionarioId INT,
-	ProdutoId INT,
-	NomeProduto VARCHAR(100),
-	Quantidade INT,
-	PrecoUnitario FLOAT,
-	DataVenda SMALLDATETIME,
-	PrecoTotal FLOAT
-)
-GO
 CREATE TABLE Itens_Venda
 (
 	VendaId INT,
@@ -215,18 +203,6 @@ ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_Cliente
 FOREIGN KEY (ClienteId)
 REFERENCES Cliente(Id);
-GO
-
-ALTER TABLE Venda_Direta
-ADD CONSTRAINT FK_VendaDireta_Funcionario
-FOREIGN KEY (FuncionarioId)
-REFERENCES Funcionario(Id);
-GO
-
-ALTER TABLE Venda_Direta
-ADD CONSTRAINT FK_VendaDireta_Produto
-FOREIGN KEY (ProdutoId)
-REFERENCES Produto(Id);
 GO
 
 ALTER TABLE Itens_Venda
