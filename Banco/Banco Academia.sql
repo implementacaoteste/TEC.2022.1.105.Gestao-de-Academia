@@ -70,14 +70,14 @@ CREATE TABLE Cliente
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
-	Data_cadastro SMALLDATETIME
+	DataCadastro SMALLDATETIME
 )
 GO
 CREATE TABLE Fornecedor
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
-	CPF_CNPJ VARCHAR(15),
+	CpfCnpj VARCHAR(15),
 	Email VARCHAR(200),
 	Telefone CHAR(14),
 	Endereco VARCHAR(100)
