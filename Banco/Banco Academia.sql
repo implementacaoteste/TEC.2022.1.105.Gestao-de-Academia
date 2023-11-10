@@ -205,6 +205,83 @@ CREATE TABLE ControleEstoque
 )
 GO
 
+ALTER TABLE Venda
+ADD CONSTRAINT FK_Venda_Funcionario
+FOREIGN KEY (FuncionarioId)
+REFERENCES Funcionario(Id);
+GO
+
+ALTER TABLE Venda
+ADD CONSTRAINT FK_Venda_Cliente
+FOREIGN KEY (ClienteId)
+REFERENCES Cliente(Id);
+GO
+
+ALTER TABLE Venda_Direta
+ADD CONSTRAINT FK_VendaDireta_Funcionario
+FOREIGN KEY (FuncionarioId)
+REFERENCES Funcionario(Id);
+GO
+
+ALTER TABLE Venda_Direta
+ADD CONSTRAINT FK_VendaDireta_Produto
+FOREIGN KEY (ProdutoId)
+REFERENCES Produto(Id);
+GO
+
+ALTER TABLE Itens_Venda
+ADD CONSTRAINT FK_ItensVenda_Venda
+FOREIGN KEY (VendaId)
+REFERENCES Venda(Id);
+
+ALTER TABLE Itens_Venda
+ADD CONSTRAINT FK_ItensVenda_Produto
+FOREIGN KEY (ProdutoId)
+REFERENCES Produto(Id);
+GO
+
+ALTER TABLE Financas
+ADD CONSTRAINT FK_Financas_Fornecedor
+FOREIGN KEY (Fornecedor)
+REFERENCES Fornecedor(Nome);
+GO
+
+ALTER TABLE Financas
+ADD CONSTRAINT FK_Financas_Cliente
+FOREIGN KEY (Cliente)
+REFERENCES Cliente(Nome);
+GO
+
+ALTER TABLE Controle_Debito
+ADD CONSTRAINT FK_ControleDebito_Cliente
+FOREIGN KEY (ClienteId)
+REFERENCES Cliente(Id);
+GO
+
+ALTER TABLE PagamentoAluno
+ADD CONSTRAINT FK_PagamentoAluno_Aluno
+FOREIGN KEY (AlunoId)
+REFERENCES Cliente(Id);
+GO
+
+ALTER TABLE PagamentoAluno
+ADD CONSTRAINT FK_PagamentoAluno_PlanoAssinatura
+FOREIGN KEY (PlanoAssinaturaId)
+REFERENCES PlanoAssinatura(Id);
+GO
+
+ALTER TABLE PagamentoFuncionario
+ADD CONSTRAINT FK_PagamentoFuncionario_Funcionario
+FOREIGN KEY (FuncionarioId)
+REFERENCES Funcionario(Id);
+GO
+
+ALTER TABLE ControleEstoque
+ADD CONSTRAINT FK_ControleEstoque_Produto
+FOREIGN KEY (ProdutoId)
+REFERENCES Produto(Id);
+GO
+
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
 
