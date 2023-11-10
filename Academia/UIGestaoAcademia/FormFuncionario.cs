@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
-    public partial class FormVendas : Form
+    public partial class FormFuncionario : Form
     {
-        public FormVendas()
+        public FormFuncionario()
         {
             InitializeComponent();
         }
-
     }
 }

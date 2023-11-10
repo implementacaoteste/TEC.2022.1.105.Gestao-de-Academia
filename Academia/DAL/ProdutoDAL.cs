@@ -12,7 +12,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Produto(Nome, Marca, Preco, Quantidade, CodigoDeBarras) VALUES(@Nome, @Marca, @Preco, @Quantidade, @CodigoDebarras)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Produto(Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras) VALUES(@Nome, @Marca, @Preco, @Quantidade, @CodigoDebarras)"))
                 {
                     try
                     {
@@ -21,7 +21,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Nome", _produto.Nome);
                         cmd.Parameters.AddWithValue("@Preco", _produto.Preco);
                         cmd.Parameters.AddWithValue("@Marca", _produto.Marca);
-                        cmd.Parameters.AddWithValue("@Estoque", _produto.Quantidade);
+                        cmd.Parameters.AddWithValue("@Estoque", _produto.QuantidadeEstoque);
                         cmd.Parameters.AddWithValue("@CodigoDeBarras", _produto.CodigoDeBarras);
 
                         if (_transaction == null)
@@ -54,7 +54,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE Produto SET Nome = @Nome, Marca = @Marca, Preco = @Preco, Quantidade = @Quantidade, CodigoDeBarras = @CodigoDeBarras WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Produto SET Nome = @Nome, Marca = @Marca, Preco = @Preco, QuantidadeEstoque = @QuantidadeEstoque, CodigoDeBarras = @CodigoDeBarras WHERE Id = @Id"))
                 {
                     try
                     {
@@ -64,7 +64,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Nome", _produto.Nome);
                         cmd.Parameters.AddWithValue("@Marca", _produto.Marca);
                         cmd.Parameters.AddWithValue("@Preco", _produto.Preco);
-                        cmd.Parameters.AddWithValue("@Estoque", _produto.Quantidade);
+                        cmd.Parameters.AddWithValue("@Estoque", _produto.QuantidadeEstoque);
                         cmd.Parameters.AddWithValue("@CodigoDeBarras", _produto.CodigoDeBarras);
 
                         if (_transaction == null)
@@ -141,7 +141,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Marca, Preco, Quantidade, CodigoDeBarras FROM Produto";
+                cmd.CommandText = " SELECT Id, Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -156,7 +156,7 @@ namespace DAL
                         produto.Nome = rd["Nome"].ToString();
                         produto.Marca = rd["Marca"].ToString();
                         produto.Preco = (double)rd["Preco"];
-                        produto.Quantidade = (int)rd["Quantidade"];
+                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
                         produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
                         produtoList.Add(produto);
                     }
@@ -184,7 +184,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Marca, Preco, Estoque, CodigoDeBarras FROM Produto WHERE Id  = @Id";
+                cmd.CommandText = " SELECT Id, Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE Id  = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -201,7 +201,7 @@ namespace DAL
                         produto.Nome = rd["Nome"].ToString();
                         produto.Marca = rd["Marca"].ToString();
                         produto.Preco = (double)rd["Preco"];
-                        produto.Quantidade = (int)rd["Estoque"];
+                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
                         produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
                     }
                 }
@@ -228,7 +228,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Marca Preco, Quantidade, CodigoDeBarras FROM Produto WHERE Nome LIKE @Nome";
+                cmd.CommandText = " SELECT Id, Nome, Marca Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE Nome LIKE @Nome";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -245,7 +245,7 @@ namespace DAL
                         produto.Nome = rd["Nome"].ToString();
                         produto.Marca = rd["Marca"].ToString();
                         produto.Preco = (double)rd["Preco"];
-                        produto.Quantidade = (int)rd["Quantidade"];
+                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
                         produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
                         produtoList.Add(produto);
                     }
@@ -272,7 +272,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = "SELECT Id, Nome, Marca, Preco, Quantidade, CodigoDeBarras FROM Produto WHERE CodigoDeBarras  = @CodigoDeBarras";
+                cmd.CommandText = "SELECT Id, Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE CodigoDeBarras  = @CodigoDeBarras";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -290,7 +290,7 @@ namespace DAL
                         produto.Nome = rd["Nome"].ToString();
                         produto.Marca = rd["Marca"].ToString();
                         produto.Preco = (double)rd["Preco"];
-                        produto.Quantidade = (int)rd["Quantidade"];
+                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
                         produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
                     }
                 }
