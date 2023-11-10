@@ -207,7 +207,7 @@ GO
 
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_Funcionario
-FOREIGN KEY (funcionarioId)
+FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
 GO
 
