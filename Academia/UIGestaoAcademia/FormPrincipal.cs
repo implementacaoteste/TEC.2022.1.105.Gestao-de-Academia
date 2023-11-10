@@ -58,12 +58,25 @@ namespace UIGestaoAcademia
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
-
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormConsultaCliente frm  = new FormConsultaCliente())
             {
                 frm.ShowDialog();
+            }
+        }
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormBuscarProduto frm = new FormBuscarProduto())
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
