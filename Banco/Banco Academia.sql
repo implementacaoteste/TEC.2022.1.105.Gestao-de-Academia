@@ -1,14 +1,3 @@
-USE master
-GO
-
-IF(EXISTS(SELECT 1 FROM master.sys.databases WHERE name = 'Academia'))
-ALTER DATABASE Academia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
-GO
-
-IF(EXISTS(SELECT 1 FROM master.sys.databases WHERE name = 'Academia'))
-DROP DATABASE Academia
-GO
-
 CREATE DATABASE GestaoDeAcademia
 GO
 
