@@ -103,18 +103,6 @@ CREATE TABLE Venda
 	TotalVenda FLOAT
 )
 GO
-CREATE TABLE Venda_Direta
-(
-	Id INT PRIMARY KEY IDENTITY(1,1),
-	FuncionarioId INT,
-	ProdutoId INT,
-	NomeProduto VARCHAR(100),
-	Quantidade INT,
-	PrecoUnitario FLOAT,
-	DataVenda SMALLDATETIME,
-	PrecoTotal FLOAT
-)
-GO
 CREATE TABLE Itens_Venda
 (
 	VendaId INT,
