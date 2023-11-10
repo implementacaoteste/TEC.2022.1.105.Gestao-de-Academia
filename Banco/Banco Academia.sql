@@ -102,7 +102,7 @@ CREATE TABLE Venda
 	TotalVenda FLOAT
 )
 GO
-CREATE TABLE Itens_Venda
+CREATE TABLE ItensVenda
 (
 	VendaId INT,
 	ProdutoId INT,
@@ -125,7 +125,7 @@ CREATE TABLE Financas
 	Saldo FLOAT
 )
 GO
-CREATE TABLE Controle_Debito
+CREATE TABLE ControleDebito
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	ClienteId INT,
