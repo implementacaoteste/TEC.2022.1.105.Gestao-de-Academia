@@ -1,6 +1,6 @@
 ﻿namespace UIGestaoAcademia
 {
-    partial class FormBuscarProduto
+    partial class FormBuscarDebito
     {
         /// <summary>
         /// Required designer variable.
@@ -31,68 +31,67 @@
             components = new System.ComponentModel.Container();
             comboBoxBuscarPor = new ComboBox();
             dataGridViewProduto = new DataGridView();
-            bindingSourceProduto = new BindingSource(components);
             buttonSelecionar = new Button();
             label2 = new Label();
             label1 = new Label();
             buttonCancelar = new Button();
+            textBoxBuscarPor = new TextBox();
             buttonExcluir = new Button();
             buttonInserir = new Button();
             buttonAlterar = new Button();
             buttonBuscar = new Button();
-            textBoxBuscarPor = new TextBox();
+            controleDebitoBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceProduto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)controleDebitoBindingSource).BeginInit();
             SuspendLayout();
             // 
             // comboBoxBuscarPor
             // 
+            comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             comboBoxBuscarPor.FormattingEnabled = true;
-            comboBoxBuscarPor.Items.AddRange(new object[] { "Nome", "Codigo de barras", "Todos" });
-            comboBoxBuscarPor.Location = new Point(9, 68);
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Correntes", "Pagos", "Vencidos", "Todos" });
+            comboBoxBuscarPor.Location = new Point(9, 56);
             comboBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             comboBoxBuscarPor.Size = new Size(126, 23);
-            comboBoxBuscarPor.TabIndex = 21;
+            comboBoxBuscarPor.TabIndex = 32;
             // 
             // dataGridViewProduto
             // 
             dataGridViewProduto.AllowUserToAddRows = false;
             dataGridViewProduto.AllowUserToDeleteRows = false;
             dataGridViewProduto.AllowUserToOrderColumns = true;
+            dataGridViewProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProduto.Location = new Point(10, 92);
+            dataGridViewProduto.Location = new Point(10, 83);
             dataGridViewProduto.Margin = new Padding(3, 2, 3, 2);
             dataGridViewProduto.Name = "dataGridViewProduto";
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
-            dataGridViewProduto.Size = new Size(830, 254);
-            dataGridViewProduto.TabIndex = 17;
-            // 
-            // bindingSourceProduto
-            // 
-            bindingSourceProduto.DataSource = typeof(Models.Produto);
+            dataGridViewProduto.Size = new Size(879, 252);
+            dataGridViewProduto.TabIndex = 28;
             // 
             // buttonSelecionar
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelecionar.Location = new Point(672, 351);
+            buttonSelecionar.Location = new Point(721, 339);
             buttonSelecionar.Margin = new Padding(3, 2, 3, 2);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(82, 22);
-            buttonSelecionar.TabIndex = 18;
+            buttonSelecionar.TabIndex = 29;
             buttonSelecionar.Text = "Se&lecionar";
             buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
             buttonSelecionar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label2.AutoSize = true;
-            label2.Location = new Point(10, 50);
+            label2.Location = new Point(10, 38);
             label2.Name = "label2";
             label2.Size = new Size(63, 15);
-            label2.TabIndex = 20;
+            label2.TabIndex = 31;
             label2.Text = "Buscar por";
             // 
             // label1
@@ -101,101 +100,104 @@
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(853, 50);
-            label1.TabIndex = 11;
-            label1.Text = "Buscar produto";
+            label1.Size = new Size(897, 50);
+            label1.TabIndex = 22;
+            label1.Text = "Buscar debito\r\n";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonCancelar
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(758, 351);
+            buttonCancelar.Location = new Point(807, 339);
             buttonCancelar.Margin = new Padding(3, 2, 3, 2);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(82, 22);
-            buttonCancelar.TabIndex = 19;
+            buttonCancelar.TabIndex = 30;
             buttonCancelar.Text = "&Cancelar";
             buttonCancelar.TextAlign = ContentAlignment.TopCenter;
             buttonCancelar.UseVisualStyleBackColor = true;
             // 
+            // textBoxBuscarPor
+            // 
+            textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxBuscarPor.Location = new Point(140, 56);
+            textBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            textBoxBuscarPor.Name = "textBoxBuscarPor";
+            textBoxBuscarPor.Size = new Size(398, 23);
+            textBoxBuscarPor.TabIndex = 23;
+            // 
             // buttonExcluir
             // 
-            buttonExcluir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonExcluir.Location = new Point(761, 66);
+            buttonExcluir.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonExcluir.Location = new Point(807, 56);
             buttonExcluir.Margin = new Padding(3, 2, 3, 2);
             buttonExcluir.Name = "buttonExcluir";
             buttonExcluir.Size = new Size(82, 22);
-            buttonExcluir.TabIndex = 16;
+            buttonExcluir.TabIndex = 36;
             buttonExcluir.Text = "E&xcluir";
             buttonExcluir.UseVisualStyleBackColor = true;
             buttonExcluir.Click += buttonExcluir_Click;
             // 
             // buttonInserir
             // 
-            buttonInserir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonInserir.Location = new Point(673, 66);
+            buttonInserir.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonInserir.Location = new Point(719, 56);
             buttonInserir.Margin = new Padding(3, 2, 3, 2);
             buttonInserir.Name = "buttonInserir";
             buttonInserir.Size = new Size(82, 22);
-            buttonInserir.TabIndex = 15;
+            buttonInserir.TabIndex = 35;
             buttonInserir.Text = "&Inserir";
             buttonInserir.UseVisualStyleBackColor = true;
             buttonInserir.Click += buttonInserir_Click;
             // 
             // buttonAlterar
             // 
-            buttonAlterar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAlterar.Location = new Point(586, 67);
+            buttonAlterar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAlterar.Location = new Point(632, 57);
             buttonAlterar.Margin = new Padding(3, 2, 3, 2);
             buttonAlterar.Name = "buttonAlterar";
             buttonAlterar.Size = new Size(82, 22);
-            buttonAlterar.TabIndex = 14;
+            buttonAlterar.TabIndex = 34;
             buttonAlterar.Text = "&Alterar";
             buttonAlterar.UseVisualStyleBackColor = true;
-            buttonAlterar.Click += buttonAlterar_Click;
+            buttonAlterar.Click += buttonAlterar_Click_1;
             // 
             // buttonBuscar
             // 
-            buttonBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonBuscar.Location = new Point(498, 67);
+            buttonBuscar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonBuscar.Location = new Point(544, 57);
             buttonBuscar.Margin = new Padding(3, 2, 3, 2);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(82, 22);
-            buttonBuscar.TabIndex = 13;
+            buttonBuscar.TabIndex = 33;
             buttonBuscar.Text = "&Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
             buttonBuscar.Click += buttonBuscar_Click;
             // 
-            // textBoxBuscarPor
+            // controleDebitoBindingSource
             // 
-            textBoxBuscarPor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxBuscarPor.Location = new Point(140, 68);
-            textBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
-            textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(353, 23);
-            textBoxBuscarPor.TabIndex = 12;
+            controleDebitoBindingSource.DataSource = typeof(Models.ControleDebito);
             // 
-            // FormBuscarProduto
+            // FormBuscarDebito
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(853, 382);
+            ClientSize = new Size(897, 366);
+            Controls.Add(textBoxBuscarPor);
+            Controls.Add(buttonExcluir);
+            Controls.Add(buttonInserir);
+            Controls.Add(buttonAlterar);
+            Controls.Add(buttonBuscar);
             Controls.Add(comboBoxBuscarPor);
             Controls.Add(dataGridViewProduto);
             Controls.Add(buttonSelecionar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(buttonCancelar);
-            Controls.Add(buttonExcluir);
-            Controls.Add(buttonInserir);
-            Controls.Add(buttonAlterar);
-            Controls.Add(buttonBuscar);
-            Controls.Add(textBoxBuscarPor);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "FormBuscarProduto";
-            Text = "FormBuscarProduto";
+            Name = "FormBuscarDebito";
+            Text = "FormControleProduto";
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceProduto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)controleDebitoBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,18 +206,15 @@
 
         private ComboBox comboBoxBuscarPor;
         private DataGridView dataGridViewProduto;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
-        private BindingSource bindingSourceProduto;
         private Button buttonSelecionar;
         private Label label2;
         private Label label1;
         private Button buttonCancelar;
+        private TextBox textBoxBuscarPor;
         private Button buttonExcluir;
         private Button buttonInserir;
         private Button buttonAlterar;
         private Button buttonBuscar;
-        private TextBox textBoxBuscarPor;
+        private BindingSource controleDebitoBindingSource;
     }
 }

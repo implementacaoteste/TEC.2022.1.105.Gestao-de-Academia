@@ -12,32 +12,32 @@ using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
-    public partial class FormCadastrarProduto : Form
+    public partial class FormCadastrarDebito : Form
     {
         int id;
-        public FormCadastrarProduto(int _id = 0)
+        public FormCadastrarDebito(int _id = 0)
         {
             InitializeComponent();
             id = _id;
 
 
             if (id == 0)
-                bindingSourceCadastro.AddNew();
+                bindingSourceCadastrarDebito.AddNew();
             else
-                bindingSourceCadastro.DataSource = new ProdutoBLL().BuscarPorId(id);
+                bindingSourceCadastrarDebito.DataSource = new ProdutoBLL().BuscarPorId(id);
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             try
             {
-                bindingSourceCadastro.EndEdit();
-                Produto produto = (Produto)bindingSourceCadastro.Current;
+                bindingSourceCadastrarDebito.EndEdit();
+                ControleDebito controleDebito = (ControleDebito)bindingSourceCadastrarDebito.Current;
 
                 if (id == 0)
-                    new ProdutoBLL().Inserir(produto);
+                    new ControleDebitoBLL().Inserir(controleDebito);
                 else
-                    new ProdutoBLL().Alterar(produto);
+                    new ControleDebitoBLL().Atualizar(controleDebito);
 
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
@@ -47,7 +47,5 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }
-

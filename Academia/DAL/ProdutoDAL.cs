@@ -272,7 +272,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = "SELECT Id, Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE CodigoDeBarras  = @CodigoDeBarras";
+                cmd.CommandText = "SELECT Id, Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE CodigoDeBarras = @CodigoDeBarras";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 

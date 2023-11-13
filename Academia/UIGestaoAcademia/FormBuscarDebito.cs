@@ -3,9 +3,9 @@ using Models;
 
 namespace UIGestaoAcademia
 {
-    public partial class FormBuscarProduto : Form
+    public partial class FormBuscarDebito : Form
     {
-        public FormBuscarProduto()
+        public FormBuscarDebito(int id)
         {
             InitializeComponent();
         }
@@ -17,13 +17,16 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        bindingSourceProduto.DataSource = new ProdutoBLL().BuscarPorNome(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebito();
                         break;
                     case 1:
-                        bindingSourceProduto.DataSource = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago(Convert.ToDateTime(textBoxBuscarPor.Text));
+                        break;
+                    case 2:
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente(Convert.ToDateTime(textBoxBuscarPor.Text));
                         break;
                     default:
-                        bindingSourceProduto.DataSource = new ProdutoBLL().BuscarTodos();
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido(Convert.ToDateTime(textBoxBuscarPor.Text));
                         break;
                 }
             }
@@ -32,11 +35,10 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-        private void buttonAlterar_Click(object sender, EventArgs e)
+        private void buttonAlterar_Click_1(object sender, EventArgs e)
         {
-            int id = ((Produto)bindingSourceProduto.Current).Id;
-
-            using (FormCadastrarProduto frm = new FormCadastrarProduto(id))
+            int id = ((ControleDebito)controleDebitoBindingSource.Current).Id;
+            using (FormBuscarDebito frm = new FormBuscarDebito(id))
             {
                 frm.ShowDialog();
             }
@@ -53,10 +55,11 @@ namespace UIGestaoAcademia
             if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((Produto)bindingSourceProduto.Current).Id;
-            new ProdutoBLL().Excluir(id);
-            bindingSourceProduto.RemoveCurrent();
+            int id = ((ControleDebito)controleDebitoBindingSource.Current).Id;
+            new ControleDebitoBLL().Excluir(id);
+            controleDebitoBindingSource.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
+
     }
 }
