@@ -41,6 +41,15 @@
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
+=======
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeEstoqueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProduto)).BeginInit();
             this.SuspendLayout();
@@ -62,13 +71,30 @@
             this.dataGridViewProduto.AllowUserToAddRows = false;
             this.dataGridViewProduto.AllowUserToDeleteRows = false;
             this.dataGridViewProduto.AllowUserToOrderColumns = true;
+<<<<<<< HEAD
             this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+=======
+            this.dataGridViewProduto.AutoGenerateColumns = false;
+            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.marcaDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.quantidadeEstoqueDataGridViewTextBoxColumn});
+            this.dataGridViewProduto.DataSource = this.bindingSourceProduto;
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.dataGridViewProduto.Location = new System.Drawing.Point(11, 123);
             this.dataGridViewProduto.Name = "dataGridViewProduto";
             this.dataGridViewProduto.ReadOnly = true;
             this.dataGridViewProduto.RowHeadersWidth = 51;
             this.dataGridViewProduto.RowTemplate.Height = 29;
+<<<<<<< HEAD
             this.dataGridViewProduto.Size = new System.Drawing.Size(949, 339);
+=======
+            this.dataGridViewProduto.Size = new System.Drawing.Size(829, 339);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.dataGridViewProduto.TabIndex = 17;
             // 
             // bindingSourceProduto
@@ -78,7 +104,11 @@
             // buttonSelecionar
             // 
             this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonSelecionar.Location = new System.Drawing.Point(768, 468);
+=======
+            this.buttonSelecionar.Location = new System.Drawing.Point(642, 468);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
             this.buttonSelecionar.TabIndex = 18;
@@ -101,7 +131,11 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
+<<<<<<< HEAD
             this.label1.Size = new System.Drawing.Size(975, 67);
+=======
+            this.label1.Size = new System.Drawing.Size(849, 67);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.label1.TabIndex = 11;
             this.label1.Text = "Buscar produto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +143,11 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonCancelar.Location = new System.Drawing.Point(866, 468);
+=======
+            this.buttonCancelar.Location = new System.Drawing.Point(740, 468);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 19;
@@ -120,42 +158,74 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonExcluir.Location = new System.Drawing.Point(870, 88);
+=======
+            this.buttonExcluir.Location = new System.Drawing.Point(744, 88);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
             this.buttonExcluir.TabIndex = 16;
             this.buttonExcluir.Text = "E&xcluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             // 
             // buttonInserir
             // 
             this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonInserir.Location = new System.Drawing.Point(769, 88);
+=======
+            this.buttonInserir.Location = new System.Drawing.Point(643, 88);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
             this.buttonInserir.TabIndex = 15;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             // 
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonAlterar.Location = new System.Drawing.Point(670, 89);
+=======
+            this.buttonAlterar.Location = new System.Drawing.Point(544, 89);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
             this.buttonAlterar.TabIndex = 14;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             // 
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonBuscar.Location = new System.Drawing.Point(569, 89);
+=======
+            this.buttonBuscar.Location = new System.Drawing.Point(443, 89);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 13;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
+=======
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             // 
             // textBoxBuscarPor
             // 
@@ -163,14 +233,77 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscarPor.Location = new System.Drawing.Point(160, 91);
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
+<<<<<<< HEAD
             this.textBoxBuscarPor.Size = new System.Drawing.Size(403, 27);
             this.textBoxBuscarPor.TabIndex = 12;
+=======
+            this.textBoxBuscarPor.Size = new System.Drawing.Size(277, 27);
+            this.textBoxBuscarPor.TabIndex = 12;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.marcaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Preco";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Preco";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CodigoDeBarras";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CodigoDeBarras";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // quantidadeEstoqueDataGridViewTextBoxColumn
+            // 
+            this.quantidadeEstoqueDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeEstoque";
+            this.quantidadeEstoqueDataGridViewTextBoxColumn.HeaderText = "QuantidadeEstoque";
+            this.quantidadeEstoqueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.quantidadeEstoqueDataGridViewTextBoxColumn.Name = "quantidadeEstoqueDataGridViewTextBoxColumn";
+            this.quantidadeEstoqueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantidadeEstoqueDataGridViewTextBoxColumn.Width = 150;
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             // 
             // FormBuscarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(975, 509);
+=======
+            this.ClientSize = new System.Drawing.Size(849, 509);
+>>>>>>> bb6e59edcfe85ddb20020d13ee3b064a7771667c
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.buttonSelecionar);
@@ -208,5 +341,11 @@
         private Button buttonAlterar;
         private Button buttonBuscar;
         private TextBox textBoxBuscarPor;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn quantidadeEstoqueDataGridViewTextBoxColumn;
     }
 }
