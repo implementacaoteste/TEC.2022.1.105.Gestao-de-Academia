@@ -83,7 +83,7 @@
             this.dataGridViewProduto.ReadOnly = true;
             this.dataGridViewProduto.RowHeadersWidth = 51;
             this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(994, 339);
+            this.dataGridViewProduto.Size = new System.Drawing.Size(1069, 339);
             this.dataGridViewProduto.TabIndex = 17;
             // 
             // bindingSourceProduto
@@ -93,7 +93,7 @@
             // buttonSelecionar
             // 
             this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(809, 468);
+            this.buttonSelecionar.Location = new System.Drawing.Point(886, 468);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
             this.buttonSelecionar.TabIndex = 18;
@@ -116,7 +116,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1016, 67);
+            this.label1.Size = new System.Drawing.Size(1093, 67);
             this.label1.TabIndex = 11;
             this.label1.Text = "Buscar produto";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,7 +124,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(907, 468);
+            this.buttonCancelar.Location = new System.Drawing.Point(984, 468);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 19;
@@ -135,7 +135,7 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(911, 88);
+            this.buttonExcluir.Location = new System.Drawing.Point(988, 88);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
             this.buttonExcluir.TabIndex = 16;
@@ -146,7 +146,7 @@
             // buttonInserir
             // 
             this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(810, 88);
+            this.buttonInserir.Location = new System.Drawing.Point(887, 88);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
             this.buttonInserir.TabIndex = 15;
@@ -157,7 +157,7 @@
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(711, 89);
+            this.buttonAlterar.Location = new System.Drawing.Point(788, 89);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
             this.buttonAlterar.TabIndex = 14;
@@ -168,7 +168,7 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(610, 89);
+            this.buttonBuscar.Location = new System.Drawing.Point(687, 89);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 13;
@@ -182,7 +182,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscarPor.Location = new System.Drawing.Point(160, 91);
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(444, 27);
+            this.textBoxBuscarPor.Size = new System.Drawing.Size(521, 27);
             this.textBoxBuscarPor.TabIndex = 12;
             // 
             // idDataGridViewTextBoxColumn
@@ -210,7 +210,7 @@
             this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
             this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.marcaDataGridViewTextBoxColumn.Width = 150;
+            this.marcaDataGridViewTextBoxColumn.Width = 200;
             // 
             // precoDataGridViewTextBoxColumn
             // 
@@ -228,7 +228,7 @@
             this.codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
             this.codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codigoDeBarrasDataGridViewTextBoxColumn.Width = 125;
+            this.codigoDeBarrasDataGridViewTextBoxColumn.Width = 150;
             // 
             // quantidadeEstoqueDataGridViewTextBoxColumn
             // 
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 509);
+            this.ClientSize = new System.Drawing.Size(1093, 509);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.buttonSelecionar);
