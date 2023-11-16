@@ -5,7 +5,7 @@ namespace UIGestaoAcademia
 {
     public partial class FormBuscarDebito : Form
     {
-        public FormBuscarDebito(int id)
+        public FormBuscarDebito()
         {
             InitializeComponent();
         }
@@ -37,15 +37,14 @@ namespace UIGestaoAcademia
         }
         private void buttonAlterar_Click_1(object sender, EventArgs e)
         {
-            int id = ((ControleDebito)controleDebitoBindingSource.Current).Id;
-            using (FormBuscarDebito frm = new FormBuscarDebito(id))
+            using (FormBuscarDebito frm = new FormBuscarDebito())
             {
                 frm.ShowDialog();
             }
         }
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarProduto frm = new FormCadastrarProduto())
+            using (FormCadastrarDebito frm = new FormCadastrarDebito())
             {
                 frm.ShowDialog();
             }
@@ -61,5 +60,9 @@ namespace UIGestaoAcademia
             MessageBox.Show("Registro excluido com sucesso!");
         }
 
+        private void buttonInserir_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
