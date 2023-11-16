@@ -67,19 +67,20 @@
             this.buttonCancelar.Location = new System.Drawing.Point(693, 312);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 21;
+            this.buttonCancelar.TabIndex = 6;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonSalvar
             // 
             this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSalvar.Location = new System.Drawing.Point(592, 309);
+            this.buttonSalvar.Location = new System.Drawing.Point(593, 312);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 20;
+            this.buttonSalvar.TabIndex = 5;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
             // 
             // label5
             // 
@@ -127,7 +128,7 @@
             this.textBoxCodigoDeBarras.Location = new System.Drawing.Point(206, 205);
             this.textBoxCodigoDeBarras.Name = "textBoxCodigoDeBarras";
             this.textBoxCodigoDeBarras.Size = new System.Drawing.Size(186, 27);
-            this.textBoxCodigoDeBarras.TabIndex = 19;
+            this.textBoxCodigoDeBarras.TabIndex = 4;
             // 
             // textBoxEstoque
             // 
@@ -135,7 +136,7 @@
             this.textBoxEstoque.Location = new System.Drawing.Point(7, 205);
             this.textBoxEstoque.Name = "textBoxEstoque";
             this.textBoxEstoque.Size = new System.Drawing.Size(193, 27);
-            this.textBoxEstoque.TabIndex = 17;
+            this.textBoxEstoque.TabIndex = 3;
             // 
             // textBoxPreco
             // 
@@ -143,7 +144,7 @@
             this.textBoxPreco.Location = new System.Drawing.Point(398, 145);
             this.textBoxPreco.Name = "textBoxPreco";
             this.textBoxPreco.Size = new System.Drawing.Size(184, 27);
-            this.textBoxPreco.TabIndex = 15;
+            this.textBoxPreco.TabIndex = 1;
             // 
             // textBoxNome
             // 
@@ -151,7 +152,7 @@
             this.textBoxNome.Location = new System.Drawing.Point(6, 145);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(386, 27);
-            this.textBoxNome.TabIndex = 13;
+            this.textBoxNome.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -159,7 +160,7 @@
             this.textBox1.Location = new System.Drawing.Point(588, 145);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(191, 27);
-            this.textBox1.TabIndex = 22;
+            this.textBox1.TabIndex = 2;
             // 
             // label6
             // 

@@ -12,7 +12,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Produto(Nome, Preco, Marca, QuantidadeEstoque, CodigoDeBarras) VALUES(@Nome, @Marca, @Preco, @QuantidadeEstoque, @CodigoDeBarras)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Produto(Nome, Preco, Marca, QuantidadeEstoque, CodigoDeBarras) VALUES(@Nome, @Preco, @Marca, @QuantidadeEstoque, @CodigoDeBarras)"))
                 {
                     try
                     {
