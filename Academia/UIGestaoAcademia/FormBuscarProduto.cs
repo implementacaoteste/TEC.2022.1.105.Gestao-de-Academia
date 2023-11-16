@@ -9,8 +9,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
         }
-
-        private void buttonBuscar_Click(object sender, EventArgs e)
+        private void buttonBuscar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -32,7 +31,7 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-        private void buttonAlterar_Click(object sender, EventArgs e)
+        private void buttonAlterar_Click_1(object sender, EventArgs e)
         {
             int id = ((Produto)bindingSourceProduto.Current).Id;
 
@@ -41,14 +40,14 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
-        private void buttonInserir_Click(object sender, EventArgs e)
+        private void buttonInserir_Click_1(object sender, EventArgs e)
         {
             using (FormCadastrarProduto frm = new FormCadastrarProduto())
             {
                 frm.ShowDialog();
             }
         }
-        private void buttonExcluir_Click(object sender, EventArgs e)
+        private void buttonExcluir_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;

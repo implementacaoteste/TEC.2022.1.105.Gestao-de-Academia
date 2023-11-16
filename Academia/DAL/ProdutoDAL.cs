@@ -12,7 +12,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Produto(Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras) VALUES(@Nome, @Marca, @Preco, @Quantidade, @CodigoDebarras)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Produto(Nome, Preco, Marca, QuantidadeEstoque, CodigoDeBarras) VALUES(@Nome, @Marca, @Preco, @QuantidadeEstoque, @CodigoDeBarras)"))
                 {
                     try
                     {
@@ -21,7 +21,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Nome", _produto.Nome);
                         cmd.Parameters.AddWithValue("@Preco", _produto.Preco);
                         cmd.Parameters.AddWithValue("@Marca", _produto.Marca);
-                        cmd.Parameters.AddWithValue("@Estoque", _produto.QuantidadeEstoque);
+                        cmd.Parameters.AddWithValue("@QuantidadeEstoque", _produto.QuantidadeEstoque);
                         cmd.Parameters.AddWithValue("@CodigoDeBarras", _produto.CodigoDeBarras);
 
                         if (_transaction == null)
@@ -64,7 +64,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Nome", _produto.Nome);
                         cmd.Parameters.AddWithValue("@Marca", _produto.Marca);
                         cmd.Parameters.AddWithValue("@Preco", _produto.Preco);
-                        cmd.Parameters.AddWithValue("@Estoque", _produto.QuantidadeEstoque);
+                        cmd.Parameters.AddWithValue("@QuantidadeEstoque", _produto.QuantidadeEstoque);
                         cmd.Parameters.AddWithValue("@CodigoDeBarras", _produto.CodigoDeBarras);
 
                         if (_transaction == null)
@@ -228,7 +228,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Marca Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE Nome LIKE @Nome";
+                cmd.CommandText = " SELECT Id, Nome, Marca, Preco, QuantidadeEstoque, CodigoDeBarras FROM Produto WHERE Nome LIKE @Nome";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
