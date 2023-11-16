@@ -19,7 +19,7 @@ namespace UIGestaoAcademia
                 bindingSourceCadastro.DataSource = new ProdutoBLL().BuscarPorId(id);
         }
 
-        private void buttonSalvar_Click(object sender, EventArgs e)
+        private void buttonSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -39,7 +39,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }
 

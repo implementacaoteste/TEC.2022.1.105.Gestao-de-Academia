@@ -133,7 +133,6 @@ CREATE TABLE ControleDebito
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	ClienteId INT,
-	Estatus BIT,
 	ValorDebito FLOAT,
 	FormaPagamento VARCHAR(30),
 	DataLancamento DATETIME,
@@ -143,6 +142,12 @@ CREATE TABLE ControleDebito
 	Desconto FLOAT,
 	Acrescimo FLOAT
 	
+)
+GO
+CREATE TABLE FormaPagamento
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	DescriçãoFormaPagamento VARCHAR
 )
 GO
 CREATE TABLE Exercicios

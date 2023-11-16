@@ -1,14 +1,6 @@
 ﻿using BLL;
 using Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace UIGestaoAcademia
 {
@@ -24,10 +16,9 @@ namespace UIGestaoAcademia
             if (id == 0)
                 bindingSourceCadastrarDebito.AddNew();
             else
-                bindingSourceCadastrarDebito.DataSource = new ProdutoBLL().BuscarPorId(id);
+                bindingSourceCadastrarDebito.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
         }
-
-        private void buttonSalvar_Click(object sender, EventArgs e)
+        private void buttonSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -37,7 +28,7 @@ namespace UIGestaoAcademia
                 if (id == 0)
                     new ControleDebitoBLL().Inserir(controleDebito);
                 else
-                    new ControleDebitoBLL().Atualizar(controleDebito);
+                    new ControleDebitoBLL().Alterar(controleDebito);
 
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
