@@ -91,8 +91,8 @@ CREATE TABLE CompraProduto
 CREATE TABLE Produto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Nome Varchar(20),
-	Marca VARCHAR(10),
+	Nome Varchar(150),
+	Marca VARCHAR(150),
 	Preco FLOAT,
 	QuantidadeEstoque int,
 	CodigoDeBarras VARCHAR(20)
