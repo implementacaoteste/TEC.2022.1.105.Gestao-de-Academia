@@ -81,10 +81,10 @@ GO
 CREATE TABLE CompraProduto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Nome VARCHAR(100),
-	Marca VARCHAR(100),
+	ProdutoId int,
 	Quantidade INT,
 	FornecedorId INT,
+	ValorUnitario float,
 	ValorTotal FLOAT
 )
 
@@ -92,15 +92,16 @@ CREATE TABLE Produto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome Varchar(20),
-	CompraProdutoId INT,
+	Marca VARCHAR(10),
 	Preco FLOAT,
+	QuantidadeEstoque int,
 	CodigoDeBarras VARCHAR(20)
 )
 GO
 CREATE TABLE Venda
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	funcionarioId INT,
+	FuncionarioId INT,
 	ClienteId INT,
 	DataVenda DATETIME,
 	TotalVenda FLOAT
@@ -198,14 +199,14 @@ CREATE TABLE ControleEstoque
 )
 GO
 
-ALTER TABLE Produto
-ADD CONSTRAINT FK_CompraProduto_Produto
-FOREIGN KEY (CompraProdutoId)
-REFERENCES CompraProduto(Id);
+ALTER TABLE CompraProduto
+ADD CONSTRAINT FK_Produto_CompraProduto
+FOREIGN KEY (ProdutoId)
+REFERENCES Produto(Id);
 GO
 
 ALTER TABLE CompraProduto
-ADD CONSTRAINT FK_Fornedor_CompraProduto
+ADD CONSTRAINT FK_Fornecedor_CompraProduto
 FOREIGN KEY (FornecedorId)
 REFERENCES Fornecedor(Id);
 GO
