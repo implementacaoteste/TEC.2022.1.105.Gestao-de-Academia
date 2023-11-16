@@ -41,6 +41,11 @@
             this.textBoxEstoque = new System.Windows.Forms.TextBox();
             this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
+=======
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,17 +70,28 @@
             this.buttonCancelar.Location = new System.Drawing.Point(693, 312);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+<<<<<<< HEAD
             this.buttonCancelar.TabIndex = 21;
+=======
+            this.buttonCancelar.TabIndex = 6;
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonSalvar
             // 
             this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+<<<<<<< HEAD
             this.buttonSalvar.Location = new System.Drawing.Point(592, 311);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 20;
+=======
+            this.buttonSalvar.Location = new System.Drawing.Point(593, 312);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvar.TabIndex = 5;
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
@@ -126,7 +142,11 @@
             this.textBoxCodigoDeBarras.Location = new System.Drawing.Point(206, 205);
             this.textBoxCodigoDeBarras.Name = "textBoxCodigoDeBarras";
             this.textBoxCodigoDeBarras.Size = new System.Drawing.Size(186, 27);
+<<<<<<< HEAD
             this.textBoxCodigoDeBarras.TabIndex = 19;
+=======
+            this.textBoxCodigoDeBarras.TabIndex = 4;
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             // 
             // textBoxEstoque
             // 
@@ -134,15 +154,24 @@
             this.textBoxEstoque.Location = new System.Drawing.Point(7, 205);
             this.textBoxEstoque.Name = "textBoxEstoque";
             this.textBoxEstoque.Size = new System.Drawing.Size(193, 27);
+<<<<<<< HEAD
             this.textBoxEstoque.TabIndex = 17;
+=======
+            this.textBoxEstoque.TabIndex = 3;
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             // 
             // textBoxPreco
             // 
             this.textBoxPreco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Preco", true));
             this.textBoxPreco.Location = new System.Drawing.Point(398, 145);
             this.textBoxPreco.Name = "textBoxPreco";
+<<<<<<< HEAD
             this.textBoxPreco.Size = new System.Drawing.Size(386, 27);
             this.textBoxPreco.TabIndex = 15;
+=======
+            this.textBoxPreco.Size = new System.Drawing.Size(184, 27);
+            this.textBoxPreco.TabIndex = 1;
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             // 
             // textBoxNome
             // 
@@ -150,13 +179,40 @@
             this.textBoxNome.Location = new System.Drawing.Point(6, 145);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(386, 27);
+<<<<<<< HEAD
             this.textBoxNome.TabIndex = 13;
+=======
+            this.textBoxNome.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Marca", true));
+            this.textBox1.Location = new System.Drawing.Point(588, 145);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(191, 27);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(592, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 20);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Marca";
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             // 
             // FormCadastrarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 349);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox1);
+>>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
@@ -190,5 +246,7 @@
         private TextBox textBoxEstoque;
         private TextBox textBoxPreco;
         private TextBox textBoxNome;
+        private TextBox textBox1;
+        private Label label6;
     }
 }
