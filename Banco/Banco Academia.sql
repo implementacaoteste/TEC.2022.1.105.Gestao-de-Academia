@@ -1,6 +1,9 @@
-use master
-go
-
+USE MASTER
+GO
+ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
+GO
+DROP DATABASE GestaoDeAcademia
+GO
 CREATE DATABASE GestaoDeAcademia
 GO
 
@@ -88,6 +91,7 @@ CREATE TABLE CompraProduto
 CREATE TABLE Produto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	Nome Varchar(20),
 	CompraProdutoId INT,
 	Preco FLOAT,
 	CodigoDeBarras VARCHAR(20)
