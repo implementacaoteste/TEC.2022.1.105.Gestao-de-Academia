@@ -109,5 +109,13 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void iniciarVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormVendas frm = new FormVendas())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
