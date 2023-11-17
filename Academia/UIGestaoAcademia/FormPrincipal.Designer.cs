@@ -35,6 +35,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@
             this.gruposDeUsuáriosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.produtoToolStripMenuItem,
-            this.debitoToolStripMenuItem});
+            this.debitoToolStripMenuItem,
+            this.funcionárioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -98,6 +100,13 @@
             this.debitoToolStripMenuItem.Text = "Debito";
             this.debitoToolStripMenuItem.Click += new System.EventHandler(this.debitoToolStripMenuItem_Click);
             // 
+            // funcionárioToolStripMenuItem
+            // 
+            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.funcionárioToolStripMenuItem.Text = "Funcionário";
+            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -129,6 +138,7 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem produtoToolStripMenuItem;
         private ToolStripMenuItem debitoToolStripMenuItem;
+        private ToolStripMenuItem funcionárioToolStripMenuItem;
     }
 }
 
