@@ -28,178 +28,253 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
-            this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.buttonExcluir = new System.Windows.Forms.Button();
-            this.buttonInserir = new System.Windows.Forms.Button();
-            this.buttonAlterar = new System.Windows.Forms.Button();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.controleDebitoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.controleDebitoBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            comboBoxBuscarPor = new ComboBox();
+            dataGridViewProduto = new DataGridView();
+            buttonSelecionar = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            buttonCancelar = new Button();
+            textBoxBuscarPor = new TextBox();
+            buttonExcluir = new Button();
+            buttonInserir = new Button();
+            buttonAlterar = new Button();
+            buttonBuscar = new Button();
+            controleDebitoBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            valorDebitoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            formaPagamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataLancamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataVencimentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataPagamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            jurosDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            descontoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            acrescimoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)controleDebitoBindingSource).BeginInit();
+            SuspendLayout();
             // 
             // comboBoxBuscarPor
             // 
-            this.comboBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Items.AddRange(new object[] {
-            "Correntes",
-            "Pagos",
-            "Vencidos",
-            "Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(10, 75);
-            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxBuscarPor.TabIndex = 32;
+            comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Correntes", "Pagos", "Vencidos", "Todos" });
+            comboBoxBuscarPor.Location = new Point(9, 56);
+            comboBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(126, 23);
+            comboBoxBuscarPor.TabIndex = 32;
             // 
             // dataGridViewProduto
             // 
-            this.dataGridViewProduto.AllowUserToAddRows = false;
-            this.dataGridViewProduto.AllowUserToDeleteRows = false;
-            this.dataGridViewProduto.AllowUserToOrderColumns = true;
-            this.dataGridViewProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduto.Location = new System.Drawing.Point(11, 111);
-            this.dataGridViewProduto.Name = "dataGridViewProduto";
-            this.dataGridViewProduto.ReadOnly = true;
-            this.dataGridViewProduto.RowHeadersWidth = 51;
-            this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(1005, 336);
-            this.dataGridViewProduto.TabIndex = 28;
+            dataGridViewProduto.AllowUserToAddRows = false;
+            dataGridViewProduto.AllowUserToDeleteRows = false;
+            dataGridViewProduto.AllowUserToOrderColumns = true;
+            dataGridViewProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProduto.AutoGenerateColumns = false;
+            dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, valorDebitoDataGridViewTextBoxColumn, formaPagamentoDataGridViewTextBoxColumn, dataLancamentoDataGridViewTextBoxColumn, dataVencimentoDataGridViewTextBoxColumn, dataPagamentoDataGridViewTextBoxColumn, jurosDataGridViewTextBoxColumn, descontoDataGridViewTextBoxColumn, acrescimoDataGridViewTextBoxColumn });
+            dataGridViewProduto.DataSource = controleDebitoBindingSource;
+            dataGridViewProduto.Location = new Point(10, 83);
+            dataGridViewProduto.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewProduto.Name = "dataGridViewProduto";
+            dataGridViewProduto.ReadOnly = true;
+            dataGridViewProduto.RowHeadersWidth = 51;
+            dataGridViewProduto.RowTemplate.Height = 29;
+            dataGridViewProduto.Size = new Size(879, 252);
+            dataGridViewProduto.TabIndex = 28;
             // 
             // buttonSelecionar
             // 
-            this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(824, 452);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSelecionar.TabIndex = 29;
-            this.buttonSelecionar.Text = "Se&lecionar";
-            this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonSelecionar.Location = new Point(721, 339);
+            buttonSelecionar.Margin = new Padding(3, 2, 3, 2);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(82, 22);
+            buttonSelecionar.TabIndex = 29;
+            buttonSelecionar.Text = "Se&lecionar";
+            buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
+            buttonSelecionar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Buscar por";
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 38);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 15);
+            label2.TabIndex = 31;
+            label2.Text = "Buscar por";
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1025, 67);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Buscar debito\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Dock = DockStyle.Top;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(897, 50);
+            label1.TabIndex = 22;
+            label1.Text = "Buscar debito\r\n";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(922, 452);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 30;
-            this.buttonCancelar.Text = "&Cancelar";
-            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancelar.Location = new Point(807, 339);
+            buttonCancelar.Margin = new Padding(3, 2, 3, 2);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(82, 22);
+            buttonCancelar.TabIndex = 30;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.TextAlign = ContentAlignment.TopCenter;
+            buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // textBoxBuscarPor
             // 
-            this.textBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscarPor.Location = new System.Drawing.Point(160, 75);
-            this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
-            this.textBoxBuscarPor.TabIndex = 23;
+            textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxBuscarPor.Location = new Point(140, 56);
+            textBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            textBoxBuscarPor.Name = "textBoxBuscarPor";
+            textBoxBuscarPor.Size = new Size(398, 23);
+            textBoxBuscarPor.TabIndex = 23;
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(922, 75);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluir.TabIndex = 36;
-            this.buttonExcluir.Text = "E&xcluir";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click_1);
+            buttonExcluir.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonExcluir.Location = new Point(807, 56);
+            buttonExcluir.Margin = new Padding(3, 2, 3, 2);
+            buttonExcluir.Name = "buttonExcluir";
+            buttonExcluir.Size = new Size(82, 22);
+            buttonExcluir.TabIndex = 36;
+            buttonExcluir.Text = "E&xcluir";
+            buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click_1;
             // 
             // buttonInserir
             // 
-            this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(822, 75);
-            this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserir.TabIndex = 35;
-            this.buttonInserir.Text = "&Inserir";
-            this.buttonInserir.UseVisualStyleBackColor = true;
-            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click_1);
+            buttonInserir.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonInserir.Location = new Point(719, 56);
+            buttonInserir.Margin = new Padding(3, 2, 3, 2);
+            buttonInserir.Name = "buttonInserir";
+            buttonInserir.Size = new Size(82, 22);
+            buttonInserir.TabIndex = 35;
+            buttonInserir.Text = "&Inserir";
+            buttonInserir.UseVisualStyleBackColor = true;
+            buttonInserir.Click += buttonInserir_Click_1;
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(722, 76);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterar.TabIndex = 34;
-            this.buttonAlterar.Text = "&Alterar";
-            this.buttonAlterar.UseVisualStyleBackColor = true;
-            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
+            buttonAlterar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAlterar.Location = new Point(632, 57);
+            buttonAlterar.Margin = new Padding(3, 2, 3, 2);
+            buttonAlterar.Name = "buttonAlterar";
+            buttonAlterar.Size = new Size(82, 22);
+            buttonAlterar.TabIndex = 34;
+            buttonAlterar.Text = "&Alterar";
+            buttonAlterar.UseVisualStyleBackColor = true;
+            buttonAlterar.Click += buttonAlterar_Click;
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(622, 76);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscar.TabIndex = 33;
-            this.buttonBuscar.Text = "&Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click_1);
+            buttonBuscar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonBuscar.Location = new Point(544, 57);
+            buttonBuscar.Margin = new Padding(3, 2, 3, 2);
+            buttonBuscar.Name = "buttonBuscar";
+            buttonBuscar.Size = new Size(82, 22);
+            buttonBuscar.TabIndex = 33;
+            buttonBuscar.Text = "&Buscar";
+            buttonBuscar.UseVisualStyleBackColor = true;
+            buttonBuscar.Click += buttonBuscar_Click_1;
             // 
             // controleDebitoBindingSource
             // 
-            this.controleDebitoBindingSource.DataSource = typeof(Models.ControleDebito);
+            controleDebitoBindingSource.DataSource = typeof(Models.ControleDebito);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorDebitoDataGridViewTextBoxColumn
+            // 
+            valorDebitoDataGridViewTextBoxColumn.DataPropertyName = "ValorDebito";
+            valorDebitoDataGridViewTextBoxColumn.HeaderText = "ValorDebito";
+            valorDebitoDataGridViewTextBoxColumn.Name = "valorDebitoDataGridViewTextBoxColumn";
+            valorDebitoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // formaPagamentoDataGridViewTextBoxColumn
+            // 
+            formaPagamentoDataGridViewTextBoxColumn.DataPropertyName = "FormaPagamento";
+            formaPagamentoDataGridViewTextBoxColumn.HeaderText = "FormaPagamento";
+            formaPagamentoDataGridViewTextBoxColumn.Name = "formaPagamentoDataGridViewTextBoxColumn";
+            formaPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataLancamentoDataGridViewTextBoxColumn
+            // 
+            dataLancamentoDataGridViewTextBoxColumn.DataPropertyName = "DataLancamento";
+            dataLancamentoDataGridViewTextBoxColumn.HeaderText = "DataLancamento";
+            dataLancamentoDataGridViewTextBoxColumn.Name = "dataLancamentoDataGridViewTextBoxColumn";
+            dataLancamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataVencimentoDataGridViewTextBoxColumn
+            // 
+            dataVencimentoDataGridViewTextBoxColumn.DataPropertyName = "DataVencimento";
+            dataVencimentoDataGridViewTextBoxColumn.HeaderText = "DataVencimento";
+            dataVencimentoDataGridViewTextBoxColumn.Name = "dataVencimentoDataGridViewTextBoxColumn";
+            dataVencimentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataPagamentoDataGridViewTextBoxColumn
+            // 
+            dataPagamentoDataGridViewTextBoxColumn.DataPropertyName = "DataPagamento";
+            dataPagamentoDataGridViewTextBoxColumn.HeaderText = "DataPagamento";
+            dataPagamentoDataGridViewTextBoxColumn.Name = "dataPagamentoDataGridViewTextBoxColumn";
+            dataPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // jurosDataGridViewTextBoxColumn
+            // 
+            jurosDataGridViewTextBoxColumn.DataPropertyName = "Juros";
+            jurosDataGridViewTextBoxColumn.HeaderText = "Juros";
+            jurosDataGridViewTextBoxColumn.Name = "jurosDataGridViewTextBoxColumn";
+            jurosDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descontoDataGridViewTextBoxColumn
+            // 
+            descontoDataGridViewTextBoxColumn.DataPropertyName = "Desconto";
+            descontoDataGridViewTextBoxColumn.HeaderText = "Desconto";
+            descontoDataGridViewTextBoxColumn.Name = "descontoDataGridViewTextBoxColumn";
+            descontoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // acrescimoDataGridViewTextBoxColumn
+            // 
+            acrescimoDataGridViewTextBoxColumn.DataPropertyName = "Acrescimo";
+            acrescimoDataGridViewTextBoxColumn.HeaderText = "Acrescimo";
+            acrescimoDataGridViewTextBoxColumn.Name = "acrescimoDataGridViewTextBoxColumn";
+            acrescimoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormBuscarDebito
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 488);
-            this.Controls.Add(this.textBoxBuscarPor);
-            this.Controls.Add(this.buttonExcluir);
-            this.Controls.Add(this.buttonInserir);
-            this.Controls.Add(this.buttonAlterar);
-            this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.dataGridViewProduto);
-            this.Controls.Add(this.buttonSelecionar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCancelar);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FormBuscarDebito";
-            this.Text = "FormControleProduto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.controleDebitoBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(897, 366);
+            Controls.Add(textBoxBuscarPor);
+            Controls.Add(buttonExcluir);
+            Controls.Add(buttonInserir);
+            Controls.Add(buttonAlterar);
+            Controls.Add(buttonBuscar);
+            Controls.Add(comboBoxBuscarPor);
+            Controls.Add(dataGridViewProduto);
+            Controls.Add(buttonSelecionar);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(buttonCancelar);
+            Name = "FormBuscarDebito";
+            Text = "FormControleProduto";
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)controleDebitoBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -216,5 +291,14 @@
         private Button buttonAlterar;
         private Button buttonBuscar;
         private BindingSource controleDebitoBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn valorDebitoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn formaPagamentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataLancamentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataVencimentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataPagamentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn jurosDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descontoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn acrescimoDataGridViewTextBoxColumn;
     }
 }
