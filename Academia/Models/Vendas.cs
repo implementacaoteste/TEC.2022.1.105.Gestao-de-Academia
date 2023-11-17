@@ -15,6 +15,6 @@ namespace Models
         public int ClienteId { get; set; }
         public DateTime Data_Venda { get; set; }
         public double Total_Venda { get; set; }
-
+        public int FormaPagamentoId { get; set; }
     }
 }

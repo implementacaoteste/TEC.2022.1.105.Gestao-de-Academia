@@ -41,9 +41,13 @@
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSourceFuncionario = new System.Windows.Forms.BindingSource(this.components);
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFuncionario)).BeginInit();
@@ -53,7 +57,7 @@
             // buttonSelecionar
             // 
             this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(887, 445);
+            this.buttonSelecionar.Location = new System.Drawing.Point(853, 445);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
             this.buttonSelecionar.TabIndex = 29;
@@ -76,7 +80,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1093, 67);
+            this.label1.Size = new System.Drawing.Size(1059, 50);
             this.label1.TabIndex = 22;
             this.label1.Text = "Buscar funcionário";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -84,7 +88,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(987, 445);
+            this.buttonCancelar.Location = new System.Drawing.Point(953, 445);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 30;
@@ -95,32 +99,35 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(710, 65);
+            this.buttonExcluir.Location = new System.Drawing.Point(951, 65);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
             this.buttonExcluir.TabIndex = 27;
             this.buttonExcluir.Text = "E&xcluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonInserir
             // 
             this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(609, 65);
+            this.buttonInserir.Location = new System.Drawing.Point(850, 65);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
             this.buttonInserir.TabIndex = 26;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = true;
+            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
             // 
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(510, 66);
+            this.buttonAlterar.Location = new System.Drawing.Point(751, 66);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
             this.buttonAlterar.TabIndex = 25;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // textBoxBuscarPor
             // 
@@ -128,7 +135,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscarPor.Location = new System.Drawing.Point(160, 68);
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(243, 27);
+            this.textBoxBuscarPor.Size = new System.Drawing.Size(484, 27);
             this.textBoxBuscarPor.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn3
@@ -140,12 +147,13 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(409, 66);
+            this.buttonBuscar.Location = new System.Drawing.Point(650, 66);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 24;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -157,14 +165,28 @@
             // 
             this.bindingSourceFuncionario.DataSource = typeof(Models.Funcionario);
             // 
-            // nomeDataGridViewTextBoxColumn
+            // dataGridViewProduto
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            this.dataGridViewProduto.AllowUserToAddRows = false;
+            this.dataGridViewProduto.AllowUserToDeleteRows = false;
+            this.dataGridViewProduto.AllowUserToOrderColumns = true;
+            this.dataGridViewProduto.AutoGenerateColumns = false;
+            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.Cpf,
+            this.Telefone,
+            this.Email,
+            this.Endereco});
+            this.dataGridViewProduto.DataSource = this.bindingSourceFuncionario;
+            this.dataGridViewProduto.Location = new System.Drawing.Point(11, 100);
+            this.dataGridViewProduto.Name = "dataGridViewProduto";
+            this.dataGridViewProduto.ReadOnly = true;
+            this.dataGridViewProduto.RowHeadersWidth = 51;
+            this.dataGridViewProduto.RowTemplate.Height = 29;
+            this.dataGridViewProduto.Size = new System.Drawing.Size(1034, 339);
+            this.dataGridViewProduto.TabIndex = 28;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -175,24 +197,50 @@
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 80;
             // 
-            // dataGridViewProduto
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewProduto.AllowUserToAddRows = false;
-            this.dataGridViewProduto.AllowUserToDeleteRows = false;
-            this.dataGridViewProduto.AllowUserToOrderColumns = true;
-            this.dataGridViewProduto.AutoGenerateColumns = false;
-            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn});
-            this.dataGridViewProduto.DataSource = this.bindingSourceFuncionario;
-            this.dataGridViewProduto.Location = new System.Drawing.Point(11, 100);
-            this.dataGridViewProduto.Name = "dataGridViewProduto";
-            this.dataGridViewProduto.ReadOnly = true;
-            this.dataGridViewProduto.RowHeadersWidth = 51;
-            this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(1070, 339);
-            this.dataGridViewProduto.TabIndex = 28;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // Cpf
+            // 
+            this.Cpf.DataPropertyName = "Cpf";
+            this.Cpf.HeaderText = "Cpf";
+            this.Cpf.MinimumWidth = 6;
+            this.Cpf.Name = "Cpf";
+            this.Cpf.ReadOnly = true;
+            this.Cpf.Width = 125;
+            // 
+            // Telefone
+            // 
+            this.Telefone.DataPropertyName = "Telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.MinimumWidth = 6;
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 150;
+            // 
+            // Endereco
+            // 
+            this.Endereco.DataPropertyName = "Endereco";
+            this.Endereco.HeaderText = "Endereco";
+            this.Endereco.MinimumWidth = 6;
+            this.Endereco.Name = "Endereco";
+            this.Endereco.ReadOnly = true;
+            this.Endereco.Width = 200;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -205,7 +253,7 @@
             this.comboBoxBuscarPor.FormattingEnabled = true;
             this.comboBoxBuscarPor.Items.AddRange(new object[] {
             "Nome",
-            "Codigo de barras",
+            "Cpf",
             "Todos"});
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(10, 68);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
@@ -216,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 479);
+            this.ClientSize = new System.Drawing.Size(1059, 479);
             this.Controls.Add(this.buttonSelecionar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -251,10 +299,14 @@
         private Button buttonBuscar;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private BindingSource bindingSourceFuncionario;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridView dataGridViewProduto;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private ComboBox comboBoxBuscarPor;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Cpf;
+        private DataGridViewTextBoxColumn Telefone;
+        private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Endereco;
     }
 }
