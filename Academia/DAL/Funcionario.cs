@@ -48,7 +48,7 @@ namespace DAL
                 }
             }
         }
-        public void Alerar(Funcionario _funcionario, SqlTransaction _transaction = null)
+        public void Alterar(Funcionario _funcionario, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
 
