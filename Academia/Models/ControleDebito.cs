@@ -3,7 +3,8 @@
     public class ControleDebito
     {
         public int Id { get; set; }
-        public int clienteId { get; set; }
+        public int ClienteId { get; set; }
+        public int FormaPagamentoId { get; set; }
         public double ValorDebito { get; set; }
         public string FormaPagamento { get; set; }
         public DateTime DataLancamento { get; set; }

@@ -49,6 +49,7 @@
             this.textBoxAcrescimo = new System.Windows.Forms.TextBox();
             this.textBoxDataDoVencimento = new System.Windows.Forms.TextBox();
             this.textBoxDataDoPagamento = new System.Windows.Forms.TextBox();
+            this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +93,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(609, 119);
+            this.label5.Location = new System.Drawing.Point(638, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 29;
@@ -121,7 +122,7 @@
             // textBoxDataDoLancamento
             // 
             this.textBoxDataDoLancamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataLancamento", true));
-            this.textBoxDataDoLancamento.Location = new System.Drawing.Point(609, 142);
+            this.textBoxDataDoLancamento.Location = new System.Drawing.Point(638, 142);
             this.textBoxDataDoLancamento.Name = "textBoxDataDoLancamento";
             this.textBoxDataDoLancamento.Size = new System.Drawing.Size(186, 27);
             this.textBoxDataDoLancamento.TabIndex = 30;
@@ -176,7 +177,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(609, 176);
+            this.label9.Location = new System.Drawing.Point(638, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 29;
@@ -197,13 +198,13 @@
             this.textBoxJuros.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Juros", true));
             this.textBoxJuros.Location = new System.Drawing.Point(414, 199);
             this.textBoxJuros.Name = "textBoxJuros";
-            this.textBoxJuros.Size = new System.Drawing.Size(189, 27);
+            this.textBoxJuros.Size = new System.Drawing.Size(218, 27);
             this.textBoxJuros.TabIndex = 28;
             // 
             // textBoxDesconto
             // 
             this.textBoxDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Desconto", true));
-            this.textBoxDesconto.Location = new System.Drawing.Point(609, 199);
+            this.textBoxDesconto.Location = new System.Drawing.Point(638, 199);
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(186, 27);
             this.textBoxDesconto.TabIndex = 28;
@@ -229,14 +230,25 @@
             this.textBoxDataDoPagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataPagamento", true));
             this.textBoxDataDoPagamento.Location = new System.Drawing.Point(216, 199);
             this.textBoxDataDoPagamento.Name = "textBoxDataDoPagamento";
-            this.textBoxDataDoPagamento.Size = new System.Drawing.Size(193, 27);
+            this.textBoxDataDoPagamento.Size = new System.Drawing.Size(187, 27);
             this.textBoxDataDoPagamento.TabIndex = 28;
+            // 
+            // buttonBuscarFormaPagamento
+            // 
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(602, 142);
+            this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
+            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(30, 29);
+            this.buttonBuscarFormaPagamento.TabIndex = 33;
+            this.buttonBuscarFormaPagamento.Text = "...";
+            this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
             // 
             // FormCadastrarDebito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 343);
+            this.Controls.Add(this.buttonBuscarFormaPagamento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
@@ -287,5 +299,6 @@
         private TextBox textBoxAcrescimo;
         private TextBox textBoxDataDoVencimento;
         private TextBox textBoxDataDoPagamento;
+        private Button buttonBuscarFormaPagamento;
     }
 }
