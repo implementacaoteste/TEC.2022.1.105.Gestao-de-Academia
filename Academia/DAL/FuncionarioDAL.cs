@@ -60,6 +60,7 @@ namespace DAL
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
+                        cmd.Parameters.AddWithValue("@Id", _funcionario.Id);
                         cmd.Parameters.AddWithValue("@Nome", _funcionario.Nome);
                         cmd.Parameters.AddWithValue("@Cpf", _funcionario.Cpf);
                         cmd.Parameters.AddWithValue("@Telefone", _funcionario.Telefone);
@@ -150,7 +151,7 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        funcionario= new Funcionario();
+                        funcionario = new Funcionario();
                         funcionario.Id = (int)rd["Id"];
                         funcionario.Nome = rd["Nome"].ToString();
                         funcionario.Cpf = rd["Cpf"].ToString();
