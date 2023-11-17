@@ -18,7 +18,7 @@ namespace BLL
         }
         public void Excluir(int _id)
         {
-            new ProdutoDAL().Excluir(_id);
+            new FuncionarioDAL().Excluir(_id);
         }
         public List<Funcionario> BuscarTodos()
         {
