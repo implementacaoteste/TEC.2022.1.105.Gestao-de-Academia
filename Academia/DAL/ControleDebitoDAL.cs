@@ -50,14 +50,15 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito( ClienteId, ValorDebito, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @ValorDebito, @FormaPagamento, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito( ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @ValorDebito, @FormaPagamentoId, @FormaPagamento, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.clienteId);
+                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
+                        cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamentoId);
                         cmd.Parameters.AddWithValue("@FormaPagamento", _controleDebito.FormaPagamento);
                         cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
                         cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
@@ -96,13 +97,15 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE Produto SET ValorDebito = @ValorDebito, ValorPagamento = @ValorPagamento, , FormaPagamento = @FormaPagamento, DataLancamento = @DataLancamento, DataVencimento = @DataVencimento, DataPagamento = @DataPagamento, Juros = @Juros, Desconto = @Desconto, Acrescimo = @Acrescimo WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Produto SET ClienteId = @ClienteId, ValorDebito = @ValorDebito, FormaPagamentoId = @FormaPagamentoId, FormaPagamento = @FormaPagamento, DataLancamento = @DataLancamento, DataVencimento = @DataVencimento, DataPagamento = @DataPagamento, Juros = @Juros, Desconto = @Desconto, Acrescimo = @Acrescimo WHERE Id = @Id"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
+                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
+                        cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamentoId);
                         cmd.Parameters.AddWithValue("@FormaPagamento", _controleDebito.FormaPagamento);
                         cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
                         cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
@@ -147,7 +150,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, ClienteId, ValorDebito, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito";
+                cmd.CommandText = " SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -159,8 +162,9 @@ namespace DAL
                     {
                         controleDebito = new ControleDebito();
                         controleDebito.Id = (int)rd["Id"];
-                        controleDebito.clienteId = (int)rd["ClienteId"];
-                        controleDebito.ValorDebito = (int)rd["ValorDebito"];
+                        controleDebito.ClienteId = (int)rd["ClienteId"];
+                        controleDebito.ValorDebito = (double)rd["ValorDebito"];
+                        controleDebito.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         controleDebito.FormaPagamento = rd["FormaPagamento"].ToString();
                         controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
                         controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];
@@ -193,7 +197,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = "SELECT ValorDebito, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataVencimento < GetDate() AND DataDePagamento Is Null";
+                cmd.CommandText = "SELECT ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataVencimento < GetDate() AND DataDePagamento Is Null";
 
                 cmd.CommandType = System.Data.CommandType.Text; 
                 
@@ -208,8 +212,9 @@ namespace DAL
                     {
                         controleDebito = new ControleDebito();
                         controleDebito.Id = (int)rd["Id"];
-                        controleDebito.clienteId = (int)rd["ClienteId"];
-                        controleDebito.ValorDebito = (int)rd["ValorDebito"];
+                        controleDebito.ClienteId = (int)rd["ClienteId"];
+                        controleDebito.ValorDebito = (double)rd["ValorDebito"];
+                        controleDebito.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         controleDebito.FormaPagamento = rd["FormaPagamento"].ToString();
                         controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
                         controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];
@@ -240,7 +245,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = @"SELECT Id, ClienteId, ValorDebito, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataPagamento Is Not null";
+                cmd.CommandText = @"SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataPagamento Is Not null";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -255,8 +260,9 @@ namespace DAL
                     {
                         controleDebito = new ControleDebito();
                         controleDebito.Id = (int)rd["Id"];
-                        controleDebito.clienteId = (int)rd["ClienteId"];
+                        controleDebito.ClienteId = (int)rd["ClienteId"];
                         controleDebito.ValorDebito = (int)rd["ValorDebito"];
+                        controleDebito.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         controleDebito.FormaPagamento = rd["FormaPagamento"].ToString();
                         controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
                         controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];
@@ -287,7 +293,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = @"SELECT Id, ClienteId, ValorDebito, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataPagamento Is null";
+                cmd.CommandText = @"SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataPagamento Is null";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -302,8 +308,9 @@ namespace DAL
                     {
                         controleDebito = new ControleDebito();
                         controleDebito.Id = (int)rd["Id"];
-                        controleDebito.clienteId = (int)rd["ClienteId"];
+                        controleDebito.ClienteId = (int)rd["ClienteId"];
                         controleDebito.ValorDebito = (int)rd["ValorDebito"];
+                        controleDebito.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         controleDebito.FormaPagamento = rd["FormaPagamento"].ToString();
                         controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
                         controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];
@@ -335,7 +342,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = "SELECT Id, ClienteId, ValorDebito, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE Id = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -350,8 +357,9 @@ namespace DAL
                     {
                         controleDebito = new ControleDebito();
                         controleDebito.Id = (int)rd["Id"];
-                        controleDebito.clienteId = (int)rd["ClienteId"];
+                        controleDebito.ClienteId = (int)rd["ClienteId"];
                         controleDebito.ValorDebito = (int)rd["ValorDebito"];
+                        controleDebito.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         controleDebito.FormaPagamento = rd["FormaPagamento"].ToString();
                         controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
                         controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];

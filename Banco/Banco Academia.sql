@@ -146,6 +146,7 @@ CREATE TABLE ControleDebito
 	ClienteId INT,
 	FormaPagamentoId INT,
 	ValorDebito FLOAT,
+	FormaPagamento VARCHAR(20),
 	DataLancamento DATETIME,
 	DataVencimento DATETIME,
 	DataPagamento DATETIME,

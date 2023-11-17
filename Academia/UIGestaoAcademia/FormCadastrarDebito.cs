@@ -38,5 +38,13 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaFormPagamento frm = new FormConsultaFormPagamento())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
