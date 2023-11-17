@@ -18,10 +18,7 @@ namespace UIGestaoAcademia
             else
                 bindingSourceCadastro.DataSource = new ProdutoBLL().BuscarPorId(id);
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 97636269645a18d4aa57b002f1f101d5e41e08de
         private void buttonSalvar_Click_1(object sender, EventArgs e)
         {
             try
