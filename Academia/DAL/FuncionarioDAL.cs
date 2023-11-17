@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace DAL
 {
     public class FuncionarioDAL
@@ -20,10 +19,10 @@ namespace DAL
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Nome", _funcionario.Nome);
-                        cmd.Parameters.AddWithValue("@Preco", _funcionario.Cpf);
-                        cmd.Parameters.AddWithValue("@Marca", _funcionario.Telefone);
-                        cmd.Parameters.AddWithValue("@QuantidadeEstoque", _funcionario.Email);
-                        cmd.Parameters.AddWithValue("@CodigoDeBarras", _funcionario.Endereco);
+                        cmd.Parameters.AddWithValue("@Cpf", _funcionario.Cpf);
+                        cmd.Parameters.AddWithValue("@Telefone", _funcionario.Telefone);
+                        cmd.Parameters.AddWithValue("@Email", _funcionario.Email);
+                        cmd.Parameters.AddWithValue("@Endereco", _funcionario.Endereco);
 
                         if (_transaction == null)
                         {
@@ -49,7 +48,7 @@ namespace DAL
                 }
             }
         }
-        public void Alerar(Funcionario _funcionario, SqlTransaction _transaction = null)
+        public void Alterar(Funcionario _funcionario, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
 
@@ -62,10 +61,10 @@ namespace DAL
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Nome", _funcionario.Nome);
-                        cmd.Parameters.AddWithValue("@Preco", _funcionario.Cpf);
-                        cmd.Parameters.AddWithValue("@Marca", _funcionario.Telefone);
-                        cmd.Parameters.AddWithValue("@QuantidadeEstoque", _funcionario.Email);
-                        cmd.Parameters.AddWithValue("@CodigoDeBarras", _funcionario.Endereco);
+                        cmd.Parameters.AddWithValue("@Cpf", _funcionario.Cpf);
+                        cmd.Parameters.AddWithValue("@Telefone", _funcionario.Telefone);
+                        cmd.Parameters.AddWithValue("@Email", _funcionario.Email);
+                        cmd.Parameters.AddWithValue("@Endereco", _funcionario.Endereco);
 
                         if (_transaction == null)
                         {
@@ -167,6 +166,138 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar o produto no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public Funcionario BuscarPorId(int _id)
+        {
+            Funcionario funcionario;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Id  = @Id";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    funcionario = new Funcionario();
+                    if (rd.Read())
+                    {
+                        funcionario.Id = (int)rd["Id"];
+                        funcionario.Nome = rd["Nome"].ToString();
+                        funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Telefone = rd["Telefone"].ToString();
+                        funcionario.Email = rd["Email"].ToString();
+                        funcionario.Endereco = rd["Endereco"].ToString();
+                    }
+                }
+                return funcionario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o funcionario no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<Funcionario> BuscarPorNome(string _nome)
+        {
+            List<Funcionario> funcionarioList = new List<Funcionario>();
+            Funcionario funcionario;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Nome LIKE @Nome";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        funcionario = new Funcionario();
+                        funcionario.Id = (int)rd["Id"];
+                        funcionario.Nome = rd["Nome"].ToString();
+                        funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Telefone = rd["Telefone"].ToString();
+                        funcionario.Email = rd["Email"].ToString();
+                        funcionario.Endereco = rd["Endereco"].ToString();
+                        funcionarioList.Add(funcionario);
+                    }
+                }
+                return funcionarioList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o funcionario por nome no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public Funcionario BuscarPorCpf(string _Cpf)
+        {
+            Funcionario funcionario;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Cpf  = @Cpf";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Cpf", _Cpf);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    funcionario = new Funcionario();
+                    if (rd.Read())
+                    {
+                        funcionario.Id = (int)rd["Id"];
+                        funcionario.Nome = rd["Nome"].ToString();
+                        funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Telefone = rd["Telefone"].ToString();
+                        funcionario.Email = rd["Email"].ToString();
+                        funcionario.Endereco = rd["Endereco"].ToString();
+                    }
+                }
+                return funcionario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o funcionario por cpf no banco de dados.", ex);
             }
             finally
             {

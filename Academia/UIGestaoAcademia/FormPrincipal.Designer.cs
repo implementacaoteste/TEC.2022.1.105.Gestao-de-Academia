@@ -35,9 +35,13 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +64,8 @@
             this.gruposDeUsuáriosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.produtoToolStripMenuItem,
-            this.debitoToolStripMenuItem});
+            this.debitoToolStripMenuItem,
+            this.funcionárioToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -102,6 +107,7 @@
             this.debitoToolStripMenuItem.Text = "Debito";
             this.debitoToolStripMenuItem.Click += new System.EventHandler(this.debitoToolStripMenuItem_Click);
             // 
+
             // vENDASToolStripMenuItem
             // 
             this.vENDASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -124,6 +130,14 @@
             this.relatórioDeVendaToolStripMenuItem.Name = "relatórioDeVendaToolStripMenuItem";
             this.relatórioDeVendaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.relatórioDeVendaToolStripMenuItem.Text = "Relatório de venda";
+
+            // funcionárioToolStripMenuItem
+            // 
+            this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.funcionárioToolStripMenuItem.Text = "Funcionário";
+            this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
+
             // 
             // FormPrincipal
             // 
@@ -156,9 +170,13 @@
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem produtoToolStripMenuItem;
         private ToolStripMenuItem debitoToolStripMenuItem;
+
         private ToolStripMenuItem vENDASToolStripMenuItem;
         private ToolStripMenuItem iniciarVendaToolStripMenuItem;
         private ToolStripMenuItem relatórioDeVendaToolStripMenuItem;
+
+        private ToolStripMenuItem funcionárioToolStripMenuItem;
+
     }
 }
 

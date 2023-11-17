@@ -95,11 +95,18 @@ namespace UIGestaoAcademia
             }
         }
 
-        private void iniciarVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FormVendas frm = new FormVendas())
+            try
             {
-                frm.ShowDialog();
+                using (FormBuscarFuncionario frm = new FormBuscarFuncionario())
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
