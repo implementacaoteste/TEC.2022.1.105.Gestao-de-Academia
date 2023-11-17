@@ -132,7 +132,7 @@ CREATE TABLE Financas
 	FornecedorId INT,
 	FormaPagamentoId INT,
 	ValorTransacao FLOAT,
-	DescricaoTransacao VARCHAR(200),
+	Descricao VARCHAR(200),
 	DataFinanca DATETIME,
 	ImpostosPagos FLOAT,
 	RetencaoDeImposto FLOAT,
@@ -157,7 +157,7 @@ GO
 CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	DescriçãoFormaPagamento VARCHAR
+	Descricao VARCHAR(200)
 )
 GO
 CREATE TABLE Exercicios
