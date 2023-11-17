@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BLL;
 
 namespace UIGestaoAcademia
 {
@@ -17,5 +9,24 @@ namespace UIGestaoAcademia
             InitializeComponent();
         }
 
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (comboBoxBuscarPor.SelectedIndex)
+                {
+                    case 0: 
+                        itensVendaBindingSource.DataSource = new VendaBLL().BuscarPorNomeCliente(textBoxBuscarPor.Text);
+                            break;
+                    case 1:
+                        itensVendaBindingSource.DataSource = new VendaBLL().BuscarPorCpfCliente(textBoxBuscarPor.Text);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
