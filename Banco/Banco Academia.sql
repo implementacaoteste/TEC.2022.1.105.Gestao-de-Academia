@@ -81,18 +81,26 @@ GO
 CREATE TABLE CompraProduto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	ProdutoId int,
-	Quantidade INT,
 	FornecedorId INT,
-	ValorUnitario float,
+	FormaPagamentoId INT,
 	ValorTotal FLOAT
 )
-
+GO
+CREATE TABLE ItensCompra
+(
+	CompraProdutoId INT,
+	Nome VARCHAR(100),
+	Marca VARCHAR(100),
+	Quantidade INT,
+	ValorUnitario FLOAT,
+	ValorTotal FLOAT
+)
+GO
 CREATE TABLE Produto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome Varchar(150),
-	Marca VARCHAR(150),
+	Marca VARCHAR(100),
 	Preco FLOAT,
 	QuantidadeEstoque int,
 	CodigoDeBarras VARCHAR(20)
@@ -102,6 +110,7 @@ CREATE TABLE Venda
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	FuncionarioId INT,
+	FormaPagamentoId INT,
 	ClienteId INT,
 	DataVenda DATETIME,
 	TotalVenda FLOAT
@@ -121,8 +130,9 @@ CREATE TABLE Financas
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	NumeroDoDocumento INT,
 	FornecedorId INT,
+	FormaPagamentoId INT,
 	ValorTransacao FLOAT,
-	DescricaoTransacao VARCHAR(200),
+	Descricao VARCHAR(200),
 	DataFinanca DATETIME,
 	ImpostosPagos FLOAT,
 	RetencaoDeImposto FLOAT,
@@ -134,21 +144,20 @@ CREATE TABLE ControleDebito
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	ClienteId INT,
+	FormaPagamentoId INT,
 	ValorDebito FLOAT,
-	FormaPagamento VARCHAR(30),
 	DataLancamento DATETIME,
 	DataVencimento DATETIME,
 	DataPagamento DATETIME,
 	Juros FLOAT,
 	Desconto FLOAT,
-	Acrescimo FLOAT
-	
+	Acrescimo FLOAT	
 )
 GO
 CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	DescriçãoFormaPagamento VARCHAR
+	Descricao VARCHAR(200)
 )
 GO
 CREATE TABLE Exercicios
@@ -170,6 +179,7 @@ CREATE TABLE PagamentoAluno
  Id INT PRIMARY KEY IDENTITY(1,1),
  AlunoId INT,
  PlanoAssinaturaId INT,
+ FormaPagamentoId INT,
  Debitado BIT
 )
 GO
@@ -177,6 +187,7 @@ CREATE TABLE PagamentoFuncionario
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	FuncionarioId Int,
+	FormaPagamentoId INT,
 	Valor FLOAT,
 	Desconto FLOAT,
 	HoraExtra INT
@@ -192,22 +203,48 @@ CREATE TABLE Funcionario
 	Endereco VARCHAR(100),
 )
 GO
-CREATE TABLE ControleEstoque
-(
-	Id INT PRIMARY KEY IDENTITY(1,1),
-	ProdutoId INT,
-	CompraProdutoId INT,
-	DataEntrada DATETIME,
-	DataSaida DATETIME,
-	Quantidade FLOAT,
-	SaldoTotal FLOAT
-)
-GO
+
 
 ALTER TABLE CompraProduto
 ADD CONSTRAINT FK_Produto_CompraProduto
 FOREIGN KEY (ProdutoId)
 REFERENCES Produto(Id);
+GO
+
+ALTER TABLE Venda
+ADD CONSTRAINT FK_Venda_FormaPagamento
+FOREIGN KEY (FormaPagamentoId)
+REFERENCES FormaPagamento(Id);
+GO
+
+ALTER TABLE Financas
+ADD CONSTRAINT FK_Financas_FormaPagamento
+FOREIGN KEY (FormaPagamentoId)
+REFERENCES FormaPagamento(Id);
+GO
+
+ALTER TABLE PagamentoAluno
+ADD CONSTRAINT FK_PagamentoAluno_FormaPagamento
+FOREIGN KEY (FormaPagamentoId)
+REFERENCES FormaPagamento(Id);
+GO
+
+ALTER TABLE PagamentoFuncionario
+ADD CONSTRAINT FK_PagamentoFuncionario_FormaPagamento
+FOREIGN KEY (FormaPagamentoId)
+REFERENCES FormaPagamento(Id);
+GO
+
+ALTER TABLE ControleDebito
+ADD CONSTRAINT FK_ControleDebito_FormaPagamento
+FOREIGN KEY (FormaPagamentoId)
+REFERENCES FormaPagamento(Id);
+GO
+
+ALTER TABLE Compra
+ADD CONSTRAINT FK_Compra_FormaPagamento
+FOREIGN KEY (FormaPagamentoId)
+REFERENCES FormaPagamento(Id);
 GO
 
 ALTER TABLE CompraProduto
