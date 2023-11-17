@@ -94,5 +94,20 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void funcionárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormBuscarFuncionario frm = new FormBuscarFuncionario())
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

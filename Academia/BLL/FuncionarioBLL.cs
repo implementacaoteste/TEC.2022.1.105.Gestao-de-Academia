@@ -1,10 +1,5 @@
 ﻿using DAL;
 using Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -36,6 +31,10 @@ namespace BLL
         public List<Funcionario> BuscarPorNome(string _nome)
         {
             return new FuncionarioDAL().BuscarPorNome(_nome);
+        }
+        public Funcionario BuscarPorCpf(string _Cpf)
+        {
+           return new FuncionarioDAL().BuscarPorCpf(_Cpf);
         }
     }
 }

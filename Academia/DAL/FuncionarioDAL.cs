@@ -261,5 +261,48 @@ namespace DAL
                 cn.Close();
             }
         }
+        public Funcionario BuscarPorCpf(string _Cpf)
+        {
+            Funcionario funcionario;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Cpf  = @Cpf";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Cpf", _Cpf);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    funcionario = new Funcionario();
+                    if (rd.Read())
+                    {
+                        funcionario.Id = (int)rd["Id"];
+                        funcionario.Nome = rd["Nome"].ToString();
+                        funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Telefone = rd["Telefone"].ToString();
+                        funcionario.Email = rd["Email"].ToString();
+                        funcionario.Endereco = rd["Endereco"].ToString();
+                    }
+                }
+                return funcionario;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o funcionario por cpf no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
