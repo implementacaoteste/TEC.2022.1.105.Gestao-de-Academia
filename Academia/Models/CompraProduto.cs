@@ -11,6 +11,6 @@ namespace Models
         public int Id { get; set; }
         public int FornecedorId { get; set; }
         public int FormaPagamentoId { get; set; }
-        public float ValorTotal { get; set; }
+        public double ValorTotal { get; set; }
     }
 }

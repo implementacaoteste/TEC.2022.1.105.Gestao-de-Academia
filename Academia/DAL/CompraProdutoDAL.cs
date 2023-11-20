@@ -138,7 +138,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId,ValorTotal FROM CompraProduto";
+                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -152,7 +152,7 @@ namespace DAL
                         compraProduto.Id = (int)rd["Id"];
                         compraProduto.FornecedorId = (int)rd["FornecedorId"];
                         compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
-                        compraProduto.ValorTotal = (float)rd["ValorTotal"];
+                        compraProduto.ValorTotal = (double)rd["ValorTotal"];
 
                         compraProdutoList.Add(compraProduto);
                     }
@@ -169,6 +169,87 @@ namespace DAL
                 cn.Close();
             }
         }
+        public CompraProduto BuscarPorId(int _id)
+        {
+            CompraProduto compraProduto;
 
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto WHERE Id  = @Id";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    compraProduto = new CompraProduto();
+                    if (rd.Read())
+                    {
+                        compraProduto.Id = (int)rd["Id"];
+                        compraProduto.FornecedorId = (int)rd["FornecedorId"];
+                        compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
+                        compraProduto.ValorTotal = (double)rd["ValorTotal"];
+                    }
+                }
+                return compraProduto;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o produto por id no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public CompraProduto BuscarPorIdFornecedor(int _FornecedorId)
+        {
+            CompraProduto compraProduto;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto WHERE FornecedorId  = @FornecedorId";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@FornecedorId", _FornecedorId);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    compraProduto = new CompraProduto();
+                    if (rd.Read())
+                    {
+                        compraProduto.Id = (int)rd["Id"];
+                        compraProduto.FornecedorId = (int)rd["FornecedorId"];
+                        compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
+                        compraProduto.ValorTotal = (double)rd["ValorTotal"];
+                    }
+                }
+                return compraProduto;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a compra de produto pelo id do fornecedor no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
