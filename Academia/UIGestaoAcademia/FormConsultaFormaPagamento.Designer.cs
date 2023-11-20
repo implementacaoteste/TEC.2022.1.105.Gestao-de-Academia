@@ -1,6 +1,6 @@
 ﻿namespace UIGestaoAcademia
 {
-    partial class FormConsultaFormPagamento
+    partial class FormConsultaFormaPagamento
     {
         /// <summary>
         /// Required designer variable.
@@ -102,6 +102,7 @@
             this.buttonBuscar.TabIndex = 43;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click_1);
             // 
             // buttonSelecionar
             // 
@@ -198,7 +199,7 @@
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.descricaoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // FormConsultaFormPagamento
+            // FormConsultaFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -214,7 +215,7 @@
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.label2);
-            this.Name = "FormConsultaFormPagamento";
+            this.Name = "FormConsultaFormaPagamento";
             this.Text = "FormConsultaFormPagamento";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFormaPagamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
