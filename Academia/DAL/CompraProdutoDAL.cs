@@ -138,7 +138,9 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto";
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto
+                                  INNER JOIN
+                                  ";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -221,7 +223,15 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto WHERE FornecedorId  = @FornecedorId";
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId,
+                                    CompraProduto.ValorTotal, Fornecedor.Nome AS NomeFornecedor, FormaPagamento.Descricao AS FormaPagamento
+                                    FROM CompraProduto
+                                    INNER JOIN 
+                                    Fornecedor ON CompraProduto.FornecedorId = Fornecedor.Id
+                                    INNER JOIN 
+                                    FormaPagamento ON CompraProduto.FormaPagamentoId = FormaPagamento.Id
+
+                                    Where CompraProduto.Id = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
