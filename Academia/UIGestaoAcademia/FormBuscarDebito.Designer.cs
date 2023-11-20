@@ -59,10 +59,10 @@
             this.comboBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxBuscarPor.FormattingEnabled = true;
             this.comboBoxBuscarPor.Items.AddRange(new object[] {
+            "Todos",
             "Correntes",
             "Pagos",
-            "Vencidos",
-            "Todos"});
+            "Vencidos"});
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(10, 75);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
@@ -242,6 +242,7 @@
             this.buttonExcluir.TabIndex = 36;
             this.buttonExcluir.Text = "E&xcluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click_1);
             // 
             // buttonInserir
             // 
@@ -263,6 +264,7 @@
             this.buttonAlterar.TabIndex = 34;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonBuscar
             // 
@@ -274,6 +276,7 @@
             this.buttonBuscar.TabIndex = 33;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click_1);
             // 
             // FormBuscarDebito
             // 

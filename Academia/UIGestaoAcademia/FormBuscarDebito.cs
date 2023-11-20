@@ -17,17 +17,21 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarTodos();
                         break;
                     case 1:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente(textBoxBuscarPor.Text);
                         break;
                     case 2:
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago(textBoxBuscarPor.Text);
+                        break;
+                    case 3:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido(textBoxBuscarPor.Text);
                         break;
                     default:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarTodos();
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId(textBoxBuscarPor.Text);
                         break;
+
                 }
             }
             catch (Exception ex)
@@ -64,7 +68,5 @@ namespace UIGestaoAcademia
             controleDebitoBindingSource.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
-
-        
     }
 }

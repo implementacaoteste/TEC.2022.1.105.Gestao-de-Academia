@@ -1,6 +1,6 @@
 ﻿namespace UIGestaoAcademia
 {
-    partial class FormConsultaFormPagamento
+    partial class FormConsultaFormaPagamento
     {
         /// <summary>
         /// Required designer variable.

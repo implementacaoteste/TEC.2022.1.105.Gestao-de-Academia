@@ -41,7 +41,7 @@ namespace UIGestaoAcademia
 
         private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormPagamento frm = new FormConsultaFormPagamento())
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
             }

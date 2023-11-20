@@ -1,13 +1,14 @@
-﻿using Models;
+﻿using BLL;
+using Models;
 
 namespace UIGestaoAcademia
 {
-    public partial class FormConsultaFormPagamento : Form
+    public partial class FormConsultaFormaPagamento : Form
     {
         public int Id;
         private string ultimaBusca;
         private bool buscou;
-        public FormConsultaFormPagamento()
+        public FormConsultaFormaPagamento()
         {
             InitializeComponent();
             ultimaBusca = "";
@@ -18,7 +19,16 @@ namespace UIGestaoAcademia
         {
             try
             {
-                //bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscar.Text);
+                switch (comboBoxBuscarPor.SelectedIndex)
+                {
+                    case 0:
+                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarTodos();
+                        break;
+                    default:
+                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscarPor.Text);
+                        break ;
+
+                }
             }
             catch (Exception ex)
             {
