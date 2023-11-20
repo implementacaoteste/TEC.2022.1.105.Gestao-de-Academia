@@ -198,6 +198,7 @@ CREATE TABLE Funcionario
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
 	CPF CHAR(14),
+	Cargo Varchar(20),
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
