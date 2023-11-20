@@ -46,5 +46,13 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void textBoxFormaDePagamento_TextChanged(object sender, EventArgs e)
+        {
+            using (FormCadastrarFormaPagamento frm = new FormCadastrarFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

@@ -26,5 +26,9 @@ namespace BLL
         {
             return new FormaPagamentoDAL().BuscarDescricao(_Descricao);
         }
+        public FormaPagamento BuscarPorId(int _id)
+        {
+            return new FormaPagamentoDAL().BuscarPorId(_id);
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace UIGestaoAcademia
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido(textBoxBuscarPor.Text);
                         break;
                     default:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId (Convert.ToInt32(textBoxBuscarPor.Text));
                         break;
 
                 }

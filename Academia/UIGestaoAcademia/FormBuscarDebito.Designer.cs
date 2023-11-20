@@ -62,7 +62,8 @@
             "Todos",
             "Correntes",
             "Pagos",
-            "Vencidos"});
+            "Vencidos",
+            "Id"});
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(10, 75);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);

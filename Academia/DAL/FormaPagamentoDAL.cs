@@ -19,20 +19,7 @@ namespace DAL
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
-<<<<<<< HEAD
                         cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
-
-=======
-                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
-                        cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
-                        cmd.Parameters.AddWithValue("@FormaPagamento", _controleDebito.FormaPagamento);
-                        cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
-                        cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
-                        cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
-                        cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
-                        cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
-                        cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
->>>>>>> d1f71dbcc4b4fe1e9f7cb67895f5db06b2bc3e85
 
                         if (_transaction == null)
                         {
@@ -110,7 +97,7 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@Id", _formaPagamento.Id);
                         cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
-                        
+
 
                         if (_transaction == null)
                         {
@@ -203,7 +190,7 @@ namespace DAL
                         formaPagamento = new FormaPagamento();
                         formaPagamento.Id = (int)rd["Id"];
                         formaPagamento.Descricao = rd["Descricao"].ToString();
-                        
+
                         formaPagamentoList.Add(formaPagamento);
                     }
                 }
@@ -213,6 +200,46 @@ namespace DAL
             catch (Exception ex)
             {
                 throw new Exception("Ocorreu um erro ao tentar buscar a forma de pagamento por nome no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public FormaPagamento BuscarPorId(int _id)
+        {
+            FormaPagamento formaPagamento;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Id = @Id";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.Parameters.AddWithValue("@Id", _id);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    formaPagamento = new FormaPagamento();
+                    if (rd.Read())
+                    {
+                        formaPagamento = new FormaPagamento();
+                        formaPagamento.Id = (int)rd["Id"];
+                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return formaPagamento;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o produto no banco de dados.", ex);
             }
             finally
             {
