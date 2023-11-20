@@ -19,8 +19,20 @@ namespace DAL
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
+<<<<<<< HEAD
                         cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
 
+=======
+                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
+                        cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
+                        cmd.Parameters.AddWithValue("@FormaPagamento", _controleDebito.FormaPagamento);
+                        cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
+                        cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
+                        cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
+                        cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
+                        cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
+                        cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
+>>>>>>> d1f71dbcc4b4fe1e9f7cb67895f5db06b2bc3e85
 
                         if (_transaction == null)
                         {

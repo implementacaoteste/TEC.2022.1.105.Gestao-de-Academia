@@ -12,7 +12,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Funcionario(Nome, Cpf, Telefone, Email, Endereco) VALUES(@Nome, @Cpf, @Telefone, @Email, @Endereco)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Funcionario(Nome, Cpf, Cargo, Telefone, Email, Endereco) VALUES(@Nome, @Cpf, @Cargo, @Telefone, @Email, @Endereco)"))
                 {
                     try
                     {
@@ -20,6 +20,7 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@Nome", _funcionario.Nome);
                         cmd.Parameters.AddWithValue("@Cpf", _funcionario.Cpf);
+                        cmd.Parameters.AddWithValue("@Cargo", _funcionario.Cargo);
                         cmd.Parameters.AddWithValue("@Telefone", _funcionario.Telefone);
                         cmd.Parameters.AddWithValue("@Email", _funcionario.Email);
                         cmd.Parameters.AddWithValue("@Endereco", _funcionario.Endereco);
@@ -54,7 +55,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE Funcionario SET Nome = @Nome, Cpf = @Cpf, Telefone = @Telefone, Email = @Email, Endereco = @Endereco WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Funcionario SET Nome = @Nome, Cpf = @Cpf, Cargo = @Cargo, Telefone = @Telefone, Email = @Email, Endereco = @Endereco WHERE Id = @Id"))
                 {
                     try
                     {
@@ -63,6 +64,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Id", _funcionario.Id);
                         cmd.Parameters.AddWithValue("@Nome", _funcionario.Nome);
                         cmd.Parameters.AddWithValue("@Cpf", _funcionario.Cpf);
+                        cmd.Parameters.AddWithValue("@Cargo", _funcionario.Cargo);
                         cmd.Parameters.AddWithValue("@Telefone", _funcionario.Telefone);
                         cmd.Parameters.AddWithValue("@Email", _funcionario.Email);
                         cmd.Parameters.AddWithValue("@Endereco", _funcionario.Endereco);
@@ -141,7 +143,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario";
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Cargo, Telefone, Email, Endereco FROM Funcionario";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -155,6 +157,7 @@ namespace DAL
                         funcionario.Id = (int)rd["Id"];
                         funcionario.Nome = rd["Nome"].ToString();
                         funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Cargo = rd["Cargo"].ToString();
                         funcionario.Telefone = rd["Telefone"].ToString();
                         funcionario.Email = rd["Email"].ToString();
                         funcionario.Endereco = rd["Endereco"].ToString();
@@ -184,7 +187,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Id  = @Id";
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Cargo, Telefone, Email, Endereco FROM Funcionario WHERE Id  = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -200,6 +203,7 @@ namespace DAL
                         funcionario.Id = (int)rd["Id"];
                         funcionario.Nome = rd["Nome"].ToString();
                         funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Cargo = rd["Cargo"].ToString();
                         funcionario.Telefone = rd["Telefone"].ToString();
                         funcionario.Email = rd["Email"].ToString();
                         funcionario.Endereco = rd["Endereco"].ToString();
@@ -228,7 +232,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Nome LIKE @Nome";
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Cargo, Telefone, Email, Endereco FROM Funcionario WHERE Nome LIKE @Nome";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -273,7 +277,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome, Cpf, Telefone, Email, Endereco FROM Funcionario WHERE Cpf  = @Cpf";
+                cmd.CommandText = " SELECT Id, Nome, Cpf, Cargo, Telefone, Email, Endereco FROM Funcionario WHERE Cpf  = @Cpf";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -289,6 +293,7 @@ namespace DAL
                         funcionario.Id = (int)rd["Id"];
                         funcionario.Nome = rd["Nome"].ToString();
                         funcionario.Cpf = rd["Cpf"].ToString();
+                        funcionario.Cargo = rd["Cargo"].ToString();
                         funcionario.Telefone = rd["Telefone"].ToString();
                         funcionario.Email = rd["Email"].ToString();
                         funcionario.Endereco = rd["Endereco"].ToString();

@@ -38,5 +38,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

@@ -39,6 +39,8 @@
             this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.vENDASToolStripMenuItem});
+            this.vENDASToolStripMenuItem,
+            this.comprasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(856, 28);
@@ -134,6 +137,20 @@
             this.relatórioDeVendaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.relatórioDeVendaToolStripMenuItem.Text = "Relatório de venda";
             // 
+            // comprasToolStripMenuItem
+            // 
+            this.comprasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprasDeProdutosToolStripMenuItem});
+            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.comprasToolStripMenuItem.Text = "Compras";
+            // 
+            // comprasDeProdutosToolStripMenuItem
+            // 
+            this.comprasDeProdutosToolStripMenuItem.Name = "comprasDeProdutosToolStripMenuItem";
+            this.comprasDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -171,7 +188,8 @@
         private ToolStripMenuItem relatórioDeVendaToolStripMenuItem;
 
         private ToolStripMenuItem funcionárioToolStripMenuItem;
-
+        private ToolStripMenuItem comprasToolStripMenuItem;
+        private ToolStripMenuItem comprasDeProdutosToolStripMenuItem;
     }
 }
 
