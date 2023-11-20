@@ -126,5 +126,49 @@ namespace DAL
                 }
             }
         }
+        public List<CompraProduto> BuscarTodos()
+        {
+            List<CompraProduto> compraProdutoList = new List<CompraProduto>();
+            CompraProduto compraProduto;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId,ValorTotal FROM CompraProduto";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        compraProduto = new CompraProduto();
+                        compraProduto.Id = (int)rd["Id"];
+                        compraProduto.FornecedorId = (int)rd["FornecedorId"];
+                        compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
+                        compraProduto.ValorTotal = (float)rd["ValorTotal"];
+
+                        compraProdutoList.Add(compraProduto);
+                    }
+                }
+                return compraProdutoList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a compra de um produto no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
     }
 }
