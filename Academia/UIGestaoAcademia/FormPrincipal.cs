@@ -117,5 +117,13 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastrarFornecedor frm = new FormCadastrarFornecedor())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

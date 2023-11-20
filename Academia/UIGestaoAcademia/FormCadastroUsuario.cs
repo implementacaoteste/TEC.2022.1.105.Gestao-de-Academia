@@ -70,5 +70,10 @@ namespace UIGestaoAcademia
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
+
+        private void nomeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

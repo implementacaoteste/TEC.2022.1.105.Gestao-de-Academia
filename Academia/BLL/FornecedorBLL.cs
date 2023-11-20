@@ -22,7 +22,7 @@ namespace BLL
         {
             return new FornecedorDAL().BuscarPorNome(_nome);
         }
-        public Fornecedor BuscarPorCPF(string _CpfCnpj)
+        public Fornecedor BuscarPorCpfCnpj(string _CpfCnpj)
         {
             if (String.IsNullOrEmpty(_CpfCnpj))
                 throw new Exception("Informe um CPF ou CNPJ") { Data = { { "Id", 32 } } };
@@ -36,6 +36,10 @@ namespace BLL
         public void Excluir(int _id)
         {
             new FornecedorDAL().Excluir(_id);
+        }
+        public Fornecedor BuscarPorId(int _id)
+        {
+            return new FornecedorDAL().BuscarPorId(_id);
         }
     }
 }

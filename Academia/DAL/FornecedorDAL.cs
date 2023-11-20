@@ -230,6 +230,45 @@ namespace DAL
                 cn.Close();
             }
         }
+        public Fornecedor BuscarPorId(int _id)
+        {
+            Fornecedor fornecedor = new Fornecedor();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Endereco, Descricao 
+                                    FROM Fornecedor WHERE Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _id);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        fornecedor = new Fornecedor();
+                        fornecedor.Id = (int)rd["Id"];
+                        fornecedor.Nome = rd["Nome"].ToString();
+                        fornecedor.CpfCnpj = rd["CpfCnpf"].ToString();
+                        fornecedor.Email = rd["Email"].ToString();
+                        fornecedor.Telefone = rd["Telefone"].ToString();
+                        fornecedor.Endereco = rd["Endereco"].ToString();
+                        fornecedor.Descricao = rd["Descricao"].ToString();
+                    }
+                }
+                return fornecedor;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o produto no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 }
 

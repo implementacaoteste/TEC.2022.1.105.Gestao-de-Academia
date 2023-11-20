@@ -46,5 +46,10 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void textBoxValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
