@@ -8,15 +8,15 @@ namespace BLL
     {
         public void Inserir(FormaPagamento _formaPagamento)
         {
-            new FormaPagamentoBLL().Inserir(_formaPagamento);
+            new FormaPagamentoDAL().Inserir(_formaPagamento);
         }
         public void Alterar(FormaPagamento _formaPagamento)
         {
-            new FormaPagamentoBLL().Alterar(_formaPagamento);
+            new FormaPagamentoDAL().Alterar(_formaPagamento);
         }
         public void Excluir(int _id)
         {
-            new FormaPagamentoBLL().Excluir(_id);
+            new FormaPagamentoDAL().Excluir(_id);
         }
         public List<FormaPagamento> BuscarTodos()
         {

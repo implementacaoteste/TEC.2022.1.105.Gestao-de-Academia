@@ -68,6 +68,7 @@
             this.buttonSalvar.TabIndex = 51;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // bindingSourceCadastrarFormaPagamento
             // 
@@ -85,7 +86,7 @@
             // 
             // textBoxDescricao
             // 
-            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFormaPagamento, "ValorDebito", true));
+            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFormaPagamento, "Descricao", true));
             this.textBoxDescricao.Location = new System.Drawing.Point(12, 138);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(815, 27);

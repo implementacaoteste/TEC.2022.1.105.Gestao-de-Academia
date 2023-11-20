@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,38 @@ namespace UIGestaoAcademia
 {
     public partial class FormCadastrarFormaPagamento : Form
     {
-        public FormCadastrarFormaPagamento()
+        int id;
+        public FormCadastrarFormaPagamento(int _id = 0)
         {
             InitializeComponent();
+            id = _id;
+
+
+            if (id == 0)
+                bindingSourceCadastrarFormaPagamento.AddNew();
+            else
+                bindingSourceCadastrarFormaPagamento.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bindingSourceCadastrarFormaPagamento.EndEdit();
+                FormaPagamento formaPagamento = (FormaPagamento)bindingSourceCadastrarFormaPagamento.Current;
+
+                if (id == 0)
+                    new FormaPagamentoBLL().Inserir(formaPagamento);
+                else
+                    new FormaPagamentoBLL().Alterar(formaPagamento);
+
+                MessageBox.Show("Registro salvo com sucesso!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
