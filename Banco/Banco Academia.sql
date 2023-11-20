@@ -1,4 +1,4 @@
-USE MASTER
+ï»¿USE MASTER
 GO
 ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
@@ -204,13 +204,6 @@ CREATE TABLE Funcionario
 )
 GO
 
-
-ALTER TABLE CompraProduto
-ADD CONSTRAINT FK_Produto_CompraProduto
-FOREIGN KEY (ProdutoId)
-REFERENCES Produto(Id);
-GO
-
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_FormaPagamento
 FOREIGN KEY (FormaPagamentoId)
@@ -241,7 +234,7 @@ FOREIGN KEY (FormaPagamentoId)
 REFERENCES FormaPagamento(Id);
 GO
 
-ALTER TABLE Compra
+ALTER TABLE CompraProduto
 ADD CONSTRAINT FK_Compra_FormaPagamento
 FOREIGN KEY (FormaPagamentoId)
 REFERENCES FormaPagamento(Id);
@@ -306,12 +299,6 @@ FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
 GO
 
-ALTER TABLE ControleEstoque
-ADD CONSTRAINT FK_ControleEstoque_Produto
-FOREIGN KEY (ProdutoId)
-REFERENCES Produto(Id);
-GO
-
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
 
@@ -354,16 +341,16 @@ ALTER TABLE Usuario ADD DataCadastro DATETIME DEFAULT GETDATE()
 
 GO
 
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 1))INSERT INTO Permissao(Id, Descricao)VALUES(1,'Visualizar usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 2))INSERT INTO Permissao(Id, Descricao)VALUES(2,'Cadastrar usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 3))INSERT INTO Permissao(Id, Descricao)VALUES(3,'Alterar usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 4))INSERT INTO Permissao(Id, Descricao)VALUES(4,'Excluir usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 5))INSERT INTO Permissao(Id, Descricao)VALUES(5,'Visualizar grupo de usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 6))INSERT INTO Permissao(Id, Descricao)VALUES(6,'Cadastrar grupo de usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 7))INSERT INTO Permissao(Id, Descricao)VALUES(7,'Alterar grupo de usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 8))INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 9))INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permissão a um grupo de usuário')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usuário a um usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 1))INSERT INTO Permissao(Id, Descricao)VALUES(1,'Visualizar usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 2))INSERT INTO Permissao(Id, Descricao)VALUES(2,'Cadastrar usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 3))INSERT INTO Permissao(Id, Descricao)VALUES(3,'Alterar usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 4))INSERT INTO Permissao(Id, Descricao)VALUES(4,'Excluir usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 5))INSERT INTO Permissao(Id, Descricao)VALUES(5,'Visualizar grupo de usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 6))INSERT INTO Permissao(Id, Descricao)VALUES(6,'Cadastrar grupo de usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 7))INSERT INTO Permissao(Id, Descricao)VALUES(7,'Alterar grupo de usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 8))INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 9))INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permissï¿½o a um grupo de usuï¿½rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usuï¿½rio a um usuï¿½rio')
 GO
 
 IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Adm'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Administrador da Silva', 'Adm', '123', 1)
