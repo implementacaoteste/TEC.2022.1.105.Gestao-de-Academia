@@ -19,7 +19,7 @@ namespace DAL
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.clienteId);
+                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
                         cmd.Parameters.AddWithValue("@FormaPagamento", _controleDebito.FormaPagamento);
                         cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
