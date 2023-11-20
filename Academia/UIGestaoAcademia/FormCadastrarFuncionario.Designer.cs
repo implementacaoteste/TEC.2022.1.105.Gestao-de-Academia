@@ -43,6 +43,8 @@
             this.textBoxEstoque = new System.Windows.Forms.TextBox();
             this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +77,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(507, 147);
+            this.label6.Location = new System.Drawing.Point(619, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 20);
             this.label6.TabIndex = 36;
@@ -84,9 +86,9 @@
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Telefone", true));
-            this.textBox1.Location = new System.Drawing.Point(503, 170);
+            this.textBox1.Location = new System.Drawing.Point(615, 170);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 27);
+            this.textBox1.Size = new System.Drawing.Size(173, 27);
             this.textBox1.TabIndex = 27;
             // 
             // buttonSalvar
@@ -114,7 +116,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(206, 148);
+            this.label4.Location = new System.Drawing.Point(352, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 34;
@@ -151,9 +153,9 @@
             // textBoxEstoque
             // 
             this.textBoxEstoque.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Email", true));
-            this.textBoxEstoque.Location = new System.Drawing.Point(206, 170);
+            this.textBoxEstoque.Location = new System.Drawing.Point(352, 170);
             this.textBoxEstoque.Name = "textBoxEstoque";
-            this.textBoxEstoque.Size = new System.Drawing.Size(291, 27);
+            this.textBoxEstoque.Size = new System.Drawing.Size(257, 27);
             this.textBoxEstoque.TabIndex = 28;
             // 
             // textBoxPreco
@@ -161,7 +163,7 @@
             this.textBoxPreco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Cpf", true));
             this.textBoxPreco.Location = new System.Drawing.Point(16, 170);
             this.textBoxPreco.Name = "textBoxPreco";
-            this.textBoxPreco.Size = new System.Drawing.Size(184, 27);
+            this.textBoxPreco.Size = new System.Drawing.Size(161, 27);
             this.textBoxPreco.TabIndex = 26;
             // 
             // textBoxNome
@@ -172,12 +174,32 @@
             this.textBoxNome.Size = new System.Drawing.Size(386, 27);
             this.textBoxNome.TabIndex = 25;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(183, 148);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 20);
+            this.label7.TabIndex = 38;
+            this.label7.Text = "Cargo";
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Cargo", true));
+            this.textBox2.Location = new System.Drawing.Point(183, 170);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(163, 27);
+            this.textBox2.TabIndex = 39;
+            // 
             // FormCadastrarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancelar;
             this.ClientSize = new System.Drawing.Size(800, 416);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.label6);
@@ -215,5 +237,7 @@
         private TextBox textBoxEstoque;
         private TextBox textBoxPreco;
         private TextBox textBoxNome;
+        private Label label7;
+        private TextBox textBox2;
     }
 }
