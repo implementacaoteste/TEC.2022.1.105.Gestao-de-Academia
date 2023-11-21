@@ -7,6 +7,9 @@ namespace UIGestaoAcademia
 {
     public partial class FormConsultaCliente : Form
     {
+        public Cliente Cliente { get; set; }
+        public Funcionario Funcionario { get; set; }
+
         public FormConsultaCliente()
         {
             InitializeComponent();
