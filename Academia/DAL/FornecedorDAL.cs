@@ -16,17 +16,14 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Endereco, Descricao) 
-                                    VALUES(@Nome, @CpfCnpj, @Email, @Telefone, @Endereco, @Descricao)";
+                cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Endereco, Descricao,
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa) 
+                                    VALUES (@Nome, @CpfCnpj, @Email, @Telefone, @Endereco, @Descricao,
+                                    @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Nome", _fornecedor.Nome);
-                cmd.Parameters.AddWithValue("@CpfCnpj", _fornecedor.CpfCnpj);
-                cmd.Parameters.AddWithValue("@Email", _fornecedor.Email);
-                cmd.Parameters.AddWithValue("@Telefone", _fornecedor.Telefone);
-                cmd.Parameters.AddWithValue("@Endereco", _fornecedor.Endereco);
-                cmd.Parameters.AddWithValue("@Descricao", _fornecedor.Descricao);
+                PreencherObjeto(_fornecedor, cmd);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -41,6 +38,23 @@ namespace DAL
             {
                 cn.Close();
             }
+        }
+
+        private static void PreencherObjeto(Fornecedor _fornecedor, SqlCommand cmd)
+        {
+            cmd.Parameters.AddWithValue("@Nome", _fornecedor.Nome);
+            cmd.Parameters.AddWithValue("@CpfCnpj", _fornecedor.CpfCnpj);
+            cmd.Parameters.AddWithValue("@Email", _fornecedor.Email);
+            cmd.Parameters.AddWithValue("@Telefone", _fornecedor.Telefone);
+            cmd.Parameters.AddWithValue("@Descricao", _fornecedor.Descricao);
+            cmd.Parameters.AddWithValue("@Rua", _fornecedor.Rua);
+            cmd.Parameters.AddWithValue("@CEP", _fornecedor.CEP);
+            cmd.Parameters.AddWithValue("@Bairro", _fornecedor.Bairro);
+            cmd.Parameters.AddWithValue("@Complemento", _fornecedor.Complemento);
+            cmd.Parameters.AddWithValue("@NumeroCasa", _fornecedor.NumeroCasa);
+            cmd.Parameters.AddWithValue("@Pais", _fornecedor.Pais);
+            cmd.Parameters.AddWithValue("@Cidade", _fornecedor.Cidade);
+            cmd.Parameters.AddWithValue("@Estado", _fornecedor.Estado);
         }
 
         public List<Fornecedor> BuscarTodos()
@@ -61,13 +75,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        fornecedor.Id = (int)rd["Id"];
-                        fornecedor.Nome = rd["Nome"].ToString();
-                        fornecedor.CpfCnpj = rd["CpfCnpf"].ToString();
-                        fornecedor.Email = rd["Email"].ToString();
-                        fornecedor.Telefone = rd["Telefone"].ToString();
-                        fornecedor.Endereco = rd["Endereco"].ToString();
-                        fornecedor.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(fornecedor, cmd);
 
                         fornecedorList.Add(fornecedor);
                     }
@@ -103,13 +111,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        fornecedor.Id = (int)rd["Id"];
-                        fornecedor.Nome = rd["Nome"].ToString();
-                        fornecedor.CpfCnpj = rd["CpfCnpf"].ToString();
-                        fornecedor.Email = rd["Email"].ToString();
-                        fornecedor.Telefone = rd["Telefone"].ToString();
-                        fornecedor.Endereco = rd["Endereco"].ToString();
-                        fornecedor.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(fornecedor, cmd);
 
                         fornecedorList.Add(fornecedor);
                     }
@@ -144,13 +146,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        fornecedor.Id = (int)rd["Id"];
-                        fornecedor.Nome = rd["Nome"].ToString();
-                        fornecedor.CpfCnpj = rd["CpfCnpf"].ToString();
-                        fornecedor.Email = rd["Email"].ToString();
-                        fornecedor.Telefone = rd["Telefone"].ToString();
-                        fornecedor.Endereco = rd["Endereco"].ToString();
-                        fornecedor.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(fornecedor, cmd);
                     }
                 }
                 return fornecedor;
@@ -165,8 +161,6 @@ namespace DAL
             }
         }
         public void Alterar(Fornecedor _fornecedor)
-
-
         {
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
@@ -183,13 +177,8 @@ namespace DAL
                                         WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Id", _fornecedor.Id);
-                cmd.Parameters.AddWithValue("@Nome", _fornecedor.Nome);
-                cmd.Parameters.AddWithValue("@CPF", _fornecedor.CpfCnpj);
-                cmd.Parameters.AddWithValue("@Email", _fornecedor.Email);
-                cmd.Parameters.AddWithValue("@Telefone", _fornecedor.Telefone);
-                cmd.Parameters.AddWithValue("@Endereco", _fornecedor.Endereco);
-                cmd.Parameters.AddWithValue("@Descricao", _fornecedor.Descricao);
+                PreencherObjeto(_fornecedor, cmd);
+
                 cmd.Connection = cn;
                 cn.Open();
 
@@ -249,13 +238,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        fornecedor.Id = (int)rd["Id"];
-                        fornecedor.Nome = rd["Nome"].ToString();
-                        fornecedor.CpfCnpj = rd["CpfCnpf"].ToString();
-                        fornecedor.Email = rd["Email"].ToString();
-                        fornecedor.Telefone = rd["Telefone"].ToString();
-                        fornecedor.Endereco = rd["Endereco"].ToString();
-                        fornecedor.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(fornecedor, cmd);
                     }
                 }
                 return fornecedor;
