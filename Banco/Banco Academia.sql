@@ -386,4 +386,154 @@ INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 GO
 
 
-select*from Usuario
+select*from Fornecedor
+GO
+
+ALTER TABLE Fornecedor
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Fornecedor
+DROP COLUMN Endereco
+GO
+
+--
+
+select*from Funcionario
+GO
+
+ALTER TABLE Funcionario
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Funcionario
+DROP COLUMN Endereco
+GO
+
+--
+
+select*from Cliente
+GO
+
+ALTER TABLE Cliente
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Cliente
+DROP COLUMN Endereco
+GO
+
+ALTER TABLE Funcionario
+ALTER COLUMN CEP VARCHAR(9)
+GO
+
+ALTER TABLE Cliente
+ALTER COLUMN CEP VARCHAR(9)
+GO
+
+ALTER TABLE Fornecedor
+ALTER COLUMN CEP VARCHAR(9)
+GO
+
+--
+
+ALTER TABLE Cliente
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Estado VARCHAR(100)
+GO
+
+--
+
+ALTER TABLE Fornecedor
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Estado VARCHAR(100)
+GO
+
+--
+
+ALTER TABLE Funcionario
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ADD Estado VARCHAR(100)
+GO
+
+--
+
+ALTER TABLE Fornecedor
+ALTER COLUMN Estado VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ALTER COLUMN Estado VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ALTER COLUMN Estado VARCHAR(50)

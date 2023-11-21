@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxBuscarFuncionario = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,8 +43,7 @@
             this.PrecoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxBuscarPorCliente = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -53,11 +51,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.buttonBuscarCliente = new System.Windows.Forms.Button();
+            this.buttonBuscarFuncionario = new System.Windows.Forms.Button();
+            this.textBoxBuscarFuncionario = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -86,26 +87,14 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1008, 68);
+            this.label2.Size = new System.Drawing.Size(1583, 68);
             this.label2.TabIndex = 3;
             this.label2.Text = "VENDA";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // comboBoxBuscarFuncionario
-            // 
-            this.comboBoxBuscarFuncionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBuscarFuncionario.FormattingEnabled = true;
-            this.comboBoxBuscarFuncionario.Items.AddRange(new object[] {
-            "Id",
-            "Nome"});
-            this.comboBoxBuscarFuncionario.Location = new System.Drawing.Point(124, 140);
-            this.comboBoxBuscarFuncionario.Name = "comboBoxBuscarFuncionario";
-            this.comboBoxBuscarFuncionario.Size = new System.Drawing.Size(325, 28);
-            this.comboBoxBuscarFuncionario.TabIndex = 4;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(787, 98);
+            this.textBox1.Location = new System.Drawing.Point(745, 158);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 27);
             this.textBox1.TabIndex = 5;
@@ -113,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(641, 102);
+            this.label4.Location = new System.Drawing.Point(611, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 3;
@@ -197,20 +186,12 @@
             // 
             this.itensVendaBindingSource.DataSource = typeof(Models.ItensVenda);
             // 
-            // textBoxBuscarPor
+            // textBoxBuscarPorCliente
             // 
-            this.textBoxBuscarPor.Location = new System.Drawing.Point(124, 180);
-            this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(424, 27);
-            this.textBoxBuscarPor.TabIndex = 5;
-            this.textBoxBuscarPor.TextChanged += new System.EventHandler(this.textBoxBuscarPor_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(572, 180);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(424, 27);
-            this.textBox2.TabIndex = 5;
+            this.textBoxBuscarPorCliente.Location = new System.Drawing.Point(124, 180);
+            this.textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
+            this.textBoxBuscarPorCliente.Size = new System.Drawing.Size(398, 27);
+            this.textBoxBuscarPorCliente.TabIndex = 5;
             // 
             // button1
             // 
@@ -272,18 +253,6 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "DATA";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Id",
-            "Nome"});
-            this.comboBox1.Location = new System.Drawing.Point(830, 652);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 28);
-            this.comboBox1.TabIndex = 4;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -295,7 +264,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(745, 746);
+            this.button4.Location = new System.Drawing.Point(849, 757);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(147, 40);
             this.button4.TabIndex = 8;
@@ -319,11 +288,53 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(166, 27);
             this.dateTimePicker2.TabIndex = 12;
             // 
+            // buttonBuscarCliente
+            // 
+            this.buttonBuscarCliente.Location = new System.Drawing.Point(528, 180);
+            this.buttonBuscarCliente.Name = "buttonBuscarCliente";
+            this.buttonBuscarCliente.Size = new System.Drawing.Size(33, 29);
+            this.buttonBuscarCliente.TabIndex = 13;
+            this.buttonBuscarCliente.Text = "...";
+            this.buttonBuscarCliente.UseVisualStyleBackColor = true;
+            this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
+            // 
+            // buttonBuscarFuncionario
+            // 
+            this.buttonBuscarFuncionario.Location = new System.Drawing.Point(528, 140);
+            this.buttonBuscarFuncionario.Name = "buttonBuscarFuncionario";
+            this.buttonBuscarFuncionario.Size = new System.Drawing.Size(33, 29);
+            this.buttonBuscarFuncionario.TabIndex = 14;
+            this.buttonBuscarFuncionario.Text = "...";
+            this.buttonBuscarFuncionario.UseVisualStyleBackColor = true;
+            this.buttonBuscarFuncionario.Click += new System.EventHandler(this.buttonBuscarFuncionario_Click);
+            // 
+            // textBoxBuscarFuncionario
+            // 
+            this.textBoxBuscarFuncionario.Location = new System.Drawing.Point(124, 141);
+            this.textBoxBuscarFuncionario.Name = "textBoxBuscarFuncionario";
+            this.textBoxBuscarFuncionario.Size = new System.Drawing.Size(398, 27);
+            this.textBoxBuscarFuncionario.TabIndex = 15;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Id",
+            "Nome"});
+            this.comboBox1.Location = new System.Drawing.Point(830, 652);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(166, 28);
+            this.comboBox1.TabIndex = 4;
+            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 867);
+            this.ClientSize = new System.Drawing.Size(1583, 867);
+            this.Controls.Add(this.textBoxBuscarFuncionario);
+            this.Controls.Add(this.buttonBuscarFuncionario);
+            this.Controls.Add(this.buttonBuscarCliente);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label9);
@@ -336,11 +347,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBoxBuscarPor);
+            this.Controls.Add(this.textBoxBuscarPorCliente);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.comboBoxBuscarFuncionario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -360,7 +369,6 @@
         private Label label1;
         private Label label3;
         private Label label2;
-        private ComboBox comboBoxBuscarFuncionario;
         private TextBox textBox1;
         private Label label4;
         private Label label5;
@@ -369,9 +377,8 @@
         private DataGridViewTextBoxColumn produtoIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
-        private TextBox textBoxBuscarPor;
+        private TextBox textBoxBuscarPorCliente;
         private BindingSource itensVendaBindingSource;
-        private TextBox textBox2;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -384,10 +391,13 @@
         private DataGridViewTextBoxColumn PrecoTotal;
         private DateTimePicker dateTimePicker1;
         private Label label7;
-        private ComboBox comboBox1;
         private Label label8;
         private Button button4;
         private Label label9;
         private DateTimePicker dateTimePicker2;
+        private Button buttonBuscarCliente;
+        private Button buttonBuscarFuncionario;
+        private TextBox textBoxBuscarFuncionario;
+        private ComboBox comboBox1;
     }
 }
