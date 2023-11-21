@@ -44,20 +44,10 @@ namespace UIGestaoAcademia
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
+                ((ControleDebito)bindingSourceCadastrarDebito.Current).FormaPagamento = frm.FormaPagamento;
+                ((ControleDebito)bindingSourceCadastrarDebito.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                textBoxFormaDePagamento.Text = frm.FormaPagamento.Descricao;
             }
-        }
-
-        private void textBoxFormaDePagamento_TextChanged(object sender, EventArgs e)
-        {
-            using (FormCadastrarFormaPagamento frm = new FormCadastrarFormaPagamento())
-            {
-                frm.ShowDialog();
-            }
-        }
-
-        private void textBoxValor_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

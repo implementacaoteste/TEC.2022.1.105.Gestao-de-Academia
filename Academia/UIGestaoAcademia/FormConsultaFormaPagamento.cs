@@ -5,7 +5,7 @@ namespace UIGestaoAcademia
 {
     public partial class FormConsultaFormaPagamento : Form
     {
-        public int Id;
+        public FormaPagamento FormaPagamento;
         private string ultimaBusca;
         private bool buscou;
         public FormConsultaFormaPagamento()
@@ -35,25 +35,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void buttonSelecionar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (bindingSourceFormaPagamento.Count > 0)
-                {
-                    Id = ((FormaPagamento)bindingSourceFormaPagamento.Current).Id;
-                    Close();
-                }
-                else
-                    MessageBox.Show("Não existe forma de pagamento a ser selecionada.");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void buttonInserir_Click(object sender, EventArgs e)
         {
             using (FormCadastrarFormaPagamento frm = new FormCadastrarFormaPagamento())
@@ -104,6 +85,28 @@ namespace UIGestaoAcademia
             new ControleDebitoBLL().Excluir(id);
             bindingSourceFormaPagamento.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
+        }
+        private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
+        {
+            comboBoxBuscarPor.SelectedIndex = 0;
+        }
+
+        private void buttonSelecionar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bindingSourceFormaPagamento.Count > 0)
+                {
+                    this.FormaPagamento = (FormaPagamento)bindingSourceFormaPagamento.Current;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe permissão a ser selecionada.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
