@@ -387,21 +387,87 @@ GO
 
 
 select*from Fornecedor
+GO
 
 ALTER TABLE Fornecedor
 ADD Rua VARCHAR(100)
+GO
 
 ALTER TABLE Fornecedor
 ADD CEP VARCHAR(100)
+GO
 
 ALTER TABLE Fornecedor
 ADD Bairro VARCHAR(100)
+GO
 
 ALTER TABLE Fornecedor
 ADD Complemento VARCHAR(100)
+GO
 
 ALTER TABLE Fornecedor
 ADD NumeroCasa INT
+GO
 
 ALTER TABLE Fornecedor
 DROP COLUMN Endereco
+GO
+
+--
+
+select*from Funcionario
+GO
+
+ALTER TABLE Funcionario
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Funcionario
+DROP COLUMN Endereco
+GO
+
+--
+
+select*from Cliente
+GO
+
+ALTER TABLE Cliente
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Cliente
+DROP COLUMN Endereco
+GO
+
