@@ -1,18 +1,15 @@
-﻿
-
-using BLL;
+﻿using BLL;
 using Models;
 
 namespace UIGestaoAcademia
 {
-    public partial class FormBuscarFuncionario : Form
+    public partial class FormBuscarCompraProduto : Form
     {
-        public Funcionario Funcionario { get; set; }
-
-        public FormBuscarFuncionario()
+        public FormBuscarCompraProduto()
         {
             InitializeComponent();
         }
+
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             try
@@ -20,13 +17,10 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        bindingSourceFuncionario.DataSource = new FuncionarioBLL().BuscarPorNome(textBoxBuscarPor.Text);
-                        break;
-                    case 1:
-                        bindingSourceFuncionario.DataSource = new FuncionarioBLL().BuscarPorCpf(textBoxBuscarPor.Text);
+                        bindingSourceCompraProduto.DataSource = new CompraProdutoBLL().BuscarPorIdFornecedor(Convert.ToInt32(textBoxBuscarPor.Text));
                         break;
                     default:
-                        bindingSourceFuncionario.DataSource = new FuncionarioBLL().BuscarTodos();
+                        bindingSourceCompraProduto.DataSource = new CompraProdutoBLL().BuscarTodos();
                         break;
                 }
             }
@@ -38,28 +32,30 @@ namespace UIGestaoAcademia
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((Funcionario)bindingSourceFuncionario.Current).Id;
+            int id = ((CompraProduto)bindingSourceCompraProduto.Current).Id;
 
-            using (FormCadastrarFuncionario frm = new FormCadastrarFuncionario(id))
+            using (FormFazerCompraProduto frm = new FormFazerCompraProduto(id))
             {
                 frm.ShowDialog();
             }
         }
+
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarFuncionario frm = new FormCadastrarFuncionario())
+            using (FormFazerCompraProduto frm = new FormFazerCompraProduto())
             {
                 frm.ShowDialog();
             }
         }
+
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((Funcionario)bindingSourceFuncionario.Current).Id;
-            new FuncionarioBLL().Excluir(id);
-            bindingSourceFuncionario.RemoveCurrent();
+            int id = ((Produto)bindingSourceCompraProduto.Current).Id;
+            new CompraProdutoBLL().Excluir(id);
+            bindingSourceCompraProduto.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
     }
