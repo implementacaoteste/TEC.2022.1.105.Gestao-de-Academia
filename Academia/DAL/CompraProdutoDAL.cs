@@ -138,9 +138,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto
-                                  INNER JOIN
-                                  ";
+                cmd.CommandText = "SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto ";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
