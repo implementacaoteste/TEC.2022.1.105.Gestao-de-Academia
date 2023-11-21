@@ -481,3 +481,46 @@ GO
 
 ALTER TABLE Fornecedor
 ALTER COLUMN CEP VARCHAR(9)
+GO
+
+--
+
+ALTER TABLE Cliente
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Estado VARCHAR(100)
+GO
+
+--
+
+ALTER TABLE Fornecedor
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Estado VARCHAR(100)
+GO
+
+--
+
+ALTER TABLE Funcionario
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ADD Estado VARCHAR(100)
+GO
