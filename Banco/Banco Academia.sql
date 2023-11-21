@@ -389,4 +389,19 @@ GO
 select*from Fornecedor
 
 ALTER TABLE Fornecedor
-ADD Descricao VARCHAR(100)
+ADD Rua VARCHAR(100)
+
+ALTER TABLE Fornecedor
+ADD CEP VARCHAR(100)
+
+ALTER TABLE Fornecedor
+ADD Bairro VARCHAR(100)
+
+ALTER TABLE Fornecedor
+ADD Complemento VARCHAR(100)
+
+ALTER TABLE Fornecedor
+ADD NumeroCasa INT
+
+ALTER TABLE Fornecedor
+DROP COLUMN Endereco
