@@ -386,4 +386,7 @@ INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 GO
 
 
-select*from Usuario
+select*from Fornecedor
+
+ALTER TABLE Fornecedor
+ADD Descricao VARCHAR(100)
