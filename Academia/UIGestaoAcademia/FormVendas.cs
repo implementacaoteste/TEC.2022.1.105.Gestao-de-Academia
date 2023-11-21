@@ -50,5 +50,9 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+        private void buttonFormaDePagamento_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
