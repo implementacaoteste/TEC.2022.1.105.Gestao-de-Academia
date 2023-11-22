@@ -59,8 +59,10 @@
             this.buttonBuscarFuncionario = new System.Windows.Forms.Button();
             this.textBoxBuscarFuncionario = new System.Windows.Forms.TextBox();
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
+            this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -325,6 +327,10 @@
             this.buttonFormaDePagamento.UseVisualStyleBackColor = true;
             this.buttonFormaDePagamento.Click += new System.EventHandler(this.buttonFormaDePagamento_Click);
             // 
+            // bindingSourceVendas
+            // 
+            this.bindingSourceVendas.DataSource = typeof(Models.Vendas);
+            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -358,6 +364,7 @@
             this.Text = "VENDAS";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,5 +404,6 @@
         private Button buttonBuscarFuncionario;
         private TextBox textBoxBuscarFuncionario;
         private Button buttonFormaDePagamento;
+        private BindingSource bindingSourceVendas;
     }
 }
