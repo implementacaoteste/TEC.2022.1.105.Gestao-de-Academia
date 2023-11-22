@@ -46,10 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.buttonExcluir = new System.Windows.Forms.Button();
-            this.buttonInserir = new System.Windows.Forms.Button();
-            this.buttonAlterar = new System.Windows.Forms.Button();
-            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonExcluirDebito = new System.Windows.Forms.Button();
+            this.buttonInserirDebito = new System.Windows.Forms.Button();
+            this.buttonAlterarDebito = new System.Windows.Forms.Button();
+            this.buttonBuscarDebito = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controleDebitoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -192,6 +192,7 @@
             this.buttonSelecionar.Text = "Se&lecionar";
             this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
             // 
             // label2
             // 
@@ -234,50 +235,50 @@
             this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
             this.textBoxBuscarPor.TabIndex = 23;
             // 
-            // buttonExcluir
+            // buttonExcluirDebito
             // 
-            this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(922, 75);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluir.TabIndex = 36;
-            this.buttonExcluir.Text = "E&xcluir";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click_1);
+            this.buttonExcluirDebito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExcluirDebito.Location = new System.Drawing.Point(922, 75);
+            this.buttonExcluirDebito.Name = "buttonExcluirDebito";
+            this.buttonExcluirDebito.Size = new System.Drawing.Size(94, 29);
+            this.buttonExcluirDebito.TabIndex = 36;
+            this.buttonExcluirDebito.Text = "E&xcluir";
+            this.buttonExcluirDebito.UseVisualStyleBackColor = true;
+            this.buttonExcluirDebito.Click += new System.EventHandler(this.buttonExcluir_Click_1);
             // 
-            // buttonInserir
+            // buttonInserirDebito
             // 
-            this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(822, 75);
-            this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserir.TabIndex = 35;
-            this.buttonInserir.Text = "&Inserir";
-            this.buttonInserir.UseVisualStyleBackColor = true;
-            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click_1);
+            this.buttonInserirDebito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInserirDebito.Location = new System.Drawing.Point(822, 75);
+            this.buttonInserirDebito.Name = "buttonInserirDebito";
+            this.buttonInserirDebito.Size = new System.Drawing.Size(94, 29);
+            this.buttonInserirDebito.TabIndex = 35;
+            this.buttonInserirDebito.Text = "&Inserir";
+            this.buttonInserirDebito.UseVisualStyleBackColor = true;
+            this.buttonInserirDebito.Click += new System.EventHandler(this.buttonInserir_Click_1);
             // 
-            // buttonAlterar
+            // buttonAlterarDebito
             // 
-            this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(722, 76);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterar.TabIndex = 34;
-            this.buttonAlterar.Text = "&Alterar";
-            this.buttonAlterar.UseVisualStyleBackColor = true;
-            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
+            this.buttonAlterarDebito.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAlterarDebito.Location = new System.Drawing.Point(722, 76);
+            this.buttonAlterarDebito.Name = "buttonAlterarDebito";
+            this.buttonAlterarDebito.Size = new System.Drawing.Size(94, 29);
+            this.buttonAlterarDebito.TabIndex = 34;
+            this.buttonAlterarDebito.Text = "&Alterar";
+            this.buttonAlterarDebito.UseVisualStyleBackColor = true;
+            this.buttonAlterarDebito.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
-            // buttonBuscar
+            // buttonBuscarDebito
             // 
-            this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonBuscarDebito.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(622, 76);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscar.TabIndex = 33;
-            this.buttonBuscar.Text = "&Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click_1);
+            this.buttonBuscarDebito.Location = new System.Drawing.Point(622, 76);
+            this.buttonBuscarDebito.Name = "buttonBuscarDebito";
+            this.buttonBuscarDebito.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarDebito.TabIndex = 33;
+            this.buttonBuscarDebito.Text = "&Buscar";
+            this.buttonBuscarDebito.UseVisualStyleBackColor = true;
+            this.buttonBuscarDebito.Click += new System.EventHandler(this.buttonBuscar_Click_1);
             // 
             // FormBuscarDebito
             // 
@@ -285,10 +286,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 488);
             this.Controls.Add(this.textBoxBuscarPor);
-            this.Controls.Add(this.buttonExcluir);
-            this.Controls.Add(this.buttonInserir);
-            this.Controls.Add(this.buttonAlterar);
-            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonExcluirDebito);
+            this.Controls.Add(this.buttonInserirDebito);
+            this.Controls.Add(this.buttonAlterarDebito);
+            this.Controls.Add(this.buttonBuscarDebito);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.buttonSelecionar);
@@ -314,10 +315,10 @@
         private Label label1;
         private Button buttonCancelar;
         private TextBox textBoxBuscarPor;
-        private Button buttonExcluir;
-        private Button buttonInserir;
-        private Button buttonAlterar;
-        private Button buttonBuscar;
+        private Button buttonExcluirDebito;
+        private Button buttonInserirDebito;
+        private Button buttonAlterarDebito;
+        private Button buttonBuscarDebito;
         private BindingSource controleDebitoBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorDebitoDataGridViewTextBoxColumn;
