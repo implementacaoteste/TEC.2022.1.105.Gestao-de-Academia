@@ -68,5 +68,10 @@ namespace UIGestaoAcademia
             controleDebitoBindingSource.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
+
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
