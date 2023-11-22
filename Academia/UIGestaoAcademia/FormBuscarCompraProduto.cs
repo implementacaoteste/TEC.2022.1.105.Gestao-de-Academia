@@ -17,10 +17,10 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        bindingSourceCompraProduto.DataSource = new CompraProdutoBLL().BuscarPorIdFornecedor(Convert.ToInt32(textBoxBuscarPor.Text));
+                        bindingSourceItensCompra.DataSource = new CompraProdutoBLL().BuscarPorIdFornecedor(Convert.ToInt32(textBoxBuscarPor.Text));
                         break;
                     default:
-                        bindingSourceCompraProduto.DataSource = new CompraProdutoBLL().BuscarTodos();
+                        bindingSourceItensCompra.DataSource = new CompraProdutoBLL().BuscarTodos();
                         break;
                 }
             }
@@ -32,20 +32,12 @@ namespace UIGestaoAcademia
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((CompraProduto)bindingSourceCompraProduto.Current).Id;
 
-            using (FormFazerCompraProduto frm = new FormFazerCompraProduto(id))
-            {
-                frm.ShowDialog();
-            }
         }
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            using (FormFazerCompraProduto frm = new FormFazerCompraProduto())
-            {
-                frm.ShowDialog();
-            }
+            
         }
 
         private void buttonExcluir_Click(object sender, EventArgs e)
@@ -53,10 +45,18 @@ namespace UIGestaoAcademia
             if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((Produto)bindingSourceCompraProduto.Current).Id;
+            int id = ((CompraProduto)bindingSourceItensCompra.Current).Id;
             new CompraProdutoBLL().Excluir(id);
-            bindingSourceCompraProduto.RemoveCurrent();
+            bindingSourceItensCompra.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
+        }
+
+        private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }
