@@ -129,12 +129,11 @@
             // 
             // textBoxFormaDePagamento
             // 
-            this.textBoxFormaDePagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "FormaPagamento", true));
+            this.textBoxFormaDePagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "NomeFormaPagamento", true));
             this.textBoxFormaDePagamento.Location = new System.Drawing.Point(410, 142);
             this.textBoxFormaDePagamento.Name = "textBoxFormaDePagamento";
             this.textBoxFormaDePagamento.Size = new System.Drawing.Size(193, 27);
             this.textBoxFormaDePagamento.TabIndex = 28;
-            this.textBoxFormaDePagamento.TextChanged += new System.EventHandler(this.textBoxFormaDePagamento_TextChanged);
             // 
             // textBoxValor
             // 
