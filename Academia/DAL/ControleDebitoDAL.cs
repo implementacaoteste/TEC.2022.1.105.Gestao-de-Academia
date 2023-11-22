@@ -51,7 +51,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito(ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @ValorDebito, @FormaPagamentoId, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito(ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @FormaPagamentoId, @ValorDebito, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
                 {
                     try
                     {
@@ -190,6 +190,7 @@ namespace DAL
             controleDebito.Desconto = (double)rd["Desconto"];
             controleDebito.Acrescimo = (double)rd["Acrescimo"];
             controleDebito.FormaPagamento = new FormaPagamentoDAL().BuscarPorId(controleDebito.FormaPagamentoId);
+            controleDebito.Cliente = new ClienteDAL().BuscarPorId(controleDebito.ClienteId);
         }
 
         public ControleDebito BuscarDebitoVencido(DateTime _buscarDebitoVencido)

@@ -32,13 +32,13 @@
             this.bindingSourceFormaPagamento = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.buttonExcluir = new System.Windows.Forms.Button();
-            this.buttonInserir = new System.Windows.Forms.Button();
-            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonExcluirFormaPagamento = new System.Windows.Forms.Button();
+            this.buttonInserirFormaPagamento = new System.Windows.Forms.Button();
+            this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             this.buttonSelecionar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.buttonAlterarFormaPagamento = new System.Windows.Forms.Button();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,39 +71,39 @@
             this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
             this.textBoxBuscarPor.TabIndex = 37;
             // 
-            // buttonExcluir
+            // buttonExcluirFormaPagamento
             // 
-            this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(940, 95);
-            this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluir.TabIndex = 46;
-            this.buttonExcluir.Text = "E&xcluir";
-            this.buttonExcluir.UseVisualStyleBackColor = true;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
+            this.buttonExcluirFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(940, 95);
+            this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
+            this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(94, 29);
+            this.buttonExcluirFormaPagamento.TabIndex = 46;
+            this.buttonExcluirFormaPagamento.Text = "E&xcluir";
+            this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
-            // buttonInserir
+            // buttonInserirFormaPagamento
             // 
-            this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(840, 95);
-            this.buttonInserir.Name = "buttonInserir";
-            this.buttonInserir.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserir.TabIndex = 45;
-            this.buttonInserir.Text = "&Inserir";
-            this.buttonInserir.UseVisualStyleBackColor = true;
-            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
+            this.buttonInserirFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonInserirFormaPagamento.Location = new System.Drawing.Point(840, 95);
+            this.buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
+            this.buttonInserirFormaPagamento.Size = new System.Drawing.Size(94, 29);
+            this.buttonInserirFormaPagamento.TabIndex = 45;
+            this.buttonInserirFormaPagamento.Text = "&Inserir";
+            this.buttonInserirFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonInserirFormaPagamento.Click += new System.EventHandler(this.buttonInserir_Click);
             // 
-            // buttonBuscar
+            // buttonBuscarFormaPagamento
             // 
-            this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.buttonBuscarFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(640, 96);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscar.TabIndex = 43;
-            this.buttonBuscar.Text = "&Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click_1);
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(640, 96);
+            this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
+            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarFormaPagamento.TabIndex = 43;
+            this.buttonBuscarFormaPagamento.Text = "&Buscar";
+            this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscar_Click_1);
             // 
             // buttonSelecionar
             // 
@@ -138,16 +138,16 @@
             this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
-            // buttonAlterar
+            // buttonAlterarFormaPagamento
             // 
-            this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(740, 96);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterar.TabIndex = 44;
-            this.buttonAlterar.Text = "&Alterar";
-            this.buttonAlterar.UseVisualStyleBackColor = true;
-            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
+            this.buttonAlterarFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(740, 96);
+            this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
+            this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(94, 29);
+            this.buttonAlterarFormaPagamento.TabIndex = 44;
+            this.buttonAlterarFormaPagamento.Text = "&Alterar";
+            this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // comboBoxBuscarPor
             // 
@@ -207,13 +207,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1069, 521);
             this.Controls.Add(this.textBoxBuscarPor);
-            this.Controls.Add(this.buttonExcluir);
-            this.Controls.Add(this.buttonInserir);
-            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonExcluirFormaPagamento);
+            this.Controls.Add(this.buttonInserirFormaPagamento);
+            this.Controls.Add(this.buttonBuscarFormaPagamento);
             this.Controls.Add(this.buttonSelecionar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonAlterar);
+            this.Controls.Add(this.buttonAlterarFormaPagamento);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.label2);
@@ -231,13 +231,13 @@
         private Label label2;
         private BindingSource bindingSourceFormaPagamento;
         private TextBox textBoxBuscarPor;
-        private Button buttonExcluir;
-        private Button buttonInserir;
-        private Button buttonBuscar;
+        private Button buttonExcluirFormaPagamento;
+        private Button buttonInserirFormaPagamento;
+        private Button buttonBuscarFormaPagamento;
         private Button buttonSelecionar;
         private Label label1;
         private Button buttonCancelar;
-        private Button buttonAlterar;
+        private Button buttonAlterarFormaPagamento;
         private ComboBox comboBoxBuscarPor;
         private DataGridView dataGridViewProduto;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;

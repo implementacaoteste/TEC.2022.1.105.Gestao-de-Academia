@@ -25,6 +25,9 @@ namespace UIGestaoAcademia
                 bindingSourceCadastrarDebito.EndEdit();
                 ControleDebito controleDebito = (ControleDebito)bindingSourceCadastrarDebito.Current;
 
+                //TODO: Apagar a linha abaixo
+                controleDebito.Cliente = new Cliente() { Id = 12, Nome = "Maria" };
+
                 if (id == 0)
                     new ControleDebitoBLL().Inserir(controleDebito);
                 else

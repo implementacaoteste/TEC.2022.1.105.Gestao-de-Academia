@@ -4,6 +4,15 @@
     {
         public int Id { get; set; }
         public int ClienteId { get; set; }
+        public string NomeCliente
+        {
+            get
+            {
+                if (Cliente != null)
+                    return Cliente.Nome;
+                throw new Exception("Para inserir um debito é nescessário ter um cliente cadastrado.");
+            }
+        }
         public int FormaPagamentoId { get; set; }
         public double ValorDebito { get; set; }
         public string NomeFormaPagamento
@@ -22,5 +31,6 @@
         public double Desconto { get; set; }
         public double Acrescimo { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }
