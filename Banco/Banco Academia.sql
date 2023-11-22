@@ -9,7 +9,7 @@ GO
 
 USE GestaoDeAcademia
 GO
-select * from Cliente
+
 IF OBJECT_ID('Usuario', 'U') IS NULL
 CREATE TABLE Usuario
 (
