@@ -195,6 +195,15 @@
             label10.TabIndex = 7;
             label10.Text = "País";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(9, 181);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(33, 20);
+            label11.TabIndex = 3;
+            label11.Text = "CPF";
+            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
@@ -228,7 +237,7 @@
             // 
             // foneTextBox
             // 
-            this.foneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Fone", true));
+            this.foneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Telefone", true));
             this.foneTextBox.Location = new System.Drawing.Point(198, 205);
             this.foneTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.foneTextBox.Name = "foneTextBox";
@@ -350,15 +359,6 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(212, 27);
             this.textBox8.TabIndex = 8;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(9, 181);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(33, 20);
-            label11.TabIndex = 3;
-            label11.Text = "CPF";
             // 
             // FormCadastroCliente
             // 
