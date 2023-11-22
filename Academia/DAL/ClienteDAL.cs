@@ -14,16 +14,25 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Cliente(Nome, CPF, RG, Email, Fone) 
-                                    VALUES(@Nome, @CPF, @RG, @Email, @Fone)";
+                cmd.CommandText = @"INSERT INTO Cliente(Nome, Aluno, CPF, Telefone, Email, DataCadastro, Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado) 
+                                    VALUES(@Nome, @Aluno, @CPF, @Telefone, @Email, @DataCadastro, @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa, @Pais, @Cidade, @Estado)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Nome", _cliente.Nome);
+                cmd.Parameters.AddWithValue("@Aluno", _cliente.Aluno);
                 cmd.Parameters.AddWithValue("@CPF", _cliente.CPF);
-                cmd.Parameters.AddWithValue("@RG", _cliente.RG);
+                cmd.Parameters.AddWithValue("@Telefone", _cliente.Telefone);
                 cmd.Parameters.AddWithValue("@Email", _cliente.Email);
-                cmd.Parameters.AddWithValue("@Fone", _cliente.Fone);
+                cmd.Parameters.AddWithValue("@DataCadastro", _cliente.DataCadastro);
+                cmd.Parameters.AddWithValue("@Rua", _cliente.Rua);
+                cmd.Parameters.AddWithValue("@CEP", _cliente.CEP);
+                cmd.Parameters.AddWithValue("@Bairro", _cliente.Bairro);
+                cmd.Parameters.AddWithValue("@Complemento", _cliente.Complemento);
+                cmd.Parameters.AddWithValue("@NumeroCasa", _cliente.NumeroCasa);
+                cmd.Parameters.AddWithValue("@Pais", _cliente.Pais);
+                cmd.Parameters.AddWithValue("@Cidade", _cliente.Cidade);
+                cmd.Parameters.AddWithValue("@Estado", _cliente.Estado);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -48,7 +57,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CPF, RG, Email, Fone FROM Cliente";
+                cmd.CommandText = @"SELECT Id, Nome, Aluno, CPF, Telefone, Email, DataCadastro, Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado FROM Cliente";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -59,10 +68,19 @@ namespace DAL
                         cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
+                        cliente.Aluno = rd["Aluno"].ToString();
                         cliente.CPF = rd["CPF"].ToString();
-                        cliente.RG = rd["RG"].ToString();
-                        cliente.Email = rd["email"].ToString();
-                        cliente.Fone = rd["Fone"].ToString();
+                        cliente.Telefone = rd["Telefone"].ToString();
+                        cliente.Email = rd["Email"].ToString();
+                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
+                        cliente.Rua = rd["Rua"].ToString();
+                        cliente.CEP = rd["CEP"].ToString();
+                        cliente.Bairro = rd["Bairro"].ToString();
+                        cliente.Complemento = rd["Complemento"].ToString();
+                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
+                        cliente.Pais = rd["Pais"].ToString();
+                        cliente.Cidade = rd["Cidade"].ToString();
+                        cliente.Estado = rd["Estado"].ToString();
 
                         clienteList.Add(cliente);
                     }
@@ -87,7 +105,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CPF, RG, Email, Fone FROM Cliente WHERE Nome LIKE @Nome";
+                cmd.CommandText = @"SELECT Id, Nome, Aluno, CPF, Telefone, Email, DataCadastro, Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado FROM Cliente WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
 
@@ -99,10 +117,19 @@ namespace DAL
                         cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
+                        cliente.Aluno = rd["Aluno"].ToString();
                         cliente.CPF = rd["CPF"].ToString();
-                        cliente.RG = rd["RG"].ToString();
-                        cliente.Email = rd["email"].ToString();
-                        cliente.Fone = rd["Fone"].ToString();
+                        cliente.Telefone = rd["Telefone"].ToString();
+                        cliente.Email = rd["Email"].ToString();
+                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
+                        cliente.Rua = rd["Rua"].ToString();
+                        cliente.CEP = rd["CEP"].ToString();
+                        cliente.Bairro = rd["Bairro"].ToString();
+                        cliente.Complemento = rd["Complemento"].ToString();
+                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
+                        cliente.Pais = rd["Pais"].ToString();
+                        cliente.Cidade = rd["Cidade"].ToString();
+                        cliente.Estado = rd["Estado"].ToString();
 
                         clienteList.Add(cliente);
                     }
@@ -126,7 +153,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CPF, RG, Email, Fone FROM Cliente WHERE Id = @Id";
+                cmd.CommandText = @"SELECT Id, Nome, Aluno, CPF, Telefone, Email, DataCadastro, Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado FROM Cliente WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
 
@@ -135,12 +162,22 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
+                        cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
+                        cliente.Aluno = rd["Aluno"].ToString();
                         cliente.CPF = rd["CPF"].ToString();
-                        cliente.RG = rd["RG"].ToString();
-                        cliente.Email = rd["email"].ToString();
-                        cliente.Fone = rd["Fone"].ToString();
+                        cliente.Telefone = rd["Telefone"].ToString();
+                        cliente.Email = rd["Email"].ToString();
+                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
+                        cliente.Rua = rd["Rua"].ToString();
+                        cliente.CEP = rd["CEP"].ToString();
+                        cliente.Bairro = rd["Bairro"].ToString();
+                        cliente.Complemento = rd["Complemento"].ToString();
+                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
+                        cliente.Pais = rd["Pais"].ToString();
+                        cliente.Cidade = rd["Cidade"].ToString();
+                        cliente.Estado = rd["Estado"].ToString();
                     }
                 }
                 return cliente;
@@ -162,7 +199,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CPF, RG, Email, Fone FROM Cliente WHERE CPF = @CPF";
+                cmd.CommandText = @"SELECT Id, Nome, Aluno, CPF, Telefone, Email, DataCadastro, Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado FROM Cliente WHERE CPF = @CPF";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CPF", _CPF);
 
@@ -171,12 +208,22 @@ namespace DAL
                 {
                     if (rd.Read())
                     {
+                        cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
+                        cliente.Aluno = rd["Aluno"].ToString();
                         cliente.CPF = rd["CPF"].ToString();
-                        cliente.RG = rd["RG"].ToString();
-                        cliente.Email = rd["email"].ToString();
-                        cliente.Fone = rd["Fone"].ToString();
+                        cliente.Telefone = rd["Telefone"].ToString();
+                        cliente.Email = rd["Email"].ToString();
+                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
+                        cliente.Rua = rd["Rua"].ToString();
+                        cliente.CEP = rd["CEP"].ToString();
+                        cliente.Bairro = rd["Bairro"].ToString();
+                        cliente.Complemento = rd["Complemento"].ToString();
+                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
+                        cliente.Pais = rd["Pais"].ToString();
+                        cliente.Cidade = rd["Cidade"].ToString();
+                        cliente.Estado = rd["Estado"].ToString();
                     }
                 }
                 return cliente;
@@ -198,20 +245,37 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE Cliente SET 
-                                        Nome = @Nome, 
-                                        CPF = @CPF, 
-                                        RG = @RG, 
-                                        Email = @Email, 
-                                        Fone = @Fone 
+                                    Nome = @Nome
+                                    Aluno = @Aluno
+                                    CPF = @CPF
+                                    Telefone = @Telefone
+                                    Email = @Email
+                                    DataCadastro = @DataCadastro
+                                    Rua = @Rua
+                                    CEP = @CEP
+                                    Bairro = @Bairro
+                                    Complemento = @Complemento
+                                    NumeroCasa = @NumeroCasa
+                                    Pais = @Pais
+                                    Cidade = @Cidade
+                                    Estado = @Estado
                                     WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Id", _cliente.Id);
                 cmd.Parameters.AddWithValue("@Nome", _cliente.Nome);
+                cmd.Parameters.AddWithValue("@Aluno", _cliente.Aluno);
                 cmd.Parameters.AddWithValue("@CPF", _cliente.CPF);
-                cmd.Parameters.AddWithValue("@RG", _cliente.RG);
+                cmd.Parameters.AddWithValue("@Telefone", _cliente.Telefone);
                 cmd.Parameters.AddWithValue("@Email", _cliente.Email);
-                cmd.Parameters.AddWithValue("@Fone", _cliente.Fone);
+                cmd.Parameters.AddWithValue("@DataCadastro", _cliente.DataCadastro);
+                cmd.Parameters.AddWithValue("@Rua", _cliente.Rua);
+                cmd.Parameters.AddWithValue("@CEP", _cliente.CEP);
+                cmd.Parameters.AddWithValue("@Bairro", _cliente.Bairro);
+                cmd.Parameters.AddWithValue("@Complemento", _cliente.Complemento);
+                cmd.Parameters.AddWithValue("@NumeroCasa", _cliente.NumeroCasa);
+                cmd.Parameters.AddWithValue("@Pais", _cliente.Pais);
+                cmd.Parameters.AddWithValue("@Cidade", _cliente.Cidade);
+                cmd.Parameters.AddWithValue("@Estado", _cliente.Estado);
 
                 cmd.Connection = cn;
                 cn.Open();

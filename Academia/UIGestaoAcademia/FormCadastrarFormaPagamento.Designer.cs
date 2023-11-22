@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
+            this.buttonSalvarCadastro = new System.Windows.Forms.Button();
             this.bindingSourceCadastrarFormaPagamento = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
@@ -59,16 +59,16 @@
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
-            // buttonSalvar
+            // buttonSalvarCadastro
             // 
-            this.buttonSalvar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonSalvar.Location = new System.Drawing.Point(633, 260);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 51;
-            this.buttonSalvar.Text = "&Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            this.buttonSalvarCadastro.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.buttonSalvarCadastro.Location = new System.Drawing.Point(633, 260);
+            this.buttonSalvarCadastro.Name = "buttonSalvarCadastro";
+            this.buttonSalvarCadastro.Size = new System.Drawing.Size(94, 29);
+            this.buttonSalvarCadastro.TabIndex = 51;
+            this.buttonSalvarCadastro.Text = "&Salvar";
+            this.buttonSalvarCadastro.UseVisualStyleBackColor = true;
+            this.buttonSalvarCadastro.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // bindingSourceCadastrarFormaPagamento
             // 
@@ -99,7 +99,7 @@
             this.ClientSize = new System.Drawing.Size(837, 297);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.buttonSalvarCadastro);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDescricao);
             this.Name = "FormCadastrarFormaPagamento";
@@ -113,7 +113,7 @@
         #endregion
         private Label label2;
         private Button buttonCancelar;
-        private Button buttonSalvar;
+        private Button buttonSalvarCadastro;
         private BindingSource bindingSourceCadastrarFormaPagamento;
         private Label label3;
         private TextBox textBoxDescricao;
