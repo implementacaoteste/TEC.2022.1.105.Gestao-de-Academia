@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,14 +18,13 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Endereco, Descricao,
+                cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Descricao,
                                     Rua, CEP, Bairro, Complemento, NumeroCasa) 
-                                    VALUES (@Nome, @CpfCnpj, @Email, @Telefone, @Endereco, @Descricao,
+                                    VALUES (@Nome, @CpfCnpj, @Email, @Telefone, @Descricao,
                                     @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
-
-                PreencherObjeto(_fornecedor, cmd);
+                PreencherParametros(_fornecedor, cmd, Operacao.Inserir);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -39,23 +40,7 @@ namespace DAL
                 cn.Close();
             }
         }
-
-        private static void PreencherObjeto(Fornecedor _fornecedor, SqlCommand cmd)
-        {
-            cmd.Parameters.AddWithValue("@Nome", _fornecedor.Nome);
-            cmd.Parameters.AddWithValue("@CpfCnpj", _fornecedor.CpfCnpj);
-            cmd.Parameters.AddWithValue("@Email", _fornecedor.Email);
-            cmd.Parameters.AddWithValue("@Telefone", _fornecedor.Telefone);
-            cmd.Parameters.AddWithValue("@Descricao", _fornecedor.Descricao);
-            cmd.Parameters.AddWithValue("@Rua", _fornecedor.Rua);
-            cmd.Parameters.AddWithValue("@CEP", _fornecedor.CEP);
-            cmd.Parameters.AddWithValue("@Bairro", _fornecedor.Bairro);
-            cmd.Parameters.AddWithValue("@Complemento", _fornecedor.Complemento);
-            cmd.Parameters.AddWithValue("@NumeroCasa", _fornecedor.NumeroCasa);
-            cmd.Parameters.AddWithValue("@Pais", _fornecedor.Pais);
-            cmd.Parameters.AddWithValue("@Cidade", _fornecedor.Cidade);
-            cmd.Parameters.AddWithValue("@Estado", _fornecedor.Estado);
-        }
+       
 
         public List<Fornecedor> BuscarTodos()
         {
@@ -66,7 +51,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Endereco, Descricao";
+                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -75,7 +61,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, cmd);
+                        PreencherObjeto(fornecedor, rd);
 
                         fornecedorList.Add(fornecedor);
                     }
@@ -100,7 +86,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Endereco, Descricao 
+                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa 
                                     FROM Cliente WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
@@ -111,7 +98,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, cmd);
+                        PreencherObjeto(fornecedor, rd);
 
                         fornecedorList.Add(fornecedor);
                     }
@@ -135,7 +122,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Endereco, Descricao 
+                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa 
                                     FROM Fornecedor WHERE CpfCnpj = @CpfCnpj";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CpfCnpj", _CpfCnpj);
@@ -146,7 +134,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, cmd);
+                        PreencherObjeto(fornecedor, rd);
                     }
                 }
                 return fornecedor;
@@ -172,12 +160,18 @@ namespace DAL
                                         CPF = @CpfCnpj, 
                                         Email = @Email, 
                                         Telefone = @Telefone 
-                                        Endereco = @Endereco
+                                        Rua= @Rua
                                         Descricao = @Descricao
+                                        CEP = @CEP
+                                        Bairro = @Bairro
+                                        Cidade = @Cidade
+                                        Estado = @Estado
+                                        NumeroCasa = @NumeroCasa
+                                        Pais = @Pais
                                         WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                PreencherObjeto(_fornecedor, cmd);
+                PreencherParametros(_fornecedor, cmd, Operacao.Alterar);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -203,7 +197,7 @@ namespace DAL
                 cmd.CommandText = @"DELETE FROM Fornecedor WHERE id = @id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@Id", _id);
+                PreencherParametros(cmd, _id);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -227,7 +221,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Endereco, Descricao 
+                cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa 
                                     FROM Fornecedor WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -238,20 +233,59 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, cmd);
+                        PreencherObjeto(fornecedor, rd);
                     }
                 }
                 return fornecedor;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar o produto no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar o Fornecedor no banco de dados.", ex);
             }
             finally
             {
                 cn.Close();
             }
         }
+        enum Operacao
+        {
+            Inserir,
+            Alterar,
+            Excluir
+        }
+        private static void PreencherParametros(SqlCommand cmd, int _id)
+        {
+            PreencherParametros(new Fornecedor() { Id = _id }, cmd, Operacao.Excluir);
+        }
+        private static void PreencherParametros(Fornecedor _fornecedor, SqlCommand cmd, Operacao _operacao)
+        {
+            if (_operacao != Operacao.Excluir)
+            {
+                cmd.Parameters.AddWithValue("@Nome", _fornecedor.Nome);
+                cmd.Parameters.AddWithValue("@CpfCnpj", _fornecedor.CpfCnpj);
+                cmd.Parameters.AddWithValue("@Email", _fornecedor.Email);
+                cmd.Parameters.AddWithValue("@Telefone", _fornecedor.Telefone);
+                cmd.Parameters.AddWithValue("@Descricao", _fornecedor.Descricao);
+                cmd.Parameters.AddWithValue("@Rua", _fornecedor.Rua);
+                cmd.Parameters.AddWithValue("@CEP", _fornecedor.CEP);
+                cmd.Parameters.AddWithValue("@Bairro", _fornecedor.Bairro);
+                cmd.Parameters.AddWithValue("@Complemento", _fornecedor.Complemento);
+                cmd.Parameters.AddWithValue("@NumeroCasa", _fornecedor.NumeroCasa);
+                cmd.Parameters.AddWithValue("@Pais", _fornecedor.Pais);
+                cmd.Parameters.AddWithValue("@Cidade", _fornecedor.Cidade);
+                cmd.Parameters.AddWithValue("@Estado", _fornecedor.Estado);
+            }
+            if (_operacao != Operacao.Inserir)
+                cmd.Parameters.AddWithValue("@Id", _fornecedor.Id);
+
+            
+        }
+
+        private static void PreencherObjeto(Fornecedor _fornecedor, SqlDataReader _rd)
+        {
+
+        }
+
     }
 }
 
