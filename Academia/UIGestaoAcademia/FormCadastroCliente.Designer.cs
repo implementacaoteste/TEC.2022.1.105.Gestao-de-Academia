@@ -195,6 +195,15 @@
             label10.TabIndex = 7;
             label10.Text = "País";
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new System.Drawing.Point(9, 181);
+            label11.Name = "label11";
+            label11.Size = new System.Drawing.Size(33, 20);
+            label11.TabIndex = 3;
+            label11.Text = "CPF";
+            // 
             // nomeTextBox
             // 
             this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
@@ -351,15 +360,6 @@
             this.textBox8.Size = new System.Drawing.Size(212, 27);
             this.textBox8.TabIndex = 8;
             // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(9, 181);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(33, 20);
-            label11.TabIndex = 3;
-            label11.Text = "CPF";
-            // 
             // FormCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -398,7 +398,7 @@
             this.Controls.Add(this.nomeTextBox);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCadastroCliente";
-            this.Text = "FormCadastroCliente";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);

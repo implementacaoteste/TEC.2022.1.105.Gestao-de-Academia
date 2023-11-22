@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,77 +41,59 @@
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteDataGridView
             // 
+            this.clienteDataGridView.AllowUserToAddRows = false;
+            this.clienteDataGridView.AllowUserToDeleteRows = false;
+            this.clienteDataGridView.AllowUserToOrderColumns = true;
             this.clienteDataGridView.AutoGenerateColumns = false;
             this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
+            this.Aluno,
+            this.Telefone,
             this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.clienteDataGridView.DataSource = this.clienteBindingSource;
+            this.CEP,
+            this.Rua,
+            this.NumeroCasa,
+            this.Complemento,
+            this.Bairro,
+            this.Cidade,
+            this.Estado,
+            this.Pais,
+            this.DataCadastro});
+            this.clienteDataGridView.DataSource = this.clienteBindingSource1;
             this.clienteDataGridView.Location = new System.Drawing.Point(12, 125);
             this.clienteDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.clienteDataGridView.Name = "clienteDataGridView";
+            this.clienteDataGridView.ReadOnly = true;
             this.clienteDataGridView.RowHeadersWidth = 51;
             this.clienteDataGridView.RowTemplate.Height = 24;
-            this.clienteDataGridView.Size = new System.Drawing.Size(824, 415);
+            this.clienteDataGridView.Size = new System.Drawing.Size(1754, 415);
             this.clienteDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CPF";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CPF";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "RG";
-            this.dataGridViewTextBoxColumn4.HeaderText = "RG";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Fone";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Fone";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // clienteBindingSource
             // 
@@ -129,7 +105,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(848, 61);
+            this.label1.Size = new System.Drawing.Size(1766, 61);
             this.label1.TabIndex = 2;
             this.label1.Text = "Consulta cliente";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -164,7 +140,7 @@
             // 
             // buttonSelecionar
             // 
-            this.buttonSelecionar.Location = new System.Drawing.Point(664, 548);
+            this.buttonSelecionar.Location = new System.Drawing.Point(1589, 561);
             this.buttonSelecionar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(91, 29);
@@ -176,7 +152,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancelar.Location = new System.Drawing.Point(761, 548);
+            this.buttonCancelar.Location = new System.Drawing.Point(1686, 561);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 29);
@@ -231,11 +207,150 @@
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(144, 28);
             this.comboBoxBuscarPor.TabIndex = 6;
             // 
+            // clienteBindingSource1
+            // 
+            this.clienteBindingSource1.DataSource = typeof(Models.Cliente);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CPF";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CPF";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // Aluno
+            // 
+            this.Aluno.DataPropertyName = "Aluno";
+            this.Aluno.HeaderText = "Aluno";
+            this.Aluno.MinimumWidth = 6;
+            this.Aluno.Name = "Aluno";
+            this.Aluno.ReadOnly = true;
+            this.Aluno.Width = 125;
+            // 
+            // Telefone
+            // 
+            this.Telefone.DataPropertyName = "Telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.MinimumWidth = 6;
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // CEP
+            // 
+            this.CEP.DataPropertyName = "CEP";
+            this.CEP.HeaderText = "CEP";
+            this.CEP.MinimumWidth = 6;
+            this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
+            this.CEP.Width = 125;
+            // 
+            // Rua
+            // 
+            this.Rua.DataPropertyName = "Rua";
+            this.Rua.HeaderText = "Rua";
+            this.Rua.MinimumWidth = 6;
+            this.Rua.Name = "Rua";
+            this.Rua.ReadOnly = true;
+            this.Rua.Width = 125;
+            // 
+            // NumeroCasa
+            // 
+            this.NumeroCasa.DataPropertyName = "NumeroCasa";
+            this.NumeroCasa.HeaderText = "NumeroCasa";
+            this.NumeroCasa.MinimumWidth = 6;
+            this.NumeroCasa.Name = "NumeroCasa";
+            this.NumeroCasa.ReadOnly = true;
+            this.NumeroCasa.Width = 125;
+            // 
+            // Complemento
+            // 
+            this.Complemento.DataPropertyName = "Complemento";
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.MinimumWidth = 6;
+            this.Complemento.Name = "Complemento";
+            this.Complemento.ReadOnly = true;
+            this.Complemento.Width = 125;
+            // 
+            // Bairro
+            // 
+            this.Bairro.DataPropertyName = "Bairro";
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.MinimumWidth = 6;
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            this.Bairro.Width = 125;
+            // 
+            // Cidade
+            // 
+            this.Cidade.DataPropertyName = "Cidade";
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.MinimumWidth = 6;
+            this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
+            this.Cidade.Width = 125;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 125;
+            // 
+            // Pais
+            // 
+            this.Pais.DataPropertyName = "Pais";
+            this.Pais.HeaderText = "Pais";
+            this.Pais.MinimumWidth = 6;
+            this.Pais.Name = "Pais";
+            this.Pais.ReadOnly = true;
+            this.Pais.Width = 125;
+            // 
+            // DataCadastro
+            // 
+            this.DataCadastro.DataPropertyName = "DataCadastro";
+            this.DataCadastro.HeaderText = "DataCadastro";
+            this.DataCadastro.MinimumWidth = 6;
+            this.DataCadastro.Name = "DataCadastro";
+            this.DataCadastro.ReadOnly = true;
+            this.DataCadastro.Width = 125;
+            // 
             // FormConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 588);
+            this.ClientSize = new System.Drawing.Size(1766, 588);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSelecionar);
@@ -253,6 +368,7 @@
             this.Load += new System.EventHandler(this.FormConsultaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,11 +378,7 @@
 
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.DataGridView clienteDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -278,5 +390,21 @@
         private System.Windows.Forms.Button buttonInserir;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.ComboBox comboBoxBuscarPor;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Aluno;
+        private DataGridViewTextBoxColumn Telefone;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn CEP;
+        private DataGridViewTextBoxColumn Rua;
+        private DataGridViewTextBoxColumn NumeroCasa;
+        private DataGridViewTextBoxColumn Complemento;
+        private DataGridViewTextBoxColumn Bairro;
+        private DataGridViewTextBoxColumn Cidade;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Pais;
+        private DataGridViewTextBoxColumn DataCadastro;
+        private BindingSource clienteBindingSource1;
     }
 }
