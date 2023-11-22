@@ -12,6 +12,11 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             id = _id;
+
+            if (id == 0)
+                clienteBindingSource.AddNew();
+            else
+                clienteBindingSource.DataSource = new ClienteBLL().BuscarPorId(_id);
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {

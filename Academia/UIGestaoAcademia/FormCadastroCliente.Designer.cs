@@ -228,7 +228,7 @@
             // 
             // rGTextBox
             // 
-            this.rGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "RG", true));
+            this.rGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "DataCadastro", true));
             this.rGTextBox.Location = new System.Drawing.Point(562, 138);
             this.rGTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rGTextBox.Name = "rGTextBox";
@@ -237,7 +237,7 @@
             // 
             // foneTextBox
             // 
-            this.foneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Fone", true));
+            this.foneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Telefone", true));
             this.foneTextBox.Location = new System.Drawing.Point(198, 205);
             this.foneTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.foneTextBox.Name = "foneTextBox";
@@ -298,6 +298,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Rua", true));
             this.textBox1.Location = new System.Drawing.Point(175, 275);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
@@ -306,6 +307,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "CEP", true));
             this.textBox2.Location = new System.Drawing.Point(15, 275);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
@@ -314,6 +316,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Bairro", true));
             this.textBox3.Location = new System.Drawing.Point(417, 341);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
@@ -322,6 +325,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NumeroCasa", true));
             this.textBox4.Location = new System.Drawing.Point(583, 275);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
@@ -330,6 +334,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Complemento", true));
             this.textBox5.Location = new System.Drawing.Point(15, 341);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Name = "textBox5";
@@ -338,6 +343,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Cidade", true));
             this.textBox6.Location = new System.Drawing.Point(15, 418);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox6.Name = "textBox6";
@@ -346,6 +352,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Estado", true));
             this.textBox7.Location = new System.Drawing.Point(242, 418);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox7.Name = "textBox7";
@@ -354,6 +361,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Pais", true));
             this.textBox8.Location = new System.Drawing.Point(472, 418);
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox8.Name = "textBox8";
