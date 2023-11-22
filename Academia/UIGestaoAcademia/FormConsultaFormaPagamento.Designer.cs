@@ -115,6 +115,7 @@
             this.buttonSelecionar.Text = "Se&lecionar";
             this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click_1);
             // 
             // label1
             // 
@@ -153,10 +154,9 @@
             this.comboBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxBuscarPor.FormattingEnabled = true;
             this.comboBoxBuscarPor.Items.AddRange(new object[] {
-            "Correntes",
-            "Pagos",
-            "Vencidos",
-            "Todos"});
+            "Todos",
+            "Nome",
+            "Id"});
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(28, 95);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
@@ -219,6 +219,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FormConsultaFormaPagamento";
             this.Text = "FormConsultaFormPagamento";
+            this.Load += new System.EventHandler(this.FormConsultaFormaPagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFormaPagamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
             this.ResumeLayout(false);

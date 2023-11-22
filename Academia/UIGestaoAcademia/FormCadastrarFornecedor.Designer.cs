@@ -45,6 +45,17 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +65,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(800, 76);
+            this.label2.Size = new System.Drawing.Size(864, 76);
             this.label2.TabIndex = 31;
             this.label2.Text = "Cadastrar Fornecedor";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,13 +89,13 @@
             this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Email", true));
             this.textBoxEmail.Location = new System.Drawing.Point(594, 122);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(191, 27);
+            this.textBoxEmail.Size = new System.Drawing.Size(258, 27);
             this.textBoxEmail.TabIndex = 27;
             // 
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(694, 239);
+            this.buttonCancelar.Location = new System.Drawing.Point(758, 401);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 30;
@@ -94,7 +105,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSalvar.Location = new System.Drawing.Point(592, 239);
+            this.buttonSalvar.Location = new System.Drawing.Point(656, 401);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 29;
@@ -105,18 +116,19 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(212, 160);
+            this.label5.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.label5.Font = new System.Drawing.Font("Bell MT", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(13, 164);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.Size = new System.Drawing.Size(135, 33);
             this.label5.TabIndex = 35;
-            this.label5.Text = "Endereço";
+            this.label5.Text = "Endereço:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(13, 160);
+            this.label4.Location = new System.Drawing.Point(448, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 20);
             this.label4.TabIndex = 34;
@@ -145,16 +157,16 @@
             // 
             // textBoxEndereco
             // 
-            this.textBoxEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Endereco", true));
-            this.textBoxEndereco.Location = new System.Drawing.Point(212, 182);
+            this.textBoxEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Rua", true));
+            this.textBoxEndereco.Location = new System.Drawing.Point(12, 228);
             this.textBoxEndereco.Name = "textBoxEndereco";
-            this.textBoxEndereco.Size = new System.Drawing.Size(186, 27);
+            this.textBoxEndereco.Size = new System.Drawing.Size(193, 27);
             this.textBoxEndereco.TabIndex = 37;
             // 
             // textBoxTelefone
             // 
             this.textBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Telefone", true));
-            this.textBoxTelefone.Location = new System.Drawing.Point(13, 182);
+            this.textBoxTelefone.Location = new System.Drawing.Point(439, 229);
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(193, 27);
             this.textBoxTelefone.TabIndex = 28;
@@ -162,7 +174,7 @@
             // textBoxCpfCnpj
             // 
             this.textBoxCpfCnpj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "CpfCnpj", true));
-            this.textBoxCpfCnpj.Location = new System.Drawing.Point(404, 122);
+            this.textBoxCpfCnpj.Location = new System.Drawing.Point(408, 123);
             this.textBoxCpfCnpj.Name = "textBoxCpfCnpj";
             this.textBoxCpfCnpj.Size = new System.Drawing.Size(184, 27);
             this.textBoxCpfCnpj.TabIndex = 26;
@@ -179,9 +191,9 @@
             // textBoxDescricao
             // 
             this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Descricao", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(408, 182);
+            this.textBoxDescricao.Location = new System.Drawing.Point(13, 356);
             this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(386, 27);
+            this.textBoxDescricao.Size = new System.Drawing.Size(839, 27);
             this.textBoxDescricao.TabIndex = 25;
             this.textBoxDescricao.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
@@ -189,35 +201,149 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(408, 159);
+            this.label7.Location = new System.Drawing.Point(13, 333);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 20);
             this.label7.TabIndex = 32;
             this.label7.Text = "Descrição";
             this.label7.Click += new System.EventHandler(this.label1_Click);
             // 
-            // FormFornecedor
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(12, 205);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 20);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Rua";
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSourceCadastrarFornecedor, "CEP", true));
+            this.textBox1.Location = new System.Drawing.Point(227, 228);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(193, 27);
+            this.textBox1.TabIndex = 37;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(227, 205);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 20);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "CEP";
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Bairro", true));
+            this.textBox2.Location = new System.Drawing.Point(12, 295);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(193, 27);
+            this.textBox2.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(12, 273);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 20);
+            this.label10.TabIndex = 34;
+            this.label10.Text = "Bairro";
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Cidade", true));
+            this.textBox3.Location = new System.Drawing.Point(227, 295);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(193, 27);
+            this.textBox3.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(227, 273);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 20);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Cidade";
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Estado", true));
+            this.textBox4.Location = new System.Drawing.Point(656, 229);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(196, 27);
+            this.textBox4.TabIndex = 28;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(656, 206);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 20);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Estado";
+            // 
+            // textBox5
+            // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Complemento", true));
+            this.textBox5.Location = new System.Drawing.Point(439, 295);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(413, 27);
+            this.textBox5.TabIndex = 25;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(439, 273);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 20);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Complemento";
+            this.label13.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // FormCadastrarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.CancelButton = this.buttonCancelar;
-            this.ClientSize = new System.Drawing.Size(800, 280);
+            this.ClientSize = new System.Drawing.Size(864, 442);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxEndereco);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBoxTelefone);
             this.Controls.Add(this.textBoxCpfCnpj);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBoxDescricao);
             this.Controls.Add(this.textBoxNome);
-            this.Name = "FormFornecedor";
+            this.Name = "FormCadastrarFornecedor";
             this.Text = "FormCadastrarFornecedor";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarFornecedor)).EndInit();
             this.ResumeLayout(false);
@@ -243,5 +369,16 @@
         private TextBox textBoxNome;
         private TextBox textBoxDescricao;
         private Label label7;
+        private Label label8;
+        private TextBox textBox1;
+        private Label label9;
+        private TextBox textBox2;
+        private Label label10;
+        private TextBox textBox3;
+        private Label label11;
+        private TextBox textBox4;
+        private Label label12;
+        private TextBox textBox5;
+        private Label label13;
     }
 }
