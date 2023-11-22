@@ -9,7 +9,7 @@ GO
 
 USE GestaoDeAcademia
 GO
-
+select * from Cliente
 IF OBJECT_ID('Usuario', 'U') IS NULL
 CREATE TABLE Usuario
 (
@@ -235,6 +235,12 @@ FOREIGN KEY (FormaPagamentoId)
 REFERENCES FormaPagamento(Id);
 GO
 
+ALTER TABLE ControleDebito
+ADD CONSTRAINT FK_ControleDebito_Cliente
+FOREIGN KEY (ClienteId)
+REFERENCES Cliente(Id);
+GO
+
 ALTER TABLE CompraProduto
 ADD CONSTRAINT FK_Compra_FormaPagamento
 FOREIGN KEY (FormaPagamentoId)
@@ -274,12 +280,6 @@ ALTER TABLE ItensVenda
 ADD CONSTRAINT FK_ItensVenda_Produto
 FOREIGN KEY (ProdutoId)
 REFERENCES Produto(Id);
-GO
-
-ALTER TABLE ControleDebito
-ADD CONSTRAINT FK_ControleDebito_Cliente
-FOREIGN KEY (ClienteId)
-REFERENCES Cliente(Id);
 GO
 
 ALTER TABLE PagamentoAluno

@@ -51,15 +51,15 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito( ClienteId, ValorDebito, FormaPagamentoId, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @ValorDebito, @FormaPagamentoId, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito(ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @ValorDebito, @FormaPagamentoId, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
-                        cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamento.Id);
+                        cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
                         cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
                         cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
                         cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
