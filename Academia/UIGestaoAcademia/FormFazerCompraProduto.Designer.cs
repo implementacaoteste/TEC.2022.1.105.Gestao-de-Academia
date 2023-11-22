@@ -39,6 +39,7 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,11 +133,22 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Valor Total";
             // 
+            // buttonBuscarFormaPagamento
+            // 
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(202, 165);
+            this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
+            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(30, 29);
+            this.buttonBuscarFormaPagamento.TabIndex = 39;
+            this.buttonBuscarFormaPagamento.Text = "...";
+            this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
+            // 
             // FormFazerCompraProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 330);
+            this.Controls.Add(this.buttonBuscarFormaPagamento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
@@ -166,5 +178,6 @@
         private TextBox textBoxNome;
         private TextBox textBox2;
         private Label label4;
+        private Button buttonBuscarFormaPagamento;
     }
 }

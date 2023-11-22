@@ -19,7 +19,7 @@ namespace UIGestaoAcademia
 
                         if (frm.Cliente != null)
                         {
-                            ((Vendas)itensVendaBindingSource.Current).Cliente = frm.Cliente;
+                            ((Vendas)bindingSourceVendas.Current).Cliente = frm.Cliente;
                             textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
                         }
                     }
@@ -40,7 +40,7 @@ namespace UIGestaoAcademia
 
                     if (frm.Funcionario != null)
                     {
-                        ((Vendas)itensVendaBindingSource.Current).Funcionario = frm.Funcionario;
+                        ((Vendas)bindingSourceVendas.Current).Funcionario = frm.Funcionario;
                         textBoxBuscarFuncionario.Text = frm.Funcionario.Nome;
                     }
                 }
@@ -52,7 +52,10 @@ namespace UIGestaoAcademia
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
-
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }
