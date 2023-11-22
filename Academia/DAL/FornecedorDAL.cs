@@ -60,9 +60,7 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, rd);
-
+                        fornecedor = PreencherObjeto(rd);
                         fornecedorList.Add(fornecedor);
                     }
                 }
@@ -77,6 +75,9 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        
+
         public List<Fornecedor> BuscarPorNome(string _nome)
         {
             List<Fornecedor> fornecedorList = new List<Fornecedor>();
@@ -98,7 +99,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, rd);
+                        PreencherObjeto(rd);
 
                         fornecedorList.Add(fornecedor);
                     }
@@ -134,7 +135,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, rd);
+                        PreencherObjeto(rd);
                     }
                 }
                 return fornecedor;
@@ -233,7 +234,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(fornecedor, rd);
+                        PreencherObjeto(rd);
                     }
                 }
                 return fornecedor;
@@ -281,9 +282,24 @@ namespace DAL
             
         }
 
-        private static void PreencherObjeto(Fornecedor _fornecedor, SqlDataReader _rd)
+        public static Fornecedor PreencherObjeto(SqlDataReader rd)
         {
-
+            Fornecedor fornecedor = new Fornecedor();
+            fornecedor.Id = Convert.ToInt32(rd["Id"]);
+            fornecedor.Nome = rd["Nome"].ToString();
+            fornecedor.CpfCnpj = rd["CpfCnpj"].ToString();
+            fornecedor.Email = rd["Email"].ToString();
+            fornecedor.Telefone = rd["Telefone"].ToString();
+            fornecedor.Descricao = rd["Descricao"].ToString();
+            fornecedor.Rua = rd["Rua"].ToString();
+            fornecedor.CEP = rd["CEP"].ToString();
+            fornecedor.Bairro = rd["Bairro"].ToString();
+            fornecedor.Complemento = rd["Complemento"].ToString();
+            fornecedor.NumeroCasa = Convert.ToInt32(rd["NumeroCasa"]);
+            fornecedor.Pais = rd["Pais"].ToString();
+            fornecedor.Cidade = rd["Cidade"].ToString();
+            fornecedor.Estado = rd["Estado"].ToString();
+            return fornecedor;
         }
 
     }
