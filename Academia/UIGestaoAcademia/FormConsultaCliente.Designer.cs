@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
-            this.clienteBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,8 +58,8 @@
             this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // clienteDataGridView
@@ -94,6 +94,10 @@
             this.clienteDataGridView.RowTemplate.Height = 24;
             this.clienteDataGridView.Size = new System.Drawing.Size(1754, 415);
             this.clienteDataGridView.TabIndex = 1;
+            // 
+            // clienteBindingSource1
+            // 
+            this.clienteBindingSource1.DataSource = typeof(Models.Cliente);
             // 
             // clienteBindingSource
             // 
@@ -207,10 +211,6 @@
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(144, 28);
             this.comboBoxBuscarPor.TabIndex = 6;
             // 
-            // clienteBindingSource1
-            // 
-            this.clienteBindingSource1.DataSource = typeof(Models.Cliente);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -227,7 +227,7 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
+            this.dataGridViewTextBoxColumn2.Width = 350;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -236,7 +236,7 @@
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
+            this.dataGridViewTextBoxColumn3.Width = 200;
             // 
             // Aluno
             // 
@@ -245,7 +245,6 @@
             this.Aluno.MinimumWidth = 6;
             this.Aluno.Name = "Aluno";
             this.Aluno.ReadOnly = true;
-            this.Aluno.Width = 125;
             // 
             // Telefone
             // 
@@ -254,7 +253,7 @@
             this.Telefone.MinimumWidth = 6;
             this.Telefone.Name = "Telefone";
             this.Telefone.ReadOnly = true;
-            this.Telefone.Width = 125;
+            this.Telefone.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -263,7 +262,7 @@
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 125;
+            this.dataGridViewTextBoxColumn5.Width = 250;
             // 
             // CEP
             // 
@@ -281,7 +280,7 @@
             this.Rua.MinimumWidth = 6;
             this.Rua.Name = "Rua";
             this.Rua.ReadOnly = true;
-            this.Rua.Width = 125;
+            this.Rua.Width = 300;
             // 
             // NumeroCasa
             // 
@@ -290,7 +289,6 @@
             this.NumeroCasa.MinimumWidth = 6;
             this.NumeroCasa.Name = "NumeroCasa";
             this.NumeroCasa.ReadOnly = true;
-            this.NumeroCasa.Width = 125;
             // 
             // Complemento
             // 
@@ -299,7 +297,7 @@
             this.Complemento.MinimumWidth = 6;
             this.Complemento.Name = "Complemento";
             this.Complemento.ReadOnly = true;
-            this.Complemento.Width = 125;
+            this.Complemento.Width = 200;
             // 
             // Bairro
             // 
@@ -308,7 +306,7 @@
             this.Bairro.MinimumWidth = 6;
             this.Bairro.Name = "Bairro";
             this.Bairro.ReadOnly = true;
-            this.Bairro.Width = 125;
+            this.Bairro.Width = 200;
             // 
             // Cidade
             // 
@@ -317,7 +315,7 @@
             this.Cidade.MinimumWidth = 6;
             this.Cidade.Name = "Cidade";
             this.Cidade.ReadOnly = true;
-            this.Cidade.Width = 125;
+            this.Cidade.Width = 200;
             // 
             // Estado
             // 
@@ -326,7 +324,7 @@
             this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
-            this.Estado.Width = 125;
+            this.Estado.Width = 200;
             // 
             // Pais
             // 
@@ -335,7 +333,7 @@
             this.Pais.MinimumWidth = 6;
             this.Pais.Name = "Pais";
             this.Pais.ReadOnly = true;
-            this.Pais.Width = 125;
+            this.Pais.Width = 200;
             // 
             // DataCadastro
             // 
@@ -367,8 +365,8 @@
             this.Text = "FormConsultaCliente";
             this.Load += new System.EventHandler(this.FormConsultaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,6 +388,7 @@
         private System.Windows.Forms.Button buttonInserir;
         private System.Windows.Forms.Button buttonExcluir;
         private System.Windows.Forms.ComboBox comboBoxBuscarPor;
+        private BindingSource clienteBindingSource1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -405,6 +404,5 @@
         private DataGridViewTextBoxColumn Estado;
         private DataGridViewTextBoxColumn Pais;
         private DataGridViewTextBoxColumn DataCadastro;
-        private BindingSource clienteBindingSource1;
     }
 }
