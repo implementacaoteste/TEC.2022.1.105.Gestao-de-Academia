@@ -57,5 +57,10 @@ namespace UIGestaoAcademia
             bindingSourceProduto.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
+
+        private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
