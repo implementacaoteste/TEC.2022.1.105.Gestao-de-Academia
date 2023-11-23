@@ -60,6 +60,7 @@
             this.textBoxBuscarFuncionario = new System.Windows.Forms.TextBox();
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
             this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
@@ -319,7 +320,7 @@
             // 
             // buttonFormaDePagamento
             // 
-            this.buttonFormaDePagamento.Location = new System.Drawing.Point(170, 659);
+            this.buttonFormaDePagamento.Location = new System.Drawing.Point(303, 656);
             this.buttonFormaDePagamento.Name = "buttonFormaDePagamento";
             this.buttonFormaDePagamento.Size = new System.Drawing.Size(33, 29);
             this.buttonFormaDePagamento.TabIndex = 16;
@@ -331,11 +332,19 @@
             // 
             this.bindingSourceVendas.DataSource = typeof(Models.Vendas);
             // 
+            // textBoxFormaPagamento
+            // 
+            this.textBoxFormaPagamento.Location = new System.Drawing.Point(172, 656);
+            this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
+            this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
+            this.textBoxFormaPagamento.TabIndex = 17;
+            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 867);
+            this.Controls.Add(this.textBoxFormaPagamento);
             this.Controls.Add(this.buttonFormaDePagamento);
             this.Controls.Add(this.textBoxBuscarFuncionario);
             this.Controls.Add(this.buttonBuscarFuncionario);
@@ -405,5 +414,6 @@
         private TextBox textBoxBuscarFuncionario;
         private Button buttonFormaDePagamento;
         private BindingSource bindingSourceVendas;
+        private TextBox textBoxFormaPagamento;
     }
 }

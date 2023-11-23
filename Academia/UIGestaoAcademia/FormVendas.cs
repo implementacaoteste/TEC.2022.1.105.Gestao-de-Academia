@@ -56,6 +56,12 @@ namespace UIGestaoAcademia
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
+
+                if (frm.FormaPagamento != null)
+                {
+
+                    textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                }
             }
         }
 
