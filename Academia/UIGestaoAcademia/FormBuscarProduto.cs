@@ -5,6 +5,8 @@ namespace UIGestaoAcademia
 {
     public partial class FormBuscarProduto : Form
     {
+        public Produto Produto { get; private set; }
+
         public FormBuscarProduto()
         {
             InitializeComponent();
@@ -58,14 +60,21 @@ namespace UIGestaoAcademia
             MessageBox.Show("Registro excluido com sucesso!");
         }
 
-        private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonSelecionar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (bindingSourceProduto.Count == 0)
+                    throw new Exception("Não existe registro para ser selecionado!");
 
-        }
+                this.Produto = (Produto)bindingSourceProduto.Current;
 
-        private void textBoxBuscarPor_TextChanged(object sender, EventArgs e)
-        {
-
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

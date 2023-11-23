@@ -9,6 +9,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             bindingSourceVendas.AddNew();
+            dataGridViewVendas.DataSource = bindingSourceVendas;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -30,7 +31,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonBuscarFuncionario_Click(object sender, EventArgs e)
         {
             try
@@ -64,7 +64,13 @@ namespace UIGestaoAcademia
                 }
             }
         }
+        private void buttonAdicionarProduto_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarProduto frm = new FormBuscarProduto()) 
+            {
+                frm.ShowDialog();
 
-     
+            }
+        }
     }
 }
