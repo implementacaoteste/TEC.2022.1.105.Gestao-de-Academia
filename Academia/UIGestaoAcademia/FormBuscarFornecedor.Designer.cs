@@ -41,10 +41,6 @@
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
-            this.fornecedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fornecedorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpfCnpjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +55,11 @@
             this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BindingSourceBuscarFornecedor = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceBuscarFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSelecionar
@@ -99,6 +97,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancelar.Location = new System.Drawing.Point(986, 519);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 31);
@@ -106,7 +105,6 @@
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
-            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonExcluir
             // 
@@ -179,6 +177,9 @@
             this.dataGridViewProduto.AllowUserToAddRows = false;
             this.dataGridViewProduto.AllowUserToDeleteRows = false;
             this.dataGridViewProduto.AllowUserToOrderColumns = true;
+            this.dataGridViewProduto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProduto.AutoGenerateColumns = false;
             this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -196,7 +197,7 @@
             this.paisDataGridViewTextBoxColumn,
             this.cidadeDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn});
-            this.dataGridViewProduto.DataSource = this.fornecedorBindingSource1;
+            this.dataGridViewProduto.DataSource = this.BindingSourceBuscarFornecedor;
             this.dataGridViewProduto.Location = new System.Drawing.Point(11, 165);
             this.dataGridViewProduto.Name = "dataGridViewProduto";
             this.dataGridViewProduto.ReadOnly = true;
@@ -205,33 +206,6 @@
             this.dataGridViewProduto.Size = new System.Drawing.Size(1069, 341);
             this.dataGridViewProduto.TabIndex = 28;
             this.dataGridViewProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduto_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // comboBoxBuscarPor
-            // 
-            this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Items.AddRange(new object[] {
-            "Nome",
-            "CPF/CNPJ",
-            "Todos"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(11, 128);
-            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxBuscarPor.TabIndex = 32;
-            this.comboBoxBuscarPor.SelectedIndexChanged += new System.EventHandler(this.comboBoxBuscarPor_SelectedIndexChanged);
-            // 
-            // fornecedorBindingSource
-            // 
-            this.fornecedorBindingSource.DataSource = typeof(Models.Fornecedor);
-            // 
-            // fornecedorBindingSource1
-            // 
-            this.fornecedorBindingSource1.DataSource = typeof(Models.Fornecedor);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -359,6 +333,28 @@
             this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
             this.estadoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // BindingSourceBuscarFornecedor
+            // 
+            this.BindingSourceBuscarFornecedor.DataSource = typeof(Models.Fornecedor);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // comboBoxBuscarPor
+            // 
+            this.comboBoxBuscarPor.FormattingEnabled = true;
+            this.comboBoxBuscarPor.Items.AddRange(new object[] {
+            "Nome",
+            "CPF/CNPJ",
+            "Todos"});
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(11, 128);
+            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
+            this.comboBoxBuscarPor.TabIndex = 32;
+            // 
             // FormBuscarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -377,10 +373,8 @@
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Name = "FormBuscarFornecedor";
             this.Text = "FormBuscarFornecedor";
-            this.Load += new System.EventHandler(this.FormBuscarFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fornecedorBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceBuscarFornecedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,7 +396,6 @@
         private DataGridView dataGridViewProduto;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private ComboBox comboBoxBuscarPor;
-        private BindingSource fornecedorBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cpfCnpjDataGridViewTextBoxColumn;
@@ -417,6 +410,6 @@
         private DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private BindingSource fornecedorBindingSource1;
+        private BindingSource BindingSourceBuscarFornecedor;
     }
 }

@@ -131,5 +131,13 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void buscarFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

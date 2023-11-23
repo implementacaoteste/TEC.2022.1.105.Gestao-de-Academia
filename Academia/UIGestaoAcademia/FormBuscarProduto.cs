@@ -62,5 +62,10 @@ namespace UIGestaoAcademia
         {
 
         }
+
+        private void textBoxBuscarPor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
