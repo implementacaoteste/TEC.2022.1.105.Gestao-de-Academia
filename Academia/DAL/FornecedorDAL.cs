@@ -19,9 +19,9 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa) 
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado) 
                                     VALUES (@Nome, @CpfCnpj, @Email, @Telefone, @Descricao,
-                                    @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa)";
+                                    @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa, @Pais, @Cidade, @Estado)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 PreencherParametros(_fornecedor, cmd, Operacao.Inserir);

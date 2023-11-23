@@ -94,7 +94,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(594, 177);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(258, 27);
-            this.textBoxEmail.TabIndex = 27;
+            this.textBoxEmail.TabIndex = 3;
             // 
             // buttonCancelar
             // 
@@ -102,7 +102,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(758, 432);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 30;
+            this.buttonCancelar.TabIndex = 14;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +112,7 @@
             this.buttonSalvar.Location = new System.Drawing.Point(656, 432);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 29;
+            this.buttonSalvar.TabIndex = 13;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -165,7 +165,7 @@
             this.textBoxEndereco.Location = new System.Drawing.Point(217, 335);
             this.textBoxEndereco.Name = "textBoxEndereco";
             this.textBoxEndereco.Size = new System.Drawing.Size(245, 27);
-            this.textBoxEndereco.TabIndex = 37;
+            this.textBoxEndereco.TabIndex = 9;
             // 
             // textBoxTelefone
             // 
@@ -173,7 +173,7 @@
             this.textBoxTelefone.Location = new System.Drawing.Point(11, 177);
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(260, 27);
-            this.textBoxTelefone.TabIndex = 28;
+            this.textBoxTelefone.TabIndex = 1;
             // 
             // textBoxCpfCnpj
             // 
@@ -181,7 +181,7 @@
             this.textBoxCpfCnpj.Location = new System.Drawing.Point(292, 177);
             this.textBoxCpfCnpj.Name = "textBoxCpfCnpj";
             this.textBoxCpfCnpj.Size = new System.Drawing.Size(281, 27);
-            this.textBoxCpfCnpj.TabIndex = 26;
+            this.textBoxCpfCnpj.TabIndex = 2;
             // 
             // textBoxNome
             // 
@@ -189,7 +189,7 @@
             this.textBoxNome.Location = new System.Drawing.Point(12, 122);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(840, 27);
-            this.textBoxNome.TabIndex = 25;
+            this.textBoxNome.TabIndex = 0;
             this.textBoxNome.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // textBoxDescricao
@@ -198,7 +198,7 @@
             this.textBoxDescricao.Location = new System.Drawing.Point(11, 393);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(841, 27);
-            this.textBoxDescricao.TabIndex = 25;
+            this.textBoxDescricao.TabIndex = 12;
             this.textBoxDescricao.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // label7
@@ -228,7 +228,7 @@
             this.textBox1.Location = new System.Drawing.Point(12, 283);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 27);
-            this.textBox1.TabIndex = 37;
+            this.textBox1.TabIndex = 4;
             // 
             // label9
             // 
@@ -246,7 +246,7 @@
             this.textBox2.Location = new System.Drawing.Point(11, 335);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(193, 27);
-            this.textBox2.TabIndex = 28;
+            this.textBox2.TabIndex = 8;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label10
@@ -265,7 +265,7 @@
             this.textBox3.Location = new System.Drawing.Point(659, 283);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(193, 27);
-            this.textBox3.TabIndex = 28;
+            this.textBox3.TabIndex = 7;
             // 
             // label11
             // 
@@ -283,7 +283,7 @@
             this.textBox4.Location = new System.Drawing.Point(435, 283);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(211, 27);
-            this.textBox4.TabIndex = 28;
+            this.textBox4.TabIndex = 6;
             // 
             // label12
             // 
@@ -301,7 +301,7 @@
             this.textBox5.Location = new System.Drawing.Point(594, 335);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(258, 27);
-            this.textBox5.TabIndex = 25;
+            this.textBox5.TabIndex = 11;
             this.textBox5.TextChanged += new System.EventHandler(this.textBoxNome_TextChanged);
             // 
             // label13
@@ -321,7 +321,7 @@
             this.textBox6.Location = new System.Drawing.Point(481, 335);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(92, 27);
-            this.textBox6.TabIndex = 28;
+            this.textBox6.TabIndex = 10;
             this.textBox6.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label14
@@ -340,7 +340,7 @@
             this.textBox7.Location = new System.Drawing.Point(217, 283);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(196, 27);
-            this.textBox7.TabIndex = 28;
+            this.textBox7.TabIndex = 5;
             // 
             // label15
             // 
