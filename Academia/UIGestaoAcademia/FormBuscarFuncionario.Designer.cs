@@ -50,7 +50,14 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rua = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroCasa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFuncionario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +65,7 @@
             // buttonSelecionar
             // 
             this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(887, 445);
+            this.buttonSelecionar.Location = new System.Drawing.Point(1123, 445);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
             this.buttonSelecionar.TabIndex = 29;
@@ -81,7 +88,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1093, 50);
+            this.label1.Size = new System.Drawing.Size(1329, 50);
             this.label1.TabIndex = 22;
             this.label1.Text = "Buscar funcionário";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,7 +96,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(987, 445);
+            this.buttonCancelar.Location = new System.Drawing.Point(1223, 445);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 30;
@@ -100,7 +107,7 @@
             // buttonExcluir
             // 
             this.buttonExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluir.Location = new System.Drawing.Point(985, 65);
+            this.buttonExcluir.Location = new System.Drawing.Point(1221, 65);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
             this.buttonExcluir.TabIndex = 27;
@@ -111,7 +118,7 @@
             // buttonInserir
             // 
             this.buttonInserir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserir.Location = new System.Drawing.Point(884, 65);
+            this.buttonInserir.Location = new System.Drawing.Point(1120, 65);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
             this.buttonInserir.TabIndex = 26;
@@ -122,7 +129,7 @@
             // buttonAlterar
             // 
             this.buttonAlterar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterar.Location = new System.Drawing.Point(785, 66);
+            this.buttonAlterar.Location = new System.Drawing.Point(1021, 66);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
             this.buttonAlterar.TabIndex = 25;
@@ -136,7 +143,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscarPor.Location = new System.Drawing.Point(160, 68);
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(518, 27);
+            this.textBoxBuscarPor.Size = new System.Drawing.Size(754, 27);
             this.textBoxBuscarPor.TabIndex = 23;
             // 
             // dataGridViewTextBoxColumn3
@@ -148,7 +155,7 @@
             // buttonBuscar
             // 
             this.buttonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscar.Location = new System.Drawing.Point(684, 66);
+            this.buttonBuscar.Location = new System.Drawing.Point(920, 66);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscar.TabIndex = 24;
@@ -180,14 +187,21 @@
             this.Cargo,
             this.Telefone,
             this.Email,
-            this.CEP});
+            this.Rua,
+            this.CEP,
+            this.Bairro,
+            this.Complemento,
+            this.NumeroCasa,
+            this.Pais,
+            this.Estado,
+            this.Cidade});
             this.dataGridViewProduto.DataSource = this.bindingSourceFuncionario;
             this.dataGridViewProduto.Location = new System.Drawing.Point(11, 100);
             this.dataGridViewProduto.Name = "dataGridViewProduto";
             this.dataGridViewProduto.ReadOnly = true;
             this.dataGridViewProduto.RowHeadersWidth = 51;
             this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(1068, 339);
+            this.dataGridViewProduto.Size = new System.Drawing.Size(1304, 339);
             this.dataGridViewProduto.TabIndex = 28;
             // 
             // dataGridViewTextBoxColumn1
@@ -262,6 +276,15 @@
             this.Email.ReadOnly = true;
             this.Email.Width = 150;
             // 
+            // Rua
+            // 
+            this.Rua.DataPropertyName = "Rua";
+            this.Rua.HeaderText = "Rua";
+            this.Rua.MinimumWidth = 6;
+            this.Rua.Name = "Rua";
+            this.Rua.ReadOnly = true;
+            this.Rua.Width = 200;
+            // 
             // CEP
             // 
             this.CEP.DataPropertyName = "CEP";
@@ -271,11 +294,66 @@
             this.CEP.ReadOnly = true;
             this.CEP.Width = 110;
             // 
+            // Bairro
+            // 
+            this.Bairro.DataPropertyName = "Bairro";
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.MinimumWidth = 6;
+            this.Bairro.Name = "Bairro";
+            this.Bairro.ReadOnly = true;
+            this.Bairro.Width = 125;
+            // 
+            // Complemento
+            // 
+            this.Complemento.DataPropertyName = "Complemento";
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.MinimumWidth = 6;
+            this.Complemento.Name = "Complemento";
+            this.Complemento.ReadOnly = true;
+            this.Complemento.Width = 125;
+            // 
+            // NumeroCasa
+            // 
+            this.NumeroCasa.DataPropertyName = "NumeroCasa";
+            this.NumeroCasa.HeaderText = "NumeroCasa";
+            this.NumeroCasa.MinimumWidth = 6;
+            this.NumeroCasa.Name = "NumeroCasa";
+            this.NumeroCasa.ReadOnly = true;
+            this.NumeroCasa.Width = 90;
+            // 
+            // Pais
+            // 
+            this.Pais.DataPropertyName = "Pais";
+            this.Pais.HeaderText = "Pais";
+            this.Pais.MinimumWidth = 6;
+            this.Pais.Name = "Pais";
+            this.Pais.ReadOnly = true;
+            this.Pais.Width = 125;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 125;
+            // 
+            // Cidade
+            // 
+            this.Cidade.DataPropertyName = "Cidade";
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.MinimumWidth = 6;
+            this.Cidade.Name = "Cidade";
+            this.Cidade.ReadOnly = true;
+            this.Cidade.Width = 125;
+            // 
             // FormBuscarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 479);
+            this.CancelButton = this.buttonCancelar;
+            this.ClientSize = new System.Drawing.Size(1329, 479);
             this.Controls.Add(this.buttonSelecionar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -288,7 +366,7 @@
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.comboBoxBuscarPor);
             this.Name = "FormBuscarFuncionario";
-            this.Text = "BuscarFuncionario";
+            this.Text = "amd";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFuncionario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
             this.ResumeLayout(false);
@@ -319,6 +397,13 @@
         private DataGridViewTextBoxColumn Cargo;
         private DataGridViewTextBoxColumn Telefone;
         private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Rua;
         private DataGridViewTextBoxColumn CEP;
+        private DataGridViewTextBoxColumn Bairro;
+        private DataGridViewTextBoxColumn Complemento;
+        private DataGridViewTextBoxColumn NumeroCasa;
+        private DataGridViewTextBoxColumn Pais;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridViewTextBoxColumn Cidade;
     }
 }

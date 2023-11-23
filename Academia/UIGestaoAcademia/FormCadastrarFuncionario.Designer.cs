@@ -299,7 +299,6 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastro, "Cidade", true));
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(11, 326);
             this.label13.Name = "label13";
