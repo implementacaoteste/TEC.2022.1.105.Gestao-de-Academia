@@ -138,7 +138,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = "SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto ";
+                cmd.CommandText = @"SELECT CompraProduto.Id, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal FROM CompraProduto";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -153,7 +153,7 @@ namespace DAL
                         compraProduto.FornecedorId = (int)rd["FornecedorId"];
                         compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         compraProduto.ValorTotal = (double)rd["ValorTotal"];
-
+                        compraProduto.itensCompraList = new ItensCompraDAL().BuscarPorIdCompraProduto(compraProduto.Id);
                         compraProdutoList.Add(compraProduto);
                     }
                 }

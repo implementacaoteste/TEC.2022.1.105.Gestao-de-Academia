@@ -89,6 +89,7 @@ CREATE TABLE CompraProduto
 GO
 CREATE TABLE ItensCompra
 (
+	Id Int Primary key identity(1,1),
 	CompraProdutoId INT,
 	Nome VARCHAR(100),
 	Marca VARCHAR(100),
