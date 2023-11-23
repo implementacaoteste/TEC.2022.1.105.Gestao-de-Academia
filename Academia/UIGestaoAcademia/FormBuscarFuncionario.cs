@@ -5,7 +5,8 @@ namespace UIGestaoAcademia
 {
     public partial class FormBuscarFuncionario : Form
     {
-        public Funcionario Funcionario { get; set; }
+        public Funcionario Funcionario { get; private set; }
+
         public FormBuscarFuncionario()
         {
             InitializeComponent();
@@ -58,6 +59,23 @@ namespace UIGestaoAcademia
             new FuncionarioBLL().Excluir(id);
             bindingSourceFuncionario.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
+        }
+
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bindingSourceFuncionario.Count == 0)
+                    throw new Exception("Não existe registro para ser selecionado!");
+
+                this.Funcionario = (Funcionario)bindingSourceFuncionario.Current;
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

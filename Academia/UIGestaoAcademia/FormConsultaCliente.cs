@@ -19,7 +19,7 @@ namespace UIGestaoAcademia
         {
             try
             {
-                switch (comboBoxBuscarPor.SelectedIndex)
+                switch (comboBoxBuscarPorCliente.SelectedIndex)
                 {
                     case 0:
                         if (String.IsNullOrEmpty(textBoxBuscar.Text))
@@ -110,12 +110,25 @@ namespace UIGestaoAcademia
 
         private void FormConsultaCliente_Load(object sender, EventArgs e)
         {
-            comboBoxBuscarPor.SelectedIndex = 3;
+            comboBoxBuscarPorCliente.SelectedIndex = 3;
         }
 
         private void buttonSelecionar_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (clienteBindingSource.Count == 0)
+                    throw new Exception("Não existe registro para ser selecionado!");
+
+                this.Cliente = (Cliente)clienteBindingSource.Current;
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
