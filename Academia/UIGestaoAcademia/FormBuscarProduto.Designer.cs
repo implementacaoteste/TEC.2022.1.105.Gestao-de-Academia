@@ -260,6 +260,7 @@
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
             this.textBoxBuscarPor.Size = new System.Drawing.Size(277, 27);
             this.textBoxBuscarPor.TabIndex = 12;
+            this.textBoxBuscarPor.TextChanged += new System.EventHandler(this.textBoxBuscarPor_TextChanged);
             // 
             // FormBuscarProduto
             // 

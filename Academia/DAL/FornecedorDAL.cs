@@ -40,7 +40,7 @@ namespace DAL
                 cn.Close();
             }
         }
-       
+
 
         public List<Fornecedor> BuscarTodos()
         {
@@ -52,7 +52,8 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa";
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado 
+                                    FROM Fornecedor";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -60,7 +61,8 @@ namespace DAL
                 {
                     while (rd.Read())
                     {
-                        fornecedor = PreencherObjeto(rd);
+                        fornecedor = new Fornecedor();
+                        PreencherObjeto(fornecedor, rd);
                         fornecedorList.Add(fornecedor);
                     }
                 }
@@ -76,8 +78,6 @@ namespace DAL
             }
         }
 
-        
-
         public List<Fornecedor> BuscarPorNome(string _nome)
         {
             List<Fornecedor> fornecedorList = new List<Fornecedor>();
@@ -88,8 +88,8 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa 
-                                    FROM Cliente WHERE Nome LIKE @Nome";
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado
+                                    FROM Fornecedor WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
 
@@ -99,7 +99,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(rd);
+                        PreencherObjeto(fornecedor, rd);
 
                         fornecedorList.Add(fornecedor);
                     }
@@ -124,7 +124,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa 
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado
                                     FROM Fornecedor WHERE CpfCnpj = @CpfCnpj";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CpfCnpj", _CpfCnpj);
@@ -135,7 +135,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(rd);
+                        PreencherObjeto(fornecedor, rd);
                     }
                 }
                 return fornecedor;
@@ -158,16 +158,16 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE Fornecedor SET 
                                         Nome = @Nome, 
-                                        CPF = @CpfCnpj, 
+                                        CpfCnpj = @CpfCnpj, 
                                         Email = @Email, 
-                                        Telefone = @Telefone 
-                                        Rua= @Rua
-                                        Descricao = @Descricao
-                                        CEP = @CEP
-                                        Bairro = @Bairro
-                                        Cidade = @Cidade
-                                        Estado = @Estado
-                                        NumeroCasa = @NumeroCasa
+                                        Telefone = @Telefone, 
+                                        Rua = @Rua,
+                                        Descricao = @Descricao,
+                                        CEP = @CEP,
+                                        Bairro = @Bairro,
+                                        Cidade = @Cidade,
+                                        Estado = @Estado,
+                                        NumeroCasa = @NumeroCasa,
                                         Pais = @Pais
                                         WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -181,7 +181,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao tentar alterar Fornecedor no banco de dados", ex) { Data = { { "Id", 20 } } };
+                throw new Exception("Erro ao tentar Alterar Fornecedor no banco de dados", ex) { Data = { { "Id", 20 } } };
             }
             finally
             {
@@ -223,7 +223,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa 
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado 
                                     FROM Fornecedor WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -234,7 +234,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         fornecedor = new Fornecedor();
-                        PreencherObjeto(rd);
+                        PreencherObjeto(fornecedor, rd);
                     }
                 }
                 return fornecedor;
@@ -279,27 +279,25 @@ namespace DAL
             if (_operacao != Operacao.Inserir)
                 cmd.Parameters.AddWithValue("@Id", _fornecedor.Id);
 
-            
+
         }
 
-        public static Fornecedor PreencherObjeto(SqlDataReader rd)
+        public static void PreencherObjeto(Fornecedor _fornecedor, SqlDataReader _rd)
         {
-            Fornecedor fornecedor = new Fornecedor();
-            fornecedor.Id = Convert.ToInt32(rd["Id"]);
-            fornecedor.Nome = rd["Nome"].ToString();
-            fornecedor.CpfCnpj = rd["CpfCnpj"].ToString();
-            fornecedor.Email = rd["Email"].ToString();
-            fornecedor.Telefone = rd["Telefone"].ToString();
-            fornecedor.Descricao = rd["Descricao"].ToString();
-            fornecedor.Rua = rd["Rua"].ToString();
-            fornecedor.CEP = rd["CEP"].ToString();
-            fornecedor.Bairro = rd["Bairro"].ToString();
-            fornecedor.Complemento = rd["Complemento"].ToString();
-            fornecedor.NumeroCasa = Convert.ToInt32(rd["NumeroCasa"]);
-            fornecedor.Pais = rd["Pais"].ToString();
-            fornecedor.Cidade = rd["Cidade"].ToString();
-            fornecedor.Estado = rd["Estado"].ToString();
-            return fornecedor;
+            _fornecedor.Id = Convert.ToInt32(_rd["Id"]);
+            _fornecedor.Nome = _rd["Nome"].ToString();
+            _fornecedor.CpfCnpj = _rd["CpfCnpj"].ToString();
+            _fornecedor.Email = _rd["Email"].ToString();
+            _fornecedor.Telefone = _rd["Telefone"].ToString();
+            _fornecedor.Descricao = _rd["Descricao"].ToString();
+            _fornecedor.Rua = _rd["Rua"].ToString();
+            _fornecedor.CEP = _rd["CEP"].ToString();
+            _fornecedor.Bairro = _rd["Bairro"].ToString();
+            _fornecedor.Complemento = _rd["Complemento"].ToString();
+            _fornecedor.NumeroCasa = Convert.ToInt32(_rd["NumeroCasa"]);
+            _fornecedor.Pais = _rd["Pais"].ToString();
+            _fornecedor.Cidade = _rd["Cidade"].ToString();
+            _fornecedor.Estado = _rd["Estado"].ToString();
         }
 
     }

@@ -19,41 +19,30 @@ namespace UIGestaoAcademia
             InitializeComponent();
         }
 
-        private void buttonSelecionar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormBuscarFornecedor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
 
+            int id = ((Fornecedor)BindingSourceBuscarFornecedor.Current).Id;
+            new FornecedorBLL().Excluir(id);
+            BindingSourceBuscarFornecedor.RemoveCurrent();
+            MessageBox.Show("Registro excluido com sucesso!");
         }
 
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-
+            using (FormCadastrarFornecedor frm = new FormCadastrarFornecedor())
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((Fornecedor)fornecedorBindingSource.Current).Id;
+            int id = ((Fornecedor)BindingSourceBuscarFornecedor.Current).Id;
 
-            using (FormCadastrarProduto frm = new FormCadastrarProduto(id))
+            using (FormCadastrarFornecedor frm = new FormCadastrarFornecedor(id))
             {
                 frm.ShowDialog();
             }
@@ -66,13 +55,13 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        fornecedorBindingSource.DataSource = new ProdutoBLL().BuscarPorNome(textBoxBuscarPor.Text);
+                        BindingSourceBuscarFornecedor.DataSource = new FornecedorBLL().BuscarPorNome(textBoxBuscarPor.Text);
                         break;
                     case 1:
-                        fornecedorBindingSource.DataSource = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxBuscarPor.Text);
+                        BindingSourceBuscarFornecedor.DataSource = new FornecedorBLL().BuscarPorCpfCnpj(textBoxBuscarPor.Text);
                         break;
                     default:
-                        fornecedorBindingSource.DataSource = new ProdutoBLL().BuscarTodos();
+                        BindingSourceBuscarFornecedor.DataSource = new FornecedorBLL().BuscarTodos();
                         break;
                 }
             }
@@ -82,12 +71,17 @@ namespace UIGestaoAcademia
             }
         }
 
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBoxBuscarPor_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
+        private void dataGridViewProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
