@@ -153,7 +153,6 @@ namespace DAL
                         compraProduto.FornecedorId = (int)rd["FornecedorId"];
                         compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
                         compraProduto.ValorTotal = (double)rd["ValorTotal"];
-                        compraProduto.itensCompraList = new ItensCompraDAL().BuscarPorIdCompraProduto(compraProduto.Id);
                         compraProdutoList.Add(compraProduto);
                     }
                 }

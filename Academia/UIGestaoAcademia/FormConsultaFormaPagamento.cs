@@ -5,9 +5,10 @@ namespace UIGestaoAcademia
 {
     public partial class FormConsultaFormaPagamento : Form
     {
-        public FormaPagamento FormaPagamento;
         private string ultimaBusca;
         private bool buscou;
+        public FormaPagamento FormaPagamento { get; set; }
+
         public FormConsultaFormaPagamento()
         {
             InitializeComponent();

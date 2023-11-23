@@ -172,7 +172,7 @@
             // 
             // bindingSourceFuncionario
             // 
-            this.bindingSourceFuncionario.DataSource = typeof(Models.Funcionario);
+            this.bindingSourceFuncionario.DataSource = typeof(Models.Produto);
             // 
             // dataGridViewProduto
             // 

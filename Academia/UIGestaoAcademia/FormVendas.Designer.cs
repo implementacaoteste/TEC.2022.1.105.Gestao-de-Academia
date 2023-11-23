@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewVendas = new System.Windows.Forms.DataGridView();
             this.ProdutoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,9 @@
             this.textBoxBuscarFuncionario = new System.Windows.Forms.TextBox();
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
             this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
+            this.buttonAdicionarProduto = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
             this.SuspendLayout();
@@ -126,23 +128,23 @@
             this.textBox3.Size = new System.Drawing.Size(125, 27);
             this.textBox3.TabIndex = 5;
             // 
-            // dataGridView1
+            // dataGridViewVendas
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewVendas.AutoGenerateColumns = false;
+            this.dataGridViewVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProdutoId,
             this.dataGridViewTextBoxColumn1,
             this.quantidadeDataGridViewTextBoxColumn,
             this.PrecoUnitario,
             this.PrecoTotal});
-            this.dataGridView1.DataSource = this.itensVendaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 321);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 303);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridViewVendas.DataSource = this.itensVendaBindingSource;
+            this.dataGridViewVendas.Location = new System.Drawing.Point(11, 321);
+            this.dataGridViewVendas.Name = "dataGridViewVendas";
+            this.dataGridViewVendas.RowHeadersWidth = 51;
+            this.dataGridViewVendas.RowTemplate.Height = 29;
+            this.dataGridViewVendas.Size = new System.Drawing.Size(985, 303);
+            this.dataGridViewVendas.TabIndex = 6;
             // 
             // ProdutoId
             // 
@@ -319,7 +321,7 @@
             // 
             // buttonFormaDePagamento
             // 
-            this.buttonFormaDePagamento.Location = new System.Drawing.Point(170, 659);
+            this.buttonFormaDePagamento.Location = new System.Drawing.Point(303, 656);
             this.buttonFormaDePagamento.Name = "buttonFormaDePagamento";
             this.buttonFormaDePagamento.Size = new System.Drawing.Size(33, 29);
             this.buttonFormaDePagamento.TabIndex = 16;
@@ -331,11 +333,30 @@
             // 
             this.bindingSourceVendas.DataSource = typeof(Models.Vendas);
             // 
+            // textBoxFormaPagamento
+            // 
+            this.textBoxFormaPagamento.Location = new System.Drawing.Point(172, 656);
+            this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
+            this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
+            this.textBoxFormaPagamento.TabIndex = 17;
+            // 
+            // buttonAdicionarProduto
+            // 
+            this.buttonAdicionarProduto.Location = new System.Drawing.Point(11, 281);
+            this.buttonAdicionarProduto.Name = "buttonAdicionarProduto";
+            this.buttonAdicionarProduto.Size = new System.Drawing.Size(153, 29);
+            this.buttonAdicionarProduto.TabIndex = 18;
+            this.buttonAdicionarProduto.Text = "Adicionar produto";
+            this.buttonAdicionarProduto.UseVisualStyleBackColor = true;
+            this.buttonAdicionarProduto.Click += new System.EventHandler(this.buttonAdicionarProduto_Click);
+            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 867);
+            this.Controls.Add(this.buttonAdicionarProduto);
+            this.Controls.Add(this.textBoxFormaPagamento);
             this.Controls.Add(this.buttonFormaDePagamento);
             this.Controls.Add(this.textBoxBuscarFuncionario);
             this.Controls.Add(this.buttonBuscarFuncionario);
@@ -349,7 +370,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewVendas);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBoxBuscarPorCliente);
@@ -362,7 +383,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormVendas";
             this.Text = "VENDAS";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).EndInit();
             this.ResumeLayout(false);
@@ -378,7 +399,7 @@
         private Label label4;
         private Label label5;
         private TextBox textBox3;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewVendas;
         private DataGridViewTextBoxColumn produtoIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
@@ -405,5 +426,7 @@
         private TextBox textBoxBuscarFuncionario;
         private Button buttonFormaDePagamento;
         private BindingSource bindingSourceVendas;
+        private TextBox textBoxFormaPagamento;
+        private Button buttonAdicionarProduto;
     }
 }
