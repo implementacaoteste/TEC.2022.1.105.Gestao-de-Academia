@@ -68,7 +68,7 @@ namespace DAL
                         cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = rd["Aluno"].ToString();
+                        cliente.Aluno = (bool)rd["Aluno"];
                         cliente.CPF = rd["CPF"].ToString();
                         cliente.Telefone = rd["Telefone"].ToString();
                         cliente.Email = rd["Email"].ToString();
@@ -117,7 +117,7 @@ namespace DAL
                         cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = rd["Aluno"].ToString();
+                        cliente.Aluno = (bool)rd["Aluno"];
                         cliente.CPF = rd["CPF"].ToString();
                         cliente.Telefone = rd["Telefone"].ToString();
                         cliente.Email = rd["Email"].ToString();
@@ -165,7 +165,7 @@ namespace DAL
                         cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = rd["Aluno"].ToString();
+                        cliente.Aluno = (bool)rd["Aluno"];
                         cliente.CPF = rd["CPF"].ToString();
                         cliente.Telefone = rd["Telefone"].ToString();
                         cliente.Email = rd["Email"].ToString();
@@ -211,7 +211,7 @@ namespace DAL
                         cliente = new Cliente();
                         cliente.Id = (int)rd["Id"];
                         cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = rd["Aluno"].ToString();
+                        cliente.Aluno = (bool)rd["Aluno"];
                         cliente.CPF = rd["CPF"].ToString();
                         cliente.Telefone = rd["Telefone"].ToString();
                         cliente.Email = rd["Email"].ToString();
