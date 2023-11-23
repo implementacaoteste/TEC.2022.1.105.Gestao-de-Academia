@@ -304,8 +304,6 @@ namespace DAL
             {
                 cn.Close();
             }
-        }
-
-        
+        }  
     }
 }

@@ -50,13 +50,13 @@
             this.textBoxPreco = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bindingSourceItensCompra = new System.Windows.Forms.BindingSource(this.components);
             this.compraProdutoIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorUnitarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSourceItensCompra = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceItensCompra)).BeginInit();
             this.SuspendLayout();
@@ -187,7 +187,7 @@
             // 
             // buttonBuscarFormaPagamento
             // 
-            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(202, 524);
+            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(202, 522);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
             this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(30, 29);
             this.buttonBuscarFormaPagamento.TabIndex = 46;
@@ -269,10 +269,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1071, 324);
             this.dataGridView1.TabIndex = 47;
             // 
-            // bindingSourceItensCompra
-            // 
-            this.bindingSourceItensCompra.DataSource = typeof(Models.ItensCompra);
-            // 
             // compraProdutoIdDataGridViewTextBoxColumn
             // 
             this.compraProdutoIdDataGridViewTextBoxColumn.DataPropertyName = "CompraProdutoId";
@@ -326,6 +322,10 @@
             this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             this.valorTotalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // bindingSourceItensCompra
+            // 
+            this.bindingSourceItensCompra.DataSource = typeof(Models.ItensCompra);
             // 
             // FormBuscarCompraProduto
             // 

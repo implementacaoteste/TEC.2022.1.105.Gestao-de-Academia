@@ -9,6 +9,7 @@ namespace Models
 {
     public class ItensCompra
     {
+        public int Id { get; set; }
         public int CompraProdutoId { get; set; }
         public string Nome { get; set; }
         public string Marca { get; set; }
