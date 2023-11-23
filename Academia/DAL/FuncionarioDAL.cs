@@ -68,6 +68,7 @@ namespace DAL
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
+                        cmd.Parameters.AddWithValue("@Id", _funcionario.Id);
                         cmd.Parameters.AddWithValue("@Nome", _funcionario.Nome);
                         cmd.Parameters.AddWithValue("@Cpf", _funcionario.Cpf);
                         cmd.Parameters.AddWithValue("@Cargo", _funcionario.Cargo);
@@ -189,7 +190,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar o produto no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar todos os funcionarios no banco de dados.", ex);
             }
             finally
             {

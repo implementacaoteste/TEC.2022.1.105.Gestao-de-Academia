@@ -1,6 +1,4 @@
-﻿
-
-using BLL;
+﻿using BLL;
 using Models;
 
 namespace UIGestaoAcademia
@@ -8,7 +6,6 @@ namespace UIGestaoAcademia
     public partial class FormBuscarFuncionario : Form
     {
         public Funcionario Funcionario { get; set; }
-
         public FormBuscarFuncionario()
         {
             InitializeComponent();
