@@ -8,26 +8,27 @@ namespace UIGestaoAcademia
         public FormVendas()
         {
             InitializeComponent();
+            bindingSourceVendas.AddNew();
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
-        {            
-                try
+        {
+            try
+            {
+                using (FormConsultaCliente frm = new FormConsultaCliente())
                 {
-                    using (FormConsultaCliente frm = new FormConsultaCliente())
-                    {
-                        frm.ShowDialog();
+                    frm.ShowDialog();
 
-                        if (frm.Cliente != null)
-                        {
-                            ((Vendas)bindingSourceVendas.Current).Cliente = frm.Cliente;
-                            textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
-                        }
+                    if (frm.Cliente != null)
+                    {
+                        ((Vendas)bindingSourceVendas.Current).Cliente = frm.Cliente;
+                        textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }           
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonBuscarFuncionario_Click(object sender, EventArgs e)
@@ -57,5 +58,7 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+     
     }
 }
