@@ -75,7 +75,8 @@ CREATE TABLE Fornecedor
 	CpfCnpj VARCHAR(15),
 	Email VARCHAR(200),
 	Telefone CHAR(14),
-	Endereco VARCHAR(100)
+	Endereco VARCHAR(100),
+	Descricao VARCHAR(150)
 )
 GO
 CREATE TABLE CompraProduto
