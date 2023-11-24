@@ -85,7 +85,7 @@
             // 
             // bindingSourceCadastro
             // 
-            this.bindingSourceCadastro.DataSource = typeof(Models.Produto);
+            this.bindingSourceCadastro.DataSource = typeof(Models.Funcionario);
             // 
             // label6
             // 
