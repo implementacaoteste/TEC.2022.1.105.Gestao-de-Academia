@@ -65,7 +65,7 @@ CREATE TABLE Cliente
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
-	DataCadastro SMALLDATETIME
+	DataCadastro DATETIME
 )
 GO
 CREATE TABLE Fornecedor
