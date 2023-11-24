@@ -91,8 +91,8 @@ CREATE TABLE ItensCompra
 (
 	Id Int Primary key identity(1,1),
 	CompraProdutoId INT,
+	ProdutoId Int,
 	Nome VARCHAR(100),
-	Marca VARCHAR(100),
 	Quantidade INT,
 	ValorUnitario FLOAT,
 	ValorTotal FLOAT
@@ -253,6 +253,16 @@ ALTER TABLE CompraProduto
 ADD CONSTRAINT FK_Fornecedor_CompraProduto
 FOREIGN KEY (FornecedorId)
 REFERENCES Fornecedor(Id);
+GO
+ALTER TABLE ItensCompra
+ADD CONSTRAINT FK_ItensCompra_Produto
+FOREIGN KEY (ProdutoId)
+REFERENCES Produto(Id);
+GO
+ALTER TABLE ItensCompra
+ADD CONSTRAINT FK_ItensCompra_CompraProduto
+FOREIGN KEY (CompraProdutoId)
+REFERENCES CompraProduto(Id);
 GO
 
 ALTER TABLE Financas
