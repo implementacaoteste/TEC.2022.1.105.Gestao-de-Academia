@@ -152,12 +152,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         produto = new Produto();
-                        produto.Id = (int)rd["Id"];
-                        produto.Nome = rd["Nome"].ToString();
-                        produto.Marca = rd["Marca"].ToString();
-                        produto.Preco = (double)rd["Preco"];
-                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
-                        produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
+                        PreencherObjeto(produto, rd);
                         produtoList.Add(produto);
                     }
                 }
@@ -173,6 +168,17 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        private static void PreencherObjeto(Produto produto, SqlDataReader rd)
+        {
+            produto.Id = (int)rd["Id"];
+            produto.Nome = rd["Nome"].ToString();
+            produto.Marca = rd["Marca"].ToString();
+            produto.Preco = (double)rd["Preco"];
+            produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
+            produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
+        }
+
         public Produto BuscarPorId(int _id)
         {
             Produto produto;
@@ -197,12 +203,7 @@ namespace DAL
                     produto = new Produto();
                     if (rd.Read())
                     {
-                        produto.Id = (int)rd["Id"];
-                        produto.Nome = rd["Nome"].ToString();
-                        produto.Marca = rd["Marca"].ToString();
-                        produto.Preco = (double)rd["Preco"];
-                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
-                        produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
+                        PreencherObjeto(produto, rd);
                     }
                 }
                 return produto;
@@ -241,12 +242,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         produto = new Produto();
-                        produto.Id = (int)rd["Id"];
-                        produto.Nome = rd["Nome"].ToString();
-                        produto.Marca = rd["Marca"].ToString();
-                        produto.Preco = (double)rd["Preco"];
-                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
-                        produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
+                        PreencherObjeto(produto, rd);
                         produtoList.Add(produto);
                     }
                 }
@@ -286,12 +282,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         produto = new Produto();
-                        produto.Id = (int)rd["Id"];
-                        produto.Nome = rd["Nome"].ToString();
-                        produto.Marca = rd["Marca"].ToString();
-                        produto.Preco = (double)rd["Preco"];
-                        produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
-                        produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
+                        PreencherObjeto(produto, rd);
                     }
                 }
                 return produto;
