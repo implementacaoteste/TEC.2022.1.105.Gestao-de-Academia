@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDataDoLancamento = new System.Windows.Forms.TextBox();
-            this.textBoxFormaDePagamento = new System.Windows.Forms.TextBox();
             this.textBoxValor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,7 +48,11 @@
             this.textBoxAcrescimo = new System.Windows.Forms.TextBox();
             this.textBoxDataDoVencimento = new System.Windows.Forms.TextBox();
             this.textBoxDataDoPagamento = new System.Windows.Forms.TextBox();
-            this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
+            this.buttonConsultaFormaPagamento = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxFormaDePagamento = new System.Windows.Forms.TextBox();
+            this.buttonConsultaCliente = new System.Windows.Forms.Button();
+            this.textBoxConsultaCliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(638, 119);
+            this.label5.Location = new System.Drawing.Point(632, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 29;
@@ -122,18 +125,10 @@
             // textBoxDataDoLancamento
             // 
             this.textBoxDataDoLancamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataLancamento", true));
-            this.textBoxDataDoLancamento.Location = new System.Drawing.Point(638, 142);
+            this.textBoxDataDoLancamento.Location = new System.Drawing.Point(632, 199);
             this.textBoxDataDoLancamento.Name = "textBoxDataDoLancamento";
             this.textBoxDataDoLancamento.Size = new System.Drawing.Size(186, 27);
             this.textBoxDataDoLancamento.TabIndex = 30;
-            // 
-            // textBoxFormaDePagamento
-            // 
-            this.textBoxFormaDePagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "NomeFormaPagamento", true));
-            this.textBoxFormaDePagamento.Location = new System.Drawing.Point(410, 142);
-            this.textBoxFormaDePagamento.Name = "textBoxFormaDePagamento";
-            this.textBoxFormaDePagamento.Size = new System.Drawing.Size(193, 27);
-            this.textBoxFormaDePagamento.TabIndex = 28;
             // 
             // textBoxValor
             // 
@@ -157,7 +152,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(216, 176);
+            this.label7.Location = new System.Drawing.Point(439, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 20);
             this.label7.TabIndex = 29;
@@ -167,7 +162,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(414, 176);
+            this.label8.Location = new System.Drawing.Point(215, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 29;
@@ -177,7 +172,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(638, 176);
+            this.label9.Location = new System.Drawing.Point(217, 228);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 29;
@@ -196,7 +191,7 @@
             // textBoxJuros
             // 
             this.textBoxJuros.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Juros", true));
-            this.textBoxJuros.Location = new System.Drawing.Point(414, 199);
+            this.textBoxJuros.Location = new System.Drawing.Point(215, 199);
             this.textBoxJuros.Name = "textBoxJuros";
             this.textBoxJuros.Size = new System.Drawing.Size(218, 27);
             this.textBoxJuros.TabIndex = 28;
@@ -204,7 +199,7 @@
             // textBoxDesconto
             // 
             this.textBoxDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Desconto", true));
-            this.textBoxDesconto.Location = new System.Drawing.Point(638, 199);
+            this.textBoxDesconto.Location = new System.Drawing.Point(217, 251);
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(186, 27);
             this.textBoxDesconto.TabIndex = 28;
@@ -228,27 +223,64 @@
             // textBoxDataDoPagamento
             // 
             this.textBoxDataDoPagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataPagamento", true));
-            this.textBoxDataDoPagamento.Location = new System.Drawing.Point(216, 199);
+            this.textBoxDataDoPagamento.Location = new System.Drawing.Point(439, 199);
             this.textBoxDataDoPagamento.Name = "textBoxDataDoPagamento";
             this.textBoxDataDoPagamento.Size = new System.Drawing.Size(187, 27);
             this.textBoxDataDoPagamento.TabIndex = 28;
             // 
-            // buttonBuscarFormaPagamento
+            // buttonConsultaFormaPagamento
             // 
-            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(602, 142);
-            this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
-            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(30, 29);
-            this.buttonBuscarFormaPagamento.TabIndex = 33;
-            this.buttonBuscarFormaPagamento.Text = "...";
-            this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
+            this.buttonConsultaFormaPagamento.Location = new System.Drawing.Point(604, 142);
+            this.buttonConsultaFormaPagamento.Name = "buttonConsultaFormaPagamento";
+            this.buttonConsultaFormaPagamento.Size = new System.Drawing.Size(30, 29);
+            this.buttonConsultaFormaPagamento.TabIndex = 33;
+            this.buttonConsultaFormaPagamento.Text = "...";
+            this.buttonConsultaFormaPagamento.UseVisualStyleBackColor = true;
+            this.buttonConsultaFormaPagamento.Click += new System.EventHandler(this.buttonConsultaFormaPagamento_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(638, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Cliente\r\n";
+            // 
+            // textBoxFormaDePagamento
+            // 
+            this.textBoxFormaDePagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "NomeFormaPagamento", true));
+            this.textBoxFormaDePagamento.Location = new System.Drawing.Point(410, 142);
+            this.textBoxFormaDePagamento.Name = "textBoxFormaDePagamento";
+            this.textBoxFormaDePagamento.Size = new System.Drawing.Size(193, 27);
+            this.textBoxFormaDePagamento.TabIndex = 28;
+            // 
+            // buttonConsultaCliente
+            // 
+            this.buttonConsultaCliente.Location = new System.Drawing.Point(832, 143);
+            this.buttonConsultaCliente.Name = "buttonConsultaCliente";
+            this.buttonConsultaCliente.Size = new System.Drawing.Size(30, 29);
+            this.buttonConsultaCliente.TabIndex = 33;
+            this.buttonConsultaCliente.Text = "...";
+            this.buttonConsultaCliente.UseVisualStyleBackColor = true;
+            this.buttonConsultaCliente.Click += new System.EventHandler(this.buttonConsultaCliente_Click);
+            // 
+            // textBoxConsultaCliente
+            // 
+            this.textBoxConsultaCliente.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "NomeCliente", true));
+            this.textBoxConsultaCliente.Location = new System.Drawing.Point(638, 143);
+            this.textBoxConsultaCliente.Name = "textBoxConsultaCliente";
+            this.textBoxConsultaCliente.Size = new System.Drawing.Size(193, 27);
+            this.textBoxConsultaCliente.TabIndex = 28;
             // 
             // FormCadastrarDebito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 343);
-            this.Controls.Add(this.buttonBuscarFormaPagamento);
+            this.Controls.Add(this.buttonConsultaCliente);
+            this.Controls.Add(this.buttonConsultaFormaPagamento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonSalvar);
@@ -258,6 +290,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDataDoLancamento);
@@ -266,6 +299,7 @@
             this.Controls.Add(this.textBoxAcrescimo);
             this.Controls.Add(this.textBoxDesconto);
             this.Controls.Add(this.textBoxJuros);
+            this.Controls.Add(this.textBoxConsultaCliente);
             this.Controls.Add(this.textBoxFormaDePagamento);
             this.Controls.Add(this.textBoxValor);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -287,7 +321,6 @@
         private Label label4;
         private Label label3;
         private TextBox textBoxDataDoLancamento;
-        private TextBox textBoxFormaDePagamento;
         private TextBox textBoxValor;
         private Label label6;
         private Label label7;
@@ -299,6 +332,10 @@
         private TextBox textBoxAcrescimo;
         private TextBox textBoxDataDoVencimento;
         private TextBox textBoxDataDoPagamento;
-        private Button buttonBuscarFormaPagamento;
+        private Button buttonConsultaFormaPagamento;
+        private Label label1;
+        private TextBox textBoxFormaDePagamento;
+        private Button buttonConsultaCliente;
+        private TextBox textBoxConsultaCliente;
     }
 }

@@ -16,54 +16,11 @@ namespace UIGestaoAcademia
             buscou = false;
         }
 
-        private void buttonBuscar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                switch (comboBoxBuscarPor.SelectedIndex)
-                {
-                    case 0:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarTodos();
-                        break;
-                    default:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscarPor.Text);
-                        break;
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
         private void buttonInserir_Click(object sender, EventArgs e)
         {
             using (FormCadastrarFormaPagamento frm = new FormCadastrarFormaPagamento())
             {
                 frm.ShowDialog();
-            }
-        }
-
-        private void buttonBuscar_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                switch (comboBoxBuscarPor.SelectedIndex)
-                {
-                    case 0:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarTodos();
-                        break;
-                    case 1:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscarPor.Text);
-                        break;
-                    default:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -103,6 +60,29 @@ namespace UIGestaoAcademia
                 }
                 else
                     MessageBox.Show("Não existe permissão a ser selecionada.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonBuscar_Click_FormaPagamento(object sender, EventArgs e)
+        {
+            try
+            {
+                switch (comboBoxBuscarPor.SelectedIndex)
+                {
+                    case 0:
+                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarTodos();
+                        break;
+                    case 1:
+                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscarPor.Text);
+                        break;
+                    default:
+                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
+                        break;
+                }
             }
             catch (Exception ex)
             {

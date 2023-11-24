@@ -33,7 +33,7 @@
             this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorDebitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.formaPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataLancamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataVencimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +81,7 @@
             this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.valorDebitoDataGridViewTextBoxColumn,
-            this.formaPagamentoDataGridViewTextBoxColumn,
+            this.NomeFormaPagamento,
             this.dataLancamentoDataGridViewTextBoxColumn,
             this.dataVencimentoDataGridViewTextBoxColumn,
             this.dataPagamentoDataGridViewTextBoxColumn,
@@ -115,14 +115,14 @@
             this.valorDebitoDataGridViewTextBoxColumn.ReadOnly = true;
             this.valorDebitoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // formaPagamentoDataGridViewTextBoxColumn
+            // NomeFormaPagamento
             // 
-            this.formaPagamentoDataGridViewTextBoxColumn.DataPropertyName = "FormaPagamento";
-            this.formaPagamentoDataGridViewTextBoxColumn.HeaderText = "FormaPagamento";
-            this.formaPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.formaPagamentoDataGridViewTextBoxColumn.Name = "formaPagamentoDataGridViewTextBoxColumn";
-            this.formaPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.formaPagamentoDataGridViewTextBoxColumn.Width = 125;
+            this.NomeFormaPagamento.DataPropertyName = "NomeFormaPagamento";
+            this.NomeFormaPagamento.HeaderText = "Forma de pagamento";
+            this.NomeFormaPagamento.MinimumWidth = 6;
+            this.NomeFormaPagamento.Name = "NomeFormaPagamento";
+            this.NomeFormaPagamento.ReadOnly = true;
+            this.NomeFormaPagamento.Width = 125;
             // 
             // dataLancamentoDataGridViewTextBoxColumn
             // 
@@ -136,7 +136,7 @@
             // dataVencimentoDataGridViewTextBoxColumn
             // 
             this.dataVencimentoDataGridViewTextBoxColumn.DataPropertyName = "DataVencimento";
-            this.dataVencimentoDataGridViewTextBoxColumn.HeaderText = "DataVencimento";
+            this.dataVencimentoDataGridViewTextBoxColumn.HeaderText = "Data de vencimento";
             this.dataVencimentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dataVencimentoDataGridViewTextBoxColumn.Name = "dataVencimentoDataGridViewTextBoxColumn";
             this.dataVencimentoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -192,7 +192,6 @@
             this.buttonSelecionar.Text = "Se&lecionar";
             this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSelecionar.UseVisualStyleBackColor = true;
-            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
             // 
             // label2
             // 
@@ -299,6 +298,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormBuscarDebito";
             this.Text = "FormControleProduto";
+            this.Load += new System.EventHandler(this.FormBuscarDebito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controleDebitoBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -322,7 +322,7 @@
         private BindingSource controleDebitoBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorDebitoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn formaPagamentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn NomeFormaPagamento;
         private DataGridViewTextBoxColumn dataLancamentoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataVencimentoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataPagamentoDataGridViewTextBoxColumn;

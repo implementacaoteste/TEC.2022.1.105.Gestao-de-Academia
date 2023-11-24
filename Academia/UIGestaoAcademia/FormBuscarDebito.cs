@@ -29,7 +29,7 @@ namespace UIGestaoAcademia
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido(textBoxBuscarPor.Text);
                         break;
                     default:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId (Convert.ToInt32(textBoxBuscarPor.Text));
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
                         break;
 
                 }
@@ -50,11 +50,22 @@ namespace UIGestaoAcademia
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((ControleDebito)controleDebitoBindingSource.Current).Id;
-
-            using (FormCadastrarDebito frm = new FormCadastrarDebito(id))
+            try
             {
-                frm.ShowDialog();
+
+                if (controleDebitoBindingSource.Count == 0)
+                    throw new Exception("Não existe registro para ser alterado");
+
+                int id = ((ControleDebito)controleDebitoBindingSource.Current).Id;
+
+                using (FormCadastrarDebito frm = new FormCadastrarDebito(id))
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -69,9 +80,9 @@ namespace UIGestaoAcademia
             MessageBox.Show("Registro excluido com sucesso!");
         }
 
-        private void buttonSelecionar_Click(object sender, EventArgs e)
+        private void FormBuscarDebito_Load(object sender, EventArgs e)
         {
-
+            comboBoxBuscarPor.SelectedIndex = 0;
         }
     }
 }

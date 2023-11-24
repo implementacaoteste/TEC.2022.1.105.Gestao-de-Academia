@@ -10,7 +10,7 @@
             {
                 if (Cliente != null)
                     return Cliente.Nome;
-                throw new Exception("Para inserir um debito é nescessário ter um cliente cadastrado.");
+                return "";
             }
         }
         public int FormaPagamentoId { get; set; }

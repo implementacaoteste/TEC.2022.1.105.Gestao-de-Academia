@@ -25,9 +25,6 @@ namespace UIGestaoAcademia
                 bindingSourceCadastrarDebito.EndEdit();
                 ControleDebito controleDebito = (ControleDebito)bindingSourceCadastrarDebito.Current;
 
-                //TODO: Apagar a linha abaixo
-                controleDebito.Cliente = new Cliente() { Id = 12, Nome = "Maria" };
-
                 if (id == 0)
                     new ControleDebitoBLL().Inserir(controleDebito);
                 else
@@ -42,14 +39,31 @@ namespace UIGestaoAcademia
             }
         }
 
-        private void buttonBuscarFormaPagamento_Click(object sender, EventArgs e)
+        private void buttonConsultaCliente_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaCliente frm = new FormConsultaCliente())
+            {
+                frm.ShowDialog();
+                if (frm.Cliente != null)
+                {
+                    ((ControleDebito)bindingSourceCadastrarDebito.Current).Cliente = frm.Cliente;
+                    ((ControleDebito)bindingSourceCadastrarDebito.Current).ClienteId = frm.Cliente.Id;
+                    textBoxConsultaCliente.Text = frm.Cliente.Nome;
+                }
+            }
+        }
+
+        private void buttonConsultaFormaPagamento_Click(object sender, EventArgs e)
         {
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
                 frm.ShowDialog();
-                ((ControleDebito)bindingSourceCadastrarDebito.Current).FormaPagamento = frm.FormaPagamento;
-                ((ControleDebito)bindingSourceCadastrarDebito.Current).FormaPagamentoId = frm.FormaPagamento.Id;
-                textBoxFormaDePagamento.Text = frm.FormaPagamento.Descricao;
+                if (frm.FormaPagamento != null)
+                {
+                    ((ControleDebito)bindingSourceCadastrarDebito.Current).FormaPagamento = frm.FormaPagamento;
+                    ((ControleDebito)bindingSourceCadastrarDebito.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                    textBoxFormaDePagamento.Text = frm.FormaPagamento.Descricao;
+                }
             }
         }
     }

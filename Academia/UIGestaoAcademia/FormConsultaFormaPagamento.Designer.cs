@@ -103,7 +103,7 @@
             this.buttonBuscarFormaPagamento.TabIndex = 43;
             this.buttonBuscarFormaPagamento.Text = "&Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscar_Click_1);
+            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscar_Click_FormaPagamento);
             // 
             // buttonSelecionar
             // 
