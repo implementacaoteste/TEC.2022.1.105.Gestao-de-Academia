@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.bindingSourceCadastrarFornecedor = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceCadastrarDadosBancarios = new System.Windows.Forms.BindingSource(this.components);
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarFornecedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -83,15 +83,15 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Email", true));
+            this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Email", true));
             this.textBoxEmail.Location = new System.Drawing.Point(626, 151);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(194, 27);
             this.textBoxEmail.TabIndex = 40;
             // 
-            // bindingSourceCadastrarFornecedor
+            // bindingSourceCadastrarDadosBancarios
             // 
-            this.bindingSourceCadastrarFornecedor.DataSource = typeof(Models.Fornecedor);
+            this.bindingSourceCadastrarDadosBancarios.DataSource = typeof(Models.Fornecedor);
             // 
             // buttonCancelar
             // 
@@ -155,7 +155,7 @@
             // 
             // textBoxTelefone
             // 
-            this.textBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Telefone", true));
+            this.textBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Telefone", true));
             this.textBoxTelefone.Location = new System.Drawing.Point(226, 151);
             this.textBoxTelefone.Name = "textBoxTelefone";
             this.textBoxTelefone.Size = new System.Drawing.Size(194, 27);
@@ -163,7 +163,7 @@
             // 
             // textBoxCpfCnpj
             // 
-            this.textBoxCpfCnpj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "CpfCnpj", true));
+            this.textBoxCpfCnpj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "CpfCnpj", true));
             this.textBoxCpfCnpj.Location = new System.Drawing.Point(426, 151);
             this.textBoxCpfCnpj.Name = "textBoxCpfCnpj";
             this.textBoxCpfCnpj.Size = new System.Drawing.Size(194, 27);
@@ -171,7 +171,7 @@
             // 
             // textBoxDescricao
             // 
-            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Descricao", true));
+            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Descricao", true));
             this.textBoxDescricao.Location = new System.Drawing.Point(11, 371);
             this.textBoxDescricao.Name = "textBoxDescricao";
             this.textBoxDescricao.Size = new System.Drawing.Size(841, 27);
@@ -179,7 +179,7 @@
             // 
             // textBoxNome
             // 
-            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Nome", true));
+            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Nome", true));
             this.textBoxNome.Location = new System.Drawing.Point(27, 151);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(193, 27);
@@ -215,7 +215,7 @@
             // 
             // textBox8
             // 
-            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Nome", true));
+            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Nome", true));
             this.textBox8.Location = new System.Drawing.Point(226, 214);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(193, 27);
@@ -233,7 +233,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Nome", true));
+            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Nome", true));
             this.textBox9.Location = new System.Drawing.Point(428, 215);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(193, 27);
@@ -251,7 +251,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Nome", true));
+            this.textBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Nome", true));
             this.textBox10.Location = new System.Drawing.Point(627, 214);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(193, 27);
@@ -269,7 +269,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Nome", true));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Nome", true));
             this.textBox1.Location = new System.Drawing.Point(128, 275);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 27);
@@ -305,7 +305,7 @@
             // 
             // textBox7
             // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarFornecedor, "Nome", true));
+            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancarios, "Nome", true));
             this.textBox7.Location = new System.Drawing.Point(529, 274);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(193, 27);
@@ -345,7 +345,7 @@
             this.Controls.Add(this.textBoxNome);
             this.Name = "FormCadastrarDadosBancarios";
             this.Text = "FormCadastrarDadosBancarios";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarFornecedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +356,7 @@
         private Label label2;
         private Label label6;
         private TextBox textBoxEmail;
-        private BindingSource bindingSourceCadastrarFornecedor;
+        private BindingSource bindingSourceCadastrarDadosBancarios;
         private Button buttonCancelar;
         private Button buttonSalvar;
         private Label label4;
