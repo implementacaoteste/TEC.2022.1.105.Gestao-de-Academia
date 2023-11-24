@@ -9,7 +9,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             bindingSourceVendas.AddNew();
-            dataGridViewVendas.DataSource = bindingSourceVendas;
+            dataGridView1.DataSource = bindingSourceVendas;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -64,12 +64,32 @@ namespace UIGestaoAcademia
                 }
             }
         }
-        private void buttonAdicionarProduto_Click(object sender, EventArgs e)
+        private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
         {
-            using (FormBuscarProduto frm = new FormBuscarProduto()) 
+            if (e.KeyCode== Keys.Enter)
+            {
+                Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxProduto.Text);
+                itensVendaBindingSource.AddNew();
+                ((ItensVenda)itensVendaBindingSource.Current).ProdutoId = produto.Id;
+                ((ItensVenda)itensVendaBindingSource.Current).Produto = produto;
+                ((ItensVenda)itensVendaBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
+                ((ItensVenda)itensVendaBindingSource.Current).PrecoUnitario = produto.Preco;
+                ((ItensVenda)itensVendaBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaBindingSource.Current).Quantidade;
+
+                itensVendaBindingSource.EndEdit();
+
+                dataGridView1.DataSource = bindingSourceVendas;
+                dataGridView1.Refresh();
+                textBoxProduto.Clear();
+                textBoxQuantidade.Text = "1";
+
+            }
+        }
+        private void buttonBuscarProduto_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarProduto frm = new FormBuscarProduto())
             {
                 frm.ShowDialog();
-
             }
         }
     }

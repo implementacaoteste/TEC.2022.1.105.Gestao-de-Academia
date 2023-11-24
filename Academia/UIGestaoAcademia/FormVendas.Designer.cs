@@ -36,12 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridViewVendas = new System.Windows.Forms.DataGridView();
-            this.ProdutoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscarPorCliente = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,11 +55,20 @@
             this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).BeginInit();
+            this.textBoxProduto = new System.Windows.Forms.TextBox();
+            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codigoDeBarrasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonBuscarProduto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,14 +95,14 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1009, 68);
+            this.label2.Size = new System.Drawing.Size(931, 68);
             this.label2.TabIndex = 3;
             this.label2.Text = "VENDA";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(790, 137);
+            this.textBox1.Location = new System.Drawing.Point(725, 140);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(192, 27);
             this.textBox1.TabIndex = 5;
@@ -107,7 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(656, 140);
+            this.label4.Location = new System.Drawing.Point(591, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 3;
@@ -129,64 +132,6 @@
             this.textBox3.Size = new System.Drawing.Size(125, 27);
             this.textBox3.TabIndex = 5;
             // 
-            // dataGridViewVendas
-            // 
-            this.dataGridViewVendas.AutoGenerateColumns = false;
-            this.dataGridViewVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProdutoId,
-            this.dataGridViewTextBoxColumn1,
-            this.quantidadeDataGridViewTextBoxColumn,
-            this.PrecoUnitario,
-            this.PrecoTotal});
-            this.dataGridViewVendas.DataSource = this.itensVendaBindingSource;
-            this.dataGridViewVendas.Location = new System.Drawing.Point(11, 321);
-            this.dataGridViewVendas.Name = "dataGridViewVendas";
-            this.dataGridViewVendas.RowHeadersWidth = 51;
-            this.dataGridViewVendas.RowTemplate.Height = 29;
-            this.dataGridViewVendas.Size = new System.Drawing.Size(985, 303);
-            this.dataGridViewVendas.TabIndex = 6;
-            // 
-            // ProdutoId
-            // 
-            this.ProdutoId.DataPropertyName = "ProdutoId";
-            this.ProdutoId.HeaderText = "Codigo";
-            this.ProdutoId.MinimumWidth = 6;
-            this.ProdutoId.Name = "ProdutoId";
-            this.ProdutoId.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProdutoId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Produto";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 350;
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            this.quantidadeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // PrecoUnitario
-            // 
-            this.PrecoUnitario.DataPropertyName = "PrecoUnitario";
-            this.PrecoUnitario.HeaderText = "Valor";
-            this.PrecoUnitario.MinimumWidth = 6;
-            this.PrecoUnitario.Name = "PrecoUnitario";
-            this.PrecoUnitario.Width = 130;
-            // 
-            // PrecoTotal
-            // 
-            this.PrecoTotal.DataPropertyName = "PrecoTotal";
-            this.PrecoTotal.HeaderText = "Valor Total";
-            this.PrecoTotal.MinimumWidth = 6;
-            this.PrecoTotal.Name = "PrecoTotal";
-            this.PrecoTotal.Width = 127;
-            // 
             // itensVendaBindingSource
             // 
             this.itensVendaBindingSource.DataSource = typeof(Models.ItensVenda);
@@ -200,7 +145,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(693, 630);
+            this.button2.Location = new System.Drawing.Point(617, 702);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 40);
             this.button2.TabIndex = 9;
@@ -209,7 +154,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(846, 630);
+            this.button3.Location = new System.Drawing.Point(770, 702);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(147, 40);
             this.button3.TabIndex = 10;
@@ -219,7 +164,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(656, 177);
+            this.label6.Location = new System.Drawing.Point(591, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 11;
@@ -227,7 +172,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(790, 170);
+            this.textBox4.Location = new System.Drawing.Point(725, 173);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(192, 27);
             this.textBox4.TabIndex = 5;
@@ -252,7 +197,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 659);
+            this.label8.Location = new System.Drawing.Point(18, 702);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 20);
             this.label8.TabIndex = 11;
@@ -261,7 +206,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 703);
+            this.label9.Location = new System.Drawing.Point(18, 746);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 20);
             this.label9.TabIndex = 11;
@@ -270,7 +215,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(170, 698);
+            this.dateTimePicker2.Location = new System.Drawing.Point(177, 741);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(166, 27);
             this.dateTimePicker2.TabIndex = 12;
@@ -304,7 +249,7 @@
             // 
             // buttonFormaDePagamento
             // 
-            this.buttonFormaDePagamento.Location = new System.Drawing.Point(303, 656);
+            this.buttonFormaDePagamento.Location = new System.Drawing.Point(310, 699);
             this.buttonFormaDePagamento.Name = "buttonFormaDePagamento";
             this.buttonFormaDePagamento.Size = new System.Drawing.Size(33, 29);
             this.buttonFormaDePagamento.TabIndex = 16;
@@ -318,53 +263,152 @@
             // 
             // textBoxFormaPagamento
             // 
-            this.textBoxFormaPagamento.Location = new System.Drawing.Point(172, 656);
+            this.textBoxFormaPagamento.Location = new System.Drawing.Point(179, 699);
             this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
             this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
             this.textBoxFormaPagamento.TabIndex = 17;
             // 
             // buttonAlterar
             // 
-            this.buttonAlterar.Location = new System.Drawing.Point(681, 275);
+            this.buttonAlterar.Location = new System.Drawing.Point(605, 307);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(153, 40);
             this.buttonAlterar.TabIndex = 18;
             this.buttonAlterar.Text = "Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
-            this.buttonAlterar.Click += new System.EventHandler(this.buttonAdicionarProduto_Click);
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Location = new System.Drawing.Point(840, 275);
+            this.buttonExcluir.Location = new System.Drawing.Point(764, 307);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(153, 40);
             this.buttonExcluir.TabIndex = 18;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
-            this.buttonExcluir.Click += new System.EventHandler(this.buttonAdicionarProduto_Click);
             // 
-            // textBox2
+            // textBoxProduto
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 288);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(198, 27);
-            this.textBox2.TabIndex = 19;
-            this.textBox2.Text = "Código de barras";
+            this.textBoxProduto.Location = new System.Drawing.Point(12, 314);
+            this.textBoxProduto.Name = "textBoxProduto";
+            this.textBoxProduto.Size = new System.Drawing.Size(161, 27);
+            this.textBoxProduto.TabIndex = 19;
+            this.textBoxProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
-            // textBox5
+            // textBoxQuantidade
             // 
-            this.textBox5.Location = new System.Drawing.Point(237, 288);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(207, 27);
-            this.textBox5.TabIndex = 19;
+            this.textBoxQuantidade.Location = new System.Drawing.Point(179, 314);
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
+            this.textBoxQuantidade.TabIndex = 19;
+            this.textBoxQuantidade.Text = "1";
+            this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 285);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 20);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Código de barras";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(179, 285);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 20);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Quantidade";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoDeBarrasDataGridViewTextBoxColumn,
+            this.nomeProdutoDataGridViewTextBoxColumn,
+            this.quantidadeDataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView1.DataSource = this.itensVendaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 366);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.Size = new System.Drawing.Size(903, 333);
+            this.dataGridView1.TabIndex = 21;
+            // 
+            // codigoDeBarrasDataGridViewTextBoxColumn
+            // 
+            this.codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
+            this.codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
+            this.codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
+            this.codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDeBarrasDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // nomeProdutoDataGridViewTextBoxColumn
+            // 
+            this.nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
+            this.nomeProdutoDataGridViewTextBoxColumn.HeaderText = "NomeProduto";
+            this.nomeProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
+            this.nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeProdutoDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // quantidadeDataGridViewTextBoxColumn1
+            // 
+            this.quantidadeDataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn1.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.quantidadeDataGridViewTextBoxColumn1.Name = "quantidadeDataGridViewTextBoxColumn1";
+            this.quantidadeDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.quantidadeDataGridViewTextBoxColumn1.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "PrecoUnitario";
+            this.dataGridViewTextBoxColumn3.HeaderText = "PrecoUnitario";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PrecoTotal";
+            this.dataGridViewTextBoxColumn4.HeaderText = "PrecoTotal";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // buttonBuscarProduto
+            // 
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(294, 312);
+            this.buttonBuscarProduto.Name = "buttonBuscarProduto";
+            this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
+            this.buttonBuscarProduto.TabIndex = 22;
+            this.buttonBuscarProduto.Text = "...";
+            this.buttonBuscarProduto.UseVisualStyleBackColor = true;
+            this.buttonBuscarProduto.Click += new System.EventHandler(this.buttonBuscarProduto_Click);
             // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 867);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(931, 867);
+            this.Controls.Add(this.buttonBuscarProduto);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBoxQuantidade);
+            this.Controls.Add(this.textBoxProduto);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.textBoxFormaPagamento);
@@ -379,7 +423,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridViewVendas);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBoxBuscarPorCliente);
@@ -392,9 +435,9 @@
             this.Controls.Add(this.label1);
             this.Name = "FormVendas";
             this.Text = "VENDAS";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,7 +451,6 @@
         private Label label4;
         private Label label5;
         private TextBox textBox3;
-        private DataGridView dataGridViewVendas;
         private DataGridViewTextBoxColumn produtoIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
@@ -418,11 +460,6 @@
         private Button button3;
         private Label label6;
         private TextBox textBox4;
-        private DataGridViewTextBoxColumn ProdutoId;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn PrecoUnitario;
-        private DataGridViewTextBoxColumn PrecoTotal;
         private DateTimePicker dateTimePicker1;
         private Label label7;
         private Label label8;
@@ -436,7 +473,17 @@
         private TextBox textBoxFormaPagamento;
         private Button buttonAlterar;
         private Button buttonExcluir;
-        private TextBox textBox2;
-        private TextBox textBox5;
+        private TextBox textBoxProduto;
+        private TextBox textBoxQuantidade;
+        private Label label10;
+        private Label label12;
+        private ComboBox comboBox1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Button buttonBuscarProduto;
     }
 }
