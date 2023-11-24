@@ -146,8 +146,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         formaPagamento = new FormaPagamento();
-                        formaPagamento.Id = (int)rd["Id"];
-                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(formaPagamento, rd);
                         formaPagamentoList.Add(formaPagamento);
                     }
                 }
@@ -163,6 +162,13 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        private static void PreencherObjeto(FormaPagamento formaPagamento, SqlDataReader rd)
+        {
+            formaPagamento.Id = (int)rd["Id"];
+            formaPagamento.Descricao = rd["Descricao"].ToString();
+        }
+
         public List<FormaPagamento> BuscarDescricao(string _descricao)
         {
             List<FormaPagamento> formaPagamentoList = new List<FormaPagamento>();
