@@ -67,7 +67,7 @@
             this.buttonSelecionar.Location = new System.Drawing.Point(1006, 635);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSelecionar.TabIndex = 29;
+            this.buttonSelecionar.TabIndex = 9;
             this.buttonSelecionar.Text = "Se&lecionar";
             this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSelecionar.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(1106, 635);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 30;
+            this.buttonCancelar.TabIndex = 10;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonCancelar.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.buttonExcluir.Location = new System.Drawing.Point(992, 67);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluir.TabIndex = 27;
+            this.buttonExcluir.TabIndex = 5;
             this.buttonExcluir.Text = "E&xcluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
@@ -120,7 +120,7 @@
             this.buttonInserir.Location = new System.Drawing.Point(891, 67);
             this.buttonInserir.Name = "buttonInserir";
             this.buttonInserir.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserir.TabIndex = 26;
+            this.buttonInserir.TabIndex = 4;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = true;
             this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
@@ -131,7 +131,7 @@
             this.buttonAlterar.Location = new System.Drawing.Point(792, 68);
             this.buttonAlterar.Name = "buttonAlterar";
             this.buttonAlterar.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterar.TabIndex = 25;
+            this.buttonAlterar.TabIndex = 3;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
             this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
@@ -143,7 +143,7 @@
             this.textBoxBuscarPor.Location = new System.Drawing.Point(182, 67);
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
             this.textBoxBuscarPor.Size = new System.Drawing.Size(503, 27);
-            this.textBoxBuscarPor.TabIndex = 23;
+            this.textBoxBuscarPor.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -157,7 +157,7 @@
             this.buttonBuscar.Location = new System.Drawing.Point(691, 68);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscar.TabIndex = 24;
+            this.buttonBuscar.TabIndex = 2;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
@@ -183,14 +183,14 @@
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(9, 67);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(167, 28);
-            this.comboBoxBuscarPor.TabIndex = 32;
+            this.comboBoxBuscarPor.TabIndex = 0;
             // 
             // buttonBuscarFormaPagamento
             // 
             this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(202, 522);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
             this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(30, 29);
-            this.buttonBuscarFormaPagamento.TabIndex = 46;
+            this.buttonBuscarFormaPagamento.TabIndex = 7;
             this.buttonBuscarFormaPagamento.Text = "...";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscarFormaPagamento_Click);
@@ -210,7 +210,7 @@
             this.textBox2.Location = new System.Drawing.Point(12, 577);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(181, 27);
-            this.textBox2.TabIndex = 44;
+            this.textBox2.TabIndex = 8;
             // 
             // label3
             // 
@@ -244,7 +244,7 @@
             this.textBoxNome.Location = new System.Drawing.Point(12, 471);
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(184, 27);
-            this.textBoxNome.TabIndex = 40;
+            this.textBoxNome.TabIndex = 6;
             // 
             // dataGridView1
             // 

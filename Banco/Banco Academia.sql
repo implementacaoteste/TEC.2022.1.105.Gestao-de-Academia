@@ -65,7 +65,7 @@ CREATE TABLE Cliente
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
-	DataCadastro SMALLDATETIME
+	DataCadastro DATETIME
 )
 GO
 CREATE TABLE Fornecedor
@@ -91,8 +91,8 @@ CREATE TABLE ItensCompra
 (
 	Id Int Primary key identity(1,1),
 	CompraProdutoId INT,
+	ProdutoId Int,
 	Nome VARCHAR(100),
-	Marca VARCHAR(100),
 	Quantidade INT,
 	ValorUnitario FLOAT,
 	ValorTotal FLOAT
@@ -205,6 +205,30 @@ CREATE TABLE Funcionario
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
 )
+
+CREATE TABLE DadosBancarios
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	FornecedorId INT,
+	NomeBanco VARCHAR(50),
+	NumeroAgencia VARCHAR(6),
+	NumeroConta VARCHAR(21),
+	ChavePix VARCHAR(32),
+	TipoConta VARCHAR(30),
+	NomeTitular VARCHAR(100),
+	CpfCnpj VARCHAR(15),
+	Telefone VARCHAR(14),
+	Email VARCHAR(100),
+	TipoMoeda VARCHAR(10),
+	Iban VARCHAR(34),
+	Obs VARCHAR(100)
+)
+GO
+
+ALTER TABLE DadosBancarios
+ADD CONSTRAINT FK_DadosBancario_Fornecedor
+FOREIGN KEY (FornecedorId)
+REFERENCES Fornecedor(Id);
 GO
 
 ALTER TABLE Venda
@@ -254,6 +278,16 @@ ADD CONSTRAINT FK_Fornecedor_CompraProduto
 FOREIGN KEY (FornecedorId)
 REFERENCES Fornecedor(Id);
 GO
+ALTER TABLE ItensCompra
+ADD CONSTRAINT FK_ItensCompra_Produto
+FOREIGN KEY (ProdutoId)
+REFERENCES Produto(Id);
+GO
+ALTER TABLE ItensCompra
+ADD CONSTRAINT FK_ItensCompra_CompraProduto
+FOREIGN KEY (CompraProdutoId)
+REFERENCES CompraProduto(Id);
+GO
 
 ALTER TABLE Financas
 ADD CONSTRAINT FK_Fornecedor_Financas
@@ -301,92 +335,6 @@ ADD CONSTRAINT FK_PagamentoFuncionario_Funcionario
 FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
 GO
-
-IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
-ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
-
-GO
-IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('PermissaoGrupoUsuario') AND IS_PRIMARY_KEY = 1)
-ALTER TABLE PermissaoGrupoUsuario ADD CONSTRAINT PK_PermissaoGrupoUsuario PRIMARY KEY (IdPermissao, IdGrupoUsuario)
-
-GO
-
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('UsuarioGrupoUsuario') AND name = 'FK_UsuarioGrupoUsuario_Usuario')
-ALTER TABLE UsuarioGrupoUsuario
-ADD CONSTRAINT FK_UsuarioGrupoUsuario_Usuario
-FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
-
-GO
-
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('UsuarioGrupoUsuario') AND name = 'FK_UsuarioGrupoUsuario_GrupoUsuario')
-ALTER TABLE UsuarioGrupoUsuario
-ADD CONSTRAINT FK_UsuarioGrupoUsuario_GrupoUsuario
-FOREIGN KEY (IdGrupoUsuario) REFERENCES GrupoUsuario(Id)
-
-GO
-
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('PermissaoGrupoUsuario') AND name = 'FK_PermissaoGrupoUsuario_Permissao')
-ALTER TABLE PermissaoGrupoUsuario
-ADD CONSTRAINT FK_PermissaoGrupoUsuario_Permissao
-FOREIGN KEY (IdPermissao) REFERENCES Permissao(Id)
-
-GO
-
-IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('PermissaoGrupoUsuario') AND name = 'FK_PermissaoGrupoUsuario_GrupoUsuario')
-ALTER TABLE PermissaoGrupoUsuario
-ADD CONSTRAINT FK_PermissaoGrupoUsuario_GrupoUsuario
-FOREIGN KEY (IdGrupoUsuario) REFERENCES GrupoUsuario(Id)
-
-GO
-
-IF COL_LENGTH('Usuario', 'DataCadastro') IS NULL
-ALTER TABLE Usuario ADD DataCadastro DATETIME DEFAULT GETDATE()
-
-GO
-
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 1))INSERT INTO Permissao(Id, Descricao)VALUES(1,'Visualizar usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 2))INSERT INTO Permissao(Id, Descricao)VALUES(2,'Cadastrar usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 3))INSERT INTO Permissao(Id, Descricao)VALUES(3,'Alterar usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 4))INSERT INTO Permissao(Id, Descricao)VALUES(4,'Excluir usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 5))INSERT INTO Permissao(Id, Descricao)VALUES(5,'Visualizar grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 6))INSERT INTO Permissao(Id, Descricao)VALUES(6,'Cadastrar grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 7))INSERT INTO Permissao(Id, Descricao)VALUES(7,'Alterar grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 8))INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 9))INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permiss�o a um grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usu�rio a um usu�rio')
-GO
-
-IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Adm'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Administrador da Silva', 'Adm', '123', 1)
-IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Geno'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Genoveva', 'Geno', '123', 1)
-IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123', 1)
-GO
-
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Fiscal de caixa')
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Operador de caixa')
-
-GO
-INSERT INTO UsuarioGrupoUsuario VALUES(2,1)
-INSERT INTO UsuarioGrupoUsuario VALUES(1,2)
-GO
-
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,1)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,2)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,5)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,2)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,1)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,5)
-GO
-
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 1, Id FROM Permissao)
-GO
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 1)
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
-GO
-
 
 select*from Fornecedor
 GO
@@ -539,3 +487,88 @@ GO
 
 ALTER TABLE Cliente
 ALTER COLUMN Estado VARCHAR(50)
+
+IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
+ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
+
+GO
+IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('PermissaoGrupoUsuario') AND IS_PRIMARY_KEY = 1)
+ALTER TABLE PermissaoGrupoUsuario ADD CONSTRAINT PK_PermissaoGrupoUsuario PRIMARY KEY (IdPermissao, IdGrupoUsuario)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('UsuarioGrupoUsuario') AND name = 'FK_UsuarioGrupoUsuario_Usuario')
+ALTER TABLE UsuarioGrupoUsuario
+ADD CONSTRAINT FK_UsuarioGrupoUsuario_Usuario
+FOREIGN KEY (IdUsuario) REFERENCES Usuario(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('UsuarioGrupoUsuario') AND name = 'FK_UsuarioGrupoUsuario_GrupoUsuario')
+ALTER TABLE UsuarioGrupoUsuario
+ADD CONSTRAINT FK_UsuarioGrupoUsuario_GrupoUsuario
+FOREIGN KEY (IdGrupoUsuario) REFERENCES GrupoUsuario(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('PermissaoGrupoUsuario') AND name = 'FK_PermissaoGrupoUsuario_Permissao')
+ALTER TABLE PermissaoGrupoUsuario
+ADD CONSTRAINT FK_PermissaoGrupoUsuario_Permissao
+FOREIGN KEY (IdPermissao) REFERENCES Permissao(Id)
+
+GO
+
+IF NOT EXISTS (SELECT 1 FROM SYS.FOREIGN_KEYS WHERE PARENT_OBJECT_ID = OBJECT_ID('PermissaoGrupoUsuario') AND name = 'FK_PermissaoGrupoUsuario_GrupoUsuario')
+ALTER TABLE PermissaoGrupoUsuario
+ADD CONSTRAINT FK_PermissaoGrupoUsuario_GrupoUsuario
+FOREIGN KEY (IdGrupoUsuario) REFERENCES GrupoUsuario(Id)
+
+GO
+
+IF COL_LENGTH('Usuario', 'DataCadastro') IS NULL
+ALTER TABLE Usuario ADD DataCadastro DATETIME DEFAULT GETDATE()
+
+GO
+
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 1))INSERT INTO Permissao(Id, Descricao)VALUES(1,'Visualizar usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 2))INSERT INTO Permissao(Id, Descricao)VALUES(2,'Cadastrar usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 3))INSERT INTO Permissao(Id, Descricao)VALUES(3,'Alterar usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 4))INSERT INTO Permissao(Id, Descricao)VALUES(4,'Excluir usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 5))INSERT INTO Permissao(Id, Descricao)VALUES(5,'Visualizar grupo de usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 6))INSERT INTO Permissao(Id, Descricao)VALUES(6,'Cadastrar grupo de usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 7))INSERT INTO Permissao(Id, Descricao)VALUES(7,'Alterar grupo de usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 8))INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 9))INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permiss�o a um grupo de usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usu�rio a um usu�rio')
+GO
+
+IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Adm'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Administrador da Silva', 'Adm', '123', 1)
+IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Geno'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Genoveva', 'Geno', '123', 1)
+IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123', 1)
+GO
+
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Fiscal de caixa')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Operador de caixa')
+
+GO
+INSERT INTO UsuarioGrupoUsuario VALUES(2,1)
+INSERT INTO UsuarioGrupoUsuario VALUES(1,2)
+GO
+
+INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,1)
+INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,2)
+INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,5)
+INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,2)
+INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,1)
+INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,5)
+GO
+
+INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 1, Id FROM Permissao)
+GO
+INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 1)
+INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
+INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
+GO

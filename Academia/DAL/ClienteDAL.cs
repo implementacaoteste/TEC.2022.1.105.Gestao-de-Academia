@@ -66,21 +66,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         cliente = new Cliente();
-                        cliente.Id = (int)rd["Id"];
-                        cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = (bool)rd["Aluno"];
-                        cliente.CPF = rd["CPF"].ToString();
-                        cliente.Telefone = rd["Telefone"].ToString();
-                        cliente.Email = rd["Email"].ToString();
-                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
-                        cliente.Rua = rd["Rua"].ToString();
-                        cliente.CEP = rd["CEP"].ToString();
-                        cliente.Bairro = rd["Bairro"].ToString();
-                        cliente.Complemento = rd["Complemento"].ToString();
-                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
-                        cliente.Pais = rd["Pais"].ToString();
-                        cliente.Cidade = rd["Cidade"].ToString();
-                        cliente.Estado = rd["Estado"].ToString();
+                        PreencherObjeto(cliente, rd);
 
                         clienteList.Add(cliente);
                     }
@@ -96,6 +82,26 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        private static void PreencherObjeto(Cliente cliente, SqlDataReader rd)
+        {
+            cliente.Id = (int)rd["Id"];
+            cliente.Nome = rd["Nome"].ToString();
+            cliente.Aluno = (bool)rd["Aluno"];
+            cliente.CPF = rd["CPF"].ToString();
+            cliente.Telefone = rd["Telefone"].ToString();
+            cliente.Email = rd["Email"].ToString();
+            cliente.DataCadastro = (DateTime)rd["DataCadastro"];
+            cliente.Rua = rd["Rua"].ToString();
+            cliente.CEP = rd["CEP"].ToString();
+            cliente.Bairro = rd["Bairro"].ToString();
+            cliente.Complemento = rd["Complemento"].ToString();
+            cliente.NumeroCasa = (int)rd["NumeroCasa"];
+            cliente.Pais = rd["Pais"].ToString();
+            cliente.Cidade = rd["Cidade"].ToString();
+            cliente.Estado = rd["Estado"].ToString();
+        }
+
         public List<Cliente> BuscarPorNome(string _nome)
         {
             List<Cliente> clienteList = new List<Cliente>();
@@ -115,22 +121,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         cliente = new Cliente();
-                        cliente.Id = (int)rd["Id"];
-                        cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = (bool)rd["Aluno"];
-                        cliente.CPF = rd["CPF"].ToString();
-                        cliente.Telefone = rd["Telefone"].ToString();
-                        cliente.Email = rd["Email"].ToString();
-                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
-                        cliente.Rua = rd["Rua"].ToString();
-                        cliente.CEP = rd["CEP"].ToString();
-                        cliente.Bairro = rd["Bairro"].ToString();
-                        cliente.Complemento = rd["Complemento"].ToString();
-                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
-                        cliente.Pais = rd["Pais"].ToString();
-                        cliente.Cidade = rd["Cidade"].ToString();
-                        cliente.Estado = rd["Estado"].ToString();
-
+                        PreencherObjeto(cliente, rd);
                         clienteList.Add(cliente);
                     }
                 }
@@ -163,21 +154,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         cliente = new Cliente();
-                        cliente.Id = (int)rd["Id"];
-                        cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = (bool)rd["Aluno"];
-                        cliente.CPF = rd["CPF"].ToString();
-                        cliente.Telefone = rd["Telefone"].ToString();
-                        cliente.Email = rd["Email"].ToString();
-                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
-                        cliente.Rua = rd["Rua"].ToString();
-                        cliente.CEP = rd["CEP"].ToString();
-                        cliente.Bairro = rd["Bairro"].ToString();
-                        cliente.Complemento = rd["Complemento"].ToString();
-                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
-                        cliente.Pais = rd["Pais"].ToString();
-                        cliente.Cidade = rd["Cidade"].ToString();
-                        cliente.Estado = rd["Estado"].ToString();
+                        PreencherObjeto(cliente, rd);
                     }
                 }
                 return cliente;
@@ -209,21 +186,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         cliente = new Cliente();
-                        cliente.Id = (int)rd["Id"];
-                        cliente.Nome = rd["Nome"].ToString();
-                        cliente.Aluno = (bool)rd["Aluno"];
-                        cliente.CPF = rd["CPF"].ToString();
-                        cliente.Telefone = rd["Telefone"].ToString();
-                        cliente.Email = rd["Email"].ToString();
-                        cliente.DataCadastro = (DateTime)rd["DataCadastro"];
-                        cliente.Rua = rd["Rua"].ToString();
-                        cliente.CEP = rd["CEP"].ToString();
-                        cliente.Bairro = rd["Bairro"].ToString();
-                        cliente.Complemento = rd["Complemento"].ToString();
-                        cliente.NumeroCasa = (int)rd["NumeroCasa"];
-                        cliente.Pais = rd["Pais"].ToString();
-                        cliente.Cidade = rd["Cidade"].ToString();
-                        cliente.Estado = rd["Estado"].ToString();
+                        PreencherObjeto(cliente, rd);
                     }
                 }
                 return cliente;

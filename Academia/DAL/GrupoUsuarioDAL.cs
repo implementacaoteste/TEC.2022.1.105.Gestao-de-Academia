@@ -55,8 +55,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
-                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        PreencherObjeto(grupoUsuario, rd);
                         grupoUsuarios.Add(grupoUsuario);
                     }
                 }
@@ -71,6 +70,13 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        private static void PreencherObjeto(GrupoUsuario grupoUsuario, SqlDataReader rd)
+        {
+            grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
+            grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+        }
+
         public List<GrupoUsuario> BuscarPorNomeGrupo(string _nomeGrupo)
         {
             List<GrupoUsuario> grupoUsuarios = new List<GrupoUsuario>();
@@ -91,8 +97,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
-                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        PreencherObjeto(grupoUsuario, rd);
                         grupoUsuario.Permissoes = new PermissaoDAL().BuscarPorIdGrupo(grupoUsuario.Id);
                         grupoUsuarios.Add(grupoUsuario);
                     }
@@ -128,8 +133,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
-                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        PreencherObjeto(grupoUsuario, rd);
                         grupoUsuarios.Add(grupoUsuario);
                     }
                 }
@@ -324,8 +328,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         grupoUsuario = new GrupoUsuario();
-                        grupoUsuario.Id = Convert.ToInt32(rd["Id"]);
-                        grupoUsuario.NomeGrupo = rd["NomeGrupo"].ToString();
+                        PreencherObjeto(grupoUsuario, rd);
                         grupoUsuarios.Add(grupoUsuario);
                     }
                 }

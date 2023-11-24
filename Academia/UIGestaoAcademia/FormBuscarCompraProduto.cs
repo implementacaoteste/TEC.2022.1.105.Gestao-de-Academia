@@ -30,7 +30,10 @@ namespace UIGestaoAcademia
         }
         private void buttonInserir_Click(object sender, EventArgs e)
         {
-            
+            using (FormCompra frm = new FormCompra())
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)

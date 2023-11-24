@@ -128,7 +128,7 @@
             this.textBoxCodigoDeBarras.Location = new System.Drawing.Point(206, 205);
             this.textBoxCodigoDeBarras.Name = "textBoxCodigoDeBarras";
             this.textBoxCodigoDeBarras.Size = new System.Drawing.Size(186, 27);
-            this.textBoxCodigoDeBarras.TabIndex = 24;
+            this.textBoxCodigoDeBarras.TabIndex = 4;
             // 
             // textBoxEstoque
             // 
