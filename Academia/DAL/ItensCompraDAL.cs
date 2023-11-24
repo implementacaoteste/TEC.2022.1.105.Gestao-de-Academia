@@ -157,13 +157,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         itensCompra = new ItensCompra();
-                        itensCompra.Id = (int)rd["Id"];
-                        itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
-                        itensCompra.Nome = rd["Nome"].ToString();
-                        itensCompra.Marca = rd["Marca"].ToString();
-                        itensCompra.Quantidade = (int)rd["Quantidade"];
-                        itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
-                        itensCompra.ValorTotal = (double)rd["ValorTotal"];
+                        PreencherObjeto(itensCompra, rd);
                         itensCompraList.Add(itensCompra);
                     }
                 }
@@ -180,6 +174,18 @@ namespace DAL
             }
 
         }
+
+        private static void PreencherObjeto(ItensCompra itensCompra, SqlDataReader rd)
+        {
+            itensCompra.Id = (int)rd["Id"];
+            itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
+            itensCompra.Nome = rd["Nome"].ToString();
+            itensCompra.Marca = rd["Marca"].ToString();
+            itensCompra.Quantidade = (int)rd["Quantidade"];
+            itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
+            itensCompra.ValorTotal = (double)rd["ValorTotal"];
+        }
+
         public ItensCompra BuscarPorId(int _id)
         {
             {
@@ -205,13 +211,7 @@ namespace DAL
                         itensCompra = new ItensCompra();
                         if (rd.Read())
                         {
-                            itensCompra.Id = (int)rd["Id"];
-                            itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
-                            itensCompra.Nome = rd["Nome"].ToString();
-                            itensCompra.Marca = rd["Marca"].ToString();
-                            itensCompra.Quantidade = (int)rd["Quantidade"];
-                            itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
-                            itensCompra.ValorTotal = (double)rd["ValorTotal"];
+                            PreencherObjeto(itensCompra, rd);
                         }
                     }
                     return itensCompra;
@@ -249,13 +249,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         itensCompra = new ItensCompra();
-                        itensCompra.Id = (int)rd["Id"];
-                        itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
-                        itensCompra.Nome = rd["Nome"].ToString();
-                        itensCompra.Marca = rd["Marca"].ToString();
-                        itensCompra.Quantidade = (int)rd["Quantidade"];
-                        itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
-                        itensCompra.ValorTotal = (double)rd["ValorTotal"];
+                        PreencherObjeto(itensCompra, rd);
                         itensCompraList.Add(itensCompra);
                     }
                 }

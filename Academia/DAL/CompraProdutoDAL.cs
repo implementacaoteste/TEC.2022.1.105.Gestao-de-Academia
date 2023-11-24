@@ -149,10 +149,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         compraProduto = new CompraProduto();
-                        compraProduto.Id = (int)rd["Id"];
-                        compraProduto.FornecedorId = (int)rd["FornecedorId"];
-                        compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
-                        compraProduto.ValorTotal = (double)rd["ValorTotal"];
+                        PreencherObjeto(compraProduto, rd);
                         compraProdutoList.Add(compraProduto);
                     }
                 }
@@ -192,10 +189,7 @@ namespace DAL
                     compraProduto = new CompraProduto();
                     if (rd.Read())
                     {
-                        compraProduto.Id = (int)rd["Id"];
-                        compraProduto.FornecedorId = (int)rd["FornecedorId"];
-                        compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
-                        compraProduto.ValorTotal = (double)rd["ValorTotal"];
+                        PreencherObjeto(compraProduto, rd);
                     }
                 }
                 return compraProduto;
@@ -241,10 +235,7 @@ namespace DAL
                     compraProduto = new CompraProduto();
                     if (rd.Read())
                     {
-                        compraProduto.Id = (int)rd["Id"];
-                        compraProduto.FornecedorId = (int)rd["FornecedorId"];
-                        compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
-                        compraProduto.ValorTotal = (double)rd["ValorTotal"];
+                        PreencherObjeto(compraProduto, rd);
                     }
                 }
                 return compraProduto;
@@ -257,6 +248,13 @@ namespace DAL
             {
                 cn.Close();
             }
+        }
+        private static void PreencherObjeto(CompraProduto compraProduto, SqlDataReader rd)
+        {
+            compraProduto.Id = (int)rd["Id"];
+            compraProduto.FornecedorId = (int)rd["FornecedorId"];
+            compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
+            compraProduto.ValorTotal = (double)rd["ValorTotal"];
         }
     }
 }

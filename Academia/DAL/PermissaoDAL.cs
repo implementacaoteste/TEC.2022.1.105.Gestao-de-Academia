@@ -53,8 +53,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
-                        permissao.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(permissao, rd);
                         permissoes.Add(permissao);
                     }
                 }
@@ -69,6 +68,13 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        private static void PreencherObjeto(Permissao permissao, SqlDataReader rd)
+        {
+            permissao.Id = Convert.ToInt32(rd["Id"]);
+            permissao.Descricao = rd["Descricao"].ToString();
+        }
+
         public List<Permissao> BuscarPorDescricao(string _descricao)
         {
             List<Permissao> permissoes = new List<Permissao>();
@@ -89,8 +95,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
-                        permissao.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(permissao, rd);
                         permissoes.Add(permissao);
                     }
                 }
@@ -125,8 +130,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
-                        permissao.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(permissao, rd);
                         permissoes.Add(permissao);
                     }
                 }
@@ -164,8 +168,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         permissao = new Permissao();
-                        permissao.Id = Convert.ToInt32(rd["Id"]);
-                        permissao.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(permissao, rd);
                         permissoes.Add(permissao);
                     }
                 }

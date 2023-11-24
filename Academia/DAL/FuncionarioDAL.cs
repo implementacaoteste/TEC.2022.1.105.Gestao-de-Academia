@@ -168,20 +168,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         funcionario = new Funcionario();
-                        funcionario.Id = (int)rd["Id"];
-                        funcionario.Nome = rd["Nome"].ToString();
-                        funcionario.Cpf = rd["Cpf"].ToString();
-                        funcionario.Cargo = rd["Cargo"].ToString();
-                        funcionario.Telefone = rd["Telefone"].ToString();
-                        funcionario.Email = rd["Email"].ToString();
-                        funcionario.Rua = rd["Rua"].ToString();
-                        funcionario.CEP = rd["CEP"].ToString();
-                        funcionario.Bairro = rd["Bairro"].ToString();
-                        funcionario.Complemento = rd["Complemento"].ToString();
-                        funcionario.NumeroCasa = (int)rd["NumeroCasa"];
-                        funcionario.Pais = rd["Pais"].ToString();
-                        funcionario.Estado = rd["Estado"].ToString();
-                        funcionario.Cidade = rd["Cidade"].ToString();
+                        PreencherObjeto(funcionario, rd);
                         funcionarioList.Add(funcionario);
                     }
                 }
@@ -197,6 +184,25 @@ namespace DAL
                 cn.Close();
             }
         }
+
+        private static void PreencherObjeto(Funcionario funcionario, SqlDataReader rd)
+        {
+            funcionario.Id = (int)rd["Id"];
+            funcionario.Nome = rd["Nome"].ToString();
+            funcionario.Cpf = rd["Cpf"].ToString();
+            funcionario.Cargo = rd["Cargo"].ToString();
+            funcionario.Telefone = rd["Telefone"].ToString();
+            funcionario.Email = rd["Email"].ToString();
+            funcionario.Rua = rd["Rua"].ToString();
+            funcionario.CEP = rd["CEP"].ToString();
+            funcionario.Bairro = rd["Bairro"].ToString();
+            funcionario.Complemento = rd["Complemento"].ToString();
+            funcionario.NumeroCasa = (int)rd["NumeroCasa"];
+            funcionario.Pais = rd["Pais"].ToString();
+            funcionario.Estado = rd["Estado"].ToString();
+            funcionario.Cidade = rd["Cidade"].ToString();
+        }
+
         public Funcionario BuscarPorId(int _id)
         {
             Funcionario funcionario;
@@ -222,20 +228,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         funcionario = new Funcionario();
-                        funcionario.Id = (int)rd["Id"];
-                        funcionario.Nome = rd["Nome"].ToString();
-                        funcionario.Cpf = rd["Cpf"].ToString();
-                        funcionario.Cargo = rd["Cargo"].ToString();
-                        funcionario.Telefone = rd["Telefone"].ToString();
-                        funcionario.Email = rd["Email"].ToString();
-                        funcionario.Rua = rd["Rua"].ToString();
-                        funcionario.CEP = rd["CEP"].ToString();
-                        funcionario.Bairro = rd["Bairro"].ToString();
-                        funcionario.Complemento = rd["Complemento"].ToString();
-                        funcionario.NumeroCasa = (int)rd["NumeroCasa"];
-                        funcionario.Pais = rd["Pais"].ToString();
-                        funcionario.Estado = rd["Estado"].ToString();
-                        funcionario.Cidade = rd["Cidade"].ToString();
+                        PreencherObjeto(funcionario, rd);
                     }
                 }
                 return funcionario;
@@ -274,20 +267,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         funcionario = new Funcionario();
-                        funcionario.Id = (int)rd["Id"];
-                        funcionario.Nome = rd["Nome"].ToString();
-                        funcionario.Cpf = rd["Cpf"].ToString();
-                        funcionario.Cargo = rd["Cargo"].ToString();
-                        funcionario.Telefone = rd["Telefone"].ToString();
-                        funcionario.Email = rd["Email"].ToString();
-                        funcionario.Rua = rd["Rua"].ToString();
-                        funcionario.CEP = rd["CEP"].ToString();
-                        funcionario.Bairro = rd["Bairro"].ToString();
-                        funcionario.Complemento = rd["Complemento"].ToString();
-                        funcionario.NumeroCasa = (int)rd["NumeroCasa"];
-                        funcionario.Pais = rd["Pais"].ToString();
-                        funcionario.Estado = rd["Estado"].ToString();
-                        funcionario.Cidade = rd["Cidade"].ToString();
+                        PreencherObjeto(funcionario, rd);
                         funcionarioList.Add(funcionario);
                     }
                 }
@@ -328,20 +308,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         funcionario = new Funcionario();
-                        funcionario.Id = (int)rd["Id"];
-                        funcionario.Nome = rd["Nome"].ToString();
-                        funcionario.Cpf = rd["Cpf"].ToString();
-                        funcionario.Cargo = rd["Cargo"].ToString();
-                        funcionario.Telefone = rd["Telefone"].ToString();
-                        funcionario.Email = rd["Email"].ToString();
-                        funcionario.Rua = rd["Rua"].ToString();
-                        funcionario.CEP = rd["CEP"].ToString();
-                        funcionario.Bairro = rd["Bairro"].ToString();
-                        funcionario.Complemento = rd["Complemento"].ToString();
-                        funcionario.NumeroCasa = (int)rd["NumeroCasa"];
-                        funcionario.Pais = rd["Pais"].ToString();
-                        funcionario.Estado = rd["Estado"].ToString();
-                        funcionario.Cidade = rd["Cidade"].ToString();
+                        PreencherObjeto(funcionario, rd);
                     }
                 }
                 return funcionario;

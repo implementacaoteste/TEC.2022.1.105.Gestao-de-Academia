@@ -44,7 +44,6 @@
             this.PrecoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscarPorCliente = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,7 +51,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
@@ -61,7 +59,10 @@
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
             this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
-            this.buttonAdicionarProduto = new System.Windows.Forms.Button();
+            this.buttonAlterar = new System.Windows.Forms.Button();
+            this.buttonExcluir = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
@@ -197,18 +198,9 @@
             this.textBoxBuscarPorCliente.Size = new System.Drawing.Size(398, 27);
             this.textBoxBuscarPorCliente.TabIndex = 5;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(696, 275);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 40);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Finalizar pedido";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(849, 275);
+            this.button2.Location = new System.Drawing.Point(693, 630);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 40);
             this.button2.TabIndex = 9;
@@ -217,9 +209,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(849, 826);
+            this.button3.Location = new System.Drawing.Point(846, 630);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 29);
+            this.button3.Size = new System.Drawing.Size(147, 40);
             this.button3.TabIndex = 10;
             this.button3.Text = "Imprimir";
             this.button3.UseVisualStyleBackColor = true;
@@ -265,15 +257,6 @@
             this.label8.Size = new System.Drawing.Size(153, 20);
             this.label8.TabIndex = 11;
             this.label8.Text = "Forma de pagamento";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(17, 752);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(147, 40);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "FINALIZAR";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -340,22 +323,50 @@
             this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
             this.textBoxFormaPagamento.TabIndex = 17;
             // 
-            // buttonAdicionarProduto
+            // buttonAlterar
             // 
-            this.buttonAdicionarProduto.Location = new System.Drawing.Point(11, 281);
-            this.buttonAdicionarProduto.Name = "buttonAdicionarProduto";
-            this.buttonAdicionarProduto.Size = new System.Drawing.Size(153, 29);
-            this.buttonAdicionarProduto.TabIndex = 18;
-            this.buttonAdicionarProduto.Text = "Adicionar produto";
-            this.buttonAdicionarProduto.UseVisualStyleBackColor = true;
-            this.buttonAdicionarProduto.Click += new System.EventHandler(this.buttonAdicionarProduto_Click);
+            this.buttonAlterar.Location = new System.Drawing.Point(681, 275);
+            this.buttonAlterar.Name = "buttonAlterar";
+            this.buttonAlterar.Size = new System.Drawing.Size(153, 40);
+            this.buttonAlterar.TabIndex = 18;
+            this.buttonAlterar.Text = "Alterar";
+            this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAdicionarProduto_Click);
+            // 
+            // buttonExcluir
+            // 
+            this.buttonExcluir.Location = new System.Drawing.Point(840, 275);
+            this.buttonExcluir.Name = "buttonExcluir";
+            this.buttonExcluir.Size = new System.Drawing.Size(153, 40);
+            this.buttonExcluir.TabIndex = 18;
+            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonAdicionarProduto_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(12, 288);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(198, 27);
+            this.textBox2.TabIndex = 19;
+            this.textBox2.Text = "Código de barras";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(237, 288);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(207, 27);
+            this.textBox5.TabIndex = 19;
             // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 867);
-            this.Controls.Add(this.buttonAdicionarProduto);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.buttonExcluir);
+            this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.textBoxFormaPagamento);
             this.Controls.Add(this.buttonFormaDePagamento);
             this.Controls.Add(this.textBoxBuscarFuncionario);
@@ -368,8 +379,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridViewVendas);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -405,7 +414,6 @@
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
         private TextBox textBoxBuscarPorCliente;
         private BindingSource itensVendaBindingSource;
-        private Button button1;
         private Button button2;
         private Button button3;
         private Label label6;
@@ -418,7 +426,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label7;
         private Label label8;
-        private Button button4;
         private Label label9;
         private DateTimePicker dateTimePicker2;
         private Button buttonBuscarCliente;
@@ -427,6 +434,9 @@
         private Button buttonFormaDePagamento;
         private BindingSource bindingSourceVendas;
         private TextBox textBoxFormaPagamento;
-        private Button buttonAdicionarProduto;
+        private Button buttonAlterar;
+        private Button buttonExcluir;
+        private TextBox textBox2;
+        private TextBox textBox5;
     }
 }

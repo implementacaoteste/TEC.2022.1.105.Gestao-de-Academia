@@ -65,7 +65,7 @@ CREATE TABLE Cliente
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
-	DataCadastro SMALLDATETIME
+	DataCadastro DATETIME
 )
 GO
 CREATE TABLE Fornecedor
@@ -205,6 +205,30 @@ CREATE TABLE Funcionario
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
 )
+
+CREATE TABLE DadosBancarios
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	FornecedorId INT,
+	NomeBanco VARCHAR(50),
+	NumeroAgencia VARCHAR(6),
+	NumeroConta VARCHAR(21),
+	ChavePix VARCHAR(32),
+	TipoConta VARCHAR(30),
+	NomeTitular VARCHAR(100),
+	CpfCnpj VARCHAR(15),
+	Telefone VARCHAR(14),
+	Email VARCHAR(100),
+	TipoMoeda VARCHAR(10),
+	Iban VARCHAR(34),
+	Obs VARCHAR(100)
+)
+GO
+
+ALTER TABLE DadosBancarios
+ADD CONSTRAINT FK_DadosBancario_Fornecedor
+FOREIGN KEY (FornecedorId)
+REFERENCES Fornecedor(Id);
 GO
 
 ALTER TABLE Venda
