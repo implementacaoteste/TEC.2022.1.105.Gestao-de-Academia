@@ -211,7 +211,7 @@
             this.nomeTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(412, 27);
-            this.nomeTextBox.TabIndex = 2;
+            this.nomeTextBox.TabIndex = 0;
             // 
             // clienteBindingSource
             // 
@@ -224,7 +224,7 @@
             this.cPFTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cPFTextBox.Name = "cPFTextBox";
             this.cPFTextBox.Size = new System.Drawing.Size(180, 27);
-            this.cPFTextBox.TabIndex = 4;
+            this.cPFTextBox.TabIndex = 2;
             // 
             // rGTextBox
             // 
@@ -233,7 +233,7 @@
             this.rGTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rGTextBox.Name = "rGTextBox";
             this.rGTextBox.Size = new System.Drawing.Size(122, 27);
-            this.rGTextBox.TabIndex = 6;
+            this.rGTextBox.TabIndex = 1;
             // 
             // foneTextBox
             // 
@@ -242,7 +242,7 @@
             this.foneTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.foneTextBox.Name = "foneTextBox";
             this.foneTextBox.Size = new System.Drawing.Size(213, 27);
-            this.foneTextBox.TabIndex = 8;
+            this.foneTextBox.TabIndex = 3;
             // 
             // emailTextBox
             // 
@@ -251,7 +251,7 @@
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(267, 27);
-            this.emailTextBox.TabIndex = 10;
+            this.emailTextBox.TabIndex = 4;
             // 
             // label1
             // 
@@ -270,7 +270,7 @@
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(75, 29);
-            this.buttonSalvar.TabIndex = 12;
+            this.buttonSalvar.TabIndex = 13;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
@@ -282,7 +282,7 @@
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(75, 29);
-            this.buttonCancelar.TabIndex = 12;
+            this.buttonCancelar.TabIndex = 14;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
@@ -303,7 +303,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(402, 27);
-            this.textBox1.TabIndex = 10;
+            this.textBox1.TabIndex = 6;
             // 
             // textBox2
             // 
@@ -312,7 +312,7 @@
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(154, 27);
-            this.textBox2.TabIndex = 8;
+            this.textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
@@ -321,7 +321,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(267, 27);
-            this.textBox3.TabIndex = 8;
+            this.textBox3.TabIndex = 9;
             // 
             // textBox4
             // 
@@ -330,7 +330,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(101, 27);
-            this.textBox4.TabIndex = 8;
+            this.textBox4.TabIndex = 7;
             // 
             // textBox5
             // 
@@ -339,7 +339,7 @@
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(396, 27);
-            this.textBox5.TabIndex = 10;
+            this.textBox5.TabIndex = 8;
             // 
             // textBox6
             // 
@@ -348,7 +348,7 @@
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(212, 27);
-            this.textBox6.TabIndex = 8;
+            this.textBox6.TabIndex = 10;
             // 
             // textBox7
             // 
@@ -357,7 +357,7 @@
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(212, 27);
-            this.textBox7.TabIndex = 8;
+            this.textBox7.TabIndex = 11;
             // 
             // textBox8
             // 
@@ -366,7 +366,7 @@
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(212, 27);
-            this.textBox8.TabIndex = 8;
+            this.textBox8.TabIndex = 12;
             // 
             // FormCadastroCliente
             // 
