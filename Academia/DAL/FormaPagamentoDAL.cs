@@ -194,8 +194,7 @@ namespace DAL
                     while (rd.Read())
                     {
                         formaPagamento = new FormaPagamento();
-                        formaPagamento.Id = (int)rd["Id"];
-                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(formaPagamento, rd);
 
                         formaPagamentoList.Add(formaPagamento);
                     }
@@ -237,8 +236,7 @@ namespace DAL
                     if (rd.Read())
                     {
                         formaPagamento = new FormaPagamento();
-                        formaPagamento.Id = (int)rd["Id"];
-                        formaPagamento.Descricao = rd["Descricao"].ToString();
+                        PreencherObjeto(formaPagamento, rd);
                     }
                 }
                 return formaPagamento;
