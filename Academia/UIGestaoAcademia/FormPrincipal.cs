@@ -139,5 +139,13 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormRelatorioDeVendas frm = new FormRelatorioDeVendas())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

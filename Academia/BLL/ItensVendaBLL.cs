@@ -14,10 +14,6 @@ namespace BLL
         {
             new ItensVendaDAL().Inserir(_itensvenda);
         }
-        public void Alterar(ItensVenda _itensvenda)
-        {
-            new ItensVendaDAL().Alterar(_itensvenda);
-        }
         public void Excluir(int _id)
         {
             new ItensVendaDAL().Excluir(_id);

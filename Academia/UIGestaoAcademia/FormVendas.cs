@@ -1,5 +1,8 @@
 ﻿using BLL;
+using DAL;
 using Models;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace UIGestaoAcademia
 {
@@ -112,13 +115,62 @@ namespace UIGestaoAcademia
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-                if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return;
+            if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
 
-                int id = ((ItensVenda)itensVendaBindingSource.Current).VendaId;
-                new ItensVendaBLL().Excluir(id);
-                itensVendaBindingSource.RemoveCurrent();
-                MessageBox.Show("Registro excluido com sucesso!");           
+            int id = ((ItensVenda)itensVendaBindingSource.Current).VendaId;
+            new ItensVendaBLL().Excluir(id);
+            itensVendaBindingSource.RemoveCurrent();
+            MessageBox.Show("Registro excluido com sucesso!");
+        }
+        private void FinalizarVenda()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(Conexao.StringDeConexao))
+                {
+                    connection.Open();
+
+                    // Inserir a venda na tabela Venda
+                    string insertVendaQuery = "INSERT INTO Venda (DataVenda, ValorTotal) VALUES (@DataVenda, @ValorTotal); SELECT SCOPE_IDENTITY();";
+                    using (SqlCommand cmdInsertVenda = new SqlCommand(insertVendaQuery, connection))
+                    {
+                        cmdInsertVenda.Parameters.AddWithValue("@DataVenda", DateTime.Now);
+                        cmdInsertVenda.Parameters.AddWithValue("@ValorTotal", labelValorTotal.Text); // Chame o método que calcula o valor total
+
+                        int vendaId = Convert.ToInt32(cmdInsertVenda.ExecuteScalar());
+
+                        // Inserir cada item da venda na tabela ItensVenda
+                        string insertItemQuery = "INSERT INTO ItensVenda (CodigoDeBarras, NomeDoProduto, Quantidade, PrecoUnitario, PrecoTotal) VALUES (@CodigoDeBarras,@NomeProduto, @Quantidade, @PrecoUnitario, @PrecoTotal);";
+                        using (SqlCommand cmdInsertItem = new SqlCommand(insertItemQuery, connection))
+                        {
+                            foreach (ItensVenda item in itensVendaBindingSource)
+                            {
+                                cmdInsertItem.Parameters.Clear();
+                                cmdInsertItem.Parameters.AddWithValue("@CodigoDeBarras", item.CodigoDeBarras);
+                                cmdInsertItem.Parameters.AddWithValue("NomeDoProduto", item.NomeProduto);
+                                cmdInsertItem.Parameters.AddWithValue("@Quantidade", item.Quantidade);
+                                cmdInsertItem.Parameters.AddWithValue("@PrecoUnitario", item.PrecoUnitario);
+                                cmdInsertItem.Parameters.AddWithValue("@PrecoTotal", item.PrecoTotal);
+
+                                cmdInsertItem.ExecuteNonQuery();
+                            }
+                        }
+
+                        MessageBox.Show("Venda registrada com sucesso!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao registrar a venda: " + ex.Message);
+            }
+        }
+
+        private void buttonFinalizarVenda_Click(object sender, EventArgs e)
+        {
+            FinalizarVenda();
         }
     }
-}
+}   
+

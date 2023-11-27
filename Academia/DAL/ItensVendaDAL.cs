@@ -43,7 +43,7 @@ namespace DAL
                         if (transaction.Connection != null && transaction.Connection.State == ConnectionState.Open)
                             transaction.Rollback();
 
-                        throw new Exception("Ocorreu um erro ao tentar inserir o produto no banco de dados.", ex);
+                        throw new Exception("Ocorreu um erro ao tentar finalizar a venda.", ex);
                     }
                 }
             }

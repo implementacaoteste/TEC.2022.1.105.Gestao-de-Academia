@@ -37,7 +37,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscarPorCliente = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonFinalizarVenda = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -52,7 +52,6 @@
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
             this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
-            this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.textBoxProduto = new System.Windows.Forms.TextBox();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
@@ -136,14 +135,15 @@
             this.textBoxBuscarPorCliente.Size = new System.Drawing.Size(398, 27);
             this.textBoxBuscarPorCliente.TabIndex = 5;
             // 
-            // button2
+            // buttonFinalizarVenda
             // 
-            this.button2.Location = new System.Drawing.Point(617, 712);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 40);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Finalizar venda";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonFinalizarVenda.Location = new System.Drawing.Point(617, 712);
+            this.buttonFinalizarVenda.Name = "buttonFinalizarVenda";
+            this.buttonFinalizarVenda.Size = new System.Drawing.Size(147, 40);
+            this.buttonFinalizarVenda.TabIndex = 9;
+            this.buttonFinalizarVenda.Text = "Finalizar venda";
+            this.buttonFinalizarVenda.UseVisualStyleBackColor = true;
+            this.buttonFinalizarVenda.Click += new System.EventHandler(this.buttonFinalizarVenda_Click);
             // 
             // button3
             // 
@@ -260,15 +260,6 @@
             this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
             this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
             this.textBoxFormaPagamento.TabIndex = 17;
-            // 
-            // buttonAlterar
-            // 
-            this.buttonAlterar.Location = new System.Drawing.Point(605, 307);
-            this.buttonAlterar.Name = "buttonAlterar";
-            this.buttonAlterar.Size = new System.Drawing.Size(153, 40);
-            this.buttonAlterar.TabIndex = 18;
-            this.buttonAlterar.Text = "Alterar";
-            this.buttonAlterar.UseVisualStyleBackColor = true;
             // 
             // buttonExcluir
             // 
@@ -414,7 +405,6 @@
             this.Controls.Add(this.textBoxQuantidade);
             this.Controls.Add(this.textBoxProduto);
             this.Controls.Add(this.buttonExcluir);
-            this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.textBoxFormaPagamento);
             this.Controls.Add(this.buttonFormaDePagamento);
             this.Controls.Add(this.textBoxBuscarFuncionario);
@@ -426,7 +416,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonFinalizarVenda);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBoxBuscarPorCliente);
@@ -459,7 +449,7 @@
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
         private TextBox textBoxBuscarPorCliente;
         private BindingSource itensVendaBindingSource;
-        private Button button2;
+        private Button buttonFinalizarVenda;
         private Button button3;
         private Label label6;
         private TextBox textBox4;
@@ -474,7 +464,6 @@
         private Button buttonFormaDePagamento;
         private BindingSource bindingSourceVendas;
         private TextBox textBoxFormaPagamento;
-        private Button buttonAlterar;
         private Button buttonExcluir;
         private TextBox textBoxProduto;
         private TextBox textBoxQuantidade;
