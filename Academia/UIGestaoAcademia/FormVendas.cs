@@ -9,7 +9,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             bindingSourceVendas.AddNew();
-            dataGridView1.DataSource = bindingSourceVendas;
+            dataGridView1.DataSource = itensVendaBindingSource;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace UIGestaoAcademia
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode== Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxProduto.Text);
                 itensVendaBindingSource.AddNew();
@@ -78,19 +78,47 @@ namespace UIGestaoAcademia
 
                 itensVendaBindingSource.EndEdit();
 
-                dataGridView1.DataSource = bindingSourceVendas;
+                dataGridView1.DataSource = itensVendaBindingSource;
                 dataGridView1.Refresh();
                 textBoxProduto.Clear();
-                textBoxQuantidade.Text = "1";
+                textBoxQuantidade.Clear();
+                textBoxQuantidade.Text = "";
+
+                AtualizarValorTotal();
 
             }
         }
+        private void AtualizarValorTotal()
+        {
+            double valorTotal = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DataBoundItem is ItensVenda item)
+                {
+                    valorTotal += item.PrecoTotal;
+                }
+            }
+            labelValorTotal.Text = valorTotal.ToString("C");
+        }
+
         private void buttonBuscarProduto_Click(object sender, EventArgs e)
         {
             using (FormBuscarProduto frm = new FormBuscarProduto())
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+                if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+
+                int id = ((ItensVenda)itensVendaBindingSource.Current).VendaId;
+                new ItensVendaBLL().Excluir(id);
+                itensVendaBindingSource.RemoveCurrent();
+                MessageBox.Show("Registro excluido com sucesso!");           
         }
     }
 }
