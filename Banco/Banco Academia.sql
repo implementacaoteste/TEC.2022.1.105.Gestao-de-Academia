@@ -91,8 +91,8 @@ CREATE TABLE ItensCompra
 (
 	Id Int Primary key identity(1,1),
 	CompraProdutoId INT,
-	ProdutoId Int,
 	Nome VARCHAR(100),
+	Marca VARCHAR(100),
 	Quantidade INT,
 	ValorUnitario FLOAT,
 	ValorTotal FLOAT
@@ -205,30 +205,6 @@ CREATE TABLE Funcionario
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
 )
-
-CREATE TABLE DadosBancarios
-(
-	Id INT PRIMARY KEY IDENTITY(1,1),
-	FornecedorId INT,
-	NomeBanco VARCHAR(50),
-	NumeroAgencia VARCHAR(6),
-	NumeroConta VARCHAR(21),
-	ChavePix VARCHAR(32),
-	TipoConta VARCHAR(30),
-	NomeTitular VARCHAR(100),
-	CpfCnpj VARCHAR(15),
-	Telefone VARCHAR(14),
-	Email VARCHAR(100),
-	TipoMoeda VARCHAR(10),
-	Iban VARCHAR(34),
-	Obs VARCHAR(100)
-)
-GO
-
-ALTER TABLE DadosBancarios
-ADD CONSTRAINT FK_DadosBancario_Fornecedor
-FOREIGN KEY (FornecedorId)
-REFERENCES Fornecedor(Id);
 GO
 
 ALTER TABLE Venda
@@ -278,16 +254,6 @@ ADD CONSTRAINT FK_Fornecedor_CompraProduto
 FOREIGN KEY (FornecedorId)
 REFERENCES Fornecedor(Id);
 GO
-ALTER TABLE ItensCompra
-ADD CONSTRAINT FK_ItensCompra_Produto
-FOREIGN KEY (ProdutoId)
-REFERENCES Produto(Id);
-GO
-ALTER TABLE ItensCompra
-ADD CONSTRAINT FK_ItensCompra_CompraProduto
-FOREIGN KEY (CompraProdutoId)
-REFERENCES CompraProduto(Id);
-GO
 
 ALTER TABLE Financas
 ADD CONSTRAINT FK_Fornecedor_Financas
@@ -335,158 +301,6 @@ ADD CONSTRAINT FK_PagamentoFuncionario_Funcionario
 FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
 GO
-
-select*from Fornecedor
-GO
-
-ALTER TABLE Fornecedor
-ADD Rua VARCHAR(100)
-GO
-
-ALTER TABLE Fornecedor
-ADD CEP VARCHAR(100)
-GO
-
-ALTER TABLE Fornecedor
-ADD Bairro VARCHAR(100)
-GO
-
-ALTER TABLE Fornecedor
-ADD Complemento VARCHAR(100)
-GO
-
-ALTER TABLE Fornecedor
-ADD NumeroCasa INT
-GO
-
-ALTER TABLE Fornecedor
-DROP COLUMN Endereco
-GO
-
---
-
-select*from Funcionario
-GO
-
-ALTER TABLE Funcionario
-ADD Rua VARCHAR(100)
-GO
-
-ALTER TABLE Funcionario
-ADD CEP VARCHAR(100)
-GO
-
-ALTER TABLE Funcionario
-ADD Bairro VARCHAR(100)
-GO
-
-ALTER TABLE Funcionario
-ADD Complemento VARCHAR(100)
-GO
-
-ALTER TABLE Funcionario
-ADD NumeroCasa INT
-GO
-
-ALTER TABLE Funcionario
-DROP COLUMN Endereco
-GO
-
---
-
-select*from Cliente
-GO
-
-ALTER TABLE Cliente
-ADD Rua VARCHAR(100)
-GO
-
-ALTER TABLE Cliente
-ADD CEP VARCHAR(100)
-GO
-
-ALTER TABLE Cliente
-ADD Bairro VARCHAR(100)
-GO
-
-ALTER TABLE Cliente
-ADD Complemento VARCHAR(100)
-GO
-
-ALTER TABLE Cliente
-ADD NumeroCasa INT
-GO
-
-ALTER TABLE Cliente
-DROP COLUMN Endereco
-GO
-
-ALTER TABLE Funcionario
-ALTER COLUMN CEP VARCHAR(9)
-GO
-
-ALTER TABLE Cliente
-ALTER COLUMN CEP VARCHAR(9)
-GO
-
-ALTER TABLE Fornecedor
-ALTER COLUMN CEP VARCHAR(9)
-GO
-
---
-
-ALTER TABLE Cliente
-ADD Pais VARCHAR(50)
-GO
-
-ALTER TABLE Cliente
-ADD Cidade VARCHAR(50)
-GO
-
-ALTER TABLE Cliente
-ADD Estado VARCHAR(100)
-GO
-
---
-
-ALTER TABLE Fornecedor
-ADD Pais VARCHAR(50)
-GO
-
-ALTER TABLE Fornecedor
-ADD Cidade VARCHAR(50)
-GO
-
-ALTER TABLE Fornecedor
-ADD Estado VARCHAR(100)
-GO
-
---
-
-ALTER TABLE Funcionario
-ADD Pais VARCHAR(50)
-GO
-
-ALTER TABLE Funcionario
-ADD Cidade VARCHAR(50)
-GO
-
-ALTER TABLE Funcionario
-ADD Estado VARCHAR(100)
-GO
-
---
-
-ALTER TABLE Fornecedor
-ALTER COLUMN Estado VARCHAR(50)
-GO
-
-ALTER TABLE Funcionario
-ALTER COLUMN Estado VARCHAR(50)
-GO
-
-ALTER TABLE Cliente
-ALTER COLUMN Estado VARCHAR(50)
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
@@ -571,4 +385,142 @@ GO
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 1)
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
+GO
+
+--
+
+ALTER TABLE Cliente
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Cliente
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Cliente
+DROP COLUMN Endereco
+GO
+
+ALTER TABLE Cliente
+ALTER COLUMN CEP VARCHAR(9)
+GO
+
+ALTER TABLE Cliente
+ALTER COLUMN Estado VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Cliente
+ADD Estado VARCHAR(100)
+GO
+
+--
+
+ALTER TABLE Fornecedor
+ALTER COLUMN CEP VARCHAR(9)
+GO
+
+ALTER TABLE Fornecedor
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Estado VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ALTER COLUMN Estado VARCHAR(50)
+GO
+
+ALTER TABLE Fornecedor
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Fornecedor
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Fornecedor
+DROP COLUMN Endereco
+GO
+
+--
+
+ALTER TABLE Funcionario
+ALTER COLUMN Estado VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ALTER COLUMN CEP VARCHAR(9)
+GO
+
+ALTER TABLE Funcionario
+ADD Pais VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ADD Cidade VARCHAR(50)
+GO
+
+ALTER TABLE Funcionario
+ADD Estado VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Rua VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD CEP VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Bairro VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD Complemento VARCHAR(100)
+GO
+
+ALTER TABLE Funcionario
+ADD NumeroCasa INT
+GO
+
+ALTER TABLE Funcionario
+DROP COLUMN Endereco
 GO
