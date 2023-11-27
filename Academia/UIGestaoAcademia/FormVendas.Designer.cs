@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -66,6 +65,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonBuscarProduto = new System.Windows.Forms.Button();
+            this.labelValorTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -100,17 +100,10 @@
             this.label2.Text = "VENDA";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(725, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 27);
-            this.textBox1.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(591, 143);
+            this.label4.Location = new System.Drawing.Point(500, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 3;
@@ -145,7 +138,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(617, 702);
+            this.button2.Location = new System.Drawing.Point(617, 712);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 40);
             this.button2.TabIndex = 9;
@@ -154,7 +147,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(770, 702);
+            this.button3.Location = new System.Drawing.Point(770, 712);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(147, 40);
             this.button3.TabIndex = 10;
@@ -164,7 +157,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(591, 180);
+            this.label6.Location = new System.Drawing.Point(591, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 11;
@@ -172,7 +165,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(725, 173);
+            this.textBox4.Location = new System.Drawing.Point(725, 183);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(192, 27);
             this.textBox4.TabIndex = 5;
@@ -197,7 +190,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 702);
+            this.label8.Location = new System.Drawing.Point(9, 712);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 20);
             this.label8.TabIndex = 11;
@@ -206,7 +199,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 746);
+            this.label9.Location = new System.Drawing.Point(9, 756);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(143, 20);
             this.label9.TabIndex = 11;
@@ -215,7 +208,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(177, 741);
+            this.dateTimePicker2.Location = new System.Drawing.Point(168, 751);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(166, 27);
             this.dateTimePicker2.TabIndex = 12;
@@ -249,7 +242,7 @@
             // 
             // buttonFormaDePagamento
             // 
-            this.buttonFormaDePagamento.Location = new System.Drawing.Point(310, 699);
+            this.buttonFormaDePagamento.Location = new System.Drawing.Point(301, 709);
             this.buttonFormaDePagamento.Name = "buttonFormaDePagamento";
             this.buttonFormaDePagamento.Size = new System.Drawing.Size(33, 29);
             this.buttonFormaDePagamento.TabIndex = 16;
@@ -263,7 +256,7 @@
             // 
             // textBoxFormaPagamento
             // 
-            this.textBoxFormaPagamento.Location = new System.Drawing.Point(179, 699);
+            this.textBoxFormaPagamento.Location = new System.Drawing.Point(170, 709);
             this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
             this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
             this.textBoxFormaPagamento.TabIndex = 17;
@@ -285,6 +278,7 @@
             this.buttonExcluir.TabIndex = 18;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // textBoxProduto
             // 
@@ -300,7 +294,6 @@
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
             this.textBoxQuantidade.TabIndex = 19;
-            this.textBoxQuantidade.Text = "1";
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
@@ -398,11 +391,22 @@
             this.buttonBuscarProduto.UseVisualStyleBackColor = true;
             this.buttonBuscarProduto.Click += new System.EventHandler(this.buttonBuscarProduto_Click);
             // 
+            // labelValorTotal
+            // 
+            this.labelValorTotal.AutoSize = true;
+            this.labelValorTotal.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelValorTotal.Location = new System.Drawing.Point(640, 72);
+            this.labelValorTotal.Name = "labelValorTotal";
+            this.labelValorTotal.Size = new System.Drawing.Size(133, 62);
+            this.labelValorTotal.TabIndex = 23;
+            this.labelValorTotal.Text = "Teste";
+            // 
             // FormVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 867);
+            this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.buttonBuscarProduto);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
@@ -426,7 +430,6 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBoxBuscarPorCliente);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -447,7 +450,7 @@
         private Label label1;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox textBoxValorTotal;
         private Label label4;
         private Label label5;
         private TextBox textBox3;
@@ -485,5 +488,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
+        private Label labelValorTotal;
     }
 }
