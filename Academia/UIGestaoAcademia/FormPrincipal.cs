@@ -139,5 +139,13 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void formDadosBancariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastrarDadosBancarios frm = new FormCadastrarDadosBancarios())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

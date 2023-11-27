@@ -37,12 +37,13 @@
             this.debitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formDadosBancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             this.debitoToolStripMenuItem,
             this.funcionárioToolStripMenuItem,
             this.fornecedorToolStripMenuItem,
-            this.buscarFornecedorToolStripMenuItem});
+            this.buscarFornecedorToolStripMenuItem,
+            this.formDadosBancariosToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -125,6 +127,13 @@
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
+            // buscarFornecedorToolStripMenuItem
+            // 
+            this.buscarFornecedorToolStripMenuItem.Name = "buscarFornecedorToolStripMenuItem";
+            this.buscarFornecedorToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.buscarFornecedorToolStripMenuItem.Text = "BuscarFornecedor";
+            this.buscarFornecedorToolStripMenuItem.Click += new System.EventHandler(this.buscarFornecedorToolStripMenuItem_Click);
+            // 
             // vENDASToolStripMenuItem
             // 
             this.vENDASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -163,12 +172,12 @@
             this.comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
             this.comprasDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeProdutosToolStripMenuItem_Click);
             // 
-            // buscarFornecedorToolStripMenuItem
+            // formDadosBancariosToolStripMenuItem
             // 
-            this.buscarFornecedorToolStripMenuItem.Name = "buscarFornecedorToolStripMenuItem";
-            this.buscarFornecedorToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.buscarFornecedorToolStripMenuItem.Text = "BuscarFornecedor";
-            this.buscarFornecedorToolStripMenuItem.Click += new System.EventHandler(this.buscarFornecedorToolStripMenuItem_Click);
+            this.formDadosBancariosToolStripMenuItem.Name = "formDadosBancariosToolStripMenuItem";
+            this.formDadosBancariosToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.formDadosBancariosToolStripMenuItem.Text = "FormDadosBancarios";
+            this.formDadosBancariosToolStripMenuItem.Click += new System.EventHandler(this.formDadosBancariosToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -211,6 +220,7 @@
         private ToolStripMenuItem comprasDeProdutosToolStripMenuItem;
         private ToolStripMenuItem fornecedorToolStripMenuItem;
         private ToolStripMenuItem buscarFornecedorToolStripMenuItem;
+        private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
     }
 }
 
