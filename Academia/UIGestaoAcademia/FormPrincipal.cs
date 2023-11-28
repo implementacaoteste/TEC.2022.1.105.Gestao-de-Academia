@@ -140,9 +140,17 @@ namespace UIGestaoAcademia
             }
         }
 
+
         private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormRelatorioDeVendas frm = new FormRelatorioDeVendas())
+            {
+                frm.ShowDialog();
+            }
+        }
+        private void formDadosBancariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormCadastrarDadosBancarios frm = new FormCadastrarDadosBancarios())
             {
                 frm.ShowDialog();
             }
