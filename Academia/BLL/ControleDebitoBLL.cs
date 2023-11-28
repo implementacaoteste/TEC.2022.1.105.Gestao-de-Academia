@@ -9,27 +9,15 @@ namespace BLL
         {
             return new ControleDebitoDAL().BuscarTodos();
         }
-        public ControleDebito BuscarDebitoVencido(string _buscarDebitoVencido)
+        
+        public ControleDebito BuscarDebitoVencido()
         {
-            if (string.IsNullOrEmpty(_buscarDebitoVencido))
-                throw new Exception("Informe uma data!");
-
-            return BuscarDebitoVencido(_buscarDebitoVencido);
+            return new ControleDebitoDAL().BuscarDebitoVencido();
         }
-        public ControleDebito BuscarDebitoVencido(DateTime _buscarDebitoVencido)
+      
+        public List<ControleDebito> BuscarDebitoPago()
         {
-            return new ControleDebitoDAL().BuscarDebitoVencido(_buscarDebitoVencido);
-        }
-        public ControleDebito BuscarDebitoPago(string _buscarDebitoPago)
-        {
-            if (string.IsNullOrEmpty(_buscarDebitoPago))
-                throw new Exception("Informe uma data!");
-
-            return BuscarDebitoPago(_buscarDebitoPago);
-        }
-        public ControleDebito BuscarDebitoPago(DateTime _buscarDebitoPago)
-        {
-            return new ControleDebitoDAL().BuscarDebitoPago(_buscarDebitoPago);
+            return new ControleDebitoDAL().BuscarDebitoPago();
         }
         public ControleDebito BuscarDebitoCorrente(string _buscarDebitoCorrente)
         {
@@ -57,6 +45,17 @@ namespace BLL
         public void Inserir(ControleDebito _controleDebito)
         {
             new ControleDebitoDAL().Inserir(_controleDebito);
+        }
+
+        public List<ControleDebito> BuscarPorDataDeVencimento(string _dataInicial, string _dataFinal)
+        {
+            if (string.IsNullOrEmpty(_dataInicial))
+                throw new Exception("Informe a data incial.");
+            
+            if (string.IsNullOrEmpty(_dataFinal))
+                throw new Exception("Informe a data final.");
+
+            return new ControleDebitoDAL().BuscarPorDataDeVencimento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
         }
     }
 }

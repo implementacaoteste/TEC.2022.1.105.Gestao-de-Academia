@@ -60,9 +60,21 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.Cliente.Id);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamento.Id);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
-                        cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
-                        cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
-                        cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
+                        if (_controleDebito.DataLancamento.Year < 1900)
+                            cmd.Parameters.AddWithValue("@DataLancamento", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
+
+                        if (_controleDebito.DataVencimento.Year < 1900)
+                            cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
+
+                        if (_controleDebito.DataPagamento.Year < 1900)
+                            cmd.Parameters.AddWithValue("@DataPagamento", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
+
                         cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
                         cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
                         cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
@@ -176,7 +188,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public ControleDebito BuscarDebitoVencido(DateTime _buscarDebitoVencido)
+        public ControleDebito BuscarDebitoVencido()
         {
             ControleDebito controleDebito;
 
@@ -186,11 +198,9 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = selectBase + " WHERE DataVencimento < GetDate() AND DataDePagamento Is Null";
+                cmd.CommandText = selectBase + " WHERE DataVencimento < GetDate() AND DataPagamento Is Null";
 
-                cmd.CommandType = System.Data.CommandType.Text; 
-                
-                    cmd.Parameters.Add(_buscarDebitoVencido);
+                cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
 
@@ -214,34 +224,34 @@ namespace DAL
                 cn.Close();
             }
         }
-        public ControleDebito BuscarDebitoPago(DateTime _buscarDebitoPago)
+
+        public List<ControleDebito> BuscarDebitoPago()
         {
             ControleDebito controleDebito;
-
+            List<ControleDebito> controleDebitoList = new List<ControleDebito>();
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = @"SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataPagamento Is Not null";
+                cmd.CommandText = selectBase + " WHERE DataPagamento Is Not null";
 
                 cmd.CommandType = System.Data.CommandType.Text;
-
-                cmd.Parameters.Add(_buscarDebitoPago);
 
                 cn.Open();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     controleDebito = new ControleDebito();
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         controleDebito = new ControleDebito();
                         PreencherObjeto(controleDebito, rd);
+                        controleDebitoList.Add(controleDebito);
                     }
                 }
-                return controleDebito;
+                return controleDebitoList;
             }
             catch (Exception ex)
             {
@@ -262,7 +272,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = @"SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, FormaPagamento, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE DataPagamento Is null";
+                cmd.CommandText = selectBase + " WHERE DataPagamento Is null";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -301,7 +311,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = "SELECT Id, ClienteId, ValorDebito, FormaPagamentoId, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo FROM ControleDebito WHERE Id = @Id";
+                cmd.CommandText = selectBase + " WHERE Id = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -335,9 +345,16 @@ namespace DAL
             controleDebito.ClienteId = (int)rd["ClienteId"];
             controleDebito.ValorDebito = (double)rd["ValorDebito"];
             controleDebito.FormaPagamentoId = (int)rd["FormaPagamentoId"];
-            controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
-            controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];
-            controleDebito.DataPagamento = (DateTime)rd["DataPagamento"];
+
+            if (rd["DataLancamento"] != DBNull.Value)
+                controleDebito.DataLancamento = (DateTime)rd["DataLancamento"];
+
+            if (rd["DataVencimento"] != DBNull.Value)
+                controleDebito.DataVencimento = (DateTime)rd["DataVencimento"];
+
+            if (rd["DataPagamento"] != DBNull.Value)
+                controleDebito.DataPagamento = (DateTime)rd["DataPagamento"];
+
             controleDebito.Juros = (double)rd["Juros"];
             controleDebito.Desconto = (double)rd["Desconto"];
             controleDebito.Acrescimo = (double)rd["Acrescimo"];
@@ -345,6 +362,45 @@ namespace DAL
             controleDebito.Cliente = new ClienteDAL().BuscarPorId(controleDebito.ClienteId);
         }
 
+        public List<ControleDebito> BuscarPorDataDeVencimento(DateTime _dataInicial, DateTime _dataFinal)
+        {
+            List<ControleDebito> controleDebitoList = new List<ControleDebito>();
+            ControleDebito controleDebito;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+                cmd.CommandText = selectBase + " WHERE DataVencimento BETWEEN @DataInicial AND @DataFinal";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@DataInicial", _dataInicial);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        controleDebito = new ControleDebito();
+                        PreencherObjeto(controleDebito, rd);
+                        controleDebitoList.Add(controleDebito);
+                    }
+                }
+                return controleDebitoList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o debito no banco de dados no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
     }
 
 }

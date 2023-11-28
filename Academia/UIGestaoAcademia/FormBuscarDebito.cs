@@ -23,10 +23,13 @@ namespace UIGestaoAcademia
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente(textBoxBuscarPor.Text);
                         break;
                     case 2:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago();
                         break;
                     case 3:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido();
+                        break;
+                    case 5:
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeVencimento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
                         break;
                     default:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
@@ -83,6 +86,20 @@ namespace UIGestaoAcademia
         private void FormBuscarDebito_Load(object sender, EventArgs e)
         {
             comboBoxBuscarPor.SelectedIndex = 0;
+        }
+
+        private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBoxBuscarPor.Width = 454;
+            textBoxDataFinal.Visible = false;
+            labelE.Visible = false;
+
+            if (comboBoxBuscarPor.SelectedIndex == 5)
+            {
+                textBoxBuscarPor.Width = 187;
+                textBoxDataFinal.Visible = true;
+                labelE.Visible = true;
+            }
         }
     }
 }
