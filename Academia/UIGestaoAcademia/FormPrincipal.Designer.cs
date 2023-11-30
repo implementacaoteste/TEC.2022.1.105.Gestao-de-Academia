@@ -38,12 +38,12 @@
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formDadosBancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formDadosBancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,13 @@
             this.buscarFornecedorToolStripMenuItem.Text = "BuscarFornecedor";
             this.buscarFornecedorToolStripMenuItem.Click += new System.EventHandler(this.buscarFornecedorToolStripMenuItem_Click);
             // 
+            // formDadosBancariosToolStripMenuItem
+            // 
+            this.formDadosBancariosToolStripMenuItem.Name = "formDadosBancariosToolStripMenuItem";
+            this.formDadosBancariosToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.formDadosBancariosToolStripMenuItem.Text = "FormDadosBancaros";
+            this.formDadosBancariosToolStripMenuItem.Click += new System.EventHandler(this.formDadosBancariosToolStripMenuItem_Click);
+            // 
             // vENDASToolStripMenuItem
             // 
             this.vENDASToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -172,9 +179,9 @@
             this.comprasDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
             this.comprasDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeProdutosToolStripMenuItem_Click);
-            this.formDadosBancariosToolStripMenuItem.Name = "formDadosBancariosToolStripMenuItem";
-            this.formDadosBancariosToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.formDadosBancariosToolStripMenuItem.Text = "FormDadosBancarios";
+            // 
+            // FormPrincipal
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 590);
