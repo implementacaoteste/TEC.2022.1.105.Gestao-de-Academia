@@ -3,6 +3,7 @@ using DAL;
 using Models;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing.Text;
 
 namespace UIGestaoAcademia
 {
@@ -123,53 +124,51 @@ namespace UIGestaoAcademia
             itensVendaBindingSource.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
-        private void FinalizarVenda()
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(Conexao.StringDeConexao))
-                {
-                    connection.Open();
-
-                    // Inserir a venda na tabela Venda
-                    string insertVendaQuery = "INSERT INTO Venda (DataVenda, ValorTotal) VALUES (@DataVenda, @ValorTotal); SELECT SCOPE_IDENTITY();";
-                    using (SqlCommand cmdInsertVenda = new SqlCommand(insertVendaQuery, connection))
-                    {
-                        cmdInsertVenda.Parameters.AddWithValue("@DataVenda", DateTime.Now);
-                        cmdInsertVenda.Parameters.AddWithValue("@ValorTotal", labelValorTotal.Text); // Chame o método que calcula o valor total
-
-                        int vendaId = Convert.ToInt32(cmdInsertVenda.ExecuteScalar());
-
-                        // Inserir cada item da venda na tabela ItensVenda
-                        string insertItemQuery = "INSERT INTO ItensVenda (CodigoDeBarras, NomeDoProduto, Quantidade, PrecoUnitario, PrecoTotal) VALUES (@CodigoDeBarras,@NomeProduto, @Quantidade, @PrecoUnitario, @PrecoTotal);";
-                        using (SqlCommand cmdInsertItem = new SqlCommand(insertItemQuery, connection))
-                        {
-                            foreach (ItensVenda item in itensVendaBindingSource)
-                            {
-                                cmdInsertItem.Parameters.Clear();
-                                cmdInsertItem.Parameters.AddWithValue("@CodigoDeBarras", item.CodigoDeBarras);
-                                cmdInsertItem.Parameters.AddWithValue("NomeDoProduto", item.NomeProduto);
-                                cmdInsertItem.Parameters.AddWithValue("@Quantidade", item.Quantidade);
-                                cmdInsertItem.Parameters.AddWithValue("@PrecoUnitario", item.PrecoUnitario);
-                                cmdInsertItem.Parameters.AddWithValue("@PrecoTotal", item.PrecoTotal);
-
-                                cmdInsertItem.ExecuteNonQuery();
-                            }
-                        }
-
-                        MessageBox.Show("Venda registrada com sucesso!");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao registrar a venda: " + ex.Message);
-            }
-        }
 
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
-            FinalizarVenda();
+            {
+                try
+                {
+                    // Certifique-se de que há itens na venda antes de finalizar
+                    if (dataGridView1.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Adicione itens à venda antes de finalizar.");
+                        return;
+                    }
+                    // 1. Salvar a venda
+                    Vendas vendaAtual = (Vendas)bindingSourceVendas.Current;
+                    new VendasBLL().Inserir(vendaAtual);
+
+                    // 2. Obter o ID da venda recém-inserida
+                    int vendaId = vendaAtual.Id;
+
+                    // 3. Iterar pelos itens de venda e salvar cada um deles
+                    foreach (ItensVenda itemVenda in itensVendaBindingSource.List)
+                    {
+                        itemVenda.VendaId = vendaId;
+                        new ItensVendaBLL().Inserir(itemVenda);
+                    }
+
+                    MessageBox.Show("Venda finalizada com sucesso!");
+
+                    // Limpar o formulário ou realizar ações adicionais após finalizar, se necessário
+                    LimparFormulario();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao finalizar a venda: " + ex.Message);
+                }
+            }
+        }
+        private void LimparFormulario()
+        {
+            // Limpe os controles ou faça outras ações para reiniciar o formulário após finalizar
+            bindingSourceVendas.AddNew();
+            itensVendaBindingSource.Clear();
+            dataGridView1.DataSource = itensVendaBindingSource;
+            labelValorTotal.Text = "0.00";
+            // Adicione outras ações de limpeza conforme necessário
         }
     }
 }   
