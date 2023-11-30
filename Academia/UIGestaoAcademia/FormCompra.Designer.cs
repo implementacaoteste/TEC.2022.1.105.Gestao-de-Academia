@@ -61,7 +61,7 @@
             // 
             // buttonBuscarProduto
             // 
-            this.buttonBuscarProduto.Location = new System.Drawing.Point(283, 294);
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(284, 245);
             this.buttonBuscarProduto.Name = "buttonBuscarProduto";
             this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
             this.buttonBuscarProduto.TabIndex = 51;
@@ -83,7 +83,7 @@
             this.valorUnitarioDataGridViewTextBoxColumn,
             this.valorTotalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itensCompraBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 346);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 297);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -152,7 +152,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(179, 265);
+            this.label12.Location = new System.Drawing.Point(180, 216);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 49;
@@ -161,7 +161,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 265);
+            this.label10.Location = new System.Drawing.Point(13, 216);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 20);
             this.label10.TabIndex = 48;
@@ -169,7 +169,7 @@
             // 
             // textBoxQuantidade
             // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(179, 294);
+            this.textBoxQuantidade.Location = new System.Drawing.Point(180, 245);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
             this.textBoxQuantidade.TabIndex = 47;
@@ -211,7 +211,7 @@
             // 
             // textBoxProduto
             // 
-            this.textBoxProduto.Location = new System.Drawing.Point(12, 294);
+            this.textBoxProduto.Location = new System.Drawing.Point(13, 245);
             this.textBoxProduto.Name = "textBoxProduto";
             this.textBoxProduto.Size = new System.Drawing.Size(161, 27);
             this.textBoxProduto.TabIndex = 46;
@@ -219,7 +219,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(702, 294);
+            this.dateTimePicker1.Location = new System.Drawing.Point(703, 245);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 27);
             this.dateTimePicker1.TabIndex = 38;
@@ -236,7 +236,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(650, 299);
+            this.label7.Location = new System.Drawing.Point(651, 250);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 20);
             this.label7.TabIndex = 28;
