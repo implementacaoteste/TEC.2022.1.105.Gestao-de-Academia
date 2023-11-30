@@ -14,6 +14,8 @@ namespace UIGestaoAcademia
 {
     public partial class FormBuscarFornecedor : Form
     {
+        public Fornecedor Fornecedor { get; set; }
+
         public FormBuscarFornecedor()
         {
             InitializeComponent();

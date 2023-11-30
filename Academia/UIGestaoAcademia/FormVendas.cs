@@ -171,6 +171,7 @@ namespace UIGestaoAcademia
         {
             FinalizarVenda();
         }
+
     }
 }   
 
