@@ -24,18 +24,16 @@ namespace UIGestaoAcademia
         {
 
         }
-
-        private void buttonBuscarFuncionario_Click(object sender, EventArgs e)
+        private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
             try
             {
-                using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
+                using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
                 {
                     frm.ShowDialog();
-                    if (frm.Fornecedor != null)
+                    if (frm.FormaPagamento != null)
                     {
-                        ((CompraProduto)bindingSourceCompraProduto.Current).Fornecedor = frm.Fornecedor;
-                        textBoxBuscarFornecedor.Text = frm.Fornecedor.Nome;
+                        textBoxBuscarFormaPagamento.Text = frm.FormaPagamento.Descricao;
                     }
                 }
             }
@@ -45,11 +43,23 @@ namespace UIGestaoAcademia
             }
         }
 
-        private void buttonFormaDePagamento_Click(object sender, EventArgs e)
+        private void buttonBuscarFornecedor_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            try
             {
-                frm.ShowDialog();            }
+                using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
+                {
+                    frm.ShowDialog();
+                    if (frm.Fornecedor != null)
+                    {
+                        textBoxBuscarFornecedor.Text = frm.Fornecedor.Nome;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

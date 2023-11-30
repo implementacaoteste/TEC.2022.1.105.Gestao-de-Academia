@@ -41,10 +41,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
+            this.textBoxBuscarFormaPagamento = new System.Windows.Forms.TextBox();
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
             this.textBoxBuscarFornecedor = new System.Windows.Forms.TextBox();
-            this.buttonBuscarFuncionario = new System.Windows.Forms.Button();
+            this.buttonBuscarFornecedor = new System.Windows.Forms.Button();
             this.textBoxProduto = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             // 
             // buttonBuscarProduto
             // 
-            this.buttonBuscarProduto.Location = new System.Drawing.Point(294, 292);
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(283, 294);
             this.buttonBuscarProduto.Name = "buttonBuscarProduto";
             this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
             this.buttonBuscarProduto.TabIndex = 51;
@@ -175,12 +175,12 @@
             this.textBoxQuantidade.TabIndex = 47;
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBoxFormaPagamento
+            // textBoxBuscarFormaPagamento
             // 
-            this.textBoxFormaPagamento.Location = new System.Drawing.Point(179, 154);
-            this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
-            this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
-            this.textBoxFormaPagamento.TabIndex = 44;
+            this.textBoxBuscarFormaPagamento.Location = new System.Drawing.Point(179, 154);
+            this.textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
+            this.textBoxBuscarFormaPagamento.Size = new System.Drawing.Size(125, 27);
+            this.textBoxBuscarFormaPagamento.TabIndex = 44;
             // 
             // buttonFormaDePagamento
             // 
@@ -199,15 +199,15 @@
             this.textBoxBuscarFornecedor.Size = new System.Drawing.Size(398, 27);
             this.textBoxBuscarFornecedor.TabIndex = 42;
             // 
-            // buttonBuscarFuncionario
+            // buttonBuscarFornecedor
             // 
-            this.buttonBuscarFuncionario.Location = new System.Drawing.Point(528, 120);
-            this.buttonBuscarFuncionario.Name = "buttonBuscarFuncionario";
-            this.buttonBuscarFuncionario.Size = new System.Drawing.Size(33, 29);
-            this.buttonBuscarFuncionario.TabIndex = 41;
-            this.buttonBuscarFuncionario.Text = "...";
-            this.buttonBuscarFuncionario.UseVisualStyleBackColor = true;
-            this.buttonBuscarFuncionario.Click += new System.EventHandler(this.buttonBuscarFuncionario_Click);
+            this.buttonBuscarFornecedor.Location = new System.Drawing.Point(528, 120);
+            this.buttonBuscarFornecedor.Name = "buttonBuscarFornecedor";
+            this.buttonBuscarFornecedor.Size = new System.Drawing.Size(33, 29);
+            this.buttonBuscarFornecedor.TabIndex = 41;
+            this.buttonBuscarFornecedor.Text = "...";
+            this.buttonBuscarFornecedor.UseVisualStyleBackColor = true;
+            this.buttonBuscarFornecedor.Click += new System.EventHandler(this.buttonBuscarFornecedor_Click);
             // 
             // textBoxProduto
             // 
@@ -292,10 +292,10 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxQuantidade);
-            this.Controls.Add(this.textBoxFormaPagamento);
+            this.Controls.Add(this.textBoxBuscarFormaPagamento);
             this.Controls.Add(this.buttonFormaDePagamento);
             this.Controls.Add(this.textBoxBuscarFornecedor);
-            this.Controls.Add(this.buttonBuscarFuncionario);
+            this.Controls.Add(this.buttonBuscarFornecedor);
             this.Controls.Add(this.textBoxProduto);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label8);
@@ -321,10 +321,10 @@
         private Label label12;
         private Label label10;
         private TextBox textBoxQuantidade;
-        private TextBox textBoxFormaPagamento;
+        private TextBox textBoxBuscarFormaPagamento;
         private Button buttonFormaDePagamento;
         private TextBox textBoxBuscarFornecedor;
-        private Button buttonBuscarFuncionario;
+        private Button buttonBuscarFornecedor;
         private TextBox textBoxProduto;
         private DateTimePicker dateTimePicker1;
         private Label label8;
