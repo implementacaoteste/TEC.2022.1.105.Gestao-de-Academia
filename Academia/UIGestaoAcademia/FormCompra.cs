@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,50 @@ namespace UIGestaoAcademia
         public FormCompra()
         {
             InitializeComponent();
+        }
+
+
+
+        private void FormCompra_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonFormaDePagamento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+                {
+                    frm.ShowDialog();
+                    if (frm.FormaPagamento != null)
+                    {
+                        textBoxBuscarFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonBuscarFornecedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
+                {
+                    frm.ShowDialog();
+                    if (frm.Fornecedor != null)
+                    {
+                        textBoxBuscarFornecedor.Text = frm.Fornecedor.Nome;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
