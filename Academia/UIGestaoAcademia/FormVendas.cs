@@ -170,6 +170,7 @@ namespace UIGestaoAcademia
             labelValorTotal.Text = "0.00";
             // Adicione outras ações de limpeza conforme necessário
         }
+
     }
 }   
 
