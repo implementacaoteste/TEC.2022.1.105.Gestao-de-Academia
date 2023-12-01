@@ -209,6 +209,7 @@ CREATE TABLE Funcionario
 CREATE TABLE DadosBancarios
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	TipoDeMoedaId INT,
 	FornecedorId INT,
 	NomeBanco VARCHAR(50),
 	NumeroAgencia VARCHAR(6),
@@ -237,10 +238,16 @@ CREATE  TABLE TipoDeConta
 )
 
 ALTER TABLE DadosBancarios
-ADD CONSTRAINT FK_DadosBancario_Fornecedor
-FOREIGN KEY (FornecedorId)
-REFERENCES Fornecedor(Id);
+ADD CONSTRAINT FK_DadosBancarios_TipoMoeda
+FOREIGN KEY (TipoDeMoedaId)
+REFERENCES TipoDeMoeda(Id)
+
+ALTER TABLE DadosBancarios
+ADD TipoDeMoedaId INT
+
 GO
+
+select * from DadosBancarios
 
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_FormaPagamento
@@ -249,7 +256,7 @@ REFERENCES FormaPagamento(Id);
 GO
 
 ALTER TABLE Financas
-ADD CONSTRAINT FK_Financas_FormaPagamento
+ADD CONSTRAINT FK_Financas_FormaPagamento 
 FOREIGN KEY (FormaPagamentoId)
 REFERENCES FormaPagamento(Id);
 GO
@@ -347,7 +354,7 @@ FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
 GO
 
-select*from Fornecedor
+select*from DadosBancarios
 GO
 
 ALTER TABLE Fornecedor
@@ -498,6 +505,8 @@ GO
 
 ALTER TABLE Cliente
 ALTER COLUMN Estado VARCHAR(50)
+GO
+
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
