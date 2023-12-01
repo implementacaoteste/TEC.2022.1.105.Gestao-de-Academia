@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(500, 95);
+            this.label4.Location = new System.Drawing.Point(535, 95);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 20);
             this.label4.TabIndex = 3;
@@ -386,7 +386,7 @@
             // 
             this.labelValorTotal.AutoSize = true;
             this.labelValorTotal.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelValorTotal.Location = new System.Drawing.Point(640, 72);
+            this.labelValorTotal.Location = new System.Drawing.Point(675, 72);
             this.labelValorTotal.Name = "labelValorTotal";
             this.labelValorTotal.Size = new System.Drawing.Size(133, 62);
             this.labelValorTotal.TabIndex = 23;

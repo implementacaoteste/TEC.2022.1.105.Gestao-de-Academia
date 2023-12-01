@@ -96,7 +96,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(632, 176);
+            this.label5.Location = new System.Drawing.Point(408, 176);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(147, 20);
             this.label5.TabIndex = 29;
@@ -125,7 +125,7 @@
             // textBoxDataDoLancamento
             // 
             this.textBoxDataDoLancamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataLancamento", true));
-            this.textBoxDataDoLancamento.Location = new System.Drawing.Point(632, 199);
+            this.textBoxDataDoLancamento.Location = new System.Drawing.Point(408, 199);
             this.textBoxDataDoLancamento.Name = "textBoxDataDoLancamento";
             this.textBoxDataDoLancamento.Size = new System.Drawing.Size(186, 27);
             this.textBoxDataDoLancamento.TabIndex = 30;
@@ -152,7 +152,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(439, 176);
+            this.label7.Location = new System.Drawing.Point(215, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 20);
             this.label7.TabIndex = 29;
@@ -162,7 +162,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(215, 176);
+            this.label8.Location = new System.Drawing.Point(600, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 29;
@@ -172,7 +172,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(217, 228);
+            this.label9.Location = new System.Drawing.Point(215, 231);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 29;
@@ -182,7 +182,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(17, 228);
+            this.label10.Location = new System.Drawing.Point(15, 231);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 29;
@@ -191,7 +191,7 @@
             // textBoxJuros
             // 
             this.textBoxJuros.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Juros", true));
-            this.textBoxJuros.Location = new System.Drawing.Point(215, 199);
+            this.textBoxJuros.Location = new System.Drawing.Point(600, 199);
             this.textBoxJuros.Name = "textBoxJuros";
             this.textBoxJuros.Size = new System.Drawing.Size(218, 27);
             this.textBoxJuros.TabIndex = 28;
@@ -199,7 +199,7 @@
             // textBoxDesconto
             // 
             this.textBoxDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Desconto", true));
-            this.textBoxDesconto.Location = new System.Drawing.Point(217, 251);
+            this.textBoxDesconto.Location = new System.Drawing.Point(215, 254);
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(186, 27);
             this.textBoxDesconto.TabIndex = 28;
@@ -207,7 +207,7 @@
             // textBoxAcrescimo
             // 
             this.textBoxAcrescimo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Acrescimo", true));
-            this.textBoxAcrescimo.Location = new System.Drawing.Point(17, 251);
+            this.textBoxAcrescimo.Location = new System.Drawing.Point(15, 254);
             this.textBoxAcrescimo.Name = "textBoxAcrescimo";
             this.textBoxAcrescimo.Size = new System.Drawing.Size(194, 27);
             this.textBoxAcrescimo.TabIndex = 28;
@@ -223,7 +223,7 @@
             // textBoxDataDoPagamento
             // 
             this.textBoxDataDoPagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataPagamento", true));
-            this.textBoxDataDoPagamento.Location = new System.Drawing.Point(439, 199);
+            this.textBoxDataDoPagamento.Location = new System.Drawing.Point(215, 199);
             this.textBoxDataDoPagamento.Name = "textBoxDataDoPagamento";
             this.textBoxDataDoPagamento.Size = new System.Drawing.Size(187, 27);
             this.textBoxDataDoPagamento.TabIndex = 28;

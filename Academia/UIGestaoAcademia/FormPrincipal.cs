@@ -126,7 +126,7 @@ namespace UIGestaoAcademia
         }
         private void comprasDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FormBuscarCompraProduto frm = new FormBuscarCompraProduto())
+            using (FormCompra frm = new FormCompra())
             {
                 frm.ShowDialog();
             }
