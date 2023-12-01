@@ -17,9 +17,6 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
         }
-
-
-
         private void FormCompra_Load(object sender, EventArgs e)
         {
 
@@ -42,7 +39,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonBuscarFornecedor_Click(object sender, EventArgs e)
         {
             try
