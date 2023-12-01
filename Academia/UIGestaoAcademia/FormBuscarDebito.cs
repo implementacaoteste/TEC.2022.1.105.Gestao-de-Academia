@@ -20,7 +20,7 @@ namespace UIGestaoAcademia
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarTodos();
                         break;
                     case 1:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente();
                         break;
                     case 2:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago();
@@ -28,11 +28,11 @@ namespace UIGestaoAcademia
                     case 3:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido();
                         break;
-                    case 5:
+                    case 4:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeVencimento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
                         break;
                     default:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCliente(textBoxBuscarPor.Text);
                         break;
 
                 }
@@ -94,7 +94,7 @@ namespace UIGestaoAcademia
             textBoxDataFinal.Visible = false;
             labelE.Visible = false;
 
-            if (comboBoxBuscarPor.SelectedIndex == 5)
+            if (comboBoxBuscarPor.SelectedIndex == 4)
             {
                 textBoxBuscarPor.Width = 187;
                 textBoxDataFinal.Visible = true;
