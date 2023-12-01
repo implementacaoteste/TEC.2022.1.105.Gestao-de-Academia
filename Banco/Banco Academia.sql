@@ -214,16 +214,27 @@ CREATE TABLE DadosBancarios
 	NumeroAgencia VARCHAR(6),
 	NumeroConta VARCHAR(21),
 	ChavePix VARCHAR(32),
-	TipoConta VARCHAR(30),
 	NomeTitular VARCHAR(100),
 	CpfCnpj VARCHAR(15),
 	Telefone VARCHAR(14),
 	Email VARCHAR(100),
-	TipoMoeda VARCHAR(10),
 	Iban VARCHAR(34),
 	Obs VARCHAR(100)
 )
 GO
+
+CREATE  TABLE TipoDeMoeda
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	TipoMoeda VARCHAR(10)
+)
+GO
+
+CREATE  TABLE TipoDeConta
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	TipoConta VARCHAR(10)
+)
 
 ALTER TABLE DadosBancarios
 ADD CONSTRAINT FK_DadosBancario_Fornecedor
