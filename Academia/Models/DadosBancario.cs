@@ -6,6 +6,16 @@ namespace Models
     {
         public int Id { get; set; }
         public int FornecedorId { get; set; }
+        public int TipoDeMoedaId { get; set; }
+        public string NomeMoeda
+        {
+            get
+            {
+                if (TipoMoeda != null)
+                    return TipoMoeda.Descricao;
+                return "";
+            }
+        }
         public string NomeBanco { get; set; }
         public string NumeroAgencia { get; set; }
         public string NumeroConta { get; set; }
@@ -16,6 +26,8 @@ namespace Models
         public string Email { get; set; }
         public string Iban { get; set; }
         public string Obs { get; set; }
+        public TipoDeMoeda TipoMoeda { get; set; }
+
     }
 }
 

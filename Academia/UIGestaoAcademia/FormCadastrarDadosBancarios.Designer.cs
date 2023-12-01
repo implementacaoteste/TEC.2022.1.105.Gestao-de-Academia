@@ -53,10 +53,11 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxTipoDeMoeda = new System.Windows.Forms.TextBox();
+            this.buttonTipoMoeda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +113,7 @@
             this.buttonSalvar.TabIndex = 50;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // label4
             // 
@@ -197,7 +199,6 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "TipoConta", true));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Conta corrente",
@@ -279,18 +280,6 @@
             this.textBox1.Size = new System.Drawing.Size(193, 27);
             this.textBox1.TabIndex = 76;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "BRL",
-            "USD",
-            "EUR"});
-            this.comboBox2.Location = new System.Drawing.Point(328, 274);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(193, 28);
-            this.comboBox2.TabIndex = 79;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -305,7 +294,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(529, 252);
+            this.label19.Location = new System.Drawing.Point(562, 253);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(44, 20);
             this.label19.TabIndex = 81;
@@ -314,10 +303,28 @@
             // textBox7
             // 
             this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "Iban", true));
-            this.textBox7.Location = new System.Drawing.Point(529, 274);
+            this.textBox7.Location = new System.Drawing.Point(562, 275);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(193, 27);
             this.textBox7.TabIndex = 80;
+            // 
+            // textBoxTipoDeMoeda
+            // 
+            this.textBoxTipoDeMoeda.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "NomeMoeda", true));
+            this.textBoxTipoDeMoeda.Location = new System.Drawing.Point(327, 275);
+            this.textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
+            this.textBoxTipoDeMoeda.Size = new System.Drawing.Size(193, 27);
+            this.textBoxTipoDeMoeda.TabIndex = 72;
+            // 
+            // buttonTipoMoeda
+            // 
+            this.buttonTipoMoeda.Location = new System.Drawing.Point(526, 273);
+            this.buttonTipoMoeda.Name = "buttonTipoMoeda";
+            this.buttonTipoMoeda.Size = new System.Drawing.Size(30, 29);
+            this.buttonTipoMoeda.TabIndex = 82;
+            this.buttonTipoMoeda.Text = "...";
+            this.buttonTipoMoeda.UseVisualStyleBackColor = true;
+            this.buttonTipoMoeda.Click += new System.EventHandler(this.buttonTipoDeMoeda_Click);
             // 
             // FormCadastrarDadosBancarios
             // 
@@ -325,15 +332,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancelar;
             this.ClientSize = new System.Drawing.Size(857, 475);
+            this.Controls.Add(this.buttonTipoMoeda);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.label17);
+            this.Controls.Add(this.textBoxTipoDeMoeda);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox8);
@@ -385,10 +393,11 @@
         private TextBox textBox10;
         private Label label9;
         private TextBox textBox1;
-        private ComboBox comboBox2;
         private Label label15;
         private Label label19;
         private TextBox textBox7;
         private BindingSource bindingSourceCadastrarDadosBancario;
+        private TextBox textBoxTipoDeMoeda;
+        private Button buttonTipoMoeda;
     }
 }

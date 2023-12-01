@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,23 @@ namespace UIGestaoAcademia
             InitializeComponent();
         }
 
+        private void buttonTipoDeMoeda_Click(object sender, EventArgs e)
+        {
+            using (FormTipoDeMoeda frm = new FormTipoDeMoeda())
+            {
+                frm.ShowDialog();
+                if (frm.TipoMoeda != null)
+                {
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoMoeda = frm.TipoMoeda;
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoDeMoedaId = frm.TipoMoeda.Id;
+                    textBoxTipoDeMoeda.Text = frm.TipoMoeda.Descricao;
+                }
+            }
+        }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
