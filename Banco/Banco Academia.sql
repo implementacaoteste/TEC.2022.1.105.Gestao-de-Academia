@@ -84,16 +84,18 @@ CREATE TABLE CompraProduto
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	FornecedorId INT,
 	FormaPagamentoId INT,
-	ValorTotal FLOAT
+	ValorTotal FLOAT,
+	FreteTotal Float 
 )
 GO
 CREATE TABLE ItensCompra
 (
 	Id Int Primary key identity(1,1),
 	CompraProdutoId INT,
-	ProdutoId Int,
-	Nome VARCHAR(100),
+	ProdutoId int,
+	Marca VARCHAR(100),
 	Quantidade INT,
+	ValorFrete Float,
 	ValorUnitario FLOAT,
 	ValorTotal FLOAT
 )
