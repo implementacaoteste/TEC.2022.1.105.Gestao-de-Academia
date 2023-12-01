@@ -57,5 +57,13 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonBuscarProduto_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarProduto frm = new FormBuscarProduto())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
