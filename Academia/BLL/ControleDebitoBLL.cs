@@ -47,6 +47,26 @@ namespace BLL
 
             return new ControleDebitoDAL().BuscarPorDataDeVencimento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
         }
+        public List<ControleDebito> BuscarPorDataDePagamento(string _dataInicial, string _dataFinal)
+        {
+            if (string.IsNullOrEmpty(_dataInicial))
+                throw new Exception("Informe a data incial.");
+
+            if (string.IsNullOrEmpty(_dataFinal))
+                throw new Exception("Informe a data final.");
+
+            return new ControleDebitoDAL().BuscarPorDataDePagamento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
+        }
+        public List<ControleDebito> BuscarPorDataDeLancamento(string _dataInicial, string _dataFinal)
+        {
+            if (string.IsNullOrEmpty(_dataInicial))
+                throw new Exception("Informe a data incial.");
+
+            if (string.IsNullOrEmpty(_dataFinal))
+                throw new Exception("Informe a data final.");
+
+            return new ControleDebitoDAL().BuscarPorDataDeLancamento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
+        }
         public List<ControleDebito> BuscarDebitoCliente(string _nome)
         {
             return new ControleDebitoDAL().BuscarDebitoCliente(_nome);

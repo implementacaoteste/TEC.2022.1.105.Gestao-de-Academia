@@ -368,7 +368,85 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar o debito no banco de dados no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar o debito por data de vencimento no banco de dados no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<ControleDebito> BuscarPorDataDePagamento(DateTime _dataInicial, DateTime _dataFinal)
+        {
+            List<ControleDebito> controleDebitoList = new List<ControleDebito>();
+            ControleDebito controleDebito;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+                cmd.CommandText = selectBase + " WHERE DataPagamento BETWEEN @DataInicial AND @DataFinal";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@DataInicial", _dataInicial);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        controleDebito = new ControleDebito();
+                        PreencherObjeto(controleDebito, rd);
+                        controleDebitoList.Add(controleDebito);
+                    }
+                }
+                return controleDebitoList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o debito por data de pagamento no banco de dados no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+        public List<ControleDebito> BuscarPorDataDeLancamento(DateTime _dataInicial, DateTime _dataFinal)
+        {
+            List<ControleDebito> controleDebitoList = new List<ControleDebito>();
+            ControleDebito controleDebito;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+                cmd.CommandText = selectBase + " WHERE DataLancamento BETWEEN @DataInicial AND @DataFinal";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@DataInicial", _dataInicial);
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        controleDebito = new ControleDebito();
+                        PreencherObjeto(controleDebito, rd);
+                        controleDebitoList.Add(controleDebito);
+                    }
+                }
+                return controleDebitoList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o debito por data de lançamento no banco de dados no banco de dados.", ex);
             }
             finally
             {
