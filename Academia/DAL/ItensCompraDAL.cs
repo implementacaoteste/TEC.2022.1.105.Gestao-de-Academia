@@ -179,8 +179,6 @@ namespace DAL
         {
             itensCompra.Id = (int)rd["Id"];
             itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
-            itensCompra.Nome = rd["Nome"].ToString();
-            itensCompra.Marca = rd["Marca"].ToString();
             itensCompra.Quantidade = (int)rd["Quantidade"];
             itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
             itensCompra.ValorTotal = (double)rd["ValorTotal"];

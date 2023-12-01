@@ -1,4 +1,6 @@
-﻿using Models;
+﻿using BLL;
+using Models;
+using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,12 +59,47 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonBuscarProduto_Click(object sender, EventArgs e)
         {
             using (FormBuscarProduto frm = new FormBuscarProduto())
             {
                 frm.ShowDialog();
+            }
+        }
+        private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxCodigoDeBarras.Text);
+                itensCompraBindingSource.AddNew();
+                ((ItensCompra)itensCompraBindingSource.Current).ProdutoId = produto.Id;
+                ((ItensCompra)itensCompraBindingSource.Current).Produto = produto;
+                ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
+
+                textBoxQuantidade.Focus();
+                textBoxQuantidade.SelectAll();
+                textBoxNomeProduto.Text = produto.Nome;
+            }
+        }
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ((ItensCompra)itensCompraBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
+                ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario = Convert.ToDouble(textBoxValorProduto.Text);
+                ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
+
+                itensCompraBindingSource.EndEdit();
+
+                dataGridView1.DataSource = itensCompraBindingSource;
+                dataGridView1.Refresh();
+                textBoxCodigoDeBarras.Clear();
+                textBoxNomeProduto.Clear();
+                textBoxQuantidade.Clear();
+                textBoxCodigoDeBarras.Focus();
+                textBoxValorProduto.Clear();
+
+
             }
         }
     }

@@ -11,10 +11,28 @@ namespace Models
     {
         public int Id { get; set; }
         public int CompraProdutoId { get; set; }
-        public string Nome { get; set; }
-        public string Marca { get; set; }
+        public int ProdutoId { get; set; }
+        public string Nome 
+        {
+            get 
+            {
+                if (Produto != null)
+                    return Produto.Nome;
+                return "";
+            }
+        }
+        public string Marca 
+        { 
+            get
+            {
+                if (Produto != null)
+                    return Produto.Marca;
+                return "";
+            }
+        }
         public int Quantidade { get; set; }
         public double ValorUnitario { get; set; }
         public double ValorTotal { get; set; }
+        public Produto Produto { get; set; }
     }
 }
