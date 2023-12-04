@@ -15,6 +15,7 @@ namespace UIGestaoAcademia
 {
     public partial class FormCompra : Form
     {
+
         public FormCompra()
         {
             InitializeComponent();
@@ -99,8 +100,21 @@ namespace UIGestaoAcademia
                 textBoxCodigoDeBarras.Focus();
                 textBoxValorProduto.Clear();
 
-
+                AtualizarValorTotal();
             }
+        }
+        private void AtualizarValorTotal()
+        {
+            double valorTotal = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DataBoundItem is ItensCompra item)
+                {
+                    valorTotal += item.ValorTotal;
+                }
+            }
+            labelValorTotal.Text = valorTotal.ToString("C");
         }
     }
 }
