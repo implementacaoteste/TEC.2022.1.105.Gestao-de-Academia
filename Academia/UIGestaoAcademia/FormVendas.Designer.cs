@@ -35,6 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
             this.itensVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxBuscarPorCliente = new System.Windows.Forms.TextBox();
             this.buttonFinalizarVenda = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.buttonBuscarFuncionario = new System.Windows.Forms.Button();
             this.textBoxBuscarFuncionario = new System.Windows.Forms.TextBox();
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
-            this.bindingSourceVendas = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.textBoxProduto = new System.Windows.Forms.TextBox();
@@ -65,8 +65,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonBuscarProduto = new System.Windows.Forms.Button();
             this.labelValorTotal = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,10 +119,15 @@
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "Id", true));
             this.textBox3.Location = new System.Drawing.Point(170, 95);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(125, 27);
             this.textBox3.TabIndex = 5;
+            // 
+            // bindingSourceVendas
+            // 
+            this.bindingSourceVendas.DataSource = typeof(Models.Vendas);
             // 
             // itensVendaBindingSource
             // 
@@ -210,7 +215,7 @@
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(168, 751);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(166, 27);
+            this.dateTimePicker2.Size = new System.Drawing.Size(127, 27);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // buttonBuscarCliente
@@ -250,10 +255,6 @@
             this.buttonFormaDePagamento.UseVisualStyleBackColor = true;
             this.buttonFormaDePagamento.Click += new System.EventHandler(this.buttonFormaDePagamento_Click);
             // 
-            // bindingSourceVendas
-            // 
-            this.bindingSourceVendas.DataSource = typeof(Models.Vendas);
-            // 
             // textBoxFormaPagamento
             // 
             this.textBoxFormaPagamento.Location = new System.Drawing.Point(170, 709);
@@ -273,7 +274,7 @@
             // 
             // textBoxProduto
             // 
-            this.textBoxProduto.Location = new System.Drawing.Point(12, 314);
+            this.textBoxProduto.Location = new System.Drawing.Point(124, 315);
             this.textBoxProduto.Name = "textBoxProduto";
             this.textBoxProduto.Size = new System.Drawing.Size(161, 27);
             this.textBoxProduto.TabIndex = 19;
@@ -281,16 +282,17 @@
             // 
             // textBoxQuantidade
             // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(179, 314);
+            this.textBoxQuantidade.Location = new System.Drawing.Point(12, 314);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
             this.textBoxQuantidade.TabIndex = 19;
+            this.textBoxQuantidade.Text = "1";
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 285);
+            this.label10.Location = new System.Drawing.Point(124, 286);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 20);
             this.label10.TabIndex = 20;
@@ -299,7 +301,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(179, 285);
+            this.label12.Location = new System.Drawing.Point(12, 285);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 20;
@@ -374,7 +376,7 @@
             // 
             // buttonBuscarProduto
             // 
-            this.buttonBuscarProduto.Location = new System.Drawing.Point(294, 312);
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(301, 315);
             this.buttonBuscarProduto.Name = "buttonBuscarProduto";
             this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
             this.buttonBuscarProduto.TabIndex = 22;
@@ -427,9 +429,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "FormVendas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VENDAS";
-            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.FormVendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

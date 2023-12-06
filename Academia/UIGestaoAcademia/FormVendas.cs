@@ -86,7 +86,7 @@ namespace UIGestaoAcademia
                 dataGridView1.Refresh();
                 textBoxProduto.Clear();
                 textBoxQuantidade.Clear();
-                textBoxQuantidade.Text = "";
+                textBoxQuantidade.Text = "1";
 
                 AtualizarValorTotal();
 
@@ -116,13 +116,13 @@ namespace UIGestaoAcademia
 
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
             int id = ((ItensVenda)itensVendaBindingSource.Current).VendaId;
             new ItensVendaBLL().Excluir(id);
             itensVendaBindingSource.RemoveCurrent();
-            MessageBox.Show("Registro excluido com sucesso!");
+            MessageBox.Show("Item excluido com sucesso!");
         }
 
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
@@ -163,14 +163,20 @@ namespace UIGestaoAcademia
         }
         private void LimparFormulario()
         {
-            // Limpe os controles ou faça outras ações para reiniciar o formulário após finalizar
             bindingSourceVendas.AddNew();
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
-            // Adicione outras ações de limpeza conforme necessário
         }
 
+        private void FormVendas_Load(object sender, EventArgs e)
+        {
+            
+            if (Constantes.ProfessorLogado != null)
+            {
+                textBoxBuscarFuncionario.Text = Constantes.ProfessorLogado.Nome;
+            }
+        }
     }
-}   
+}
 
