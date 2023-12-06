@@ -1,4 +1,6 @@
-﻿using Models;
+﻿using BLL;
+using Models;
+using NPOI.SS.Formula.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,19 +15,34 @@ namespace UIGestaoAcademia
 {
     public partial class FormCompra : Form
     {
+
         public FormCompra()
         {
             InitializeComponent();
         }
-
-
-
         private void FormCompra_Load(object sender, EventArgs e)
         {
 
         }
-
-        private void buttonBuscarFuncionario_Click(object sender, EventArgs e)
+        private void buttonFormaDePagamento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+                {
+                    frm.ShowDialog();
+                    if (frm.FormaPagamento != null)
+                    {
+                        textBoxBuscarFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonBuscarFornecedor_Click(object sender, EventArgs e)
         {
             try
             {
@@ -34,7 +51,6 @@ namespace UIGestaoAcademia
                     frm.ShowDialog();
                     if (frm.Fornecedor != null)
                     {
-                        ((CompraProduto)bindingSourceCompraProduto.Current).Fornecedor = frm.Fornecedor;
                         textBoxBuscarFornecedor.Text = frm.Fornecedor.Nome;
                     }
                 }
@@ -44,12 +60,61 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void buttonFormaDePagamento_Click(object sender, EventArgs e)
+        private void buttonBuscarProduto_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            using (FormBuscarProduto frm = new FormBuscarProduto())
             {
-                frm.ShowDialog();            }
+                frm.ShowDialog();
+            }
+        }
+        private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxCodigoDeBarras.Text);
+                itensCompraBindingSource.AddNew();
+                ((ItensCompra)itensCompraBindingSource.Current).ProdutoId = produto.Id;
+                ((ItensCompra)itensCompraBindingSource.Current).Produto = produto;
+                ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
+
+                textBoxQuantidade.Focus();
+                textBoxQuantidade.SelectAll();
+                textBoxNomeProduto.Text = produto.Nome;
+            }
+        }
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ((ItensCompra)itensCompraBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
+                ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario = Convert.ToDouble(textBoxValorProduto.Text);
+                ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
+
+                itensCompraBindingSource.EndEdit();
+
+                dataGridView1.DataSource = itensCompraBindingSource;
+                dataGridView1.Refresh();
+                textBoxCodigoDeBarras.Clear();
+                textBoxNomeProduto.Clear();
+                textBoxQuantidade.Clear();
+                textBoxCodigoDeBarras.Focus();
+                textBoxValorProduto.Clear();
+
+                AtualizarValorTotal();
+            }
+        }
+        private void AtualizarValorTotal()
+        {
+            double valorTotal = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.DataBoundItem is ItensCompra item)
+                {
+                    valorTotal += item.ValorTotal;
+                }
+            }
+            labelValorTotal.Text = valorTotal.ToString("C");
         }
     }
 }

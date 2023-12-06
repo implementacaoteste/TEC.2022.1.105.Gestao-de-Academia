@@ -75,7 +75,19 @@ namespace UIGestaoAcademia
 
         private void buttonSelecionar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (BindingSourceBuscarFornecedor.Count == 0)
+                    throw new Exception("Não existe registro para ser selecionado!");
 
+                this.Fornecedor = (Fornecedor)BindingSourceBuscarFornecedor.Current;
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBoxBuscarPor_TextChanged(object sender, EventArgs e)

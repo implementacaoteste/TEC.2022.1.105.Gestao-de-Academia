@@ -20,8 +20,8 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO DadosBancarios(NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
                                     NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs, ) 
-                                    VALUES (@NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix, @TipoConta,
-                                    @NomeTitular, @CpfCnpj, @Telefone, @Email, @TipoMoeda, @Iban, @Obs)";
+                                    VALUES (@NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix,
+                                    @NomeTitular, @CpfCnpj, @Telefone, @Email, @Iban, @Obs)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 PreencherParametros(_dadosbancario, cmd, Operacao.Inserir);
@@ -51,8 +51,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
-                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs 
+                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
+                                    NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs 
                                     FROM DadosBancarios";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -87,8 +87,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
-                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs 
+                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
+                                    NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs 
                                     FROM DadosBancarios WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@ChavePix", "%" + _chavepix + "%");
@@ -123,8 +123,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
-                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs 
+                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
+                                    NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs 
                                     FROM DadosBancarios WHERE CpfCnpj = @CpfCnpj";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CpfCnpj", _CpfCnpj);
@@ -161,12 +161,10 @@ namespace DAL
                                         NumeroAgencia = @NumeroAgencia, 
                                         NumeroConta = @NumeroConta, 
                                         ChavePix = @ChavePix, 
-                                        TipoConta = @TipoConta,
                                         NomeTitular = @NomeTitular,
                                         CpfCnpj = @CpfCnpj,
                                         Telefone = @Telefone,
                                         Email = @Email,
-                                        TipoMoeda = @TipoMoeda,
                                         Iban = @Iban,
                                         Obs = @Obs
                                         WHERE Id = @Id";
@@ -222,8 +220,8 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
-                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs 
+                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
+                                    NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs 
                                     FROM DadosBancarios WHERE CpfCnpj = @CpfCnpj WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -266,12 +264,10 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@NumeroAgencia", _dadosbancario.NumeroAgencia);
                 cmd.Parameters.AddWithValue("@NumeroConta", _dadosbancario.NumeroConta);
                 cmd.Parameters.AddWithValue("@ChavePix", _dadosbancario.ChavePix);
-                cmd.Parameters.AddWithValue("@TipoConta", _dadosbancario.TipoConta);
                 cmd.Parameters.AddWithValue("@NomeTitular", _dadosbancario.NomeTitular);
                 cmd.Parameters.AddWithValue("@CpfCnpj", _dadosbancario.CpfCnpj);
                 cmd.Parameters.AddWithValue("@Telefone", _dadosbancario.Telefone);
                 cmd.Parameters.AddWithValue("@Email", _dadosbancario.Email);
-                cmd.Parameters.AddWithValue("@TipoMoeda", _dadosbancario.TipoMoeda);
                 cmd.Parameters.AddWithValue("@Iban", _dadosbancario.Iban);
                 cmd.Parameters.AddWithValue("@Obs", _dadosbancario.Obs);
             }
@@ -288,12 +284,10 @@ namespace DAL
             _dadosbancario.NumeroAgencia = _rd["NumeroAgencia"].ToString();
             _dadosbancario.NumeroConta = _rd["NumeroConta"].ToString();
             _dadosbancario.ChavePix = _rd["ChavePix"].ToString();
-            _dadosbancario.TipoConta = _rd["TipoConta"].ToString();
             _dadosbancario.NomeTitular = _rd["NomeTitular"].ToString();
             _dadosbancario.CpfCnpj = _rd["CpfCnpj"].ToString();
             _dadosbancario.Telefone = _rd["Telefone"].ToString();
             _dadosbancario.Email = _rd["Email"].ToString();
-            _dadosbancario.TipoMoeda = _rd["TipoMoeda"].ToString();
             _dadosbancario.Iban = _rd["Iban"].ToString();
             _dadosbancario.Obs = _rd["Obs"].ToString();
         }

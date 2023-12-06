@@ -168,7 +168,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         private static void PreencherObjeto(Produto produto, SqlDataReader rd)
         {
             produto.Id = (int)rd["Id"];
@@ -178,7 +177,6 @@ namespace DAL
             produto.QuantidadeEstoque = (int)rd["QuantidadeEstoque"];
             produto.CodigoDeBarras = rd["CodigoDeBarras"].ToString();
         }
-
         public Produto BuscarPorId(int _id)
         {
             Produto produto;

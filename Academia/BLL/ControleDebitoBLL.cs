@@ -9,26 +9,17 @@ namespace BLL
         {
             return new ControleDebitoDAL().BuscarTodos();
         }
-        
         public ControleDebito BuscarDebitoVencido()
         {
             return new ControleDebitoDAL().BuscarDebitoVencido();
         }
-      
         public List<ControleDebito> BuscarDebitoPago()
         {
             return new ControleDebitoDAL().BuscarDebitoPago();
         }
-        public ControleDebito BuscarDebitoCorrente(string _buscarDebitoCorrente)
+        public List<ControleDebito> BuscarDebitoCorrente()
         {
-            if (string.IsNullOrEmpty(_buscarDebitoCorrente))
-                throw new Exception("Informe uma data!");
-
-            return BuscarDebitoCorrente(Convert.ToDateTime(_buscarDebitoCorrente));
-        }
-        public ControleDebito BuscarDebitoCorrente(DateTime _buscarDebitoCorrente)
-        {
-            return new ControleDebitoDAL().BuscarDebitoCorrente(_buscarDebitoCorrente);
+            return new ControleDebitoDAL().BuscarDebitoCorrente();
         }
         public ControleDebito BuscarPorId(int _id)
         {
@@ -46,16 +37,39 @@ namespace BLL
         {
             new ControleDebitoDAL().Inserir(_controleDebito);
         }
-
         public List<ControleDebito> BuscarPorDataDeVencimento(string _dataInicial, string _dataFinal)
         {
             if (string.IsNullOrEmpty(_dataInicial))
                 throw new Exception("Informe a data incial.");
-            
+
             if (string.IsNullOrEmpty(_dataFinal))
                 throw new Exception("Informe a data final.");
 
             return new ControleDebitoDAL().BuscarPorDataDeVencimento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
+        }
+        public List<ControleDebito> BuscarPorDataDePagamento(string _dataInicial, string _dataFinal)
+        {
+            if (string.IsNullOrEmpty(_dataInicial))
+                throw new Exception("Informe a data incial.");
+
+            if (string.IsNullOrEmpty(_dataFinal))
+                throw new Exception("Informe a data final.");
+
+            return new ControleDebitoDAL().BuscarPorDataDePagamento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
+        }
+        public List<ControleDebito> BuscarPorDataDeLancamento(string _dataInicial, string _dataFinal)
+        {
+            if (string.IsNullOrEmpty(_dataInicial))
+                throw new Exception("Informe a data incial.");
+
+            if (string.IsNullOrEmpty(_dataFinal))
+                throw new Exception("Informe a data final.");
+
+            return new ControleDebitoDAL().BuscarPorDataDeLancamento(Convert.ToDateTime(_dataInicial), Convert.ToDateTime(_dataFinal));
+        }
+        public List<ControleDebito> BuscarDebitoCliente(string _nome)
+        {
+            return new ControleDebitoDAL().BuscarDebitoCliente(_nome);
         }
     }
 }

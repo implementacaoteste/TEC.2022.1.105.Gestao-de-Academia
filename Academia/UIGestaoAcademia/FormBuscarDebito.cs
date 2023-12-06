@@ -20,19 +20,25 @@ namespace UIGestaoAcademia
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarTodos();
                         break;
                     case 1:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente(textBoxBuscarPor.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCliente(textBoxBuscarPor.Text);
                         break;
                     case 2:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago();
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoCorrente();
                         break;
                     case 3:
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoPago();
+                        break;
+                    case 4:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido();
                         break;
                     case 5:
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDePagamento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
+                        break;
+                    case 6:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeVencimento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
                         break;
                     default:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeLancamento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
                         break;
 
                 }
@@ -90,13 +96,13 @@ namespace UIGestaoAcademia
 
         private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxBuscarPor.Width = 454;
+            textBoxBuscarPor.Width = 651;
             textBoxDataFinal.Visible = false;
             labelE.Visible = false;
 
-            if (comboBoxBuscarPor.SelectedIndex == 5)
+            if (comboBoxBuscarPor.SelectedIndex >= 5)
             {
-                textBoxBuscarPor.Width = 187;
+                textBoxBuscarPor.Width = 314;
                 textBoxDataFinal.Visible = true;
                 labelE.Visible = true;
             }

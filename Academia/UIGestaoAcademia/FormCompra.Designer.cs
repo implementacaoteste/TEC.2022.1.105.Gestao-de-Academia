@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.buttonBuscarProduto = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,19 +40,22 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.textBoxFormaPagamento = new System.Windows.Forms.TextBox();
+            this.textBoxBuscarFormaPagamento = new System.Windows.Forms.TextBox();
             this.buttonFormaDePagamento = new System.Windows.Forms.Button();
             this.textBoxBuscarFornecedor = new System.Windows.Forms.TextBox();
-            this.buttonBuscarFuncionario = new System.Windows.Forms.Button();
-            this.textBoxProduto = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonBuscarFornecedor = new System.Windows.Forms.Button();
+            this.textBoxCodigoDeBarras = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bindingSourceCompraProduto = new System.Windows.Forms.BindingSource(this.components);
+            this.labelValorTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxValorProduto = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxNomeProduto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensCompraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCompraProduto)).BeginInit();
@@ -61,12 +63,13 @@
             // 
             // buttonBuscarProduto
             // 
-            this.buttonBuscarProduto.Location = new System.Drawing.Point(294, 292);
+            this.buttonBuscarProduto.Location = new System.Drawing.Point(852, 245);
             this.buttonBuscarProduto.Name = "buttonBuscarProduto";
             this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
             this.buttonBuscarProduto.TabIndex = 51;
             this.buttonBuscarProduto.Text = "...";
             this.buttonBuscarProduto.UseVisualStyleBackColor = true;
+            this.buttonBuscarProduto.Click += new System.EventHandler(this.buttonBuscarProduto_Click);
             // 
             // dataGridView1
             // 
@@ -76,38 +79,28 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
             this.marcaDataGridViewTextBoxColumn,
             this.quantidadeDataGridViewTextBoxColumn,
             this.valorUnitarioDataGridViewTextBoxColumn,
             this.valorTotalDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itensCompraBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 346);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 297);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(803, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(869, 333);
             this.dataGridView1.TabIndex = 50;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // marcaDataGridViewTextBoxColumn
             // 
@@ -116,7 +109,7 @@
             this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
             this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.marcaDataGridViewTextBoxColumn.Width = 125;
+            this.marcaDataGridViewTextBoxColumn.Width = 200;
             // 
             // quantidadeDataGridViewTextBoxColumn
             // 
@@ -152,7 +145,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(179, 265);
+            this.label12.Location = new System.Drawing.Point(619, 216);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 49;
@@ -161,7 +154,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 265);
+            this.label10.Location = new System.Drawing.Point(13, 216);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 20);
             this.label10.TabIndex = 48;
@@ -169,18 +162,19 @@
             // 
             // textBoxQuantidade
             // 
-            this.textBoxQuantidade.Location = new System.Drawing.Point(179, 294);
+            this.textBoxQuantidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensCompraBindingSource, "Quantidade", true));
+            this.textBoxQuantidade.Location = new System.Drawing.Point(619, 245);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
             this.textBoxQuantidade.TabIndex = 47;
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBoxFormaPagamento
+            // textBoxBuscarFormaPagamento
             // 
-            this.textBoxFormaPagamento.Location = new System.Drawing.Point(179, 154);
-            this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
-            this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
-            this.textBoxFormaPagamento.TabIndex = 44;
+            this.textBoxBuscarFormaPagamento.Location = new System.Drawing.Point(179, 154);
+            this.textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
+            this.textBoxBuscarFormaPagamento.Size = new System.Drawing.Size(125, 27);
+            this.textBoxBuscarFormaPagamento.TabIndex = 44;
             // 
             // buttonFormaDePagamento
             // 
@@ -194,35 +188,28 @@
             // 
             // textBoxBuscarFornecedor
             // 
-            this.textBoxBuscarFornecedor.Location = new System.Drawing.Point(124, 121);
+            this.textBoxBuscarFornecedor.Location = new System.Drawing.Point(102, 121);
             this.textBoxBuscarFornecedor.Name = "textBoxBuscarFornecedor";
-            this.textBoxBuscarFornecedor.Size = new System.Drawing.Size(398, 27);
+            this.textBoxBuscarFornecedor.Size = new System.Drawing.Size(202, 27);
             this.textBoxBuscarFornecedor.TabIndex = 42;
             // 
-            // buttonBuscarFuncionario
+            // buttonBuscarFornecedor
             // 
-            this.buttonBuscarFuncionario.Location = new System.Drawing.Point(528, 120);
-            this.buttonBuscarFuncionario.Name = "buttonBuscarFuncionario";
-            this.buttonBuscarFuncionario.Size = new System.Drawing.Size(33, 29);
-            this.buttonBuscarFuncionario.TabIndex = 41;
-            this.buttonBuscarFuncionario.Text = "...";
-            this.buttonBuscarFuncionario.UseVisualStyleBackColor = true;
-            this.buttonBuscarFuncionario.Click += new System.EventHandler(this.buttonBuscarFuncionario_Click);
+            this.buttonBuscarFornecedor.Location = new System.Drawing.Point(310, 121);
+            this.buttonBuscarFornecedor.Name = "buttonBuscarFornecedor";
+            this.buttonBuscarFornecedor.Size = new System.Drawing.Size(33, 29);
+            this.buttonBuscarFornecedor.TabIndex = 41;
+            this.buttonBuscarFornecedor.Text = "...";
+            this.buttonBuscarFornecedor.UseVisualStyleBackColor = true;
+            this.buttonBuscarFornecedor.Click += new System.EventHandler(this.buttonBuscarFornecedor_Click);
             // 
-            // textBoxProduto
+            // textBoxCodigoDeBarras
             // 
-            this.textBoxProduto.Location = new System.Drawing.Point(12, 294);
-            this.textBoxProduto.Name = "textBoxProduto";
-            this.textBoxProduto.Size = new System.Drawing.Size(161, 27);
-            this.textBoxProduto.TabIndex = 46;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(702, 294);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 27);
-            this.dateTimePicker1.TabIndex = 38;
+            this.textBoxCodigoDeBarras.Location = new System.Drawing.Point(13, 245);
+            this.textBoxCodigoDeBarras.Name = "textBoxCodigoDeBarras";
+            this.textBoxCodigoDeBarras.Size = new System.Drawing.Size(161, 27);
+            this.textBoxCodigoDeBarras.TabIndex = 46;
+            this.textBoxCodigoDeBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
             // label8
             // 
@@ -233,76 +220,117 @@
             this.label8.TabIndex = 35;
             this.label8.Text = "Forma de pagamento";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(650, 299);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 20);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "DATA";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(170, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 30;
-            // 
             // label2
             // 
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(846, 68);
+            this.label2.Size = new System.Drawing.Size(889, 68);
             this.label2.TabIndex = 27;
             this.label2.Text = "Compra de produto";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 79);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 20);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "NÚMERO DA  VENDA";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 29;
-            this.label3.Text = "FORNECEDOR";
+            this.label3.Text = "Fornecedor";
             // 
             // bindingSourceCompraProduto
             // 
             this.bindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
+            // labelValorTotal
+            // 
+            this.labelValorTotal.AutoSize = true;
+            this.labelValorTotal.Font = new System.Drawing.Font("Segoe UI", 20.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelValorTotal.Location = new System.Drawing.Point(717, 68);
+            this.labelValorTotal.Name = "labelValorTotal";
+            this.labelValorTotal.Size = new System.Drawing.Size(0, 46);
+            this.labelValorTotal.TabIndex = 53;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(572, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 20);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "TOTAL DA COMPRA";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(485, 121);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(98, 27);
+            this.textBox1.TabIndex = 54;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(356, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 20);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "VALOR DO FRETE";
+            // 
+            // textBoxValorProduto
+            // 
+            this.textBoxValorProduto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensCompraBindingSource, "ValorUnitario", true));
+            this.textBoxValorProduto.Location = new System.Drawing.Point(723, 245);
+            this.textBoxValorProduto.Name = "textBoxValorProduto";
+            this.textBoxValorProduto.Size = new System.Drawing.Size(123, 27);
+            this.textBoxValorProduto.TabIndex = 56;
+            this.textBoxValorProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxValorProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(723, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 20);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "Valor do produto";
+            // 
+            // textBoxNomeProduto
+            // 
+            this.textBoxNomeProduto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensCompraBindingSource, "Nome", true));
+            this.textBoxNomeProduto.Location = new System.Drawing.Point(182, 245);
+            this.textBoxNomeProduto.Name = "textBoxNomeProduto";
+            this.textBoxNomeProduto.Size = new System.Drawing.Size(431, 27);
+            this.textBoxNomeProduto.TabIndex = 46;
+            this.textBoxNomeProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
+            // 
             // FormCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 689);
+            this.ClientSize = new System.Drawing.Size(889, 689);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxValorProduto);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelValorTotal);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonBuscarProduto);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxQuantidade);
-            this.Controls.Add(this.textBoxFormaPagamento);
+            this.Controls.Add(this.textBoxBuscarFormaPagamento);
             this.Controls.Add(this.buttonFormaDePagamento);
             this.Controls.Add(this.textBoxBuscarFornecedor);
-            this.Controls.Add(this.buttonBuscarFuncionario);
-            this.Controls.Add(this.textBoxProduto);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.buttonBuscarFornecedor);
+            this.Controls.Add(this.textBoxNomeProduto);
+            this.Controls.Add(this.textBoxCodigoDeBarras);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Name = "FormCompra";
             this.Text = "FormCompra";
@@ -321,25 +349,27 @@
         private Label label12;
         private Label label10;
         private TextBox textBoxQuantidade;
-        private TextBox textBoxFormaPagamento;
+        private TextBox textBoxBuscarFormaPagamento;
         private Button buttonFormaDePagamento;
         private TextBox textBoxBuscarFornecedor;
-        private Button buttonBuscarFuncionario;
-        private TextBox textBoxProduto;
-        private DateTimePicker dateTimePicker1;
+        private Button buttonBuscarFornecedor;
+        private TextBox textBoxCodigoDeBarras;
         private Label label8;
-        private Label label7;
-        private TextBox textBox3;
         private Label label2;
-        private Label label5;
         private Label label3;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private BindingSource itensCompraBindingSource;
+        private BindingSource bindingSourceCompraProduto;
+        private Label labelValorTotal;
+        private Label label4;
+        private TextBox textBox1;
+        private Label label1;
+        private TextBox textBoxValorProduto;
+        private Label label5;
+        private TextBox textBoxNomeProduto;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
-        private BindingSource itensCompraBindingSource;
-        private BindingSource bindingSourceCompraProduto;
     }
 }
