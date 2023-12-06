@@ -9,7 +9,7 @@ namespace BLL
         {
             return new ControleDebitoDAL().BuscarTodos();
         }
-        public ControleDebito BuscarDebitoVencido()
+        public List<ControleDebito> BuscarDebitoVencido()
         {
             return new ControleDebitoDAL().BuscarDebitoVencido();
         }
@@ -31,11 +31,18 @@ namespace BLL
         }
         public void Alterar(ControleDebito _controleDebito)
         {
+            ValidarDados(_controleDebito);
             new ControleDebitoDAL().Alterar(_controleDebito);
         }
         public void Inserir(ControleDebito _controleDebito)
         {
+            ValidarDados(_controleDebito);
             new ControleDebitoDAL().Inserir(_controleDebito);
+        }
+        private void ValidarDados(ControleDebito _controleDebito)
+        {
+            if (_controleDebito.DataVencimento.Year < 1900)
+                throw new Exception("Informe a data de vencimento.");
         }
         public List<ControleDebito> BuscarPorDataDeVencimento(string _dataInicial, string _dataFinal)
         {
