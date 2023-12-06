@@ -54,30 +54,33 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
-
-        public void BuscarPorNomeCliente(string _nome)
+        public void BuscarPorCodigoVenda()
         {
-            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            try
-            {
-                SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = " SELECT Nome FROM Cliente WHERE Nome LIKE @Nome";
-                cmd.CommandType = System.Data.CommandType.Text;
-                cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
+            throw new NotImplementedException();
+        }
+        public List<Vendas> BuscarPorDataVenda()
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<Vendas> BuscarTodos()
+        {
+            throw new NotImplementedException();
+        }
 
-                cn.Open();
+        public List<Vendas> BuscarPorNomeFuncionario(string nome)
+        {
+            throw new NotImplementedException();
+        }
 
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                
-            }
-            finally
-            {
-                cn.Close();
-            }
+        public List<Vendas> BuscarPorNomeCliente(string _nomeCliente)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vendas BuscarPorCodigoVenda(int _id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
