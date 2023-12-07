@@ -9,11 +9,13 @@ namespace UIGestaoAcademia
 {
     public partial class FormVendas : Form
     {
-        public FormVendas()
+        int id;
+        public FormVendas(int _id = 0)
         {
             InitializeComponent();
             bindingSourceVendas.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
+            _id = id;   
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -63,7 +65,7 @@ namespace UIGestaoAcademia
 
                 if (frm.FormaPagamento != null)
                 {
-
+                    ((Vendas)bindingSourceVendas.Current).FormaPagamento = frm.FormaPagamento;
                     textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
                 }
             }
@@ -128,36 +130,22 @@ namespace UIGestaoAcademia
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
             {
+
                 try
                 {
-                    // Certifique-se de que há itens na venda antes de finalizar
-                    if (dataGridView1.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Adicione itens à venda antes de finalizar.");
-                        return;
-                    }
-                    // 1. Salvar a venda
-                    Vendas vendaAtual = (Vendas)bindingSourceVendas.Current;
-                    new VendasBLL().Inserir(vendaAtual);
+                    Vendas vendas = (Vendas)bindingSourceVendas.Current;
 
-                    // 2. Obter o ID da venda recém-inserida
-                    int vendaId = vendaAtual.Id;
+                    bindingSourceVendas.EndEdit();
 
-                    // 3. Iterar pelos itens de venda e salvar cada um deles
-                    foreach (ItensVenda itemVenda in itensVendaBindingSource.List)
-                    {
-                        itemVenda.VendaId = vendaId;
-                        new ItensVendaBLL().Inserir(itemVenda);
-                    }
+                    if (id == 0)
+                        new VendasBLL().Inserir(vendas);
 
-                    MessageBox.Show("Venda finalizada com sucesso!");
-
-                    // Limpar o formulário ou realizar ações adicionais após finalizar, se necessário
-                    LimparFormulario();
+                    MessageBox.Show("Registro salvo com sucesso!");
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao finalizar a venda: " + ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
             }
         }

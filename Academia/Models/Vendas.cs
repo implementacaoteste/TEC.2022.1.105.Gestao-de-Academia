@@ -16,6 +16,29 @@ namespace Models
         public DateTime Data_Venda { get; set; }
         public double Total_Venda { get; set; }
         public int FormaPagamentoId { get; set; }
+        public string NomeCliente
+        {
+            get
+            {
+                if (Cliente != null)
+                {
+                    return Cliente.Nome;
+                }
+                return "";
+            }
+        }
+        public string FormaDePagamento
+        {
+            get
+            {
+                if (FormaPagamento != null)
+                {
+                    return FormaPagamento.Descricao;
+                }
+                return "";
+            }
+        }
+        public FormaPagamento FormaPagamento { get; set; }
         public Cliente Cliente { get; set; }
         public Funcionario Funcionario { get; set; }
     }
