@@ -19,7 +19,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO DadosBancarios(NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
-                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs, ) 
+                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs) 
                                     VALUES (@NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix,
                                     @NomeTitular, @CpfCnpj, @Telefone, @Email, @Iban, @Obs)";
 
@@ -220,7 +220,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
+                cmd.CommandText = @"SELECT Id, TipoDeMoedaId, FornecedorId NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
                                     NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs 
                                     FROM DadosBancarios WHERE CpfCnpj = @CpfCnpj WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -259,12 +259,14 @@ namespace DAL
         private static void PreencherParametros(DadosBancario _dadosbancario, SqlCommand cmd, Operacao _operacao)
         {
             if (_operacao != Operacao.Excluir)
-            {
+            {               
                 cmd.Parameters.AddWithValue("@NomeBanco", _dadosbancario.NomeBanco);
+                cmd.Parameters.AddWithValue("@FornecedorId", _dadosbancario.Fornecedor.Id);
                 cmd.Parameters.AddWithValue("@NumeroAgencia", _dadosbancario.NumeroAgencia);
                 cmd.Parameters.AddWithValue("@NumeroConta", _dadosbancario.NumeroConta);
                 cmd.Parameters.AddWithValue("@ChavePix", _dadosbancario.ChavePix);
-                cmd.Parameters.AddWithValue("@NomeTitular", _dadosbancario.NomeTitular);
+                cmd.Parameters.AddWithValue("@TipoMoedaId", _dadosbancario.TipoMoeda.Id);
+                cmd.Parameters.AddWithValue("@NomeTitula", _dadosbancario.NomeTitular);
                 cmd.Parameters.AddWithValue("@CpfCnpj", _dadosbancario.CpfCnpj);
                 cmd.Parameters.AddWithValue("@Telefone", _dadosbancario.Telefone);
                 cmd.Parameters.AddWithValue("@Email", _dadosbancario.Email);
