@@ -7,7 +7,8 @@ namespace UIGestaoAcademia
     {
         private string ultimaBusca;
         private bool buscou;
-        public FormaPagamento FormaPagamento { get; set; }
+
+        public FormaPagamento FormaPagamento { get;  set; }
 
         public FormConsultaFormaPagamento()
         {

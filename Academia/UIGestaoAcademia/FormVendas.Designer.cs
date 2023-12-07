@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -76,7 +75,7 @@
             this.label1.Location = new System.Drawing.Point(12, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 6;
             this.label1.Text = "CLIENTE";
             // 
             // label3
@@ -87,17 +86,6 @@
             this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "FUNCIONÁRIO";
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(931, 68);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "VENDA";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label4
             // 
@@ -113,17 +101,18 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 99);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "NÚMERO DA  VENDA";
+            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "VENDA";
             // 
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "Id", true));
-            this.textBox3.Location = new System.Drawing.Point(170, 95);
+            this.textBox3.Location = new System.Drawing.Point(124, 96);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 5;
+            this.textBox3.TabIndex = 2;
             // 
             // bindingSourceVendas
             // 
@@ -135,16 +124,17 @@
             // 
             // textBoxBuscarPorCliente
             // 
+            this.textBoxBuscarPorCliente.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "NomeCliente", true));
             this.textBoxBuscarPorCliente.Location = new System.Drawing.Point(124, 180);
             this.textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             this.textBoxBuscarPorCliente.Size = new System.Drawing.Size(398, 27);
-            this.textBoxBuscarPorCliente.TabIndex = 5;
+            this.textBoxBuscarPorCliente.TabIndex = 7;
             // 
             // buttonFinalizarVenda
             // 
-            this.buttonFinalizarVenda.Location = new System.Drawing.Point(617, 712);
+            this.buttonFinalizarVenda.Location = new System.Drawing.Point(767, 314);
             this.buttonFinalizarVenda.Name = "buttonFinalizarVenda";
-            this.buttonFinalizarVenda.Size = new System.Drawing.Size(147, 40);
+            this.buttonFinalizarVenda.Size = new System.Drawing.Size(147, 41);
             this.buttonFinalizarVenda.TabIndex = 9;
             this.buttonFinalizarVenda.Text = "Finalizar venda";
             this.buttonFinalizarVenda.UseVisualStyleBackColor = true;
@@ -152,7 +142,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(770, 712);
+            this.button3.Location = new System.Drawing.Point(770, 815);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(147, 40);
             this.button3.TabIndex = 10;
@@ -177,11 +167,12 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "Data_Venda", true));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(124, 227);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 27);
-            this.dateTimePicker1.TabIndex = 12;
+            this.dateTimePicker1.TabIndex = 10;
             // 
             // label7
             // 
@@ -189,7 +180,7 @@
             this.label7.Location = new System.Drawing.Point(12, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 20);
-            this.label7.TabIndex = 3;
+            this.label7.TabIndex = 9;
             this.label7.Text = "DATA";
             // 
             // label8
@@ -223,7 +214,7 @@
             this.buttonBuscarCliente.Location = new System.Drawing.Point(528, 180);
             this.buttonBuscarCliente.Name = "buttonBuscarCliente";
             this.buttonBuscarCliente.Size = new System.Drawing.Size(33, 29);
-            this.buttonBuscarCliente.TabIndex = 13;
+            this.buttonBuscarCliente.TabIndex = 8;
             this.buttonBuscarCliente.Text = "...";
             this.buttonBuscarCliente.UseVisualStyleBackColor = true;
             this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
@@ -233,7 +224,7 @@
             this.buttonBuscarFuncionario.Location = new System.Drawing.Point(528, 140);
             this.buttonBuscarFuncionario.Name = "buttonBuscarFuncionario";
             this.buttonBuscarFuncionario.Size = new System.Drawing.Size(33, 29);
-            this.buttonBuscarFuncionario.TabIndex = 14;
+            this.buttonBuscarFuncionario.TabIndex = 5;
             this.buttonBuscarFuncionario.Text = "...";
             this.buttonBuscarFuncionario.UseVisualStyleBackColor = true;
             this.buttonBuscarFuncionario.Click += new System.EventHandler(this.buttonBuscarFuncionario_Click);
@@ -243,7 +234,7 @@
             this.textBoxBuscarFuncionario.Location = new System.Drawing.Point(124, 141);
             this.textBoxBuscarFuncionario.Name = "textBoxBuscarFuncionario";
             this.textBoxBuscarFuncionario.Size = new System.Drawing.Size(398, 27);
-            this.textBoxBuscarFuncionario.TabIndex = 15;
+            this.textBoxBuscarFuncionario.TabIndex = 4;
             // 
             // buttonFormaDePagamento
             // 
@@ -257,6 +248,7 @@
             // 
             // textBoxFormaPagamento
             // 
+            this.textBoxFormaPagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "FormaPagamento", true));
             this.textBoxFormaPagamento.Location = new System.Drawing.Point(170, 709);
             this.textBoxFormaPagamento.Name = "textBoxFormaPagamento";
             this.textBoxFormaPagamento.Size = new System.Drawing.Size(125, 27);
@@ -264,11 +256,11 @@
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Location = new System.Drawing.Point(764, 307);
+            this.buttonExcluir.Location = new System.Drawing.Point(608, 315);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(153, 40);
-            this.buttonExcluir.TabIndex = 18;
-            this.buttonExcluir.Text = "Excluir";
+            this.buttonExcluir.TabIndex = 16;
+            this.buttonExcluir.Text = "Excluir item";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
@@ -277,7 +269,7 @@
             this.textBoxProduto.Location = new System.Drawing.Point(124, 315);
             this.textBoxProduto.Name = "textBoxProduto";
             this.textBoxProduto.Size = new System.Drawing.Size(161, 27);
-            this.textBoxProduto.TabIndex = 19;
+            this.textBoxProduto.TabIndex = 14;
             this.textBoxProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
             // textBoxQuantidade
@@ -285,7 +277,7 @@
             this.textBoxQuantidade.Location = new System.Drawing.Point(12, 314);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
-            this.textBoxQuantidade.TabIndex = 19;
+            this.textBoxQuantidade.TabIndex = 12;
             this.textBoxQuantidade.Text = "1";
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -295,7 +287,7 @@
             this.label10.Location = new System.Drawing.Point(124, 286);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 20);
-            this.label10.TabIndex = 20;
+            this.label10.TabIndex = 13;
             this.label10.Text = "Código de barras";
             // 
             // label12
@@ -304,7 +296,7 @@
             this.label12.Location = new System.Drawing.Point(12, 285);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
-            this.label12.TabIndex = 20;
+            this.label12.TabIndex = 11;
             this.label12.Text = "Quantidade";
             // 
             // dataGridView1
@@ -327,7 +319,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(903, 333);
-            this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.TabIndex = 23;
             // 
             // codigoDeBarrasDataGridViewTextBoxColumn
             // 
@@ -379,7 +371,7 @@
             this.buttonBuscarProduto.Location = new System.Drawing.Point(301, 315);
             this.buttonBuscarProduto.Name = "buttonBuscarProduto";
             this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
-            this.buttonBuscarProduto.TabIndex = 22;
+            this.buttonBuscarProduto.TabIndex = 15;
             this.buttonBuscarProduto.Text = "...";
             this.buttonBuscarProduto.UseVisualStyleBackColor = true;
             this.buttonBuscarProduto.Click += new System.EventHandler(this.buttonBuscarProduto_Click);
@@ -422,7 +414,6 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBoxBuscarPorCliente);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -443,7 +434,6 @@
         #endregion
         private Label label1;
         private Label label3;
-        private Label label2;
         private TextBox textBoxValorTotal;
         private Label label4;
         private Label label5;

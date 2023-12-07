@@ -87,7 +87,7 @@ namespace DAL
         {
             cliente.Id = (int)rd["Id"];
             cliente.Nome = rd["Nome"].ToString();
-            cliente.Aluno = (bool)rd["Aluno"];
+            cliente.Aluno = Convert.ToBoolean(rd["Aluno"]);
             cliente.CPF = rd["CPF"].ToString();
             cliente.Telefone = rd["Telefone"].ToString();
             cliente.Email = rd["Email"].ToString();
@@ -207,7 +207,7 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Cliente SET 
+                cmd.CommandText = @"UPDATE Cliente SET \
                                     Nome = @Nome
                                     Aluno = @Aluno
                                     CPF = @CPF

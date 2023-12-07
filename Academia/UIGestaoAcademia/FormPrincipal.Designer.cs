@@ -95,6 +95,7 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
@@ -102,6 +103,7 @@
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
+            this.produtoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
@@ -109,6 +111,7 @@
             // debitoToolStripMenuItem
             // 
             this.debitoToolStripMenuItem.Name = "debitoToolStripMenuItem";
+            this.debitoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
             this.debitoToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.debitoToolStripMenuItem.Text = "Debito";
             this.debitoToolStripMenuItem.Click += new System.EventHandler(this.debitoToolStripMenuItem_Click);
@@ -116,6 +119,7 @@
             // funcionárioToolStripMenuItem
             // 
             this.funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
+            this.funcionárioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.funcionárioToolStripMenuItem.Text = "Funcionário";
             this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
@@ -153,7 +157,7 @@
             // iniciarVendaToolStripMenuItem
             // 
             this.iniciarVendaToolStripMenuItem.Name = "iniciarVendaToolStripMenuItem";
-            this.iniciarVendaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.iniciarVendaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.iniciarVendaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.iniciarVendaToolStripMenuItem.Text = "Nova venda";
             this.iniciarVendaToolStripMenuItem.Click += new System.EventHandler(this.iniciarVendaToolStripMenuItem_Click);
@@ -176,7 +180,8 @@
             // comprasDeProdutosToolStripMenuItem
             // 
             this.comprasDeProdutosToolStripMenuItem.Name = "comprasDeProdutosToolStripMenuItem";
-            this.comprasDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.comprasDeProdutosToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.comprasDeProdutosToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
             this.comprasDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeProdutosToolStripMenuItem_Click);
             // 

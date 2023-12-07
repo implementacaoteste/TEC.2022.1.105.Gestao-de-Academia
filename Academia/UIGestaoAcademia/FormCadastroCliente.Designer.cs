@@ -289,6 +289,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Aluno", true));
             this.checkBox1.Location = new System.Drawing.Point(358, 114);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(66, 24);
