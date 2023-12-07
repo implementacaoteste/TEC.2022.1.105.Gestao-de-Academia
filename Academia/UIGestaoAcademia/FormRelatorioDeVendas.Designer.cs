@@ -31,10 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.buttonBuscarVendas = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -53,22 +52,13 @@
             // 
             // buttonBuscarVendas
             // 
-            this.buttonBuscarVendas.Location = new System.Drawing.Point(594, 124);
+            this.buttonBuscarVendas.Location = new System.Drawing.Point(694, 124);
             this.buttonBuscarVendas.Name = "buttonBuscarVendas";
             this.buttonBuscarVendas.Size = new System.Drawing.Size(94, 29);
             this.buttonBuscarVendas.TabIndex = 1;
             this.buttonBuscarVendas.Text = "&Buscar";
             this.buttonBuscarVendas.UseVisualStyleBackColor = true;
             this.buttonBuscarVendas.Click += new System.EventHandler(this.buttonBuscarVendas_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(694, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "&Excluir";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // comboBoxBuscarPor
             // 
@@ -89,17 +79,17 @@
             // 
             this.textBoxBuscar.Location = new System.Drawing.Point(173, 127);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(415, 27);
+            this.textBoxBuscar.Size = new System.Drawing.Size(515, 27);
             this.textBoxBuscar.TabIndex = 3;
             // 
-            // button1
+            // buttonCancelar
             // 
-            this.button1.Location = new System.Drawing.Point(694, 478);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "&Cancelar\r\n";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Location = new System.Drawing.Point(694, 478);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
+            this.buttonCancelar.TabIndex = 1;
+            this.buttonCancelar.Text = "&Cancelar\r\n";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -116,12 +106,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancelar;
             this.ClientSize = new System.Drawing.Size(800, 519);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxBuscar);
             this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonBuscarVendas);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormRelatorioDeVendas";
@@ -137,10 +127,9 @@
 
         private DataGridView dataGridView1;
         private Button buttonBuscarVendas;
-        private Button button2;
         private ComboBox comboBoxBuscarPor;
         private TextBox textBoxBuscar;
-        private Button button1;
+        private Button buttonCancelar;
         private Label label1;
         private BindingSource vendasBindingSource;
     }

@@ -41,7 +41,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
@@ -62,6 +61,7 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonBuscarProduto = new System.Windows.Forms.Button();
             this.labelValorTotal = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -73,7 +73,7 @@
             this.label1.Location = new System.Drawing.Point(12, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 5;
             this.label1.Text = "CLIENTE";
             // 
             // label3
@@ -82,7 +82,7 @@
             this.label3.Location = new System.Drawing.Point(12, 140);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 20);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 2;
             this.label3.Text = "FUNCIONÁRIO";
             // 
             // label4
@@ -100,7 +100,7 @@
             this.label5.Location = new System.Drawing.Point(11, 99);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 20);
-            this.label5.TabIndex = 1;
+            this.label5.TabIndex = 0;
             this.label5.Text = "VENDA";
             // 
             // textBox3
@@ -110,7 +110,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(125, 27);
-            this.textBox3.TabIndex = 2;
+            this.textBox3.TabIndex = 1;
             // 
             // bindingSourceVendas
             // 
@@ -126,7 +126,7 @@
             this.textBoxBuscarPorCliente.Location = new System.Drawing.Point(124, 180);
             this.textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             this.textBoxBuscarPorCliente.Size = new System.Drawing.Size(398, 27);
-            this.textBoxBuscarPorCliente.TabIndex = 7;
+            this.textBoxBuscarPorCliente.TabIndex = 6;
             // 
             // buttonFinalizarVenda
             // 
@@ -163,22 +163,13 @@
             this.textBox4.Size = new System.Drawing.Size(125, 27);
             this.textBox4.TabIndex = 5;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "Data_Venda", true));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(124, 227);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(112, 27);
-            this.dateTimePicker1.TabIndex = 10;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 20);
-            this.label7.TabIndex = 9;
+            this.label7.TabIndex = 8;
             this.label7.Text = "DATA";
             // 
             // label8
@@ -195,7 +186,7 @@
             this.buttonBuscarCliente.Location = new System.Drawing.Point(528, 180);
             this.buttonBuscarCliente.Name = "buttonBuscarCliente";
             this.buttonBuscarCliente.Size = new System.Drawing.Size(33, 29);
-            this.buttonBuscarCliente.TabIndex = 8;
+            this.buttonBuscarCliente.TabIndex = 7;
             this.buttonBuscarCliente.Text = "...";
             this.buttonBuscarCliente.UseVisualStyleBackColor = true;
             this.buttonBuscarCliente.Click += new System.EventHandler(this.buttonBuscarCliente_Click);
@@ -205,7 +196,7 @@
             this.buttonBuscarFuncionario.Location = new System.Drawing.Point(528, 140);
             this.buttonBuscarFuncionario.Name = "buttonBuscarFuncionario";
             this.buttonBuscarFuncionario.Size = new System.Drawing.Size(33, 29);
-            this.buttonBuscarFuncionario.TabIndex = 5;
+            this.buttonBuscarFuncionario.TabIndex = 4;
             this.buttonBuscarFuncionario.Text = "...";
             this.buttonBuscarFuncionario.UseVisualStyleBackColor = true;
             this.buttonBuscarFuncionario.Click += new System.EventHandler(this.buttonBuscarFuncionario_Click);
@@ -215,7 +206,7 @@
             this.textBoxBuscarFuncionario.Location = new System.Drawing.Point(124, 141);
             this.textBoxBuscarFuncionario.Name = "textBoxBuscarFuncionario";
             this.textBoxBuscarFuncionario.Size = new System.Drawing.Size(398, 27);
-            this.textBoxBuscarFuncionario.TabIndex = 4;
+            this.textBoxBuscarFuncionario.TabIndex = 3;
             // 
             // buttonFormaDePagamento
             // 
@@ -250,7 +241,7 @@
             this.textBoxProduto.Location = new System.Drawing.Point(124, 315);
             this.textBoxProduto.Name = "textBoxProduto";
             this.textBoxProduto.Size = new System.Drawing.Size(161, 27);
-            this.textBoxProduto.TabIndex = 14;
+            this.textBoxProduto.TabIndex = 13;
             this.textBoxProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
             // textBoxQuantidade
@@ -258,7 +249,7 @@
             this.textBoxQuantidade.Location = new System.Drawing.Point(12, 314);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
-            this.textBoxQuantidade.TabIndex = 12;
+            this.textBoxQuantidade.TabIndex = 11;
             this.textBoxQuantidade.Text = "1";
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -268,7 +259,7 @@
             this.label10.Location = new System.Drawing.Point(124, 286);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(124, 20);
-            this.label10.TabIndex = 13;
+            this.label10.TabIndex = 12;
             this.label10.Text = "Código de barras";
             // 
             // label12
@@ -277,7 +268,7 @@
             this.label12.Location = new System.Drawing.Point(12, 285);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
-            this.label12.TabIndex = 11;
+            this.label12.TabIndex = 10;
             this.label12.Text = "Quantidade";
             // 
             // dataGridView1
@@ -300,7 +291,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(903, 333);
-            this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.TabIndex = 16;
             // 
             // codigoDeBarrasDataGridViewTextBoxColumn
             // 
@@ -352,7 +343,7 @@
             this.buttonBuscarProduto.Location = new System.Drawing.Point(301, 315);
             this.buttonBuscarProduto.Name = "buttonBuscarProduto";
             this.buttonBuscarProduto.Size = new System.Drawing.Size(29, 29);
-            this.buttonBuscarProduto.TabIndex = 15;
+            this.buttonBuscarProduto.TabIndex = 14;
             this.buttonBuscarProduto.Text = "...";
             this.buttonBuscarProduto.UseVisualStyleBackColor = true;
             this.buttonBuscarProduto.Click += new System.EventHandler(this.buttonBuscarProduto_Click);
@@ -367,6 +358,15 @@
             this.labelValorTotal.Size = new System.Drawing.Size(133, 62);
             this.labelValorTotal.TabIndex = 23;
             this.labelValorTotal.Text = "Teste";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "Data_Venda", true));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(124, 227);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(125, 27);
+            this.dateTimePicker1.TabIndex = 9;
             // 
             // FormVendas
             // 
@@ -427,7 +427,6 @@
         private Button button3;
         private Label label6;
         private TextBox textBox4;
-        private DateTimePicker dateTimePicker1;
         private Label label7;
         private Label label8;
         private Button buttonBuscarCliente;
@@ -450,5 +449,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
         private Label labelValorTotal;
+        private DateTimePicker dateTimePicker1;
     }
 }
