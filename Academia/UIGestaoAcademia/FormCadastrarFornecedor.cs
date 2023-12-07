@@ -18,7 +18,7 @@ namespace UIGestaoAcademia
         public FormCadastrarFornecedor(int _id = 0)
         {
             InitializeComponent();
-            Id = _id;
+            Id = _id;                                                   
 
 
             if (Id == 0)

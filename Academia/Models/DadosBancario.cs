@@ -6,6 +6,15 @@ namespace Models
     {
         public int Id { get; set; }
         public int FornecedorId { get; set; }
+        public string FornecedorNome
+        {
+            get
+            {
+                if (Fornecedor != null)
+                    return Fornecedor.Nome;
+                return "";
+            }
+        }
         public int TipoDeMoedaId { get; set; }
         public string NomeMoeda
         {
@@ -27,6 +36,7 @@ namespace Models
         public string Iban { get; set; }
         public string Obs { get; set; }
         public TipoDeMoeda TipoMoeda { get; set; }
+        public Fornecedor Fornecedor { get; set; }
 
     }
 }

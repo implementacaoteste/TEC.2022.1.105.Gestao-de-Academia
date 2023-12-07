@@ -212,6 +212,7 @@ CREATE TABLE DadosBancarios
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	TipoDeMoedaId INT,
+	TipoContaId INT,
 	FornecedorId INT,
 	NomeBanco VARCHAR(50),
 	NumeroAgencia VARCHAR(6),
@@ -219,12 +220,28 @@ CREATE TABLE DadosBancarios
 	ChavePix VARCHAR(32),
 	NomeTitular VARCHAR(100),
 	CpfCnpj VARCHAR(15),
-	Telefone VARCHAR(14),
+	Telefone VARCHAR(15),
 	Email VARCHAR(100),
 	Iban VARCHAR(34),
 	Obs VARCHAR(100)
 )
 GO
+
+CREATE TABLE TipoDeMoeda
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Descricao VARCHAR(15)
+)
+GO
+
+CREATE TABLE TipoDeConta
+(
+	Id INT PRIMARY KEY IDENTITY(1,1),
+	Descricao VARCHAR(20)
+)
+GO
+
+SELECT * FROM DadosBancarios
 
 CREATE  TABLE TipoDeMoeda
 (
@@ -238,18 +255,18 @@ CREATE  TABLE TipoDeConta
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	TipoConta VARCHAR(10)
 )
-
+GO
 ALTER TABLE DadosBancarios
-ADD CONSTRAINT FK_DadosBancarios_TipoMoeda
+ADD CONSTRAINT FK_DadosBancarios_TipoDeMoeda
 FOREIGN KEY (TipoDeMoedaId)
 REFERENCES TipoDeMoeda(Id)
-
-ALTER TABLE DadosBancarios
-ADD TipoDeMoedaId INT
-
 GO
 
-select * from DadosBancarios
+ALTER TABLE DadosBancarios
+ADD CONSTRAINT FK_DadosBancarios_TipoDeConta
+FOREIGN KEY (TipoContaId)
+REFERENCES TipoDeConta(Id)
+GO
 
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_FormaPagamento
