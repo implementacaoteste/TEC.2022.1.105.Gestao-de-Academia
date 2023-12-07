@@ -44,8 +44,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.buttonBuscarFuncionario = new System.Windows.Forms.Button();
             this.textBoxBuscarFuncionario = new System.Windows.Forms.TextBox();
@@ -152,7 +150,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(591, 190);
+            this.label6.Location = new System.Drawing.Point(8, 742);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 11;
@@ -160,9 +158,9 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(725, 183);
+            this.textBox4.Location = new System.Drawing.Point(170, 744);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 27);
+            this.textBox4.Size = new System.Drawing.Size(125, 27);
             this.textBox4.TabIndex = 5;
             // 
             // dateTimePicker1
@@ -191,23 +189,6 @@
             this.label8.Size = new System.Drawing.Size(153, 20);
             this.label8.TabIndex = 11;
             this.label8.Text = "Forma de pagamento";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 756);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 20);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Data de vencimento";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(168, 751);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(127, 27);
-            this.dateTimePicker2.TabIndex = 12;
             // 
             // buttonBuscarCliente
             // 
@@ -379,6 +360,7 @@
             // labelValorTotal
             // 
             this.labelValorTotal.AutoSize = true;
+            this.labelValorTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceVendas, "Total_Venda", true));
             this.labelValorTotal.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelValorTotal.Location = new System.Drawing.Point(675, 72);
             this.labelValorTotal.Name = "labelValorTotal";
@@ -404,9 +386,7 @@
             this.Controls.Add(this.textBoxBuscarFuncionario);
             this.Controls.Add(this.buttonBuscarFuncionario);
             this.Controls.Add(this.buttonBuscarCliente);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
@@ -450,8 +430,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label7;
         private Label label8;
-        private Label label9;
-        private DateTimePicker dateTimePicker2;
         private Button buttonBuscarCliente;
         private Button buttonBuscarFuncionario;
         private TextBox textBoxBuscarFuncionario;
