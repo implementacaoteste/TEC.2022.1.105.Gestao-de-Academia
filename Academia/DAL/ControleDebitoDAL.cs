@@ -51,7 +51,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito (ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @FormaPagamentoId, @ValorDebito, @DataLancamento, @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito (ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @FormaPagamentoId, @ValorDebito, GETDATE(), @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
                 {
                     try
                     {
@@ -60,10 +60,6 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.Cliente.Id);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamento.Id);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
-                        if (_controleDebito.DataLancamento.Year < 1900)
-                            cmd.Parameters.AddWithValue("@DataLancamento", DBNull.Value);
-                        else
-                            cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
 
                         if (_controleDebito.DataVencimento.Year < 1900)
                             cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
@@ -109,7 +105,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE ControleDebito SET ClienteId = @ClienteId, ValorDebito = @ValorDebito, FormaPagamentoId = @FormaPagamentoId, DataLancamento = @DataLancamento, DataVencimento = @DataVencimento, DataPagamento = @DataPagamento, Juros = @Juros, Desconto = @Desconto, Acrescimo = @Acrescimo WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE ControleDebito SET ClienteId = @ClienteId, ValorDebito = @ValorDebito, FormaPagamentoId = @FormaPagamentoId, DataVencimento = @DataVencimento, DataPagamento = @DataPagamento, Juros = @Juros, Desconto = @Desconto, Acrescimo = @Acrescimo WHERE Id = @Id"))
                 {
                     try
                     {
@@ -119,7 +115,6 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@DataLancamento", _controleDebito.DataLancamento);
                         cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
                         cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
                         cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
@@ -188,11 +183,12 @@ namespace DAL
                 cn.Close();
             }
         }
-        public ControleDebito BuscarDebitoVencido()
+        public List<ControleDebito> BuscarDebitoVencido()
         {
             ControleDebito controleDebito;
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            List<ControleDebito> controleDebitoList = new List<ControleDebito>();
 
             try
             {
@@ -207,13 +203,14 @@ namespace DAL
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     controleDebito = new ControleDebito();
-                    if (rd.Read())
+                    while (rd.Read())
                     {
                         controleDebito = new ControleDebito();
                         PreencherObjeto(controleDebito, rd);
+                        controleDebitoList.Add(controleDebito);
                     }
                 }
-                return controleDebito;
+                return controleDebitoList;
             }
             catch (Exception ex)
             {
@@ -271,7 +268,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = selectBase + " WHERE DataPagamento Is null AND DataVencimento Is null";
+                cmd.CommandText = selectBase + " WHERE DataPagamento Is null AND DataVencimento >= GetDate()";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -347,10 +344,11 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = selectBase + " WHERE DataVencimento BETWEEN @DataInicial AND @DataFinal";
+                cmd.CommandText = selectBase + " WHERE CONVERT(DATETIME, CONVERT(VARCHAR, ControleDebito.DataVencimento, 107)) BETWEEN @DataInicial AND @DataFinal";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@DataInicial", _dataInicial);
+                cmd.Parameters.AddWithValue("@DataFinal", _dataFinal);
 
                 cn.Open();
 
@@ -386,10 +384,11 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = selectBase + " WHERE DataPagamento BETWEEN @DataInicial AND @DataFinal";
+                cmd.CommandText = selectBase + " WHERE CONVERT(DATETIME, CONVERT(VARCHAR, ControleDebito.DataPagamento, 107)) BETWEEN @DataInicial AND @DataFinal";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@DataInicial", _dataInicial);
+                cmd.Parameters.AddWithValue("@DataFinal", _dataFinal);
 
                 cn.Open();
 
@@ -425,10 +424,11 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = selectBase + " WHERE DataLancamento BETWEEN @DataInicial AND @DataFinal";
+                cmd.CommandText = selectBase + " WHERE CONVERT(DATETIME, CONVERT(VARCHAR, ControleDebito.DataLancamento, 107)) BETWEEN @DataInicial AND @DataFinal";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@DataInicial", _dataInicial);
+                cmd.Parameters.AddWithValue("@DataFinal", _dataFinal);
 
                 cn.Open();
 

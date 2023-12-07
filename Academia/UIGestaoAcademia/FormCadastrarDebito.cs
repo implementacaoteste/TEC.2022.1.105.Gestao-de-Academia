@@ -66,5 +66,11 @@ namespace UIGestaoAcademia
                 }
             }
         }
+
+        private void FormCadastrarDebito_Load(object sender, EventArgs e)
+        {
+            dateTimePickerPagamento.CustomFormat = " ";
+            dateTimePickerPagamento.Format = DateTimePickerFormat.Custom;
+        }
     }
 }

@@ -8,5 +8,7 @@ namespace Models
         public static string StringDeConexao;
         public static string DiretorioStringConexao = "C:\\Configuracao\\";
         public static string NomeArquivoConexao = "academiaConnection.config";
+
+        public static Usuario ProfessorLogado { get; set; }
     }
 }

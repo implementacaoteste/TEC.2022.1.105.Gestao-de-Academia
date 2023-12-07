@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.buttonBuscarVendas = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
+            this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -48,14 +51,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 279);
             this.dataGridView1.TabIndex = 0;
             // 
-            // buttonBuscar
+            // buttonBuscarVendas
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(594, 124);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscar.TabIndex = 1;
-            this.buttonBuscar.Text = "&Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscarVendas.Location = new System.Drawing.Point(594, 124);
+            this.buttonBuscarVendas.Name = "buttonBuscarVendas";
+            this.buttonBuscarVendas.Size = new System.Drawing.Size(94, 29);
+            this.buttonBuscarVendas.TabIndex = 1;
+            this.buttonBuscarVendas.Text = "&Buscar";
+            this.buttonBuscarVendas.UseVisualStyleBackColor = true;
+            this.buttonBuscarVendas.Click += new System.EventHandler(this.buttonBuscarVendas_Click);
             // 
             // button2
             // 
@@ -66,24 +70,27 @@
             this.button2.Text = "&Excluir";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // comboBoxBuscarPor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxBuscarPor.FormattingEnabled = true;
+            this.comboBoxBuscarPor.Items.AddRange(new object[] {
             "Código da venda",
             "Nome do Funcionário",
-            "Cliente"});
-            this.comboBox1.Location = new System.Drawing.Point(16, 127);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 2;
+            "Cliente",
+            "CPF Cliente",
+            "Data",
+            "Todas"});
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(16, 127);
+            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            this.comboBoxBuscarPor.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxBuscarPor.TabIndex = 2;
             // 
-            // textBox1
+            // textBoxBuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(415, 27);
-            this.textBox1.TabIndex = 3;
+            this.textBoxBuscar.Location = new System.Drawing.Point(173, 127);
+            this.textBoxBuscar.Name = "textBoxBuscar";
+            this.textBoxBuscar.Size = new System.Drawing.Size(415, 27);
+            this.textBoxBuscar.TabIndex = 3;
             // 
             // button1
             // 
@@ -111,15 +118,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 519);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBoxBuscar);
+            this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonBuscar);
+            this.Controls.Add(this.buttonBuscarVendas);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormRelatorioDeVendas";
             this.Text = "FormRelatorioDeVendas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,11 +136,12 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private Button buttonBuscar;
+        private Button buttonBuscarVendas;
         private Button button2;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private ComboBox comboBoxBuscarPor;
+        private TextBox textBoxBuscar;
         private Button button1;
         private Label label1;
+        private BindingSource vendasBindingSource;
     }
 }

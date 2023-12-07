@@ -32,13 +32,13 @@ namespace UIGestaoAcademia
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarDebitoVencido();
                         break;
                     case 5:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDePagamento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeVencimento(dateTimePicker1.Text, dateTimePicker2.Text);
                         break;
                     case 6:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeVencimento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDePagamento(dateTimePicker1.Text, dateTimePicker2.Text);
                         break;
                     default:
-                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeLancamento(textBoxBuscarPor.Text, textBoxDataFinal.Text);
+                        controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeLancamento(dateTimePicker1.Text, dateTimePicker2.Text);
                         break;
 
                 }
@@ -96,14 +96,20 @@ namespace UIGestaoAcademia
 
         private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxBuscarPor.Width = 651;
-            textBoxDataFinal.Visible = false;
+            textBoxBuscarPor.Width = 586;
+            textBoxBuscarPor.Enabled = true;
+            textBoxBuscarPor.BackColor = Color.White;
+            dateTimePicker1.Visible = false;
+            dateTimePicker2.Visible = false;
             labelE.Visible = false;
 
             if (comboBoxBuscarPor.SelectedIndex >= 5)
             {
-                textBoxBuscarPor.Width = 314;
-                textBoxDataFinal.Visible = true;
+                textBoxBuscarPor.Width = 307;
+                textBoxBuscarPor.Enabled = false;
+                textBoxBuscarPor.BackColor = Color.WhiteSmoke;
+                dateTimePicker1.Visible = true;
+                dateTimePicker2.Visible = true;
                 labelE.Visible = true;
             }
         }

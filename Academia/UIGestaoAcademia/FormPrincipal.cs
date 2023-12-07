@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
     public partial class FormPrincipal : Form
     {
+
         public FormPrincipal()
         {
             InitializeComponent();
