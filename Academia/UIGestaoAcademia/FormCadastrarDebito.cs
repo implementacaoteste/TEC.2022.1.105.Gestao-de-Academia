@@ -16,12 +16,17 @@ namespace UIGestaoAcademia
             if (id == 0)
                 bindingSourceCadastrarDebito.AddNew();
             else
+            {
                 bindingSourceCadastrarDebito.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
+                //TODO: Mostar a data de pagamento
+            }
         }
         private void buttonSalvar_Click_1(object sender, EventArgs e)
         {
             try
             {
+                ((ControleDebito)bindingSourceCadastrarDebito.Current).DataPagamento = calendario1.Checked ? calendario1.Value : new DateTime(1900, 1, 1);
+
                 bindingSourceCadastrarDebito.EndEdit();
                 ControleDebito controleDebito = (ControleDebito)bindingSourceCadastrarDebito.Current;
 
@@ -66,11 +71,6 @@ namespace UIGestaoAcademia
                 }
             }
         }
-
-        private void FormCadastrarDebito_Load(object sender, EventArgs e)
-        {
-            dateTimePickerPagamento.CustomFormat = " ";
-            dateTimePickerPagamento.Format = DateTimePickerFormat.Custom;
-        }
     }
 }
+

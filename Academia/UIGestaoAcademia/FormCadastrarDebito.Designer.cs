@@ -49,8 +49,8 @@
             this.textBoxFormaDePagamento = new System.Windows.Forms.TextBox();
             this.buttonConsultaCliente = new System.Windows.Forms.Button();
             this.textBoxConsultaCliente = new System.Windows.Forms.TextBox();
-            this.dateTimePickerPagamento = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerVencimento = new System.Windows.Forms.DateTimePicker();
+            this.calendario1 = new UIGestaoAcademia.Calendario();
+            this.calendarioDataVencimento = new UIGestaoAcademia.Calendario();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(874, 53);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Cadastrar Debito";
+            this.label2.Text = "Cadastrar Débito";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bindingSourceCadastrarDebito
@@ -142,7 +142,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(310, 178);
+            this.label8.Location = new System.Drawing.Point(311, 176);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 29;
@@ -152,7 +152,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(576, 178);
+            this.label9.Location = new System.Drawing.Point(577, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 29;
@@ -162,7 +162,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(443, 178);
+            this.label10.Location = new System.Drawing.Point(444, 176);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 29;
@@ -171,7 +171,7 @@
             // textBoxJuros
             // 
             this.textBoxJuros.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Juros", true));
-            this.textBoxJuros.Location = new System.Drawing.Point(310, 201);
+            this.textBoxJuros.Location = new System.Drawing.Point(311, 199);
             this.textBoxJuros.Name = "textBoxJuros";
             this.textBoxJuros.Size = new System.Drawing.Size(127, 27);
             this.textBoxJuros.TabIndex = 28;
@@ -179,7 +179,7 @@
             // textBoxDesconto
             // 
             this.textBoxDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Desconto", true));
-            this.textBoxDesconto.Location = new System.Drawing.Point(576, 201);
+            this.textBoxDesconto.Location = new System.Drawing.Point(577, 199);
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(127, 27);
             this.textBoxDesconto.TabIndex = 28;
@@ -187,7 +187,7 @@
             // textBoxAcrescimo
             // 
             this.textBoxAcrescimo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Acrescimo", true));
-            this.textBoxAcrescimo.Location = new System.Drawing.Point(443, 201);
+            this.textBoxAcrescimo.Location = new System.Drawing.Point(444, 199);
             this.textBoxAcrescimo.Name = "textBoxAcrescimo";
             this.textBoxAcrescimo.Size = new System.Drawing.Size(127, 27);
             this.textBoxAcrescimo.TabIndex = 28;
@@ -238,33 +238,37 @@
             this.textBoxConsultaCliente.Size = new System.Drawing.Size(193, 27);
             this.textBoxConsultaCliente.TabIndex = 28;
             // 
-            // dateTimePickerPagamento
+            // calendario1
             // 
-            this.dateTimePickerPagamento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataPagamento", true));
-            this.dateTimePickerPagamento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerPagamento.Location = new System.Drawing.Point(165, 199);
-            this.dateTimePickerPagamento.Name = "dateTimePickerPagamento";
-            this.dateTimePickerPagamento.Size = new System.Drawing.Size(121, 27);
-            this.dateTimePickerPagamento.TabIndex = 34;
-            this.dateTimePickerPagamento.Value = new System.DateTime(2023, 12, 6, 11, 14, 21, 0);
+            this.calendario1.Checked = false;
+            this.calendario1.CustomFormat = " ";
+            this.calendario1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.calendario1.Location = new System.Drawing.Point(165, 197);
+            this.calendario1.Name = "calendario1";
+            this.calendario1.ShowCheckBox = true;
+            this.calendario1.Size = new System.Drawing.Size(140, 27);
+            this.calendario1.TabIndex = 35;
             // 
-            // dateTimePickerVencimento
+            // calendarioDataVencimento
             // 
-            this.dateTimePickerVencimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataVencimento", true));
-            this.dateTimePickerVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerVencimento.Location = new System.Drawing.Point(17, 199);
-            this.dateTimePickerVencimento.Name = "dateTimePickerVencimento";
-            this.dateTimePickerVencimento.Size = new System.Drawing.Size(122, 27);
-            this.dateTimePickerVencimento.TabIndex = 34;
-            this.dateTimePickerVencimento.Value = new System.DateTime(2023, 12, 6, 10, 6, 38, 0);
+            this.calendarioDataVencimento.Checked = false;
+            this.calendarioDataVencimento.CustomFormat = " ";
+            this.calendarioDataVencimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataVencimento", true));
+            this.calendarioDataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.calendarioDataVencimento.Location = new System.Drawing.Point(19, 199);
+            this.calendarioDataVencimento.Name = "calendarioDataVencimento";
+            this.calendarioDataVencimento.RightToLeftLayout = true;
+            this.calendarioDataVencimento.ShowCheckBox = true;
+            this.calendarioDataVencimento.Size = new System.Drawing.Size(140, 27);
+            this.calendarioDataVencimento.TabIndex = 36;
             // 
             // FormCadastrarDebito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 284);
-            this.Controls.Add(this.dateTimePickerVencimento);
-            this.Controls.Add(this.dateTimePickerPagamento);
+            this.Controls.Add(this.calendarioDataVencimento);
+            this.Controls.Add(this.calendario1);
             this.Controls.Add(this.buttonConsultaCliente);
             this.Controls.Add(this.buttonConsultaFormaPagamento);
             this.Controls.Add(this.label2);
@@ -287,7 +291,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCadastrarDebito";
             this.Text = "FormCadastrarDebito";
-            this.Load += new System.EventHandler(this.FormCadastrarDebito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -316,7 +319,7 @@
         private TextBox textBoxFormaDePagamento;
         private Button buttonConsultaCliente;
         private TextBox textBoxConsultaCliente;
-        private DateTimePicker dateTimePickerPagamento;
-        private DateTimePicker dateTimePickerVencimento;
+        private Calendario calendario1;
+        private Calendario calendarioDataVencimento;
     }
 }

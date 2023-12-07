@@ -61,12 +61,12 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamento.Id);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
 
-                        if (_controleDebito.DataVencimento.Year < 1900)
+                        if (_controleDebito.DataVencimento.Year <= 1900)
                             cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
 
-                        if (_controleDebito.DataPagamento.Year < 1900)
+                        if (_controleDebito.DataPagamento.Year <= 1900)
                             cmd.Parameters.AddWithValue("@DataPagamento", DBNull.Value);
                         else
                             cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
