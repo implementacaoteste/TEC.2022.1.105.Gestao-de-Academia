@@ -36,8 +36,6 @@
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarFornecedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formDadosBancariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vENDASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iniciarVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,8 +69,6 @@
             this.produtoToolStripMenuItem,
             this.debitoToolStripMenuItem,
             this.funcionárioToolStripMenuItem,
-            this.fornecedorToolStripMenuItem,
-            this.buscarFornecedorToolStripMenuItem,
             this.formDadosBancariosToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
@@ -125,18 +121,6 @@
             this.funcionárioToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.funcionárioToolStripMenuItem.Text = "Funcionário";
             this.funcionárioToolStripMenuItem.Click += new System.EventHandler(this.funcionárioToolStripMenuItem_Click);
-            // 
-            // fornecedorToolStripMenuItem
-            // 
-            this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
-            this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.fornecedorToolStripMenuItem.Text = "Fornecedor";
-            // 
-            // buscarFornecedorToolStripMenuItem
-            // 
-            this.buscarFornecedorToolStripMenuItem.Name = "buscarFornecedorToolStripMenuItem";
-            this.buscarFornecedorToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.buscarFornecedorToolStripMenuItem.Text = "BuscarFornecedor";
             // 
             // formDadosBancariosToolStripMenuItem
             // 
@@ -231,8 +215,6 @@
         private ToolStripMenuItem funcionárioToolStripMenuItem;
         private ToolStripMenuItem comprasToolStripMenuItem;
         private ToolStripMenuItem comprasDeProdutosToolStripMenuItem;
-        private ToolStripMenuItem fornecedorToolStripMenuItem;
-        private ToolStripMenuItem buscarFornecedorToolStripMenuItem;
         private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
         private ToolStripMenuItem fornecedorToolStripMenuItem1;
     }
