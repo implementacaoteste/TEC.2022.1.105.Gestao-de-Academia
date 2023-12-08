@@ -48,6 +48,7 @@ namespace UIGestaoAcademia
         private void FormConsultaFormaPagamento_Load(object sender, EventArgs e)
         {
             comboBoxBuscarPor.SelectedIndex = 0;
+            buttonBuscar_Click_FormaPagamento(sender, e);
         }
 
         private void buttonSelecionar_Click_1(object sender, EventArgs e)
@@ -77,11 +78,8 @@ namespace UIGestaoAcademia
                     case 0:
                         bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarTodos();
                         break;
-                    case 1:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscarPor.Text);
-                        break;
                     default:
-                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscarPor.Text));
+                        bindingSourceFormaPagamento.DataSource = new FormaPagamentoBLL().BuscarPorDescricao(textBoxBuscarPor.Text);
                         break;
                 }
             }

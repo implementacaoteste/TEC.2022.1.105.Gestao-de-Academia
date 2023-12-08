@@ -69,7 +69,7 @@
             this.textBoxBuscarPor.Location = new System.Drawing.Point(178, 95);
             this.textBoxBuscarPor.Name = "textBoxBuscarPor";
             this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
-            this.textBoxBuscarPor.TabIndex = 37;
+            this.textBoxBuscarPor.TabIndex = 1;
             // 
             // buttonExcluirFormaPagamento
             // 
@@ -77,7 +77,7 @@
             this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(940, 95);
             this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
             this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluirFormaPagamento.TabIndex = 46;
+            this.buttonExcluirFormaPagamento.TabIndex = 5;
             this.buttonExcluirFormaPagamento.Text = "E&xcluir";
             this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.buttonExcluir_Click);
@@ -88,7 +88,7 @@
             this.buttonInserirFormaPagamento.Location = new System.Drawing.Point(840, 95);
             this.buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
             this.buttonInserirFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserirFormaPagamento.TabIndex = 45;
+            this.buttonInserirFormaPagamento.TabIndex = 4;
             this.buttonInserirFormaPagamento.Text = "&Inserir";
             this.buttonInserirFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonInserirFormaPagamento.Click += new System.EventHandler(this.buttonInserir_Click);
@@ -100,7 +100,7 @@
             this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(640, 96);
             this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
             this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscarFormaPagamento.TabIndex = 43;
+            this.buttonBuscarFormaPagamento.TabIndex = 2;
             this.buttonBuscarFormaPagamento.Text = "&Buscar";
             this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscar_Click_FormaPagamento);
@@ -108,7 +108,7 @@
             // buttonSelecionar
             // 
             this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(842, 472);
+            this.buttonSelecionar.Location = new System.Drawing.Point(842, 480);
             this.buttonSelecionar.Name = "buttonSelecionar";
             this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
             this.buttonSelecionar.TabIndex = 39;
@@ -130,7 +130,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(940, 472);
+            this.buttonCancelar.Location = new System.Drawing.Point(940, 480);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 40;
@@ -144,7 +144,7 @@
             this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(740, 96);
             this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
             this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterarFormaPagamento.TabIndex = 44;
+            this.buttonAlterarFormaPagamento.TabIndex = 3;
             this.buttonAlterarFormaPagamento.Text = "&Alterar";
             this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterar_Click);
@@ -155,12 +155,11 @@
             this.comboBoxBuscarPor.FormattingEnabled = true;
             this.comboBoxBuscarPor.Items.AddRange(new object[] {
             "Todos",
-            "Nome",
-            "Id"});
+            "Nome"});
             this.comboBoxBuscarPor.Location = new System.Drawing.Point(28, 95);
             this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxBuscarPor.TabIndex = 42;
+            this.comboBoxBuscarPor.TabIndex = 0;
             // 
             // dataGridViewProduto
             // 
@@ -181,7 +180,7 @@
             this.dataGridViewProduto.RowHeadersWidth = 51;
             this.dataGridViewProduto.RowTemplate.Height = 29;
             this.dataGridViewProduto.Size = new System.Drawing.Size(1005, 336);
-            this.dataGridViewProduto.TabIndex = 38;
+            this.dataGridViewProduto.TabIndex = 3;
             // 
             // idDataGridViewTextBoxColumn
             // 
