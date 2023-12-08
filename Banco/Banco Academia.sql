@@ -598,3 +598,6 @@ INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 1)
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 GO
+INSERT INTO FormaPagamento VALUES(1, 'Dinheiro')
+INSERT INTO FormaPagamento VALUES(2, 'Pix')
+INSERT INTO FormaPagamento VALUES(3, 'Cartõa')
