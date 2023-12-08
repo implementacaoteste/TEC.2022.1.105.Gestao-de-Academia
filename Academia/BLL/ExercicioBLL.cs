@@ -25,7 +25,7 @@ namespace BLL
         {
             new ExercicioDAL().Excluir(_id);
         }
-        public Produto BuscarPorId(int _id)
+        public Exercicio BuscarPorId(int _id)
         {
             return new ExercicioDAL().BuscarPorId(_id);
         }
