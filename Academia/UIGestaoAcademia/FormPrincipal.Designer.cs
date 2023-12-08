@@ -44,6 +44,7 @@
             this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fornecedorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.vENDASToolStripMenuItem,
-            this.comprasToolStripMenuItem});
+            this.comprasToolStripMenuItem,
+            this.fornecedorToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(856, 28);
@@ -129,14 +131,12 @@
             this.fornecedorToolStripMenuItem.Name = "fornecedorToolStripMenuItem";
             this.fornecedorToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.fornecedorToolStripMenuItem.Text = "Fornecedor";
-            this.fornecedorToolStripMenuItem.Click += new System.EventHandler(this.fornecedorToolStripMenuItem_Click);
             // 
             // buscarFornecedorToolStripMenuItem
             // 
             this.buscarFornecedorToolStripMenuItem.Name = "buscarFornecedorToolStripMenuItem";
             this.buscarFornecedorToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.buscarFornecedorToolStripMenuItem.Text = "BuscarFornecedor";
-            this.buscarFornecedorToolStripMenuItem.Click += new System.EventHandler(this.buscarFornecedorToolStripMenuItem_Click);
             // 
             // formDadosBancariosToolStripMenuItem
             // 
@@ -185,6 +185,13 @@
             this.comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
             this.comprasDeProdutosToolStripMenuItem.Click += new System.EventHandler(this.comprasDeProdutosToolStripMenuItem_Click);
             // 
+            // fornecedorToolStripMenuItem1
+            // 
+            this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
+            this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(98, 24);
+            this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
+            this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -227,6 +234,7 @@
         private ToolStripMenuItem fornecedorToolStripMenuItem;
         private ToolStripMenuItem buscarFornecedorToolStripMenuItem;
         private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
+        private ToolStripMenuItem fornecedorToolStripMenuItem1;
     }
 }
 

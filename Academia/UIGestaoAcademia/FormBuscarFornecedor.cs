@@ -39,7 +39,6 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
-
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             int id = ((Fornecedor)BindingSourceBuscarFornecedor.Current).Id;

@@ -120,13 +120,6 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
-        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (FormCadastrarFornecedor frm = new FormCadastrarFornecedor())
-            {
-                frm.ShowDialog();
-            }
-        }
         private void comprasDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormCompra frm = new FormCompra())
@@ -134,16 +127,6 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
-
-        private void buscarFornecedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
-            {
-                frm.ShowDialog();
-            }
-        }
-
-
         private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormRelatorioDeVendas frm = new FormRelatorioDeVendas())
@@ -155,6 +138,14 @@ namespace UIGestaoAcademia
         private void formDadosBancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormCadastrarDadosBancarios frm = new FormCadastrarDadosBancarios())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarFornecedor frm = new FormBuscarFornecedor()) 
             {
                 frm.ShowDialog();
             }
