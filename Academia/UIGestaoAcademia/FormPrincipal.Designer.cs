@@ -43,6 +43,7 @@
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasDeProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fornecedorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exercicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@
             this.cadastroToolStripMenuItem,
             this.vENDASToolStripMenuItem,
             this.comprasToolStripMenuItem,
-            this.fornecedorToolStripMenuItem1});
+            this.fornecedorToolStripMenuItem1,
+            this.exercicioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(856, 28);
@@ -176,6 +178,13 @@
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
             this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
+            // exercicioToolStripMenuItem
+            // 
+            this.exercicioToolStripMenuItem.Name = "exercicioToolStripMenuItem";
+            this.exercicioToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.exercicioToolStripMenuItem.Text = "Exercicio";
+            this.exercicioToolStripMenuItem.Click += new System.EventHandler(this.exercicioToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -217,6 +226,7 @@
         private ToolStripMenuItem comprasDeProdutosToolStripMenuItem;
         private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
         private ToolStripMenuItem fornecedorToolStripMenuItem1;
+        private ToolStripMenuItem exercicioToolStripMenuItem;
     }
 }
 

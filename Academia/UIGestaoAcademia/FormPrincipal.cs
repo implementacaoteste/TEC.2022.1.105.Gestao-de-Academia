@@ -150,5 +150,13 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void exercicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarExercicio frm = new FormBuscarExercicio())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }
