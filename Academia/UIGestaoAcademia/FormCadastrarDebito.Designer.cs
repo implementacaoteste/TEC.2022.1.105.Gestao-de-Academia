@@ -75,7 +75,7 @@
             this.buttonCancelar.Location = new System.Drawing.Point(768, 243);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 32;
+            this.buttonCancelar.TabIndex = 11;
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
@@ -85,7 +85,7 @@
             this.buttonSalvar.Location = new System.Drawing.Point(668, 243);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 31;
+            this.buttonSalvar.TabIndex = 10;
             this.buttonSalvar.Text = "&Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click_1);
@@ -116,7 +116,7 @@
             this.textBoxValor.Location = new System.Drawing.Point(17, 142);
             this.textBoxValor.Name = "textBoxValor";
             this.textBoxValor.Size = new System.Drawing.Size(386, 27);
-            this.textBoxValor.TabIndex = 26;
+            this.textBoxValor.TabIndex = 0;
             // 
             // label6
             // 
@@ -174,7 +174,7 @@
             this.textBoxJuros.Location = new System.Drawing.Point(311, 199);
             this.textBoxJuros.Name = "textBoxJuros";
             this.textBoxJuros.Size = new System.Drawing.Size(127, 27);
-            this.textBoxJuros.TabIndex = 28;
+            this.textBoxJuros.TabIndex = 7;
             // 
             // textBoxDesconto
             // 
@@ -182,7 +182,7 @@
             this.textBoxDesconto.Location = new System.Drawing.Point(577, 199);
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(127, 27);
-            this.textBoxDesconto.TabIndex = 28;
+            this.textBoxDesconto.TabIndex = 9;
             // 
             // textBoxAcrescimo
             // 
@@ -190,14 +190,14 @@
             this.textBoxAcrescimo.Location = new System.Drawing.Point(444, 199);
             this.textBoxAcrescimo.Name = "textBoxAcrescimo";
             this.textBoxAcrescimo.Size = new System.Drawing.Size(127, 27);
-            this.textBoxAcrescimo.TabIndex = 28;
+            this.textBoxAcrescimo.TabIndex = 8;
             // 
             // buttonConsultaFormaPagamento
             // 
             this.buttonConsultaFormaPagamento.Location = new System.Drawing.Point(604, 142);
             this.buttonConsultaFormaPagamento.Name = "buttonConsultaFormaPagamento";
             this.buttonConsultaFormaPagamento.Size = new System.Drawing.Size(30, 29);
-            this.buttonConsultaFormaPagamento.TabIndex = 33;
+            this.buttonConsultaFormaPagamento.TabIndex = 2;
             this.buttonConsultaFormaPagamento.Text = "...";
             this.buttonConsultaFormaPagamento.UseVisualStyleBackColor = true;
             this.buttonConsultaFormaPagamento.Click += new System.EventHandler(this.buttonConsultaFormaPagamento_Click);
@@ -218,14 +218,14 @@
             this.textBoxFormaDePagamento.Location = new System.Drawing.Point(410, 142);
             this.textBoxFormaDePagamento.Name = "textBoxFormaDePagamento";
             this.textBoxFormaDePagamento.Size = new System.Drawing.Size(193, 27);
-            this.textBoxFormaDePagamento.TabIndex = 28;
+            this.textBoxFormaDePagamento.TabIndex = 1;
             // 
             // buttonConsultaCliente
             // 
             this.buttonConsultaCliente.Location = new System.Drawing.Point(832, 143);
             this.buttonConsultaCliente.Name = "buttonConsultaCliente";
             this.buttonConsultaCliente.Size = new System.Drawing.Size(30, 29);
-            this.buttonConsultaCliente.TabIndex = 33;
+            this.buttonConsultaCliente.TabIndex = 4;
             this.buttonConsultaCliente.Text = "...";
             this.buttonConsultaCliente.UseVisualStyleBackColor = true;
             this.buttonConsultaCliente.Click += new System.EventHandler(this.buttonConsultaCliente_Click);
@@ -236,7 +236,7 @@
             this.textBoxConsultaCliente.Location = new System.Drawing.Point(638, 143);
             this.textBoxConsultaCliente.Name = "textBoxConsultaCliente";
             this.textBoxConsultaCliente.Size = new System.Drawing.Size(193, 27);
-            this.textBoxConsultaCliente.TabIndex = 28;
+            this.textBoxConsultaCliente.TabIndex = 3;
             // 
             // calendario1
             // 
@@ -247,7 +247,7 @@
             this.calendario1.Name = "calendario1";
             this.calendario1.ShowCheckBox = true;
             this.calendario1.Size = new System.Drawing.Size(140, 27);
-            this.calendario1.TabIndex = 35;
+            this.calendario1.TabIndex = 6;
             // 
             // calendarioDataVencimento
             // 
@@ -260,7 +260,7 @@
             this.calendarioDataVencimento.RightToLeftLayout = true;
             this.calendarioDataVencimento.ShowCheckBox = true;
             this.calendarioDataVencimento.Size = new System.Drawing.Size(140, 27);
-            this.calendarioDataVencimento.TabIndex = 36;
+            this.calendarioDataVencimento.TabIndex = 5;
             // 
             // FormCadastrarDebito
             // 
