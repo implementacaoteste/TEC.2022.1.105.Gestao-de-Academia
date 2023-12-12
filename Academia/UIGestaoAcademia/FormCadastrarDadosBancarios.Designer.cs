@@ -58,7 +58,9 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBoxTipoDeMoeda = new System.Windows.Forms.TextBox();
             this.buttonTipoMoeda = new System.Windows.Forms.Button();
+            this.tipoDeMoedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -310,7 +312,7 @@
             // 
             // textBoxTipoDeMoeda
             // 
-            this.textBoxTipoDeMoeda.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "NomeMoeda", true));
+            this.textBoxTipoDeMoeda.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoDeMoedaBindingSource, "TipoMoeda", true));
             this.textBoxTipoDeMoeda.Location = new System.Drawing.Point(327, 275);
             this.textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
             this.textBoxTipoDeMoeda.Size = new System.Drawing.Size(193, 27);
@@ -325,6 +327,10 @@
             this.buttonTipoMoeda.Text = "...";
             this.buttonTipoMoeda.UseVisualStyleBackColor = true;
             this.buttonTipoMoeda.Click += new System.EventHandler(this.buttonTipoDeMoeda_Click);
+            // 
+            // tipoDeMoedaBindingSource
+            // 
+            this.tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
             // 
             // FormCadastrarDadosBancarios
             // 
@@ -363,6 +369,7 @@
             this.Name = "FormCadastrarDadosBancarios";
             this.Text = "FormCadastrarDadosBancarios";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +406,6 @@
         private BindingSource bindingSourceCadastrarDadosBancario;
         private TextBox textBoxTipoDeMoeda;
         private Button buttonTipoMoeda;
+        private BindingSource tipoDeMoedaBindingSource;
     }
 }

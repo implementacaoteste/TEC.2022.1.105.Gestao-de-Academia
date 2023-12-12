@@ -105,6 +105,7 @@
             this.buttonSelecionar.Text = "Se&lecionar";
             this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
             // 
             // label1
             // 

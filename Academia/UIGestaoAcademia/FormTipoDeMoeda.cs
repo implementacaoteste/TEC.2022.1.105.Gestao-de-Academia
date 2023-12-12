@@ -81,5 +81,23 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
+
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (bindingSourceTipoDeMoeda.Count > 0)
+                {
+                    this.TipoDeMoeda = (TipoDeMoeda)bindingSourceTipoDeMoeda.Current;
+                    Close();
+                }
+                else
+                    MessageBox.Show("Não existe permissão a ser selecionada.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
