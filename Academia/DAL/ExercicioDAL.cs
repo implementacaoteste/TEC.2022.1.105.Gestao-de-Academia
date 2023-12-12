@@ -18,7 +18,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Exercicio(Nome) VALUES(@Nome)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Exercicios(Nome) VALUES(@Nome)"))
                 {
                     try
                     {
@@ -57,7 +57,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE Exercicio SET Nome = @Nome WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Exercicios SET Nome = @Nome WHERE Id = @Id"))
                 {
                     try
                     {
@@ -97,7 +97,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("DELETE FROM Exercicio WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("DELETE FROM Exercicios WHERE Id = @Id"))
                 {
                     try
                     {
@@ -141,7 +141,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome FROM Exercicio WHERE Id  = @Id";
+                cmd.CommandText = " SELECT Id, Nome FROM Exercicios WHERE Id  = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -182,7 +182,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome FROM Exercicio WHERE Nome LIKE @Nome";
+                cmd.CommandText = " SELECT Id, Nome FROM Exercicios WHERE Nome LIKE @Nome";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -224,7 +224,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Nome FROM Exercicio";
+                cmd.CommandText = " SELECT Id, Nome FROM Exercicios";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 

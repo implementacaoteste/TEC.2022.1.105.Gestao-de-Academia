@@ -31,18 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewExercicio = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bindingSourceExercicio = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exercicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
+            this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.buttonInserir = new System.Windows.Forms.Button();
             this.buttonAlterar = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonSelecionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExercicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceExercicio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exercicioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,41 +59,62 @@
             // 
             // dataGridViewExercicio
             // 
+            this.dataGridViewExercicio.AllowUserToAddRows = false;
+            this.dataGridViewExercicio.AllowUserToDeleteRows = false;
+            this.dataGridViewExercicio.AllowUserToOrderColumns = true;
             this.dataGridViewExercicio.AutoGenerateColumns = false;
             this.dataGridViewExercicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewExercicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn});
-            this.dataGridViewExercicio.DataSource = this.bindingSourceExercicio;
+            this.dataGridViewExercicio.DataSource = this.exercicioBindingSource;
             this.dataGridViewExercicio.Location = new System.Drawing.Point(12, 163);
             this.dataGridViewExercicio.Name = "dataGridViewExercicio";
+            this.dataGridViewExercicio.ReadOnly = true;
             this.dataGridViewExercicio.RowHeadersWidth = 51;
             this.dataGridViewExercicio.RowTemplate.Height = 29;
             this.dataGridViewExercicio.Size = new System.Drawing.Size(805, 236);
             this.dataGridViewExercicio.TabIndex = 30;
             // 
-            // comboBox1
+            // idDataGridViewTextBoxColumn
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Id",
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // exercicioBindingSource
+            // 
+            this.exercicioBindingSource.DataSource = typeof(Models.Exercicio);
+            // 
+            // comboBoxBuscarPor
+            // 
+            this.comboBoxBuscarPor.FormattingEnabled = true;
+            this.comboBoxBuscarPor.Items.AddRange(new object[] {
             "Nome",
             "Todos"});
-            this.comboBox1.Location = new System.Drawing.Point(12, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(98, 28);
-            this.comboBox1.TabIndex = 31;
+            this.comboBoxBuscarPor.Location = new System.Drawing.Point(12, 129);
+            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            this.comboBoxBuscarPor.Size = new System.Drawing.Size(98, 28);
+            this.comboBoxBuscarPor.TabIndex = 31;
             // 
-            // bindingSourceExercicio
+            // textBoxBuscarPor
             // 
-            this.bindingSourceExercicio.DataSource = typeof(Models.Exercicio);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(116, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(323, 27);
-            this.textBox1.TabIndex = 32;
+            this.textBoxBuscarPor.Location = new System.Drawing.Point(116, 130);
+            this.textBoxBuscarPor.Name = "textBoxBuscarPor";
+            this.textBoxBuscarPor.Size = new System.Drawing.Size(323, 27);
+            this.textBoxBuscarPor.TabIndex = 32;
             // 
             // buttonBuscar
             // 
@@ -102,6 +124,7 @@
             this.buttonBuscar.TabIndex = 33;
             this.buttonBuscar.Text = "&Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // buttonInserir
             // 
@@ -111,6 +134,7 @@
             this.buttonInserir.TabIndex = 33;
             this.buttonInserir.Text = "&Inserir";
             this.buttonInserir.UseVisualStyleBackColor = true;
+            this.buttonInserir.Click += new System.EventHandler(this.buttonInserir_Click);
             // 
             // buttonAlterar
             // 
@@ -120,6 +144,7 @@
             this.buttonAlterar.TabIndex = 33;
             this.buttonAlterar.Text = "&Alterar";
             this.buttonAlterar.UseVisualStyleBackColor = true;
+            this.buttonAlterar.Click += new System.EventHandler(this.buttonAlterar_Click);
             // 
             // buttonExcluir
             // 
@@ -129,22 +154,7 @@
             this.buttonExcluir.TabIndex = 33;
             this.buttonExcluir.Text = "&Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.Width = 625;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // buttonCancelar
             // 
@@ -155,25 +165,36 @@
             this.buttonCancelar.Text = "&Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
+            // buttonSelecionar
+            // 
+            this.buttonSelecionar.Location = new System.Drawing.Point(630, 410);
+            this.buttonSelecionar.Name = "buttonSelecionar";
+            this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
+            this.buttonSelecionar.TabIndex = 34;
+            this.buttonSelecionar.Text = "&Selecionar";
+            this.buttonSelecionar.UseVisualStyleBackColor = true;
+            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
+            // 
             // FormBuscarExercicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancelar;
             this.ClientSize = new System.Drawing.Size(846, 450);
+            this.Controls.Add(this.buttonSelecionar);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.buttonAlterar);
             this.Controls.Add(this.buttonInserir);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonBuscar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBoxBuscarPor);
+            this.Controls.Add(this.comboBoxBuscarPor);
             this.Controls.Add(this.dataGridViewExercicio);
             this.Controls.Add(this.label1);
             this.Name = "FormBuscarExercicio";
             this.Text = "FormBuscarExercicio";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewExercicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceExercicio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exercicioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,15 +204,16 @@
 
         private Label label1;
         private DataGridView dataGridViewExercicio;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private BindingSource bindingSourceExercicio;
-        private ComboBox comboBox1;
-        private TextBox textBox1;
+        private ComboBox comboBoxBuscarPor;
+        private TextBox textBoxBuscarPor;
         private Button buttonBuscar;
         private Button buttonInserir;
         private Button buttonAlterar;
         private Button buttonExcluir;
         private Button buttonCancelar;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private BindingSource exercicioBindingSource;
+        private Button buttonSelecionar;
     }
 }
