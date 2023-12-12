@@ -16,7 +16,7 @@ namespace DAL
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@TipoMoeda", _tipodemoeda.Descricao);
+                cmd.Parameters.AddWithValue("@TipoMoeda", _tipodemoeda.TipoMoeda);
 
                 cmd.Connection = cn;
                 cn.Open();
@@ -76,7 +76,7 @@ namespace DAL
         private static void PreencherObjeto(TipoDeMoeda tipoMoeda, SqlDataReader rd)
         {
             tipoMoeda.Id = (int)rd["Id"];
-            tipoMoeda.Descricao = rd["Descricao"].ToString();
+            tipoMoeda.TipoMoeda = rd["TipoMoeda"].ToString();
         }
 
         public TipoDeMoeda BuscarPorId(int _id)
@@ -119,11 +119,12 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"UPDATE TipoDeMoeda SET 
-                                    Nome = @TipoMoeda
+                                    TipoMoeda = @TipoMoeda
                                     WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@TipoMoeda", _tipomoeda.Descricao);
+                cmd.Parameters.AddWithValue("@Id", _tipomoeda.Id);
+                cmd.Parameters.AddWithValue("@TipoMoeda", _tipomoeda.TipoMoeda);
                 cmd.Connection = cn;
                 cn.Open();
 

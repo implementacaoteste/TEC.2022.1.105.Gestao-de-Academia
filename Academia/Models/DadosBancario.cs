@@ -21,7 +21,7 @@ namespace Models
             get
             {
                 if (TipoMoeda != null)
-                    return TipoMoeda.Descricao;
+                    return TipoMoeda.TipoMoeda;
                 return "";
             }
         }

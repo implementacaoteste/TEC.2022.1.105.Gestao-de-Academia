@@ -66,7 +66,7 @@
             this.comboBoxBuscarPor.Items.AddRange(new object[] {
             "Código da venda",
             "Nome do Funcionário",
-            "Cliente",
+            "Nome do Cliente",
             "CPF Cliente",
             "Data",
             "Todas"});
@@ -114,6 +114,8 @@
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonBuscarVendas);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.Name = "FormRelatorioDeVendas";
             this.Text = "FormRelatorioDeVendas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
