@@ -6,7 +6,7 @@ namespace DAL
 {
     public class ControleDebitoDAL
     {
-        private string selectBase = "SELECT ControleDebito.Id, ControleDebito.ClienteId, ControleDebito.ValorDebito, ControleDebito.FormaPagamentoId, ControleDebito.DataLancamento, ControleDebito.DataVencimento, ControleDebito.DataPagamento, ControleDebito.Juros, ControleDebito.Desconto, ControleDebito.Acrescimo FROM ControleDebito";
+        private string selectBase = "SELECT ControleDebito.Id, ControleDebito.ClienteId, ControleDebito.ValorDebito, ControleDebito.FormaPagamentoId, ControleDebito.DataLancamento, ControleDebito.DataVencimento, ControleDebito.DataPagamento, ControleDebito.Juros, ControleDebito.Desconto, ControleDebito.Acrescimo, ControleDebito.Descricao FROM ControleDebito";
         public void Excluir(int _id, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
@@ -51,7 +51,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito (ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo) VALUES(@ClienteId, @FormaPagamentoId, @ValorDebito, GETDATE(), @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ControleDebito (ClienteId, FormaPagamentoId, ValorDebito, DataLancamento, DataVencimento, DataPagamento, Juros, Desconto, Acrescimo, Descricao) VALUES(@ClienteId, @FormaPagamentoId, @ValorDebito, GETDATE(), @DataVencimento, @DataPagamento, @Juros, @Desconto, @Acrescimo, @Descricao)"))
                 {
                     try
                     {
@@ -74,6 +74,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
                         cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
                         cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
+                        cmd.Parameters.AddWithValue("@Descricao", _controleDebito.Descricao);
 
                         if (_transaction == null)
                         {
@@ -105,7 +106,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE ControleDebito SET ClienteId = @ClienteId, ValorDebito = @ValorDebito, FormaPagamentoId = @FormaPagamentoId, DataVencimento = @DataVencimento, DataPagamento = @DataPagamento, Juros = @Juros, Desconto = @Desconto, Acrescimo = @Acrescimo WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE ControleDebito SET ClienteId = @ClienteId, ValorDebito = @ValorDebito, FormaPagamentoId = @FormaPagamentoId, DataVencimento = @DataVencimento, DataPagamento = @DataPagamento, Juros = @Juros, Desconto = @Desconto, Acrescimo = @Acrescimo, Descricao = @Descricao WHERE Id = @Id"))
                 {
                     try
                     {
@@ -120,6 +121,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
                         cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
                         cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
+                        cmd.Parameters.AddWithValue("@Descricao", _controleDebito.Descricao);
 
                         if (_transaction == null)
                         {
@@ -513,6 +515,7 @@ namespace DAL
             controleDebito.Juros = (double)rd["Juros"];
             controleDebito.Desconto = (double)rd["Desconto"];
             controleDebito.Acrescimo = (double)rd["Acrescimo"];
+            controleDebito.Descricao = rd["Descricao"].ToString();
             controleDebito.FormaPagamento = new FormaPagamentoDAL().BuscarPorId(controleDebito.FormaPagamentoId);
             controleDebito.Cliente = new ClienteDAL().BuscarPorId(controleDebito.ClienteId);
         }

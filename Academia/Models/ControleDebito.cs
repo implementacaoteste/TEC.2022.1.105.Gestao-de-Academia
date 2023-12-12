@@ -30,6 +30,7 @@
         public double Juros { get; set; }
         public double Desconto { get; set; }
         public double Acrescimo { get; set; }
+        public string Descricao { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public Cliente Cliente { get; set; }
     }

@@ -117,5 +117,7 @@
         private BindingSource bindingSourceCadastrarFormaPagamento;
         private Label label3;
         private TextBox textBoxDescricao;
+        private Label label1;
+        private TextBox textBoxNumeroDeParcelas;
     }
 }

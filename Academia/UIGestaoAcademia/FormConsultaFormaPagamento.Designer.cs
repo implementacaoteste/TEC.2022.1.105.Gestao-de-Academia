@@ -80,7 +80,7 @@
             this.buttonExcluirFormaPagamento.TabIndex = 5;
             this.buttonExcluirFormaPagamento.Text = "E&xcluir";
             this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.buttonExcluir_Click);
+            this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.ButtonExcluir_Click);
             // 
             // buttonInserirFormaPagamento
             // 

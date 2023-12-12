@@ -27,21 +27,21 @@ namespace UIGestaoAcademia
 
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
-            int id = ((ControleDebito)bindingSourceFormaPagamento.Current).Id;
+            int id = ((FormaPagamento)bindingSourceFormaPagamento.Current).Id;
 
-            using (FormCadastrarDebito frm = new FormCadastrarDebito(id))
+            using (FormCadastrarFormaPagamento frm = new FormCadastrarFormaPagamento(id))
             {
                 frm.ShowDialog();
             }
         }
 
-        private void buttonExcluir_Click(object sender, EventArgs e)
+        private void ButtonExcluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((ControleDebito)bindingSourceFormaPagamento.Current).Id;
-            new ControleDebitoBLL().Excluir(id);
+            int id = ((FormaPagamento)bindingSourceFormaPagamento.Current).Id;
+            new FormaPagamentoBLL().Excluir(id);
             bindingSourceFormaPagamento.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }

@@ -513,6 +513,10 @@ ALTER TABLE Cliente
 ALTER COLUMN Estado VARCHAR(50)
 GO
 
+ALTER TABLE ControleDebito
+ADD Descricao VARCHAR(200)
+GO
+
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
@@ -598,11 +602,8 @@ INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 1)
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
 INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
 GO
-INSERT INTO FormaPagamento VALUES('Dinheiro')
-INSERT INTO FormaPagamento VALUES('Pix')
-INSERT INTO FormaPagamento VALUES('Cartão')
-GO
-SELECT*FROM FormaPagamento
 INSERT INTO Cliente VALUES('Genilsom',1, '07790087655','(63)99124-9261','genism355@gmail.com',GETDATE(),'Magman','0987654','Lipídios',null,'107','Brasil', 'São Juares', 'Mato Fino')
 INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
+SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
+SELECT*FROM ControleDebito

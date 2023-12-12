@@ -21,6 +21,7 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
 
+
                         if (_transaction == null)
                         {
                             cn.Open();
@@ -162,13 +163,11 @@ namespace DAL
                 cn.Close();
             }
         }
-
         private static void PreencherObjeto(FormaPagamento formaPagamento, SqlDataReader rd)
         {
             formaPagamento.Id = (int)rd["Id"];
             formaPagamento.Descricao = rd["Descricao"].ToString();
         }
-
         public List<FormaPagamento> BuscarDescricao(string _descricao)
         {
             List<FormaPagamento> formaPagamentoList = new List<FormaPagamento>();
@@ -181,7 +180,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Descricao FROM FormaPagamento WHERE Descricao LIKE @Descricao";
+                cmd.CommandText = " SELECT Descricao, QuantidadeParcelas FROM FormaPagamento WHERE Descricao LIKE @Descricao";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -222,7 +221,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = "SELECT Id, Descricao FROM FormaPagamento WHERE Id = @Id";
+                cmd.CommandText = "SELECT Id, Descricao, QuantidadeParcelas FROM FormaPagamento WHERE Id = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
