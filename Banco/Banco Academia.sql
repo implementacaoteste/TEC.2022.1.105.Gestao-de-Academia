@@ -603,3 +603,6 @@ INSERT INTO FormaPagamento VALUES('Pix')
 INSERT INTO FormaPagamento VALUES('Cartão')
 GO
 SELECT*FROM FormaPagamento
+INSERT INTO Cliente VALUES('Genilsom',1, '07790087655','(63)99124-9261','genism355@gmail.com',GETDATE(),'Magman','0987654','Lipídios',null,'107','Brasil', 'São Juares', 'Mato Fino')
+INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
+SELECT*FROM Cliente
