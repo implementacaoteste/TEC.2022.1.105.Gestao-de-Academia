@@ -32,11 +32,11 @@ namespace UIGestaoAcademia
             using (FormTipoDeMoeda frm = new FormTipoDeMoeda())
             {
                 frm.ShowDialog();
-                if (frm.TipoMoeda != null)
+                if (frm.TipoDeMoeda != null)
                 {
-                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoMoeda = frm.TipoMoeda;
-                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoDeMoedaId = frm.TipoMoeda.Id;
-                    textBoxTipoDeMoeda.Text = frm.TipoMoeda.Descricao;
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoMoeda = frm.TipoDeMoeda;
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoDeMoedaId = frm.TipoDeMoeda.Id;
+                    textBoxTipoDeMoeda.Text = frm.TipoDeMoeda.TipoMoeda;
                 }
             }
         }
