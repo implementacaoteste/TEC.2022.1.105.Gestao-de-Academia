@@ -36,10 +36,10 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        exercicioBindingSource.DataSource = new ProdutoBLL().BuscarPorNome(textBoxBuscarPor.Text);
+                        exercicioBindingSource.DataSource = new ExercicioBLL().BuscarPorNome(textBoxBuscarPor.Text);
                         break;
                     default:
-                        exercicioBindingSource.DataSource = new ProdutoBLL().BuscarTodos();
+                        exercicioBindingSource.DataSource = new ExercicioBLL().BuscarTodos();
                         break;
                 }
             }
