@@ -48,7 +48,7 @@ namespace UIGestaoAcademia
                     if (frm.Funcionario != null)
                     {
                         ((Vendas)bindingSourceVendas.Current).Funcionario = frm.Funcionario;
-                        textBoxBuscarFuncionario.Text = frm.Funcionario.Nome;
+                        labelNomeUsuarioLogado.Text = frm.Funcionario.Nome;
                     }
                 }
             }
@@ -155,15 +155,6 @@ namespace UIGestaoAcademia
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
-        }
-
-        private void FormVendas_Load(object sender, EventArgs e)
-        {
-            
-            if (Constantes.ProfessorLogado != null)
-            {
-                textBoxBuscarFuncionario.Text = Constantes.ProfessorLogado.Nome;
-            }
         }
     }
 }
