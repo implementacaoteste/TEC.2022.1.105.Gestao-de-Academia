@@ -519,8 +519,11 @@ GO
 ALTER TABLE Venda
 ADD Desconto FLOAT
 GO
-ALTER TABLE CompraProduto
+ALTER TABLE ItensCompra
 ADD Frete FLOAT
+GO
+Alter Table CompraProduto
+Drop column Frete 
 GO
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)

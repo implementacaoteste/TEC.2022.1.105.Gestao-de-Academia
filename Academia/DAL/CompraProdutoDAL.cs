@@ -13,7 +13,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, Frete, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @ValorTotal)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @ValorTotal)"))
                 {
                     try
                     {
@@ -21,7 +21,6 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@FornecedorId", _Compraproduto.FornecedorId);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _Compraproduto.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@Frete", _Compraproduto.Frete);
                         cmd.Parameters.AddWithValue("@ValorTotal", _Compraproduto.ValorTotal);
 
                         if (_transaction == null)
@@ -63,7 +62,6 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Id", _Compraproduto.Id);
                         cmd.Parameters.AddWithValue("@FornecedorId", _Compraproduto.FornecedorId);
                         cmd.Parameters.AddWithValue("@FormaPagamento", _Compraproduto.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@Frete", _Compraproduto.Frete);
                         cmd.Parameters.AddWithValue("@ValorTotal", _Compraproduto.ValorTotal);
 
                         if (_transaction == null)
@@ -255,7 +253,6 @@ namespace DAL
             compraProduto.Id = (int)rd["Id"];
             compraProduto.FornecedorId = (int)rd["FornecedorId"];
             compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
-            compraProduto.Frete = (double)rd["Frete"];
             compraProduto.ValorTotal = (double)rd["ValorTotal"];
         }
     }

@@ -11,7 +11,6 @@ namespace Models
         public int Id { get; set; }
         public int FornecedorId { get; set; }
         public int FormaPagamentoId { get; set; }
-        public double Frete { get; set; }
         public double ValorTotal { get; set; }
         public List<ItensCompra> itensCompraList { get; set; }
         public Fornecedor Fornecedor { get; set; }

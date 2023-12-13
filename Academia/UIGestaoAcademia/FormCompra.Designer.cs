@@ -48,7 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bindingSourceCompraProduto = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSourceCompraProduto = new System.Windows.Forms.BindingSource(this.components);
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxFrete = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             this.textBoxNomeProduto = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensCompraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCompraProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceCompraProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBuscarProduto
@@ -240,9 +240,9 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Fornecedor";
             // 
-            // bindingSourceCompraProduto
+            // BindingSourceCompraProduto
             // 
-            this.bindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
+            this.BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
             // labelValorTotal
             // 
@@ -264,11 +264,13 @@
             // 
             // textBoxFrete
             // 
+            this.textBoxFrete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensCompraBindingSource, "Frete", true));
             this.textBoxFrete.Location = new System.Drawing.Point(485, 121);
             this.textBoxFrete.Name = "textBoxFrete";
             this.textBoxFrete.Size = new System.Drawing.Size(98, 27);
             this.textBoxFrete.TabIndex = 2;
             this.textBoxFrete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxFrete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFrete_KeyDown);
             // 
             // label1
             // 
@@ -337,7 +339,7 @@
             this.Load += new System.EventHandler(this.FormCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensCompraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCompraProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceCompraProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,7 +360,7 @@
         private Label label2;
         private Label label3;
         private BindingSource itensCompraBindingSource;
-        private BindingSource bindingSourceCompraProduto;
+        private BindingSource BindingSourceCompraProduto;
         private Label labelValorTotal;
         private Label label4;
         private TextBox textBoxFrete;

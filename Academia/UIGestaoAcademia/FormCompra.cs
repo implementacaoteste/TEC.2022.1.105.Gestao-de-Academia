@@ -78,7 +78,7 @@ namespace UIGestaoAcademia
             {
                 ((ItensCompra)itensCompraBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                 ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario = Convert.ToDouble(textBoxValorProduto.Text);
-                ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = (((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade);
+                ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
 
                 itensCompraBindingSource.EndEdit();
 
@@ -105,6 +105,21 @@ namespace UIGestaoAcademia
                 }
             }
             labelValorTotal.Text = valorTotal.ToString("C");
+        }
+
+        private void textBoxFrete_KeyDown(object sender, KeyEventArgs e)
+        {
+            double ValorTotal = 0;
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                ((ItensCompra)itensCompraBindingSource.Current).Frete = Convert.ToDouble(textBoxFrete.Text);
+                labelValorTotal.Text = ((ItensCompra)itensCompraBindingSource.Current).ValorTotal + textBoxFrete.Text;
+
+                itensCompraBindingSource.EndEdit();
+
+
+            }
         }
     }
 }
