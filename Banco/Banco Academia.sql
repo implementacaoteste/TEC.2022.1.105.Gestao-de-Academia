@@ -519,10 +519,7 @@ GO
 ALTER TABLE Venda
 ADD Desconto FLOAT
 GO
-ALTER TABLE ItensCompra
-ADD Frete FLOAT
-GO
-Alter Table CompraProduto
+Alter Table ItensCompra
 Drop column Frete 
 GO
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
