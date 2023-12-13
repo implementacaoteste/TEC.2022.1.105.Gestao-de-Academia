@@ -18,7 +18,6 @@ namespace UIGestaoAcademia
             else
             {
                 bindingSourceCadastrarDebito.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
-                //TODO: Mostar a data de pagamento
             }
         }
         private void buttonSalvar_Click_1(object sender, EventArgs e)

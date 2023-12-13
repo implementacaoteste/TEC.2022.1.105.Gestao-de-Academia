@@ -53,7 +53,9 @@
             this.calendarioDataVencimento = new UIGestaoAcademia.Calendario();
             this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxNumeroDeParcelas = new System.Windows.Forms.TextBox();
+            this.textBoxDescricão = new System.Windows.Forms.TextBox();
+            this.textBoxQuantidaDeParcelasDesejadas = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +78,7 @@
             // buttonCancelar
             // 
             this.buttonCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonCancelar.Location = new System.Drawing.Point(715, 263);
+            this.buttonCancelar.Location = new System.Drawing.Point(717, 298);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
             this.buttonCancelar.TabIndex = 11;
@@ -86,7 +88,7 @@
             // buttonSalvar
             // 
             this.buttonSalvar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonSalvar.Location = new System.Drawing.Point(615, 263);
+            this.buttonSalvar.Location = new System.Drawing.Point(617, 298);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
             this.buttonSalvar.TabIndex = 10;
@@ -119,14 +121,14 @@
             this.textBoxValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "ValorDebito", true));
             this.textBoxValor.Location = new System.Drawing.Point(18, 111);
             this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(386, 27);
+            this.textBoxValor.Size = new System.Drawing.Size(316, 27);
             this.textBoxValor.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(245, 144);
+            this.label6.Location = new System.Drawing.Point(244, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(147, 20);
             this.label6.TabIndex = 29;
@@ -136,7 +138,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(394, 144);
+            this.label7.Location = new System.Drawing.Point(393, 152);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(145, 20);
             this.label7.TabIndex = 29;
@@ -146,7 +148,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(540, 144);
+            this.label8.Location = new System.Drawing.Point(539, 152);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 20);
             this.label8.TabIndex = 29;
@@ -156,7 +158,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(18, 195);
+            this.label9.Location = new System.Drawing.Point(17, 214);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 20);
             this.label9.TabIndex = 29;
@@ -166,7 +168,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(673, 142);
+            this.label10.Location = new System.Drawing.Point(672, 150);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 20);
             this.label10.TabIndex = 29;
@@ -175,7 +177,7 @@
             // textBoxJuros
             // 
             this.textBoxJuros.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Juros", true));
-            this.textBoxJuros.Location = new System.Drawing.Point(540, 167);
+            this.textBoxJuros.Location = new System.Drawing.Point(539, 175);
             this.textBoxJuros.Name = "textBoxJuros";
             this.textBoxJuros.Size = new System.Drawing.Size(127, 27);
             this.textBoxJuros.TabIndex = 7;
@@ -183,7 +185,7 @@
             // textBoxDesconto
             // 
             this.textBoxDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Desconto", true));
-            this.textBoxDesconto.Location = new System.Drawing.Point(18, 218);
+            this.textBoxDesconto.Location = new System.Drawing.Point(17, 238);
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(193, 27);
             this.textBoxDesconto.TabIndex = 9;
@@ -191,9 +193,9 @@
             // textBoxAcrescimo
             // 
             this.textBoxAcrescimo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Acrescimo", true));
-            this.textBoxAcrescimo.Location = new System.Drawing.Point(673, 165);
+            this.textBoxAcrescimo.Location = new System.Drawing.Point(672, 174);
             this.textBoxAcrescimo.Name = "textBoxAcrescimo";
-            this.textBoxAcrescimo.Size = new System.Drawing.Size(136, 27);
+            this.textBoxAcrescimo.Size = new System.Drawing.Size(137, 27);
             this.textBoxAcrescimo.TabIndex = 8;
             // 
             // buttonConsultaFormaPagamento
@@ -210,7 +212,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(18, 141);
+            this.label1.Location = new System.Drawing.Point(17, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 27;
@@ -226,7 +228,7 @@
             // 
             // buttonConsultaCliente
             // 
-            this.buttonConsultaCliente.Location = new System.Drawing.Point(214, 165);
+            this.buttonConsultaCliente.Location = new System.Drawing.Point(213, 174);
             this.buttonConsultaCliente.Name = "buttonConsultaCliente";
             this.buttonConsultaCliente.Size = new System.Drawing.Size(30, 29);
             this.buttonConsultaCliente.TabIndex = 4;
@@ -237,7 +239,7 @@
             // textBoxConsultaCliente
             // 
             this.textBoxConsultaCliente.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "NomeCliente", true));
-            this.textBoxConsultaCliente.Location = new System.Drawing.Point(18, 165);
+            this.textBoxConsultaCliente.Location = new System.Drawing.Point(17, 174);
             this.textBoxConsultaCliente.Name = "textBoxConsultaCliente";
             this.textBoxConsultaCliente.Size = new System.Drawing.Size(193, 27);
             this.textBoxConsultaCliente.TabIndex = 3;
@@ -247,7 +249,7 @@
             this.calendario1.Checked = false;
             this.calendario1.CustomFormat = " ";
             this.calendario1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.calendario1.Location = new System.Drawing.Point(394, 167);
+            this.calendario1.Location = new System.Drawing.Point(393, 175);
             this.calendario1.Name = "calendario1";
             this.calendario1.ShowCheckBox = true;
             this.calendario1.Size = new System.Drawing.Size(140, 27);
@@ -259,7 +261,7 @@
             this.calendarioDataVencimento.CustomFormat = " ";
             this.calendarioDataVencimento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "DataVencimento", true));
             this.calendarioDataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.calendarioDataVencimento.Location = new System.Drawing.Point(248, 167);
+            this.calendarioDataVencimento.Location = new System.Drawing.Point(247, 175);
             this.calendarioDataVencimento.Name = "calendarioDataVencimento";
             this.calendarioDataVencimento.RightToLeftLayout = true;
             this.calendarioDataVencimento.ShowCheckBox = true;
@@ -280,20 +282,38 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Descrição";
             // 
-            // textBoxNumeroDeParcelas
+            // textBoxDescricão
             // 
-            this.textBoxNumeroDeParcelas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Descricao", true));
-            this.textBoxNumeroDeParcelas.Location = new System.Drawing.Point(641, 112);
-            this.textBoxNumeroDeParcelas.Name = "textBoxNumeroDeParcelas";
-            this.textBoxNumeroDeParcelas.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNumeroDeParcelas.TabIndex = 8;
-            this.textBoxNumeroDeParcelas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDescricão.Location = new System.Drawing.Point(641, 112);
+            this.textBoxDescricão.Name = "textBoxDescricão";
+            this.textBoxDescricão.Size = new System.Drawing.Size(169, 27);
+            this.textBoxDescricão.TabIndex = 8;
+            this.textBoxDescricão.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxQuantidaDeParcelasDesejadas
+            // 
+            this.textBoxQuantidaDeParcelasDesejadas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "QuantidaDeParcelas", true));
+            this.textBoxQuantidaDeParcelasDesejadas.Location = new System.Drawing.Point(340, 111);
+            this.textBoxQuantidaDeParcelasDesejadas.Name = "textBoxQuantidaDeParcelasDesejadas";
+            this.textBoxQuantidaDeParcelasDesejadas.Size = new System.Drawing.Size(65, 27);
+            this.textBoxQuantidaDeParcelasDesejadas.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(340, 89);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 20);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Parcelas";
             // 
             // FormCadastrarDebito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 304);
+            this.ClientSize = new System.Drawing.Size(821, 339);
+            this.Controls.Add(this.textBoxQuantidaDeParcelasDesejadas);
             this.Controls.Add(this.calendarioDataVencimento);
             this.Controls.Add(this.calendario1);
             this.Controls.Add(this.buttonConsultaCliente);
@@ -308,9 +328,10 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxNumeroDeParcelas);
+            this.Controls.Add(this.textBoxDescricão);
             this.Controls.Add(this.textBoxAcrescimo);
             this.Controls.Add(this.textBoxDesconto);
             this.Controls.Add(this.textBoxJuros);
@@ -353,6 +374,8 @@
         private Calendario calendarioDataVencimento;
         private Label label5;
         private BindingSource formaPagamentoBindingSource;
-        private TextBox textBoxNumeroDeParcelas;
+        private TextBox textBoxDescricão;
+        private TextBox textBoxQuantidaDeParcelasDesejadas;
+        private Label label11;
     }
 }
