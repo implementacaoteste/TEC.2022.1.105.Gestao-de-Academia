@@ -43,6 +43,7 @@
             this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeParcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFormaPagamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
             this.SuspendLayout();
@@ -172,7 +173,8 @@
             this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn});
+            this.descricaoDataGridViewTextBoxColumn,
+            this.QuantidadeParcelas});
             this.dataGridViewProduto.DataSource = this.bindingSourceFormaPagamento;
             this.dataGridViewProduto.Location = new System.Drawing.Point(29, 131);
             this.dataGridViewProduto.Name = "dataGridViewProduto";
@@ -194,11 +196,20 @@
             // descricaoDataGridViewTextBoxColumn
             // 
             this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.descricaoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // QuantidadeParcelas
+            // 
+            this.QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
+            this.QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
+            this.QuantidadeParcelas.MinimumWidth = 6;
+            this.QuantidadeParcelas.Name = "QuantidadeParcelas";
+            this.QuantidadeParcelas.ReadOnly = true;
+            this.QuantidadeParcelas.Width = 125;
             // 
             // FormConsultaFormaPagamento
             // 
@@ -241,5 +252,6 @@
         private DataGridView dataGridViewProduto;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn QuantidadeParcelas;
     }
 }

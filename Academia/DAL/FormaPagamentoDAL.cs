@@ -13,13 +13,14 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO FormaPagamento(Descricao) VALUES(@Descricao)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO FormaPagamento(Descricao, QuantidadeParcelas) VALUES(@Descricao, @QuantidadeParcelas)"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
+                        cmd.Parameters.AddWithValue("@QuantidadeParcelas", _formaPagamento.QuantidadeParcelas);
 
 
                         if (_transaction == null)
@@ -90,7 +91,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE FormaPagamento SET Id = @Id, Descricao = @Descricao WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE FormaPagamento SET Id = @Id, Descricao = @Descricao, QuantidadeParcelas = @QuantidadeParcelas WHERE Id = @Id"))
                 {
                     try
                     {
@@ -98,6 +99,7 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@Id", _formaPagamento.Id);
                         cmd.Parameters.AddWithValue("@Descricao", _formaPagamento.Descricao);
+                        cmd.Parameters.AddWithValue("@QuantidadeParcelas", _formaPagamento.QuantidadeParcelas);
 
 
                         if (_transaction == null)
@@ -136,7 +138,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, Descricao FROM FormaPagamento";
+                cmd.CommandText = " SELECT Id, Descricao, QuantidadeParcelas FROM FormaPagamento";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -167,6 +169,7 @@ namespace DAL
         {
             formaPagamento.Id = (int)rd["Id"];
             formaPagamento.Descricao = rd["Descricao"].ToString();
+            formaPagamento.QuantidadeParcelas = (int)rd["QuantidadeParcelas"];
         }
         public List<FormaPagamento> BuscarDescricao(string _descricao)
         {

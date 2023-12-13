@@ -51,9 +51,9 @@
             this.textBoxConsultaCliente = new System.Windows.Forms.TextBox();
             this.calendario1 = new UIGestaoAcademia.Calendario();
             this.calendarioDataVencimento = new UIGestaoAcademia.Calendario();
-            this.textBoxNumeroDeParcelas = new System.Windows.Forms.TextBox();
             this.formaPagamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.textBoxNumeroDeParcelas = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -266,16 +266,6 @@
             this.calendarioDataVencimento.Size = new System.Drawing.Size(140, 27);
             this.calendarioDataVencimento.TabIndex = 5;
             // 
-            // textBoxNumeroDeParcelas
-            // 
-            this.textBoxNumeroDeParcelas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Descricao", true));
-            this.textBoxNumeroDeParcelas.Location = new System.Drawing.Point(641, 112);
-            this.textBoxNumeroDeParcelas.Name = "textBoxNumeroDeParcelas";
-            this.textBoxNumeroDeParcelas.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNumeroDeParcelas.TabIndex = 8;
-            this.textBoxNumeroDeParcelas.Text = "1";
-            this.textBoxNumeroDeParcelas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // formaPagamentoBindingSource
             // 
             this.formaPagamentoBindingSource.DataSource = typeof(Models.FormaPagamento);
@@ -286,9 +276,18 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(641, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 20);
+            this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 29;
-            this.label5.Text = "Número de parcelas";
+            this.label5.Text = "Descrição";
+            // 
+            // textBoxNumeroDeParcelas
+            // 
+            this.textBoxNumeroDeParcelas.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Descricao", true));
+            this.textBoxNumeroDeParcelas.Location = new System.Drawing.Point(641, 112);
+            this.textBoxNumeroDeParcelas.Name = "textBoxNumeroDeParcelas";
+            this.textBoxNumeroDeParcelas.Size = new System.Drawing.Size(168, 27);
+            this.textBoxNumeroDeParcelas.TabIndex = 8;
+            this.textBoxNumeroDeParcelas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FormCadastrarDebito
             // 
@@ -352,8 +351,8 @@
         private TextBox textBoxConsultaCliente;
         private Calendario calendario1;
         private Calendario calendarioDataVencimento;
-        private TextBox textBoxNumeroDeParcelas;
         private Label label5;
         private BindingSource formaPagamentoBindingSource;
+        private TextBox textBoxNumeroDeParcelas;
     }
 }

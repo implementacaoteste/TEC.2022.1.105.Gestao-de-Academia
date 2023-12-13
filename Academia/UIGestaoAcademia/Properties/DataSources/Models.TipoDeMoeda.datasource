@@ -5,11 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<<<<<<<< HEAD:Academia/UIGestaoAcademia/Properties/DataSources/Models.FormaPagamento.datasource
-<GenericObjectDataSource DisplayName="FormaPagamento" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-  <TypeInfo>Models.FormaPagamento, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
-========
 <GenericObjectDataSource DisplayName="TipoDeMoeda" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
   <TypeInfo>Models.TipoDeMoeda, Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
->>>>>>>> 94fc96857ea16a3ec34fddebc48e18c23ee95fb3:Academia/UIGestaoAcademia/Properties/DataSources/Models.TipoDeMoeda.datasource
 </GenericObjectDataSource>
