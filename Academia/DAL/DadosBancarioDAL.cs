@@ -89,7 +89,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
                                     NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs 
-                                    FROM DadosBancarios WHERE Nome LIKE @Nome";
+                                    FROM DadosBancarios WHERE ChavePix LIKE @ChavePix";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@ChavePix", "%" + _chavepix + "%");
 

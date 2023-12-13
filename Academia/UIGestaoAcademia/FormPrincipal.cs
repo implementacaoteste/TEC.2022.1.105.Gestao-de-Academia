@@ -137,7 +137,7 @@ namespace UIGestaoAcademia
 
         private void formDadosBancariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FormCadastrarDadosBancarios frm = new FormCadastrarDadosBancarios())
+            using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
             {
                 frm.ShowDialog();
             }

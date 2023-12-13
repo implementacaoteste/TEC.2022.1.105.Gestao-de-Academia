@@ -128,7 +128,7 @@
             // 
             this.formDadosBancariosToolStripMenuItem.Name = "formDadosBancariosToolStripMenuItem";
             this.formDadosBancariosToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.formDadosBancariosToolStripMenuItem.Text = "FormDadosBancaros";
+            this.formDadosBancariosToolStripMenuItem.Text = "Fornecedor";
             this.formDadosBancariosToolStripMenuItem.Click += new System.EventHandler(this.formDadosBancariosToolStripMenuItem_Click);
             // 
             // vENDASToolStripMenuItem

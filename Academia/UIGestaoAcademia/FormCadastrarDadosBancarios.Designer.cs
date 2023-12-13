@@ -57,8 +57,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBoxTipoDeMoeda = new System.Windows.Forms.TextBox();
-            this.buttonTipoMoeda = new System.Windows.Forms.Button();
             this.tipoDeMoedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonTipoMoeda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(857, 110);
             this.label2.TabIndex = 52;
-            this.label2.Text = "Cadastrar Dados Bancarios";
+            this.label2.Text = "Dados Bancarios";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -318,6 +318,10 @@
             this.textBoxTipoDeMoeda.Size = new System.Drawing.Size(193, 27);
             this.textBoxTipoDeMoeda.TabIndex = 72;
             // 
+            // tipoDeMoedaBindingSource
+            // 
+            this.tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
+            // 
             // buttonTipoMoeda
             // 
             this.buttonTipoMoeda.Location = new System.Drawing.Point(526, 273);
@@ -327,10 +331,6 @@
             this.buttonTipoMoeda.Text = "...";
             this.buttonTipoMoeda.UseVisualStyleBackColor = true;
             this.buttonTipoMoeda.Click += new System.EventHandler(this.buttonTipoDeMoeda_Click);
-            // 
-            // tipoDeMoedaBindingSource
-            // 
-            this.tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
             // 
             // FormCadastrarDadosBancarios
             // 
