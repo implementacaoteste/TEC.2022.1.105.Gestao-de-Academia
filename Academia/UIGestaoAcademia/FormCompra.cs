@@ -109,14 +109,14 @@ namespace UIGestaoAcademia
 
         private void textBoxFrete_KeyDown(object sender, KeyEventArgs e)
         {
-            double ValorTotal = 0;
-
             if (e.KeyCode == Keys.Enter)
             {
-                ((ItensCompra)itensCompraBindingSource.Current).Frete = Convert.ToDouble(textBoxFrete.Text);
-                labelValorTotal.Text = ((ItensCompra)itensCompraBindingSource.Current).ValorTotal + textBoxFrete.Text;
+                ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal = Convert.ToDouble(textBoxFrete.Text);
+                ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal = Convert.ToDouble(textBoxNota.Text);
+                ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota = ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal + ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal;
 
-                itensCompraBindingSource.EndEdit();
+
+                BindingSourceCompraProduto.EndEdit();
 
 
             }
