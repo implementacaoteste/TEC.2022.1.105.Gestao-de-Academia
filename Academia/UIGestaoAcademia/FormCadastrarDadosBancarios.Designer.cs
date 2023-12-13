@@ -44,7 +44,6 @@
             this.textBoxDescricao = new System.Windows.Forms.TextBox();
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -59,8 +58,12 @@
             this.textBoxTipoDeMoeda = new System.Windows.Forms.TextBox();
             this.tipoDeMoedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonTipoMoeda = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxTipoConta = new System.Windows.Forms.TextBox();
+            this.tipoDeContaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDeContaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -199,17 +202,6 @@
             this.label16.TabIndex = 68;
             this.label16.Text = "Tipo de conta";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Conta corrente",
-            "Conta poupança"});
-            this.comboBox1.Location = new System.Drawing.Point(26, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 28);
-            this.comboBox1.TabIndex = 69;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -332,17 +324,41 @@
             this.buttonTipoMoeda.UseVisualStyleBackColor = true;
             this.buttonTipoMoeda.Click += new System.EventHandler(this.buttonTipoDeMoeda_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(181, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 29);
+            this.button1.TabIndex = 83;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBoxTipoConta
+            // 
+            this.textBoxTipoConta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoDeContaBindingSource, "TipoConta", true));
+            this.textBoxTipoConta.Location = new System.Drawing.Point(11, 217);
+            this.textBoxTipoConta.Name = "textBoxTipoConta";
+            this.textBoxTipoConta.Size = new System.Drawing.Size(161, 27);
+            this.textBoxTipoConta.TabIndex = 76;
+            // 
+            // tipoDeContaBindingSource
+            // 
+            this.tipoDeContaBindingSource.DataSource = typeof(Models.TipoDeConta);
+            // 
             // FormCadastrarDadosBancarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancelar;
             this.ClientSize = new System.Drawing.Size(857, 475);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonTipoMoeda);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBoxTipoConta);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.textBox10);
@@ -351,7 +367,6 @@
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
@@ -370,6 +385,7 @@
             this.Text = "FormCadastrarDadosBancarios";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoDeContaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,7 +407,6 @@
         private TextBox textBoxDescricao;
         private TextBox textBoxNome;
         private Label label16;
-        private ComboBox comboBox1;
         private Label label5;
         private TextBox textBox8;
         private Label label17;
@@ -407,5 +422,8 @@
         private TextBox textBoxTipoDeMoeda;
         private Button buttonTipoMoeda;
         private BindingSource tipoDeMoedaBindingSource;
+        private Button button1;
+        private TextBox textBoxTipoConta;
+        private BindingSource tipoDeContaBindingSource;
     }
 }
