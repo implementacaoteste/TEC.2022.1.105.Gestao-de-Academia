@@ -10,11 +10,11 @@ namespace BLL
 {
     public class TipoDeContaBLL
     {
-        private void Inserir(TipoDeConta _TipoDeConta)
+        public void Inserir(TipoDeConta _TipoDeConta)
         {
             new TipoDeContaDAL().Inserir(_TipoDeConta);
         }
-        private void Alterar(TipoDeConta _TipoDeConta)
+        public void Alterar(TipoDeConta _TipoDeConta)
         {
             new TipoDeContaDAL().Alterar(_TipoDeConta);
         }
@@ -25,6 +25,18 @@ namespace BLL
                 Inserir(_tipoDeConta);
             else
                 Alterar(_tipoDeConta);
+        }
+        public List<TipoDeConta> BuscarTodos()
+        {
+            return new TipoDeContaDAL().BuscarTodos();
+        }
+        public TipoDeConta BuscarPorId(int _id)
+        {
+            return new TipoDeContaDAL().BuscarPorId(_id);
+        }
+        public void Excluir(int _id)
+        {
+            new TipoDeContaDAL().Excluir(_id);
         }
     }
 }

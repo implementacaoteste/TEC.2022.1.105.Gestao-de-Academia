@@ -61,5 +61,19 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (FormTipoDeConta frm = new FormTipoDeConta())
+            {
+                frm.ShowDialog();
+                if (frm.TipoDeConta != null)
+                {
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoConta = frm.TipoDeConta;
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoDeContaId = frm.TipoDeConta.Id;
+                    textBoxTipoConta.Text = frm.TipoDeConta.TipoConta;
+                }
+            }
+        }
     }
 }
