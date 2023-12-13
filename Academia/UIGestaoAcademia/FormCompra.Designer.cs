@@ -51,7 +51,7 @@
             this.bindingSourceCompraProduto = new System.Windows.Forms.BindingSource(this.components);
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxFrete = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxValorProduto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -166,7 +166,7 @@
             this.textBoxQuantidade.Location = new System.Drawing.Point(619, 245);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
-            this.textBoxQuantidade.TabIndex = 47;
+            this.textBoxQuantidade.TabIndex = 4;
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxBuscarFormaPagamento
@@ -174,7 +174,7 @@
             this.textBoxBuscarFormaPagamento.Location = new System.Drawing.Point(179, 154);
             this.textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
             this.textBoxBuscarFormaPagamento.Size = new System.Drawing.Size(125, 27);
-            this.textBoxBuscarFormaPagamento.TabIndex = 44;
+            this.textBoxBuscarFormaPagamento.TabIndex = 1;
             // 
             // buttonFormaDePagamento
             // 
@@ -191,7 +191,7 @@
             this.textBoxBuscarFornecedor.Location = new System.Drawing.Point(102, 121);
             this.textBoxBuscarFornecedor.Name = "textBoxBuscarFornecedor";
             this.textBoxBuscarFornecedor.Size = new System.Drawing.Size(202, 27);
-            this.textBoxBuscarFornecedor.TabIndex = 42;
+            this.textBoxBuscarFornecedor.TabIndex = 0;
             // 
             // buttonBuscarFornecedor
             // 
@@ -208,7 +208,7 @@
             this.textBoxCodigoDeBarras.Location = new System.Drawing.Point(13, 245);
             this.textBoxCodigoDeBarras.Name = "textBoxCodigoDeBarras";
             this.textBoxCodigoDeBarras.Size = new System.Drawing.Size(161, 27);
-            this.textBoxCodigoDeBarras.TabIndex = 46;
+            this.textBoxCodigoDeBarras.TabIndex = 3;
             this.textBoxCodigoDeBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
             // label8
@@ -262,13 +262,13 @@
             this.label4.TabIndex = 52;
             this.label4.Text = "TOTAL DA COMPRA";
             // 
-            // textBox1
+            // textBoxFrete
             // 
-            this.textBox1.Location = new System.Drawing.Point(485, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 27);
-            this.textBox1.TabIndex = 54;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxFrete.Location = new System.Drawing.Point(485, 121);
+            this.textBoxFrete.Name = "textBoxFrete";
+            this.textBoxFrete.Size = new System.Drawing.Size(98, 27);
+            this.textBoxFrete.TabIndex = 2;
+            this.textBoxFrete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -285,7 +285,7 @@
             this.textBoxValorProduto.Location = new System.Drawing.Point(723, 245);
             this.textBoxValorProduto.Name = "textBoxValorProduto";
             this.textBoxValorProduto.Size = new System.Drawing.Size(123, 27);
-            this.textBoxValorProduto.TabIndex = 56;
+            this.textBoxValorProduto.TabIndex = 5;
             this.textBoxValorProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxValorProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
@@ -315,7 +315,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxValorProduto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxFrete);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonBuscarProduto);
@@ -361,7 +361,7 @@
         private BindingSource bindingSourceCompraProduto;
         private Label labelValorTotal;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox textBoxFrete;
         private Label label1;
         private TextBox textBoxValorProduto;
         private Label label5;

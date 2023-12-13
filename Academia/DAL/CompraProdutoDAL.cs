@@ -13,7 +13,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @ValorTotal)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, Frete, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @ValorTotal)"))
                 {
                     try
                     {
@@ -21,6 +21,7 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@FornecedorId", _Compraproduto.FornecedorId);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _Compraproduto.FormaPagamentoId);
+                        cmd.Parameters.AddWithValue("@Frete", _Compraproduto.Frete);
                         cmd.Parameters.AddWithValue("@ValorTotal", _Compraproduto.ValorTotal);
 
                         if (_transaction == null)
@@ -53,7 +54,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE CompraProduto SET FornecedorId = @FornecedorId, FormaPagamento = @FormaPagamento, ValorTotal = @ValorTotal WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE CompraProduto SET FornecedorId = @FornecedorId, FormaPagamento = @FormaPagamento, Frete = @Frete, ValorTotal = @ValorTotal WHERE Id = @Id"))
                 {
                     try
                     {
@@ -62,6 +63,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Id", _Compraproduto.Id);
                         cmd.Parameters.AddWithValue("@FornecedorId", _Compraproduto.FornecedorId);
                         cmd.Parameters.AddWithValue("@FormaPagamento", _Compraproduto.FormaPagamentoId);
+                        cmd.Parameters.AddWithValue("@Frete", _Compraproduto.Frete);
                         cmd.Parameters.AddWithValue("@ValorTotal", _Compraproduto.ValorTotal);
 
                         if (_transaction == null)
@@ -176,7 +178,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, ValorTotal FROM CompraProduto WHERE Id  = @Id";
+                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, Frete, ValorTotal FROM CompraProduto WHERE Id  = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -213,8 +215,7 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-
-                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId,
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.Frete,
                                     CompraProduto.ValorTotal, Fornecedor.Nome AS NomeFornecedor, FormaPagamento.Descricao AS FormaPagamento
                                     FROM CompraProduto
                                     INNER JOIN 
@@ -254,6 +255,7 @@ namespace DAL
             compraProduto.Id = (int)rd["Id"];
             compraProduto.FornecedorId = (int)rd["FornecedorId"];
             compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
+            compraProduto.Frete = (double)rd["Frete"];
             compraProduto.ValorTotal = (double)rd["ValorTotal"];
         }
     }
