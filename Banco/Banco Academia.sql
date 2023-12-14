@@ -517,9 +517,21 @@ ALTER TABLE ControleDebito
 ADD Descricao VARCHAR(200)
 GO
 
+
 ALTER TABLE FormaPagamento
 ADD QuantidadeParcelas INT
 GO
+
+
+ALTER TABLE Venda
+ADD Desconto FLOAT
+GO
+Alter Table ItensCompra
+Drop column Frete 
+GO
+ALter table CompraProduto
+ADD ValorTotalNota Float
+Go
 
 
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)

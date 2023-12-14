@@ -1,15 +1,5 @@
 ﻿using BLL;
 using Models;
-using NPOI.SS.Formula.Functions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
@@ -115,6 +105,21 @@ namespace UIGestaoAcademia
                 }
             }
             labelValorTotal.Text = valorTotal.ToString("C");
+        }
+
+        private void textBoxFrete_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal = Convert.ToDouble(textBoxFrete.Text);
+                ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal = Convert.ToDouble(textBoxNota.Text);
+                ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota = ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal + ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal;
+
+
+                BindingSourceCompraProduto.EndEdit();
+
+
+            }
         }
     }
 }

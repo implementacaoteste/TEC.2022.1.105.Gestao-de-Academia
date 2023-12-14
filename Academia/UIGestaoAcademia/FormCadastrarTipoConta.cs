@@ -14,22 +14,33 @@ namespace UIGestaoAcademia
 {
     public partial class FormCadastrarTipoConta : Form
     {
-        int id;
+        int Id;
         public FormCadastrarTipoConta(int _id = 0)
         {
             InitializeComponent();
-            id = _id;
+            Id = _id;
+
+
+            if (Id == 0)
+                bindingSourceCadastrarTipoDeConta.AddNew();
+            else
+            {
+                bindingSourceCadastrarTipoDeConta.DataSource = new TipoDeContaBLL().BuscarPorId(_id);
+            }
         }
 
         private void buttonCadastrar_Click(object sender, EventArgs e)
         {
             try
             {
-                bindingSourceTipoDeConta.EndEdit();
-                TipoDeConta tipoDeConta = (TipoDeConta)bindingSourceTipoDeConta.Current;
+                bindingSourceCadastrarTipoDeConta.EndEdit();
+                TipoDeConta tipoConta = (TipoDeConta)bindingSourceCadastrarTipoDeConta.Current;
 
-                new TipoDeContaBLL().Salvar(tipoDeConta);
-               
+                if (Id == 0)
+                    new TipoDeContaBLL().Inserir(tipoConta);
+                else
+                    new TipoDeContaBLL().Alterar(tipoConta);
+
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
             }

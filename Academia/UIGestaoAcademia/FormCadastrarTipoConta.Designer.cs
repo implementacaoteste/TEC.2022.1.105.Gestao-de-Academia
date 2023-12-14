@@ -32,10 +32,10 @@
             this.buttonSair = new System.Windows.Forms.Button();
             this.labelNomeProfessor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTipoConta = new System.Windows.Forms.TextBox();
+            this.bindingSourceCadastrarTipoDeConta = new System.Windows.Forms.BindingSource(this.components);
             this.buttonCadastrar = new System.Windows.Forms.Button();
-            this.bindingSourceTipoDeConta = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipoDeConta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarTipoDeConta)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSair
@@ -69,14 +69,19 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Tipo";
             // 
-            // textBox1
+            // textBoxTipoConta
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 89);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(501, 27);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxTipoConta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarTipoDeConta, "TipoConta", true));
+            this.textBoxTipoConta.Location = new System.Drawing.Point(12, 89);
+            this.textBoxTipoConta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxTipoConta.Name = "textBoxTipoConta";
+            this.textBoxTipoConta.Size = new System.Drawing.Size(501, 27);
+            this.textBoxTipoConta.TabIndex = 8;
+            this.textBoxTipoConta.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // bindingSourceCadastrarTipoDeConta
+            // 
+            this.bindingSourceCadastrarTipoDeConta.DataSource = typeof(Models.TipoDeConta);
             // 
             // buttonCadastrar
             // 
@@ -89,23 +94,20 @@
             this.buttonCadastrar.UseVisualStyleBackColor = true;
             this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
-            // bindingSourceTipoDeConta
-            // 
-            this.bindingSourceTipoDeConta.DataSource = typeof(Models.TipoDeConta);
-            // 
             // FormCadastrarTipoConta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonSair;
             this.ClientSize = new System.Drawing.Size(536, 181);
             this.Controls.Add(this.buttonSair);
             this.Controls.Add(this.labelNomeProfessor);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTipoConta);
             this.Controls.Add(this.buttonCadastrar);
             this.Name = "FormCadastrarTipoConta";
             this.Text = "FormCadastrarTipoConta";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipoDeConta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarTipoDeConta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,8 +118,8 @@
         private Button buttonSair;
         private Label labelNomeProfessor;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxTipoConta;
         private Button buttonCadastrar;
-        private BindingSource bindingSourceTipoDeConta;
+        private BindingSource bindingSourceCadastrarTipoDeConta;
     }
 }

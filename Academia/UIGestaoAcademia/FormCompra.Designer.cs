@@ -48,17 +48,22 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.bindingSourceCompraProduto = new System.Windows.Forms.BindingSource(this.components);
+            this.BindingSourceCompraProduto = new System.Windows.Forms.BindingSource(this.components);
             this.labelValorTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxFrete = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxValorProduto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxNomeProduto = new System.Windows.Forms.TextBox();
+            this.textBoxNota = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxValorTotalNota = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensCompraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCompraProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceCompraProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBuscarProduto
@@ -166,7 +171,7 @@
             this.textBoxQuantidade.Location = new System.Drawing.Point(619, 245);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(98, 27);
-            this.textBoxQuantidade.TabIndex = 47;
+            this.textBoxQuantidade.TabIndex = 4;
             this.textBoxQuantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxBuscarFormaPagamento
@@ -174,7 +179,7 @@
             this.textBoxBuscarFormaPagamento.Location = new System.Drawing.Point(179, 154);
             this.textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
             this.textBoxBuscarFormaPagamento.Size = new System.Drawing.Size(125, 27);
-            this.textBoxBuscarFormaPagamento.TabIndex = 44;
+            this.textBoxBuscarFormaPagamento.TabIndex = 1;
             // 
             // buttonFormaDePagamento
             // 
@@ -191,7 +196,7 @@
             this.textBoxBuscarFornecedor.Location = new System.Drawing.Point(102, 121);
             this.textBoxBuscarFornecedor.Name = "textBoxBuscarFornecedor";
             this.textBoxBuscarFornecedor.Size = new System.Drawing.Size(202, 27);
-            this.textBoxBuscarFornecedor.TabIndex = 42;
+            this.textBoxBuscarFornecedor.TabIndex = 0;
             // 
             // buttonBuscarFornecedor
             // 
@@ -208,7 +213,7 @@
             this.textBoxCodigoDeBarras.Location = new System.Drawing.Point(13, 245);
             this.textBoxCodigoDeBarras.Name = "textBoxCodigoDeBarras";
             this.textBoxCodigoDeBarras.Size = new System.Drawing.Size(161, 27);
-            this.textBoxCodigoDeBarras.TabIndex = 46;
+            this.textBoxCodigoDeBarras.TabIndex = 3;
             this.textBoxCodigoDeBarras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
             // label8
@@ -240,15 +245,15 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Fornecedor";
             // 
-            // bindingSourceCompraProduto
+            // BindingSourceCompraProduto
             // 
-            this.bindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
+            this.BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
             // labelValorTotal
             // 
             this.labelValorTotal.AutoSize = true;
             this.labelValorTotal.Font = new System.Drawing.Font("Segoe UI", 20.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelValorTotal.Location = new System.Drawing.Point(717, 68);
+            this.labelValorTotal.Location = new System.Drawing.Point(706, 52);
             this.labelValorTotal.Name = "labelValorTotal";
             this.labelValorTotal.Size = new System.Drawing.Size(0, 46);
             this.labelValorTotal.TabIndex = 53;
@@ -256,19 +261,21 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(572, 87);
+            this.label4.Location = new System.Drawing.Point(485, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 20);
+            this.label4.Size = new System.Drawing.Size(211, 20);
             this.label4.TabIndex = 52;
-            this.label4.Text = "TOTAL DA COMPRA";
+            this.label4.Text = "VALOR TOTAL DOS PRODUTOS";
             // 
-            // textBox1
+            // textBoxFrete
             // 
-            this.textBox1.Location = new System.Drawing.Point(485, 121);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 27);
-            this.textBox1.TabIndex = 54;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxFrete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSourceCompraProduto, "FreteTotal", true));
+            this.textBoxFrete.Location = new System.Drawing.Point(485, 121);
+            this.textBoxFrete.Name = "textBoxFrete";
+            this.textBoxFrete.Size = new System.Drawing.Size(98, 27);
+            this.textBoxFrete.TabIndex = 2;
+            this.textBoxFrete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxFrete.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxFrete_KeyDown);
             // 
             // label1
             // 
@@ -285,7 +292,7 @@
             this.textBoxValorProduto.Location = new System.Drawing.Point(723, 245);
             this.textBoxValorProduto.Name = "textBoxValorProduto";
             this.textBoxValorProduto.Size = new System.Drawing.Size(123, 27);
-            this.textBoxValorProduto.TabIndex = 56;
+            this.textBoxValorProduto.TabIndex = 5;
             this.textBoxValorProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxValorProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
@@ -307,15 +314,65 @@
             this.textBoxNomeProduto.TabIndex = 46;
             this.textBoxNomeProduto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxProduto_KeyDown);
             // 
+            // textBoxNota
+            // 
+            this.textBoxNota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSourceCompraProduto, "ValorTotal", true));
+            this.textBoxNota.Location = new System.Drawing.Point(760, 123);
+            this.textBoxNota.Name = "textBoxNota";
+            this.textBoxNota.Size = new System.Drawing.Size(117, 27);
+            this.textBoxNota.TabIndex = 58;
+            this.textBoxNota.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(589, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 20);
+            this.label6.TabIndex = 59;
+            this.label6.Text = "VALOR DA NOTA";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(750, 636);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(131, 29);
+            this.button3.TabIndex = 62;
+            this.button3.Text = "Finalizar compra";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(589, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 20);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "VALOR TOTAL DA NOTA";
+            // 
+            // textBoxValorTotalNota
+            // 
+            this.textBoxValorTotalNota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensCompraBindingSource, "Frete", true));
+            this.textBoxValorTotalNota.Location = new System.Drawing.Point(760, 161);
+            this.textBoxValorTotalNota.Name = "textBoxValorTotalNota";
+            this.textBoxValorTotalNota.Size = new System.Drawing.Size(117, 27);
+            this.textBoxValorTotalNota.TabIndex = 64;
+            this.textBoxValorTotalNota.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // FormCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(889, 689);
+            this.Controls.Add(this.textBoxValorTotalNota);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxNota);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxValorProduto);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxFrete);
             this.Controls.Add(this.labelValorTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonBuscarProduto);
@@ -332,12 +389,13 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormCompra";
-            this.Text = "FormCompra";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itensCompraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCompraProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceCompraProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,10 +416,10 @@
         private Label label2;
         private Label label3;
         private BindingSource itensCompraBindingSource;
-        private BindingSource bindingSourceCompraProduto;
+        private BindingSource BindingSourceCompraProduto;
         private Label labelValorTotal;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox textBoxFrete;
         private Label label1;
         private TextBox textBoxValorProduto;
         private Label label5;
@@ -371,5 +429,10 @@
         private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private TextBox textBoxNota;
+        private Label label6;
+        private Button button3;
+        private Label label7;
+        private TextBox textBoxValorTotalNota;
     }
 }
