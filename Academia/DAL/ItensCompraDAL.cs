@@ -12,7 +12,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ItensCompra(CompraProdutoId, Nome, Marca, Quantidade, Frete, ValorUnitario, ValorTotal ) VALUES(@CompraProdutoId, @Nome, @Marca, @Quantidade, @Frete, @ValorUnitario, @ValorTotal)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ItensCompra(CompraProdutoId, Nome, Marca, Quantidade, ValorUnitario, ValorTotal ) VALUES(@CompraProdutoId, @Nome, @Marca, @Quantidade, @ValorUnitario, @ValorTotal)"))
                 {
                     try
                     {
@@ -22,7 +22,6 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Nome", _itensCompra.Nome);
                         cmd.Parameters.AddWithValue("@Marca", _itensCompra.Marca);
                         cmd.Parameters.AddWithValue("@Quantidade", _itensCompra.Quantidade);
-                        cmd.Parameters.AddWithValue("@Frete", _itensCompra.Frete);
                         cmd.Parameters.AddWithValue("@ValorUnitario", _itensCompra.ValorUnitario);
                         cmd.Parameters.AddWithValue("@ValorTotal", _itensCompra.ValorTotal);
 
@@ -57,7 +56,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE ItensCompra SET Nome = @Nome, Marca = @Marca, Quantidade = @Quantidade, Frete = @Frete, ValorUnitario = @ValorUnitario, ValorTotal = @ValorTotal WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE ItensCompra SET Nome = @Nome, Marca = @Marca, Quantidade = @Quantidade, ValorUnitario = @ValorUnitario, ValorTotal = @ValorTotal WHERE Id = @Id"))
                 {
                     try
                     {
@@ -67,7 +66,6 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@Nome", _itensCompra.Nome);
                         cmd.Parameters.AddWithValue("@Marca", _itensCompra.Marca);
                         cmd.Parameters.AddWithValue("@Quantidade", _itensCompra.Quantidade);
-                        cmd.Parameters.AddWithValue("@Frete", _itensCompra.Frete);
                         cmd.Parameters.AddWithValue("@ValorUnitario", _itensCompra.ValorUnitario);
                         cmd.Parameters.AddWithValue("@ValorTotal", _itensCompra.ValorTotal);
 
@@ -181,7 +179,6 @@ namespace DAL
             itensCompra.Id = (int)rd["Id"];
             itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
             itensCompra.Quantidade = (int)rd["Quantidade"];
-            itensCompra.Frete = (int)rd["Frete"];
             itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
             itensCompra.ValorTotal = (double)rd["ValorTotal"];
         }
