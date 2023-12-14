@@ -520,7 +520,7 @@ ALTER TABLE Venda
 ADD Desconto FLOAT
 GO
 Alter Table ItensCompra
-Drop column Frete 
+Drop column ValorFrete 
 GO
 ALter table CompraProduto
 ADD ValorTotalNota Float
