@@ -123,6 +123,7 @@
             this.textBoxValor.Name = "textBoxValor";
             this.textBoxValor.Size = new System.Drawing.Size(316, 27);
             this.textBoxValor.TabIndex = 0;
+            this.textBoxValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -181,6 +182,7 @@
             this.textBoxJuros.Name = "textBoxJuros";
             this.textBoxJuros.Size = new System.Drawing.Size(127, 27);
             this.textBoxJuros.TabIndex = 7;
+            this.textBoxJuros.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxDesconto
             // 
@@ -189,6 +191,7 @@
             this.textBoxDesconto.Name = "textBoxDesconto";
             this.textBoxDesconto.Size = new System.Drawing.Size(193, 27);
             this.textBoxDesconto.TabIndex = 9;
+            this.textBoxDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxAcrescimo
             // 
@@ -197,6 +200,7 @@
             this.textBoxAcrescimo.Name = "textBoxAcrescimo";
             this.textBoxAcrescimo.Size = new System.Drawing.Size(137, 27);
             this.textBoxAcrescimo.TabIndex = 8;
+            this.textBoxAcrescimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // buttonConsultaFormaPagamento
             // 
@@ -284,11 +288,11 @@
             // 
             // textBoxDescricão
             // 
+            this.textBoxDescricão.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDebito, "Descricao", true));
             this.textBoxDescricão.Location = new System.Drawing.Point(641, 112);
             this.textBoxDescricão.Name = "textBoxDescricão";
             this.textBoxDescricão.Size = new System.Drawing.Size(169, 27);
             this.textBoxDescricão.TabIndex = 8;
-            this.textBoxDescricão.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxQuantidaDeParcelasDesejadas
             // 
@@ -297,6 +301,7 @@
             this.textBoxQuantidaDeParcelasDesejadas.Name = "textBoxQuantidaDeParcelasDesejadas";
             this.textBoxQuantidaDeParcelasDesejadas.Size = new System.Drawing.Size(65, 27);
             this.textBoxQuantidaDeParcelasDesejadas.TabIndex = 30;
+            this.textBoxQuantidaDeParcelasDesejadas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label11
             // 

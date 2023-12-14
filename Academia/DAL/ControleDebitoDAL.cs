@@ -45,7 +45,7 @@ namespace DAL
                 }
             }
         }
-        public void Inserir(ControleDebito _controleDebito, SqlTransaction _transaction = null)
+        public void Inserir(List<ControleDebito> _controleDebitoList, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
 
@@ -56,26 +56,6 @@ namespace DAL
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
-
-                        cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.Cliente.Id);
-                        cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamento.Id);
-                        cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
-
-                        if (_controleDebito.DataVencimento.Year <= 1900)
-                            cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
-                        else
-                            cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
-
-                        if (_controleDebito.DataPagamento.Year <= 1900)
-                            cmd.Parameters.AddWithValue("@DataPagamento", DBNull.Value);
-                        else
-                            cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
-
-                        cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
-                        cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
-                        cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
-                        cmd.Parameters.AddWithValue("@Descricao", _controleDebito.Descricao);
-
                         if (_transaction == null)
                         {
                             cn.Open();
@@ -85,7 +65,30 @@ namespace DAL
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
 
-                        cmd.ExecuteNonQuery();
+                        foreach (var item in _controleDebitoList)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@ClienteId", item.Cliente.Id);
+                            cmd.Parameters.AddWithValue("@FormaPagamentoId", item.FormaPagamento.Id);
+                            cmd.Parameters.AddWithValue("@ValorDebito", item.ValorDebito);
+
+                            if (item.DataVencimento.Year <= 1900)
+                                cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@DataVencimento", item.DataVencimento);
+
+                            if (item.DataPagamento.Year <= 1900)
+                                cmd.Parameters.AddWithValue("@DataPagamento", DBNull.Value);
+                            else
+                                cmd.Parameters.AddWithValue("@DataPagamento", item.DataPagamento);
+
+                            cmd.Parameters.AddWithValue("@Juros", item.Juros);
+                            cmd.Parameters.AddWithValue("@Desconto", item.Desconto);
+                            cmd.Parameters.AddWithValue("@Acrescimo", item.Acrescimo);
+                            cmd.Parameters.AddWithValue("@Descricao", item.Descricao);
+
+                            cmd.ExecuteNonQuery();
+                        }
 
                         if (_transaction == null)
                             transaction.Commit();

@@ -1,5 +1,7 @@
 ﻿using DAL;
+using MathNet.Numerics;
 using Models;
+using NPOI.SS.Formula.Functions;
 
 namespace BLL
 {
@@ -36,16 +38,35 @@ namespace BLL
         }
         public void Inserir(ControleDebito _controleDebito)
         {
-            if (_controleDebito.QuantidadeParcelas <= _controleDebito.QuantidadeParcelasFormaPagamento)
+            List<ControleDebito> controleDebitoList = new List<ControleDebito>();
+            ControleDebito controleDebito;
+            double valor = (_controleDebito.ValorDebito / _controleDebito.QuantidadeParcelas).Round(2);
+            double diferenca = (_controleDebito.ValorDebito - (valor * _controleDebito.QuantidadeParcelas).Round(2)).Round(2);
+
+            if (_controleDebito.QuantidadeParcelas > _controleDebito.QuantidadeParcelasFormaPagamento)
+                throw new Exception($"A forma de pagamento selecionada não permite efetuar parcelas acima de {_controleDebito.QuantidadeParcelasFormaPagamento}x");
+
+
+            for (int i = 0; i < _controleDebito.QuantidadeParcelas; i++)
             {
-                Inserir(_controleDebito);
-                for (int i = 0; i < _controleDebito.QuantidadeParcelas; i++)
-                {
-                    throw new Exception(_controleDebito.Descricao = $"{_controleDebito.Descricao}  | parcela {i + 1} de {_controleDebito.QuantidadeParcelas}");
-                }
+                controleDebito = new ControleDebito();
+                controleDebito.Descricao = _controleDebito.Descricao;
+                controleDebito.Acrescimo = _controleDebito.Acrescimo;
+                controleDebito.DataPagamento = _controleDebito.DataPagamento;
+                controleDebito.DataLancamento = _controleDebito.DataLancamento;
+                controleDebito.DataVencimento = _controleDebito.DataVencimento;
+                controleDebito.Desconto = _controleDebito.Desconto;
+                controleDebito.Juros = _controleDebito.Juros;
+                controleDebito.FormaPagamento = _controleDebito.FormaPagamento;
+                controleDebito.Cliente = _controleDebito.Cliente;
+                controleDebito.QuantidadeParcelas = _controleDebito.QuantidadeParcelas;
+                controleDebito.Descricao = $"{_controleDebito.Descricao}  | parcela {i + 1} de {_controleDebito.QuantidadeParcelas}";
+                controleDebito.ValorDebito = valor;
+
+                controleDebitoList.Add(controleDebito);
             }
-            throw new Exception($"A forma de pagamento selecionada não permite efetuar parcelas acima de {_controleDebito.QuantidadeParcelasFormaPagamento}x");
-            new ControleDebitoDAL().Inserir(_controleDebito);
+            controleDebitoList.Last().ValorDebito = valor + diferenca;
+            new ControleDebitoDAL().Inserir(controleDebitoList);
         }
         private void ValidarDados(ControleDebito _controleDebito)
         {
