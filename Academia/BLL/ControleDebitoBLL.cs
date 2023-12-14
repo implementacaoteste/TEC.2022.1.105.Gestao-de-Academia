@@ -36,7 +36,15 @@ namespace BLL
         }
         public void Inserir(ControleDebito _controleDebito)
         {
-            ValidarDados(_controleDebito);
+            if (_controleDebito.QuantidadeParcelas <= _controleDebito.QuantidadeParcelasFormaPagamento)
+            {
+                Inserir(_controleDebito);
+                for (int i = 0; i < _controleDebito.QuantidadeParcelas; i++)
+                {
+                    throw new Exception(_controleDebito.Descricao = $"{_controleDebito.Descricao}  | parcela {i + 1} de {_controleDebito.QuantidadeParcelas}");
+                }
+            }
+            throw new Exception($"A forma de pagamento selecionada não permite efetuar parcelas acima de {_controleDebito.QuantidadeParcelasFormaPagamento}x");
             new ControleDebitoDAL().Inserir(_controleDebito);
         }
         private void ValidarDados(ControleDebito _controleDebito)
