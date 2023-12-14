@@ -110,7 +110,7 @@ namespace UIGestaoAcademia
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ((ItensCompra)BindingSourceCompraProduto.Current).Frete = Convert.ToDouble(textBoxFrete.Text);
+                ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal = Convert.ToDouble(textBoxFrete.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal = Convert.ToDouble(textBoxValorTotal.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota = ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal + ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal;
 

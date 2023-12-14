@@ -269,7 +269,7 @@
             // 
             // textBoxFrete
             // 
-            this.textBoxFrete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itensCompraBindingSource, "Frete", true));
+            this.textBoxFrete.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.BindingSourceCompraProduto, "FreteTotal", true));
             this.textBoxFrete.Location = new System.Drawing.Point(485, 121);
             this.textBoxFrete.Name = "textBoxFrete";
             this.textBoxFrete.Size = new System.Drawing.Size(98, 27);

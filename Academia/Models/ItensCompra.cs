@@ -12,7 +12,6 @@ namespace Models
         public int Id { get; set; }
         public int CompraProdutoId { get; set; }
         public int ProdutoId { get; set; }
-        public double Frete { get; set; }
         public string Nome 
         {
             get 
