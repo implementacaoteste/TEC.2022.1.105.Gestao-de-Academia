@@ -29,8 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
             this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
+            this.NomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDebitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataLancamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataVencimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jurosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descontoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acrescimoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.controleDebitoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonSelecionar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,16 +57,6 @@
             this.labelE = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.NomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorDebitoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeFormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataLancamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataVencimentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPagamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jurosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descontoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acrescimoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controleDebitoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +105,102 @@
             this.dataGridViewProduto.RowTemplate.Height = 29;
             this.dataGridViewProduto.Size = new System.Drawing.Size(1183, 336);
             this.dataGridViewProduto.TabIndex = 8;
+            // 
+            // NomeCliente
+            // 
+            this.NomeCliente.DataPropertyName = "NomeCliente";
+            this.NomeCliente.HeaderText = "Nome do cliente";
+            this.NomeCliente.MinimumWidth = 6;
+            this.NomeCliente.Name = "NomeCliente";
+            this.NomeCliente.ReadOnly = true;
+            this.NomeCliente.Width = 125;
+            // 
+            // valorDebitoDataGridViewTextBoxColumn
+            // 
+            this.valorDebitoDataGridViewTextBoxColumn.DataPropertyName = "ValorDebito";
+            this.valorDebitoDataGridViewTextBoxColumn.HeaderText = "Valor do débito";
+            this.valorDebitoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valorDebitoDataGridViewTextBoxColumn.Name = "valorDebitoDataGridViewTextBoxColumn";
+            this.valorDebitoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorDebitoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // NomeFormaPagamento
+            // 
+            this.NomeFormaPagamento.DataPropertyName = "NomeFormaPagamento";
+            this.NomeFormaPagamento.HeaderText = "Forma de pagamento";
+            this.NomeFormaPagamento.MinimumWidth = 6;
+            this.NomeFormaPagamento.Name = "NomeFormaPagamento";
+            this.NomeFormaPagamento.ReadOnly = true;
+            this.NomeFormaPagamento.Width = 125;
+            // 
+            // dataLancamentoDataGridViewTextBoxColumn
+            // 
+            this.dataLancamentoDataGridViewTextBoxColumn.DataPropertyName = "DataLancamento";
+            this.dataLancamentoDataGridViewTextBoxColumn.HeaderText = "Data de lancamento";
+            this.dataLancamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataLancamentoDataGridViewTextBoxColumn.Name = "dataLancamentoDataGridViewTextBoxColumn";
+            this.dataLancamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataLancamentoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataVencimentoDataGridViewTextBoxColumn
+            // 
+            this.dataVencimentoDataGridViewTextBoxColumn.DataPropertyName = "DataVencimento";
+            this.dataVencimentoDataGridViewTextBoxColumn.HeaderText = "Data de vencimento";
+            this.dataVencimentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataVencimentoDataGridViewTextBoxColumn.Name = "dataVencimentoDataGridViewTextBoxColumn";
+            this.dataVencimentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataVencimentoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataPagamentoDataGridViewTextBoxColumn
+            // 
+            this.dataPagamentoDataGridViewTextBoxColumn.DataPropertyName = "DataPagamento";
+            this.dataPagamentoDataGridViewTextBoxColumn.HeaderText = "Data de pagamento";
+            this.dataPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataPagamentoDataGridViewTextBoxColumn.Name = "dataPagamentoDataGridViewTextBoxColumn";
+            this.dataPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataPagamentoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // jurosDataGridViewTextBoxColumn
+            // 
+            this.jurosDataGridViewTextBoxColumn.DataPropertyName = "Juros";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.jurosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.jurosDataGridViewTextBoxColumn.HeaderText = "Juros";
+            this.jurosDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.jurosDataGridViewTextBoxColumn.Name = "jurosDataGridViewTextBoxColumn";
+            this.jurosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.jurosDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descontoDataGridViewTextBoxColumn
+            // 
+            this.descontoDataGridViewTextBoxColumn.DataPropertyName = "Desconto";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.descontoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.descontoDataGridViewTextBoxColumn.HeaderText = "Desconto";
+            this.descontoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descontoDataGridViewTextBoxColumn.Name = "descontoDataGridViewTextBoxColumn";
+            this.descontoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descontoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // acrescimoDataGridViewTextBoxColumn
+            // 
+            this.acrescimoDataGridViewTextBoxColumn.DataPropertyName = "Acrescimo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.acrescimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.acrescimoDataGridViewTextBoxColumn.HeaderText = "Acréscimo";
+            this.acrescimoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.acrescimoDataGridViewTextBoxColumn.Name = "acrescimoDataGridViewTextBoxColumn";
+            this.acrescimoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.acrescimoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.MinimumWidth = 6;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 125;
             // 
             // controleDebitoBindingSource
             // 
@@ -229,96 +328,6 @@
             this.dateTimePicker2.TabIndex = 3;
             this.dateTimePicker2.Value = new System.DateTime(2023, 12, 6, 10, 6, 38, 0);
             // 
-            // NomeCliente
-            // 
-            this.NomeCliente.DataPropertyName = "NomeCliente";
-            this.NomeCliente.HeaderText = "Nome do cliente";
-            this.NomeCliente.MinimumWidth = 6;
-            this.NomeCliente.Name = "NomeCliente";
-            this.NomeCliente.ReadOnly = true;
-            this.NomeCliente.Width = 125;
-            // 
-            // valorDebitoDataGridViewTextBoxColumn
-            // 
-            this.valorDebitoDataGridViewTextBoxColumn.DataPropertyName = "ValorDebito";
-            this.valorDebitoDataGridViewTextBoxColumn.HeaderText = "Valor do débito";
-            this.valorDebitoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorDebitoDataGridViewTextBoxColumn.Name = "valorDebitoDataGridViewTextBoxColumn";
-            this.valorDebitoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorDebitoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // NomeFormaPagamento
-            // 
-            this.NomeFormaPagamento.DataPropertyName = "NomeFormaPagamento";
-            this.NomeFormaPagamento.HeaderText = "Forma de pagamento";
-            this.NomeFormaPagamento.MinimumWidth = 6;
-            this.NomeFormaPagamento.Name = "NomeFormaPagamento";
-            this.NomeFormaPagamento.ReadOnly = true;
-            this.NomeFormaPagamento.Width = 125;
-            // 
-            // dataLancamentoDataGridViewTextBoxColumn
-            // 
-            this.dataLancamentoDataGridViewTextBoxColumn.DataPropertyName = "DataLancamento";
-            this.dataLancamentoDataGridViewTextBoxColumn.HeaderText = "Data de lancamento";
-            this.dataLancamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataLancamentoDataGridViewTextBoxColumn.Name = "dataLancamentoDataGridViewTextBoxColumn";
-            this.dataLancamentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataLancamentoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataVencimentoDataGridViewTextBoxColumn
-            // 
-            this.dataVencimentoDataGridViewTextBoxColumn.DataPropertyName = "DataVencimento";
-            this.dataVencimentoDataGridViewTextBoxColumn.HeaderText = "Data de vencimento";
-            this.dataVencimentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataVencimentoDataGridViewTextBoxColumn.Name = "dataVencimentoDataGridViewTextBoxColumn";
-            this.dataVencimentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataVencimentoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataPagamentoDataGridViewTextBoxColumn
-            // 
-            this.dataPagamentoDataGridViewTextBoxColumn.DataPropertyName = "DataPagamento";
-            this.dataPagamentoDataGridViewTextBoxColumn.HeaderText = "Data de pagamento";
-            this.dataPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataPagamentoDataGridViewTextBoxColumn.Name = "dataPagamentoDataGridViewTextBoxColumn";
-            this.dataPagamentoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataPagamentoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // jurosDataGridViewTextBoxColumn
-            // 
-            this.jurosDataGridViewTextBoxColumn.DataPropertyName = "Juros";
-            this.jurosDataGridViewTextBoxColumn.HeaderText = "Juros";
-            this.jurosDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.jurosDataGridViewTextBoxColumn.Name = "jurosDataGridViewTextBoxColumn";
-            this.jurosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.jurosDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // descontoDataGridViewTextBoxColumn
-            // 
-            this.descontoDataGridViewTextBoxColumn.DataPropertyName = "Desconto";
-            this.descontoDataGridViewTextBoxColumn.HeaderText = "Desconto";
-            this.descontoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descontoDataGridViewTextBoxColumn.Name = "descontoDataGridViewTextBoxColumn";
-            this.descontoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descontoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // acrescimoDataGridViewTextBoxColumn
-            // 
-            this.acrescimoDataGridViewTextBoxColumn.DataPropertyName = "Acrescimo";
-            this.acrescimoDataGridViewTextBoxColumn.HeaderText = "Acréscimo";
-            this.acrescimoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.acrescimoDataGridViewTextBoxColumn.Name = "acrescimoDataGridViewTextBoxColumn";
-            this.acrescimoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.acrescimoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descricao";
-            this.Descricao.MinimumWidth = 6;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 125;
-            // 
             // FormBuscarDebito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -341,7 +350,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(992, 532);
             this.Name = "FormBuscarDebito";
-            this.Text = "FormControleProduto";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.FormBuscarDebito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controleDebitoBindingSource)).EndInit();

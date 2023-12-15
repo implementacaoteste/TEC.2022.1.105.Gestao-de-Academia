@@ -92,6 +92,7 @@ namespace UIGestaoAcademia
         private void FormBuscarDebito_Load(object sender, EventArgs e)
         {
             comboBoxBuscarPor.SelectedIndex = 0;
+            buttonBuscar_Click_1(sender, e);
         }
 
         private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)

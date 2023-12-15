@@ -43,9 +43,7 @@ namespace BLL
             double valor = (_controleDebito.ValorDebito / _controleDebito.QuantidadeParcelas).Round(2);
             double diferenca = (_controleDebito.ValorDebito - (valor * _controleDebito.QuantidadeParcelas).Round(2)).Round(2);
 
-            if (_controleDebito.QuantidadeParcelas > _controleDebito.QuantidadeParcelasFormaPagamento)
-                throw new Exception($"A forma de pagamento selecionada não permite efetuar parcelas acima de {_controleDebito.QuantidadeParcelasFormaPagamento}x");
-
+            ValidarDados(_controleDebito);
 
             for (int i = 0; i < _controleDebito.QuantidadeParcelas; i++)
             {
@@ -70,6 +68,21 @@ namespace BLL
         }
         private void ValidarDados(ControleDebito _controleDebito)
         {
+            if (_controleDebito.ValorDebito <= 0)
+                throw new Exception("Informe um valor");
+
+            if (_controleDebito.FormaPagamento == null)
+                throw new Exception("Informe uma forma de pagamento");
+
+            if (_controleDebito.QuantidadeParcelas > _controleDebito.QuantidadeParcelasFormaPagamento)
+                throw new Exception($"A forma de pagamento selecionada não permite efetuar parcelas acima de {_controleDebito.QuantidadeParcelasFormaPagamento}x");
+
+            if (_controleDebito.QuantidadeParcelas < 1)
+                throw new Exception("A quantidade de parcelas não pode ser menor que 1.");
+
+            if (_controleDebito.Cliente == null)
+                throw new Exception("Informe um cliente.");
+
             if (_controleDebito.DataVencimento.Year < 1900)
                 throw new Exception("Informe a data de vencimento.");
         }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingSourceFormaPagamento = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
@@ -206,6 +207,8 @@
             // QuantidadeParcelas
             // 
             this.QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle1;
             this.QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
             this.QuantidadeParcelas.MinimumWidth = 6;
             this.QuantidadeParcelas.Name = "QuantidadeParcelas";
@@ -229,7 +232,8 @@
             this.Controls.Add(this.dataGridViewProduto);
             this.Controls.Add(this.label2);
             this.Name = "FormConsultaFormaPagamento";
-            this.Text = "FormConsultaFormPagamento";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.FormConsultaFormaPagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFormaPagamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();

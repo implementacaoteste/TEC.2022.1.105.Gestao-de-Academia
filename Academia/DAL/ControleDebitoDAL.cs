@@ -67,11 +67,12 @@ namespace DAL
 
                         foreach (var item in _controleDebitoList)
                         {
+                      
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@ClienteId", item.Cliente.Id);
                             cmd.Parameters.AddWithValue("@FormaPagamentoId", item.FormaPagamento.Id);
                             cmd.Parameters.AddWithValue("@ValorDebito", item.ValorDebito);
-
+                            
                             if (item.DataVencimento.Year <= 1900)
                                 cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
                             else

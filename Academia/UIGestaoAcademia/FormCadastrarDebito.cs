@@ -14,7 +14,10 @@ namespace UIGestaoAcademia
 
 
             if (id == 0)
+            {
                 bindingSourceCadastrarDebito.AddNew();
+                ((ControleDebito)bindingSourceCadastrarDebito.Current).QuantidadeParcelas = 1;
+            }
             else
             {
                 bindingSourceCadastrarDebito.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
@@ -27,8 +30,8 @@ namespace UIGestaoAcademia
                 ((ControleDebito)bindingSourceCadastrarDebito.Current).DataPagamento = calendario1.Checked ? calendario1.Value : new DateTime(1900, 1, 1);
 
                 bindingSourceCadastrarDebito.EndEdit();
-                ControleDebito controleDebito = (ControleDebito)bindingSourceCadastrarDebito.Current;
 
+                ControleDebito controleDebito = (ControleDebito)bindingSourceCadastrarDebito.Current;
                 if (id == 0)
                     new ControleDebitoBLL().Inserir(controleDebito);
                 else

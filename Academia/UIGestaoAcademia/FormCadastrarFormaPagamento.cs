@@ -11,9 +11,11 @@ namespace UIGestaoAcademia
             InitializeComponent();
             id = _id;
 
-
             if (id == 0)
+            {
                 bindingSourceCadastrarFormaPagamento.AddNew();
+                ((FormaPagamento)bindingSourceCadastrarFormaPagamento.Current).QuantidadeParcelas = 1;
+            }
             else
                 bindingSourceCadastrarFormaPagamento.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
         }

@@ -345,7 +345,8 @@
             this.Controls.Add(this.textBoxValor);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormCadastrarDebito";
-            this.Text = "FormCadastrarDebito";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDebito)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formaPagamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
