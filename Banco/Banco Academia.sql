@@ -158,6 +158,7 @@ CREATE TABLE ControleDebito
 	Acrescimo FLOAT	
 )
 GO
+select * from Usuario
 CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
@@ -623,3 +624,4 @@ INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90
 SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
 SELECT*FROM ControleDebito
+select*from Usuario
