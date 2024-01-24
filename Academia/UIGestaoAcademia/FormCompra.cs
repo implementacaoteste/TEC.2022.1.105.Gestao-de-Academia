@@ -12,7 +12,7 @@ namespace UIGestaoAcademia
         }
         private void FormCompra_Load(object sender, EventArgs e)
         {
-
+            BindingSourceCompraProduto.AddNew();
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
@@ -113,12 +113,13 @@ namespace UIGestaoAcademia
                 ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal = Convert.ToDouble(textBoxFrete.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal = Convert.ToDouble(textBoxValorTotal.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota = ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal + ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal;
-
+                textBoxValorTotalNota.Text = ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota.ToString();
 
                 BindingSourceCompraProduto.EndEdit();
 
 
             }
         }
+
     }
 }
