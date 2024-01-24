@@ -15,7 +15,7 @@ namespace UIGestaoAcademia
             InitializeComponent();
             bindingSourceVendas.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
-            _id = id;   
+            _id = id;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
