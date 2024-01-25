@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Text;
 using System.Security.Principal;
+using System;
 
 namespace UIGestaoAcademia
 {
@@ -18,6 +19,11 @@ namespace UIGestaoAcademia
             itensVendaBindingSource.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
             _id = id;
+        }
+        public string GetLoggedInUsername()
+        {
+            string userName = Environment.UserName;
+            return userName;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -142,6 +148,11 @@ namespace UIGestaoAcademia
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
+        }
+
+        private void FormVendas_Load(object sender, EventArgs e)
+        {
+            labelNomeUsuarioLogado.Text = "Usuário logado: " + GetLoggedInUsername();
         }
     }
 }

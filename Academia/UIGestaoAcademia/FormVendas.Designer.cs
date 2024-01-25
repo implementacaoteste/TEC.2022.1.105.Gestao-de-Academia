@@ -394,6 +394,7 @@
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "FormVendas";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += FormVendas_Load;
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
