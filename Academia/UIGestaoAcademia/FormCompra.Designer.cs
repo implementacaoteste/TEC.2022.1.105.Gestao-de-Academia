@@ -58,7 +58,7 @@
             textBoxNomeProduto = new TextBox();
             textBoxValorTotal = new TextBox();
             label6 = new Label();
-            button3 = new Button();
+            FinalizarVenda = new Button();
             label7 = new Label();
             textBoxValorTotalNota = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -327,14 +327,14 @@
             label6.TabIndex = 59;
             label6.Text = "VALOR DA NOTA";
             // 
-            // button3
+            // FinalizarVenda
             // 
-            button3.Location = new Point(769, 636);
-            button3.Name = "button3";
-            button3.Size = new Size(131, 29);
-            button3.TabIndex = 62;
-            button3.Text = "Finalizar compra";
-            button3.UseVisualStyleBackColor = true;
+            FinalizarVenda.Location = new Point(769, 636);
+            FinalizarVenda.Name = "FinalizarVenda";
+            FinalizarVenda.Size = new Size(131, 29);
+            FinalizarVenda.TabIndex = 62;
+            FinalizarVenda.Text = "Finalizar compra";
+            FinalizarVenda.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -361,7 +361,7 @@
             ClientSize = new Size(900, 689);
             Controls.Add(textBoxValorTotalNota);
             Controls.Add(label7);
-            Controls.Add(button3);
+            Controls.Add(FinalizarVenda);
             Controls.Add(label6);
             Controls.Add(textBoxValorTotal);
             Controls.Add(label5);
@@ -425,7 +425,7 @@
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private TextBox textBoxValorTotal;
         private Label label6;
-        private Button button3;
+        private Button FinalizarVenda;
         private Label label7;
         private TextBox textBoxValorTotalNota;
     }

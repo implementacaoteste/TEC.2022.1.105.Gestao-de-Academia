@@ -17,13 +17,12 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO PlanoAssinatura(Id, TipoPlano, ValorPlano, Desconto) VALUES(@Id, @TipoPlano, @ValorPlano, @Desconto)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO PlanoAssinatura(TipoPlano, ValorPlano, Desconto) VALUES(@TipoPlano, @ValorPlano, @Desconto)"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
-                        cmd.Parameters.AddWithValue("@Id", _PlanoAssinatura.Id);
                         cmd.Parameters.AddWithValue("@TipoPlano", _PlanoAssinatura.TipoPlano);
                         cmd.Parameters.AddWithValue("@ValorPlano", _PlanoAssinatura.ValorPlano);
                         cmd.Parameters.AddWithValue("@Desconto", _PlanoAssinatura.Desconto);

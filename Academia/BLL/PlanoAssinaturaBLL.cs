@@ -1,7 +1,6 @@
 ﻿using DAL;
 using Models;
 
-
 namespace BLL
 {
     public class PlanoAssinaturaBLL

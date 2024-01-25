@@ -62,7 +62,7 @@ namespace UIGestaoAcademia
         }
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (FormConsultaCliente frm  = new FormConsultaCliente())
+            using (FormConsultaCliente frm = new FormConsultaCliente())
             {
                 frm.ShowDialog();
             }
@@ -145,7 +145,7 @@ namespace UIGestaoAcademia
 
         private void fornecedorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            using (FormBuscarFornecedor frm = new FormBuscarFornecedor()) 
+            using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
             {
                 frm.ShowDialog();
             }
@@ -154,6 +154,14 @@ namespace UIGestaoAcademia
         private void exercicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormBuscarExercicio frm = new FormBuscarExercicio())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void planoAssinaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPlanoAssinatura frm = new FormBuscarPlanoAssinatura())
             {
                 frm.ShowDialog();
             }
