@@ -15,7 +15,7 @@ namespace UIGestaoAcademia
             InitializeComponent();
             bindingSourceVendas.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
-            _id = id;   
+            _id = id;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -155,6 +155,11 @@ namespace UIGestaoAcademia
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
+        }
+
+        private void textBoxQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

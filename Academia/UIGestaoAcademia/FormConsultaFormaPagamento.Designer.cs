@@ -28,218 +28,212 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bindingSourceFormaPagamento = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.buttonExcluirFormaPagamento = new System.Windows.Forms.Button();
-            this.buttonInserirFormaPagamento = new System.Windows.Forms.Button();
-            this.buttonBuscarFormaPagamento = new System.Windows.Forms.Button();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonAlterarFormaPagamento = new System.Windows.Forms.Button();
-            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
-            this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeParcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFormaPagamento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            bindingSourceFormaPagamento = new BindingSource(components);
+            label2 = new Label();
+            textBoxBuscarPor = new TextBox();
+            buttonExcluirFormaPagamento = new Button();
+            buttonInserirFormaPagamento = new Button();
+            buttonBuscarFormaPagamento = new Button();
+            buttonSelecionar = new Button();
+            label1 = new Label();
+            buttonCancelar = new Button();
+            buttonAlterarFormaPagamento = new Button();
+            comboBoxBuscarPor = new ComboBox();
+            dataGridViewProduto = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            descricaoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            QuantidadeParcelas = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceFormaPagamento).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
+            SuspendLayout();
             // 
             // bindingSourceFormaPagamento
             // 
-            this.bindingSourceFormaPagamento.DataSource = typeof(Models.FormaPagamento);
+            bindingSourceFormaPagamento.DataSource = typeof(Models.FormaPagamento);
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1069, 72);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Consultar formas de pagamentos";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(1069, 72);
+            label2.TabIndex = 7;
+            label2.Text = "Consultar formas de pagamentos";
+            label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // textBoxBuscarPor
             // 
-            this.textBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscarPor.Location = new System.Drawing.Point(178, 95);
-            this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
-            this.textBoxBuscarPor.TabIndex = 1;
+            textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxBuscarPor.Location = new Point(178, 95);
+            textBoxBuscarPor.Name = "textBoxBuscarPor";
+            textBoxBuscarPor.Size = new Size(454, 27);
+            textBoxBuscarPor.TabIndex = 1;
             // 
             // buttonExcluirFormaPagamento
             // 
-            this.buttonExcluirFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirFormaPagamento.Location = new System.Drawing.Point(940, 95);
-            this.buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
-            this.buttonExcluirFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluirFormaPagamento.TabIndex = 5;
-            this.buttonExcluirFormaPagamento.Text = "E&xcluir";
-            this.buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonExcluirFormaPagamento.Click += new System.EventHandler(this.ButtonExcluir_Click);
+            buttonExcluirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonExcluirFormaPagamento.Location = new Point(940, 95);
+            buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
+            buttonExcluirFormaPagamento.Size = new Size(94, 29);
+            buttonExcluirFormaPagamento.TabIndex = 5;
+            buttonExcluirFormaPagamento.Text = "E&xcluir";
+            buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
+            buttonExcluirFormaPagamento.Click += ButtonExcluir_Click;
             // 
             // buttonInserirFormaPagamento
             // 
-            this.buttonInserirFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserirFormaPagamento.Location = new System.Drawing.Point(840, 95);
-            this.buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
-            this.buttonInserirFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserirFormaPagamento.TabIndex = 4;
-            this.buttonInserirFormaPagamento.Text = "&Inserir";
-            this.buttonInserirFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonInserirFormaPagamento.Click += new System.EventHandler(this.buttonInserir_Click);
+            buttonInserirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonInserirFormaPagamento.Location = new Point(840, 95);
+            buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
+            buttonInserirFormaPagamento.Size = new Size(94, 29);
+            buttonInserirFormaPagamento.TabIndex = 4;
+            buttonInserirFormaPagamento.Text = "&Inserir";
+            buttonInserirFormaPagamento.UseVisualStyleBackColor = true;
+            buttonInserirFormaPagamento.Click += buttonInserir_Click;
             // 
             // buttonBuscarFormaPagamento
             // 
-            this.buttonBuscarFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscarFormaPagamento.Location = new System.Drawing.Point(640, 96);
-            this.buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
-            this.buttonBuscarFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscarFormaPagamento.TabIndex = 2;
-            this.buttonBuscarFormaPagamento.Text = "&Buscar";
-            this.buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonBuscarFormaPagamento.Click += new System.EventHandler(this.buttonBuscar_Click_FormaPagamento);
+            buttonBuscarFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonBuscarFormaPagamento.Location = new Point(640, 96);
+            buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
+            buttonBuscarFormaPagamento.Size = new Size(94, 29);
+            buttonBuscarFormaPagamento.TabIndex = 2;
+            buttonBuscarFormaPagamento.Text = "&Buscar";
+            buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
+            buttonBuscarFormaPagamento.Click += buttonBuscar_Click_FormaPagamento;
             // 
             // buttonSelecionar
             // 
-            this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(842, 480);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSelecionar.TabIndex = 39;
-            this.buttonSelecionar.Text = "Se&lecionar";
-            this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
-            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click_1);
+            buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonSelecionar.Location = new Point(842, 480);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 39;
+            buttonSelecionar.Text = "Se&lecionar";
+            buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click_1;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Buscar por";
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(29, 71);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 41;
+            label1.Text = "Buscar por";
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(940, 480);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 40;
-            this.buttonCancelar.Text = "&Cancelar";
-            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancelar.Location = new Point(940, 480);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.TabIndex = 40;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.TextAlign = ContentAlignment.TopCenter;
+            buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonAlterarFormaPagamento
             // 
-            this.buttonAlterarFormaPagamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterarFormaPagamento.Location = new System.Drawing.Point(740, 96);
-            this.buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
-            this.buttonAlterarFormaPagamento.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterarFormaPagamento.TabIndex = 3;
-            this.buttonAlterarFormaPagamento.Text = "&Alterar";
-            this.buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
-            this.buttonAlterarFormaPagamento.Click += new System.EventHandler(this.buttonAlterar_Click);
+            buttonAlterarFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAlterarFormaPagamento.Location = new Point(740, 96);
+            buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
+            buttonAlterarFormaPagamento.Size = new Size(94, 29);
+            buttonAlterarFormaPagamento.TabIndex = 3;
+            buttonAlterarFormaPagamento.Text = "&Alterar";
+            buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
+            buttonAlterarFormaPagamento.Click += buttonAlterar_Click;
             // 
             // comboBoxBuscarPor
             // 
-            this.comboBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Items.AddRange(new object[] {
-            "Todos",
-            "Nome"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(28, 95);
-            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxBuscarPor.TabIndex = 0;
+            comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Nome" });
+            comboBoxBuscarPor.Location = new Point(28, 95);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(143, 28);
+            comboBoxBuscarPor.TabIndex = 0;
             // 
             // dataGridViewProduto
             // 
-            this.dataGridViewProduto.AllowUserToAddRows = false;
-            this.dataGridViewProduto.AllowUserToDeleteRows = false;
-            this.dataGridViewProduto.AllowUserToOrderColumns = true;
-            this.dataGridViewProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduto.AutoGenerateColumns = false;
-            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.descricaoDataGridViewTextBoxColumn,
-            this.QuantidadeParcelas});
-            this.dataGridViewProduto.DataSource = this.bindingSourceFormaPagamento;
-            this.dataGridViewProduto.Location = new System.Drawing.Point(29, 131);
-            this.dataGridViewProduto.Name = "dataGridViewProduto";
-            this.dataGridViewProduto.ReadOnly = true;
-            this.dataGridViewProduto.RowHeadersWidth = 51;
-            this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(1005, 336);
-            this.dataGridViewProduto.TabIndex = 3;
-            this.dataGridViewProduto.DoubleClick += new System.EventHandler(this.buttonSelecionar_Click_1);
+            dataGridViewProduto.AllowUserToAddRows = false;
+            dataGridViewProduto.AllowUserToDeleteRows = false;
+            dataGridViewProduto.AllowUserToOrderColumns = true;
+            dataGridViewProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProduto.AutoGenerateColumns = false;
+            dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn, QuantidadeParcelas });
+            dataGridViewProduto.DataSource = bindingSourceFormaPagamento;
+            dataGridViewProduto.Location = new Point(29, 131);
+            dataGridViewProduto.Name = "dataGridViewProduto";
+            dataGridViewProduto.ReadOnly = true;
+            dataGridViewProduto.RowHeadersWidth = 51;
+            dataGridViewProduto.RowTemplate.Height = 29;
+            dataGridViewProduto.Size = new Size(1005, 336);
+            dataGridViewProduto.TabIndex = 3;
+            dataGridViewProduto.DoubleClick += buttonSelecionar_Click_1;
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 125;
             // 
             // descricaoDataGridViewTextBoxColumn
             // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
-            this.descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descricaoDataGridViewTextBoxColumn.Width = 125;
+            descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            descricaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            descricaoDataGridViewTextBoxColumn.Width = 125;
             // 
             // QuantidadeParcelas
             // 
-            this.QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle1;
-            this.QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
-            this.QuantidadeParcelas.MinimumWidth = 6;
-            this.QuantidadeParcelas.Name = "QuantidadeParcelas";
-            this.QuantidadeParcelas.ReadOnly = true;
-            this.QuantidadeParcelas.Width = 125;
+            QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle2;
+            QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
+            QuantidadeParcelas.MinimumWidth = 6;
+            QuantidadeParcelas.Name = "QuantidadeParcelas";
+            QuantidadeParcelas.ReadOnly = true;
+            QuantidadeParcelas.Width = 125;
             // 
             // FormConsultaFormaPagamento
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 521);
-            this.Controls.Add(this.textBoxBuscarPor);
-            this.Controls.Add(this.buttonExcluirFormaPagamento);
-            this.Controls.Add(this.buttonInserirFormaPagamento);
-            this.Controls.Add(this.buttonBuscarFormaPagamento);
-            this.Controls.Add(this.buttonSelecionar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonAlterarFormaPagamento);
-            this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.dataGridViewProduto);
-            this.Controls.Add(this.label2);
-            this.Name = "FormConsultaFormaPagamento";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Load += new System.EventHandler(this.FormConsultaFormaPagamento_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceFormaPagamento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1069, 521);
+            Controls.Add(textBoxBuscarPor);
+            Controls.Add(buttonExcluirFormaPagamento);
+            Controls.Add(buttonInserirFormaPagamento);
+            Controls.Add(buttonBuscarFormaPagamento);
+            Controls.Add(buttonSelecionar);
+            Controls.Add(label1);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonAlterarFormaPagamento);
+            Controls.Add(comboBoxBuscarPor);
+            Controls.Add(dataGridViewProduto);
+            Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormConsultaFormaPagamento";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            Load += FormConsultaFormaPagamento_Load;
+            ((System.ComponentModel.ISupportInitialize)bindingSourceFormaPagamento).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
