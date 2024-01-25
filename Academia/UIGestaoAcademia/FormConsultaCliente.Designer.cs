@@ -77,6 +77,7 @@
             clienteDataGridView.RowTemplate.Height = 24;
             clienteDataGridView.Size = new Size(1754, 415);
             clienteDataGridView.TabIndex = 1;
+            clienteDataGridView.DoubleClick += buttonSelecionar_Click;
             // 
             // dataGridViewTextBoxColumn1
             // 

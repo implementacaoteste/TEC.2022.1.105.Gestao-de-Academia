@@ -45,6 +45,7 @@ namespace BLL
 
             ValidarDados(_controleDebito);
 
+            string separador;
             for (int i = 0; i < _controleDebito.QuantidadeParcelas; i++)
             {
                 controleDebito = new ControleDebito();
@@ -58,7 +59,8 @@ namespace BLL
                 controleDebito.FormaPagamento = _controleDebito.FormaPagamento;
                 controleDebito.Cliente = _controleDebito.Cliente;
                 controleDebito.QuantidadeParcelas = _controleDebito.QuantidadeParcelas;
-                controleDebito.Descricao = $"{_controleDebito.Descricao}  | parcela {i + 1} de {_controleDebito.QuantidadeParcelas}";
+                separador = !string.IsNullOrEmpty(_controleDebito.Descricao) ? " | " : "";
+                controleDebito.Descricao = $"{_controleDebito.Descricao}{separador}parcela {i + 1} de {_controleDebito.QuantidadeParcelas}";
                 controleDebito.ValorDebito = valor;
 
                 controleDebitoList.Add(controleDebito);

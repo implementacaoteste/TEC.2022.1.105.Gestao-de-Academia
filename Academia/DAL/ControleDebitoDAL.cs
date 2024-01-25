@@ -55,7 +55,7 @@ namespace DAL
                 {
                     try
                     {
-                        cmd.CommandType = System.Data.CommandType.Text;
+                        cmd.CommandType = CommandType.Text;
                         if (_transaction == null)
                         {
                             cn.Open();
@@ -67,12 +67,12 @@ namespace DAL
 
                         foreach (var item in _controleDebitoList)
                         {
-                      
+
                             cmd.Parameters.Clear();
                             cmd.Parameters.AddWithValue("@ClienteId", item.Cliente.Id);
                             cmd.Parameters.AddWithValue("@FormaPagamentoId", item.FormaPagamento.Id);
                             cmd.Parameters.AddWithValue("@ValorDebito", item.ValorDebito);
-                            
+
                             if (item.DataVencimento.Year <= 1900)
                                 cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
                             else
@@ -120,8 +120,15 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@ClienteId", _controleDebito.ClienteId);
                         cmd.Parameters.AddWithValue("@ValorDebito", _controleDebito.ValorDebito);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _controleDebito.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
-                        cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
+                        if (_controleDebito.DataVencimento.Year <= 1900)
+                            cmd.Parameters.AddWithValue("@DataVencimento", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@DataVencimento", _controleDebito.DataVencimento);
+
+                        if (_controleDebito.DataPagamento.Year <= 1900)
+                            cmd.Parameters.AddWithValue("@DataPagamento", DBNull.Value);
+                        else
+                            cmd.Parameters.AddWithValue("@DataPagamento", _controleDebito.DataPagamento);
                         cmd.Parameters.AddWithValue("@Juros", _controleDebito.Juros);
                         cmd.Parameters.AddWithValue("@Desconto", _controleDebito.Desconto);
                         cmd.Parameters.AddWithValue("@Acrescimo", _controleDebito.Acrescimo);
@@ -520,6 +527,14 @@ namespace DAL
             controleDebito.Desconto = (double)rd["Desconto"];
             controleDebito.Acrescimo = (double)rd["Acrescimo"];
             controleDebito.Descricao = rd["Descricao"].ToString();
+            try
+            {
+                controleDebito.QuantidadeParcelas = Convert.ToInt32(controleDebito.Descricao.Split(' ').LastOrDefault());
+            }
+            catch (Exception)
+            {
+                controleDebito.QuantidadeParcelas = 0;
+            }
             controleDebito.FormaPagamento = new FormaPagamentoDAL().BuscarPorId(controleDebito.FormaPagamentoId);
             controleDebito.Cliente = new ClienteDAL().BuscarPorId(controleDebito.ClienteId);
         }
