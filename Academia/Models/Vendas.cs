@@ -11,7 +11,7 @@ namespace Models
     public class Venda
     {
         public int Id { get; set; }
-        public int FuncionarioId  { get; set; }
+        public int UsuarioId  { get; set; }
         public int ClienteId { get; set; }
         public DateTime DataVenda { get; set; }
         public double TotalVenda { get; set; }

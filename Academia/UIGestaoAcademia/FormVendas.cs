@@ -4,6 +4,7 @@ using Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Text;
+using System.Security.Principal;
 
 namespace UIGestaoAcademia
 {
@@ -13,7 +14,7 @@ namespace UIGestaoAcademia
         public FormVendas(int _id = 0)
         {
             InitializeComponent();
-            bindingSourceVendas.AddNew();
+            vendaBindingSource.AddNew();
             itensVendaBindingSource.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
             _id = id;
@@ -28,28 +29,8 @@ namespace UIGestaoAcademia
 
                     if (frm.Cliente != null)
                     {
-                        ((Venda)bindingSourceVendas.Current).Cliente = frm.Cliente;
+                        ((Venda)vendaBindingSource.Current).Cliente = frm.Cliente;
                         textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void buttonBuscarFuncionario_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (FormBuscarFuncionario frm = new FormBuscarFuncionario())
-                {
-                    frm.ShowDialog();
-
-                    if (frm.Funcionario != null)
-                    {
-                        ((Venda)bindingSourceVendas.Current).Funcionario = frm.Funcionario;
-                        labelNomeUsuarioLogado.Text = frm.Funcionario.Nome;
                     }
                 }
             }
@@ -67,8 +48,8 @@ namespace UIGestaoAcademia
                 if (frm.FormaPagamento != null)
                     if (frm.FormaPagamento != null)
                     {
-                        ((Venda)bindingSourceVendas.Current).FormaPagamento = frm.FormaPagamento;
-                        ((Venda)bindingSourceVendas.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                        ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
+                        ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
                         textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
                     }
             }
@@ -136,15 +117,15 @@ namespace UIGestaoAcademia
 
                 try
                 {
-                    Venda vendas = (Venda)bindingSourceVendas.Current;
+                    Venda vendas = (Venda)vendaBindingSource.Current;
                     ItensVenda itensVenda = (ItensVenda)itensVendaBindingSource.Current;
 
-                    bindingSourceVendas.EndEdit();
-                    itensVendaBindingSource.EndEdit(); 
+                    vendaBindingSource.EndEdit();
+                    itensVendaBindingSource.EndEdit();
 
                     if (id == 0)
                         new VendasBLL().Inserir(vendas);
-                        new ItensVendaBLL().Inserir(itensVenda);
+                    new ItensVendaBLL().Inserir(itensVenda);
 
                     MessageBox.Show("Registro salvo com sucesso!");
                     this.Close();
@@ -157,15 +138,10 @@ namespace UIGestaoAcademia
         }
         private void LimparFormulario()
         {
-            bindingSourceVendas.AddNew();
+            vendaBindingSource.AddNew();
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
-        }
-
-        private void textBoxQuantidade_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,4 +1,3 @@
-﻿
 ﻿USE MASTER
 GO
 ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
@@ -322,9 +321,9 @@ REFERENCES Fornecedor(ID)
 GO
 
 ALTER TABLE Venda
-ADD CONSTRAINT FK_Venda_Funcionario
-FOREIGN KEY (FuncionarioId)
-REFERENCES Funcionario(Id);
+ADD CONSTRAINT FK_Venda_Usuario
+FOREIGN KEY (UsuarioId)
+REFERENCES Usuario(Id);
 GO
 
 ALTER TABLE Venda
@@ -626,6 +625,3 @@ SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
 SELECT*FROM ControleDebito
 select*from Usuario
-
-EXEC sp_rename 'TipoDeConta.Descricao', 'TipoConta', 'COLUMN';
-
