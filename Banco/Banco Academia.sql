@@ -1,3 +1,4 @@
+﻿
 ﻿USE MASTER
 GO
 ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
@@ -625,3 +626,6 @@ SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
 SELECT*FROM ControleDebito
 select*from Usuario
+
+EXEC sp_rename 'TipoDeConta.Descricao', 'TipoConta', 'COLUMN';
+
