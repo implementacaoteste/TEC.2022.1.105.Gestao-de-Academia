@@ -120,6 +120,9 @@ namespace UIGestaoAcademia
 
             }
         }
-
+        private void FinalizarVenda_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

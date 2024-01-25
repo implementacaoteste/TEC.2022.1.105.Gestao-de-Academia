@@ -31,17 +31,15 @@
             components = new System.ComponentModel.Container();
             label1 = new Label();
             label3 = new Label();
-            bindingSourceVendas = new BindingSource(components);
             itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
+            vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
-            button3 = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
             label7 = new Label();
             label8 = new Label();
             buttonBuscarCliente = new Button();
-            buttonBuscarFuncionario = new Button();
             buttonFormaDePagamento = new Button();
             textBoxFormaPagamento = new TextBox();
             buttonExcluir = new Button();
@@ -57,14 +55,14 @@
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             buttonBuscarProduto = new Button();
             labelValorTotal = new Label();
-            dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
+            calendarioDataVencimento = new Calendario();
             labelNomeUsuarioLogado = new Label();
-            labelNumeroVenda = new Label();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceVendas).BeginInit();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -87,21 +85,21 @@
             label3.TabIndex = 10;
             label3.Text = "User:";
             // 
-            // bindingSourceVendas
-            // 
-            bindingSourceVendas.DataSource = typeof(Models.Vendas);
-            // 
             // itensVendaBindingSource
             // 
             itensVendaBindingSource.DataSource = typeof(Models.ItensVenda);
             // 
             // textBoxBuscarPorCliente
             // 
-            textBoxBuscarPorCliente.DataBindings.Add(new Binding("Text", bindingSourceVendas, "NomeCliente", true));
+            textBoxBuscarPorCliente.DataBindings.Add(new Binding("Text", vendaBindingSource, "ClienteId", true));
             textBoxBuscarPorCliente.Location = new Point(288, 17);
             textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             textBoxBuscarPorCliente.Size = new Size(398, 27);
             textBoxBuscarPorCliente.TabIndex = 2;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Models.Venda);
             // 
             // buttonFinalizarVenda
             // 
@@ -112,15 +110,6 @@
             buttonFinalizarVenda.Text = "&Finalizar venda";
             buttonFinalizarVenda.UseVisualStyleBackColor = true;
             buttonFinalizarVenda.Click += buttonFinalizarVenda_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(849, 821);
-            button3.Name = "button3";
-            button3.Size = new Size(93, 30);
-            button3.TabIndex = 10;
-            button3.Text = "Imprimir";
-            button3.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -141,7 +130,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(741, 22);
+            label7.Location = new Point(732, 22);
             label7.Name = "label7";
             label7.Size = new Size(46, 20);
             label7.TabIndex = 8;
@@ -166,16 +155,6 @@
             buttonBuscarCliente.UseVisualStyleBackColor = true;
             buttonBuscarCliente.Click += buttonBuscarCliente_Click;
             // 
-            // buttonBuscarFuncionario
-            // 
-            buttonBuscarFuncionario.Location = new Point(139, 12);
-            buttonBuscarFuncionario.Name = "buttonBuscarFuncionario";
-            buttonBuscarFuncionario.Size = new Size(33, 29);
-            buttonBuscarFuncionario.TabIndex = 1;
-            buttonBuscarFuncionario.Text = "...";
-            buttonBuscarFuncionario.UseVisualStyleBackColor = true;
-            buttonBuscarFuncionario.Click += buttonBuscarFuncionario_Click;
-            // 
             // buttonFormaDePagamento
             // 
             buttonFormaDePagamento.Location = new Point(303, 709);
@@ -188,7 +167,7 @@
             // 
             // textBoxFormaPagamento
             // 
-            textBoxFormaPagamento.DataBindings.Add(new Binding("Text", bindingSourceVendas, "FormaPagamento", true));
+            textBoxFormaPagamento.DataBindings.Add(new Binding("Text", vendaBindingSource, "FormaPagamentoId", true));
             textBoxFormaPagamento.Location = new Point(172, 709);
             textBoxFormaPagamento.Name = "textBoxFormaPagamento";
             textBoxFormaPagamento.Size = new Size(125, 27);
@@ -220,7 +199,6 @@
             textBoxQuantidade.TabIndex = 8;
             textBoxQuantidade.Text = "1";
             textBoxQuantidade.TextAlign = HorizontalAlignment.Right;
-            textBoxQuantidade.TextChanged += textBoxQuantidade_TextChanged;
             // 
             // label10
             // 
@@ -315,22 +293,12 @@
             // labelValorTotal
             // 
             labelValorTotal.AutoSize = true;
-            labelValorTotal.DataBindings.Add(new Binding("Text", bindingSourceVendas, "Total_Venda", true));
             labelValorTotal.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(692, 689);
             labelValorTotal.Name = "labelValorTotal";
             labelValorTotal.Size = new Size(133, 62);
             labelValorTotal.TabIndex = 23;
             labelValorTotal.Text = "Teste";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.DataBindings.Add(new Binding("Text", bindingSourceVendas, "Data_Venda", true));
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(793, 17);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(125, 27);
-            dateTimePicker1.TabIndex = 4;
             // 
             // label2
             // 
@@ -354,6 +322,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(calendarioDataVencimento);
             groupBox1.Controls.Add(buttonExcluir);
             groupBox1.Controls.Add(buttonFinalizarVenda);
             groupBox1.Controls.Add(textBoxProduto);
@@ -361,7 +330,6 @@
             groupBox1.Controls.Add(buttonBuscarProduto);
             groupBox1.Controls.Add(textBoxQuantidade);
             groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(buttonBuscarCliente);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label1);
@@ -374,9 +342,23 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Nova Venda";
             // 
+            // calendarioDataVencimento
+            // 
+            calendarioDataVencimento.Checked = false;
+            calendarioDataVencimento.CustomFormat = " ";
+            calendarioDataVencimento.DataBindings.Add(new Binding("Text", vendaBindingSource, "DataVenda", true));
+            calendarioDataVencimento.Format = DateTimePickerFormat.Custom;
+            calendarioDataVencimento.Location = new Point(779, 19);
+            calendarioDataVencimento.Name = "calendarioDataVencimento";
+            calendarioDataVencimento.RightToLeftLayout = true;
+            calendarioDataVencimento.ShowCheckBox = true;
+            calendarioDataVencimento.Size = new Size(140, 27);
+            calendarioDataVencimento.TabIndex = 27;
+            // 
             // labelNomeUsuarioLogado
             // 
             labelNomeUsuarioLogado.AutoSize = true;
+            labelNomeUsuarioLogado.DataBindings.Add(new Binding("Text", vendaBindingSource, "UsuarioId", true));
             labelNomeUsuarioLogado.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelNomeUsuarioLogado.Location = new Point(59, 4);
             labelNomeUsuarioLogado.Name = "labelNomeUsuarioLogado";
@@ -384,41 +366,37 @@
             labelNomeUsuarioLogado.TabIndex = 25;
             labelNomeUsuarioLogado.Text = "User";
             // 
-            // labelNumeroVenda
+            // textBox1
             // 
-            labelNumeroVenda.AutoSize = true;
-            labelNumeroVenda.DataBindings.Add(new Binding("Text", bindingSourceVendas, "Id", true));
-            labelNumeroVenda.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            labelNumeroVenda.Location = new Point(808, 9);
-            labelNumeroVenda.Name = "labelNumeroVenda";
-            labelNumeroVenda.Size = new Size(79, 31);
-            labelNumeroVenda.TabIndex = 26;
-            labelNumeroVenda.Text = "Venda";
+            textBox1.Location = new Point(813, 18);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(98, 27);
+            textBox1.TabIndex = 26;
+            textBox1.TextAlign = HorizontalAlignment.Right;
             // 
             // FormVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(954, 863);
-            Controls.Add(labelNumeroVenda);
+            Controls.Add(textBox1);
             Controls.Add(labelNomeUsuarioLogado);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(labelValorTotal);
             Controls.Add(textBoxFormaPagamento);
             Controls.Add(buttonFormaDePagamento);
-            Controls.Add(buttonBuscarFuncionario);
             Controls.Add(label8);
             Controls.Add(label6);
-            Controls.Add(button3);
             Controls.Add(textBox4);
             Controls.Add(label3);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "FormVendas";
             StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)bindingSourceVendas).EndInit();
+            Load += FormVendas_Load;
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -436,15 +414,12 @@
         private TextBox textBoxBuscarPorCliente;
         private BindingSource itensVendaBindingSource;
         private Button buttonFinalizarVenda;
-        private Button button3;
         private Label label6;
         private TextBox textBox4;
         private Label label7;
         private Label label8;
         private Button buttonBuscarCliente;
-        private Button buttonBuscarFuncionario;
         private Button buttonFormaDePagamento;
-        private BindingSource bindingSourceVendas;
         private TextBox textBoxFormaPagamento;
         private Button buttonExcluir;
         private TextBox textBoxProduto;
@@ -460,11 +435,12 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
         private Label labelValorTotal;
-        private DateTimePicker dateTimePicker1;
         private Label label2;
         private Label label4;
         private GroupBox groupBox1;
         private Label labelNomeUsuarioLogado;
-        private Label labelNumeroVenda;
+        private Calendario calendarioDataVencimento;
+        private TextBox textBox1;
+        private BindingSource vendaBindingSource;
     }
 }

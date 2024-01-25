@@ -23,6 +23,7 @@ namespace UIGestaoAcademia
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenha.Text);
@@ -33,6 +34,7 @@ namespace UIGestaoAcademia
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void FormLogin_KeyDown(object sender, KeyEventArgs e)

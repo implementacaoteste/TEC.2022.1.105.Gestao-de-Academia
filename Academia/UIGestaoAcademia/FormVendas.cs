@@ -4,6 +4,8 @@ using Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Text;
+using System.Security.Principal;
+using System;
 
 namespace UIGestaoAcademia
 {
@@ -13,9 +15,15 @@ namespace UIGestaoAcademia
         public FormVendas(int _id = 0)
         {
             InitializeComponent();
-            bindingSourceVendas.AddNew();
+            vendaBindingSource.AddNew();
+            itensVendaBindingSource.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
             _id = id;
+        }
+        public string GetLoggedInUsername()
+        {
+            string userName = Environment.UserName;
+            return userName;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -27,28 +35,8 @@ namespace UIGestaoAcademia
 
                     if (frm.Cliente != null)
                     {
-                        ((Vendas)bindingSourceVendas.Current).Cliente = frm.Cliente;
+                        ((Venda)vendaBindingSource.Current).Cliente = frm.Cliente;
                         textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void buttonBuscarFuncionario_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (FormBuscarFuncionario frm = new FormBuscarFuncionario())
-                {
-                    frm.ShowDialog();
-
-                    if (frm.Funcionario != null)
-                    {
-                        ((Vendas)bindingSourceVendas.Current).Funcionario = frm.Funcionario;
-                        labelNomeUsuarioLogado.Text = frm.Funcionario.Nome;
                     }
                 }
             }
@@ -64,10 +52,12 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
 
                 if (frm.FormaPagamento != null)
-                {
-                    ((Vendas)bindingSourceVendas.Current).FormaPagamento = frm.FormaPagamento;
-                    textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
-                }
+                    if (frm.FormaPagamento != null)
+                    {
+                        ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
+                        ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                        textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                    }
             }
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
@@ -133,12 +123,15 @@ namespace UIGestaoAcademia
 
                 try
                 {
-                    Vendas vendas = (Vendas)bindingSourceVendas.Current;
+                    Venda vendas = (Venda)vendaBindingSource.Current;
+                    ItensVenda itensVenda = (ItensVenda)itensVendaBindingSource.Current;
 
-                    bindingSourceVendas.EndEdit();
+                    vendaBindingSource.EndEdit();
+                    itensVendaBindingSource.EndEdit();
 
                     if (id == 0)
                         new VendasBLL().Inserir(vendas);
+                    new ItensVendaBLL().Inserir(itensVenda);
 
                     MessageBox.Show("Registro salvo com sucesso!");
                     this.Close();
@@ -151,15 +144,15 @@ namespace UIGestaoAcademia
         }
         private void LimparFormulario()
         {
-            bindingSourceVendas.AddNew();
+            vendaBindingSource.AddNew();
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
         }
 
-        private void textBoxQuantidade_TextChanged(object sender, EventArgs e)
+        private void FormVendas_Load(object sender, EventArgs e)
         {
-
+            labelNomeUsuarioLogado.Text = "Usuário logado: " + GetLoggedInUsername();
         }
     }
 }
