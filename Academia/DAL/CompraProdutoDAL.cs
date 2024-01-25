@@ -55,7 +55,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE CompraProduto SET FornecedorId = @FornecedorId, FormaPagamento = @FormaPagamento, Frete = @Frete, ValorTotalNota = @ValorTotalNota, ValorTotal = @ValorTotal WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE CompraProduto SET FornecedorId = @FornecedorId, FormaPagamento = @FormaPagamento, FreteTotal = @FreteTotal, ValorTotalNota = @ValorTotalNota, ValorTotal = @ValorTotal WHERE Id = @Id"))
                 {
                     try
                     {
