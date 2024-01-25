@@ -14,6 +14,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             bindingSourceVendas.AddNew();
+            itensVendaBindingSource.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
             _id = id;
         }
@@ -27,7 +28,7 @@ namespace UIGestaoAcademia
 
                     if (frm.Cliente != null)
                     {
-                        ((Vendas)bindingSourceVendas.Current).Cliente = frm.Cliente;
+                        ((Venda)bindingSourceVendas.Current).Cliente = frm.Cliente;
                         textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
                     }
                 }
@@ -47,7 +48,7 @@ namespace UIGestaoAcademia
 
                     if (frm.Funcionario != null)
                     {
-                        ((Vendas)bindingSourceVendas.Current).Funcionario = frm.Funcionario;
+                        ((Venda)bindingSourceVendas.Current).Funcionario = frm.Funcionario;
                         labelNomeUsuarioLogado.Text = frm.Funcionario.Nome;
                     }
                 }
@@ -64,10 +65,12 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
 
                 if (frm.FormaPagamento != null)
-                {
-                    ((Vendas)bindingSourceVendas.Current).FormaPagamento = frm.FormaPagamento;
-                    textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
-                }
+                    if (frm.FormaPagamento != null)
+                    {
+                        ((Venda)bindingSourceVendas.Current).FormaPagamento = frm.FormaPagamento;
+                        ((Venda)bindingSourceVendas.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                        textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                    }
             }
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
@@ -133,12 +136,15 @@ namespace UIGestaoAcademia
 
                 try
                 {
-                    Vendas vendas = (Vendas)bindingSourceVendas.Current;
+                    Venda vendas = (Venda)bindingSourceVendas.Current;
+                    ItensVenda itensVenda = (ItensVenda)itensVendaBindingSource.Current;
 
                     bindingSourceVendas.EndEdit();
+                    itensVendaBindingSource.EndEdit(); 
 
                     if (id == 0)
                         new VendasBLL().Inserir(vendas);
+                        new ItensVendaBLL().Inserir(itensVenda);
 
                     MessageBox.Show("Registro salvo com sucesso!");
                     this.Close();

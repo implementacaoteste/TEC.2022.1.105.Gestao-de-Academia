@@ -6,7 +6,7 @@ namespace BLL
     public class VendasBLL
     {
         
-        public void Inserir(Vendas _venda)
+        public void Inserir(Venda _venda)
         {
             new VendasDAL().Inserir(_venda);
         }
@@ -14,16 +14,16 @@ namespace BLL
         //{
         //return new VendasDAL().BuscarPorNomeCliente(_nome);        
         //}
-        public Vendas BuscarPorCodigoVenda(int _id)
+        public Venda BuscarPorCodigoVenda(int _id)
         {
             return new VendasDAL().BuscarPorCodigoVenda(_id);
         }
-        public List<Vendas> BuscarPorNomeFuncionario(string _nome)
+        public List<Venda> BuscarPorNomeFuncionario(string _nome)
         {
             return new VendasDAL().BuscarPorNomeFuncionario(_nome);
 
         }
-        public List<Vendas> BuscarPorNomeCliente(string _nomeCliente)
+        public List<Venda> BuscarPorNomeCliente(string _nomeCliente)
         {
             return new VendasDAL().BuscarPorNomeCliente(_nomeCliente);
         }
@@ -34,11 +34,11 @@ namespace BLL
 
             return new VendasDAL().BuscarPorCPFCliente(_CPF);
         }
-        public List<Vendas> BuscarPorDataVenda()
+        public List<Venda> BuscarPorDataVenda()
         {
             return new VendasDAL().BuscarPorDataVenda();
         }
-        public List<Vendas> BuscarTodos()
+        public List<Venda> BuscarTodos()
         {
             return new VendasDAL().BuscarTodos();
         }

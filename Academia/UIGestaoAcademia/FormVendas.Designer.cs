@@ -35,7 +35,6 @@
             itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
             buttonFinalizarVenda = new Button();
-            button3 = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
             label7 = new Label();
@@ -57,10 +56,10 @@
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             buttonBuscarProduto = new Button();
             labelValorTotal = new Label();
-            dateTimePicker1 = new DateTimePicker();
             label2 = new Label();
             label4 = new Label();
             groupBox1 = new GroupBox();
+            calendarioDataVencimento = new Calendario();
             labelNomeUsuarioLogado = new Label();
             labelNumeroVenda = new Label();
             ((System.ComponentModel.ISupportInitialize)bindingSourceVendas).BeginInit();
@@ -89,7 +88,7 @@
             // 
             // bindingSourceVendas
             // 
-            bindingSourceVendas.DataSource = typeof(Models.Vendas);
+            bindingSourceVendas.DataSource = typeof(Models.Venda);
             // 
             // itensVendaBindingSource
             // 
@@ -113,15 +112,6 @@
             buttonFinalizarVenda.UseVisualStyleBackColor = true;
             buttonFinalizarVenda.Click += buttonFinalizarVenda_Click;
             // 
-            // button3
-            // 
-            button3.Location = new Point(849, 821);
-            button3.Name = "button3";
-            button3.Size = new Size(93, 30);
-            button3.TabIndex = 10;
-            button3.Text = "Imprimir";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -141,7 +131,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(741, 22);
+            label7.Location = new Point(732, 22);
             label7.Name = "label7";
             label7.Size = new Size(46, 20);
             label7.TabIndex = 8;
@@ -314,22 +304,13 @@
             // labelValorTotal
             // 
             labelValorTotal.AutoSize = true;
-            labelValorTotal.DataBindings.Add(new Binding("Text", bindingSourceVendas, "Total_Venda", true));
+            labelValorTotal.DataBindings.Add(new Binding("Text", bindingSourceVendas, "TotalVenda", true));
             labelValorTotal.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(692, 689);
             labelValorTotal.Name = "labelValorTotal";
             labelValorTotal.Size = new Size(133, 62);
             labelValorTotal.TabIndex = 23;
             labelValorTotal.Text = "Teste";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.DataBindings.Add(new Binding("Text", bindingSourceVendas, "Data_Venda", true));
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(793, 17);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(125, 27);
-            dateTimePicker1.TabIndex = 4;
             // 
             // label2
             // 
@@ -353,6 +334,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(calendarioDataVencimento);
             groupBox1.Controls.Add(buttonExcluir);
             groupBox1.Controls.Add(buttonFinalizarVenda);
             groupBox1.Controls.Add(textBoxProduto);
@@ -360,7 +342,6 @@
             groupBox1.Controls.Add(buttonBuscarProduto);
             groupBox1.Controls.Add(textBoxQuantidade);
             groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(dateTimePicker1);
             groupBox1.Controls.Add(buttonBuscarCliente);
             groupBox1.Controls.Add(label12);
             groupBox1.Controls.Add(label1);
@@ -373,9 +354,23 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Nova Venda";
             // 
+            // calendarioDataVencimento
+            // 
+            calendarioDataVencimento.Checked = false;
+            calendarioDataVencimento.CustomFormat = " ";
+            calendarioDataVencimento.DataBindings.Add(new Binding("Text", bindingSourceVendas, "DataVenda", true));
+            calendarioDataVencimento.Format = DateTimePickerFormat.Custom;
+            calendarioDataVencimento.Location = new Point(779, 19);
+            calendarioDataVencimento.Name = "calendarioDataVencimento";
+            calendarioDataVencimento.RightToLeftLayout = true;
+            calendarioDataVencimento.ShowCheckBox = true;
+            calendarioDataVencimento.Size = new Size(140, 27);
+            calendarioDataVencimento.TabIndex = 27;
+            // 
             // labelNomeUsuarioLogado
             // 
             labelNomeUsuarioLogado.AutoSize = true;
+            labelNomeUsuarioLogado.DataBindings.Add(new Binding("Text", bindingSourceVendas, "Funcionario", true));
             labelNomeUsuarioLogado.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelNomeUsuarioLogado.Location = new Point(59, 4);
             labelNomeUsuarioLogado.Name = "labelNomeUsuarioLogado";
@@ -409,7 +404,6 @@
             Controls.Add(buttonBuscarFuncionario);
             Controls.Add(label8);
             Controls.Add(label6);
-            Controls.Add(button3);
             Controls.Add(textBox4);
             Controls.Add(label3);
             Controls.Add(groupBox1);
@@ -435,7 +429,6 @@
         private TextBox textBoxBuscarPorCliente;
         private BindingSource itensVendaBindingSource;
         private Button buttonFinalizarVenda;
-        private Button button3;
         private Label label6;
         private TextBox textBox4;
         private Label label7;
@@ -459,11 +452,11 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
         private Label labelValorTotal;
-        private DateTimePicker dateTimePicker1;
         private Label label2;
         private Label label4;
         private GroupBox groupBox1;
         private Label labelNomeUsuarioLogado;
         private Label labelNumeroVenda;
+        private Calendario calendarioDataVencimento;
     }
 }

@@ -1,19 +1,20 @@
 ﻿using Models;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace DAL
 {
     public class VendasDAL
     {
-        public void Inserir(Vendas _venda, SqlTransaction _transaction = null)
+        public void Inserir(Venda _venda, SqlTransaction _transaction = null)
         {
             SqlTransaction transaction = _transaction;
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand(@"INSERT INTO Vendas (FuncionarioId, ClienteId, Data_Venda, Total_Venda, FormaPagamentoId)
-                                 VALUES (@FuncionarioId, @ClienteId, @Data_Venda, @Total_Venda, @FormaPagamentoId);
+                using (SqlCommand cmd = new SqlCommand(@"INSERT INTO Venda (FuncionarioId, ClienteId, DataVenda, TotalVenda, FormaPagamentoId)
+                                 VALUES (@FuncionarioId, @ClienteId, @DataVenda, @TotalVenda, @FormaPagamentoId);
                                  SELECT SCOPE_IDENTITY();"))
                 {
                     try
@@ -22,8 +23,8 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@FuncionarioId", _venda.FuncionarioId);
                         cmd.Parameters.AddWithValue("@ClienteId", _venda.ClienteId);
-                        cmd.Parameters.AddWithValue("@Data_Venda", _venda.Data_Venda);
-                        cmd.Parameters.AddWithValue("@Total_Venda", _venda.Total_Venda);
+                        cmd.Parameters.Add("@DataVenda", SqlDbType.DateTime).Value = _venda.DataVenda;
+                        cmd.Parameters.Add("@TotalVenda", SqlDbType.Decimal).Value = _venda.TotalVenda;
                         cmd.Parameters.AddWithValue("@FormaPagamentoId",_venda.FormaPagamentoId);
                         if (_transaction == null)
                         {
@@ -58,27 +59,27 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
-        public List<Vendas> BuscarPorDataVenda()
+        public List<Venda> BuscarPorDataVenda()
         {
             throw new NotImplementedException();
         }
 
-        public List<Vendas> BuscarTodos()
+        public List<Venda> BuscarTodos()
         {
             throw new NotImplementedException();
         }
 
-        public List<Vendas> BuscarPorNomeFuncionario(string nome)
+        public List<Venda> BuscarPorNomeFuncionario(string nome)
         {
             throw new NotImplementedException();
         }
 
-        public List<Vendas> BuscarPorNomeCliente(string _nomeCliente)
+        public List<Venda> BuscarPorNomeCliente(string _nomeCliente)
         {
             throw new NotImplementedException();
         }
 
-        public Vendas BuscarPorCodigoVenda(int _id)
+        public Venda BuscarPorCodigoVenda(int _id)
         {
             throw new NotImplementedException();
         }

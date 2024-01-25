@@ -8,13 +8,13 @@ using System.Transactions;
 
 namespace Models
 {
-    public class Vendas
+    public class Venda
     {
         public int Id { get; set; }
         public int FuncionarioId  { get; set; }
         public int ClienteId { get; set; }
-        public DateTime Data_Venda { get; set; }
-        public double Total_Venda { get; set; }
+        public DateTime DataVenda { get; set; }
+        public double TotalVenda { get; set; }
         public int FormaPagamentoId { get; set; }
         public string NomeCliente
         {
