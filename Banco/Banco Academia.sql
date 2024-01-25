@@ -1,4 +1,3 @@
-﻿
 ﻿USE MASTER
 GO
 ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
@@ -625,7 +624,3 @@ INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90
 SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
 SELECT*FROM ControleDebito
-select*from Usuario
-
-EXEC sp_rename 'TipoDeConta.Descricao', 'TipoConta', 'COLUMN';
-
