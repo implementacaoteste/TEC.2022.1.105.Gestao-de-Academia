@@ -162,6 +162,11 @@ namespace UIGestaoAcademia
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
         }
+
+        private void textBoxQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

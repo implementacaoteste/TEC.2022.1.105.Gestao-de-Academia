@@ -210,6 +210,7 @@
             textBoxQuantidade.TabIndex = 8;
             textBoxQuantidade.Text = "1";
             textBoxQuantidade.TextAlign = HorizontalAlignment.Right;
+            textBoxQuantidade.TextChanged += textBoxQuantidade_TextChanged;
             // 
             // label10
             // 
