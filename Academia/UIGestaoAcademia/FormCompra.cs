@@ -24,6 +24,7 @@ namespace UIGestaoAcademia
                     if (frm.FormaPagamento != null)
                     {
                         textBoxBuscarFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                        ((CompraProduto)BindingSourceCompraProduto.Current).FormaPagamentoId = frm.FormaPagamento.Id;
                     }
                 }
             }
@@ -42,6 +43,7 @@ namespace UIGestaoAcademia
                     if (frm.Fornecedor != null)
                     {
                         textBoxBuscarFornecedor.Text = frm.Fornecedor.Nome;
+                        ((CompraProduto)BindingSourceCompraProduto.Current).FornecedorId = frm.Fornecedor.Id;
                     }
                 }
             }
@@ -123,17 +125,16 @@ namespace UIGestaoAcademia
         private void FinalizarCompra_Click(object sender, EventArgs e)
         {
             {
-
                 try
                 {
-                    PlanoAssinatura planoAssinatura = (PlanoAssinatura)BindingSourceCompraProduto.Current;
+                    CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
                     ItensCompra itensCompra= (ItensCompra)itensCompraBindingSource.Current;
 
                     BindingSourceCompraProduto.EndEdit();
                     itensCompraBindingSource.EndEdit();
 
                     if (id == 0)
-                        new PlanoAssinaturaBLL().Inserir(planoAssinatura);
+                        new CompraProdutoBLL().Inserir(compraProduto);
                         new ItensCompraBLL().Inserir(itensCompra);
 
                     MessageBox.Show("Registro salvo com sucesso!");
