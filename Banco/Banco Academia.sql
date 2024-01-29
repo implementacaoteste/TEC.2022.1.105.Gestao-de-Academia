@@ -623,9 +623,9 @@ INSERT INTO Cliente VALUES('Genilsom',1, '07790087655','(63)99124-9261','genism3
 INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
 SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
-<<<<<<< HEAD
+
 SELECT*FROM ControleDebito
-=======
+
 SELECT*FROM ControleDebito
 select*from Usuario
->>>>>>> 993a69acca5fd70aa5d34df680cf7d358256edfa
+select *from PlanoAssinatura
