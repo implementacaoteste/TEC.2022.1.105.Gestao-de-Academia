@@ -5,7 +5,7 @@ namespace UIGestaoAcademia
 {
     public partial class FormCompra : Form
     {
-
+        int id;
         public FormCompra()
         {
             InitializeComponent();
@@ -120,9 +120,30 @@ namespace UIGestaoAcademia
 
             }
         }
-        private void FinalizarVenda_Click(object sender, EventArgs e)
+        private void FinalizarCompra_Click(object sender, EventArgs e)
         {
-            
+            {
+
+                try
+                {
+                    PlanoAssinatura planoAssinatura = (PlanoAssinatura)BindingSourceCompraProduto.Current;
+                    ItensCompra itensCompra= (ItensCompra)itensCompraBindingSource.Current;
+
+                    BindingSourceCompraProduto.EndEdit();
+                    itensCompraBindingSource.EndEdit();
+
+                    if (id == 0)
+                        new PlanoAssinaturaBLL().Inserir(planoAssinatura);
+                        new ItensCompraBLL().Inserir(itensCompra);
+
+                    MessageBox.Show("Registro salvo com sucesso!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
