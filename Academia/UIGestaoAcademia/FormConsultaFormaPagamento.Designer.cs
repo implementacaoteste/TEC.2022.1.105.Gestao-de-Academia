@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             bindingSourceFormaPagamento = new BindingSource(components);
             label2 = new Label();
             textBoxBuscarPor = new TextBox();
@@ -198,8 +198,8 @@
             // QuantidadeParcelas
             // 
             QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle1;
             QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
             QuantidadeParcelas.MinimumWidth = 6;
             QuantidadeParcelas.Name = "QuantidadeParcelas";

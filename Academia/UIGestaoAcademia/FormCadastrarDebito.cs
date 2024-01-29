@@ -26,6 +26,8 @@ namespace UIGestaoAcademia
                 controleDebito.Descricao = controleDebito.Descricao.Replace(descricaoParcela, "");
                 bindingSourceCadastrarDebito.DataSource = controleDebito;
                 textBoxQuantidaDeParcelasDesejadas.Enabled = false;
+                textBoxFormaDePagamento.Enabled = false;
+                buttonConsultaFormaPagamento.Enabled = false;
             }
         }
         private void buttonSalvar_Click_1(object sender, EventArgs e)
