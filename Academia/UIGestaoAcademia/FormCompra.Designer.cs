@@ -31,11 +31,6 @@
             components = new System.ComponentModel.Container();
             buttonBuscarProduto = new Button();
             dataGridView1 = new DataGridView();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            marcaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            valorUnitarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             itensCompraBindingSource = new BindingSource(components);
             label12 = new Label();
             label10 = new Label();
@@ -61,6 +56,11 @@
             FinalizarCompra = new Button();
             label7 = new Label();
             textBoxValorTotalNota = new TextBox();
+            Nome = new DataGridViewTextBoxColumn();
+            Marca = new DataGridViewTextBoxColumn();
+            Quantidade = new DataGridViewTextBoxColumn();
+            ValorUnitario = new DataGridViewTextBoxColumn();
+            valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
@@ -83,7 +83,7 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, valorUnitarioDataGridViewTextBoxColumn, valorTotalDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nome, Marca, Quantidade, ValorUnitario, valorTotalDataGridViewTextBoxColumn });
             dataGridView1.DataSource = itensCompraBindingSource;
             dataGridView1.Location = new Point(0, 297);
             dataGridView1.Name = "dataGridView1";
@@ -92,51 +92,6 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(881, 333);
             dataGridView1.TabIndex = 50;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            marcaDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            quantidadeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valorUnitarioDataGridViewTextBoxColumn
-            // 
-            valorUnitarioDataGridViewTextBoxColumn.DataPropertyName = "ValorUnitario";
-            valorUnitarioDataGridViewTextBoxColumn.HeaderText = "ValorUnitario";
-            valorUnitarioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            valorUnitarioDataGridViewTextBoxColumn.Name = "valorUnitarioDataGridViewTextBoxColumn";
-            valorUnitarioDataGridViewTextBoxColumn.ReadOnly = true;
-            valorUnitarioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valorTotalDataGridViewTextBoxColumn
-            // 
-            valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
-            valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
-            valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
-            valorTotalDataGridViewTextBoxColumn.Width = 125;
             // 
             // itensCompraBindingSource
             // 
@@ -355,6 +310,51 @@
             textBoxValorTotalNota.TabIndex = 64;
             textBoxValorTotalNota.TextAlign = HorizontalAlignment.Right;
             // 
+            // Nome
+            // 
+            Nome.DataPropertyName = "Nome";
+            Nome.HeaderText = "Nome";
+            Nome.MinimumWidth = 6;
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            Nome.Width = 250;
+            // 
+            // Marca
+            // 
+            Marca.DataPropertyName = "Marca";
+            Marca.HeaderText = "Marca";
+            Marca.MinimumWidth = 6;
+            Marca.Name = "Marca";
+            Marca.ReadOnly = true;
+            Marca.Width = 180;
+            // 
+            // Quantidade
+            // 
+            Quantidade.DataPropertyName = "Quantidade";
+            Quantidade.HeaderText = "Quantidade";
+            Quantidade.MinimumWidth = 6;
+            Quantidade.Name = "Quantidade";
+            Quantidade.ReadOnly = true;
+            Quantidade.Width = 125;
+            // 
+            // ValorUnitario
+            // 
+            ValorUnitario.DataPropertyName = "ValorUnitario";
+            ValorUnitario.HeaderText = "ValorUnitario";
+            ValorUnitario.MinimumWidth = 6;
+            ValorUnitario.Name = "ValorUnitario";
+            ValorUnitario.ReadOnly = true;
+            ValorUnitario.Width = 160;
+            // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            valorTotalDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // FormCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -419,15 +419,15 @@
         private TextBox textBoxValorProduto;
         private Label label5;
         private TextBox textBoxNomeProduto;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn valorUnitarioDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private TextBox textBoxValorTotal;
         private Label label6;
         private Button FinalizarCompra;
         private Label label7;
         private TextBox textBoxValorTotalNota;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Marca;
+        private DataGridViewTextBoxColumn Quantidade;
+        private DataGridViewTextBoxColumn ValorUnitario;
+        private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
     }
 }
