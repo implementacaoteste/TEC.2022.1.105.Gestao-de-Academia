@@ -252,6 +252,7 @@
             // 
             calendario1.Checked = false;
             calendario1.CustomFormat = " ";
+            calendario1.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDebito, "DataPagamento", true));
             calendario1.Format = DateTimePickerFormat.Custom;
             calendario1.Location = new Point(393, 175);
             calendario1.Name = "calendario1";
@@ -317,6 +318,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancelar;
             ClientSize = new Size(821, 339);
             Controls.Add(textBoxQuantidaDeParcelasDesejadas);
             Controls.Add(calendarioDataVencimento);
