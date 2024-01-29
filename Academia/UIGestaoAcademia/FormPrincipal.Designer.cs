@@ -44,21 +44,15 @@
             comprasDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             fornecedorToolStripMenuItem1 = new ToolStripMenuItem();
             exercicioToolStripMenuItem = new ToolStripMenuItem();
-<<<<<<< HEAD
             planoAssinaturaToolStripMenuItem = new ToolStripMenuItem();
-=======
->>>>>>> 993a69acca5fd70aa5d34df680cf7d358256edfa
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-<<<<<<< HEAD
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, fornecedorToolStripMenuItem1, exercicioToolStripMenuItem, planoAssinaturaToolStripMenuItem });
-=======
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, fornecedorToolStripMenuItem1, exercicioToolStripMenuItem });
->>>>>>> 993a69acca5fd70aa5d34df680cf7d358256edfa
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(856, 28);
@@ -133,10 +127,7 @@
             vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
             vENDASToolStripMenuItem.Size = new Size(70, 24);
             vENDASToolStripMenuItem.Text = "Vendas";
-<<<<<<< HEAD
-=======
             vENDASToolStripMenuItem.Click += vENDASToolStripMenuItem_Click;
->>>>>>> 993a69acca5fd70aa5d34df680cf7d358256edfa
             // 
             // iniciarVendaToolStripMenuItem
             // 
@@ -181,7 +172,6 @@
             exercicioToolStripMenuItem.Size = new Size(82, 24);
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
-<<<<<<< HEAD
             // 
             // planoAssinaturaToolStripMenuItem
             // 
@@ -189,8 +179,6 @@
             planoAssinaturaToolStripMenuItem.Size = new Size(130, 24);
             planoAssinaturaToolStripMenuItem.Text = "Plano assinatura";
             planoAssinaturaToolStripMenuItem.Click += planoAssinaturaToolStripMenuItem_Click;
-=======
->>>>>>> 993a69acca5fd70aa5d34df680cf7d358256edfa
             // 
             // FormPrincipal
             // 
