@@ -58,7 +58,7 @@
             textBoxNomeProduto = new TextBox();
             textBoxValorTotal = new TextBox();
             label6 = new Label();
-            FinalizarVenda = new Button();
+            FinalizarCompra = new Button();
             label7 = new Label();
             textBoxValorTotalNota = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -85,12 +85,12 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, valorUnitarioDataGridViewTextBoxColumn, valorTotalDataGridViewTextBoxColumn });
             dataGridView1.DataSource = itensCompraBindingSource;
-            dataGridView1.Location = new Point(12, 297);
+            dataGridView1.Location = new Point(0, 297);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(888, 333);
+            dataGridView1.Size = new Size(881, 333);
             dataGridView1.TabIndex = 50;
             // 
             // nomeDataGridViewTextBoxColumn
@@ -226,7 +226,7 @@
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(900, 68);
+            label2.Size = new Size(888, 68);
             label2.TabIndex = 27;
             label2.Text = "Compra de produto";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -327,14 +327,15 @@
             label6.TabIndex = 59;
             label6.Text = "VALOR DA NOTA";
             // 
-            // FinalizarVenda
+            // FinalizarCompra
             // 
-            FinalizarVenda.Location = new Point(769, 636);
-            FinalizarVenda.Name = "FinalizarVenda";
-            FinalizarVenda.Size = new Size(131, 29);
-            FinalizarVenda.TabIndex = 62;
-            FinalizarVenda.Text = "Finalizar compra";
-            FinalizarVenda.UseVisualStyleBackColor = true;
+            FinalizarCompra.Location = new Point(750, 636);
+            FinalizarCompra.Name = "FinalizarCompra";
+            FinalizarCompra.Size = new Size(131, 29);
+            FinalizarCompra.TabIndex = 62;
+            FinalizarCompra.Text = "Finalizar compra";
+            FinalizarCompra.UseVisualStyleBackColor = true;
+            FinalizarCompra.Click += FinalizarCompra_Click;
             // 
             // label7
             // 
@@ -358,10 +359,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(900, 689);
+            ClientSize = new Size(888, 669);
             Controls.Add(textBoxValorTotalNota);
             Controls.Add(label7);
-            Controls.Add(FinalizarVenda);
+            Controls.Add(FinalizarCompra);
             Controls.Add(label6);
             Controls.Add(textBoxValorTotal);
             Controls.Add(label5);
@@ -425,7 +426,7 @@
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private TextBox textBoxValorTotal;
         private Label label6;
-        private Button FinalizarVenda;
+        private Button FinalizarCompra;
         private Label label7;
         private TextBox textBoxValorTotalNota;
     }

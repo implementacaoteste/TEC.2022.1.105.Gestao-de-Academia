@@ -143,7 +143,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal FROM CompraProduto";
+                cmd.CommandText = @"SELECT PlanoAssinatura.Id, PlanoAssinatura.TipoPlano, PlanoAssinatura.ValorPlano, PlanoAssinatura.Desconto FROM PlanoAssinatura";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -212,8 +212,8 @@ namespace DAL
         {
             PlanoAssinatura.Id = (int)rd["Id"];
             PlanoAssinatura.TipoPlano = rd["TipoPlano"].ToString();
-            PlanoAssinatura.ValorPlano = (float)rd["FormaPagamentoId"];
-            PlanoAssinatura.Desconto = (float)rd["Desconto"];
+            PlanoAssinatura.ValorPlano = Convert.ToDouble(rd["ValorPlano"]);
+            PlanoAssinatura.Desconto = Convert.ToDouble(rd["Desconto"]);
         }
     }
 }
