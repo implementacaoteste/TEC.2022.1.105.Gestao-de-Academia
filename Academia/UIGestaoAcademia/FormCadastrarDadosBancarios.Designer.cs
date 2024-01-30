@@ -355,8 +355,14 @@
             Controls.Add(textBoxCpfCnpj);
             Controls.Add(textBoxDescricao);
             Controls.Add(textBoxNome);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCadastrarDadosBancarios";
-            Text = "FormCadastrarDadosBancarios";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).EndInit();

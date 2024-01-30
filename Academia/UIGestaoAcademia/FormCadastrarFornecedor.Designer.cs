@@ -62,39 +62,39 @@
             button1 = new Button();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            textBox15 = new TextBox();
+            bindingSourceCadastrarDadosBancario = new BindingSource(components);
+            label23 = new Label();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
-            tipoDeContaBindingSource = new BindingSource(components);
-            button2 = new Button();
-            buttonTipoMoeda = new Button();
-            tipoDeMoedaBindingSource = new BindingSource(components);
-            label19 = new Label();
             textBox8 = new TextBox();
-            bindingSourceCadastrarDadosBancario = new BindingSource(components);
-            label5 = new Label();
-            textBoxTipoConta = new TextBox();
-            textBoxTipoDeMoeda = new TextBox();
-            label20 = new Label();
-            textBox12 = new TextBox();
-            label21 = new Label();
-            label22 = new Label();
+            label19 = new Label();
+            buttonTipoMoeda = new Button();
+            button2 = new Button();
             label24 = new Label();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
             textBox16 = new TextBox();
-            label25 = new Label();
+            textBoxTipoDeMoeda = new TextBox();
+            tipoDeMoedaBindingSource = new BindingSource(components);
+            label5 = new Label();
+            label21 = new Label();
+            textBox13 = new TextBox();
+            label22 = new Label();
+            textBox14 = new TextBox();
+            textBoxTipoConta = new TextBox();
+            tipoDeContaBindingSource = new BindingSource(components);
             label27 = new Label();
             textBox17 = new TextBox();
-            textBox15 = new TextBox();
-            label23 = new Label();
+            label25 = new Label();
+            label20 = new Label();
+            textBox12 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFornecedor).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -414,6 +414,28 @@
             tabPage1.Text = "Identificação";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // textBox15
+            // 
+            textBox15.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Obs", true));
+            textBox15.Location = new Point(22, 167);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(809, 27);
+            textBox15.TabIndex = 92;
+            // 
+            // bindingSourceCadastrarDadosBancario
+            // 
+            bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label23.Location = new Point(22, 144);
+            label23.Name = "label23";
+            label23.Size = new Size(75, 20);
+            label23.TabIndex = 93;
+            label23.Text = "Descrição";
+            // 
             // tabPage2
             // 
             tabPage2.Controls.Add(label9);
@@ -470,31 +492,13 @@
             tabPage3.Text = "Dados bancários";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tipoDeContaBindingSource
+            // textBox8
             // 
-            tipoDeContaBindingSource.DataSource = typeof(Models.TipoDeConta);
-            // 
-            // button2
-            // 
-            button2.Location = new Point(166, 78);
-            button2.Name = "button2";
-            button2.Size = new Size(30, 29);
-            button2.TabIndex = 110;
-            button2.Text = "...";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // buttonTipoMoeda
-            // 
-            buttonTipoMoeda.Location = new Point(601, 80);
-            buttonTipoMoeda.Name = "buttonTipoMoeda";
-            buttonTipoMoeda.Size = new Size(30, 29);
-            buttonTipoMoeda.TabIndex = 109;
-            buttonTipoMoeda.Text = "...";
-            buttonTipoMoeda.UseVisualStyleBackColor = true;
-            // 
-            // tipoDeMoedaBindingSource
-            // 
-            tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
+            textBox8.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Iban", true));
+            textBox8.Location = new Point(637, 82);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(193, 27);
+            textBox8.TabIndex = 107;
             // 
             // label19
             // 
@@ -506,81 +510,23 @@
             label19.TabIndex = 108;
             label19.Text = "IBAN";
             // 
-            // textBox8
+            // buttonTipoMoeda
             // 
-            textBox8.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Iban", true));
-            textBox8.Location = new Point(637, 82);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(193, 27);
-            textBox8.TabIndex = 107;
+            buttonTipoMoeda.Location = new Point(601, 80);
+            buttonTipoMoeda.Name = "buttonTipoMoeda";
+            buttonTipoMoeda.Size = new Size(30, 29);
+            buttonTipoMoeda.TabIndex = 109;
+            buttonTipoMoeda.Text = "...";
+            buttonTipoMoeda.UseVisualStyleBackColor = true;
             // 
-            // bindingSourceCadastrarDadosBancario
+            // button2
             // 
-            bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(402, 56);
-            label5.Name = "label5";
-            label5.Size = new Size(112, 20);
-            label5.TabIndex = 106;
-            label5.Text = "Tipo de Moeda";
-            // 
-            // textBoxTipoConta
-            // 
-            textBoxTipoConta.DataBindings.Add(new Binding("Text", tipoDeContaBindingSource, "TipoConta", true));
-            textBoxTipoConta.Location = new Point(3, 79);
-            textBoxTipoConta.Name = "textBoxTipoConta";
-            textBoxTipoConta.Size = new Size(161, 27);
-            textBoxTipoConta.TabIndex = 104;
-            // 
-            // textBoxTipoDeMoeda
-            // 
-            textBoxTipoDeMoeda.DataBindings.Add(new Binding("Text", tipoDeMoedaBindingSource, "TipoMoeda", true));
-            textBoxTipoDeMoeda.Location = new Point(402, 80);
-            textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
-            textBoxTipoDeMoeda.Size = new Size(193, 27);
-            textBoxTipoDeMoeda.TabIndex = 99;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.Location = new Point(202, 56);
-            label20.Name = "label20";
-            label20.Size = new Size(121, 20);
-            label20.TabIndex = 97;
-            label20.Text = "Nome do Titular";
-            // 
-            // textBox12
-            // 
-            textBox12.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeTitular", true));
-            textBox12.Location = new Point(202, 79);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(193, 27);
-            textBox12.TabIndex = 96;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label21.Location = new Point(210, 3);
-            label21.Name = "label21";
-            label21.Size = new Size(146, 20);
-            label21.TabIndex = 93;
-            label21.Text = "Numero da Agencia";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label22.Location = new Point(409, 3);
-            label22.Name = "label22";
-            label22.Size = new Size(131, 20);
-            label22.TabIndex = 92;
-            label22.Text = "Numero da Conta";
+            button2.Location = new Point(166, 78);
+            button2.Name = "button2";
+            button2.Size = new Size(30, 29);
+            button2.TabIndex = 110;
+            button2.Text = "...";
+            button2.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -592,6 +538,46 @@
             label24.TabIndex = 90;
             label24.Text = "Nome do Banco";
             // 
+            // textBox16
+            // 
+            textBox16.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeBanco", true));
+            textBox16.Location = new Point(3, 26);
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(193, 27);
+            textBox16.TabIndex = 84;
+            // 
+            // textBoxTipoDeMoeda
+            // 
+            textBoxTipoDeMoeda.DataBindings.Add(new Binding("Text", tipoDeMoedaBindingSource, "TipoMoeda", true));
+            textBoxTipoDeMoeda.Location = new Point(402, 80);
+            textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
+            textBoxTipoDeMoeda.Size = new Size(193, 27);
+            textBoxTipoDeMoeda.TabIndex = 99;
+            // 
+            // tipoDeMoedaBindingSource
+            // 
+            tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(402, 56);
+            label5.Name = "label5";
+            label5.Size = new Size(112, 20);
+            label5.TabIndex = 106;
+            label5.Text = "Tipo de Moeda";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.Location = new Point(210, 3);
+            label21.Name = "label21";
+            label21.Size = new Size(146, 20);
+            label21.TabIndex = 93;
+            label21.Text = "Numero da Agencia";
+            // 
             // textBox13
             // 
             textBox13.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NumeroAgencia", true));
@@ -599,6 +585,16 @@
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(194, 27);
             textBox13.TabIndex = 85;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label22.Location = new Point(409, 3);
+            label22.Name = "label22";
+            label22.Size = new Size(131, 20);
+            label22.TabIndex = 92;
+            label22.Text = "Numero da Conta";
             // 
             // textBox14
             // 
@@ -608,23 +604,17 @@
             textBox14.Size = new Size(194, 27);
             textBox14.TabIndex = 86;
             // 
-            // textBox16
+            // textBoxTipoConta
             // 
-            textBox16.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeBanco", true));
-            textBox16.Location = new Point(3, 26);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(193, 27);
-            textBox16.TabIndex = 84;
+            textBoxTipoConta.DataBindings.Add(new Binding("Text", tipoDeContaBindingSource, "TipoConta", true));
+            textBoxTipoConta.Location = new Point(3, 79);
+            textBoxTipoConta.Name = "textBoxTipoConta";
+            textBoxTipoConta.Size = new Size(161, 27);
+            textBoxTipoConta.TabIndex = 104;
             // 
-            // label25
+            // tipoDeContaBindingSource
             // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label25.Location = new Point(3, 56);
-            label25.Name = "label25";
-            label25.Size = new Size(102, 20);
-            label25.TabIndex = 95;
-            label25.Text = "Tipo de conta";
+            tipoDeContaBindingSource.DataSource = typeof(Models.TipoDeConta);
             // 
             // label27
             // 
@@ -644,23 +634,33 @@
             textBox17.Size = new Size(194, 27);
             textBox17.TabIndex = 87;
             // 
-            // textBox15
+            // label25
             // 
-            textBox15.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Obs", true));
-            textBox15.Location = new Point(22, 167);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(809, 27);
-            textBox15.TabIndex = 92;
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label25.Location = new Point(3, 56);
+            label25.Name = "label25";
+            label25.Size = new Size(102, 20);
+            label25.TabIndex = 95;
+            label25.Text = "Tipo de conta";
             // 
-            // label23
+            // label20
             // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label23.Location = new Point(22, 144);
-            label23.Name = "label23";
-            label23.Size = new Size(75, 20);
-            label23.TabIndex = 93;
-            label23.Text = "Descrição";
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.Location = new Point(202, 56);
+            label20.Name = "label20";
+            label20.Size = new Size(121, 20);
+            label20.TabIndex = 97;
+            label20.Text = "Nome do Titular";
+            // 
+            // textBox12
+            // 
+            textBox12.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeTitular", true));
+            textBox12.Location = new Point(202, 79);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(193, 27);
+            textBox12.TabIndex = 96;
             // 
             // FormCadastrarFornecedor
             // 
@@ -674,19 +674,25 @@
             Controls.Add(label2);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCadastrarFornecedor";
-            Text = "FormCadastrarFornecedor";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFornecedor).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).EndInit();
             ResumeLayout(false);
         }
 
