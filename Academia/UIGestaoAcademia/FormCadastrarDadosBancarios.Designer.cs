@@ -28,367 +28,340 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.bindingSourceCadastrarDadosBancario = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxTelefone = new System.Windows.Forms.TextBox();
-            this.textBoxCpfCnpj = new System.Windows.Forms.TextBox();
-            this.textBoxDescricao = new System.Windows.Forms.TextBox();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBoxTipoDeMoeda = new System.Windows.Forms.TextBox();
-            this.tipoDeMoedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonTipoMoeda = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBoxTipoConta = new System.Windows.Forms.TextBox();
-            this.tipoDeContaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoDeContaBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label2 = new Label();
+            label6 = new Label();
+            textBoxEmail = new TextBox();
+            bindingSourceCadastrarDadosBancario = new BindingSource(components);
+            label4 = new Label();
+            label3 = new Label();
+            label7 = new Label();
+            label1 = new Label();
+            textBoxTelefone = new TextBox();
+            textBoxCpfCnpj = new TextBox();
+            textBoxDescricao = new TextBox();
+            textBoxNome = new TextBox();
+            label16 = new Label();
+            label5 = new Label();
+            textBox8 = new TextBox();
+            label17 = new Label();
+            textBox9 = new TextBox();
+            label18 = new Label();
+            textBox10 = new TextBox();
+            label9 = new Label();
+            textBox1 = new TextBox();
+            label15 = new Label();
+            label19 = new Label();
+            textBox7 = new TextBox();
+            textBoxTipoDeMoeda = new TextBox();
+            tipoDeMoedaBindingSource = new BindingSource(components);
+            buttonTipoMoeda = new Button();
+            button1 = new Button();
+            textBoxTipoConta = new TextBox();
+            tipoDeContaBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).BeginInit();
+            SuspendLayout();
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(857, 110);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "Dados Bancarios";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(857, 110);
+            label2.TabIndex = 52;
+            label2.Text = "Dados Bancarios";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(626, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
-            this.label6.TabIndex = 66;
-            this.label6.Text = "Chave PIX";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(626, 129);
+            label6.Name = "label6";
+            label6.Size = new Size(77, 20);
+            label6.TabIndex = 66;
+            label6.Text = "Chave PIX";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "ChavePix", true));
-            this.textBoxEmail.Location = new System.Drawing.Point(626, 151);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(194, 27);
-            this.textBoxEmail.TabIndex = 40;
+            textBoxEmail.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "ChavePix", true));
+            textBoxEmail.Location = new Point(626, 151);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(194, 27);
+            textBoxEmail.TabIndex = 40;
             // 
             // bindingSourceCadastrarDadosBancario
             // 
-            this.bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
-            // 
-            // buttonCancelar
-            // 
-            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(737, 439);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 51;
-            this.buttonCancelar.Text = "Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // buttonSalvar
-            // 
-            this.buttonSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSalvar.Location = new System.Drawing.Point(635, 439);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 50;
-            this.buttonSalvar.Text = "&Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(226, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 20);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "Numero da Agencia";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(226, 128);
+            label4.Name = "label4";
+            label4.Size = new Size(146, 20);
+            label4.TabIndex = 57;
+            label4.Text = "Numero da Agencia";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(428, 128);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 20);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Numero da Conta";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(428, 128);
+            label3.Name = "label3";
+            label3.Size = new Size(131, 20);
+            label3.TabIndex = 56;
+            label3.Text = "Numero da Conta";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(11, 348);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 20);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "Observação";
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(11, 348);
+            label7.Name = "label7";
+            label7.Size = new Size(90, 20);
+            label7.TabIndex = 54;
+            label7.Text = "Observação";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(27, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 20);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Nome do Banco";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(27, 129);
+            label1.Name = "label1";
+            label1.Size = new Size(119, 20);
+            label1.TabIndex = 53;
+            label1.Text = "Nome do Banco";
             // 
             // textBoxTelefone
             // 
-            this.textBoxTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "NumeroAgencia", true));
-            this.textBoxTelefone.Location = new System.Drawing.Point(226, 151);
-            this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(194, 27);
-            this.textBoxTelefone.TabIndex = 38;
+            textBoxTelefone.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NumeroAgencia", true));
+            textBoxTelefone.Location = new Point(226, 151);
+            textBoxTelefone.Name = "textBoxTelefone";
+            textBoxTelefone.Size = new Size(194, 27);
+            textBoxTelefone.TabIndex = 38;
             // 
             // textBoxCpfCnpj
             // 
-            this.textBoxCpfCnpj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "NumeroConta", true));
-            this.textBoxCpfCnpj.Location = new System.Drawing.Point(426, 151);
-            this.textBoxCpfCnpj.Name = "textBoxCpfCnpj";
-            this.textBoxCpfCnpj.Size = new System.Drawing.Size(194, 27);
-            this.textBoxCpfCnpj.TabIndex = 39;
+            textBoxCpfCnpj.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NumeroConta", true));
+            textBoxCpfCnpj.Location = new Point(426, 151);
+            textBoxCpfCnpj.Name = "textBoxCpfCnpj";
+            textBoxCpfCnpj.Size = new Size(194, 27);
+            textBoxCpfCnpj.TabIndex = 39;
             // 
             // textBoxDescricao
             // 
-            this.textBoxDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "Obs", true));
-            this.textBoxDescricao.Location = new System.Drawing.Point(11, 371);
-            this.textBoxDescricao.Name = "textBoxDescricao";
-            this.textBoxDescricao.Size = new System.Drawing.Size(809, 27);
-            this.textBoxDescricao.TabIndex = 49;
+            textBoxDescricao.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Obs", true));
+            textBoxDescricao.Location = new Point(11, 371);
+            textBoxDescricao.Name = "textBoxDescricao";
+            textBoxDescricao.Size = new Size(809, 27);
+            textBoxDescricao.TabIndex = 49;
             // 
             // textBoxNome
             // 
-            this.textBoxNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "NomeBanco", true));
-            this.textBoxNome.Location = new System.Drawing.Point(27, 151);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(193, 27);
-            this.textBoxNome.TabIndex = 37;
+            textBoxNome.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeBanco", true));
+            textBoxNome.Location = new Point(27, 151);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.Size = new Size(193, 27);
+            textBoxNome.TabIndex = 37;
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(27, 191);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(102, 20);
-            this.label16.TabIndex = 68;
-            this.label16.Text = "Tipo de conta";
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.Location = new Point(27, 191);
+            label16.Name = "label16";
+            label16.Size = new Size(102, 20);
+            label16.TabIndex = 68;
+            label16.Text = "Tipo de conta";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(226, 192);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 20);
-            this.label5.TabIndex = 71;
-            this.label5.Text = "Nome do Titular";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(226, 192);
+            label5.Name = "label5";
+            label5.Size = new Size(121, 20);
+            label5.TabIndex = 71;
+            label5.Text = "Nome do Titular";
             // 
             // textBox8
             // 
-            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "NomeTitular", true));
-            this.textBox8.Location = new System.Drawing.Point(226, 214);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(193, 27);
-            this.textBox8.TabIndex = 70;
+            textBox8.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeTitular", true));
+            textBox8.Location = new Point(226, 214);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(193, 27);
+            textBox8.TabIndex = 70;
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(428, 193);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 20);
-            this.label17.TabIndex = 73;
-            this.label17.Text = "CPF / CNPJ";
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Location = new Point(428, 193);
+            label17.Name = "label17";
+            label17.Size = new Size(84, 20);
+            label17.TabIndex = 73;
+            label17.Text = "CPF / CNPJ";
             // 
             // textBox9
             // 
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "CpfCnpj", true));
-            this.textBox9.Location = new System.Drawing.Point(428, 215);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(193, 27);
-            this.textBox9.TabIndex = 72;
+            textBox9.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "CpfCnpj", true));
+            textBox9.Location = new Point(428, 215);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(193, 27);
+            textBox9.TabIndex = 72;
             // 
             // label18
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(627, 192);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(57, 20);
-            this.label18.TabIndex = 75;
-            this.label18.Text = "Celular";
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.Location = new Point(627, 192);
+            label18.Name = "label18";
+            label18.Size = new Size(57, 20);
+            label18.TabIndex = 75;
+            label18.Text = "Celular";
             // 
             // textBox10
             // 
-            this.textBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "Telefone", true));
-            this.textBox10.Location = new System.Drawing.Point(627, 214);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(193, 27);
-            this.textBox10.TabIndex = 74;
+            textBox10.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Telefone", true));
+            textBox10.Location = new Point(627, 214);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(193, 27);
+            textBox10.TabIndex = 74;
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(128, 253);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 20);
-            this.label9.TabIndex = 77;
-            this.label9.Text = "E-mail";
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(128, 253);
+            label9.Name = "label9";
+            label9.Size = new Size(52, 20);
+            label9.TabIndex = 77;
+            label9.Text = "E-mail";
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "Email", true));
-            this.textBox1.Location = new System.Drawing.Point(128, 275);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 27);
-            this.textBox1.TabIndex = 76;
+            textBox1.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Email", true));
+            textBox1.Location = new Point(128, 275);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(193, 27);
+            textBox1.TabIndex = 76;
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(329, 251);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 20);
-            this.label15.TabIndex = 78;
-            this.label15.Text = "Tipo de Moeda";
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Location = new Point(329, 251);
+            label15.Name = "label15";
+            label15.Size = new Size(112, 20);
+            label15.TabIndex = 78;
+            label15.Text = "Tipo de Moeda";
             // 
             // label19
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(562, 253);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(44, 20);
-            this.label19.TabIndex = 81;
-            this.label19.Text = "IBAN";
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.Location = new Point(562, 253);
+            label19.Name = "label19";
+            label19.Size = new Size(44, 20);
+            label19.TabIndex = 81;
+            label19.Text = "IBAN";
             // 
             // textBox7
             // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarDadosBancario, "Iban", true));
-            this.textBox7.Location = new System.Drawing.Point(562, 275);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(193, 27);
-            this.textBox7.TabIndex = 80;
+            textBox7.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Iban", true));
+            textBox7.Location = new Point(562, 275);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(193, 27);
+            textBox7.TabIndex = 80;
             // 
             // textBoxTipoDeMoeda
             // 
-            this.textBoxTipoDeMoeda.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoDeMoedaBindingSource, "TipoMoeda", true));
-            this.textBoxTipoDeMoeda.Location = new System.Drawing.Point(327, 275);
-            this.textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
-            this.textBoxTipoDeMoeda.Size = new System.Drawing.Size(193, 27);
-            this.textBoxTipoDeMoeda.TabIndex = 72;
+            textBoxTipoDeMoeda.DataBindings.Add(new Binding("Text", tipoDeMoedaBindingSource, "TipoMoeda", true));
+            textBoxTipoDeMoeda.Location = new Point(327, 275);
+            textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
+            textBoxTipoDeMoeda.Size = new Size(193, 27);
+            textBoxTipoDeMoeda.TabIndex = 72;
             // 
             // tipoDeMoedaBindingSource
             // 
-            this.tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
+            tipoDeMoedaBindingSource.DataSource = typeof(Models.TipoDeMoeda);
             // 
             // buttonTipoMoeda
             // 
-            this.buttonTipoMoeda.Location = new System.Drawing.Point(526, 273);
-            this.buttonTipoMoeda.Name = "buttonTipoMoeda";
-            this.buttonTipoMoeda.Size = new System.Drawing.Size(30, 29);
-            this.buttonTipoMoeda.TabIndex = 82;
-            this.buttonTipoMoeda.Text = "...";
-            this.buttonTipoMoeda.UseVisualStyleBackColor = true;
-            this.buttonTipoMoeda.Click += new System.EventHandler(this.buttonTipoDeMoeda_Click);
+            buttonTipoMoeda.Location = new Point(526, 273);
+            buttonTipoMoeda.Name = "buttonTipoMoeda";
+            buttonTipoMoeda.Size = new Size(30, 29);
+            buttonTipoMoeda.TabIndex = 82;
+            buttonTipoMoeda.Text = "...";
+            buttonTipoMoeda.UseVisualStyleBackColor = true;
+            buttonTipoMoeda.Click += buttonTipoDeMoeda_Click;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(181, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 29);
-            this.button1.TabIndex = 83;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(181, 215);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 29);
+            button1.TabIndex = 83;
+            button1.Text = "...";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // textBoxTipoConta
             // 
-            this.textBoxTipoConta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoDeContaBindingSource, "TipoConta", true));
-            this.textBoxTipoConta.Location = new System.Drawing.Point(11, 217);
-            this.textBoxTipoConta.Name = "textBoxTipoConta";
-            this.textBoxTipoConta.Size = new System.Drawing.Size(161, 27);
-            this.textBoxTipoConta.TabIndex = 76;
+            textBoxTipoConta.DataBindings.Add(new Binding("Text", tipoDeContaBindingSource, "TipoConta", true));
+            textBoxTipoConta.Location = new Point(11, 217);
+            textBoxTipoConta.Name = "textBoxTipoConta";
+            textBoxTipoConta.Size = new Size(161, 27);
+            textBoxTipoConta.TabIndex = 76;
             // 
             // tipoDeContaBindingSource
             // 
-            this.tipoDeContaBindingSource.DataSource = typeof(Models.TipoDeConta);
+            tipoDeContaBindingSource.DataSource = typeof(Models.TipoDeConta);
             // 
             // FormCadastrarDadosBancarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCancelar;
-            this.ClientSize = new System.Drawing.Size(857, 475);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonTipoMoeda);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBoxTipoConta);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBoxTipoDeMoeda);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxEmail);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxTelefone);
-            this.Controls.Add(this.textBoxCpfCnpj);
-            this.Controls.Add(this.textBoxDescricao);
-            this.Controls.Add(this.textBoxNome);
-            this.Name = "FormCadastrarDadosBancarios";
-            this.Text = "FormCadastrarDadosBancarios";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarDadosBancario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoDeMoedaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoDeContaBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(857, 475);
+            Controls.Add(button1);
+            Controls.Add(buttonTipoMoeda);
+            Controls.Add(label19);
+            Controls.Add(textBox7);
+            Controls.Add(label15);
+            Controls.Add(label9);
+            Controls.Add(textBoxTipoConta);
+            Controls.Add(textBox1);
+            Controls.Add(label18);
+            Controls.Add(textBox10);
+            Controls.Add(label17);
+            Controls.Add(textBoxTipoDeMoeda);
+            Controls.Add(textBox9);
+            Controls.Add(label5);
+            Controls.Add(textBox8);
+            Controls.Add(label16);
+            Controls.Add(label2);
+            Controls.Add(label6);
+            Controls.Add(textBoxEmail);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label7);
+            Controls.Add(label1);
+            Controls.Add(textBoxTelefone);
+            Controls.Add(textBoxCpfCnpj);
+            Controls.Add(textBoxDescricao);
+            Controls.Add(textBoxNome);
+            Name = "FormCadastrarDadosBancarios";
+            Text = "FormCadastrarDadosBancarios";
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -396,8 +369,6 @@
         private Label label2;
         private Label label6;
         private TextBox textBoxEmail;
-        private Button buttonCancelar;
-        private Button buttonSalvar;
         private Label label4;
         private Label label3;
         private Label label7;

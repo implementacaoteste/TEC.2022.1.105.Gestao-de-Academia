@@ -78,15 +78,15 @@
             textBox12 = new TextBox();
             label21 = new Label();
             label22 = new Label();
-            label23 = new Label();
             label24 = new Label();
             textBox13 = new TextBox();
             textBox14 = new TextBox();
-            textBox15 = new TextBox();
             textBox16 = new TextBox();
             label25 = new Label();
             label27 = new Label();
             textBox17 = new TextBox();
+            textBox15 = new TextBox();
+            label23 = new Label();
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFornecedor).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -396,6 +396,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(textBox15);
+            tabPage1.Controls.Add(label23);
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(textBoxNome);
             tabPage1.Controls.Add(textBoxCpfCnpj);
@@ -442,8 +444,6 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(textBox15);
-            tabPage3.Controls.Add(label23);
             tabPage3.Controls.Add(textBox8);
             tabPage3.Controls.Add(label19);
             tabPage3.Controls.Add(buttonTipoMoeda);
@@ -582,17 +582,6 @@
             label22.TabIndex = 92;
             label22.Text = "Numero da Conta";
             // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label23.Location = new Point(6, 132);
-            label23.Name = "label23";
-            label23.Size = new Size(75, 20);
-            label23.TabIndex = 91;
-            label23.Text = "Descrição";
-            label23.Click += label23_Click;
-            // 
             // label24
             // 
             label24.AutoSize = true;
@@ -618,14 +607,6 @@
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(194, 27);
             textBox14.TabIndex = 86;
-            // 
-            // textBox15
-            // 
-            textBox15.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Obs", true));
-            textBox15.Location = new Point(6, 155);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(809, 27);
-            textBox15.TabIndex = 88;
             // 
             // textBox16
             // 
@@ -662,6 +643,24 @@
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(194, 27);
             textBox17.TabIndex = 87;
+            // 
+            // textBox15
+            // 
+            textBox15.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Obs", true));
+            textBox15.Location = new Point(22, 167);
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(809, 27);
+            textBox15.TabIndex = 92;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label23.Location = new Point(22, 144);
+            label23.Name = "label23";
+            label23.Size = new Size(75, 20);
+            label23.TabIndex = 93;
+            label23.Text = "Descrição";
             // 
             // FormCadastrarFornecedor
             // 
