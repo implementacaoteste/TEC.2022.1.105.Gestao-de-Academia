@@ -406,8 +406,15 @@
             Controls.Add(cPFTextBox);
             Controls.Add(nomeLabel);
             Controls.Add(nomeTextBox);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCadastroCliente";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
             Load += FormCadastroCliente_Load;
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).EndInit();

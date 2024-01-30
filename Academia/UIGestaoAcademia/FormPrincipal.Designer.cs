@@ -42,22 +42,15 @@
             relatórioDeVendasToolStripMenuItem = new ToolStripMenuItem();
             comprasToolStripMenuItem = new ToolStripMenuItem();
             comprasDeProdutosToolStripMenuItem = new ToolStripMenuItem();
-            fornecedorToolStripMenuItem1 = new ToolStripMenuItem();
             exercicioToolStripMenuItem = new ToolStripMenuItem();
-
             planoAssinaturaToolStripMenuItem = new ToolStripMenuItem();
-
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, fornecedorToolStripMenuItem1, exercicioToolStripMenuItem, planoAssinaturaToolStripMenuItem });
-
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, fornecedorToolStripMenuItem1, exercicioToolStripMenuItem });
-
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, planoAssinaturaToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, exercicioToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(856, 28);
@@ -132,9 +125,6 @@
             vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
             vENDASToolStripMenuItem.Size = new Size(70, 24);
             vENDASToolStripMenuItem.Text = "Vendas";
-
-
-
             // 
             // iniciarVendaToolStripMenuItem
             // 
@@ -166,20 +156,12 @@
             comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
             comprasDeProdutosToolStripMenuItem.Click += comprasDeProdutosToolStripMenuItem_Click;
             // 
-            // fornecedorToolStripMenuItem1
-            // 
-            fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
-            fornecedorToolStripMenuItem1.Size = new Size(98, 24);
-            fornecedorToolStripMenuItem1.Text = "Fornecedor";
-            fornecedorToolStripMenuItem1.Click += fornecedorToolStripMenuItem1_Click;
-            // 
             // exercicioToolStripMenuItem
             // 
             exercicioToolStripMenuItem.Name = "exercicioToolStripMenuItem";
             exercicioToolStripMenuItem.Size = new Size(82, 24);
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
-
             // 
             // planoAssinaturaToolStripMenuItem
             // 
@@ -187,7 +169,6 @@
             planoAssinaturaToolStripMenuItem.Size = new Size(130, 24);
             planoAssinaturaToolStripMenuItem.Text = "Plano assinatura";
             planoAssinaturaToolStripMenuItem.Click += planoAssinaturaToolStripMenuItem_Click;
-
             // 
             // FormPrincipal
             // 
@@ -195,12 +176,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(856, 590);
             Controls.Add(menuStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormPrincipal";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Módulo configuração";
             WindowState = FormWindowState.Maximized;
             Load += FormPrincipal_Load;
             KeyDown += FormPrincipal_KeyDown;
@@ -228,7 +213,6 @@
         private ToolStripMenuItem comprasToolStripMenuItem;
         private ToolStripMenuItem comprasDeProdutosToolStripMenuItem;
         private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
-        private ToolStripMenuItem fornecedorToolStripMenuItem1;
         private ToolStripMenuItem exercicioToolStripMenuItem;
         private ToolStripMenuItem planoAssinaturaToolStripMenuItem;
     }

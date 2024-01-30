@@ -48,7 +48,7 @@
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(781, 53);
+            label2.Size = new Size(789, 53);
             label2.TabIndex = 31;
             label2.Text = "Cadastrar plano de assinatura";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -61,7 +61,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(594, 142);
+            label6.Location = new Point(586, 106);
             label6.Name = "label6";
             label6.Size = new Size(96, 20);
             label6.TabIndex = 36;
@@ -70,15 +70,14 @@
             // textBox1
             // 
             textBox1.DataBindings.Add(new Binding("Text", bindingSourceCadastrarPlanoAssinatura, "Desconto", true));
-            textBox1.Location = new Point(590, 165);
+            textBox1.Location = new Point(582, 129);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(191, 27);
             textBox1.TabIndex = 26;
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(675, 364);
+            buttonCancelar.Location = new Point(680, 183);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 30;
@@ -89,7 +88,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(400, 143);
+            label3.Location = new Point(392, 107);
             label3.Name = "label3";
             label3.Size = new Size(110, 20);
             label3.TabIndex = 33;
@@ -99,7 +98,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(8, 143);
+            label1.Location = new Point(0, 107);
             label1.Name = "label1";
             label1.Size = new Size(103, 20);
             label1.TabIndex = 32;
@@ -108,7 +107,7 @@
             // textBoxValorPlano
             // 
             textBoxValorPlano.DataBindings.Add(new Binding("Text", bindingSourceCadastrarPlanoAssinatura, "ValorPlano", true));
-            textBoxValorPlano.Location = new Point(400, 165);
+            textBoxValorPlano.Location = new Point(392, 129);
             textBoxValorPlano.Name = "textBoxValorPlano";
             textBoxValorPlano.Size = new Size(184, 27);
             textBoxValorPlano.TabIndex = 25;
@@ -116,15 +115,14 @@
             // textBoxNome
             // 
             textBoxNome.DataBindings.Add(new Binding("Text", bindingSourceCadastrarPlanoAssinatura, "TipoPlano", true));
-            textBoxNome.Location = new Point(8, 165);
+            textBoxNome.Location = new Point(0, 129);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(386, 27);
             textBoxNome.TabIndex = 24;
             // 
             // buttonSalvar
             // 
-            buttonSalvar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSalvar.Location = new Point(575, 364);
+            buttonSalvar.Location = new Point(580, 183);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(94, 29);
             buttonSalvar.TabIndex = 37;
@@ -136,7 +134,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(781, 405);
+            ClientSize = new Size(789, 262);
             Controls.Add(buttonSalvar);
             Controls.Add(label2);
             Controls.Add(label6);
@@ -146,8 +144,14 @@
             Controls.Add(label1);
             Controls.Add(textBoxValorPlano);
             Controls.Add(textBoxNome);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormCadastrarPlanoAssinatura";
-            Text = "d";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarPlanoAssinatura).EndInit();
             ResumeLayout(false);
             PerformLayout();

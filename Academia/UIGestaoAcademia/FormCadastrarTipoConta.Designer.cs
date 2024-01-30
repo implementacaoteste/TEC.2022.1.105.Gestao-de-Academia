@@ -28,89 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.buttonSair = new System.Windows.Forms.Button();
-            this.labelNomeProfessor = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxTipoConta = new System.Windows.Forms.TextBox();
-            this.bindingSourceCadastrarTipoDeConta = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonCadastrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarTipoDeConta)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            buttonSair = new Button();
+            labelNomeProfessor = new Label();
+            label1 = new Label();
+            textBoxTipoConta = new TextBox();
+            bindingSourceCadastrarTipoDeConta = new BindingSource(components);
+            buttonCadastrar = new Button();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarTipoDeConta).BeginInit();
+            SuspendLayout();
             // 
             // buttonSair
             // 
-            this.buttonSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSair.Location = new System.Drawing.Point(437, 124);
-            this.buttonSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSair.Name = "buttonSair";
-            this.buttonSair.Size = new System.Drawing.Size(86, 31);
-            this.buttonSair.TabIndex = 11;
-            this.buttonSair.Text = "Sair";
-            this.buttonSair.UseVisualStyleBackColor = true;
+            buttonSair.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonSair.Location = new Point(437, 137);
+            buttonSair.Margin = new Padding(3, 4, 3, 4);
+            buttonSair.Name = "buttonSair";
+            buttonSair.Size = new Size(86, 31);
+            buttonSair.TabIndex = 11;
+            buttonSair.Text = "Sair";
+            buttonSair.UseVisualStyleBackColor = true;
             // 
             // labelNomeProfessor
             // 
-            this.labelNomeProfessor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelNomeProfessor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelNomeProfessor.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNomeProfessor.Location = new System.Drawing.Point(0, 0);
-            this.labelNomeProfessor.Name = "labelNomeProfessor";
-            this.labelNomeProfessor.Size = new System.Drawing.Size(536, 60);
-            this.labelNomeProfessor.TabIndex = 10;
-            this.labelNomeProfessor.Text = "Tipo de Conta";
+            labelNomeProfessor.BackColor = SystemColors.ActiveCaption;
+            labelNomeProfessor.Dock = DockStyle.Top;
+            labelNomeProfessor.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            labelNomeProfessor.Location = new Point(0, 0);
+            labelNomeProfessor.Name = "labelNomeProfessor";
+            labelNomeProfessor.Size = new Size(536, 60);
+            labelNomeProfessor.TabIndex = 10;
+            labelNomeProfessor.Text = "Tipo de Conta";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Tipo";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 65);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 20);
+            label1.TabIndex = 9;
+            label1.Text = "Tipo";
             // 
             // textBoxTipoConta
             // 
-            this.textBoxTipoConta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarTipoDeConta, "TipoConta", true));
-            this.textBoxTipoConta.Location = new System.Drawing.Point(12, 89);
-            this.textBoxTipoConta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxTipoConta.Name = "textBoxTipoConta";
-            this.textBoxTipoConta.Size = new System.Drawing.Size(501, 27);
-            this.textBoxTipoConta.TabIndex = 8;
-            this.textBoxTipoConta.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            textBoxTipoConta.DataBindings.Add(new Binding("Text", bindingSourceCadastrarTipoDeConta, "TipoConta", true));
+            textBoxTipoConta.Location = new Point(12, 89);
+            textBoxTipoConta.Margin = new Padding(3, 4, 3, 4);
+            textBoxTipoConta.Name = "textBoxTipoConta";
+            textBoxTipoConta.Size = new Size(511, 27);
+            textBoxTipoConta.TabIndex = 8;
+            textBoxTipoConta.TextChanged += textBox1_TextChanged;
             // 
             // bindingSourceCadastrarTipoDeConta
             // 
-            this.bindingSourceCadastrarTipoDeConta.DataSource = typeof(Models.TipoDeConta);
+            bindingSourceCadastrarTipoDeConta.DataSource = typeof(Models.TipoDeConta);
             // 
             // buttonCadastrar
             // 
-            this.buttonCadastrar.Location = new System.Drawing.Point(345, 124);
-            this.buttonCadastrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCadastrar.Name = "buttonCadastrar";
-            this.buttonCadastrar.Size = new System.Drawing.Size(86, 31);
-            this.buttonCadastrar.TabIndex = 7;
-            this.buttonCadastrar.Text = "Cadastrar";
-            this.buttonCadastrar.UseVisualStyleBackColor = true;
-            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
+            buttonCadastrar.Location = new Point(345, 137);
+            buttonCadastrar.Margin = new Padding(3, 4, 3, 4);
+            buttonCadastrar.Name = "buttonCadastrar";
+            buttonCadastrar.Size = new Size(86, 31);
+            buttonCadastrar.TabIndex = 7;
+            buttonCadastrar.Text = "Cadastrar";
+            buttonCadastrar.UseVisualStyleBackColor = true;
+            buttonCadastrar.Click += buttonCadastrar_Click;
             // 
             // FormCadastrarTipoConta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonSair;
-            this.ClientSize = new System.Drawing.Size(536, 181);
-            this.Controls.Add(this.buttonSair);
-            this.Controls.Add(this.labelNomeProfessor);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxTipoConta);
-            this.Controls.Add(this.buttonCadastrar);
-            this.Name = "FormCadastrarTipoConta";
-            this.Text = "FormCadastrarTipoConta";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarTipoDeConta)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonSair;
+            ClientSize = new Size(536, 181);
+            Controls.Add(buttonSair);
+            Controls.Add(labelNomeProfessor);
+            Controls.Add(label1);
+            Controls.Add(textBoxTipoConta);
+            Controls.Add(buttonCadastrar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormCadastrarTipoConta";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarTipoDeConta).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

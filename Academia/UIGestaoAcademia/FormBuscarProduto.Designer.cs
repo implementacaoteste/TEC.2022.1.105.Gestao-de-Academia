@@ -180,7 +180,7 @@
             // label1
             // 
             label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
             label1.Size = new Size(1093, 67);
@@ -268,8 +268,14 @@
             Controls.Add(buttonAlterar);
             Controls.Add(buttonBuscar);
             Controls.Add(textBoxBuscarPor);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormBuscarProduto";
-            Text = "FormBuscarProduto";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourceProduto).EndInit();
             ResumeLayout(false);

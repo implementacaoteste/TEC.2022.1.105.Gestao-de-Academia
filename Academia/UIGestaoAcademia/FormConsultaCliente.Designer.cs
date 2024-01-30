@@ -340,9 +340,15 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(clienteDataGridView);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormConsultaCliente";
-            Text = "FormConsultaCliente";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Load += FormConsultaCliente_Load;
             ((System.ComponentModel.ISupportInitialize)clienteDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).EndInit();

@@ -83,7 +83,7 @@
             dataGridViewPlanoAssinatura.ReadOnly = true;
             dataGridViewPlanoAssinatura.RowHeadersWidth = 51;
             dataGridViewPlanoAssinatura.RowTemplate.Height = 29;
-            dataGridViewPlanoAssinatura.Size = new Size(681, 341);
+            dataGridViewPlanoAssinatura.Size = new Size(687, 341);
             dataGridViewPlanoAssinatura.TabIndex = 39;
             // 
             // idDataGridViewTextBoxColumn
@@ -135,7 +135,7 @@
             // buttonBuscar
             // 
             buttonBuscar.Anchor = AnchorStyles.Left;
-            buttonBuscar.Location = new Point(302, 127);
+            buttonBuscar.Location = new Point(315, 127);
             buttonBuscar.Name = "buttonBuscar";
             buttonBuscar.Size = new Size(94, 31);
             buttonBuscar.TabIndex = 35;
@@ -161,7 +161,7 @@
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(-79, 0);
             label1.Name = "label1";
             label1.Size = new Size(899, 67);
@@ -184,7 +184,7 @@
             // buttonExcluir
             // 
             buttonExcluir.Anchor = AnchorStyles.Left;
-            buttonExcluir.Location = new Point(605, 129);
+            buttonExcluir.Location = new Point(615, 127);
             buttonExcluir.Name = "buttonExcluir";
             buttonExcluir.Size = new Size(94, 31);
             buttonExcluir.TabIndex = 38;
@@ -195,7 +195,7 @@
             // buttonInserir
             // 
             buttonInserir.Anchor = AnchorStyles.Left;
-            buttonInserir.Location = new Point(505, 129);
+            buttonInserir.Location = new Point(515, 127);
             buttonInserir.Name = "buttonInserir";
             buttonInserir.Size = new Size(94, 31);
             buttonInserir.TabIndex = 37;
@@ -206,7 +206,7 @@
             // buttonAlterar
             // 
             buttonAlterar.Anchor = AnchorStyles.Left;
-            buttonAlterar.Location = new Point(405, 129);
+            buttonAlterar.Location = new Point(415, 127);
             buttonAlterar.Name = "buttonAlterar";
             buttonAlterar.Size = new Size(94, 31);
             buttonAlterar.TabIndex = 36;
@@ -217,9 +217,9 @@
             // textBoxBuscarPor
             // 
             textBoxBuscarPor.Anchor = AnchorStyles.Left;
-            textBoxBuscarPor.Location = new Point(166, 129);
+            textBoxBuscarPor.Location = new Point(168, 129);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(133, 27);
+            textBoxBuscarPor.Size = new Size(141, 27);
             textBoxBuscarPor.TabIndex = 34;
             // 
             // buttonSelecionar
@@ -238,6 +238,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancelar;
             ClientSize = new Size(729, 553);
             Controls.Add(comboBoxBuscarPor);
             Controls.Add(dataGridViewPlanoAssinatura);
@@ -250,8 +251,14 @@
             Controls.Add(buttonAlterar);
             Controls.Add(textBoxBuscarPor);
             Controls.Add(buttonSelecionar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormBuscarPlanoAssinatura";
-            Text = "FormPlanoAssinatura";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlanoAssinatura).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourcePlanoAssinatura).EndInit();
             ResumeLayout(false);

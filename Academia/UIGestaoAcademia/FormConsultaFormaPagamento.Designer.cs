@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             bindingSourceFormaPagamento = new BindingSource(components);
             label2 = new Label();
             textBoxBuscarPor = new TextBox();
@@ -59,7 +59,7 @@
             label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(1072, 72);
+            label2.Size = new Size(1072, 71);
             label2.TabIndex = 7;
             label2.Text = "Consultar formas de pagamentos";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -198,8 +198,8 @@
             // QuantidadeParcelas
             // 
             QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle2;
             QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
             QuantidadeParcelas.MinimumWidth = 6;
             QuantidadeParcelas.Name = "QuantidadeParcelas";
@@ -224,11 +224,13 @@
             Controls.Add(dataGridViewProduto);
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormConsultaFormaPagamento";
             ShowIcon = false;
             ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Load += FormConsultaFormaPagamento_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSourceFormaPagamento).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();

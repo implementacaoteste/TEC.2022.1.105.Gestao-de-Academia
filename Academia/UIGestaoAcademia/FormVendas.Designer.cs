@@ -378,6 +378,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(954, 863);
             Controls.Add(textBox1);
             Controls.Add(labelNomeUsuarioLogado);
@@ -392,6 +393,7 @@
             Controls.Add(label3);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            KeyPreview = true;
             Name = "FormVendas";
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormVendas_Load;

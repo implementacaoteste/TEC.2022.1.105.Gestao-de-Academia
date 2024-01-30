@@ -28,73 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxExercicio = new System.Windows.Forms.TextBox();
-            this.exercicioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.exercicioBindingSource)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            label1 = new Label();
+            textBoxExercicio = new TextBox();
+            exercicioBindingSource = new BindingSource(components);
+            buttonSalvar = new Button();
+            buttonCancelar = new Button();
+            ((System.ComponentModel.ISupportInitialize)exercicioBindingSource).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(500, 101);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Cadastrar exercício";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.Dock = DockStyle.Top;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(500, 101);
+            label1.TabIndex = 30;
+            label1.Text = "Cadastrar exercício";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBoxExercicio
             // 
-            this.textBoxExercicio.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.exercicioBindingSource, "Nome", true));
-            this.textBoxExercicio.Location = new System.Drawing.Point(12, 152);
-            this.textBoxExercicio.Name = "textBoxExercicio";
-            this.textBoxExercicio.Size = new System.Drawing.Size(474, 27);
-            this.textBoxExercicio.TabIndex = 31;
+            textBoxExercicio.DataBindings.Add(new Binding("Text", exercicioBindingSource, "Nome", true));
+            textBoxExercicio.Location = new Point(12, 152);
+            textBoxExercicio.Name = "textBoxExercicio";
+            textBoxExercicio.Size = new Size(474, 27);
+            textBoxExercicio.TabIndex = 31;
             // 
             // exercicioBindingSource
             // 
-            this.exercicioBindingSource.DataSource = typeof(Models.Exercicio);
+            exercicioBindingSource.DataSource = typeof(Models.Exercicio);
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(292, 283);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 32;
-            this.buttonSalvar.Text = "&Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            buttonSalvar.Location = new Point(292, 283);
+            buttonSalvar.Name = "buttonSalvar";
+            buttonSalvar.Size = new Size(94, 29);
+            buttonSalvar.TabIndex = 32;
+            buttonSalvar.Text = "&Salvar";
+            buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(392, 283);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 32;
-            this.buttonCancelar.Text = "&Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Location = new Point(392, 283);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.TabIndex = 32;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // FormCadastrarExercicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCancelar;
-            this.ClientSize = new System.Drawing.Size(500, 324);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.textBoxExercicio);
-            this.Controls.Add(this.label1);
-            this.Name = "FormCadastrarExercicio";
-            this.Text = "]";
-            ((System.ComponentModel.ISupportInitialize)(this.exercicioBindingSource)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancelar;
+            ClientSize = new Size(500, 324);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonSalvar);
+            Controls.Add(textBoxExercicio);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormCadastrarExercicio";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)exercicioBindingSource).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

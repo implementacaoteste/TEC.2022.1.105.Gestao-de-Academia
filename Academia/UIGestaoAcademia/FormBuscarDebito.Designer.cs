@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             comboBoxBuscarPor = new ComboBox();
             dataGridViewProduto = new DataGridView();
             NomeCliente = new DataGridViewTextBoxColumn();
@@ -145,8 +145,8 @@
             // jurosDataGridViewTextBoxColumn
             // 
             jurosDataGridViewTextBoxColumn.DataPropertyName = "Juros";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            jurosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            jurosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             jurosDataGridViewTextBoxColumn.HeaderText = "Juros";
             jurosDataGridViewTextBoxColumn.MinimumWidth = 6;
             jurosDataGridViewTextBoxColumn.Name = "jurosDataGridViewTextBoxColumn";
@@ -156,8 +156,8 @@
             // descontoDataGridViewTextBoxColumn
             // 
             descontoDataGridViewTextBoxColumn.DataPropertyName = "Desconto";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            descontoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            descontoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             descontoDataGridViewTextBoxColumn.HeaderText = "Desconto";
             descontoDataGridViewTextBoxColumn.MinimumWidth = 6;
             descontoDataGridViewTextBoxColumn.Name = "descontoDataGridViewTextBoxColumn";
@@ -167,8 +167,8 @@
             // acrescimoDataGridViewTextBoxColumn
             // 
             acrescimoDataGridViewTextBoxColumn.DataPropertyName = "Acrescimo";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
-            acrescimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleRight;
+            acrescimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             acrescimoDataGridViewTextBoxColumn.HeaderText = "Acréscimo";
             acrescimoDataGridViewTextBoxColumn.MinimumWidth = 6;
             acrescimoDataGridViewTextBoxColumn.Name = "acrescimoDataGridViewTextBoxColumn";
@@ -191,7 +191,7 @@
             // buttonSelecionar
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelecionar.Location = new Point(999, 452);
+            buttonSelecionar.Location = new Point(1001, 455);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 9;
@@ -223,7 +223,7 @@
             // buttonCancelar
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(1098, 452);
+            buttonCancelar.Location = new Point(1100, 455);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 10;
@@ -314,7 +314,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.LightGreen;
+            BackColor = Color.White;
             CancelButton = buttonCancelar;
             ClientSize = new Size(1201, 496);
             Controls.Add(dateTimePicker1);
@@ -332,6 +332,7 @@
             Controls.Add(textBoxBuscarPor);
             Controls.Add(dataGridViewProduto);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -339,6 +340,7 @@
             Name = "FormBuscarDebito";
             ShowIcon = false;
             ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Load += FormBuscarDebito_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
             ((System.ComponentModel.ISupportInitialize)controleDebitoBindingSource).EndInit();

@@ -257,7 +257,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1071, 324);
+            dataGridView1.Size = new Size(1044, 324);
             dataGridView1.TabIndex = 47;
             // 
             // compraProdutoIdDataGridViewTextBoxColumn

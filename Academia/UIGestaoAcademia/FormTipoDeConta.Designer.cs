@@ -28,232 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.buttonExcluirTipoConta = new System.Windows.Forms.Button();
-            this.buttonInserirTipoConta = new System.Windows.Forms.Button();
-            this.buttonBuscarTipoConta = new System.Windows.Forms.Button();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonAlterarTipoConta = new System.Windows.Forms.Button();
-            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoMoeda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoConta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BindingSourceTipoDeConta = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceTipoDeConta)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            textBoxBuscarPor = new TextBox();
+            buttonExcluirTipoConta = new Button();
+            buttonInserirTipoConta = new Button();
+            buttonBuscarTipoConta = new Button();
+            buttonSelecionar = new Button();
+            label1 = new Label();
+            buttonCancelar = new Button();
+            buttonAlterarTipoConta = new Button();
+            comboBoxBuscarPor = new ComboBox();
+            Id = new DataGridViewTextBoxColumn();
+            TipoMoeda = new DataGridViewTextBoxColumn();
+            Descricao = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            dataGridViewProduto = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            TipoConta = new DataGridViewTextBoxColumn();
+            BindingSourceTipoDeConta = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BindingSourceTipoDeConta).BeginInit();
+            SuspendLayout();
             // 
             // textBoxBuscarPor
             // 
-            this.textBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscarPor.Location = new System.Drawing.Point(173, 72);
-            this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
-            this.textBoxBuscarPor.TabIndex = 55;
-            this.textBoxBuscarPor.TextChanged += new System.EventHandler(this.textBoxBuscarPor_TextChanged);
+            textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxBuscarPor.Location = new Point(173, 72);
+            textBoxBuscarPor.Name = "textBoxBuscarPor";
+            textBoxBuscarPor.Size = new Size(454, 27);
+            textBoxBuscarPor.TabIndex = 55;
+            textBoxBuscarPor.TextChanged += textBoxBuscarPor_TextChanged;
             // 
             // buttonExcluirTipoConta
             // 
-            this.buttonExcluirTipoConta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirTipoConta.Location = new System.Drawing.Point(935, 72);
-            this.buttonExcluirTipoConta.Name = "buttonExcluirTipoConta";
-            this.buttonExcluirTipoConta.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluirTipoConta.TabIndex = 59;
-            this.buttonExcluirTipoConta.Text = "E&xcluir";
-            this.buttonExcluirTipoConta.UseVisualStyleBackColor = true;
-            this.buttonExcluirTipoConta.Click += new System.EventHandler(this.buttonExcluirMoeda_Click);
+            buttonExcluirTipoConta.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonExcluirTipoConta.Location = new Point(935, 72);
+            buttonExcluirTipoConta.Name = "buttonExcluirTipoConta";
+            buttonExcluirTipoConta.Size = new Size(94, 29);
+            buttonExcluirTipoConta.TabIndex = 59;
+            buttonExcluirTipoConta.Text = "E&xcluir";
+            buttonExcluirTipoConta.UseVisualStyleBackColor = true;
+            buttonExcluirTipoConta.Click += buttonExcluirMoeda_Click;
             // 
             // buttonInserirTipoConta
             // 
-            this.buttonInserirTipoConta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserirTipoConta.Location = new System.Drawing.Point(835, 72);
-            this.buttonInserirTipoConta.Name = "buttonInserirTipoConta";
-            this.buttonInserirTipoConta.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserirTipoConta.TabIndex = 58;
-            this.buttonInserirTipoConta.Text = "&Inserir";
-            this.buttonInserirTipoConta.UseVisualStyleBackColor = true;
-            this.buttonInserirTipoConta.Click += new System.EventHandler(this.buttonInserirMoeda_Click);
+            buttonInserirTipoConta.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonInserirTipoConta.Location = new Point(835, 72);
+            buttonInserirTipoConta.Name = "buttonInserirTipoConta";
+            buttonInserirTipoConta.Size = new Size(94, 29);
+            buttonInserirTipoConta.TabIndex = 58;
+            buttonInserirTipoConta.Text = "&Inserir";
+            buttonInserirTipoConta.UseVisualStyleBackColor = true;
+            buttonInserirTipoConta.Click += buttonInserirMoeda_Click;
             // 
             // buttonBuscarTipoConta
             // 
-            this.buttonBuscarTipoConta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscarTipoConta.Location = new System.Drawing.Point(635, 73);
-            this.buttonBuscarTipoConta.Name = "buttonBuscarTipoConta";
-            this.buttonBuscarTipoConta.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscarTipoConta.TabIndex = 56;
-            this.buttonBuscarTipoConta.Text = "&Buscar";
-            this.buttonBuscarTipoConta.UseVisualStyleBackColor = true;
-            this.buttonBuscarTipoConta.Click += new System.EventHandler(this.buttonBuscarMoeda_Click);
+            buttonBuscarTipoConta.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonBuscarTipoConta.Location = new Point(635, 73);
+            buttonBuscarTipoConta.Name = "buttonBuscarTipoConta";
+            buttonBuscarTipoConta.Size = new Size(94, 29);
+            buttonBuscarTipoConta.TabIndex = 56;
+            buttonBuscarTipoConta.Text = "&Buscar";
+            buttonBuscarTipoConta.UseVisualStyleBackColor = true;
+            buttonBuscarTipoConta.Click += buttonBuscarMoeda_Click;
             // 
             // buttonSelecionar
             // 
-            this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(837, 447);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSelecionar.TabIndex = 60;
-            this.buttonSelecionar.Text = "Se&lecionar";
-            this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
-            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
+            buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonSelecionar.Location = new Point(837, 447);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 60;
+            buttonSelecionar.Text = "Se&lecionar";
+            buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Buscar por";
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(24, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 62;
+            label1.Text = "Buscar por";
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(935, 447);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 61;
-            this.buttonCancelar.Text = "&Cancelar";
-            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancelar.Location = new Point(935, 447);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.TabIndex = 61;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.TextAlign = ContentAlignment.TopCenter;
+            buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonAlterarTipoConta
             // 
-            this.buttonAlterarTipoConta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterarTipoConta.Location = new System.Drawing.Point(735, 73);
-            this.buttonAlterarTipoConta.Name = "buttonAlterarTipoConta";
-            this.buttonAlterarTipoConta.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterarTipoConta.TabIndex = 57;
-            this.buttonAlterarTipoConta.Text = "&Alterar";
-            this.buttonAlterarTipoConta.UseVisualStyleBackColor = true;
-            this.buttonAlterarTipoConta.Click += new System.EventHandler(this.buttonAlterarMoeda_Click);
+            buttonAlterarTipoConta.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAlterarTipoConta.Location = new Point(735, 73);
+            buttonAlterarTipoConta.Name = "buttonAlterarTipoConta";
+            buttonAlterarTipoConta.Size = new Size(94, 29);
+            buttonAlterarTipoConta.TabIndex = 57;
+            buttonAlterarTipoConta.Text = "&Alterar";
+            buttonAlterarTipoConta.UseVisualStyleBackColor = true;
+            buttonAlterarTipoConta.Click += buttonAlterarMoeda_Click;
             // 
             // comboBoxBuscarPor
             // 
-            this.comboBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Items.AddRange(new object[] {
-            "Todos",
-            "Id"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(23, 72);
-            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxBuscarPor.TabIndex = 53;
+            comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Id" });
+            comboBoxBuscarPor.Location = new Point(23, 72);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(143, 28);
+            comboBoxBuscarPor.TabIndex = 53;
             // 
             // Id
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 125;
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 125;
             // 
             // TipoMoeda
             // 
-            this.TipoMoeda.DataPropertyName = "TipoMoeda";
-            this.TipoMoeda.HeaderText = "Moeda";
-            this.TipoMoeda.MinimumWidth = 6;
-            this.TipoMoeda.Name = "TipoMoeda";
-            this.TipoMoeda.ReadOnly = true;
-            this.TipoMoeda.Width = 125;
+            TipoMoeda.DataPropertyName = "TipoMoeda";
+            TipoMoeda.HeaderText = "Moeda";
+            TipoMoeda.MinimumWidth = 6;
+            TipoMoeda.Name = "TipoMoeda";
+            TipoMoeda.ReadOnly = true;
+            TipoMoeda.Width = 125;
             // 
             // Descricao
             // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Moeda";
-            this.Descricao.MinimumWidth = 6;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 125;
+            Descricao.DataPropertyName = "Descricao";
+            Descricao.HeaderText = "Moeda";
+            Descricao.MinimumWidth = 6;
+            Descricao.Name = "Descricao";
+            Descricao.Width = 125;
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1046, 72);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "Consultar Tipos de Conta\r\n";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(1046, 72);
+            label2.TabIndex = 54;
+            label2.Text = "Consultar Tipos de Conta\r\n";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // dataGridViewProduto
             // 
-            this.dataGridViewProduto.AllowUserToAddRows = false;
-            this.dataGridViewProduto.AllowUserToDeleteRows = false;
-            this.dataGridViewProduto.AllowUserToOrderColumns = true;
-            this.dataGridViewProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduto.AutoGenerateColumns = false;
-            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.TipoConta});
-            this.dataGridViewProduto.DataSource = this.BindingSourceTipoDeConta;
-            this.dataGridViewProduto.Location = new System.Drawing.Point(21, 113);
-            this.dataGridViewProduto.Name = "dataGridViewProduto";
-            this.dataGridViewProduto.ReadOnly = true;
-            this.dataGridViewProduto.RowHeadersWidth = 51;
-            this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(1005, 328);
-            this.dataGridViewProduto.TabIndex = 64;
+            dataGridViewProduto.AllowUserToAddRows = false;
+            dataGridViewProduto.AllowUserToDeleteRows = false;
+            dataGridViewProduto.AllowUserToOrderColumns = true;
+            dataGridViewProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProduto.AutoGenerateColumns = false;
+            dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, TipoConta });
+            dataGridViewProduto.DataSource = BindingSourceTipoDeConta;
+            dataGridViewProduto.Location = new Point(21, 113);
+            dataGridViewProduto.Name = "dataGridViewProduto";
+            dataGridViewProduto.ReadOnly = true;
+            dataGridViewProduto.RowHeadersWidth = 51;
+            dataGridViewProduto.RowTemplate.Height = 29;
+            dataGridViewProduto.Size = new Size(1005, 328);
+            dataGridViewProduto.TabIndex = 64;
             // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 125;
             // 
             // TipoConta
             // 
-            this.TipoConta.DataPropertyName = "TipoConta";
-            this.TipoConta.HeaderText = "TipoConta";
-            this.TipoConta.MinimumWidth = 6;
-            this.TipoConta.Name = "TipoConta";
-            this.TipoConta.ReadOnly = true;
-            this.TipoConta.Width = 125;
+            TipoConta.DataPropertyName = "TipoConta";
+            TipoConta.HeaderText = "TipoConta";
+            TipoConta.MinimumWidth = 6;
+            TipoConta.Name = "TipoConta";
+            TipoConta.ReadOnly = true;
+            TipoConta.Width = 125;
             // 
             // BindingSourceTipoDeConta
             // 
-            this.BindingSourceTipoDeConta.DataSource = typeof(Models.TipoDeConta);
+            BindingSourceTipoDeConta.DataSource = typeof(Models.TipoDeConta);
             // 
             // FormTipoDeConta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCancelar;
-            this.ClientSize = new System.Drawing.Size(1046, 506);
-            this.Controls.Add(this.dataGridViewProduto);
-            this.Controls.Add(this.textBoxBuscarPor);
-            this.Controls.Add(this.buttonExcluirTipoConta);
-            this.Controls.Add(this.buttonInserirTipoConta);
-            this.Controls.Add(this.buttonBuscarTipoConta);
-            this.Controls.Add(this.buttonSelecionar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonAlterarTipoConta);
-            this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.label2);
-            this.Name = "FormTipoDeConta";
-            this.Text = "FormTipoDeConta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BindingSourceTipoDeConta)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancelar;
+            ClientSize = new Size(1046, 506);
+            Controls.Add(dataGridViewProduto);
+            Controls.Add(textBoxBuscarPor);
+            Controls.Add(buttonExcluirTipoConta);
+            Controls.Add(buttonInserirTipoConta);
+            Controls.Add(buttonBuscarTipoConta);
+            Controls.Add(buttonSelecionar);
+            Controls.Add(label1);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonAlterarTipoConta);
+            Controls.Add(comboBoxBuscarPor);
+            Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormTipoDeConta";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BindingSourceTipoDeConta).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

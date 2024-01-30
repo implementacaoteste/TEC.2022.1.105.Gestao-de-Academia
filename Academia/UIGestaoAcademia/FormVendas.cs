@@ -123,14 +123,14 @@ namespace UIGestaoAcademia
 
                 try
                 {
-                    Venda vendas = (Venda)vendaBindingSource.Current;
+                    Venda venda = (Venda)vendaBindingSource.Current;
                     ItensVenda itensVenda = (ItensVenda)itensVendaBindingSource.Current;
 
                     vendaBindingSource.EndEdit();
                     itensVendaBindingSource.EndEdit();
 
                     if (id == 0)
-                        new VendasBLL().Inserir(vendas);
+                        new VendasBLL().Inserir(venda);
                     new ItensVendaBLL().Inserir(itensVenda);
 
                     MessageBox.Show("Registro salvo com sucesso!");

@@ -58,5 +58,10 @@ namespace UIGestaoAcademia
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

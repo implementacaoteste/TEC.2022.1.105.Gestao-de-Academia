@@ -28,87 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.bindingSourceCadastrarMoeda = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonSalvar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxValor = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarMoeda)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            bindingSourceCadastrarMoeda = new BindingSource(components);
+            label2 = new Label();
+            buttonCancelar = new Button();
+            buttonSalvar = new Button();
+            label3 = new Label();
+            textBoxValor = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarMoeda).BeginInit();
+            SuspendLayout();
             // 
             // bindingSourceCadastrarMoeda
             // 
-            this.bindingSourceCadastrarMoeda.DataSource = typeof(Models.TipoDeMoeda);
+            bindingSourceCadastrarMoeda.DataSource = typeof(Models.TipoDeMoeda);
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(874, 53);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Cadastrar/Alterar Moeda";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(874, 53);
+            label2.TabIndex = 42;
+            label2.Text = "Cadastrar/Alterar Moeda";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonCancelar.Location = new System.Drawing.Point(768, 249);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 41;
-            this.buttonCancelar.Text = "&Cancelar";
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Anchor = AnchorStyles.Right;
+            buttonCancelar.Location = new Point(768, 249);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.TabIndex = 41;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.buttonSalvar.Location = new System.Drawing.Point(668, 249);
-            this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSalvar.TabIndex = 40;
-            this.buttonSalvar.Text = "&Salvar";
-            this.buttonSalvar.UseVisualStyleBackColor = true;
-            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
+            buttonSalvar.Anchor = AnchorStyles.Right;
+            buttonSalvar.Location = new Point(668, 249);
+            buttonSalvar.Name = "buttonSalvar";
+            buttonSalvar.Size = new Size(94, 29);
+            buttonSalvar.TabIndex = 40;
+            buttonSalvar.Text = "&Salvar";
+            buttonSalvar.UseVisualStyleBackColor = true;
+            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(101, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
-            this.label3.TabIndex = 43;
-            this.label3.Text = "Moeda (Ex: BRL)";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(101, 124);
+            label3.Name = "label3";
+            label3.Size = new Size(120, 20);
+            label3.TabIndex = 43;
+            label3.Text = "Moeda (Ex: BRL)";
             // 
             // textBoxValor
             // 
-            this.textBoxValor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceCadastrarMoeda, "TipoMoeda", true));
-            this.textBoxValor.Location = new System.Drawing.Point(101, 147);
-            this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(661, 27);
-            this.textBoxValor.TabIndex = 30;
+            textBoxValor.DataBindings.Add(new Binding("Text", bindingSourceCadastrarMoeda, "TipoMoeda", true));
+            textBoxValor.Location = new Point(101, 147);
+            textBoxValor.Name = "textBoxValor";
+            textBoxValor.Size = new Size(661, 27);
+            textBoxValor.TabIndex = 30;
             // 
             // FormCadastrarMoeda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCancelar;
-            this.ClientSize = new System.Drawing.Size(874, 284);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxValor);
-            this.Name = "FormCadastrarMoeda";
-            this.Text = "FormCadastrarMoeda";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCadastrarMoeda)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancelar;
+            ClientSize = new Size(874, 284);
+            Controls.Add(label2);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonSalvar);
+            Controls.Add(label3);
+            Controls.Add(textBoxValor);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormCadastrarMoeda";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarMoeda).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -352,6 +352,7 @@
             Name = "FormCadastrarDebito";
             ShowIcon = false;
             ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDebito).EndInit();
             ((System.ComponentModel.ISupportInitialize)formaPagamentoBindingSource).EndInit();
             ResumeLayout(false);

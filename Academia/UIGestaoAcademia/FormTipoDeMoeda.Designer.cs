@@ -28,212 +28,210 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.textBoxBuscarPor = new System.Windows.Forms.TextBox();
-            this.bindingSourceTipoDeMoeda = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonExcluirMoeda = new System.Windows.Forms.Button();
-            this.buttonInserirMoeda = new System.Windows.Forms.Button();
-            this.buttonBuscarMoeda = new System.Windows.Forms.Button();
-            this.buttonSelecionar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonAlterarMoeda = new System.Windows.Forms.Button();
-            this.comboBoxBuscarPor = new System.Windows.Forms.ComboBox();
-            this.dataGridViewProduto = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoMoeda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipoDeMoeda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            textBoxBuscarPor = new TextBox();
+            bindingSourceTipoDeMoeda = new BindingSource(components);
+            buttonExcluirMoeda = new Button();
+            buttonInserirMoeda = new Button();
+            buttonBuscarMoeda = new Button();
+            buttonSelecionar = new Button();
+            label1 = new Label();
+            buttonCancelar = new Button();
+            buttonAlterarMoeda = new Button();
+            comboBoxBuscarPor = new ComboBox();
+            dataGridViewProduto = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            tipoMoedaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            Descricao = new DataGridViewTextBoxColumn();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceTipoDeMoeda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
+            SuspendLayout();
             // 
             // textBoxBuscarPor
             // 
-            this.textBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscarPor.Location = new System.Drawing.Point(178, 105);
-            this.textBoxBuscarPor.Name = "textBoxBuscarPor";
-            this.textBoxBuscarPor.Size = new System.Drawing.Size(454, 27);
-            this.textBoxBuscarPor.TabIndex = 1;
+            textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBoxBuscarPor.Location = new Point(178, 105);
+            textBoxBuscarPor.Name = "textBoxBuscarPor";
+            textBoxBuscarPor.Size = new Size(454, 27);
+            textBoxBuscarPor.TabIndex = 1;
             // 
             // bindingSourceTipoDeMoeda
             // 
-            this.bindingSourceTipoDeMoeda.DataSource = typeof(Models.TipoDeMoeda);
+            bindingSourceTipoDeMoeda.DataSource = typeof(Models.TipoDeMoeda);
             // 
             // buttonExcluirMoeda
             // 
-            this.buttonExcluirMoeda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonExcluirMoeda.Location = new System.Drawing.Point(940, 105);
-            this.buttonExcluirMoeda.Name = "buttonExcluirMoeda";
-            this.buttonExcluirMoeda.Size = new System.Drawing.Size(94, 29);
-            this.buttonExcluirMoeda.TabIndex = 5;
-            this.buttonExcluirMoeda.Text = "E&xcluir";
-            this.buttonExcluirMoeda.UseVisualStyleBackColor = true;
-            this.buttonExcluirMoeda.Click += new System.EventHandler(this.buttonExcluirMoeda_Click);
+            buttonExcluirMoeda.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonExcluirMoeda.Location = new Point(940, 105);
+            buttonExcluirMoeda.Name = "buttonExcluirMoeda";
+            buttonExcluirMoeda.Size = new Size(94, 29);
+            buttonExcluirMoeda.TabIndex = 5;
+            buttonExcluirMoeda.Text = "E&xcluir";
+            buttonExcluirMoeda.UseVisualStyleBackColor = true;
+            buttonExcluirMoeda.Click += buttonExcluirMoeda_Click;
             // 
             // buttonInserirMoeda
             // 
-            this.buttonInserirMoeda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonInserirMoeda.Location = new System.Drawing.Point(840, 105);
-            this.buttonInserirMoeda.Name = "buttonInserirMoeda";
-            this.buttonInserirMoeda.Size = new System.Drawing.Size(94, 29);
-            this.buttonInserirMoeda.TabIndex = 4;
-            this.buttonInserirMoeda.Text = "&Inserir";
-            this.buttonInserirMoeda.UseVisualStyleBackColor = true;
-            this.buttonInserirMoeda.Click += new System.EventHandler(this.buttonInserirMoeda_Click);
+            buttonInserirMoeda.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonInserirMoeda.Location = new Point(840, 105);
+            buttonInserirMoeda.Name = "buttonInserirMoeda";
+            buttonInserirMoeda.Size = new Size(94, 29);
+            buttonInserirMoeda.TabIndex = 4;
+            buttonInserirMoeda.Text = "&Inserir";
+            buttonInserirMoeda.UseVisualStyleBackColor = true;
+            buttonInserirMoeda.Click += buttonInserirMoeda_Click;
             // 
             // buttonBuscarMoeda
             // 
-            this.buttonBuscarMoeda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBuscarMoeda.Location = new System.Drawing.Point(640, 106);
-            this.buttonBuscarMoeda.Name = "buttonBuscarMoeda";
-            this.buttonBuscarMoeda.Size = new System.Drawing.Size(94, 29);
-            this.buttonBuscarMoeda.TabIndex = 2;
-            this.buttonBuscarMoeda.Text = "&Buscar";
-            this.buttonBuscarMoeda.UseVisualStyleBackColor = true;
-            this.buttonBuscarMoeda.Click += new System.EventHandler(this.buttonBuscarMoeda_Click);
+            buttonBuscarMoeda.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonBuscarMoeda.Location = new Point(640, 106);
+            buttonBuscarMoeda.Name = "buttonBuscarMoeda";
+            buttonBuscarMoeda.Size = new Size(94, 29);
+            buttonBuscarMoeda.TabIndex = 2;
+            buttonBuscarMoeda.Text = "&Buscar";
+            buttonBuscarMoeda.UseVisualStyleBackColor = true;
+            buttonBuscarMoeda.Click += buttonBuscarMoeda_Click;
             // 
             // buttonSelecionar
             // 
-            this.buttonSelecionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelecionar.Location = new System.Drawing.Point(865, 480);
-            this.buttonSelecionar.Name = "buttonSelecionar";
-            this.buttonSelecionar.Size = new System.Drawing.Size(94, 29);
-            this.buttonSelecionar.TabIndex = 50;
-            this.buttonSelecionar.Text = "Se&lecionar";
-            this.buttonSelecionar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSelecionar.UseVisualStyleBackColor = true;
-            this.buttonSelecionar.Click += new System.EventHandler(this.buttonSelecionar_Click);
+            buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonSelecionar.Location = new Point(865, 480);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 50;
+            buttonSelecionar.Text = "Se&lecionar";
+            buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "Buscar por";
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Location = new Point(29, 81);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 20);
+            label1.TabIndex = 52;
+            label1.Text = "Buscar por";
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancelar.Location = new System.Drawing.Point(963, 480);
-            this.buttonCancelar.Name = "buttonCancelar";
-            this.buttonCancelar.Size = new System.Drawing.Size(94, 29);
-            this.buttonCancelar.TabIndex = 51;
-            this.buttonCancelar.Text = "&Cancelar";
-            this.buttonCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancelar.Location = new Point(963, 480);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.TabIndex = 51;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.TextAlign = ContentAlignment.TopCenter;
+            buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // buttonAlterarMoeda
             // 
-            this.buttonAlterarMoeda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAlterarMoeda.Location = new System.Drawing.Point(740, 106);
-            this.buttonAlterarMoeda.Name = "buttonAlterarMoeda";
-            this.buttonAlterarMoeda.Size = new System.Drawing.Size(94, 29);
-            this.buttonAlterarMoeda.TabIndex = 3;
-            this.buttonAlterarMoeda.Text = "&Alterar";
-            this.buttonAlterarMoeda.UseVisualStyleBackColor = true;
-            this.buttonAlterarMoeda.Click += new System.EventHandler(this.buttonAlterarMoeda_Click);
+            buttonAlterarMoeda.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonAlterarMoeda.Location = new Point(740, 106);
+            buttonAlterarMoeda.Name = "buttonAlterarMoeda";
+            buttonAlterarMoeda.Size = new Size(94, 29);
+            buttonAlterarMoeda.TabIndex = 3;
+            buttonAlterarMoeda.Text = "&Alterar";
+            buttonAlterarMoeda.UseVisualStyleBackColor = true;
+            buttonAlterarMoeda.Click += buttonAlterarMoeda_Click;
             // 
             // comboBoxBuscarPor
             // 
-            this.comboBoxBuscarPor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBuscarPor.FormattingEnabled = true;
-            this.comboBoxBuscarPor.Items.AddRange(new object[] {
-            "Todos",
-            "Id"});
-            this.comboBoxBuscarPor.Location = new System.Drawing.Point(28, 105);
-            this.comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            this.comboBoxBuscarPor.Size = new System.Drawing.Size(143, 28);
-            this.comboBoxBuscarPor.TabIndex = 0;
+            comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Id" });
+            comboBoxBuscarPor.Location = new Point(28, 105);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(143, 28);
+            comboBoxBuscarPor.TabIndex = 0;
             // 
             // dataGridViewProduto
             // 
-            this.dataGridViewProduto.AllowUserToAddRows = false;
-            this.dataGridViewProduto.AllowUserToDeleteRows = false;
-            this.dataGridViewProduto.AllowUserToOrderColumns = true;
-            this.dataGridViewProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduto.AutoGenerateColumns = false;
-            this.dataGridViewProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.TipoMoeda});
-            this.dataGridViewProduto.DataSource = this.bindingSourceTipoDeMoeda;
-            this.dataGridViewProduto.Location = new System.Drawing.Point(29, 141);
-            this.dataGridViewProduto.Name = "dataGridViewProduto";
-            this.dataGridViewProduto.ReadOnly = true;
-            this.dataGridViewProduto.RowHeadersWidth = 51;
-            this.dataGridViewProduto.RowTemplate.Height = 29;
-            this.dataGridViewProduto.Size = new System.Drawing.Size(1005, 217);
-            this.dataGridViewProduto.TabIndex = 7;
+            dataGridViewProduto.AllowUserToAddRows = false;
+            dataGridViewProduto.AllowUserToDeleteRows = false;
+            dataGridViewProduto.AllowUserToOrderColumns = true;
+            dataGridViewProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewProduto.AutoGenerateColumns = false;
+            dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, tipoMoedaDataGridViewTextBoxColumn });
+            dataGridViewProduto.DataSource = bindingSourceTipoDeMoeda;
+            dataGridViewProduto.Location = new Point(29, 141);
+            dataGridViewProduto.Name = "dataGridViewProduto";
+            dataGridViewProduto.ReadOnly = true;
+            dataGridViewProduto.RowHeadersWidth = 51;
+            dataGridViewProduto.RowTemplate.Height = 29;
+            dataGridViewProduto.Size = new Size(1005, 217);
+            dataGridViewProduto.TabIndex = 7;
             // 
-            // Id
+            // idDataGridViewTextBoxColumn
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.MinimumWidth = 6;
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 125;
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 125;
             // 
-            // TipoMoeda
+            // tipoMoedaDataGridViewTextBoxColumn
             // 
-            this.TipoMoeda.DataPropertyName = "TipoMoeda";
-            this.TipoMoeda.HeaderText = "Moeda";
-            this.TipoMoeda.MinimumWidth = 6;
-            this.TipoMoeda.Name = "TipoMoeda";
-            this.TipoMoeda.ReadOnly = true;
-            this.TipoMoeda.Width = 125;
+            tipoMoedaDataGridViewTextBoxColumn.DataPropertyName = "TipoMoeda";
+            tipoMoedaDataGridViewTextBoxColumn.HeaderText = "TipoMoeda";
+            tipoMoedaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            tipoMoedaDataGridViewTextBoxColumn.Name = "tipoMoedaDataGridViewTextBoxColumn";
+            tipoMoedaDataGridViewTextBoxColumn.ReadOnly = true;
+            tipoMoedaDataGridViewTextBoxColumn.Width = 125;
             // 
             // Descricao
             // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Moeda";
-            this.Descricao.MinimumWidth = 6;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 125;
+            Descricao.DataPropertyName = "Descricao";
+            Descricao.HeaderText = "Moeda";
+            Descricao.MinimumWidth = 6;
+            Descricao.Name = "Descricao";
+            Descricao.Width = 125;
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1069, 72);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Consultar Tipos de Moeda";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(0, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(1069, 72);
+            label2.TabIndex = 0;
+            label2.Text = "Consultar Tipos de Moeda";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormTipoDeMoeda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.buttonCancelar;
-            this.ClientSize = new System.Drawing.Size(1069, 521);
-            this.Controls.Add(this.textBoxBuscarPor);
-            this.Controls.Add(this.buttonExcluirMoeda);
-            this.Controls.Add(this.buttonInserirMoeda);
-            this.Controls.Add(this.buttonBuscarMoeda);
-            this.Controls.Add(this.buttonSelecionar);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.buttonCancelar);
-            this.Controls.Add(this.buttonAlterarMoeda);
-            this.Controls.Add(this.comboBoxBuscarPor);
-            this.Controls.Add(this.dataGridViewProduto);
-            this.Controls.Add(this.label2);
-            this.Name = "FormTipoDeMoeda";
-            this.Text = "FormTipoDeMoeda";
-            this.Load += new System.EventHandler(this.FormTipoDeMoeda_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTipoDeMoeda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduto)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = buttonCancelar;
+            ClientSize = new Size(1069, 521);
+            Controls.Add(textBoxBuscarPor);
+            Controls.Add(buttonExcluirMoeda);
+            Controls.Add(buttonInserirMoeda);
+            Controls.Add(buttonBuscarMoeda);
+            Controls.Add(buttonSelecionar);
+            Controls.Add(label1);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonAlterarMoeda);
+            Controls.Add(comboBoxBuscarPor);
+            Controls.Add(dataGridViewProduto);
+            Controls.Add(label2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormTipoDeMoeda";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += FormTipoDeMoeda_Load;
+            ((System.ComponentModel.ISupportInitialize)bindingSourceTipoDeMoeda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -251,7 +249,7 @@
         private DataGridView dataGridViewProduto;
         private Label label2;
         private DataGridViewTextBoxColumn Descricao;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn TipoMoeda;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoMoedaDataGridViewTextBoxColumn;
     }
 }

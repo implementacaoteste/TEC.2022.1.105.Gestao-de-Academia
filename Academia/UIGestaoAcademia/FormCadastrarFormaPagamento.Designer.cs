@@ -127,11 +127,13 @@
             Controls.Add(textBoxQuantidadeParcelas);
             Controls.Add(textBoxDescricao);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            KeyPreview = true;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastrarFormaPagamento";
             ShowIcon = false;
             ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFormaPagamento).EndInit();
             ResumeLayout(false);
             PerformLayout();
