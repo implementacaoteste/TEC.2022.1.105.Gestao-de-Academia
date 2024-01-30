@@ -31,7 +31,13 @@
             components = new System.ComponentModel.Container();
             buttonBuscarProduto = new Button();
             dataGridView1 = new DataGridView();
+            Nome = new DataGridViewTextBoxColumn();
+            Marca = new DataGridViewTextBoxColumn();
+            Quantidade = new DataGridViewTextBoxColumn();
+            ValorUnitario = new DataGridViewTextBoxColumn();
+            valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             itensCompraBindingSource = new BindingSource(components);
+            BindingSourceCompraProduto = new BindingSource(components);
             label12 = new Label();
             label10 = new Label();
             textBoxQuantidade = new TextBox();
@@ -43,7 +49,6 @@
             label8 = new Label();
             label2 = new Label();
             label3 = new Label();
-            BindingSourceCompraProduto = new BindingSource(components);
             labelValorTotal = new Label();
             label4 = new Label();
             textBoxFrete = new TextBox();
@@ -56,11 +61,6 @@
             FinalizarCompra = new Button();
             label7 = new Label();
             textBoxValorTotalNota = new TextBox();
-            Nome = new DataGridViewTextBoxColumn();
-            Marca = new DataGridViewTextBoxColumn();
-            Quantidade = new DataGridViewTextBoxColumn();
-            ValorUnitario = new DataGridViewTextBoxColumn();
-            valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
@@ -93,9 +93,59 @@
             dataGridView1.Size = new Size(881, 333);
             dataGridView1.TabIndex = 50;
             // 
+            // Nome
+            // 
+            Nome.DataPropertyName = "Nome";
+            Nome.HeaderText = "Nome";
+            Nome.MinimumWidth = 6;
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            Nome.Width = 250;
+            // 
+            // Marca
+            // 
+            Marca.DataPropertyName = "Marca";
+            Marca.HeaderText = "Marca";
+            Marca.MinimumWidth = 6;
+            Marca.Name = "Marca";
+            Marca.ReadOnly = true;
+            Marca.Width = 180;
+            // 
+            // Quantidade
+            // 
+            Quantidade.DataPropertyName = "Quantidade";
+            Quantidade.HeaderText = "Quantidade";
+            Quantidade.MinimumWidth = 6;
+            Quantidade.Name = "Quantidade";
+            Quantidade.ReadOnly = true;
+            Quantidade.Width = 125;
+            // 
+            // ValorUnitario
+            // 
+            ValorUnitario.DataPropertyName = "ValorUnitario";
+            ValorUnitario.HeaderText = "ValorUnitario";
+            ValorUnitario.MinimumWidth = 6;
+            ValorUnitario.Name = "ValorUnitario";
+            ValorUnitario.ReadOnly = true;
+            ValorUnitario.Width = 160;
+            // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            valorTotalDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // itensCompraBindingSource
             // 
-            itensCompraBindingSource.DataSource = typeof(Models.ItensCompra);
+            itensCompraBindingSource.DataMember = "itensCompraList";
+            itensCompraBindingSource.DataSource = BindingSourceCompraProduto;
+            // 
+            // BindingSourceCompraProduto
+            // 
+            BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
             // label12
             // 
@@ -194,10 +244,6 @@
             label3.Size = new Size(84, 20);
             label3.TabIndex = 29;
             label3.Text = "Fornecedor";
-            // 
-            // BindingSourceCompraProduto
-            // 
-            BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
             // labelValorTotal
             // 
@@ -309,51 +355,6 @@
             textBoxValorTotalNota.Size = new Size(117, 27);
             textBoxValorTotalNota.TabIndex = 64;
             textBoxValorTotalNota.TextAlign = HorizontalAlignment.Right;
-            // 
-            // Nome
-            // 
-            Nome.DataPropertyName = "Nome";
-            Nome.HeaderText = "Nome";
-            Nome.MinimumWidth = 6;
-            Nome.Name = "Nome";
-            Nome.ReadOnly = true;
-            Nome.Width = 250;
-            // 
-            // Marca
-            // 
-            Marca.DataPropertyName = "Marca";
-            Marca.HeaderText = "Marca";
-            Marca.MinimumWidth = 6;
-            Marca.Name = "Marca";
-            Marca.ReadOnly = true;
-            Marca.Width = 180;
-            // 
-            // Quantidade
-            // 
-            Quantidade.DataPropertyName = "Quantidade";
-            Quantidade.HeaderText = "Quantidade";
-            Quantidade.MinimumWidth = 6;
-            Quantidade.Name = "Quantidade";
-            Quantidade.ReadOnly = true;
-            Quantidade.Width = 125;
-            // 
-            // ValorUnitario
-            // 
-            ValorUnitario.DataPropertyName = "ValorUnitario";
-            ValorUnitario.HeaderText = "ValorUnitario";
-            ValorUnitario.MinimumWidth = 6;
-            ValorUnitario.Name = "ValorUnitario";
-            ValorUnitario.ReadOnly = true;
-            ValorUnitario.Width = 160;
-            // 
-            // valorTotalDataGridViewTextBoxColumn
-            // 
-            valorTotalDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
-            valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
-            valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FormCompra
             // 

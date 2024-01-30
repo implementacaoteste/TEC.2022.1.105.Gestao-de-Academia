@@ -13,7 +13,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @FreteTotal, @ValorTotalNota, @ValorTotal)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @FreteTotal, @ValorTotalNota, @ValorTotal) SELECT @@IDENTITY"))
                 {
                     try
                     {
@@ -34,7 +34,12 @@ namespace DAL
                         cmd.Transaction = transaction;
                         cmd.Connection = transaction.Connection;
 
-                        cmd.ExecuteNonQuery();
+                        _Compraproduto.Id = Convert.ToInt32(cmd.ExecuteScalar());
+                        foreach (var item in _Compraproduto.itensCompraList)
+                        {
+                            item.CompraProdutoId = _Compraproduto.Id;
+                            new ItensCompraDAL().Inserir(item, transaction);
+                        }
 
                         if (_transaction == null)
                             transaction.Commit();
