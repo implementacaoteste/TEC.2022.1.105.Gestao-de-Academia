@@ -13,6 +13,8 @@ namespace UIGestaoAcademia
         private void FormCompra_Load(object sender, EventArgs e)
         {
             BindingSourceCompraProduto.AddNew();
+            ((CompraProduto)BindingSourceCompraProduto.Current).itensCompraList = new List<ItensCompra>();
+            BindingSourceCompraProduto.EndEdit();
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
@@ -78,6 +80,7 @@ namespace UIGestaoAcademia
         {
             if (e.KeyCode == Keys.Enter)
             {
+                //itensCompraBindingSource.AddNew();
                 ((ItensCompra)itensCompraBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                 ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario = Convert.ToDouble(textBoxValorProduto.Text);
                 ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
@@ -116,34 +119,21 @@ namespace UIGestaoAcademia
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal = Convert.ToDouble(textBoxValorTotal.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota = ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal + ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal;
                 textBoxValorTotalNota.Text = ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota.ToString();
-
-                BindingSourceCompraProduto.EndEdit();
-
-
             }
         }
         private void FinalizarCompra_Click(object sender, EventArgs e)
         {
+            try
             {
-                try
-                {
-                    CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
-                    ItensCompra itensCompra= (ItensCompra)itensCompraBindingSource.Current;
+                CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
+                new CompraProdutoBLL().Inserir(compraProduto);
 
-                    BindingSourceCompraProduto.EndEdit();
-                    itensCompraBindingSource.EndEdit();
-
-                    if (id == 0)
-                        new CompraProdutoBLL().Inserir(compraProduto);
-                        new ItensCompraBLL().Inserir(itensCompra);
-
-                    MessageBox.Show("Registro salvo com sucesso!");
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Registro salvo com sucesso!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

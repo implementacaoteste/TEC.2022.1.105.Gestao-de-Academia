@@ -37,6 +37,7 @@
             ValorUnitario = new DataGridViewTextBoxColumn();
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             itensCompraBindingSource = new BindingSource(components);
+            BindingSourceCompraProduto = new BindingSource(components);
             label12 = new Label();
             label10 = new Label();
             textBoxQuantidade = new TextBox();
@@ -48,7 +49,6 @@
             label8 = new Label();
             label2 = new Label();
             label3 = new Label();
-            BindingSourceCompraProduto = new BindingSource(components);
             labelValorTotal = new Label();
             label4 = new Label();
             textBoxFrete = new TextBox();
@@ -140,7 +140,12 @@
             // 
             // itensCompraBindingSource
             // 
-            itensCompraBindingSource.DataSource = typeof(Models.ItensCompra);
+            itensCompraBindingSource.DataMember = "itensCompraList";
+            itensCompraBindingSource.DataSource = BindingSourceCompraProduto;
+            // 
+            // BindingSourceCompraProduto
+            // 
+            BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
             // label12
             // 
@@ -239,10 +244,6 @@
             label3.Size = new Size(84, 20);
             label3.TabIndex = 29;
             label3.Text = "Fornecedor";
-            // 
-            // BindingSourceCompraProduto
-            // 
-            BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
             // labelValorTotal
             // 

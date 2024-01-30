@@ -19,9 +19,11 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado) 
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,TipoDeMoedaId,
+                                    TipoContaId, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, Iban, Obs) 
                                     VALUES (@Nome, @CpfCnpj, @Email, @Telefone, @Descricao,
-                                    @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa, @Pais, @Cidade, @Estado)";
+                                    @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa, @Pais, @Cidade, @Estado, @TipoDeMoedaId,
+                                    @TipoContaId, @NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix, @Iban, @Obs)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 PreencherParametros(_fornecedor, cmd, Operacao.Inserir);
@@ -52,7 +54,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado 
+                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado
                                     FROM Fornecedor";
                 cmd.CommandType = System.Data.CommandType.Text;
 

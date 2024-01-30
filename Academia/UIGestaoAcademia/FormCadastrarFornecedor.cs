@@ -18,7 +18,7 @@ namespace UIGestaoAcademia
         public FormCadastrarFornecedor(int _id = 0)
         {
             InitializeComponent();
-            Id = _id;                                                   
+            Id = _id;
 
 
             if (Id == 0)
@@ -42,7 +42,7 @@ namespace UIGestaoAcademia
             try
             {
                 bindingSourceCadastrarFornecedor.EndEdit();
-               Fornecedor fornecedor = (Fornecedor)bindingSourceCadastrarFornecedor.Current;
+                Fornecedor fornecedor = (Fornecedor)bindingSourceCadastrarFornecedor.Current;
 
                 if (Id == 0)
                     new FornecedorBLL().Inserir(fornecedor);
@@ -64,6 +64,11 @@ namespace UIGestaoAcademia
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

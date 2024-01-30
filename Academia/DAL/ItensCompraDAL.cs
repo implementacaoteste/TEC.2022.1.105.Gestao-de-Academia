@@ -1,6 +1,7 @@
 ﻿using Models;
 using System.Data.SqlClient;
 using System.Data;
+using NPOI.SS.Formula.Functions;
 
 namespace DAL
 {
@@ -12,19 +13,18 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO ItensCompra(CompraProdutoId, Nome, Marca, Quantidade, ValorUnitario, ValorTotal ) VALUES(@CompraProdutoId, @Nome, @Marca, @Quantidade, @ValorUnitario, @ValorTotal)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO ItensCompra(CompraProdutoId, Marca, Quantidade, ValorUnitario, ValorTotal, ProdutoId) VALUES(@CompraProdutoId, @Marca, @Quantidade, @ValorUnitario, @ValorTotal, @ProdutoId)"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@CompraProdutoId", _itensCompra.CompraProdutoId);
-                        cmd.Parameters.AddWithValue("@Nome", _itensCompra.Nome);
                         cmd.Parameters.AddWithValue("@Marca", _itensCompra.Marca);
                         cmd.Parameters.AddWithValue("@Quantidade", _itensCompra.Quantidade);
                         cmd.Parameters.AddWithValue("@ValorUnitario", _itensCompra.ValorUnitario);
                         cmd.Parameters.AddWithValue("@ValorTotal", _itensCompra.ValorTotal);
-
+                        cmd.Parameters.AddWithValue("@ProdutoId", _itensCompra.ProdutoId);
 
                         if (_transaction == null)
                         {

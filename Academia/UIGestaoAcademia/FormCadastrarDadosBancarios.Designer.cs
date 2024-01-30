@@ -33,8 +33,6 @@
             label6 = new Label();
             textBoxEmail = new TextBox();
             bindingSourceCadastrarDadosBancario = new BindingSource(components);
-            buttonCancelar = new Button();
-            buttonSalvar = new Button();
             label4 = new Label();
             label3 = new Label();
             label7 = new Label();
@@ -72,7 +70,7 @@
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(857, 88);
+            label2.Size = new Size(857, 110);
             label2.TabIndex = 52;
             label2.Text = "Dados Bancarios";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -98,27 +96,6 @@
             // bindingSourceCadastrarDadosBancario
             // 
             bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
-            // 
-            // buttonCancelar
-            // 
-            buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(737, 439);
-            buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
-            buttonCancelar.TabIndex = 51;
-            buttonCancelar.Text = "Cancelar";
-            buttonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // buttonSalvar
-            // 
-            buttonSalvar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSalvar.Location = new Point(635, 439);
-            buttonSalvar.Name = "buttonSalvar";
-            buttonSalvar.Size = new Size(94, 29);
-            buttonSalvar.TabIndex = 50;
-            buttonSalvar.Text = "&Salvar";
-            buttonSalvar.UseVisualStyleBackColor = true;
-            buttonSalvar.Click += buttonSalvar_Click;
             // 
             // label4
             // 
@@ -350,7 +327,6 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = buttonCancelar;
             ClientSize = new Size(857, 475);
             Controls.Add(button1);
             Controls.Add(buttonTipoMoeda);
@@ -371,8 +347,6 @@
             Controls.Add(label2);
             Controls.Add(label6);
             Controls.Add(textBoxEmail);
-            Controls.Add(buttonCancelar);
-            Controls.Add(buttonSalvar);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label7);
@@ -381,14 +355,8 @@
             Controls.Add(textBoxCpfCnpj);
             Controls.Add(textBoxDescricao);
             Controls.Add(textBoxNome);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            KeyPreview = true;
-            MaximizeBox = false;
-            MinimizeBox = false;
             Name = "FormCadastrarDadosBancarios";
-            ShowIcon = false;
-            ShowInTaskbar = false;
-            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FormCadastrarDadosBancarios";
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).EndInit();
@@ -401,8 +369,6 @@
         private Label label2;
         private Label label6;
         private TextBox textBoxEmail;
-        private Button buttonCancelar;
-        private Button buttonSalvar;
         private Label label4;
         private Label label3;
         private Label label7;

@@ -22,5 +22,13 @@ namespace Models
         public string Pais { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
+        public int TipoDeMoedaId { get; set; }
+        public int TipoContaId { get; set; }
+        public string NomeBanco { get; set; }
+        public string NumeroAgencia { get; set; }
+        public string NumeroConta { get; set; }
+        public string ChavePix { get; set; }
+        public string Iban { get; set; }
+        public string Obs { get; set; }
     }
 }
