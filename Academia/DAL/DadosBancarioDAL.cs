@@ -18,8 +18,8 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"INSERT INTO DadosBancarios(NomeBanco, NumeroAgencia, NumeroConta, ChavePix, TipoConta,
-                                    NomeTitular, CpfCnpj, Telefone, Email, TipoMoeda, Iban, Obs) 
+                cmd.CommandText = @"INSERT INTO DadosBancarios(NomeBanco, NumeroAgencia, NumeroConta, ChavePix,
+                                    NomeTitular, CpfCnpj, Telefone, Email, Iban, Obs) 
                                     VALUES (@NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix,
                                     @NomeTitular, @CpfCnpj, @Telefone, @Email, @Iban, @Obs)";
 

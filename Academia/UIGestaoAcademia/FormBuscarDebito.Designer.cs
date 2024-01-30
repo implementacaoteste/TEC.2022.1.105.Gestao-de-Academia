@@ -299,7 +299,7 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(122, 27);
             dateTimePicker1.TabIndex = 2;
-            dateTimePicker1.Value = new DateTime(2023, 12, 6, 10, 6, 38, 0);
+            dateTimePicker1.Value = new DateTime(2024, 1, 29, 0, 0, 0, 0);
             // 
             // dateTimePicker2
             // 
@@ -308,12 +308,13 @@
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(121, 27);
             dateTimePicker2.TabIndex = 3;
-            dateTimePicker2.Value = new DateTime(2023, 12, 6, 10, 6, 38, 0);
+            dateTimePicker2.Value = new DateTime(2024, 1, 29, 0, 0, 0, 0);
             // 
             // FormBuscarDebito
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightGreen;
             CancelButton = buttonCancelar;
             ClientSize = new Size(1201, 496);
             Controls.Add(dateTimePicker1);

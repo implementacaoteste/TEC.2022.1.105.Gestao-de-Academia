@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             bindingSourceFormaPagamento = new BindingSource(components);
             label2 = new Label();
             textBoxBuscarPor = new TextBox();
@@ -59,7 +59,7 @@
             label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(1069, 72);
+            label2.Size = new Size(1072, 72);
             label2.TabIndex = 7;
             label2.Text = "Consultar formas de pagamentos";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -67,15 +67,15 @@
             // textBoxBuscarPor
             // 
             textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxBuscarPor.Location = new Point(178, 95);
+            textBoxBuscarPor.Location = new Point(180, 95);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(454, 27);
+            textBoxBuscarPor.Size = new Size(457, 27);
             textBoxBuscarPor.TabIndex = 1;
             // 
             // buttonExcluirFormaPagamento
             // 
             buttonExcluirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonExcluirFormaPagamento.Location = new Point(940, 95);
+            buttonExcluirFormaPagamento.Location = new Point(846, 96);
             buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
             buttonExcluirFormaPagamento.Size = new Size(94, 29);
             buttonExcluirFormaPagamento.TabIndex = 5;
@@ -86,7 +86,7 @@
             // buttonInserirFormaPagamento
             // 
             buttonInserirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonInserirFormaPagamento.Location = new Point(840, 95);
+            buttonInserirFormaPagamento.Location = new Point(946, 96);
             buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
             buttonInserirFormaPagamento.Size = new Size(94, 29);
             buttonInserirFormaPagamento.TabIndex = 4;
@@ -97,9 +97,9 @@
             // buttonBuscarFormaPagamento
             // 
             buttonBuscarFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            buttonBuscarFormaPagamento.Location = new Point(640, 96);
+            buttonBuscarFormaPagamento.Location = new Point(643, 96);
             buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
-            buttonBuscarFormaPagamento.Size = new Size(94, 29);
+            buttonBuscarFormaPagamento.Size = new Size(97, 29);
             buttonBuscarFormaPagamento.TabIndex = 2;
             buttonBuscarFormaPagamento.Text = "&Buscar";
             buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             // buttonSelecionar
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelecionar.Location = new Point(842, 480);
+            buttonSelecionar.Location = new Point(846, 473);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 39;
@@ -130,7 +130,7 @@
             // buttonCancelar
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(940, 480);
+            buttonCancelar.Location = new Point(946, 473);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 40;
@@ -141,7 +141,7 @@
             // buttonAlterarFormaPagamento
             // 
             buttonAlterarFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonAlterarFormaPagamento.Location = new Point(740, 96);
+            buttonAlterarFormaPagamento.Location = new Point(746, 96);
             buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
             buttonAlterarFormaPagamento.Size = new Size(94, 29);
             buttonAlterarFormaPagamento.TabIndex = 3;
@@ -154,7 +154,7 @@
             comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             comboBoxBuscarPor.FormattingEnabled = true;
             comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Nome" });
-            comboBoxBuscarPor.Location = new Point(28, 95);
+            comboBoxBuscarPor.Location = new Point(31, 95);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             comboBoxBuscarPor.Size = new Size(143, 28);
             comboBoxBuscarPor.TabIndex = 0;
@@ -164,7 +164,6 @@
             dataGridViewProduto.AllowUserToAddRows = false;
             dataGridViewProduto.AllowUserToDeleteRows = false;
             dataGridViewProduto.AllowUserToOrderColumns = true;
-            dataGridViewProduto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewProduto.AutoGenerateColumns = false;
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn, QuantidadeParcelas });
@@ -174,7 +173,7 @@
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
-            dataGridViewProduto.Size = new Size(1005, 336);
+            dataGridViewProduto.Size = new Size(1011, 336);
             dataGridViewProduto.TabIndex = 3;
             dataGridViewProduto.DoubleClick += buttonSelecionar_Click_1;
             // 
@@ -199,8 +198,8 @@
             // QuantidadeParcelas
             // 
             QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle1;
             QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
             QuantidadeParcelas.MinimumWidth = 6;
             QuantidadeParcelas.Name = "QuantidadeParcelas";
@@ -211,7 +210,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1069, 521);
+            CancelButton = buttonCancelar;
+            ClientSize = new Size(1072, 521);
             Controls.Add(textBoxBuscarPor);
             Controls.Add(buttonExcluirFormaPagamento);
             Controls.Add(buttonInserirFormaPagamento);

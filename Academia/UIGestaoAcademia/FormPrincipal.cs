@@ -159,9 +159,13 @@ namespace UIGestaoAcademia
             }
         }
 
-        private void vENDASToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        private void planoAssinaturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPlanoAssinatura frm = new FormBuscarPlanoAssinatura())
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }

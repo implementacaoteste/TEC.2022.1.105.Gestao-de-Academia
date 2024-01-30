@@ -44,13 +44,20 @@
             comprasDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             fornecedorToolStripMenuItem1 = new ToolStripMenuItem();
             exercicioToolStripMenuItem = new ToolStripMenuItem();
+
+            planoAssinaturaToolStripMenuItem = new ToolStripMenuItem();
+
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
+
+            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, fornecedorToolStripMenuItem1, exercicioToolStripMenuItem, planoAssinaturaToolStripMenuItem });
+
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, fornecedorToolStripMenuItem1, exercicioToolStripMenuItem });
+
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(856, 28);
@@ -125,7 +132,9 @@
             vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
             vENDASToolStripMenuItem.Size = new Size(70, 24);
             vENDASToolStripMenuItem.Text = "Vendas";
-            vENDASToolStripMenuItem.Click += vENDASToolStripMenuItem_Click;
+
+
+
             // 
             // iniciarVendaToolStripMenuItem
             // 
@@ -170,6 +179,15 @@
             exercicioToolStripMenuItem.Size = new Size(82, 24);
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
+
+            // 
+            // planoAssinaturaToolStripMenuItem
+            // 
+            planoAssinaturaToolStripMenuItem.Name = "planoAssinaturaToolStripMenuItem";
+            planoAssinaturaToolStripMenuItem.Size = new Size(130, 24);
+            planoAssinaturaToolStripMenuItem.Text = "Plano assinatura";
+            planoAssinaturaToolStripMenuItem.Click += planoAssinaturaToolStripMenuItem_Click;
+
             // 
             // FormPrincipal
             // 
@@ -212,6 +230,7 @@
         private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
         private ToolStripMenuItem fornecedorToolStripMenuItem1;
         private ToolStripMenuItem exercicioToolStripMenuItem;
+        private ToolStripMenuItem planoAssinaturaToolStripMenuItem;
     }
 }
 

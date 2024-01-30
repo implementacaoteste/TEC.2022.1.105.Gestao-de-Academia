@@ -76,7 +76,17 @@ CREATE TABLE Fornecedor
 	Email VARCHAR(200),
 	Telefone CHAR(14),
 	Endereco VARCHAR(100),
-	Descricao VARCHAR(150)
+	Descricao VARCHAR(150),
+	TipoDeMoedaId INT,
+	TipoContaId INT,
+	FornecedorId INT,
+	NomeBanco VARCHAR(50),
+	NumeroAgencia VARCHAR(6),
+	NumeroConta VARCHAR(21),
+	ChavePix VARCHAR(32),
+	NomeTitular VARCHAR(100),
+	Iban VARCHAR(34),
+	Obs VARCHAR(100)
 )
 GO
 CREATE TABLE CompraProduto
@@ -208,30 +218,12 @@ CREATE TABLE Funcionario
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
 )
-
-CREATE TABLE DadosBancarios
-(
-	Id INT PRIMARY KEY IDENTITY(1,1),
-	TipoDeMoedaId INT,
-	TipoContaId INT,
-	FornecedorId INT,
-	NomeBanco VARCHAR(50),
-	NumeroAgencia VARCHAR(6),
-	NumeroConta VARCHAR(21),
-	ChavePix VARCHAR(32),
-	NomeTitular VARCHAR(100),
-	CpfCnpj VARCHAR(15),
-	Telefone VARCHAR(15),
-	Email VARCHAR(100),
-	Iban VARCHAR(34),
-	Obs VARCHAR(100)
-)
 GO
 
 CREATE TABLE TipoDeConta
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Descricao VARCHAR(20)
+	TipoConta VARCHAR(20)
 )
 GO
 
@@ -623,5 +615,9 @@ INSERT INTO Cliente VALUES('Genilsom',1, '07790087655','(63)99124-9261','genism3
 INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
 SELECT*FROM FormaPagamento
 SELECT*FROM Cliente
+
+SELECT*FROM ControleDebito
+
 SELECT*FROM ControleDebito
 select*from Usuario
+select *from PlanoAssinatura

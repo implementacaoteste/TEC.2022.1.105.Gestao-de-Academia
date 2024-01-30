@@ -7,6 +7,7 @@ namespace UIGestaoAcademia
     public partial class FormCadastrarDebito : Form
     {
         int id;
+        string descricaoParcela;
         public FormCadastrarDebito(int _id = 0)
         {
             InitializeComponent();
@@ -20,7 +21,13 @@ namespace UIGestaoAcademia
             }
             else
             {
-                bindingSourceCadastrarDebito.DataSource = new ControleDebitoBLL().BuscarPorId(_id);
+                ControleDebito controleDebito = new ControleDebitoBLL().BuscarPorId(_id);
+                descricaoParcela = " | " + controleDebito.Descricao.Split('|').LastOrDefault().Trim();
+                controleDebito.Descricao = controleDebito.Descricao.Replace(descricaoParcela, "");
+                bindingSourceCadastrarDebito.DataSource = controleDebito;
+                textBoxQuantidaDeParcelasDesejadas.Enabled = false;
+                textBoxFormaDePagamento.Enabled = false;
+                buttonConsultaFormaPagamento.Enabled = false;
             }
         }
         private void buttonSalvar_Click_1(object sender, EventArgs e)
@@ -35,7 +42,10 @@ namespace UIGestaoAcademia
                 if (id == 0)
                     new ControleDebitoBLL().Inserir(controleDebito);
                 else
+                {
+                    controleDebito.Descricao += descricaoParcela;
                     new ControleDebitoBLL().Alterar(controleDebito);
+                }
 
                 MessageBox.Show("Registro salvo com sucesso!");
                 this.Close();
