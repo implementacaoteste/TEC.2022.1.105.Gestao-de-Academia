@@ -79,12 +79,10 @@ CREATE TABLE Fornecedor
 	Descricao VARCHAR(150),
 	TipoDeMoedaId INT,
 	TipoContaId INT,
-	FornecedorId INT,
 	NomeBanco VARCHAR(50),
 	NumeroAgencia VARCHAR(6),
 	NumeroConta VARCHAR(21),
 	ChavePix VARCHAR(32),
-	NomeTitular VARCHAR(100),
 	Iban VARCHAR(34),
 	Obs VARCHAR(100)
 )
