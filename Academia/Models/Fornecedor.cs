@@ -23,12 +23,32 @@ namespace Models
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public int TipoDeMoedaId { get; set; }
-        public int TipoContaId { get; set; }
+        public string NomeMoeda
+        {
+            get
+            {
+                if (TipoMoeda != null)
+                    return TipoMoeda.TipoMoeda;
+                return "";
+            }
+        }
+        public int TipoDeContaId { get; set; }
+        public string NomeConta
+        {
+            get
+            {
+                if (TipoConta != null)
+                    return TipoConta.TipoConta;
+                return "";
+            }
+        }
         public string NomeBanco { get; set; }
         public string NumeroAgencia { get; set; }
         public string NumeroConta { get; set; }
         public string ChavePix { get; set; }
         public string Iban { get; set; }
         public string Obs { get; set; }
+        public TipoDeConta TipoConta { get; set; }
+        public TipoDeMoeda TipoMoeda { get; set; }
     }
 }
