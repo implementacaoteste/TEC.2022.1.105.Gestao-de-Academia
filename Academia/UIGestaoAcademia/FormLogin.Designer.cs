@@ -81,25 +81,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 149);
+            label1.Font = new Font("Sitka Heading Semibold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 140);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(62, 28);
             label1.TabIndex = 3;
             label1.Text = "Senha";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 72);
+            label2.Font = new Font("Sitka Heading Semibold", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 64);
             label2.Name = "label2";
-            label2.Size = new Size(59, 20);
+            label2.Size = new Size(77, 28);
             label2.TabIndex = 1;
             label2.Text = "Usuário";
             // 
             // label4
             // 
             label4.Dock = DockStyle.Top;
-            label4.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Sitka Heading Semibold", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(0, 0);
             label4.Name = "label4";
             label4.Size = new Size(390, 72);
@@ -111,6 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(390, 296);
             Controls.Add(label4);
             Controls.Add(label2);
