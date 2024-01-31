@@ -231,11 +231,9 @@ GO
 CREATE TABLE TipoDeConta
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	Descricao VARCHAR(20)
+	TipoConta VARCHAR(20)
 )
 GO
-
-SELECT * FROM DadosBancarios
 
 CREATE  TABLE TipoDeMoeda
 (
