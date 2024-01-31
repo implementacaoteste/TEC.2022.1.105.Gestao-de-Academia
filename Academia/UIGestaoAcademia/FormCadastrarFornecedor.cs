@@ -70,5 +70,33 @@ namespace UIGestaoAcademia
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (FormTipoDeConta frm = new FormTipoDeConta())
+            {
+                frm.ShowDialog();
+                if (frm.TipoDeConta != null)
+                {
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoConta = frm.TipoDeConta;
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoDeContaId = frm.TipoDeConta.Id;
+                    textBoxTipoConta.Text = frm.TipoDeConta.TipoConta;
+                }
+            }
+        }
+
+        private void buttonTipoMoeda_Click(object sender, EventArgs e)
+        {
+            using (FormTipoDeMoeda frm = new FormTipoDeMoeda())
+            {
+                frm.ShowDialog();
+                if (frm.TipoDeMoeda != null)
+                {
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoMoeda = frm.TipoDeMoeda;
+                    ((DadosBancario)bindingSourceCadastrarDadosBancario.Current).TipoDeMoedaId = frm.TipoDeMoeda.Id;
+                    textBoxTipoDeMoeda.Text = frm.TipoDeMoeda.TipoMoeda;
+                }
+            }
+        }
     }
 }

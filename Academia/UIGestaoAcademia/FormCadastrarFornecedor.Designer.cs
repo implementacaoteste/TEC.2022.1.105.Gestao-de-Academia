@@ -518,6 +518,7 @@
             buttonTipoMoeda.TabIndex = 109;
             buttonTipoMoeda.Text = "...";
             buttonTipoMoeda.UseVisualStyleBackColor = true;
+            buttonTipoMoeda.Click += buttonTipoMoeda_Click;
             // 
             // button2
             // 
@@ -527,6 +528,7 @@
             button2.TabIndex = 110;
             button2.Text = "...";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label24
             // 
