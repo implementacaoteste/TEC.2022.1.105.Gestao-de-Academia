@@ -282,9 +282,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@NumeroConta", _fornecedor.NumeroConta);
                 cmd.Parameters.AddWithValue("@ChavePix", _fornecedor.ChavePix);
                 cmd.Parameters.AddWithValue("@TipoMoedaId", _fornecedor.TipoMoeda.Id);
-                cmd.Parameters.AddWithValue("@CpfCnpj", _fornecedor.CpfCnpj);
-                cmd.Parameters.AddWithValue("@Telefone", _fornecedor.Telefone);
-                cmd.Parameters.AddWithValue("@Email", _fornecedor.Email);
+                cmd.Parameters.AddWithValue("@TipoContaId", _fornecedor.TipoConta.Id);
                 cmd.Parameters.AddWithValue("@Iban", _fornecedor.Iban);
                 cmd.Parameters.AddWithValue("@Obs", _fornecedor.Obs);
             }
