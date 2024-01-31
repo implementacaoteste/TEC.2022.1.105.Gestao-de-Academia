@@ -207,20 +207,20 @@ namespace DAL
             try
             {
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = @"UPDATE Cliente SET \
-                                    Nome = @Nome
-                                    Aluno = @Aluno
-                                    CPF = @CPF
-                                    Telefone = @Telefone
-                                    Email = @Email
-                                    DataCadastro = @DataCadastro
-                                    Rua = @Rua
-                                    CEP = @CEP
-                                    Bairro = @Bairro
-                                    Complemento = @Complemento
-                                    NumeroCasa = @NumeroCasa
-                                    Pais = @Pais
-                                    Cidade = @Cidade
+                cmd.CommandText = @"UPDATE Cliente SET 
+                                    Nome = @Nome,
+                                    Aluno = @Aluno,
+                                    CPF = @CPF,
+                                    Telefone = @Telefone,
+                                    Email = @Email,
+                                    DataCadastro = @DataCadastro,
+                                    Rua = @Rua,
+                                    CEP = @CEP,
+                                    Bairro = @Bairro,
+                                    Complemento = @Complemento,
+                                    NumeroCasa = @NumeroCasa,
+                                    Pais = @Pais,
+                                    Cidade = @Cidade,
                                     Estado = @Estado
                                     WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
@@ -239,6 +239,7 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@Pais", _cliente.Pais);
                 cmd.Parameters.AddWithValue("@Cidade", _cliente.Cidade);
                 cmd.Parameters.AddWithValue("@Estado", _cliente.Estado);
+                cmd.Parameters.AddWithValue("@Id", _cliente.Id);
 
                 cmd.Connection = cn;
                 cn.Open();

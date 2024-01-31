@@ -46,7 +46,6 @@
             nomeTextBox = new TextBox();
             clienteBindingSource = new BindingSource(components);
             cPFTextBox = new TextBox();
-            rGTextBox = new TextBox();
             foneTextBox = new TextBox();
             emailTextBox = new TextBox();
             label1 = new Label();
@@ -61,6 +60,7 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
             nomeLabel = new Label();
             rGLabel = new Label();
             foneLabel = new Label();
@@ -226,15 +226,6 @@
             cPFTextBox.Size = new Size(180, 27);
             cPFTextBox.TabIndex = 2;
             // 
-            // rGTextBox
-            // 
-            rGTextBox.DataBindings.Add(new Binding("Text", clienteBindingSource, "DataCadastro", true));
-            rGTextBox.Location = new Point(562, 138);
-            rGTextBox.Margin = new Padding(3, 4, 3, 4);
-            rGTextBox.Name = "rGTextBox";
-            rGTextBox.Size = new Size(122, 27);
-            rGTextBox.TabIndex = 1;
-            // 
             // foneTextBox
             // 
             foneTextBox.DataBindings.Add(new Binding("Text", clienteBindingSource, "Telefone", true));
@@ -370,11 +361,22 @@
             textBox8.Size = new Size(212, 27);
             textBox8.TabIndex = 12;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.DataBindings.Add(new Binding("Text", clienteBindingSource, "DataCadastro", true));
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(561, 141);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(122, 27);
+            dateTimePicker1.TabIndex = 15;
+            dateTimePicker1.Value = new DateTime(2024, 1, 29, 0, 0, 0, 0);
+            // 
             // FormCadastroCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(695, 546);
+            Controls.Add(dateTimePicker1);
             Controls.Add(checkBox1);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
@@ -401,7 +403,6 @@
             Controls.Add(foneTextBox);
             Controls.Add(label2);
             Controls.Add(rGLabel);
-            Controls.Add(rGTextBox);
             Controls.Add(label11);
             Controls.Add(cPFTextBox);
             Controls.Add(nomeLabel);
@@ -427,7 +428,6 @@
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.TextBox nomeTextBox;
         private System.Windows.Forms.TextBox cPFTextBox;
-        private System.Windows.Forms.TextBox rGTextBox;
         private System.Windows.Forms.TextBox foneTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.Label label1;
@@ -442,5 +442,6 @@
         private TextBox textBox6;
         private TextBox textBox7;
         private TextBox textBox8;
+        private DateTimePicker dateTimePicker1;
     }
 }
