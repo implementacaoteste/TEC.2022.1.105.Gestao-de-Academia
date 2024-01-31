@@ -78,9 +78,9 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
                 if (frm.TipoDeConta != null)
                 {
-                    ((Fornecedor)bindingSourceCadastrarDadosBancario.Current).TipoConta = frm.TipoDeConta;
-                    ((Fornecedor)bindingSourceCadastrarDadosBancario.Current).TipoDeContaId = frm.TipoDeConta.Id;
-                    textBoxTipoConta.Text = frm.TipoDeConta.TipoConta;
+                    ((Fornecedor)bindingSourceCadastrarFornecedor.Current).TipoConta = frm.TipoDeConta;
+                    ((Fornecedor)bindingSourceCadastrarFornecedor.Current).TipoDeContaId = frm.TipoDeConta.Id;
+                    textBoxTipoConta2.Text = frm.TipoDeConta.TipoConta;
                 }
             }
         }
@@ -92,9 +92,9 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
                 if (frm.TipoDeMoeda != null)
                 {
-                    ((Fornecedor)bindingSourceCadastrarDadosBancario.Current).TipoMoeda = frm.TipoDeMoeda;
-                    ((Fornecedor)bindingSourceCadastrarDadosBancario.Current).TipoDeMoedaId = frm.TipoDeMoeda.Id;
-                    textBoxTipoDeMoeda.Text = frm.TipoDeMoeda.TipoMoeda;
+                    ((Fornecedor)bindingSourceCadastrarFornecedor.Current).TipoMoeda = frm.TipoDeMoeda;
+                    ((Fornecedor)bindingSourceCadastrarFornecedor.Current).TipoDeMoedaId = frm.TipoDeMoeda.Id;
+                    textBoxTipoDeMoeda2.Text = frm.TipoDeMoeda.TipoMoeda;
                 }
             }
         }

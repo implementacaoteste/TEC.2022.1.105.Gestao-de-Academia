@@ -73,14 +73,14 @@
             button2 = new Button();
             label24 = new Label();
             textBox16 = new TextBox();
-            textBoxTipoDeMoeda = new TextBox();
+            textBoxTipoDeMoeda2 = new TextBox();
             tipoDeMoedaBindingSource = new BindingSource(components);
             label5 = new Label();
             label21 = new Label();
             textBox13 = new TextBox();
             label22 = new Label();
             textBox14 = new TextBox();
-            textBoxTipoConta = new TextBox();
+            textBoxTipoConta2 = new TextBox();
             tipoDeContaBindingSource = new BindingSource(components);
             label27 = new Label();
             textBox17 = new TextBox();
@@ -472,13 +472,13 @@
             tabPage3.Controls.Add(button2);
             tabPage3.Controls.Add(label24);
             tabPage3.Controls.Add(textBox16);
-            tabPage3.Controls.Add(textBoxTipoDeMoeda);
+            tabPage3.Controls.Add(textBoxTipoDeMoeda2);
             tabPage3.Controls.Add(label5);
             tabPage3.Controls.Add(label21);
             tabPage3.Controls.Add(textBox13);
             tabPage3.Controls.Add(label22);
             tabPage3.Controls.Add(textBox14);
-            tabPage3.Controls.Add(textBoxTipoConta);
+            tabPage3.Controls.Add(textBoxTipoConta2);
             tabPage3.Controls.Add(label27);
             tabPage3.Controls.Add(textBox17);
             tabPage3.Controls.Add(label25);
@@ -548,13 +548,13 @@
             textBox16.Size = new Size(193, 27);
             textBox16.TabIndex = 84;
             // 
-            // textBoxTipoDeMoeda
+            // textBoxTipoDeMoeda2
             // 
-            textBoxTipoDeMoeda.DataBindings.Add(new Binding("Text", tipoDeMoedaBindingSource, "TipoMoeda", true));
-            textBoxTipoDeMoeda.Location = new Point(402, 80);
-            textBoxTipoDeMoeda.Name = "textBoxTipoDeMoeda";
-            textBoxTipoDeMoeda.Size = new Size(193, 27);
-            textBoxTipoDeMoeda.TabIndex = 99;
+            textBoxTipoDeMoeda2.DataBindings.Add(new Binding("Text", tipoDeMoedaBindingSource, "TipoMoeda", true));
+            textBoxTipoDeMoeda2.Location = new Point(402, 80);
+            textBoxTipoDeMoeda2.Name = "textBoxTipoDeMoeda2";
+            textBoxTipoDeMoeda2.Size = new Size(193, 27);
+            textBoxTipoDeMoeda2.TabIndex = 99;
             // 
             // tipoDeMoedaBindingSource
             // 
@@ -606,13 +606,13 @@
             textBox14.Size = new Size(194, 27);
             textBox14.TabIndex = 86;
             // 
-            // textBoxTipoConta
+            // textBoxTipoConta2
             // 
-            textBoxTipoConta.DataBindings.Add(new Binding("Text", tipoDeContaBindingSource, "TipoConta", true));
-            textBoxTipoConta.Location = new Point(3, 79);
-            textBoxTipoConta.Name = "textBoxTipoConta";
-            textBoxTipoConta.Size = new Size(161, 27);
-            textBoxTipoConta.TabIndex = 104;
+            textBoxTipoConta2.DataBindings.Add(new Binding("Text", tipoDeContaBindingSource, "TipoConta", true));
+            textBoxTipoConta2.Location = new Point(3, 79);
+            textBoxTipoConta2.Name = "textBoxTipoConta2";
+            textBoxTipoConta2.Size = new Size(161, 27);
+            textBoxTipoConta2.TabIndex = 104;
             // 
             // tipoDeContaBindingSource
             // 
@@ -742,14 +742,14 @@
         private Button button2;
         private Label label24;
         private TextBox textBox16;
-        private TextBox textBoxTipoDeMoeda;
+        private TextBox textBoxTipoDeMoeda2;
         private BindingSource tipoDeMoedaBindingSource;
         private Label label5;
         private Label label21;
         private TextBox textBox13;
         private Label label22;
         private TextBox textBox14;
-        private TextBox textBoxTipoConta;
+        private TextBox textBoxTipoConta2;
         private BindingSource tipoDeContaBindingSource;
         private Label label27;
         private TextBox textBox17;
