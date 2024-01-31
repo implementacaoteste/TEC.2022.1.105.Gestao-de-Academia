@@ -211,7 +211,7 @@
             // 
             // label1
             // 
-            label1.Dock = DockStyle.Top;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
@@ -233,6 +233,7 @@
             // 
             // textBoxBuscarPor
             // 
+            textBoxBuscarPor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxBuscarPor.BackColor = Color.White;
             textBoxBuscarPor.Location = new Point(216, 75);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
@@ -314,7 +315,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+<<<<<<< Updated upstream
             BackColor = Color.White;
+=======
+            BackColor = SystemColors.ButtonFace;
+>>>>>>> Stashed changes
             CancelButton = buttonCancelar;
             ClientSize = new Size(1201, 496);
             Controls.Add(dateTimePicker1);
