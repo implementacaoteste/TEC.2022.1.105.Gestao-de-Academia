@@ -176,7 +176,6 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.vecteezy_metal_dumbbells_with_background_blurred_gym_interior_21488003;
             pictureBox1.Location = new Point(0, 36);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(834, 525);

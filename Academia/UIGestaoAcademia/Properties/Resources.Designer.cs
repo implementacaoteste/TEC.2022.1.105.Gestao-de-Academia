@@ -59,15 +59,5 @@ namespace UIGestaoAcademia.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap vecteezy_metal_dumbbells_with_background_blurred_gym_interior_21488003 {
-            get {
-                object obj = ResourceManager.GetObject("vecteezy_metal-dumbbells-with-background-blurred-gym-interior_21488003", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
