@@ -29,6 +29,11 @@ namespace UIGestaoAcademia
         {
             try
             {
+                if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundo.jpg"))
+                {
+                    pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundo.jpg";
+                    pictureBox1.Load();
+                }
                 using (FormLogin frm = new FormLogin())
                 {
                     frm.ShowDialog();

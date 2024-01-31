@@ -315,11 +315,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-<<<<<<< Updated upstream
             BackColor = Color.White;
-=======
-            BackColor = SystemColors.ButtonFace;
->>>>>>> Stashed changes
             CancelButton = buttonCancelar;
             ClientSize = new Size(1201, 496);
             Controls.Add(dateTimePicker1);
