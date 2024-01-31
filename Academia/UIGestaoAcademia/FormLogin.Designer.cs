@@ -35,6 +35,8 @@
             label1 = new Label();
             label2 = new Label();
             label4 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // textBoxUsuario
@@ -109,12 +111,21 @@
             label4.Text = "Login";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(390, 300);
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(390, 296);
+            Controls.Add(pictureBox1);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -133,6 +144,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormLogin_Load;
             KeyDown += FormLogin_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,5 +158,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private PictureBox pictureBox1;
     }
 }
