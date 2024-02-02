@@ -15,15 +15,40 @@ namespace UIGestaoAcademia
         public FormVendas(int _id = 0)
         {
             InitializeComponent();
+            ExibirNomeUsuarioLogado();
             vendaBindingSource.AddNew();
             itensVendaBindingSource.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
             _id = id;
+
+            int codigoVenda = GerarCodigoVenda();
+            labelCodigoVenda.Text = codigoVenda.ToString();
+
+
         }
-        public string GetLoggedInUsername()
+        private void ExibirNomeUsuarioLogado()
         {
-            string userName = Environment.UserName;
-            return userName;
+
+        }
+        private int GerarCodigoVenda()
+        {
+
+            int codigoVenda = 0;
+
+            using (SqlConnection connection = new SqlConnection(Conexao.StringDeConexao))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT MAX(Id) FROM Venda", connection);
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    codigoVenda = Convert.ToInt32(result) + 1;
+                }
+            }
+
+            return codigoVenda;
         }
         private void buttonBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -146,7 +171,7 @@ namespace UIGestaoAcademia
 
         private void FormVendas_Load(object sender, EventArgs e)
         {
-            labelNomeUsuarioLogado.Text = "Usuário logado: " + GetLoggedInUsername();
+
         }
     }
 }
