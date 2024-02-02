@@ -1,4 +1,4 @@
-﻿USE MASTER
+﻿﻿USE MASTER
 GO
 ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
@@ -77,7 +77,17 @@ CREATE TABLE Fornecedor
 	Email VARCHAR(200),
 	Telefone CHAR(14),
 	Endereco VARCHAR(100),
-	Descricao VARCHAR(150)
+	Descricao VARCHAR(150),
+	TipoDeMoedaId INT,
+	TipoContaId INT,
+	FornecedorId INT,
+	NomeBanco VARCHAR(50),
+	NumeroAgencia VARCHAR(6),
+	NumeroConta VARCHAR(21),
+	ChavePix VARCHAR(32),
+	NomeTitular VARCHAR(100),
+	Iban VARCHAR(34),
+	Obs VARCHAR(100)
 )
 GO
 CREATE TABLE CompraProduto
@@ -209,24 +219,6 @@ CREATE TABLE Funcionario
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
 )
-
-CREATE TABLE DadosBancarios
-(
-	Id INT PRIMARY KEY IDENTITY(1,1),
-	TipoDeMoedaId INT,
-	TipoContaId INT,
-	FornecedorId INT,
-	NomeBanco VARCHAR(50),
-	NumeroAgencia VARCHAR(6),
-	NumeroConta VARCHAR(21),
-	ChavePix VARCHAR(32),
-	NomeTitular VARCHAR(100),
-	CpfCnpj VARCHAR(15),
-	Telefone VARCHAR(15),
-	Email VARCHAR(100),
-	Iban VARCHAR(34),
-	Obs VARCHAR(100)
-)
 GO
 
 CREATE TABLE TipoDeConta
@@ -235,6 +227,8 @@ CREATE TABLE TipoDeConta
 	TipoConta VARCHAR(20)
 )
 GO
+
+SELECT * FROM DadosBancarios
 
 CREATE  TABLE TipoDeMoeda
 (

@@ -198,7 +198,6 @@
             MinimizeBox = false;
             Name = "FormPrincipal";
             ShowIcon = false;
-            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;
             Load += FormPrincipal_Load;
