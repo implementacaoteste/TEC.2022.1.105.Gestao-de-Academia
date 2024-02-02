@@ -85,8 +85,6 @@
             label27 = new Label();
             textBox17 = new TextBox();
             label25 = new Label();
-            label20 = new Label();
-            textBox12 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFornecedor).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -217,7 +215,7 @@
             // 
             // textBoxDescricao
             // 
-            textBoxDescricao.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "Descricao", true));
+            textBoxDescricao.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "Obs", true));
             textBoxDescricao.Location = new Point(5, 136);
             textBoxDescricao.Name = "textBoxDescricao";
             textBoxDescricao.Size = new Size(841, 27);
@@ -416,7 +414,7 @@
             // 
             // textBox15
             // 
-            textBox15.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Obs", true));
+            textBox15.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "Descricao", true));
             textBox15.Location = new Point(22, 167);
             textBox15.Name = "textBox15";
             textBox15.Size = new Size(809, 27);
@@ -482,8 +480,6 @@
             tabPage3.Controls.Add(label27);
             tabPage3.Controls.Add(textBox17);
             tabPage3.Controls.Add(label25);
-            tabPage3.Controls.Add(label20);
-            tabPage3.Controls.Add(textBox12);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
@@ -494,17 +490,17 @@
             // 
             // textBox8
             // 
-            textBox8.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "Iban", true));
-            textBox8.Location = new Point(637, 82);
+            textBox8.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "Iban", true));
+            textBox8.Location = new Point(438, 80);
             textBox8.Name = "textBox8";
-            textBox8.Size = new Size(193, 27);
+            textBox8.Size = new Size(358, 27);
             textBox8.TabIndex = 107;
             // 
             // label19
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.Location = new Point(637, 56);
+            label19.Location = new Point(438, 54);
             label19.Name = "label19";
             label19.Size = new Size(44, 20);
             label19.TabIndex = 108;
@@ -512,7 +508,7 @@
             // 
             // buttonTipoMoeda
             // 
-            buttonTipoMoeda.Location = new Point(601, 80);
+            buttonTipoMoeda.Location = new Point(402, 78);
             buttonTipoMoeda.Name = "buttonTipoMoeda";
             buttonTipoMoeda.Size = new Size(30, 29);
             buttonTipoMoeda.TabIndex = 109;
@@ -542,7 +538,7 @@
             // 
             // textBox16
             // 
-            textBox16.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeBanco", true));
+            textBox16.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "NomeBanco", true));
             textBox16.Location = new Point(3, 26);
             textBox16.Name = "textBox16";
             textBox16.Size = new Size(193, 27);
@@ -551,7 +547,7 @@
             // textBoxTipoDeMoeda2
             // 
             textBoxTipoDeMoeda2.DataBindings.Add(new Binding("Text", tipoDeMoedaBindingSource, "TipoMoeda", true));
-            textBoxTipoDeMoeda2.Location = new Point(402, 80);
+            textBoxTipoDeMoeda2.Location = new Point(203, 78);
             textBoxTipoDeMoeda2.Name = "textBoxTipoDeMoeda2";
             textBoxTipoDeMoeda2.Size = new Size(193, 27);
             textBoxTipoDeMoeda2.TabIndex = 99;
@@ -564,7 +560,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(402, 56);
+            label5.Location = new Point(203, 54);
             label5.Name = "label5";
             label5.Size = new Size(112, 20);
             label5.TabIndex = 106;
@@ -582,7 +578,7 @@
             // 
             // textBox13
             // 
-            textBox13.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NumeroAgencia", true));
+            textBox13.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "NumeroAgencia", true));
             textBox13.Location = new Point(202, 26);
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(194, 27);
@@ -600,7 +596,7 @@
             // 
             // textBox14
             // 
-            textBox14.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NumeroConta", true));
+            textBox14.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "NumeroConta", true));
             textBox14.Location = new Point(402, 26);
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(194, 27);
@@ -630,7 +626,7 @@
             // 
             // textBox17
             // 
-            textBox17.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "ChavePix", true));
+            textBox17.DataBindings.Add(new Binding("Text", bindingSourceCadastrarFornecedor, "ChavePix", true));
             textBox17.Location = new Point(602, 26);
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(194, 27);
@@ -645,24 +641,6 @@
             label25.Size = new Size(102, 20);
             label25.TabIndex = 95;
             label25.Text = "Tipo de conta";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.Location = new Point(202, 56);
-            label20.Name = "label20";
-            label20.Size = new Size(121, 20);
-            label20.TabIndex = 97;
-            label20.Text = "Nome do Titular";
-            // 
-            // textBox12
-            // 
-            textBox12.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDadosBancario, "NomeTitular", true));
-            textBox12.Location = new Point(202, 79);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(193, 27);
-            textBox12.TabIndex = 96;
             // 
             // FormCadastrarFornecedor
             // 
@@ -754,8 +732,6 @@
         private Label label27;
         private TextBox textBox17;
         private Label label25;
-        private Label label20;
-        private TextBox textBox12;
         private Label label23;
         private TextBox textBox15;
     }
