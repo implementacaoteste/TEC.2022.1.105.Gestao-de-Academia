@@ -60,7 +60,7 @@
             groupBox1 = new GroupBox();
             calendarioDataVencimento = new Calendario();
             labelNomeUsuarioLogado = new Label();
-            textBox1 = new TextBox();
+            textBoxVenda = new TextBox();
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -366,13 +366,13 @@
             labelNomeUsuarioLogado.TabIndex = 25;
             labelNomeUsuarioLogado.Text = "User";
             // 
-            // textBox1
+            // textBoxVenda
             // 
-            textBox1.Location = new Point(813, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(98, 27);
-            textBox1.TabIndex = 26;
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            textBoxVenda.Location = new Point(813, 18);
+            textBoxVenda.Name = "textBoxVenda";
+            textBoxVenda.Size = new Size(98, 27);
+            textBoxVenda.TabIndex = 26;
+            textBoxVenda.TextAlign = HorizontalAlignment.Right;
             // 
             // FormVendas
             // 
@@ -380,7 +380,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(954, 863);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxVenda);
             Controls.Add(labelNomeUsuarioLogado);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -442,7 +442,7 @@
         private GroupBox groupBox1;
         private Label labelNomeUsuarioLogado;
         private Calendario calendarioDataVencimento;
-        private TextBox textBox1;
+        private TextBox textBoxVenda;
         private BindingSource vendaBindingSource;
     }
 }
