@@ -54,8 +54,9 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado
-                                    FROM Fornecedor";
+                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
+                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    ChavePix, Iban, Obs FROM Fornecedor";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
@@ -90,8 +91,9 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado
-                                    FROM Fornecedor WHERE Nome LIKE @Nome";
+                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
+                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    ChavePix, Iban, Obs FROM Fornecedor WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
 
@@ -126,8 +128,9 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado
-                                    FROM Fornecedor WHERE CpfCnpj = @CpfCnpj";
+                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
+                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    ChavePix, Iban, Obs  FROM Fornecedor WHERE CpfCnpj = @CpfCnpj";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CpfCnpj", _CpfCnpj);
 
@@ -225,8 +228,10 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
-                                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado 
-                                    FROM Fornecedor WHERE Id = @Id";
+                    Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
+                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    ChavePix, Iban, Obs FROM Fornecedor WHERE Id = @Id";
+                                         
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Id", _id);
 
@@ -309,7 +314,7 @@ namespace DAL
             _fornecedor.Cidade = _rd["Cidade"].ToString();
             _fornecedor.Estado = _rd["Estado"].ToString();
             _fornecedor.TipoDeMoedaId = Convert.ToInt32(_rd["TipoDeMoedaId"]);
-            _fornecedor.TipoDeContaId = Convert.ToInt32(_rd["TipoDeContaId"]);
+            _fornecedor.TipoDeContaId = Convert.ToInt32(_rd["TipoContaId"]);
             _fornecedor.NomeBanco = _rd["NomeBanco"].ToString();
             _fornecedor.NumeroAgencia = _rd["NumeroAgencia"].ToString();
             _fornecedor.NumeroConta = _rd["NumeroConta"].ToString();

@@ -146,7 +146,6 @@
             textBoxBuscarPor.Name = "textBoxBuscarPor";
             textBoxBuscarPor.Size = new Size(316, 27);
             textBoxBuscarPor.TabIndex = 23;
-            textBoxBuscarPor.TextChanged += textBoxBuscarPor_TextChanged;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -181,14 +180,13 @@
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, cpfCnpjDataGridViewTextBoxColumn, emailDataGridViewTextBoxColumn, telefoneDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn, ruaDataGridViewTextBoxColumn, cEPDataGridViewTextBoxColumn, bairroDataGridViewTextBoxColumn, complementoDataGridViewTextBoxColumn, numeroCasaDataGridViewTextBoxColumn, paisDataGridViewTextBoxColumn, cidadeDataGridViewTextBoxColumn, estadoDataGridViewTextBoxColumn });
             dataGridViewProduto.DataSource = BindingSourceBuscarFornecedor;
-            dataGridViewProduto.Location = new Point(11, 165);
+            dataGridViewProduto.Location = new Point(11, 161);
             dataGridViewProduto.Name = "dataGridViewProduto";
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
             dataGridViewProduto.Size = new Size(1069, 341);
             dataGridViewProduto.TabIndex = 28;
-            dataGridViewProduto.CellContentClick += dataGridViewProduto_CellContentClick;
             // 
             // idDataGridViewTextBoxColumn
             // 

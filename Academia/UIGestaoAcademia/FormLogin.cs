@@ -65,5 +65,10 @@ namespace UIGestaoAcademia
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundologin.png"))
                 pictureBox2.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundologin.png";
         }
+
+        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
