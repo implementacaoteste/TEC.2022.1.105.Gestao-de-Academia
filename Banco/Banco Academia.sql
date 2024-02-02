@@ -67,8 +67,9 @@ CREATE TABLE Cliente
 	Endereco VARCHAR(100),
 	DataCadastro DATETIME
 )
+select*from Cliente
 GO
-CREATE TABLE SELECT * FROM Fornecedor
+CREATE TABLE Fornecedor
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
