@@ -46,6 +46,7 @@
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(366, 27);
             textBoxUsuario.TabIndex = 2;
+            textBoxUsuario.TextChanged += textBoxUsuario_TextChanged;
             textBoxUsuario.KeyDown += textBoxUsuario_KeyDown;
             // 
             // textBoxSenha

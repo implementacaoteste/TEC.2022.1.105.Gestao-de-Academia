@@ -89,14 +89,5 @@ namespace UIGestaoAcademia
             }
         }
 
-        private void textBoxBuscarPor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
