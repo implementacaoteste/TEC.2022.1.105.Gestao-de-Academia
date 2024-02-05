@@ -125,8 +125,8 @@
             // planoAssinaturaToolStripMenuItem
             // 
             planoAssinaturaToolStripMenuItem.Name = "planoAssinaturaToolStripMenuItem";
-            planoAssinaturaToolStripMenuItem.Size = new Size(167, 32);
-            planoAssinaturaToolStripMenuItem.Text = "Plano assinatura";
+            planoAssinaturaToolStripMenuItem.Size = new Size(197, 32);
+            planoAssinaturaToolStripMenuItem.Text = "Plano de Assinatura";
             planoAssinaturaToolStripMenuItem.Click += planoAssinaturaToolStripMenuItem_Click;
             // 
             // vENDASToolStripMenuItem
