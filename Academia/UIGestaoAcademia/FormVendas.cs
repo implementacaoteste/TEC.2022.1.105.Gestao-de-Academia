@@ -171,7 +171,7 @@ namespace UIGestaoAcademia
 
         private void FormVendas_Load(object sender, EventArgs e)
         {
-
+            labeUser.Text = Constantes.UsuarioLogado.Nome;
         }
     }
 }

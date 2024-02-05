@@ -4,11 +4,11 @@ namespace Models
 {
     public static class Constantes
     {
-        public static int IdUsuarioLogado;
+        //public static int IdUsuarioLogado;
         public static string StringDeConexao;
         public static string DiretorioStringConexao = "C:\\Configuracao\\";
         public static string NomeArquivoConexao = "academiaConnection.config";
 
-        public static Usuario ProfessorLogado { get; set; }
+        public static Usuario UsuarioLogado { get; set; }
     }
 }

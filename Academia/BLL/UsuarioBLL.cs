@@ -64,7 +64,7 @@ namespace BLL
         }
         public void ValidarPermissao(int _idPermissao)
         {
-            if (!new UsuarioDAL().ValidarPermissao(Constantes.IdUsuarioLogado, _idPermissao))
+            if (!new UsuarioDAL().ValidarPermissao(Constantes.UsuarioLogado.Id, _idPermissao))
                 throw new Exception("Você não tem permissão de realizar essa operação. Procure o administrador do sistema.");
         }
         public void AdicionarGrupoUsuario(int _idUsuario, int _idGrupoUsuario)
@@ -80,7 +80,7 @@ namespace BLL
         {
             Usuario usuario = new UsuarioDAL().BuscarPorNomeUsuario(_nomeUsuario);
             if (_senha == usuario.Senha && usuario.Ativo)
-                Constantes.IdUsuarioLogado = usuario.Id;
+                Constantes.UsuarioLogado = usuario;
             else
                 throw new Exception("Usuario ou senha inválido.");
         }
