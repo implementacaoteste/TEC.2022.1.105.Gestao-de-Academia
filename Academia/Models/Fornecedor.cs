@@ -14,7 +14,7 @@ namespace Models
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Descricao { get; set; }
-        public string Rua { get; set; }
+        public string Rua { get; set; }  
         public string CEP { get; set; }
         public string Bairro { get; set; }
         public string Complemento { get; set; }
