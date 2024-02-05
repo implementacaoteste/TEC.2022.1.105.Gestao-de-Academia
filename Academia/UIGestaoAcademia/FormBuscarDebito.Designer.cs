@@ -206,7 +206,7 @@
             labelBuscarDebito.Anchor = AnchorStyles.None;
             labelBuscarDebito.BackColor = Color.Transparent;
             labelBuscarDebito.Font = new Font("Swis721 BlkCn BT", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            labelBuscarDebito.ForeColor = SystemColors.InfoText;
+            labelBuscarDebito.ForeColor = SystemColors.Window;
             labelBuscarDebito.Location = new Point(2, 7);
             labelBuscarDebito.Name = "labelBuscarDebito";
             labelBuscarDebito.Size = new Size(1201, 67);
