@@ -10,6 +10,8 @@ namespace Models
 {
     public class Venda
     {
+        public List<ItensVenda> itensCompraList;
+
         public int Id { get; set; }
         public int UsuarioId  { get; set; }
         public int ClienteId { get; set; }
@@ -41,5 +43,6 @@ namespace Models
         public FormaPagamento FormaPagamento { get; set; }
         public Cliente Cliente { get; set; }
         public Funcionario Funcionario { get; set; }
+
     }
 }

@@ -58,10 +58,11 @@ namespace UIGestaoAcademia
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            label4.Parent = pictureBox2;
-            label3.Parent = pictureBox2;
-            label5.Parent = pictureBox2;
-            label4.BackColor = Color.Transparent;
+            label1.Parent = pictureBox2;
+            label2.Parent = pictureBox2;
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundologin.png"))
                 pictureBox2.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundologin.png";
         }

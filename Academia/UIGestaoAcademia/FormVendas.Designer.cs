@@ -33,7 +33,6 @@
             label3 = new Label();
             itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
-            vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
@@ -60,11 +59,12 @@
             groupBox1 = new GroupBox();
             calendarioDataVencimento = new Calendario();
             labelNomeUsuarioLogado = new Label();
-            textBox1 = new TextBox();
+            labelCodigoVenda = new Label();
+            vendaBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -96,10 +96,6 @@
             textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             textBoxBuscarPorCliente.Size = new Size(398, 27);
             textBoxBuscarPorCliente.TabIndex = 2;
-            // 
-            // vendaBindingSource
-            // 
-            vendaBindingSource.DataSource = typeof(Models.Venda);
             // 
             // buttonFinalizarVenda
             // 
@@ -293,6 +289,7 @@
             // labelValorTotal
             // 
             labelValorTotal.AutoSize = true;
+            labelValorTotal.DataBindings.Add(new Binding("Text", vendaBindingSource, "TotalVenda", true));
             labelValorTotal.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(692, 689);
             labelValorTotal.Name = "labelValorTotal";
@@ -304,7 +301,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(622, 4);
+            label2.Location = new Point(622, 14);
             label2.Name = "label2";
             label2.Size = new Size(185, 41);
             label2.TabIndex = 10;
@@ -366,13 +363,20 @@
             labelNomeUsuarioLogado.TabIndex = 25;
             labelNomeUsuarioLogado.Text = "User";
             // 
-            // textBox1
+            // labelCodigoVenda
             // 
-            textBox1.Location = new Point(813, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(98, 27);
-            textBox1.TabIndex = 26;
-            textBox1.TextAlign = HorizontalAlignment.Right;
+            labelCodigoVenda.AutoSize = true;
+            labelCodigoVenda.DataBindings.Add(new Binding("Text", vendaBindingSource, "Id", true));
+            labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCodigoVenda.Location = new Point(795, 2);
+            labelCodigoVenda.Name = "labelCodigoVenda";
+            labelCodigoVenda.Size = new Size(162, 62);
+            labelCodigoVenda.TabIndex = 29;
+            labelCodigoVenda.Text = "Venda";
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Models.Venda);
             // 
             // FormVendas
             // 
@@ -380,7 +384,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(954, 863);
-            Controls.Add(textBox1);
+            Controls.Add(labelCodigoVenda);
             Controls.Add(labelNomeUsuarioLogado);
             Controls.Add(label4);
             Controls.Add(label2);
@@ -398,10 +402,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormVendas_Load;
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -442,7 +446,7 @@
         private GroupBox groupBox1;
         private Label labelNomeUsuarioLogado;
         private Calendario calendarioDataVencimento;
-        private TextBox textBox1;
+        private Label labelCodigoVenda;
         private BindingSource vendaBindingSource;
     }
 }
