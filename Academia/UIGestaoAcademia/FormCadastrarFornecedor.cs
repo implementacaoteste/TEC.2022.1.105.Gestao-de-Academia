@@ -98,5 +98,10 @@ namespace UIGestaoAcademia
                 }
             }
         }
+
+        private void FormCadastrarFornecedor_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

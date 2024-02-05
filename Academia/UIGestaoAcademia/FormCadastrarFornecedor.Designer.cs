@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label2 = new Label();
+            labelBuscarFornecedor = new Label();
             bindingSourceCadastrarFornecedor = new BindingSource(components);
             label6 = new Label();
             textBoxEmail = new TextBox();
@@ -63,7 +63,6 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             textBox15 = new TextBox();
-            bindingSourceCadastrarDadosBancario = new BindingSource(components);
             label23 = new Label();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
@@ -85,26 +84,30 @@
             label27 = new Label();
             textBox17 = new TextBox();
             label25 = new Label();
+            bindingSourceCadastrarDadosBancario = new BindingSource(components);
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFornecedor).BeginInit();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // label2
+            // labelBuscarFornecedor
             // 
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(880, 76);
-            label2.TabIndex = 31;
-            label2.Text = "Cadastrar Fornecedor";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            labelBuscarFornecedor.BackColor = Color.Transparent;
+            labelBuscarFornecedor.Dock = DockStyle.Top;
+            labelBuscarFornecedor.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            labelBuscarFornecedor.Location = new Point(0, 0);
+            labelBuscarFornecedor.Name = "labelBuscarFornecedor";
+            labelBuscarFornecedor.Size = new Size(880, 76);
+            labelBuscarFornecedor.TabIndex = 31;
+            labelBuscarFornecedor.Text = "Cadastrar Fornecedor";
+            labelBuscarFornecedor.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // bindingSourceCadastrarFornecedor
             // 
@@ -420,10 +423,6 @@
             textBox15.Size = new Size(809, 27);
             textBox15.TabIndex = 92;
             // 
-            // bindingSourceCadastrarDadosBancario
-            // 
-            bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
-            // 
             // label23
             // 
             label23.AutoSize = true;
@@ -642,6 +641,20 @@
             label25.TabIndex = 95;
             label25.Text = "Tipo de conta";
             // 
+            // bindingSourceCadastrarDadosBancario
+            // 
+            bindingSourceCadastrarDadosBancario.DataSource = typeof(Models.DadosBancario);
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(880, 473);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 39;
+            pictureBox1.TabStop = false;
+            // 
             // FormCadastrarFornecedor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -651,9 +664,10 @@
             ClientSize = new Size(880, 473);
             Controls.Add(tabControl1);
             Controls.Add(button1);
-            Controls.Add(label2);
+            Controls.Add(labelBuscarFornecedor);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -662,23 +676,25 @@
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
+            Load += FormCadastrarFornecedor_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarFornecedor).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)tipoDeMoedaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)tipoDeContaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSourceCadastrarDadosBancario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label label2;
+        private Label labelBuscarFornecedor;
         private BindingSource bindingSourceCadastrarFornecedor;
         private Label label6;
         private TextBox textBoxEmail;
@@ -734,5 +750,6 @@
         private Label label25;
         private Label label23;
         private TextBox textBox15;
+        private PictureBox pictureBox1;
     }
 }

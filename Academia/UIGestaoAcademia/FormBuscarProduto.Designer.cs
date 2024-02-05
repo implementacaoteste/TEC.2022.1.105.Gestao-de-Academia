@@ -79,6 +79,7 @@
             dataGridViewProduto.RowTemplate.Height = 29;
             dataGridViewProduto.Size = new Size(1069, 339);
             dataGridViewProduto.TabIndex = 17;
+            dataGridViewProduto.DoubleClick += buttonSelecionar_Click;
             // 
             // idDataGridViewTextBoxColumn
             // 
