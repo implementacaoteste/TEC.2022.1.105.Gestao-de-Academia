@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing.Text;
 using System.Security.Principal;
 using System;
+using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
@@ -172,6 +173,11 @@ namespace UIGestaoAcademia
         private void FormVendas_Load(object sender, EventArgs e)
         {
             labeUser.Text = Constantes.UsuarioLogado.Nome;
+
+            labelUser.Parent = pictureBoxVenda;
+
+            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\.png"))
+                pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\.png";
         }
     }
 }
