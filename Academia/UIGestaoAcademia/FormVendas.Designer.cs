@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
-            label3 = new Label();
+            labelCliente = new Label();
+            labelUser = new Label();
             itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
             vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
-            label7 = new Label();
+            labelData = new Label();
             label8 = new Label();
             buttonBuscarCliente = new Button();
             buttonFormaDePagamento = new Button();
@@ -55,35 +55,37 @@
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             buttonBuscarProduto = new Button();
             labelValorTotal = new Label();
-            label2 = new Label();
+            labelVenda = new Label();
             label4 = new Label();
-            groupBox1 = new GroupBox();
+            groupBoxVenda = new GroupBox();
             calendarioDataVencimento = new Calendario();
             labelCodigoVenda = new Label();
             labeUser = new Label();
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
+            groupBoxVenda.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // labelCliente
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(218, 22);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 20);
-            label1.TabIndex = 11;
-            label1.Text = "CLIENTE";
+            labelCliente.AutoSize = true;
+            labelCliente.Location = new Point(218, 22);
+            labelCliente.Name = "labelCliente";
+            labelCliente.Size = new Size(64, 20);
+            labelCliente.TabIndex = 11;
+            labelCliente.Text = "CLIENTE";
             // 
-            // label3
+            // labelUser
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 13);
-            label3.Name = "label3";
-            label3.Size = new Size(41, 20);
-            label3.TabIndex = 10;
-            label3.Text = "User:";
+            labelUser.AutoSize = true;
+            labelUser.BackColor = Color.Transparent;
+            labelUser.ForeColor = Color.Black;
+            labelUser.Location = new Point(12, 13);
+            labelUser.Name = "labelUser";
+            labelUser.Size = new Size(41, 20);
+            labelUser.TabIndex = 10;
+            labelUser.Text = "User:";
             // 
             // itensVendaBindingSource
             // 
@@ -127,14 +129,14 @@
             textBox4.Size = new Size(125, 27);
             textBox4.TabIndex = 5;
             // 
-            // label7
+            // labelData
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(732, 22);
-            label7.Name = "label7";
-            label7.Size = new Size(46, 20);
-            label7.TabIndex = 8;
-            label7.Text = "DATA";
+            labelData.AutoSize = true;
+            labelData.Location = new Point(732, 22);
+            labelData.Name = "labelData";
+            labelData.Size = new Size(46, 20);
+            labelData.TabIndex = 8;
+            labelData.Text = "DATA";
             // 
             // label8
             // 
@@ -301,15 +303,16 @@
             labelValorTotal.TabIndex = 23;
             labelValorTotal.Text = "Teste";
             // 
-            // label2
+            // labelVenda
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(622, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(185, 41);
-            label2.TabIndex = 10;
-            label2.Text = "Cod. Venda:";
+            labelVenda.AutoSize = true;
+            labelVenda.BackColor = Color.Transparent;
+            labelVenda.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            labelVenda.Location = new Point(622, 14);
+            labelVenda.Name = "labelVenda";
+            labelVenda.Size = new Size(185, 41);
+            labelVenda.TabIndex = 10;
+            labelVenda.Text = "Cod. Venda:";
             // 
             // label4
             // 
@@ -321,27 +324,27 @@
             label4.TabIndex = 0;
             label4.Text = "TOTAL VENDA:";
             // 
-            // groupBox1
+            // groupBoxVenda
             // 
-            groupBox1.Controls.Add(calendarioDataVencimento);
-            groupBox1.Controls.Add(buttonExcluir);
-            groupBox1.Controls.Add(buttonFinalizarVenda);
-            groupBox1.Controls.Add(textBoxProduto);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Controls.Add(buttonBuscarProduto);
-            groupBox1.Controls.Add(textBoxQuantidade);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(buttonBuscarCliente);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(textBoxBuscarPorCliente);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Location = new Point(15, 192);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(924, 500);
-            groupBox1.TabIndex = 24;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Nova Venda";
+            groupBoxVenda.Controls.Add(calendarioDataVencimento);
+            groupBoxVenda.Controls.Add(buttonExcluir);
+            groupBoxVenda.Controls.Add(buttonFinalizarVenda);
+            groupBoxVenda.Controls.Add(textBoxProduto);
+            groupBoxVenda.Controls.Add(dataGridView1);
+            groupBoxVenda.Controls.Add(buttonBuscarProduto);
+            groupBoxVenda.Controls.Add(textBoxQuantidade);
+            groupBoxVenda.Controls.Add(label10);
+            groupBoxVenda.Controls.Add(buttonBuscarCliente);
+            groupBoxVenda.Controls.Add(label12);
+            groupBoxVenda.Controls.Add(labelCliente);
+            groupBoxVenda.Controls.Add(textBoxBuscarPorCliente);
+            groupBoxVenda.Controls.Add(labelData);
+            groupBoxVenda.Location = new Point(15, 192);
+            groupBoxVenda.Name = "groupBoxVenda";
+            groupBoxVenda.Size = new Size(924, 500);
+            groupBoxVenda.TabIndex = 24;
+            groupBoxVenda.TabStop = false;
+            groupBoxVenda.Text = "Nova Venda";
             // 
             // calendarioDataVencimento
             // 
@@ -359,6 +362,7 @@
             // labelCodigoVenda
             // 
             labelCodigoVenda.AutoSize = true;
+            labelCodigoVenda.BackColor = Color.Transparent;
             labelCodigoVenda.DataBindings.Add(new Binding("Text", vendaBindingSource, "Id", true));
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelCodigoVenda.Location = new Point(795, 2);
@@ -370,6 +374,8 @@
             // labeUser
             // 
             labeUser.AutoSize = true;
+            labeUser.BackColor = Color.Transparent;
+            labeUser.ForeColor = Color.Black;
             labeUser.Location = new Point(62, 14);
             labeUser.Name = "labeUser";
             labeUser.Size = new Size(38, 20);
@@ -381,19 +387,20 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
+            BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(954, 863);
             Controls.Add(labeUser);
             Controls.Add(labelCodigoVenda);
             Controls.Add(label4);
-            Controls.Add(label2);
+            Controls.Add(labelVenda);
             Controls.Add(labelValorTotal);
             Controls.Add(textBoxFormaPagamento);
             Controls.Add(buttonFormaDePagamento);
             Controls.Add(label8);
             Controls.Add(label6);
             Controls.Add(textBox4);
-            Controls.Add(label3);
-            Controls.Add(groupBox1);
+            Controls.Add(labelUser);
+            Controls.Add(groupBoxVenda);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -406,14 +413,14 @@
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            groupBoxVenda.ResumeLayout(false);
+            groupBoxVenda.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
+        private Label labelCliente;
         private Label label3;
         private TextBox textBoxValorTotal;
         private DataGridViewTextBoxColumn produtoIdDataGridViewTextBoxColumn;
@@ -424,7 +431,7 @@
         private Button buttonFinalizarVenda;
         private Label label6;
         private TextBox textBox4;
-        private Label label7;
+        private Label labelData;
         private Label label8;
         private Button buttonBuscarCliente;
         private Button buttonFormaDePagamento;
@@ -443,12 +450,13 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
         private Label labelValorTotal;
-        private Label label2;
+        private Label labelVenda;
         private Label label4;
-        private GroupBox groupBox1;
+        private GroupBox groupBoxVenda;
         private Calendario calendarioDataVencimento;
         private Label labelCodigoVenda;
         private BindingSource vendaBindingSource;
         private Label labeUser;
+        private Label labelUser;
     }
 }
