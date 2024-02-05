@@ -14,6 +14,15 @@ namespace Models
 
         public int Id { get; set; }
         public int UsuarioId  { get; set; }
+        public string Nome
+        {
+            get
+            {
+                if (Usuario != null)
+                    return Usuario.Nome;
+                return "";
+            }
+        }
         public int ClienteId { get; set; }
         public DateTime DataVenda { get; set; }
         public double TotalVenda { get; set; }
@@ -43,6 +52,7 @@ namespace Models
         public FormaPagamento FormaPagamento { get; set; }
         public Cliente Cliente { get; set; }
         public Funcionario Funcionario { get; set; }
+        public Usuario Usuario { get; set; }
 
     }
 }

@@ -59,9 +59,9 @@
             label4 = new Label();
             groupBox1 = new GroupBox();
             calendarioDataVencimento = new Calendario();
-            labelNomeUsuarioLogado = new Label();
             labelCodigoVenda = new Label();
             vendaBindingSource1 = new BindingSource(components);
+            labeUser = new Label();
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -358,21 +358,10 @@
             calendarioDataVencimento.Size = new Size(140, 27);
             calendarioDataVencimento.TabIndex = 27;
             // 
-            // labelNomeUsuarioLogado
-            // 
-            labelNomeUsuarioLogado.AutoSize = true;
-            labelNomeUsuarioLogado.DataBindings.Add(new Binding("Text", vendaBindingSource, "UsuarioId", true));
-            labelNomeUsuarioLogado.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelNomeUsuarioLogado.Location = new Point(59, 4);
-            labelNomeUsuarioLogado.Name = "labelNomeUsuarioLogado";
-            labelNomeUsuarioLogado.Size = new Size(74, 38);
-            labelNomeUsuarioLogado.TabIndex = 25;
-            labelNomeUsuarioLogado.Text = "User";
-            // 
             // labelCodigoVenda
             // 
             labelCodigoVenda.AutoSize = true;
-            labelCodigoVenda.DataBindings.Add(new Binding("Text", vendaBindingSource, "Id", true));
+            labelCodigoVenda.DataBindings.Add(new Binding("Text", vendaBindingSource1, "Id", true));
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelCodigoVenda.Location = new Point(795, 2);
             labelCodigoVenda.Name = "labelCodigoVenda";
@@ -384,14 +373,24 @@
             // 
             vendaBindingSource1.DataSource = typeof(Models.Venda);
             // 
+            // labeUser
+            // 
+            labeUser.AutoSize = true;
+            labeUser.DataBindings.Add(new Binding("Text", vendaBindingSource, "Nome", true));
+            labeUser.Location = new Point(62, 14);
+            labeUser.Name = "labeUser";
+            labeUser.Size = new Size(71, 20);
+            labeUser.TabIndex = 30;
+            labeUser.Text = "labelUser";
+            // 
             // FormVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(954, 863);
+            Controls.Add(labeUser);
             Controls.Add(labelCodigoVenda);
-            Controls.Add(labelNomeUsuarioLogado);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(labelValorTotal);
@@ -451,10 +450,10 @@
         private Label label2;
         private Label label4;
         private GroupBox groupBox1;
-        private Label labelNomeUsuarioLogado;
         private Calendario calendarioDataVencimento;
         private Label labelCodigoVenda;
         private BindingSource vendaBindingSource1;
         private BindingSource vendaBindingSource;
+        private Label labeUser;
     }
 }

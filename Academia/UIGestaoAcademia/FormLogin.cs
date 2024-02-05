@@ -1,8 +1,10 @@
 ﻿using BLL;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
@@ -20,11 +22,12 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             Logou = false;
+
         }
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-
+                      
             try
             {
                 new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenha.Text);
