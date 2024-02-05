@@ -33,6 +33,7 @@
             label3 = new Label();
             itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
+            vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
             label6 = new Label();
             textBox4 = new TextBox();
@@ -60,11 +61,12 @@
             calendarioDataVencimento = new Calendario();
             labelNomeUsuarioLogado = new Label();
             labelCodigoVenda = new Label();
-            vendaBindingSource = new BindingSource(components);
+            vendaBindingSource1 = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -96,6 +98,10 @@
             textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             textBoxBuscarPorCliente.Size = new Size(398, 27);
             textBoxBuscarPorCliente.TabIndex = 2;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Models.Venda);
             // 
             // buttonFinalizarVenda
             // 
@@ -374,9 +380,9 @@
             labelCodigoVenda.TabIndex = 29;
             labelCodigoVenda.Text = "Venda";
             // 
-            // vendaBindingSource
+            // vendaBindingSource1
             // 
-            vendaBindingSource.DataSource = typeof(Models.Venda);
+            vendaBindingSource1.DataSource = typeof(Models.Venda);
             // 
             // FormVendas
             // 
@@ -402,10 +408,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormVendas_Load;
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -447,6 +454,7 @@
         private Label labelNomeUsuarioLogado;
         private Calendario calendarioDataVencimento;
         private Label labelCodigoVenda;
+        private BindingSource vendaBindingSource1;
         private BindingSource vendaBindingSource;
     }
 }
