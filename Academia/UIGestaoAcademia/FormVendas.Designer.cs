@@ -59,14 +59,12 @@
             label4 = new Label();
             groupBox1 = new GroupBox();
             calendarioDataVencimento = new Calendario();
-            labelNomeUsuarioLogado = new Label();
             labelCodigoVenda = new Label();
-            vendaBindingSource1 = new BindingSource(components);
+            labeUser = new Label();
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)vendaBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -358,17 +356,6 @@
             calendarioDataVencimento.Size = new Size(140, 27);
             calendarioDataVencimento.TabIndex = 27;
             // 
-            // labelNomeUsuarioLogado
-            // 
-            labelNomeUsuarioLogado.AutoSize = true;
-            labelNomeUsuarioLogado.DataBindings.Add(new Binding("Text", vendaBindingSource, "UsuarioId", true));
-            labelNomeUsuarioLogado.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelNomeUsuarioLogado.Location = new Point(59, 4);
-            labelNomeUsuarioLogado.Name = "labelNomeUsuarioLogado";
-            labelNomeUsuarioLogado.Size = new Size(74, 38);
-            labelNomeUsuarioLogado.TabIndex = 25;
-            labelNomeUsuarioLogado.Text = "User";
-            // 
             // labelCodigoVenda
             // 
             labelCodigoVenda.AutoSize = true;
@@ -380,9 +367,14 @@
             labelCodigoVenda.TabIndex = 29;
             labelCodigoVenda.Text = "Venda";
             // 
-            // vendaBindingSource1
+            // labeUser
             // 
-            vendaBindingSource1.DataSource = typeof(Models.Venda);
+            labeUser.AutoSize = true;
+            labeUser.Location = new Point(62, 14);
+            labeUser.Name = "labeUser";
+            labeUser.Size = new Size(38, 20);
+            labeUser.TabIndex = 30;
+            labeUser.Text = "User";
             // 
             // FormVendas
             // 
@@ -390,8 +382,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             ClientSize = new Size(954, 863);
+            Controls.Add(labeUser);
             Controls.Add(labelCodigoVenda);
-            Controls.Add(labelNomeUsuarioLogado);
             Controls.Add(label4);
             Controls.Add(label2);
             Controls.Add(labelValorTotal);
@@ -402,9 +394,13 @@
             Controls.Add(textBox4);
             Controls.Add(label3);
             Controls.Add(groupBox1);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormVendas";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormVendas_Load;
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
@@ -412,7 +408,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)vendaBindingSource1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -451,10 +446,9 @@
         private Label label2;
         private Label label4;
         private GroupBox groupBox1;
-        private Label labelNomeUsuarioLogado;
         private Calendario calendarioDataVencimento;
         private Label labelCodigoVenda;
-        private BindingSource vendaBindingSource1;
         private BindingSource vendaBindingSource;
+        private Label labeUser;
     }
 }

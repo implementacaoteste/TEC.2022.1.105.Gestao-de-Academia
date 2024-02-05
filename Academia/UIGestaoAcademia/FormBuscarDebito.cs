@@ -129,10 +129,5 @@ namespace UIGestaoAcademia
                 labelE.Visible = true;
             }
         }
-
-        private void pictureBoxLupa_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

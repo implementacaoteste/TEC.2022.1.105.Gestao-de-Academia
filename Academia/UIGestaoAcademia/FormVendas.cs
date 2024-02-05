@@ -16,7 +16,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             ExibirNomeUsuarioLogado();
-            vendaBindingSource1.AddNew();
+            vendaBindingSource.AddNew();
             itensVendaBindingSource.AddNew();
             dataGridView1.DataSource = itensVendaBindingSource;
             _id = id;
@@ -60,7 +60,7 @@ namespace UIGestaoAcademia
 
                     if (frm.Cliente != null)
                     {
-                        ((Venda)vendaBindingSource1.Current).Cliente = frm.Cliente;
+                        ((Venda)vendaBindingSource.Current).Cliente = frm.Cliente;
                         textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
                     }
                 }
@@ -79,8 +79,8 @@ namespace UIGestaoAcademia
                 if (frm.FormaPagamento != null)
                     if (frm.FormaPagamento != null)
                     {
-                        ((Venda)vendaBindingSource1.Current).FormaPagamento = frm.FormaPagamento;
-                        ((Venda)vendaBindingSource1.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                        ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
+                        ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
                         textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
                     }
             }
@@ -148,7 +148,7 @@ namespace UIGestaoAcademia
 
                 try
                 {
-                    Venda venda = (Venda)vendaBindingSource1.Current;
+                    Venda venda = (Venda)vendaBindingSource.Current;
                     new VendasBLL().Inserir(venda);
 
                     MessageBox.Show("Venda finalizada com sucesso!");
@@ -163,7 +163,7 @@ namespace UIGestaoAcademia
         }
         private void LimparFormulario()
         {
-            vendaBindingSource1.AddNew();
+            vendaBindingSource.AddNew();
             itensVendaBindingSource.Clear();
             dataGridView1.DataSource = itensVendaBindingSource;
             labelValorTotal.Text = "0.00";
@@ -171,7 +171,7 @@ namespace UIGestaoAcademia
 
         private void FormVendas_Load(object sender, EventArgs e)
         {
-
+            labeUser.Text = Constantes.UsuarioLogado.Nome;
         }
     }
 }

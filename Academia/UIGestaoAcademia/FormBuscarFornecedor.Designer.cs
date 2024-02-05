@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             buttonSelecionar = new Button();
             label2 = new Label();
-            label1 = new Label();
+            labelBuscarFornecedor = new Label();
             buttonCancelar = new Button();
             buttonExcluir = new Button();
             buttonInserir = new Button();
@@ -58,8 +58,10 @@
             BindingSourceBuscarFornecedor = new BindingSource(components);
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             comboBoxBuscarPor = new ComboBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceBuscarFornecedor).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // buttonSelecionar
@@ -83,16 +85,17 @@
             label2.TabIndex = 31;
             label2.Text = "Buscar por";
             // 
-            // label1
+            // labelBuscarFornecedor
             // 
-            label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(1086, 70);
-            label1.TabIndex = 22;
-            label1.Text = "Buscar Fornecedor\r\n";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            labelBuscarFornecedor.BackColor = Color.Transparent;
+            labelBuscarFornecedor.Dock = DockStyle.Top;
+            labelBuscarFornecedor.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            labelBuscarFornecedor.Location = new Point(0, 0);
+            labelBuscarFornecedor.Name = "labelBuscarFornecedor";
+            labelBuscarFornecedor.Size = new Size(1086, 70);
+            labelBuscarFornecedor.TabIndex = 22;
+            labelBuscarFornecedor.Text = "Buscar Fornecedor\r\n";
+            labelBuscarFornecedor.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonCancelar
             // 
@@ -334,6 +337,16 @@
             comboBoxBuscarPor.Size = new Size(143, 28);
             comboBoxBuscarPor.TabIndex = 32;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1086, 562);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+            // 
             // FormBuscarFornecedor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -342,7 +355,7 @@
             ClientSize = new Size(1086, 562);
             Controls.Add(buttonSelecionar);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(labelBuscarFornecedor);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonExcluir);
             Controls.Add(buttonInserir);
@@ -351,6 +364,7 @@
             Controls.Add(buttonBuscar);
             Controls.Add(dataGridViewProduto);
             Controls.Add(comboBoxBuscarPor);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -359,8 +373,10 @@
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
+            Load += FormBuscarFornecedor_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).EndInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceBuscarFornecedor).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -369,7 +385,7 @@
 
         private Button buttonSelecionar;
         private Label label2;
-        private Label label1;
+        private Label labelBuscarFornecedor;
         private Button buttonCancelar;
         private Button buttonExcluir;
         private Button buttonInserir;
@@ -396,5 +412,6 @@
         private DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private BindingSource BindingSourceBuscarFornecedor;
+        private PictureBox pictureBox1;
     }
 }
