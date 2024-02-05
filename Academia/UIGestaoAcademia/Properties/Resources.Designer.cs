@@ -59,5 +59,25 @@ namespace UIGestaoAcademia.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sem_nome__Banner_para_YouTube_ {
+            get {
+                object obj = ResourceManager.GetObject("Sem nome (Banner para YouTube)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sem_nome__Banner_para_YouTube_1 {
+            get {
+                object obj = ResourceManager.GetObject("Sem nome (Banner para YouTube)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

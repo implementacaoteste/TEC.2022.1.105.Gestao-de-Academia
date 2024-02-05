@@ -91,28 +91,52 @@ namespace UIGestaoAcademia
 
         private void FormBuscarDebito_Load(object sender, EventArgs e)
         {
+            pictureBoxLupa.Parent = labelBuscarDebito;
+            pictureBoxLupa.Parent = pictureBox3;
+            labelBuscarDebito.Parent = pictureBox3;
+            labelE.Parent = pictureBox3;
+            buttonBuscarDebito.Parent = pictureBox3;
+            buttonAlterarDebito.Parent = pictureBox3;
+            buttonExcluirDebito.Parent = pictureBox3;
+            buttonInserirDebito.Parent = pictureBox3;
+            buttonCancelar.Parent = pictureBox3;
+            buttonSelecionar.Parent = pictureBox3;
+
+            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundodebito.png"))
+                pictureBox3.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundodebito.png";
+
+            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\imagemlupa.png"))
+                pictureBoxLupa.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\imagemlupa.png";
+
             comboBoxBuscarPor.SelectedIndex = 0;
             buttonBuscar_Click_1(sender, e);
         }
 
         private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBoxBuscarPor.Width = 586;
-            textBoxBuscarPor.Enabled = true;
-            textBoxBuscarPor.BackColor = Color.White;
-            dateTimePicker1.Visible = false;
-            dateTimePicker2.Visible = false;
-            labelE.Visible = false;
+            if (comboBoxBuscarPor.SelectedIndex <= 4)
+            {
+                textBoxBuscarPor.Width = 470;
+                textBoxBuscarPor.Enabled = true;
+                dateTimePicker1.Visible = false;
+                dateTimePicker2.Visible = false;
+                labelE.Visible = false;
+            }
 
             if (comboBoxBuscarPor.SelectedIndex >= 5)
             {
-                textBoxBuscarPor.Width = 307;
+                textBoxBuscarPor.Width = 230;
                 textBoxBuscarPor.Enabled = false;
                 textBoxBuscarPor.BackColor = Color.WhiteSmoke;
                 dateTimePicker1.Visible = true;
                 dateTimePicker2.Visible = true;
                 labelE.Visible = true;
             }
+        }
+
+        private void pictureBoxLupa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

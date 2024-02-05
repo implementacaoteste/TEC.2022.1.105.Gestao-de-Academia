@@ -56,7 +56,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, planoAssinaturaToolStripMenuItem, vENDASToolStripMenuItem, comprasToolStripMenuItem, exercicioToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(834, 36);
+            menuStrip1.Padding = new Padding(5, 2, 0, 2);
+            menuStrip1.Size = new Size(730, 29);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -64,14 +65,14 @@
             // 
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuáriosToolStripMenuItem, gruposDeUsuáriosToolStripMenuItem, clientesToolStripMenuItem, produtoToolStripMenuItem, debitoToolStripMenuItem, funcionárioToolStripMenuItem, formDadosBancariosToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(104, 32);
+            cadastroToolStripMenuItem.Size = new Size(84, 25);
             cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // usuáriosToolStripMenuItem
             // 
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
             usuáriosToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.U;
-            usuáriosToolStripMenuItem.Size = new Size(337, 32);
+            usuáriosToolStripMenuItem.Size = new Size(272, 26);
             usuáriosToolStripMenuItem.Text = "Usuários";
             usuáriosToolStripMenuItem.Click += usuáriosToolStripMenuItem_Click;
             // 
@@ -79,7 +80,7 @@
             // 
             gruposDeUsuáriosToolStripMenuItem.Name = "gruposDeUsuáriosToolStripMenuItem";
             gruposDeUsuáriosToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.G;
-            gruposDeUsuáriosToolStripMenuItem.Size = new Size(337, 32);
+            gruposDeUsuáriosToolStripMenuItem.Size = new Size(272, 26);
             gruposDeUsuáriosToolStripMenuItem.Text = "Grupos de usuários";
             gruposDeUsuáriosToolStripMenuItem.Click += gruposDeUsuáriosToolStripMenuItem_Click;
             // 
@@ -87,7 +88,7 @@
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            clientesToolStripMenuItem.Size = new Size(337, 32);
+            clientesToolStripMenuItem.Size = new Size(272, 26);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
@@ -95,7 +96,7 @@
             // 
             produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
             produtoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
-            produtoToolStripMenuItem.Size = new Size(337, 32);
+            produtoToolStripMenuItem.Size = new Size(272, 26);
             produtoToolStripMenuItem.Text = "Produto";
             produtoToolStripMenuItem.Click += produtoToolStripMenuItem_Click;
             // 
@@ -103,7 +104,7 @@
             // 
             debitoToolStripMenuItem.Name = "debitoToolStripMenuItem";
             debitoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.D;
-            debitoToolStripMenuItem.Size = new Size(337, 32);
+            debitoToolStripMenuItem.Size = new Size(272, 26);
             debitoToolStripMenuItem.Text = "Debito";
             debitoToolStripMenuItem.Click += debitoToolStripMenuItem_Click;
             // 
@@ -111,21 +112,21 @@
             // 
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
             funcionárioToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.F;
-            funcionárioToolStripMenuItem.Size = new Size(337, 32);
+            funcionárioToolStripMenuItem.Size = new Size(272, 26);
             funcionárioToolStripMenuItem.Text = "Funcionário";
             funcionárioToolStripMenuItem.Click += funcionárioToolStripMenuItem_Click;
             // 
             // formDadosBancariosToolStripMenuItem
             // 
             formDadosBancariosToolStripMenuItem.Name = "formDadosBancariosToolStripMenuItem";
-            formDadosBancariosToolStripMenuItem.Size = new Size(337, 32);
+            formDadosBancariosToolStripMenuItem.Size = new Size(272, 26);
             formDadosBancariosToolStripMenuItem.Text = "Fornecedor";
             formDadosBancariosToolStripMenuItem.Click += formDadosBancariosToolStripMenuItem_Click;
             // 
             // planoAssinaturaToolStripMenuItem
             // 
             planoAssinaturaToolStripMenuItem.Name = "planoAssinaturaToolStripMenuItem";
-            planoAssinaturaToolStripMenuItem.Size = new Size(197, 32);
+            planoAssinaturaToolStripMenuItem.Size = new Size(159, 25);
             planoAssinaturaToolStripMenuItem.Text = "Plano de Assinatura";
             planoAssinaturaToolStripMenuItem.Click += planoAssinaturaToolStripMenuItem_Click;
             // 
@@ -133,21 +134,21 @@
             // 
             vENDASToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { iniciarVendaToolStripMenuItem, relatórioDeVendasToolStripMenuItem });
             vENDASToolStripMenuItem.Name = "vENDASToolStripMenuItem";
-            vENDASToolStripMenuItem.Size = new Size(88, 32);
+            vENDASToolStripMenuItem.Size = new Size(72, 25);
             vENDASToolStripMenuItem.Text = "Vendas";
             // 
             // iniciarVendaToolStripMenuItem
             // 
             iniciarVendaToolStripMenuItem.Name = "iniciarVendaToolStripMenuItem";
             iniciarVendaToolStripMenuItem.ShortcutKeys = Keys.F2;
-            iniciarVendaToolStripMenuItem.Size = new Size(270, 32);
+            iniciarVendaToolStripMenuItem.Size = new Size(217, 26);
             iniciarVendaToolStripMenuItem.Text = "Nova venda";
             iniciarVendaToolStripMenuItem.Click += iniciarVendaToolStripMenuItem_Click;
             // 
             // relatórioDeVendasToolStripMenuItem
             // 
             relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
-            relatórioDeVendasToolStripMenuItem.Size = new Size(270, 32);
+            relatórioDeVendasToolStripMenuItem.Size = new Size(217, 26);
             relatórioDeVendasToolStripMenuItem.Text = "Relatório de vendas";
             relatórioDeVendasToolStripMenuItem.Click += relatórioDeVendasToolStripMenuItem_Click;
             // 
@@ -155,45 +156,45 @@
             // 
             comprasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { comprasDeProdutosToolStripMenuItem });
             comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            comprasToolStripMenuItem.Size = new Size(104, 32);
+            comprasToolStripMenuItem.Size = new Size(85, 25);
             comprasToolStripMenuItem.Text = "Compras";
             // 
             // comprasDeProdutosToolStripMenuItem
             // 
             comprasDeProdutosToolStripMenuItem.Name = "comprasDeProdutosToolStripMenuItem";
             comprasDeProdutosToolStripMenuItem.ShortcutKeys = Keys.F1;
-            comprasDeProdutosToolStripMenuItem.Size = new Size(322, 32);
+            comprasDeProdutosToolStripMenuItem.Size = new Size(258, 26);
             comprasDeProdutosToolStripMenuItem.Text = "Compras de produtos";
             comprasDeProdutosToolStripMenuItem.Click += comprasDeProdutosToolStripMenuItem_Click;
             // 
             // exercicioToolStripMenuItem
             // 
             exercicioToolStripMenuItem.Name = "exercicioToolStripMenuItem";
-            exercicioToolStripMenuItem.Size = new Size(102, 32);
+            exercicioToolStripMenuItem.Size = new Size(82, 25);
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 36);
+            pictureBox1.Location = new Point(0, 29);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(834, 525);
+            pictureBox1.Size = new Size(730, 392);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 561);
+            ClientSize = new Size(730, 421);
             Controls.Add(pictureBox1);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormPrincipal";
