@@ -25,7 +25,7 @@ namespace DAL
                         cmd.Parameters.Add("@DataVenda", SqlDbType.DateTime).Value = _venda.DataVenda;
                         cmd.Parameters.Add("@TotalVenda", SqlDbType.Decimal).Value = _venda.TotalVenda;
                         cmd.Parameters.AddWithValue("@FormaPagamentoId",_venda.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@UsuarioId", _venda.UsuarioId);
+                        cmd.Parameters.AddWithValue("@UsuarioId", Constantes.UsuarioLogado.Id);
                         if (_transaction == null)
                         {
                             cn.Open();
@@ -36,7 +36,7 @@ namespace DAL
                         cmd.Connection = transaction.Connection;
 
                         _venda.Id = Convert.ToInt32(cmd.ExecuteScalar());
-                        foreach (var item in _venda.itensCompraList)
+                        foreach (var item in _venda.ItensVendaList)
                         {
                             item.VendaId = _venda.Id;
                             new ItensVendaDAL().Inserir(item, transaction);

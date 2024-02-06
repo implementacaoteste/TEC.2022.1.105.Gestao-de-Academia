@@ -31,12 +31,9 @@
             components = new System.ComponentModel.Container();
             labelCliente = new Label();
             labelUser = new Label();
-            itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
             vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
-            label6 = new Label();
-            textBox4 = new TextBox();
             labelData = new Label();
             label8 = new Label();
             buttonBuscarCliente = new Button();
@@ -48,11 +45,6 @@
             label10 = new Label();
             label12 = new Label();
             dataGridView1 = new DataGridView();
-            codigoDeBarrasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            quantidadeDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             buttonBuscarProduto = new Button();
             labelValorTotal = new Label();
             labelVenda = new Label();
@@ -62,11 +54,20 @@
             labelCodigoVenda = new Label();
             labeUser = new Label();
             pictureBoxVenda = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
+            itensVendaListBindingSource = new BindingSource(components);
+            vendaIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            codigoDeBarrasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            produtoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBoxVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVenda).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)itensVendaListBindingSource).BeginInit();
             SuspendLayout();
             // 
             // labelCliente
@@ -89,10 +90,6 @@
             labelUser.TabIndex = 10;
             labelUser.Text = "User:";
             // 
-            // itensVendaBindingSource
-            // 
-            itensVendaBindingSource.DataSource = typeof(Models.ItensVenda);
-            // 
             // textBoxBuscarPorCliente
             // 
             textBoxBuscarPorCliente.DataBindings.Add(new Binding("Text", vendaBindingSource, "ClienteId", true));
@@ -114,22 +111,6 @@
             buttonFinalizarVenda.Text = "&Finalizar venda";
             buttonFinalizarVenda.UseVisualStyleBackColor = true;
             buttonFinalizarVenda.Click += buttonFinalizarVenda_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(10, 742);
-            label6.Name = "label6";
-            label6.Size = new Size(72, 20);
-            label6.TabIndex = 11;
-            label6.Text = "Desconto";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(172, 744);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 5;
             // 
             // labelData
             // 
@@ -229,8 +210,8 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { codigoDeBarrasDataGridViewTextBoxColumn, nomeProdutoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn1, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView1.DataSource = itensVendaBindingSource;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { vendaIdDataGridViewTextBoxColumn, dataGridViewTextBoxColumn1, codigoDeBarrasDataGridViewTextBoxColumn, nomeProdutoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, produtoDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = itensVendaListBindingSource;
             dataGridView1.Location = new Point(12, 186);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -238,51 +219,6 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(903, 288);
             dataGridView1.TabIndex = 2;
-            // 
-            // codigoDeBarrasDataGridViewTextBoxColumn
-            // 
-            codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
-            codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
-            codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
-            codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
-            codigoDeBarrasDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // nomeProdutoDataGridViewTextBoxColumn
-            // 
-            nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
-            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "NomeProduto";
-            nomeProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
-            nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            nomeProdutoDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // quantidadeDataGridViewTextBoxColumn1
-            // 
-            quantidadeDataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn1.HeaderText = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            quantidadeDataGridViewTextBoxColumn1.Name = "quantidadeDataGridViewTextBoxColumn1";
-            quantidadeDataGridViewTextBoxColumn1.ReadOnly = true;
-            quantidadeDataGridViewTextBoxColumn1.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "PrecoUnitario";
-            dataGridViewTextBoxColumn3.HeaderText = "PrecoUnitario";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "PrecoTotal";
-            dataGridViewTextBoxColumn4.HeaderText = "PrecoTotal";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            dataGridViewTextBoxColumn4.Width = 125;
             // 
             // buttonBuscarProduto
             // 
@@ -395,6 +331,83 @@
             pictureBoxVenda.TabIndex = 31;
             pictureBoxVenda.TabStop = false;
             // 
+            // itensVendaListBindingSource
+            // 
+            itensVendaListBindingSource.DataMember = "ItensVendaList";
+            itensVendaListBindingSource.DataSource = vendaBindingSource;
+            // 
+            // vendaIdDataGridViewTextBoxColumn
+            // 
+            vendaIdDataGridViewTextBoxColumn.DataPropertyName = "VendaId";
+            vendaIdDataGridViewTextBoxColumn.HeaderText = "VendaId";
+            vendaIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            vendaIdDataGridViewTextBoxColumn.Name = "vendaIdDataGridViewTextBoxColumn";
+            vendaIdDataGridViewTextBoxColumn.ReadOnly = true;
+            vendaIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "ProdutoId";
+            dataGridViewTextBoxColumn1.HeaderText = "ProdutoId";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // codigoDeBarrasDataGridViewTextBoxColumn
+            // 
+            codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
+            codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
+            codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
+            codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
+            codigoDeBarrasDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeProdutoDataGridViewTextBoxColumn
+            // 
+            nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
+            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "NomeProduto";
+            nomeProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
+            nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeProdutoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            quantidadeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "PrecoUnitario";
+            dataGridViewTextBoxColumn2.HeaderText = "PrecoUnitario";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "PrecoTotal";
+            dataGridViewTextBoxColumn3.HeaderText = "PrecoTotal";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // produtoDataGridViewTextBoxColumn
+            // 
+            produtoDataGridViewTextBoxColumn.DataPropertyName = "Produto";
+            produtoDataGridViewTextBoxColumn.HeaderText = "Produto";
+            produtoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            produtoDataGridViewTextBoxColumn.Name = "produtoDataGridViewTextBoxColumn";
+            produtoDataGridViewTextBoxColumn.ReadOnly = true;
+            produtoDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -410,8 +423,6 @@
             Controls.Add(textBoxFormaPagamento);
             Controls.Add(buttonFormaDePagamento);
             Controls.Add(label8);
-            Controls.Add(label6);
-            Controls.Add(textBox4);
             Controls.Add(labelUser);
             Controls.Add(groupBoxVenda);
             Controls.Add(pictureBoxVenda);
@@ -424,12 +435,12 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormVendas_Load;
-            ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBoxVenda.ResumeLayout(false);
             groupBoxVenda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVenda).EndInit();
+            ((System.ComponentModel.ISupportInitialize)itensVendaListBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -442,10 +453,7 @@
         private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
         private TextBox textBoxBuscarPorCliente;
-        private BindingSource itensVendaBindingSource;
         private Button buttonFinalizarVenda;
-        private Label label6;
-        private TextBox textBox4;
         private Label labelData;
         private Label label8;
         private Button buttonBuscarCliente;
@@ -458,11 +466,6 @@
         private Label label12;
         private ComboBox comboBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
         private Label labelValorTotal;
         private Label labelVenda;
@@ -474,5 +477,14 @@
         private Label labeUser;
         private Label labelUser;
         private PictureBox pictureBoxVenda;
+        private DataGridViewTextBoxColumn vendaIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn produtoDataGridViewTextBoxColumn;
+        private BindingSource itensVendaListBindingSource;
     }
 }

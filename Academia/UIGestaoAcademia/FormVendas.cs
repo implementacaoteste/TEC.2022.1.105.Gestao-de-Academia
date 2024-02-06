@@ -18,8 +18,8 @@ namespace UIGestaoAcademia
             InitializeComponent();
             ExibirNomeUsuarioLogado();
             vendaBindingSource.AddNew();
-            itensVendaBindingSource.AddNew();
-            dataGridView1.DataSource = itensVendaBindingSource;
+            itensVendaListBindingSource.AddNew();
+            dataGridView1.DataSource = itensVendaListBindingSource;
             _id = id;
 
             int codigoVenda = GerarCodigoVenda();
@@ -91,16 +91,16 @@ namespace UIGestaoAcademia
             if (e.KeyCode == Keys.Enter)
             {
                 Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxProduto.Text);
-                itensVendaBindingSource.AddNew();
-                ((ItensVenda)itensVendaBindingSource.Current).ProdutoId = produto.Id;
-                ((ItensVenda)itensVendaBindingSource.Current).Produto = produto;
-                ((ItensVenda)itensVendaBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
-                ((ItensVenda)itensVendaBindingSource.Current).PrecoUnitario = produto.Preco;
-                ((ItensVenda)itensVendaBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaBindingSource.Current).Quantidade;
+                itensVendaListBindingSource.AddNew();
+                ((ItensVenda)itensVendaListBindingSource.Current).ProdutoId = produto.Id;
+                ((ItensVenda)itensVendaListBindingSource.Current).Produto = produto;
+                ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
+                ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco;
+                ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
 
-                itensVendaBindingSource.EndEdit();
+                itensVendaListBindingSource.EndEdit();
 
-                dataGridView1.DataSource = itensVendaBindingSource;
+                dataGridView1.DataSource = itensVendaListBindingSource;
                 dataGridView1.Refresh();
                 textBoxProduto.Clear();
                 textBoxQuantidade.Clear();
@@ -137,9 +137,9 @@ namespace UIGestaoAcademia
             if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((ItensVenda)itensVendaBindingSource.Current).VendaId;
+            int id = ((ItensVenda)itensVendaListBindingSource.Current).VendaId;
             new ItensVendaBLL().Excluir(id);
-            itensVendaBindingSource.RemoveCurrent();
+            itensVendaListBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
         }
 
@@ -165,8 +165,8 @@ namespace UIGestaoAcademia
         private void LimparFormulario()
         {
             vendaBindingSource.AddNew();
-            itensVendaBindingSource.Clear();
-            dataGridView1.DataSource = itensVendaBindingSource;
+            itensVendaListBindingSource.Clear();
+            dataGridView1.DataSource = itensVendaListBindingSource;
             labelValorTotal.Text = "0.00";
         }
 
