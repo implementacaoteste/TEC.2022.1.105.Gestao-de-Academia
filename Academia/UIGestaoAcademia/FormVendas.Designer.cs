@@ -81,7 +81,7 @@
             labelUser.AutoSize = true;
             labelUser.BackColor = Color.Transparent;
             labelUser.ForeColor = Color.Black;
-            labelUser.Location = new Point(12, 13);
+            labelUser.Location = new Point(13, 14);
             labelUser.Name = "labelUser";
             labelUser.Size = new Size(41, 20);
             labelUser.TabIndex = 10;
@@ -374,10 +374,11 @@
             // 
             labeUser.AutoSize = true;
             labeUser.BackColor = Color.Transparent;
+            labeUser.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             labeUser.ForeColor = Color.Black;
-            labeUser.Location = new Point(62, 14);
+            labeUser.Location = new Point(51, 2);
             labeUser.Name = "labeUser";
-            labeUser.Size = new Size(38, 20);
+            labeUser.Size = new Size(79, 41);
             labeUser.TabIndex = 30;
             labeUser.Text = "User";
             // 

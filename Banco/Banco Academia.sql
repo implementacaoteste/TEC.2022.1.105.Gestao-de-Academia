@@ -22,6 +22,8 @@ CREATE TABLE Usuario
 	Senha VARCHAR(50)
 )
 GO
+select*from Usuario
+insert into Usuario values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
 
 IF OBJECT_ID('GrupoUsuario', 'U') IS NULL
 CREATE TABLE GrupoUsuario
@@ -587,11 +589,14 @@ IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Geno'))INSERT INTO Usua
 IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123', 1)
 GO
 
+
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Fiscal de caixa')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Instrutor')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
-INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Operador de caixa')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Financeiro')
+INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Administrador')
+
 
 GO
 INSERT INTO UsuarioGrupoUsuario VALUES(2,1)
