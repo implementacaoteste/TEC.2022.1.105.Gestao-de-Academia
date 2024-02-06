@@ -173,13 +173,6 @@ namespace UIGestaoAcademia
         private void FormVendas_Load(object sender, EventArgs e)
         {
             labeUser.Text = Constantes.UsuarioLogado.Nome;
-
-
-        }
-
-        private void labeUser_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
