@@ -61,10 +61,12 @@
             calendarioDataVencimento = new Calendario();
             labelCodigoVenda = new Label();
             labeUser = new Label();
+            pictureBoxVenda = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBoxVenda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxVenda).BeginInit();
             SuspendLayout();
             // 
             // labelCliente
@@ -382,6 +384,16 @@
             labeUser.TabIndex = 30;
             labeUser.Text = "User";
             // 
+            // pictureBoxVenda
+            // 
+            pictureBoxVenda.Dock = DockStyle.Fill;
+            pictureBoxVenda.Location = new Point(0, 0);
+            pictureBoxVenda.Name = "pictureBoxVenda";
+            pictureBoxVenda.Size = new Size(954, 863);
+            pictureBoxVenda.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxVenda.TabIndex = 31;
+            pictureBoxVenda.TabStop = false;
+            // 
             // FormVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -401,6 +413,7 @@
             Controls.Add(textBox4);
             Controls.Add(labelUser);
             Controls.Add(groupBoxVenda);
+            Controls.Add(pictureBoxVenda);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -415,6 +428,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             groupBoxVenda.ResumeLayout(false);
             groupBoxVenda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxVenda).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -458,5 +472,6 @@
         private BindingSource vendaBindingSource;
         private Label labeUser;
         private Label labelUser;
+        private PictureBox pictureBoxVenda;
     }
 }
