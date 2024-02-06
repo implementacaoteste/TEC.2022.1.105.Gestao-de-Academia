@@ -363,6 +363,7 @@
             // 
             labelCodigoVenda.AutoSize = true;
             labelCodigoVenda.BackColor = Color.Transparent;
+            labelCodigoVenda.DataBindings.Add(new Binding("Text", vendaBindingSource, "Id", true));
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelCodigoVenda.Location = new Point(795, 2);
             labelCodigoVenda.Name = "labelCodigoVenda";

@@ -45,7 +45,7 @@
             button2.AccessibleRole = AccessibleRole.None;
             button2.Anchor = AnchorStyles.None;
             button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(519, 450);
+            button2.Location = new Point(519, 539);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.RightToLeft = RightToLeft.No;
@@ -58,7 +58,7 @@
             // 
             buttonEntrar.AccessibleRole = AccessibleRole.None;
             buttonEntrar.Anchor = AnchorStyles.None;
-            buttonEntrar.Location = new Point(427, 450);
+            buttonEntrar.Location = new Point(427, 539);
             buttonEntrar.Margin = new Padding(3, 4, 3, 4);
             buttonEntrar.Name = "buttonEntrar";
             buttonEntrar.RightToLeft = RightToLeft.No;
@@ -84,7 +84,7 @@
             textBoxUsuario.BackColor = SystemColors.Window;
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsuario.ForeColor = Color.Black;
-            textBoxUsuario.Location = new Point(336, 316);
+            textBoxUsuario.Location = new Point(336, 405);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(365, 27);
             textBoxUsuario.TabIndex = 0;
@@ -95,7 +95,7 @@
             textBoxSenha.Anchor = AnchorStyles.None;
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.ForeColor = Color.Black;
-            textBoxSenha.Location = new Point(336, 394);
+            textBoxSenha.Location = new Point(336, 483);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.PasswordChar = '*';
             textBoxSenha.Size = new Size(365, 27);
@@ -107,7 +107,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Swis721 BlkCn BT", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(336, 294);
+            label1.Location = new Point(336, 383);
             label1.Name = "label1";
             label1.Size = new Size(70, 22);
             label1.TabIndex = 12;
@@ -118,7 +118,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Swis721 BlkCn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(336, 370);
+            label2.Location = new Point(336, 459);
             label2.Name = "label2";
             label2.Size = new Size(53, 20);
             label2.TabIndex = 12;
