@@ -228,7 +228,7 @@ CREATE TABLE TipoDeConta
 )
 GO
 
-SELECT * FROM DadosBancarios
+SELECT * FROM Fornecedor
 
 CREATE  TABLE TipoDeMoeda
 (
