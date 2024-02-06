@@ -44,9 +44,19 @@
             comprasToolStripMenuItem = new ToolStripMenuItem();
             comprasDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             exercicioToolStripMenuItem = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            button9 = new Button();
+            button10 = new Button();
+            button11 = new Button();
+            button1 = new Button();
+            button3 = new Button();
+            button5 = new Button();
+            button4 = new Button();
+            button2 = new Button();
+            panel1 = new Panel();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -57,7 +67,7 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(834, 38);
+            menuStrip1.Size = new Size(751, 38);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -176,23 +186,141 @@
             exercicioToolStripMenuItem.Text = "Exercicio";
             exercicioToolStripMenuItem.Click += exercicioToolStripMenuItem_Click;
             // 
-            // pictureBox1
+            // button6
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 38);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(834, 523);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            button6.Anchor = AnchorStyles.None;
+            button6.Location = new Point(125, 186);
+            button6.Name = "button6";
+            button6.Size = new Size(150, 96);
+            button6.TabIndex = 1;
+            button6.Text = "Funcionário";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Anchor = AnchorStyles.None;
+            button7.Location = new Point(125, 288);
+            button7.Name = "button7";
+            button7.Size = new Size(150, 96);
+            button7.TabIndex = 1;
+            button7.Text = "Fornecedor";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Anchor = AnchorStyles.None;
+            button8.Location = new Point(437, 84);
+            button8.Name = "button8";
+            button8.Size = new Size(150, 96);
+            button8.TabIndex = 1;
+            button8.Text = "Plano de assinatura";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Anchor = AnchorStyles.None;
+            button9.Location = new Point(125, 390);
+            button9.Name = "button9";
+            button9.Size = new Size(150, 96);
+            button9.TabIndex = 1;
+            button9.Text = "Vendas";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Anchor = AnchorStyles.None;
+            button10.Location = new Point(437, 186);
+            button10.Name = "button10";
+            button10.Size = new Size(150, 96);
+            button10.TabIndex = 1;
+            button10.Text = "Compras";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            button11.Anchor = AnchorStyles.None;
+            button11.Location = new Point(281, 288);
+            button11.Name = "button11";
+            button11.Size = new Size(150, 96);
+            button11.TabIndex = 1;
+            button11.Text = "Exercícios";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.Location = new Point(281, 186);
+            button1.Name = "button1";
+            button1.Size = new Size(150, 96);
+            button1.TabIndex = 1;
+            button1.Text = "Usuário";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.None;
+            button3.Location = new Point(437, 390);
+            button3.Name = "button3";
+            button3.Size = new Size(150, 96);
+            button3.TabIndex = 1;
+            button3.Text = "Clientes";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Anchor = AnchorStyles.None;
+            button5.Location = new Point(437, 288);
+            button5.Name = "button5";
+            button5.Size = new Size(150, 96);
+            button5.TabIndex = 1;
+            button5.Text = "Debito";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.None;
+            button4.Location = new Point(125, 84);
+            button4.Name = "button4";
+            button4.Size = new Size(150, 96);
+            button4.TabIndex = 1;
+            button4.Text = "Produto";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.None;
+            button2.Location = new Point(281, 84);
+            button2.Name = "button2";
+            button2.Size = new Size(150, 96);
+            button2.TabIndex = 1;
+            button2.Text = "Grupo de usuário";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(105, 41);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(506, 513);
+            panel1.TabIndex = 2;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(834, 561);
-            Controls.Add(pictureBox1);
+            ClientSize = new Size(751, 550);
+            Controls.Add(panel1);
+            Controls.Add(button11);
+            Controls.Add(button7);
             Controls.Add(menuStrip1);
+            Controls.Add(button1);
+            Controls.Add(button2);
+            Controls.Add(button3);
+            Controls.Add(button9);
+            Controls.Add(button6);
+            Controls.Add(button8);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button10);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MainMenuStrip = menuStrip1;
@@ -207,7 +335,6 @@
             KeyDown += FormPrincipal_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,6 +359,17 @@
         private ToolStripMenuItem formDadosBancariosToolStripMenuItem;
         private ToolStripMenuItem exercicioToolStripMenuItem;
         private ToolStripMenuItem planoAssinaturaToolStripMenuItem;
-        private PictureBox pictureBox1;
+        private Button button6;
+        private Button button7;
+        private Button button8;
+        private Button button9;
+        private Button button10;
+        private Button button11;
+        private Button button1;
+        private Button button3;
+        private Button button5;
+        private Button button4;
+        private Button button2;
+        private Panel panel1;
     }
 }

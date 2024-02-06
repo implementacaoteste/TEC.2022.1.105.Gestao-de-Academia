@@ -319,7 +319,6 @@
             labeUser.Size = new Size(90, 41);
             labeUser.TabIndex = 30;
             labeUser.Text = "USER";
-            labeUser.Click += labeUser_Click;
             // 
             // pictureBoxVenda
             // 
