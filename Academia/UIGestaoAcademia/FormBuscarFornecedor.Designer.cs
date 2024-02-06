@@ -30,7 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             buttonSelecionar = new Button();
-            label2 = new Label();
+            labelBuscarPor = new Label();
             labelBuscarFornecedor = new Label();
             buttonCancelar = new Button();
             buttonExcluir = new Button();
@@ -76,14 +76,15 @@
             buttonSelecionar.UseVisualStyleBackColor = true;
             buttonSelecionar.Click += buttonSelecionar_Click;
             // 
-            // label2
+            // labelBuscarPor
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 105);
-            label2.Name = "label2";
-            label2.Size = new Size(79, 20);
-            label2.TabIndex = 31;
-            label2.Text = "Buscar por";
+            labelBuscarPor.AutoSize = true;
+            labelBuscarPor.BackColor = Color.Transparent;
+            labelBuscarPor.Location = new Point(12, 105);
+            labelBuscarPor.Name = "labelBuscarPor";
+            labelBuscarPor.Size = new Size(79, 20);
+            labelBuscarPor.TabIndex = 31;
+            labelBuscarPor.Text = "Buscar por";
             // 
             // labelBuscarFornecedor
             // 
@@ -354,7 +355,7 @@
             CancelButton = buttonCancelar;
             ClientSize = new Size(1086, 562);
             Controls.Add(buttonSelecionar);
-            Controls.Add(label2);
+            Controls.Add(labelBuscarPor);
             Controls.Add(labelBuscarFornecedor);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonExcluir);
@@ -384,7 +385,7 @@
         #endregion
 
         private Button buttonSelecionar;
-        private Label label2;
+        private Label labelBuscarPor;
         private Label labelBuscarFornecedor;
         private Button buttonCancelar;
         private Button buttonExcluir;

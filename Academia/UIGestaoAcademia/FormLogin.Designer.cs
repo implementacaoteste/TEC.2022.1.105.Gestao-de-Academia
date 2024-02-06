@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             Button button2;
-            Button buttonEntrar;
+            Button button1;
             pictureBox2 = new PictureBox();
             textBoxUsuario = new TextBox();
             textBoxSenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
             button2 = new Button();
-            buttonEntrar = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             button2.AccessibleRole = AccessibleRole.None;
             button2.Anchor = AnchorStyles.None;
             button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(519, 450);
+            button2.Location = new Point(516, 450);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.RightToLeft = RightToLeft.No;
@@ -54,19 +54,19 @@
             button2.Text = "&Cancelar";
             button2.UseVisualStyleBackColor = true;
             // 
-            // buttonEntrar
+            // button1
             // 
-            buttonEntrar.AccessibleRole = AccessibleRole.None;
-            buttonEntrar.Anchor = AnchorStyles.None;
-            buttonEntrar.Location = new Point(427, 450);
-            buttonEntrar.Margin = new Padding(3, 4, 3, 4);
-            buttonEntrar.Name = "buttonEntrar";
-            buttonEntrar.RightToLeft = RightToLeft.No;
-            buttonEntrar.Size = new Size(86, 36);
-            buttonEntrar.TabIndex = 2;
-            buttonEntrar.Text = "&Entrar";
-            buttonEntrar.UseVisualStyleBackColor = true;
-            buttonEntrar.Click += buttonEntrar_Click;
+            button1.AccessibleRole = AccessibleRole.None;
+            button1.Anchor = AnchorStyles.None;
+            button1.Location = new Point(424, 450);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.RightToLeft = RightToLeft.No;
+            button1.Size = new Size(86, 36);
+            button1.TabIndex = 2;
+            button1.Text = "&Entrar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonEntrar_Click;
             // 
             // pictureBox2
             // 
@@ -84,7 +84,7 @@
             textBoxUsuario.BackColor = SystemColors.Window;
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsuario.ForeColor = Color.Black;
-            textBoxUsuario.Location = new Point(336, 316);
+            textBoxUsuario.Location = new Point(337, 316);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(365, 27);
             textBoxUsuario.TabIndex = 0;
@@ -95,7 +95,7 @@
             textBoxSenha.Anchor = AnchorStyles.None;
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.ForeColor = Color.Black;
-            textBoxSenha.Location = new Point(336, 394);
+            textBoxSenha.Location = new Point(337, 394);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.PasswordChar = '*';
             textBoxSenha.Size = new Size(365, 27);
@@ -107,18 +107,18 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Swis721 BlkCn BT", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(336, 294);
+            label1.Location = new Point(337, 294);
             label1.Name = "label1";
             label1.Size = new Size(70, 22);
             label1.TabIndex = 12;
-            label1.Text = "Usuario";
+            label1.Text = "Usuário";
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Swis721 BlkCn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(336, 370);
+            label2.Location = new Point(337, 370);
             label2.Name = "label2";
             label2.Size = new Size(53, 20);
             label2.TabIndex = 12;
@@ -135,7 +135,7 @@
             Controls.Add(textBoxSenha);
             Controls.Add(textBoxUsuario);
             Controls.Add(button2);
-            Controls.Add(buttonEntrar);
+            Controls.Add(button1);
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;

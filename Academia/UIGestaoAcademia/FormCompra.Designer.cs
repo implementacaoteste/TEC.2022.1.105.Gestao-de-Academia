@@ -61,9 +61,11 @@
             FinalizarCompra = new Button();
             labelValorTotalDaNota = new Label();
             textBoxValorTotalNota = new TextBox();
+            pictureBoxCompra = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCompra).BeginInit();
             SuspendLayout();
             // 
             // buttonBuscarProduto
@@ -367,6 +369,16 @@
             textBoxValorTotalNota.TabIndex = 64;
             textBoxValorTotalNota.TextAlign = HorizontalAlignment.Right;
             // 
+            // pictureBoxCompra
+            // 
+            pictureBoxCompra.Dock = DockStyle.Fill;
+            pictureBoxCompra.Location = new Point(0, 0);
+            pictureBoxCompra.Name = "pictureBoxCompra";
+            pictureBoxCompra.Size = new Size(968, 706);
+            pictureBoxCompra.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxCompra.TabIndex = 65;
+            pictureBoxCompra.TabStop = false;
+            // 
             // FormCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -397,6 +409,7 @@
             Controls.Add(labelFormaPagamento);
             Controls.Add(labelCompraDeProduto);
             Controls.Add(labelFornecedor);
+            Controls.Add(pictureBoxCompra);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -409,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCompra).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -446,5 +460,6 @@
         private DataGridViewTextBoxColumn Quantidade;
         private DataGridViewTextBoxColumn ValorUnitario;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private PictureBox pictureBoxCompra;
     }
 }

@@ -18,7 +18,7 @@ namespace UIGestaoAcademia
             ((CompraProduto)BindingSourceCompraProduto.Current).itensCompraList = new List<ItensCompra>();
             BindingSourceCompraProduto.EndEdit();
 
-            /*labelValorDoFrete.Parent = pictureBoxCompra;
+            labelValorDoFrete.Parent = pictureBoxCompra;
             labelValorTotalDaNota.Parent = pictureBoxCompra;
             labelFormaPagamento.Parent = pictureBoxCompra;
             labelFornecedor.Parent = pictureBoxCompra;
@@ -33,7 +33,7 @@ namespace UIGestaoAcademia
             labelValorDaNota.Parent = pictureBoxCompra;
             FinalizarCompra.Parent = pictureBoxCompra;
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png"))
-                pictureBoxCompra.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png";*/
+                pictureBoxCompra.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png";
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
