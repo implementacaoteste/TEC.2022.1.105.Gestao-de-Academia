@@ -81,7 +81,7 @@
             labelUser.AutoSize = true;
             labelUser.BackColor = Color.Transparent;
             labelUser.ForeColor = Color.Black;
-            labelUser.Location = new Point(13, 14);
+            labelUser.Location = new Point(15, 14);
             labelUser.Name = "labelUser";
             labelUser.Size = new Size(41, 20);
             labelUser.TabIndex = 10;
@@ -299,16 +299,16 @@
             labelValorTotal.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(692, 689);
             labelValorTotal.Name = "labelValorTotal";
-            labelValorTotal.Size = new Size(133, 62);
+            labelValorTotal.Size = new Size(157, 62);
             labelValorTotal.TabIndex = 23;
-            labelValorTotal.Text = "Teste";
+            labelValorTotal.Text = "TOTAL";
             // 
             // labelVenda
             // 
             labelVenda.AutoSize = true;
             labelVenda.BackColor = Color.Transparent;
             labelVenda.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelVenda.Location = new Point(622, 14);
+            labelVenda.Location = new Point(619, 14);
             labelVenda.Name = "labelVenda";
             labelVenda.Size = new Size(185, 41);
             labelVenda.TabIndex = 10;
@@ -366,9 +366,9 @@
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelCodigoVenda.Location = new Point(795, 2);
             labelCodigoVenda.Name = "labelCodigoVenda";
-            labelCodigoVenda.Size = new Size(162, 62);
+            labelCodigoVenda.Size = new Size(126, 62);
             labelCodigoVenda.TabIndex = 29;
-            labelCodigoVenda.Text = "Venda";
+            labelCodigoVenda.Text = "COD";
             // 
             // labeUser
             // 
@@ -378,9 +378,10 @@
             labeUser.ForeColor = Color.Black;
             labeUser.Location = new Point(51, 2);
             labeUser.Name = "labeUser";
-            labeUser.Size = new Size(79, 41);
+            labeUser.Size = new Size(90, 41);
             labeUser.TabIndex = 30;
-            labeUser.Text = "User";
+            labeUser.Text = "USER";
+            labeUser.Click += labeUser_Click;
             // 
             // FormVendas
             // 

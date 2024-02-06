@@ -176,6 +176,11 @@ namespace UIGestaoAcademia
 
 
         }
+
+        private void labeUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
