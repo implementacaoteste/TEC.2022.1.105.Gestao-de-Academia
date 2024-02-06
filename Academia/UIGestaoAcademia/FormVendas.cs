@@ -174,10 +174,7 @@ namespace UIGestaoAcademia
         {
             labeUser.Text = Constantes.UsuarioLogado.Nome;
 
-            labelUser.Parent = pictureBoxVenda;
 
-            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\.png"))
-                pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\.png";
         }
     }
 }
