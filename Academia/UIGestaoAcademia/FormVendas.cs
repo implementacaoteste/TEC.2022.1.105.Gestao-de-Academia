@@ -171,10 +171,22 @@ namespace UIGestaoAcademia
 
         private void FormVendas_Load(object sender, EventArgs e)
         {
-            labeUser.Text = Constantes.UsuarioLogado.Nome;
+            labeUserVenda.Text = Constantes.UsuarioLogado.Nome;
             vendaBindingSource.AddNew();
             ((Venda)vendaBindingSource.Current).ItensVendaList = new List<ItensVenda>();
             vendaBindingSource.EndEdit();
+
+            labelUser.Parent = pictureBoxVenda;
+            labeUserVenda.Parent = pictureBoxVenda;
+            labelVenda.Parent = pictureBoxVenda;
+            labelCodigoVenda.Parent = pictureBoxVenda;
+            groupBoxVenda.Parent = pictureBoxVenda;
+            labelCliente.Parent = pictureBoxVenda;
+            textBoxBuscarPorCliente.Parent = pictureBoxVenda;
+            buttonBuscarCliente.Parent = pictureBoxVenda;
+
+            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundovenda.png"))
+                pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundovenda.png";
         }
     }
 }
