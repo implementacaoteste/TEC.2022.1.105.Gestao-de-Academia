@@ -172,9 +172,92 @@ namespace UIGestaoAcademia
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonProduto_Click(object sender, EventArgs e)
         {
+            using (FormBuscarProduto frm = new FormBuscarProduto())
+            {
+                frm.ShowDialog();
+            }
+        }
 
+        private void buttonGrupoUsuario_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarGrupoUsuario frm = new FormBuscarGrupoUsuario())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonExercicio_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarExercicio frm = new FormBuscarExercicio())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonFuncionario_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarFuncionario frm = new FormBuscarFuncionario())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonFornecedor_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarFornecedor frm = new FormBuscarFornecedor())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonVenda_Click(object sender, EventArgs e)
+        {
+            using (FormVendas frm = new FormVendas())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonUsuario_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarUsuario frm = new FormBuscarUsuario())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonAssinatura_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarPlanoAssinatura frm = new FormBuscarPlanoAssinatura())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonCompra_Click(object sender, EventArgs e)
+        {
+            using (FormCompra frm = new FormCompra())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonDebito_Click(object sender, EventArgs e)
+        {
+            using (FormBuscarDebito frm = new FormBuscarDebito())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void buttonCliente_Click(object sender, EventArgs e)
+        {
+            using (FormConsultaCliente frm = new FormConsultaCliente())
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }

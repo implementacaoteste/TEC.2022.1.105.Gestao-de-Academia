@@ -45,11 +45,10 @@
             button2.AccessibleRole = AccessibleRole.None;
             button2.Anchor = AnchorStyles.None;
             button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(516, 450);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(452, 338);
             button2.Name = "button2";
             button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(86, 36);
+            button2.Size = new Size(75, 27);
             button2.TabIndex = 3;
             button2.Text = "&Cancelar";
             button2.UseVisualStyleBackColor = true;
@@ -58,11 +57,10 @@
             // 
             button1.AccessibleRole = AccessibleRole.None;
             button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(424, 450);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(371, 338);
             button1.Name = "button1";
             button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(86, 36);
+            button1.Size = new Size(75, 27);
             button1.TabIndex = 2;
             button1.Text = "&Entrar";
             button1.UseVisualStyleBackColor = true;
@@ -72,8 +70,9 @@
             // 
             pictureBox2.Dock = DockStyle.Fill;
             pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1038, 657);
+            pictureBox2.Size = new Size(908, 493);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
@@ -84,9 +83,10 @@
             textBoxUsuario.BackColor = SystemColors.Window;
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsuario.ForeColor = Color.Black;
-            textBoxUsuario.Location = new Point(337, 316);
+            textBoxUsuario.Location = new Point(295, 237);
+            textBoxUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxUsuario.Name = "textBoxUsuario";
-            textBoxUsuario.Size = new Size(365, 27);
+            textBoxUsuario.Size = new Size(320, 23);
             textBoxUsuario.TabIndex = 0;
             textBoxUsuario.KeyDown += textBoxUsuario_KeyDown;
             // 
@@ -95,10 +95,11 @@
             textBoxSenha.Anchor = AnchorStyles.None;
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.ForeColor = Color.Black;
-            textBoxSenha.Location = new Point(337, 394);
+            textBoxSenha.Location = new Point(295, 296);
+            textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.PasswordChar = '*';
-            textBoxSenha.Size = new Size(365, 27);
+            textBoxSenha.Size = new Size(320, 23);
             textBoxSenha.TabIndex = 1;
             textBoxSenha.KeyDown += textBoxSenha_KeyDown;
             // 
@@ -107,9 +108,9 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Swis721 BlkCn BT", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(337, 294);
+            label1.Location = new Point(295, 220);
             label1.Name = "label1";
-            label1.Size = new Size(70, 22);
+            label1.Size = new Size(56, 18);
             label1.TabIndex = 12;
             label1.Text = "Usuário";
             // 
@@ -118,18 +119,18 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Swis721 BlkCn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(337, 370);
+            label2.Location = new Point(295, 278);
             label2.Name = "label2";
-            label2.Size = new Size(53, 20);
+            label2.Size = new Size(42, 16);
             label2.TabIndex = 12;
             label2.Text = "Senha";
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1038, 657);
+            ClientSize = new Size(908, 493);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBoxSenha);
@@ -139,7 +140,6 @@
             Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormLogin";
