@@ -66,7 +66,7 @@
             // 
             comboBoxBuscarPor.FormattingEnabled = true;
             comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Clientes", "Correntes", "Pagos", "Vencidos", "Data de vencimento entre:", "Data de pagamento entre:", "Data de lançamento entre:" });
-            comboBoxBuscarPor.Location = new Point(11, 77);
+            comboBoxBuscarPor.Location = new Point(12, 116);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             comboBoxBuscarPor.Size = new Size(165, 28);
             comboBoxBuscarPor.TabIndex = 0;
@@ -77,16 +77,17 @@
             dataGridViewProduto.AllowUserToAddRows = false;
             dataGridViewProduto.AllowUserToDeleteRows = false;
             dataGridViewProduto.AllowUserToOrderColumns = true;
+            dataGridViewProduto.Anchor = AnchorStyles.None;
             dataGridViewProduto.AutoGenerateColumns = false;
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { NomeCliente, valorDebitoDataGridViewTextBoxColumn, NomeFormaPagamento, dataLancamentoDataGridViewTextBoxColumn, dataVencimentoDataGridViewTextBoxColumn, dataPagamentoDataGridViewTextBoxColumn, jurosDataGridViewTextBoxColumn, descontoDataGridViewTextBoxColumn, acrescimoDataGridViewTextBoxColumn, Descricao });
             dataGridViewProduto.DataSource = controleDebitoBindingSource;
-            dataGridViewProduto.Location = new Point(11, 111);
+            dataGridViewProduto.Location = new Point(12, 148);
             dataGridViewProduto.Name = "dataGridViewProduto";
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
-            dataGridViewProduto.Size = new Size(1183, 336);
+            dataGridViewProduto.Size = new Size(1190, 336);
             dataGridViewProduto.TabIndex = 8;
             // 
             // NomeCliente
@@ -193,7 +194,7 @@
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonSelecionar.BackColor = Color.Transparent;
-            buttonSelecionar.Location = new Point(1001, 455);
+            buttonSelecionar.Location = new Point(1015, 490);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 9;
@@ -207,7 +208,7 @@
             labelBuscarDebito.BackColor = Color.Transparent;
             labelBuscarDebito.Font = new Font("Swis721 BlkCn BT", 24F, FontStyle.Regular, GraphicsUnit.Point);
             labelBuscarDebito.ForeColor = Color.Black;
-            labelBuscarDebito.Location = new Point(2, 7);
+            labelBuscarDebito.Location = new Point(16, 10);
             labelBuscarDebito.Name = "labelBuscarDebito";
             labelBuscarDebito.Size = new Size(1201, 67);
             labelBuscarDebito.TabIndex = 22;
@@ -218,7 +219,7 @@
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonCancelar.BackColor = Color.Transparent;
-            buttonCancelar.Location = new Point(1099, 455);
+            buttonCancelar.Location = new Point(1113, 490);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 10;
@@ -230,16 +231,16 @@
             // 
             textBoxBuscarPor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxBuscarPor.BackColor = Color.White;
-            textBoxBuscarPor.Location = new Point(184, 77);
+            textBoxBuscarPor.Location = new Point(182, 116);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(341, 27);
+            textBoxBuscarPor.Size = new Size(355, 27);
             textBoxBuscarPor.TabIndex = 1;
             // 
             // buttonExcluirDebito
             // 
             buttonExcluirDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonExcluirDebito.BackColor = Color.Transparent;
-            buttonExcluirDebito.Location = new Point(1099, 76);
+            buttonExcluirDebito.Location = new Point(1108, 115);
             buttonExcluirDebito.Name = "buttonExcluirDebito";
             buttonExcluirDebito.Size = new Size(94, 29);
             buttonExcluirDebito.TabIndex = 7;
@@ -251,7 +252,7 @@
             // 
             buttonInserirDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonInserirDebito.BackColor = Color.Transparent;
-            buttonInserirDebito.Location = new Point(1000, 76);
+            buttonInserirDebito.Location = new Point(1009, 115);
             buttonInserirDebito.Name = "buttonInserirDebito";
             buttonInserirDebito.Size = new Size(94, 29);
             buttonInserirDebito.TabIndex = 6;
@@ -263,7 +264,7 @@
             // 
             buttonAlterarDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonAlterarDebito.BackColor = Color.Transparent;
-            buttonAlterarDebito.Location = new Point(900, 76);
+            buttonAlterarDebito.Location = new Point(909, 115);
             buttonAlterarDebito.Name = "buttonAlterarDebito";
             buttonAlterarDebito.Size = new Size(94, 29);
             buttonAlterarDebito.TabIndex = 5;
@@ -275,7 +276,7 @@
             // 
             buttonBuscarDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonBuscarDebito.BackColor = Color.Transparent;
-            buttonBuscarDebito.Location = new Point(809, 76);
+            buttonBuscarDebito.Location = new Point(818, 115);
             buttonBuscarDebito.Name = "buttonBuscarDebito";
             buttonBuscarDebito.Size = new Size(86, 29);
             buttonBuscarDebito.TabIndex = 4;
@@ -287,7 +288,7 @@
             // 
             labelE.AutoSize = true;
             labelE.BackColor = Color.Transparent;
-            labelE.Location = new Point(659, 83);
+            labelE.Location = new Point(669, 123);
             labelE.Name = "labelE";
             labelE.Size = new Size(17, 20);
             labelE.TabIndex = 31;
@@ -296,7 +297,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(531, 76);
+            dateTimePicker1.Location = new Point(541, 116);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(122, 27);
             dateTimePicker1.TabIndex = 2;
@@ -305,7 +306,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(681, 76);
+            dateTimePicker2.Location = new Point(691, 116);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(121, 27);
             dateTimePicker2.TabIndex = 3;
@@ -313,10 +314,11 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Dock = DockStyle.Fill;
             pictureBox3.Location = new Point(0, 0);
             pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1201, 496);
+            pictureBox3.Size = new Size(1215, 531);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 32;
             pictureBox3.TabStop = false;
@@ -327,7 +329,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(1201, 496);
+            ClientSize = new Size(1215, 531);
             Controls.Add(dateTimePicker1);
             Controls.Add(dateTimePicker2);
             Controls.Add(buttonExcluirDebito);

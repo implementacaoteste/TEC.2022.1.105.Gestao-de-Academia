@@ -29,13 +29,8 @@ namespace UIGestaoAcademia
         {
             try
             {
-
- 
-                pictureBoxZe.Parent = pictureBoxPrincipal;
-                pictureBoxCentral.Parent = pictureBoxPrincipal;
-                pictureBoxZe.Parent = pictureBoxCentral;
                 if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png"))
-                pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
+                    pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
 
                 using (FormLogin frm = new FormLogin())
                 {
@@ -43,6 +38,7 @@ namespace UIGestaoAcademia
                     if (!frm.Logou)
                         Application.Exit();
                 }
+
             }
             catch (Exception ex)
             {
@@ -174,6 +170,11 @@ namespace UIGestaoAcademia
             {
                 frm.ShowDialog();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
