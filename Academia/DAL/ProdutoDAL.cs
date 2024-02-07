@@ -293,6 +293,10 @@ namespace DAL
             {
                 cn.Close();
             }
-        }  
+        }
+        private void AtualizarEstoque(Produto _produto, SqlTransaction _transaction = null)
+        {
+
+        }
     }
 }
