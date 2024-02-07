@@ -181,7 +181,6 @@
             // 
             // textBoxBuscarFormaPagamento
             // 
-            textBoxBuscarFormaPagamento.Location = new Point(177, 223);
             textBoxBuscarFormaPagamento.Location = new Point(167, 225);
             textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
             textBoxBuscarFormaPagamento.Size = new Size(117, 27);
@@ -257,8 +256,6 @@
             // labelValorTotal
             // 
             labelValorTotal.AutoSize = true;
-            labelValorTotal.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
-            labelValorTotal.Location = new Point(670, 105);
             labelValorTotal.BackColor = Color.Transparent;
             labelValorTotal.Font = new Font("Segoe UI", 20.2F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(707, 100);
@@ -279,7 +276,6 @@
             // textBoxFrete
             // 
             textBoxFrete.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "FreteTotal", true));
-            textBoxFrete.Location = new Point(418, 121);
             textBoxFrete.Location = new Point(386, 124);
             textBoxFrete.Name = "textBoxFrete";
             textBoxFrete.Size = new Size(75, 27);
@@ -329,7 +325,6 @@
             // textBoxValorTotal
             // 
             textBoxValorTotal.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotal", true));
-            textBoxValorTotal.Location = new Point(177, 121);
             textBoxValorTotal.Location = new Point(134, 124);
             textBoxValorTotal.Name = "textBoxValorTotal";
             textBoxValorTotal.Size = new Size(106, 27);
@@ -369,7 +364,6 @@
             // textBoxValorTotalNota
             // 
             textBoxValorTotalNota.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotalNota", true));
-            textBoxValorTotalNota.Location = new Point(552, 181);
             textBoxValorTotalNota.Location = new Point(504, 183);
             textBoxValorTotalNota.Name = "textBoxValorTotalNota";
             textBoxValorTotalNota.Size = new Size(117, 27);
