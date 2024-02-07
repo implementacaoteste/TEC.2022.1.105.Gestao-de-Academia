@@ -187,5 +187,6 @@ namespace UIGestaoAcademia
                 textBoxValorProduto.Focus();
             }
         }
+        
     }
 }
