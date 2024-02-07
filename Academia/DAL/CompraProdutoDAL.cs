@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace DAL
 {
     public class CompraProdutoDAL
@@ -265,6 +264,10 @@ namespace DAL
             compraProduto.FreteTotal = (double)rd["FreteTotal"];
             compraProduto.ValorTotalNota = (double)rd["ValorTotalNota"];
             compraProduto.ValorTotal = (double)rd["ValorTotal"];
+        }
+        private void AtualizarEstoque(CompraProduto compraProduto, SqlDataReader rd)
+        {
+
         }
     }
 }
