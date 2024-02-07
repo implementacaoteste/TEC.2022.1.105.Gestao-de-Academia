@@ -63,6 +63,146 @@ namespace UIGestaoAcademia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1 {
+            get {
+                object obj = ResourceManager.GetObject("1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2 {
+            get {
+                object obj = ResourceManager.GetObject("2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Imagem_do_WhatsApp_de_2024_02_06_à_s__17_22_19_a31afbe8 {
+            get {
+                object obj = ResourceManager.GetObject("Imagem do WhatsApp de 2024-02-06 à(s) 17.22.19_a31afbe8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px_ {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px___1_ {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px___1_1 {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px) (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px___2_ {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px) (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px___2_1 {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px) (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px___3_ {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px) (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px___4_ {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px) (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px_1 {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lista_central__424_x_288_px_2 {
+            get {
+                object obj = ResourceManager.GetObject("Lista central (424 x 288 px)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Principal__424_x_288_px_ {
+            get {
+                object obj = ResourceManager.GetObject("Principal (424 x 288 px)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Principal__424_x_288_px___1_ {
+            get {
+                object obj = ResourceManager.GetObject("Principal (424 x 288 px) (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sem_nome__Banner_para_YouTube_ {
             get {
                 object obj = ResourceManager.GetObject("Sem nome (Banner para YouTube)", resourceCulture);
