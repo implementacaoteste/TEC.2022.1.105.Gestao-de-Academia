@@ -177,12 +177,13 @@
             textBoxQuantidade.Size = new Size(98, 27);
             textBoxQuantidade.TabIndex = 4;
             textBoxQuantidade.TextAlign = HorizontalAlignment.Right;
+            textBoxQuantidade.KeyDown += textBoxQuantidade_KeyDown;
             // 
             // textBoxBuscarFormaPagamento
             // 
             textBoxBuscarFormaPagamento.Location = new Point(167, 225);
             textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
-            textBoxBuscarFormaPagamento.Size = new Size(125, 27);
+            textBoxBuscarFormaPagamento.Size = new Size(117, 27);
             textBoxBuscarFormaPagamento.TabIndex = 2;
             // 
             // buttonFormaDePagamento
@@ -277,7 +278,7 @@
             textBoxFrete.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "FreteTotal", true));
             textBoxFrete.Location = new Point(386, 124);
             textBoxFrete.Name = "textBoxFrete";
-            textBoxFrete.Size = new Size(98, 27);
+            textBoxFrete.Size = new Size(75, 27);
             textBoxFrete.TabIndex = 6;
             textBoxFrete.TextAlign = HorizontalAlignment.Right;
             textBoxFrete.KeyDown += textBoxFrete_KeyDown;
@@ -295,7 +296,7 @@
             // textBoxValorProduto
             // 
             textBoxValorProduto.DataBindings.Add(new Binding("Text", itensCompraBindingSource, "ValorUnitario", true));
-            textBoxValorProduto.Location = new Point(798, 294);
+            textBoxValorProduto.Location = new Point(798, 295);
             textBoxValorProduto.Name = "textBoxValorProduto";
             textBoxValorProduto.Size = new Size(123, 27);
             textBoxValorProduto.TabIndex = 5;
@@ -326,7 +327,7 @@
             textBoxValorTotal.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotal", true));
             textBoxValorTotal.Location = new Point(134, 124);
             textBoxValorTotal.Name = "textBoxValorTotal";
-            textBoxValorTotal.Size = new Size(117, 27);
+            textBoxValorTotal.Size = new Size(106, 27);
             textBoxValorTotal.TabIndex = 0;
             textBoxValorTotal.TextAlign = HorizontalAlignment.Right;
             // 
