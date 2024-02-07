@@ -17,9 +17,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             ExibirNomeUsuarioLogado();
-            vendaBindingSource.AddNew();
-            itensVendaListBindingSource.AddNew();
-            dataGridView1.DataSource = itensVendaListBindingSource;
+
             _id = id;
 
             int codigoVenda = GerarCodigoVenda();
@@ -122,6 +120,7 @@ namespace UIGestaoAcademia
                 }
             }
             labelValorTotal.Text = valorTotal.ToString("C");
+            ((Venda)vendaBindingSource.Current).TotalVenda = valorTotal;
         }
 
         private void buttonBuscarProduto_Click(object sender, EventArgs e)
@@ -173,6 +172,9 @@ namespace UIGestaoAcademia
         private void FormVendas_Load(object sender, EventArgs e)
         {
             labeUser.Text = Constantes.UsuarioLogado.Nome;
+            vendaBindingSource.AddNew();
+            ((Venda)vendaBindingSource.Current).ItensVendaList = new List<ItensVenda>();
+            vendaBindingSource.EndEdit();
         }
     }
 }
