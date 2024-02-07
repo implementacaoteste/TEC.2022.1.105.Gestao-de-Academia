@@ -31,12 +31,9 @@
             components = new System.ComponentModel.Container();
             labelCliente = new Label();
             labelUser = new Label();
-            itensVendaBindingSource = new BindingSource(components);
             textBoxBuscarPorCliente = new TextBox();
             vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
-            label6 = new Label();
-            textBox4 = new TextBox();
             labelData = new Label();
             label8 = new Label();
             buttonBuscarCliente = new Button();
@@ -48,11 +45,11 @@
             label10 = new Label();
             label12 = new Label();
             dataGridView1 = new DataGridView();
-            codigoDeBarrasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            quantidadeDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            itensVendaListBindingSource = new BindingSource(components);
             buttonBuscarProduto = new Button();
             labelValorTotal = new Label();
             labelVenda = new Label();
@@ -61,9 +58,9 @@
             calendarioDataVencimento = new Calendario();
             labelCodigoVenda = new Label();
             labeUser = new Label();
-            ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)itensVendaListBindingSource).BeginInit();
             groupBoxVenda.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,15 +78,11 @@
             labelUser.AutoSize = true;
             labelUser.BackColor = Color.Transparent;
             labelUser.ForeColor = Color.Black;
-            labelUser.Location = new Point(12, 13);
+            labelUser.Location = new Point(15, 14);
             labelUser.Name = "labelUser";
             labelUser.Size = new Size(41, 20);
             labelUser.TabIndex = 10;
             labelUser.Text = "User:";
-            // 
-            // itensVendaBindingSource
-            // 
-            itensVendaBindingSource.DataSource = typeof(Models.ItensVenda);
             // 
             // textBoxBuscarPorCliente
             // 
@@ -112,22 +105,6 @@
             buttonFinalizarVenda.Text = "&Finalizar venda";
             buttonFinalizarVenda.UseVisualStyleBackColor = true;
             buttonFinalizarVenda.Click += buttonFinalizarVenda_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(10, 742);
-            label6.Name = "label6";
-            label6.Size = new Size(72, 20);
-            label6.TabIndex = 11;
-            label6.Text = "Desconto";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(172, 744);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 5;
             // 
             // labelData
             // 
@@ -227,8 +204,8 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { codigoDeBarrasDataGridViewTextBoxColumn, nomeProdutoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn1, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
-            dataGridView1.DataSource = itensVendaBindingSource;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nomeProdutoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dataGridView1.DataSource = itensVendaListBindingSource;
             dataGridView1.Location = new Point(12, 186);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -237,50 +214,46 @@
             dataGridView1.Size = new Size(903, 288);
             dataGridView1.TabIndex = 2;
             // 
-            // codigoDeBarrasDataGridViewTextBoxColumn
-            // 
-            codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
-            codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
-            codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
-            codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
-            codigoDeBarrasDataGridViewTextBoxColumn.Width = 180;
-            // 
             // nomeProdutoDataGridViewTextBoxColumn
             // 
             nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
-            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "NomeProduto";
+            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "Nome produto";
             nomeProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
             nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
             nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
             nomeProdutoDataGridViewTextBoxColumn.Width = 300;
             // 
-            // quantidadeDataGridViewTextBoxColumn1
+            // quantidadeDataGridViewTextBoxColumn
             // 
-            quantidadeDataGridViewTextBoxColumn1.DataPropertyName = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn1.HeaderText = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            quantidadeDataGridViewTextBoxColumn1.Name = "quantidadeDataGridViewTextBoxColumn1";
-            quantidadeDataGridViewTextBoxColumn1.ReadOnly = true;
-            quantidadeDataGridViewTextBoxColumn1.Width = 120;
+            quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            quantidadeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "PrecoUnitario";
+            dataGridViewTextBoxColumn2.HeaderText = "PrecoUnitario";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "PrecoUnitario";
-            dataGridViewTextBoxColumn3.HeaderText = "PrecoUnitario";
+            dataGridViewTextBoxColumn3.DataPropertyName = "PrecoTotal";
+            dataGridViewTextBoxColumn3.HeaderText = "PrecoTotal";
             dataGridViewTextBoxColumn3.MinimumWidth = 6;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
             dataGridViewTextBoxColumn3.Width = 125;
             // 
-            // dataGridViewTextBoxColumn4
+            // itensVendaListBindingSource
             // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "PrecoTotal";
-            dataGridViewTextBoxColumn4.HeaderText = "PrecoTotal";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            dataGridViewTextBoxColumn4.Width = 125;
+            itensVendaListBindingSource.DataMember = "ItensVendaList";
+            itensVendaListBindingSource.DataSource = vendaBindingSource;
             // 
             // buttonBuscarProduto
             // 
@@ -299,16 +272,16 @@
             labelValorTotal.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(692, 689);
             labelValorTotal.Name = "labelValorTotal";
-            labelValorTotal.Size = new Size(133, 62);
+            labelValorTotal.Size = new Size(157, 62);
             labelValorTotal.TabIndex = 23;
-            labelValorTotal.Text = "Teste";
+            labelValorTotal.Text = "TOTAL";
             // 
             // labelVenda
             // 
             labelVenda.AutoSize = true;
             labelVenda.BackColor = Color.Transparent;
             labelVenda.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelVenda.Location = new Point(622, 14);
+            labelVenda.Location = new Point(619, 14);
             labelVenda.Name = "labelVenda";
             labelVenda.Size = new Size(185, 41);
             labelVenda.TabIndex = 10;
@@ -363,24 +336,24 @@
             // 
             labelCodigoVenda.AutoSize = true;
             labelCodigoVenda.BackColor = Color.Transparent;
-            labelCodigoVenda.DataBindings.Add(new Binding("Text", vendaBindingSource, "Id", true));
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
             labelCodigoVenda.Location = new Point(795, 2);
             labelCodigoVenda.Name = "labelCodigoVenda";
-            labelCodigoVenda.Size = new Size(162, 62);
+            labelCodigoVenda.Size = new Size(126, 62);
             labelCodigoVenda.TabIndex = 29;
-            labelCodigoVenda.Text = "Venda";
+            labelCodigoVenda.Text = "COD";
             // 
             // labeUser
             // 
             labeUser.AutoSize = true;
             labeUser.BackColor = Color.Transparent;
+            labeUser.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             labeUser.ForeColor = Color.Black;
-            labeUser.Location = new Point(62, 14);
+            labeUser.Location = new Point(51, 2);
             labeUser.Name = "labeUser";
-            labeUser.Size = new Size(38, 20);
+            labeUser.Size = new Size(90, 41);
             labeUser.TabIndex = 30;
-            labeUser.Text = "User";
+            labeUser.Text = "USER";
             // 
             // FormVendas
             // 
@@ -397,8 +370,6 @@
             Controls.Add(textBoxFormaPagamento);
             Controls.Add(buttonFormaDePagamento);
             Controls.Add(label8);
-            Controls.Add(label6);
-            Controls.Add(textBox4);
             Controls.Add(labelUser);
             Controls.Add(groupBoxVenda);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -410,9 +381,9 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormVendas_Load;
-            ((System.ComponentModel.ISupportInitialize)itensVendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)itensVendaListBindingSource).EndInit();
             groupBoxVenda.ResumeLayout(false);
             groupBoxVenda.PerformLayout();
             ResumeLayout(false);
@@ -427,10 +398,7 @@
         private DataGridViewTextBoxColumn precoUnitarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoTotalDataGridViewTextBoxColumn;
         private TextBox textBoxBuscarPorCliente;
-        private BindingSource itensVendaBindingSource;
         private Button buttonFinalizarVenda;
-        private Label label6;
-        private TextBox textBox4;
         private Label labelData;
         private Label label8;
         private Button buttonBuscarCliente;
@@ -443,11 +411,6 @@
         private Label label12;
         private ComboBox comboBox1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private Button buttonBuscarProduto;
         private Label labelValorTotal;
         private Label labelVenda;
@@ -458,5 +421,11 @@
         private BindingSource vendaBindingSource;
         private Label labeUser;
         private Label labelUser;
+        private BindingSource itensVendaListBindingSource;
+        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeProdutoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

@@ -23,9 +23,9 @@ namespace DAL
 
                         cmd.Parameters.AddWithValue("@ClienteId", _venda.ClienteId);
                         cmd.Parameters.Add("@DataVenda", SqlDbType.DateTime).Value = _venda.DataVenda;
-                        cmd.Parameters.Add("@TotalVenda", SqlDbType.Decimal).Value = _venda.TotalVenda;
                         cmd.Parameters.AddWithValue("@FormaPagamentoId",_venda.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@UsuarioId", _venda.UsuarioId);
+                        cmd.Parameters.Add("@TotalVenda", SqlDbType.Decimal).Value = _venda.TotalVenda;
+                        cmd.Parameters.AddWithValue("@UsuarioId", Constantes.UsuarioLogado.Id);
                         if (_transaction == null)
                         {
                             cn.Open();
@@ -36,7 +36,7 @@ namespace DAL
                         cmd.Connection = transaction.Connection;
 
                         _venda.Id = Convert.ToInt32(cmd.ExecuteScalar());
-                        foreach (var item in _venda.itensCompraList)
+                        foreach (var item in _venda.ItensVendaList)
                         {
                             item.VendaId = _venda.Id;
                             new ItensVendaDAL().Inserir(item, transaction);
@@ -71,7 +71,51 @@ namespace DAL
 
         public List<Venda> BuscarTodos()
         {
-            throw new NotImplementedException();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Venda venda = new Venda();
+            List<Venda> vendasList = new List<Venda>();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Venda.Id, Venda.UsuarioId, Venda.ClienteId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda,
+                                ItensVenda.ProdutoId, SUM(ItensVenda.Quantidade) AS QuantidadeTotal, SUM(ItensVenda.PrecoTotal) AS PrecoTotal
+                                FROM Venda
+                                INNER JOIN ItensVenda ON Venda.Id = ItensVenda.VendaId
+                                GROUP BY Venda.Id, Venda.UsuarioId, Venda.ClienteId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda, ItensVenda.ProdutoId";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        /*venda = new Venda();
+                        venda.Id = (int)rd["Id"];
+                        venda.DataVenda = (int)rd["IDTerreno"];
+                        venda.IDCliente = (int)rd["IDCliente"];
+                        venda.IDCorretor = (int)rd["IDCorretor"]; ;
+                        venda.Cliente = new ClienteDAL().BuscarPorId((int)rd["IDCliente"]);
+                        venda.Terreno = new TerrenoDAL().BuscarPorId((int)rd["IDTerreno"]);
+                        venda.Corretor = new CorretorDAL().BuscarPorId((int)rd["IDCorretor"]);
+                        vendasList.Add(venda);*/
+                    }
+                }
+
+                return vendasList;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao buscar todas as vendas no banco de dados", ex) { Data = { { "Id", 2433 } } };
+            }
+            finally
+            {
+                cn.Close();
+            }
+
         }
 
         public List<Venda> BuscarPorNomeFuncionario(string nome)

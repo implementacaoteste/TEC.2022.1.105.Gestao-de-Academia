@@ -29,8 +29,13 @@ namespace UIGestaoAcademia
         {
             try
             {
-                if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundo.jpg"))
-                    pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundo.jpg";
+
+ 
+                pictureBoxZe.Parent = pictureBoxPrincipal;
+                pictureBoxCentral.Parent = pictureBoxPrincipal;
+                pictureBoxZe.Parent = pictureBoxCentral;
+                if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png"))
+                pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
 
                 using (FormLogin frm = new FormLogin())
                 {

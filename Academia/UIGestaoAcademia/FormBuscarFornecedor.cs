@@ -92,6 +92,7 @@ namespace UIGestaoAcademia
         private void FormBuscarFornecedor_Load(object sender, EventArgs e)
         {
             labelBuscarFornecedor.Parent = pictureBox1;
+            labelBuscarPor.Parent = pictureBox1;
 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundofornecedor.png"))
                 pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundofornecedor.png";

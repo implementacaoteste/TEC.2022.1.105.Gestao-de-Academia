@@ -10,10 +10,8 @@ namespace Models
 {
     public class Venda
     {
-        public List<ItensVenda> itensCompraList;
-
         public int Id { get; set; }
-        public int UsuarioId  { get; set; }
+        public int UsuarioId { get; set; }
         public string Nome
         {
             get
@@ -23,7 +21,15 @@ namespace Models
                 return "";
             }
         }
-        public int ClienteId { get; set; }
+        public int ClienteId
+        {
+            get
+            {
+                if (Cliente != null)
+                    return Cliente.Id;
+                return 0;
+            }
+        }
         public DateTime DataVenda { get; set; }
         public double TotalVenda { get; set; }
         public int FormaPagamentoId { get; set; }
@@ -53,6 +59,10 @@ namespace Models
         public Cliente Cliente { get; set; }
         public Funcionario Funcionario { get; set; }
         public Usuario Usuario { get; set; }
-
+        public List<ItensVenda> ItensVendaList { get; set; }
+        public Venda()
+        {
+            this.ItensVendaList = new List<ItensVenda>();
+        }
     }
 }

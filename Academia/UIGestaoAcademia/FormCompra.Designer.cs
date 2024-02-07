@@ -38,32 +38,34 @@
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             itensCompraBindingSource = new BindingSource(components);
             BindingSourceCompraProduto = new BindingSource(components);
-            label12 = new Label();
-            label10 = new Label();
+            labelQuantidade = new Label();
+            labelCodigoDeBarras = new Label();
             textBoxQuantidade = new TextBox();
             textBoxBuscarFormaPagamento = new TextBox();
             buttonFormaDePagamento = new Button();
             textBoxBuscarFornecedor = new TextBox();
             buttonBuscarFornecedor = new Button();
             textBoxCodigoDeBarras = new TextBox();
-            label8 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            labelFormaPagamento = new Label();
+            labelCompraDeProduto = new Label();
+            labelFornecedor = new Label();
             labelValorTotal = new Label();
-            label4 = new Label();
+            labelValorTotalDosProdutos = new Label();
             textBoxFrete = new TextBox();
-            label1 = new Label();
+            labelValorDoFrete = new Label();
             textBoxValorProduto = new TextBox();
-            label5 = new Label();
+            labelValorDoProduto = new Label();
             textBoxNomeProduto = new TextBox();
             textBoxValorTotal = new TextBox();
-            label6 = new Label();
+            labelValorDaNota = new Label();
             FinalizarCompra = new Button();
-            label7 = new Label();
+            labelValorTotalDaNota = new Label();
             textBoxValorTotalNota = new TextBox();
+            pictureBoxCompra = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCompra).BeginInit();
             SuspendLayout();
             // 
             // buttonBuscarProduto
@@ -147,23 +149,25 @@
             // 
             BindingSourceCompraProduto.DataSource = typeof(Models.CompraProduto);
             // 
-            // label12
+            // labelQuantidade
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(694, 264);
-            label12.Name = "label12";
-            label12.Size = new Size(87, 20);
-            label12.TabIndex = 49;
-            label12.Text = "Quantidade";
+            labelQuantidade.AutoSize = true;
+            labelQuantidade.BackColor = Color.Transparent;
+            labelQuantidade.Location = new Point(694, 264);
+            labelQuantidade.Name = "labelQuantidade";
+            labelQuantidade.Size = new Size(87, 20);
+            labelQuantidade.TabIndex = 49;
+            labelQuantidade.Text = "Quantidade";
             // 
-            // label10
+            // labelCodigoDeBarras
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(8, 264);
-            label10.Name = "label10";
-            label10.Size = new Size(124, 20);
-            label10.TabIndex = 48;
-            label10.Text = "Código de barras";
+            labelCodigoDeBarras.AutoSize = true;
+            labelCodigoDeBarras.BackColor = Color.Transparent;
+            labelCodigoDeBarras.Location = new Point(8, 264);
+            labelCodigoDeBarras.Name = "labelCodigoDeBarras";
+            labelCodigoDeBarras.Size = new Size(124, 20);
+            labelCodigoDeBarras.TabIndex = 48;
+            labelCodigoDeBarras.Text = "Código de barras";
             // 
             // textBoxQuantidade
             // 
@@ -178,13 +182,14 @@
             // textBoxBuscarFormaPagamento
             // 
             textBoxBuscarFormaPagamento.Location = new Point(177, 223);
+            textBoxBuscarFormaPagamento.Location = new Point(167, 225);
             textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
             textBoxBuscarFormaPagamento.Size = new Size(117, 27);
             textBoxBuscarFormaPagamento.TabIndex = 2;
             // 
             // buttonFormaDePagamento
             // 
-            buttonFormaDePagamento.Location = new Point(300, 223);
+            buttonFormaDePagamento.Location = new Point(298, 225);
             buttonFormaDePagamento.Name = "buttonFormaDePagamento";
             buttonFormaDePagamento.Size = new Size(33, 29);
             buttonFormaDePagamento.TabIndex = 2;
@@ -194,14 +199,14 @@
             // 
             // textBoxBuscarFornecedor
             // 
-            textBoxBuscarFornecedor.Location = new Point(100, 181);
+            textBoxBuscarFornecedor.Location = new Point(98, 183);
             textBoxBuscarFornecedor.Name = "textBoxBuscarFornecedor";
             textBoxBuscarFornecedor.Size = new Size(194, 27);
             textBoxBuscarFornecedor.TabIndex = 1;
             // 
             // buttonBuscarFornecedor
             // 
-            buttonBuscarFornecedor.Location = new Point(300, 181);
+            buttonBuscarFornecedor.Location = new Point(298, 183);
             buttonBuscarFornecedor.Name = "buttonBuscarFornecedor";
             buttonBuscarFornecedor.Size = new Size(33, 29);
             buttonBuscarFornecedor.TabIndex = 1;
@@ -217,71 +222,80 @@
             textBoxCodigoDeBarras.TabIndex = 3;
             textBoxCodigoDeBarras.KeyDown += textBoxProduto_KeyDown;
             // 
-            // label8
+            // labelFormaPagamento
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(10, 226);
-            label8.Name = "label8";
-            label8.Size = new Size(153, 20);
-            label8.TabIndex = 35;
-            label8.Text = "Forma de pagamento";
+            labelFormaPagamento.AutoSize = true;
+            labelFormaPagamento.BackColor = Color.Transparent;
+            labelFormaPagamento.Location = new Point(8, 228);
+            labelFormaPagamento.Name = "labelFormaPagamento";
+            labelFormaPagamento.Size = new Size(153, 20);
+            labelFormaPagamento.TabIndex = 35;
+            labelFormaPagamento.Text = "Forma de pagamento";
             // 
-            // label2
+            // labelCompraDeProduto
             // 
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(0, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(968, 68);
-            label2.TabIndex = 27;
-            label2.Text = "Compra de produto";
-            label2.TextAlign = ContentAlignment.TopCenter;
+            labelCompraDeProduto.BackColor = Color.Transparent;
+            labelCompraDeProduto.Dock = DockStyle.Top;
+            labelCompraDeProduto.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCompraDeProduto.Location = new Point(0, 0);
+            labelCompraDeProduto.Name = "labelCompraDeProduto";
+            labelCompraDeProduto.Size = new Size(968, 68);
+            labelCompraDeProduto.TabIndex = 27;
+            labelCompraDeProduto.Text = "Compra de produto";
+            labelCompraDeProduto.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label3
+            // labelFornecedor
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 180);
-            label3.Name = "label3";
-            label3.Size = new Size(84, 20);
-            label3.TabIndex = 29;
-            label3.Text = "Fornecedor";
+            labelFornecedor.AutoSize = true;
+            labelFornecedor.BackColor = Color.Transparent;
+            labelFornecedor.Location = new Point(8, 182);
+            labelFornecedor.Name = "labelFornecedor";
+            labelFornecedor.Size = new Size(84, 20);
+            labelFornecedor.TabIndex = 29;
+            labelFornecedor.Text = "Fornecedor";
             // 
             // labelValorTotal
             // 
             labelValorTotal.AutoSize = true;
             labelValorTotal.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             labelValorTotal.Location = new Point(670, 105);
+            labelValorTotal.BackColor = Color.Transparent;
+            labelValorTotal.Font = new Font("Segoe UI", 20.2F, FontStyle.Regular, GraphicsUnit.Point);
+            labelValorTotal.Location = new Point(707, 100);
             labelValorTotal.Name = "labelValorTotal";
             labelValorTotal.Size = new Size(0, 46);
             labelValorTotal.TabIndex = 53;
             // 
-            // label4
+            // labelValorTotalDosProdutos
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(499, 124);
-            label4.Name = "label4";
-            label4.Size = new Size(165, 20);
-            label4.TabIndex = 52;
-            label4.Text = "VALOR TOTAL DA NOTA";
+            labelValorTotalDosProdutos.AutoSize = true;
+            labelValorTotalDosProdutos.BackColor = Color.Transparent;
+            labelValorTotalDosProdutos.Location = new Point(490, 127);
+            labelValorTotalDosProdutos.Name = "labelValorTotalDosProdutos";
+            labelValorTotalDosProdutos.Size = new Size(211, 20);
+            labelValorTotalDosProdutos.TabIndex = 52;
+            labelValorTotalDosProdutos.Text = "VALOR TOTAL DOS PRODUTOS";
             // 
             // textBoxFrete
             // 
             textBoxFrete.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "FreteTotal", true));
             textBoxFrete.Location = new Point(418, 121);
+            textBoxFrete.Location = new Point(386, 124);
             textBoxFrete.Name = "textBoxFrete";
             textBoxFrete.Size = new Size(75, 27);
             textBoxFrete.TabIndex = 6;
             textBoxFrete.TextAlign = HorizontalAlignment.Right;
             textBoxFrete.KeyDown += textBoxFrete_KeyDown;
             // 
-            // label1
+            // labelValorDoFrete
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(289, 125);
-            label1.Name = "label1";
-            label1.Size = new Size(123, 20);
-            label1.TabIndex = 55;
-            label1.Text = "VALOR DO FRETE";
+            labelValorDoFrete.AutoSize = true;
+            labelValorDoFrete.BackColor = Color.Transparent;
+            labelValorDoFrete.Location = new Point(257, 126);
+            labelValorDoFrete.Name = "labelValorDoFrete";
+            labelValorDoFrete.Size = new Size(123, 20);
+            labelValorDoFrete.TabIndex = 55;
+            labelValorDoFrete.Text = "VALOR DO FRETE";
             // 
             // textBoxValorProduto
             // 
@@ -293,14 +307,15 @@
             textBoxValorProduto.TextAlign = HorizontalAlignment.Right;
             textBoxValorProduto.KeyDown += textBox2_KeyDown;
             // 
-            // label5
+            // labelValorDoProduto
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(798, 264);
-            label5.Name = "label5";
-            label5.Size = new Size(123, 20);
-            label5.TabIndex = 57;
-            label5.Text = "Valor do produto";
+            labelValorDoProduto.AutoSize = true;
+            labelValorDoProduto.BackColor = Color.Transparent;
+            labelValorDoProduto.Location = new Point(798, 264);
+            labelValorDoProduto.Name = "labelValorDoProduto";
+            labelValorDoProduto.Size = new Size(123, 20);
+            labelValorDoProduto.TabIndex = 57;
+            labelValorDoProduto.Text = "Valor do produto";
             // 
             // textBoxNomeProduto
             // 
@@ -315,19 +330,21 @@
             // 
             textBoxValorTotal.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotal", true));
             textBoxValorTotal.Location = new Point(177, 121);
+            textBoxValorTotal.Location = new Point(134, 124);
             textBoxValorTotal.Name = "textBoxValorTotal";
             textBoxValorTotal.Size = new Size(106, 27);
             textBoxValorTotal.TabIndex = 0;
             textBoxValorTotal.TextAlign = HorizontalAlignment.Right;
             // 
-            // label6
+            // labelValorDaNota
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(8, 124);
-            label6.Name = "label6";
-            label6.Size = new Size(170, 20);
-            label6.TabIndex = 59;
-            label6.Text = "ENTRADA DA NOTA(R$)";
+            labelValorDaNota.AutoSize = true;
+            labelValorDaNota.BackColor = Color.Transparent;
+            labelValorDaNota.Location = new Point(8, 126);
+            labelValorDaNota.Name = "labelValorDaNota";
+            labelValorDaNota.Size = new Size(120, 20);
+            labelValorDaNota.TabIndex = 59;
+            labelValorDaNota.Text = "VALOR DA NOTA";
             // 
             // FinalizarCompra
             // 
@@ -339,23 +356,35 @@
             FinalizarCompra.UseVisualStyleBackColor = true;
             FinalizarCompra.Click += FinalizarCompra_Click;
             // 
-            // label7
+            // labelValorTotalDaNota
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(335, 185);
-            label7.Name = "label7";
-            label7.Size = new Size(211, 20);
-            label7.TabIndex = 63;
-            label7.Text = "VALOR TOTAL DOS PRODUTOS";
+            labelValorTotalDaNota.AutoSize = true;
+            labelValorTotalDaNota.BackColor = Color.Transparent;
+            labelValorTotalDaNota.Location = new Point(333, 187);
+            labelValorTotalDaNota.Name = "labelValorTotalDaNota";
+            labelValorTotalDaNota.Size = new Size(165, 20);
+            labelValorTotalDaNota.TabIndex = 63;
+            labelValorTotalDaNota.Text = "VALOR TOTAL DA NOTA";
             // 
             // textBoxValorTotalNota
             // 
             textBoxValorTotalNota.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotalNota", true));
             textBoxValorTotalNota.Location = new Point(552, 181);
+            textBoxValorTotalNota.Location = new Point(504, 183);
             textBoxValorTotalNota.Name = "textBoxValorTotalNota";
             textBoxValorTotalNota.Size = new Size(117, 27);
             textBoxValorTotalNota.TabIndex = 64;
             textBoxValorTotalNota.TextAlign = HorizontalAlignment.Right;
+            // 
+            // pictureBoxCompra
+            // 
+            pictureBoxCompra.Dock = DockStyle.Fill;
+            pictureBoxCompra.Location = new Point(0, 0);
+            pictureBoxCompra.Name = "pictureBoxCompra";
+            pictureBoxCompra.Size = new Size(968, 706);
+            pictureBoxCompra.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxCompra.TabIndex = 65;
+            pictureBoxCompra.TabStop = false;
             // 
             // FormCompra
             // 
@@ -363,20 +392,20 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 706);
             Controls.Add(textBoxValorTotalNota);
-            Controls.Add(label7);
+            Controls.Add(labelValorTotalDaNota);
             Controls.Add(FinalizarCompra);
-            Controls.Add(label6);
+            Controls.Add(labelValorDaNota);
             Controls.Add(textBoxValorTotal);
-            Controls.Add(label5);
+            Controls.Add(labelValorDoProduto);
             Controls.Add(textBoxValorProduto);
-            Controls.Add(label1);
+            Controls.Add(labelValorDoFrete);
             Controls.Add(textBoxFrete);
             Controls.Add(labelValorTotal);
-            Controls.Add(label4);
+            Controls.Add(labelValorTotalDosProdutos);
             Controls.Add(buttonBuscarProduto);
             Controls.Add(dataGridView1);
-            Controls.Add(label12);
-            Controls.Add(label10);
+            Controls.Add(labelQuantidade);
+            Controls.Add(labelCodigoDeBarras);
             Controls.Add(textBoxQuantidade);
             Controls.Add(textBoxBuscarFormaPagamento);
             Controls.Add(buttonFormaDePagamento);
@@ -384,9 +413,10 @@
             Controls.Add(buttonBuscarFornecedor);
             Controls.Add(textBoxNomeProduto);
             Controls.Add(textBoxCodigoDeBarras);
-            Controls.Add(label8);
-            Controls.Add(label2);
-            Controls.Add(label3);
+            Controls.Add(labelFormaPagamento);
+            Controls.Add(labelCompraDeProduto);
+            Controls.Add(labelFornecedor);
+            Controls.Add(pictureBoxCompra);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -399,6 +429,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCompra).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -406,35 +437,36 @@
         #endregion
         private Button buttonBuscarProduto;
         private DataGridView dataGridView1;
-        private Label label12;
-        private Label label10;
+        private Label labelQuantidade;
+        private Label labelCodigoDeBarras;
         private TextBox textBoxQuantidade;
         private TextBox textBoxBuscarFormaPagamento;
         private Button buttonFormaDePagamento;
         private TextBox textBoxBuscarFornecedor;
         private Button buttonBuscarFornecedor;
         private TextBox textBoxCodigoDeBarras;
-        private Label label8;
-        private Label label2;
-        private Label label3;
+        private Label labelFormaPagamento;
+        private Label labelCompraDeProduto;
+        private Label labelFornecedor;
         private BindingSource itensCompraBindingSource;
         private BindingSource BindingSourceCompraProduto;
         private Label labelValorTotal;
-        private Label label4;
+        private Label labelValorTotalDosProdutos;
         private TextBox textBoxFrete;
-        private Label label1;
+        private Label labelValorDoFrete;
         private TextBox textBoxValorProduto;
-        private Label label5;
+        private Label labelValorDoProduto;
         private TextBox textBoxNomeProduto;
         private TextBox textBoxValorTotal;
-        private Label label6;
+        private Label labelValorDaNota;
         private Button FinalizarCompra;
-        private Label label7;
+        private Label labelValorTotalDaNota;
         private TextBox textBoxValorTotalNota;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Marca;
         private DataGridViewTextBoxColumn Quantidade;
         private DataGridViewTextBoxColumn ValorUnitario;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private PictureBox pictureBoxCompra;
     }
 }

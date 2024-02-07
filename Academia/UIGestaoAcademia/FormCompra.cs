@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Models;
+using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
@@ -12,9 +13,27 @@ namespace UIGestaoAcademia
         }
         private void FormCompra_Load(object sender, EventArgs e)
         {
+
             BindingSourceCompraProduto.AddNew();
             ((CompraProduto)BindingSourceCompraProduto.Current).itensCompraList = new List<ItensCompra>();
             BindingSourceCompraProduto.EndEdit();
+
+            labelValorDoFrete.Parent = pictureBoxCompra;
+            labelValorTotalDaNota.Parent = pictureBoxCompra;
+            labelFormaPagamento.Parent = pictureBoxCompra;
+            labelFornecedor.Parent = pictureBoxCompra;
+            labelFormaPagamento.Parent = pictureBoxCompra;
+            labelCodigoDeBarras.Parent = pictureBoxCompra;
+            labelQuantidade.Parent = pictureBoxCompra;
+            labelValorDoProduto.Parent = pictureBoxCompra;
+            labelValorTotal.Parent = pictureBoxCompra;
+            labelCompraDeProduto.Parent = pictureBoxCompra;
+            labelValorTotalDosProdutos.Parent = pictureBoxCompra;
+            labelValorDoFrete.Parent = pictureBoxCompra;
+            labelValorDaNota.Parent = pictureBoxCompra;
+            FinalizarCompra.Parent = pictureBoxCompra;
+            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png"))
+                pictureBoxCompra.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png";
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
