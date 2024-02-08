@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Data;
 
-
 namespace DAL
 {
     public class CompraProdutoDAL
