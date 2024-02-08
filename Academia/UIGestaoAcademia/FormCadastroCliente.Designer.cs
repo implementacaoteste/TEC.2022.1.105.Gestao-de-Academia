@@ -60,7 +60,7 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            calendarioDataVencimento = new Calendario();
             nomeLabel = new Label();
             rGLabel = new Label();
             foneLabel = new Label();
@@ -250,7 +250,7 @@
             label1.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(695, 61);
+            label1.Size = new Size(700, 61);
             label1.TabIndex = 11;
             label1.Text = "Cadastro de cliente";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -361,22 +361,25 @@
             textBox8.Size = new Size(212, 27);
             textBox8.TabIndex = 12;
             // 
-            // dateTimePicker1
+            // calendarioDataVencimento
             // 
-            dateTimePicker1.DataBindings.Add(new Binding("Text", clienteBindingSource, "DataCadastro", true));
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(561, 141);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(122, 27);
-            dateTimePicker1.TabIndex = 15;
-            dateTimePicker1.Value = new DateTime(2024, 1, 29, 0, 0, 0, 0);
+            calendarioDataVencimento.Checked = false;
+            calendarioDataVencimento.CustomFormat = " ";
+            calendarioDataVencimento.DataBindings.Add(new Binding("Text", clienteBindingSource, "DataCadastro", true));
+            calendarioDataVencimento.Format = DateTimePickerFormat.Custom;
+            calendarioDataVencimento.Location = new Point(555, 138);
+            calendarioDataVencimento.Name = "calendarioDataVencimento";
+            calendarioDataVencimento.RightToLeftLayout = true;
+            calendarioDataVencimento.ShowCheckBox = true;
+            calendarioDataVencimento.Size = new Size(140, 27);
+            calendarioDataVencimento.TabIndex = 28;
             // 
             // FormCadastroCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(695, 546);
-            Controls.Add(dateTimePicker1);
+            ClientSize = new Size(700, 546);
+            Controls.Add(calendarioDataVencimento);
             Controls.Add(checkBox1);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonSalvar);
@@ -443,5 +446,6 @@
         private TextBox textBox7;
         private TextBox textBox8;
         private DateTimePicker dateTimePicker1;
+        private Calendario calendarioDataVencimento;
     }
 }
