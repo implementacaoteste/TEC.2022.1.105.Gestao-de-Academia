@@ -112,7 +112,7 @@ namespace UIGestaoAcademia
         {
             if (comboBoxBuscarPor.SelectedIndex <= 4)
             {
-                textBoxBuscarPor.Width = 555;
+                textBoxBuscarPor.Width = 628;
                 textBoxBuscarPor.Enabled = true;
                 dateTimePicker1.Visible = false;
                 dateTimePicker2.Visible = false;
@@ -121,7 +121,7 @@ namespace UIGestaoAcademia
 
             if (comboBoxBuscarPor.SelectedIndex >= 5)
             {
-                textBoxBuscarPor.Width = 307;
+                textBoxBuscarPor.Width = 350;
                 textBoxBuscarPor.Enabled = false;
                 textBoxBuscarPor.BackColor = Color.WhiteSmoke;
                 dateTimePicker1.Visible = true;
