@@ -72,7 +72,6 @@ namespace DAL
         public List<Venda> BuscarTodos()
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            Venda venda = new Venda();
             List<Venda> vendasList = new List<Venda>();
 
             try
@@ -80,28 +79,36 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
 
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Venda.Id, Venda.UsuarioId, Venda.ClienteId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda,
-                                ItensVenda.ProdutoId, SUM(ItensVenda.Quantidade) AS QuantidadeTotal, SUM(ItensVenda.PrecoTotal) AS PrecoTotal
-                                FROM Venda
-                                INNER JOIN ItensVenda ON Venda.Id = ItensVenda.VendaId
-                                GROUP BY Venda.Id, Venda.UsuarioId, Venda.ClienteId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda, ItensVenda.ProdutoId";
+                cmd.CommandText = @"SELECT Venda.Id, Venda.UsuarioId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda,
+                                    SUM(ItensVenda.Quantidade) AS QuantidadeTotal, SUM(ItensVenda.PrecoTotal) AS PrecoTotal
+                            FROM Venda
+                            INNER JOIN ItensVenda ON Venda.Id = ItensVenda.VendaId
+                            GROUP BY Venda.Id, Venda.UsuarioId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cn.Open();
+
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
-                        /*venda = new Venda();
+                        Venda venda = new Venda();
                         venda.Id = (int)rd["Id"];
-                        venda.DataVenda = (int)rd["IDTerreno"];
-                        venda.IDCliente = (int)rd["IDCliente"];
-                        venda.IDCorretor = (int)rd["IDCorretor"]; ;
+                        venda.UsuarioId = (int)rd["UsuarioId"];
+                        venda.DataVenda = (DateTime)rd["DataVenda"];
+                        venda.Desconto = (decimal)rd["Desconto"];
+                        venda.TotalVenda = (double)rd["TotalVenda"];
+                        venda.QuantidadeTotal = (int)rd["QuantidadeTotal"];
+                        venda.PrecoTotal = (decimal)rd["PrecoTotal"];
                         venda.Cliente = new ClienteDAL().BuscarPorId((int)rd["IDCliente"]);
-                        venda.Terreno = new TerrenoDAL().BuscarPorId((int)rd["IDTerreno"]);
-                        venda.Corretor = new CorretorDAL().BuscarPorId((int)rd["IDCorretor"]);
-                        vendasList.Add(venda);*/
+                        venda.Usuario = new UsuarioDAL().BuscarPorId((int)rd["IDTerreno"]);
+
+
+
+
+
+                        vendasList.Add(venda);
                     }
                 }
 
@@ -109,14 +116,14 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao buscar todas as vendas no banco de dados", ex) { Data = { { "Id", 2433 } } };
+                throw new Exception("Ocorreu um erro ao buscar as vendas com detalhes no banco de dados", ex);
             }
             finally
             {
                 cn.Close();
             }
-
         }
+
 
         public List<Venda> BuscarPorNomeFuncionario(string nome)
         {
