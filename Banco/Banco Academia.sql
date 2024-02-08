@@ -1,5 +1,5 @@
 CREATE TRIGGER ATUALIZAR_ESTOQUE
-ON COMPRAPRODUTO
+ON ItensCompra
 AFTER INSERT
 AS
 BEGIN
@@ -14,3 +14,4 @@ END
 select * from Produto
 select * from CompraProduto
 select * from ItensCompra
+
