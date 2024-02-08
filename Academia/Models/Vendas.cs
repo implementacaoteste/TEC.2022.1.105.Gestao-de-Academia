@@ -60,6 +60,11 @@ namespace Models
         public Funcionario Funcionario { get; set; }
         public Usuario Usuario { get; set; }
         public List<ItensVenda> ItensVendaList { get; set; }
+        public Produto Produto { get; set; }
+        public decimal Desconto { get; set; }
+        public int QuantidadeTotal { get; set; }
+        public decimal PrecoTotal { get; set; }
+
         public Venda()
         {
             this.ItensVendaList = new List<ItensVenda>();

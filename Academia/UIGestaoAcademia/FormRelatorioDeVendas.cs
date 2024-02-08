@@ -37,10 +37,13 @@ namespace UIGestaoAcademia
                         vendasBindingSource.DataSource = new VendasBLL().BuscarPorCpfCliente(textBoxBuscar.Text);
                         break;
                     case 4:
-                        //vendasBindingSource.DataSource = new VendasBLL().BuscarPorDataVenda(textBoxBuscar.Text);
+                        vendasBindingSource.DataSource = new VendasBLL().BuscarPorDataVenda();
+                        break;
+                        case 5:
+                        vendasBindingSource.DataSource = new VendasBLL().BuscarTodos();
                         break;
                     default:
-                        //vendasBindingSource.DataSource = new VendasBLL().BuscarTodos(textBoxBuscar);
+                        vendasBindingSource.DataSource = new VendasBLL().BuscarTodos();
                         break;
                 }
             }

@@ -181,12 +181,15 @@ namespace UIGestaoAcademia
             labelVenda.Parent = pictureBoxVenda;
             labelCodigoVenda.Parent = pictureBoxVenda;
             groupBoxVenda.Parent = pictureBoxVenda;
-            labelCliente.Parent = pictureBoxVenda;
-            textBoxBuscarPorCliente.Parent = pictureBoxVenda;
-            buttonBuscarCliente.Parent = pictureBoxVenda;
+
 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundovenda.png"))
                 pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundovenda.png";
+        }
+
+        private void pictureBoxVenda_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

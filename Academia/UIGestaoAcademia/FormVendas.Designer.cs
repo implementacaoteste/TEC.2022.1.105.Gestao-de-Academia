@@ -69,28 +69,31 @@
             // 
             // labelCliente
             // 
+            labelCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             labelCliente.AutoSize = true;
-            labelCliente.Location = new Point(218, 22);
+            labelCliente.Location = new Point(209, 31);
             labelCliente.Name = "labelCliente";
-            labelCliente.Size = new Size(64, 20);
+            labelCliente.Size = new Size(67, 20);
             labelCliente.TabIndex = 11;
-            labelCliente.Text = "CLIENTE";
+            labelCliente.Text = "CLIENTE:";
             // 
             // labelUser
             // 
             labelUser.AutoSize = true;
             labelUser.BackColor = Color.Transparent;
+            labelUser.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labelUser.ForeColor = Color.Black;
-            labelUser.Location = new Point(15, 14);
+            labelUser.Location = new Point(74, 14);
             labelUser.Name = "labelUser";
-            labelUser.Size = new Size(41, 20);
+            labelUser.Size = new Size(45, 20);
             labelUser.TabIndex = 10;
             labelUser.Text = "User:";
             // 
             // textBoxBuscarPorCliente
             // 
+            textBoxBuscarPorCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             textBoxBuscarPorCliente.DataBindings.Add(new Binding("Text", vendaBindingSource, "ClienteId", true));
-            textBoxBuscarPorCliente.Location = new Point(288, 17);
+            textBoxBuscarPorCliente.Location = new Point(279, 26);
             textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             textBoxBuscarPorCliente.Size = new Size(398, 27);
             textBoxBuscarPorCliente.TabIndex = 2;
@@ -112,7 +115,7 @@
             // labelData
             // 
             labelData.AutoSize = true;
-            labelData.Location = new Point(732, 22);
+            labelData.Location = new Point(725, 31);
             labelData.Name = "labelData";
             labelData.Size = new Size(46, 20);
             labelData.TabIndex = 8;
@@ -129,7 +132,8 @@
             // 
             // buttonBuscarCliente
             // 
-            buttonBuscarCliente.Location = new Point(692, 17);
+            buttonBuscarCliente.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            buttonBuscarCliente.Location = new Point(683, 25);
             buttonBuscarCliente.Name = "buttonBuscarCliente";
             buttonBuscarCliente.Size = new Size(33, 29);
             buttonBuscarCliente.TabIndex = 3;
@@ -293,7 +297,7 @@
             labelVenda.AutoSize = true;
             labelVenda.BackColor = Color.Transparent;
             labelVenda.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelVenda.Location = new Point(619, 14);
+            labelVenda.Location = new Point(633, 80);
             labelVenda.Name = "labelVenda";
             labelVenda.Size = new Size(185, 41);
             labelVenda.TabIndex = 10;
@@ -319,11 +323,11 @@
             groupBoxVenda.Controls.Add(buttonBuscarProduto);
             groupBoxVenda.Controls.Add(textBoxQuantidade);
             groupBoxVenda.Controls.Add(label10);
-            groupBoxVenda.Controls.Add(buttonBuscarCliente);
             groupBoxVenda.Controls.Add(label12);
-            groupBoxVenda.Controls.Add(labelCliente);
             groupBoxVenda.Controls.Add(textBoxBuscarPorCliente);
             groupBoxVenda.Controls.Add(labelData);
+            groupBoxVenda.Controls.Add(labelCliente);
+            groupBoxVenda.Controls.Add(buttonBuscarCliente);
             groupBoxVenda.Location = new Point(15, 192);
             groupBoxVenda.Name = "groupBoxVenda";
             groupBoxVenda.Size = new Size(924, 500);
@@ -337,7 +341,7 @@
             calendarioDataVencimento.CustomFormat = " ";
             calendarioDataVencimento.DataBindings.Add(new Binding("Text", vendaBindingSource, "DataVenda", true));
             calendarioDataVencimento.Format = DateTimePickerFormat.Custom;
-            calendarioDataVencimento.Location = new Point(779, 19);
+            calendarioDataVencimento.Location = new Point(771, 26);
             calendarioDataVencimento.Name = "calendarioDataVencimento";
             calendarioDataVencimento.RightToLeftLayout = true;
             calendarioDataVencimento.ShowCheckBox = true;
@@ -349,7 +353,7 @@
             labelCodigoVenda.AutoSize = true;
             labelCodigoVenda.BackColor = Color.Transparent;
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCodigoVenda.Location = new Point(795, 2);
+            labelCodigoVenda.Location = new Point(809, 68);
             labelCodigoVenda.Name = "labelCodigoVenda";
             labelCodigoVenda.Size = new Size(126, 62);
             labelCodigoVenda.TabIndex = 29;
@@ -361,7 +365,7 @@
             labeUserVenda.BackColor = Color.Transparent;
             labeUserVenda.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             labeUserVenda.ForeColor = Color.Black;
-            labeUserVenda.Location = new Point(51, 2);
+            labeUserVenda.Location = new Point(110, 2);
             labeUserVenda.Name = "labeUserVenda";
             labeUserVenda.Size = new Size(90, 41);
             labeUserVenda.TabIndex = 30;
@@ -369,13 +373,14 @@
             // 
             // pictureBoxVenda
             // 
-            pictureBoxVenda.Dock = DockStyle.Fill;
-            pictureBoxVenda.Location = new Point(0, 0);
+            pictureBoxVenda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBoxVenda.Location = new Point(-1, 2);
             pictureBoxVenda.Name = "pictureBoxVenda";
-            pictureBoxVenda.Size = new Size(954, 863);
+            pictureBoxVenda.Size = new Size(953, 863);
             pictureBoxVenda.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxVenda.TabIndex = 31;
             pictureBoxVenda.TabStop = false;
+            pictureBoxVenda.Click += pictureBoxVenda_Click;
             // 
             // FormVendas
             // 
@@ -453,5 +458,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private PictureBox pictureBoxVenda;
+        private Label Nome;
     }
 }
