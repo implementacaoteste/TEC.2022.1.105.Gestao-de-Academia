@@ -27,7 +27,7 @@ namespace UIGestaoAcademia
 
         private void buttonEntrar_Click(object sender, EventArgs e)
         {
-                      
+
             try
             {
                 new UsuarioBLL().Altenticar(textBoxUsuario.Text, textBoxSenha.Text);
@@ -61,13 +61,14 @@ namespace UIGestaoAcademia
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            label1.Parent = pictureBox2;
-            label2.Parent = pictureBox2;
-            label1.BackColor = Color.Transparent;
-            label2.BackColor = Color.Transparent;
+            label1.Parent = pictureBoxFundo;
+            label2.Parent = pictureBoxFundo;
+            pictureBoxLogo.Parent = pictureBoxFundo;
 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundologin.png"))
-                pictureBox2.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundologin.png";
+                pictureBoxFundo.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundologin.png";
+            if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\logologin.png"))
+                pictureBoxLogo.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\logologin.png";
         }
     }
 }

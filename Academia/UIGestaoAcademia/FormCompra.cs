@@ -75,9 +75,30 @@ namespace UIGestaoAcademia
         }
         private void buttonBuscarProduto_Click(object sender, EventArgs e)
         {
-            using (FormBuscarProduto frm = new FormBuscarProduto())
+            try
             {
-                frm.ShowDialog();
+                using (FormBuscarProduto frm = new FormBuscarProduto())
+                {
+                    frm.ShowDialog();
+                    if (frm.Produto != null)
+                    {
+                        textBoxCodigoDeBarras.Text = frm.Produto.CodigoDeBarras;
+                        //((ItensCompra)BindingSourceCompraProduto.Current).Produto = frm.Produto;
+
+                        itensCompraBindingSource.AddNew();
+                        //((ItensCompra)itensCompraBindingSource.Current).ProdutoId = frm.Produto.Id;
+                        ((ItensCompra)itensCompraBindingSource.Current).Produto = frm.Produto;
+                        ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
+
+                        textBoxQuantidade.Focus();
+                        textBoxQuantidade.SelectAll();
+                        textBoxNomeProduto.Text = frm.Produto.Nome;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
@@ -85,8 +106,13 @@ namespace UIGestaoAcademia
             if (e.KeyCode == Keys.Enter)
             {
                 Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(textBoxCodigoDeBarras.Text);
+
+                if (produto.Id == 0)
+                {
+                    textBoxCodigoDeBarras.SelectAll();
+                    return;
+                }
                 itensCompraBindingSource.AddNew();
-                ((ItensCompra)itensCompraBindingSource.Current).ProdutoId = produto.Id;
                 ((ItensCompra)itensCompraBindingSource.Current).Produto = produto;
                 ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
 
@@ -99,7 +125,6 @@ namespace UIGestaoAcademia
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //itensCompraBindingSource.AddNew();
                 ((ItensCompra)itensCompraBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                 ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario = Convert.ToDouble(textBoxValorProduto.Text);
                 ((ItensCompra)itensCompraBindingSource.Current).ValorTotal = ((ItensCompra)itensCompraBindingSource.Current).ValorUnitario * ((ItensCompra)itensCompraBindingSource.Current).Quantidade;
@@ -128,7 +153,7 @@ namespace UIGestaoAcademia
                     valorTotal += item.ValorTotal;
                 }
             }
-            labelValorTotal.Text = valorTotal.ToString("C");
+            textBoxValorTotalNota.Text = valorTotal.ToString();
         }
         private void textBoxFrete_KeyDown(object sender, KeyEventArgs e)
         {
@@ -137,7 +162,7 @@ namespace UIGestaoAcademia
                 ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal = Convert.ToDouble(textBoxFrete.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal = Convert.ToDouble(textBoxValorTotal.Text);
                 ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota = ((CompraProduto)BindingSourceCompraProduto.Current).FreteTotal + ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotal;
-                textBoxValorTotalNota.Text = ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota.ToString();
+                labelValorTotal.Text = ((CompraProduto)BindingSourceCompraProduto.Current).ValorTotalNota.ToString("C");
             }
         }
         private void FinalizarCompra_Click(object sender, EventArgs e)
@@ -153,6 +178,13 @@ namespace UIGestaoAcademia
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void textBoxQuantidade_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBoxValorProduto.Focus();
             }
         }
     }

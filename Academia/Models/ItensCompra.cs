@@ -11,7 +11,15 @@ namespace Models
     {
         public int Id { get; set; }
         public int CompraProdutoId { get; set; }
-        public int ProdutoId { get; set; }
+        public int ProdutoId 
+        {
+            get
+            {
+                if (Produto != null)
+                    return Produto.Id;
+                return 0;
+            }
+        }
         public string Nome 
         {
             get 
