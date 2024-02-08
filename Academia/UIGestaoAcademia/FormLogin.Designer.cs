@@ -28,54 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Button button2;
-            Button button1;
-            pictureBox2 = new PictureBox();
+            Button buttonCancelar;
+            Button buttonEntrar;
+            pictureBoxFundo = new PictureBox();
             textBoxUsuario = new TextBox();
             textBoxSenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            button2 = new Button();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            pictureBoxLogo = new PictureBox();
+            buttonCancelar = new Button();
+            buttonEntrar = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFundo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
-            // button2
+            // buttonCancelar
             // 
-            button2.AccessibleRole = AccessibleRole.None;
-            button2.Anchor = AnchorStyles.None;
-            button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(452, 338);
-            button2.Name = "button2";
-            button2.RightToLeft = RightToLeft.No;
-            button2.Size = new Size(75, 27);
-            button2.TabIndex = 3;
-            button2.Text = "&Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            buttonCancelar.AccessibleRole = AccessibleRole.None;
+            buttonCancelar.Anchor = AnchorStyles.None;
+            buttonCancelar.BackColor = Color.Transparent;
+            buttonCancelar.DialogResult = DialogResult.Cancel;
+            buttonCancelar.FlatStyle = FlatStyle.Popup;
+            buttonCancelar.ForeColor = Color.Black;
+            buttonCancelar.Location = new Point(452, 456);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.RightToLeft = RightToLeft.No;
+            buttonCancelar.Size = new Size(75, 27);
+            buttonCancelar.TabIndex = 3;
+            buttonCancelar.Text = "&Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // buttonEntrar
             // 
-            button1.AccessibleRole = AccessibleRole.None;
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(371, 338);
-            button1.Name = "button1";
-            button1.RightToLeft = RightToLeft.No;
-            button1.Size = new Size(75, 27);
-            button1.TabIndex = 2;
-            button1.Text = "&Entrar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += buttonEntrar_Click;
+            buttonEntrar.AccessibleRole = AccessibleRole.None;
+            buttonEntrar.Anchor = AnchorStyles.None;
+            buttonEntrar.BackColor = Color.Transparent;
+            buttonEntrar.FlatStyle = FlatStyle.Popup;
+            buttonEntrar.ForeColor = Color.Black;
+            buttonEntrar.Location = new Point(371, 456);
+            buttonEntrar.Name = "buttonEntrar";
+            buttonEntrar.RightToLeft = RightToLeft.No;
+            buttonEntrar.Size = new Size(75, 27);
+            buttonEntrar.TabIndex = 2;
+            buttonEntrar.Text = "&Entrar";
+            buttonEntrar.UseVisualStyleBackColor = false;
+            buttonEntrar.Click += buttonEntrar_Click;
             // 
-            // pictureBox2
+            // pictureBoxFundo
             // 
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(908, 493);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
+            pictureBoxFundo.Dock = DockStyle.Fill;
+            pictureBoxFundo.Location = new Point(0, 0);
+            pictureBoxFundo.Margin = new Padding(3, 2, 3, 2);
+            pictureBoxFundo.Name = "pictureBoxFundo";
+            pictureBoxFundo.Size = new Size(908, 729);
+            pictureBoxFundo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxFundo.TabIndex = 7;
+            pictureBoxFundo.TabStop = false;
             // 
             // textBoxUsuario
             // 
@@ -83,7 +91,7 @@
             textBoxUsuario.BackColor = SystemColors.Window;
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsuario.ForeColor = Color.Black;
-            textBoxUsuario.Location = new Point(295, 237);
+            textBoxUsuario.Location = new Point(295, 355);
             textBoxUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(320, 23);
@@ -95,7 +103,7 @@
             textBoxSenha.Anchor = AnchorStyles.None;
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.ForeColor = Color.Black;
-            textBoxSenha.Location = new Point(295, 296);
+            textBoxSenha.Location = new Point(295, 414);
             textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.PasswordChar = '*';
@@ -107,8 +115,9 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Swis721 BlkCn BT", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(295, 220);
+            label1.Location = new Point(295, 338);
             label1.Name = "label1";
             label1.Size = new Size(56, 18);
             label1.TabIndex = 12;
@@ -118,26 +127,39 @@
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Swis721 BlkCn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(295, 278);
+            label2.Location = new Point(295, 396);
             label2.Name = "label2";
             label2.Size = new Size(42, 16);
             label2.TabIndex = 12;
             label2.Text = "Senha";
+            // 
+            // pictureBoxLogo
+            // 
+            pictureBoxLogo.Anchor = AnchorStyles.None;
+            pictureBoxLogo.BackColor = Color.Transparent;
+            pictureBoxLogo.Location = new Point(295, -18);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(320, 353);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogo.TabIndex = 13;
+            pictureBoxLogo.TabStop = false;
             // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(908, 493);
+            ClientSize = new Size(908, 729);
+            Controls.Add(textBoxUsuario);
+            Controls.Add(pictureBoxLogo);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBoxSenha);
-            Controls.Add(textBoxUsuario);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox2);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonEntrar);
+            Controls.Add(pictureBoxFundo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MaximizeBox = false;
@@ -149,17 +171,19 @@
             WindowState = FormWindowState.Maximized;
             Load += FormLogin_Load;
             KeyDown += FormLogin_KeyDown;
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFundo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxFundo;
         private TextBox textBoxUsuario;
         private TextBox textBoxSenha;
         private Label label1;
         private Label label2;
+        private PictureBox pictureBoxLogo;
     }
 }

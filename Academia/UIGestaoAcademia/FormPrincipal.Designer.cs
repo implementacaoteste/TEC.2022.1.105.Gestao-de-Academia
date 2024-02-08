@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             buttonFuncionario = new Button();
             buttonFornecedor = new Button();
             buttonExercicio = new Button();
@@ -41,13 +40,13 @@
             buttonProduto = new Button();
             buttonGrupoUsuario = new Button();
             pictureBoxCentral = new PictureBox();
-            pictureBoxZe = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pictureBoxLogoMenu = new PictureBox();
+            pictureBoxNomeLogo = new PictureBox();
             pictureBoxPrincipal = new PictureBox();
             labelMenu = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCentral).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxZe).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogoMenu).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxNomeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +61,7 @@
             buttonFuncionario.Margin = new Padding(3, 2, 3, 2);
             buttonFuncionario.Name = "buttonFuncionario";
             buttonFuncionario.Size = new Size(99, 56);
-            buttonFuncionario.TabIndex = 1;
+            buttonFuncionario.TabIndex = 3;
             buttonFuncionario.Text = "Funcionários";
             buttonFuncionario.UseVisualStyleBackColor = false;
             buttonFuncionario.Click += buttonFuncionario_Click;
@@ -78,7 +77,7 @@
             buttonFornecedor.Margin = new Padding(3, 2, 3, 2);
             buttonFornecedor.Name = "buttonFornecedor";
             buttonFornecedor.Size = new Size(99, 56);
-            buttonFornecedor.TabIndex = 1;
+            buttonFornecedor.TabIndex = 6;
             buttonFornecedor.Text = "Fornecedores";
             buttonFornecedor.UseVisualStyleBackColor = false;
             buttonFornecedor.Click += buttonFornecedor_Click;
@@ -94,7 +93,7 @@
             buttonExercicio.Margin = new Padding(3, 2, 3, 2);
             buttonExercicio.Name = "buttonExercicio";
             buttonExercicio.Size = new Size(99, 56);
-            buttonExercicio.TabIndex = 1;
+            buttonExercicio.TabIndex = 2;
             buttonExercicio.Text = "Exercícios";
             buttonExercicio.UseVisualStyleBackColor = false;
             buttonExercicio.Click += buttonExercicio_Click;
@@ -110,7 +109,7 @@
             button9.Margin = new Padding(3, 2, 3, 2);
             button9.Name = "button9";
             button9.Size = new Size(99, 56);
-            button9.TabIndex = 1;
+            button9.TabIndex = 9;
             button9.Text = "Vendas";
             button9.UseVisualStyleBackColor = false;
             button9.Click += buttonVenda_Click;
@@ -126,7 +125,7 @@
             button10.Margin = new Padding(3, 2, 3, 2);
             button10.Name = "button10";
             button10.Size = new Size(99, 56);
-            button10.TabIndex = 1;
+            button10.TabIndex = 5;
             button10.Text = "Compras";
             button10.UseVisualStyleBackColor = false;
             button10.Click += buttonCompra_Click;
@@ -142,7 +141,7 @@
             buttonAssinatura.Margin = new Padding(3, 2, 3, 2);
             buttonAssinatura.Name = "buttonAssinatura";
             buttonAssinatura.Size = new Size(131, 56);
-            buttonAssinatura.TabIndex = 1;
+            buttonAssinatura.TabIndex = 7;
             buttonAssinatura.Text = "Plano de assinatura";
             buttonAssinatura.UseVisualStyleBackColor = false;
             buttonAssinatura.Click += buttonAssinatura_Click;
@@ -158,7 +157,7 @@
             buttonUsuario.Margin = new Padding(3, 2, 3, 2);
             buttonUsuario.Name = "buttonUsuario";
             buttonUsuario.Size = new Size(131, 56);
-            buttonUsuario.TabIndex = 1;
+            buttonUsuario.TabIndex = 4;
             buttonUsuario.Text = "Usuários";
             buttonUsuario.UseVisualStyleBackColor = false;
             buttonUsuario.Click += buttonUsuario_Click;
@@ -174,7 +173,7 @@
             buttonCliente.Margin = new Padding(3, 2, 3, 2);
             buttonCliente.Name = "buttonCliente";
             buttonCliente.Size = new Size(99, 56);
-            buttonCliente.TabIndex = 1;
+            buttonCliente.TabIndex = 10;
             buttonCliente.Text = "Clientes";
             buttonCliente.UseVisualStyleBackColor = false;
             buttonCliente.Click += buttonCliente_Click;
@@ -190,7 +189,7 @@
             buttonDebito.Margin = new Padding(3, 2, 3, 2);
             buttonDebito.Name = "buttonDebito";
             buttonDebito.Size = new Size(99, 56);
-            buttonDebito.TabIndex = 1;
+            buttonDebito.TabIndex = 8;
             buttonDebito.Text = "Debitos";
             buttonDebito.UseVisualStyleBackColor = false;
             buttonDebito.Click += buttonDebito_Click;
@@ -206,7 +205,7 @@
             buttonProduto.Margin = new Padding(3, 2, 3, 2);
             buttonProduto.Name = "buttonProduto";
             buttonProduto.Size = new Size(99, 56);
-            buttonProduto.TabIndex = 1;
+            buttonProduto.TabIndex = 0;
             buttonProduto.Text = "Produtos";
             buttonProduto.UseVisualStyleBackColor = false;
             buttonProduto.Click += buttonProduto_Click;
@@ -238,29 +237,27 @@
             pictureBoxCentral.TabIndex = 2;
             pictureBoxCentral.TabStop = false;
             // 
-            // pictureBoxZe
+            // pictureBoxLogoMenu
             // 
-            pictureBoxZe.Anchor = AnchorStyles.Top;
-            pictureBoxZe.BackColor = SystemColors.Window;
-            pictureBoxZe.Image = (Image)resources.GetObject("pictureBoxZe.Image");
-            pictureBoxZe.Location = new Point(436, 250);
-            pictureBoxZe.Name = "pictureBoxZe";
-            pictureBoxZe.Size = new Size(130, 130);
-            pictureBoxZe.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxZe.TabIndex = 3;
-            pictureBoxZe.TabStop = false;
+            pictureBoxLogoMenu.Anchor = AnchorStyles.Top;
+            pictureBoxLogoMenu.BackColor = SystemColors.Window;
+            pictureBoxLogoMenu.Location = new Point(436, 250);
+            pictureBoxLogoMenu.Name = "pictureBoxLogoMenu";
+            pictureBoxLogoMenu.Size = new Size(130, 130);
+            pictureBoxLogoMenu.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogoMenu.TabIndex = 3;
+            pictureBoxLogoMenu.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxNomeLogo
             // 
-            pictureBox1.Anchor = AnchorStyles.Top;
-            pictureBox1.BackColor = Color.White;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(267, 276);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(471, 246);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            pictureBoxNomeLogo.Anchor = AnchorStyles.Top;
+            pictureBoxNomeLogo.BackColor = Color.White;
+            pictureBoxNomeLogo.Location = new Point(267, 278);
+            pictureBoxNomeLogo.Name = "pictureBoxNomeLogo";
+            pictureBoxNomeLogo.Size = new Size(471, 246);
+            pictureBoxNomeLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxNomeLogo.TabIndex = 4;
+            pictureBoxNomeLogo.TabStop = false;
             // 
             // pictureBoxPrincipal
             // 
@@ -278,7 +275,7 @@
             labelMenu.BackColor = SystemColors.Window;
             labelMenu.Font = new Font("Swis721 BlkCn BT", 36F, FontStyle.Regular, GraphicsUnit.Point);
             labelMenu.ForeColor = Color.Black;
-            labelMenu.Location = new Point(267, 0);
+            labelMenu.Location = new Point(267, 3);
             labelMenu.Name = "labelMenu";
             labelMenu.Size = new Size(471, 57);
             labelMenu.TabIndex = 23;
@@ -294,8 +291,8 @@
             Controls.Add(labelMenu);
             Controls.Add(buttonCliente);
             Controls.Add(button9);
-            Controls.Add(pictureBoxZe);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxLogoMenu);
+            Controls.Add(pictureBoxNomeLogo);
             Controls.Add(buttonAssinatura);
             Controls.Add(buttonFornecedor);
             Controls.Add(buttonUsuario);
@@ -319,8 +316,8 @@
             Load += FormPrincipal_Load;
             KeyDown += FormPrincipal_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBoxCentral).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxZe).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogoMenu).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxNomeLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).EndInit();
             ResumeLayout(false);
         }
@@ -338,8 +335,8 @@
         private Button buttonProduto;
         private Button buttonGrupoUsuario;
         private PictureBox pictureBoxCentral;
-        private PictureBox pictureBoxZe;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxLogoMenu;
+        private PictureBox pictureBoxNomeLogo;
         private PictureBox pictureBoxPrincipal;
         private Label labelMenu;
     }
