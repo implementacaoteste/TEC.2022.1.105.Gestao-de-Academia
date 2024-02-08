@@ -1,10 +1,10 @@
-﻿﻿USE MASTER
+﻿use master
+GO
+ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
 DROP DATABASE GestaoDeAcademia
 GO
 CREATE DATABASE GestaoDeAcademia
-GO
-ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
 
 USE GestaoDeAcademia
@@ -22,8 +22,6 @@ CREATE TABLE Usuario
 	Senha VARCHAR(50)
 )
 GO
-select*from Usuario
-insert into Usuario values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
 
 IF OBJECT_ID('GrupoUsuario', 'U') IS NULL
 CREATE TABLE GrupoUsuario
@@ -81,7 +79,6 @@ CREATE TABLE Fornecedor
 	Descricao VARCHAR(150),
 	TipoDeMoedaId INT,
 	TipoContaId INT,
-	FornecedorId INT,
 	NomeBanco VARCHAR(50),
 	NumeroAgencia VARCHAR(6),
 	NumeroConta VARCHAR(21),
@@ -125,7 +122,7 @@ GO
 CREATE TABLE Venda
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	FuncionarioId INT,
+	UsuarioId INT,
 	FormaPagamentoId INT,
 	ClienteId INT,
 	DataVenda DATETIME,
@@ -236,18 +233,6 @@ CREATE  TABLE TipoDeMoeda
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	TipoMoeda VARCHAR(10)
 )
-
-GO
-ALTER TABLE DadosBancarios
-ADD CONSTRAINT FK_DadosBancarios_TipoDeMoeda
-FOREIGN KEY (TipoDeMoedaId)
-REFERENCES TipoDeMoeda(Id)
-GO
-
-ALTER TABLE DadosBancarios
-ADD CONSTRAINT FK_DadosBancarios_TipoDeConta
-FOREIGN KEY (TipoContaId)
-REFERENCES TipoDeConta(Id)
 GO
 
 ALTER TABLE Venda
@@ -353,9 +338,7 @@ ALTER TABLE PagamentoFuncionario
 ADD CONSTRAINT FK_PagamentoFuncionario_Funcionario
 FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
-GO
 
-select*from DadosBancarios
 GO
 
 ALTER TABLE Fornecedor
@@ -588,14 +571,12 @@ IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Geno'))INSERT INTO Usua
 IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123', 1)
 GO
 
-
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Instrutor')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Financeiro')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Administrador')
-
 
 GO
 INSERT INTO UsuarioGrupoUsuario VALUES(2,1)
@@ -642,3 +623,10 @@ DECLARE	@PRODUTOID INT
 
     UPDATE Produto SET QuantidadeEstoque = QuantidadeEstoque + @QUANTIDADE WHERE Id = @PRODUTOID
 END
+
+
+
+go
+select*from Usuario
+insert into Usuario (Nome, NomeUsuario, Email, CPF, Ativo, Senha, DataCadastro)values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
+go
