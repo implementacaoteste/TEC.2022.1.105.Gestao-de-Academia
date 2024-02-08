@@ -13,18 +13,19 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand(@"INSERT INTO Venda (ClienteId, DataVenda, TotalVenda, FormaPagamentoId,UsuarioId)
-                                 VALUES (@ClienteId, @DataVenda, @TotalVenda, @FormaPagamentoId,@UsuarioId);
+                using (SqlCommand cmd = new SqlCommand(@"INSERT INTO Venda (ClienteId, DataVenda, TotalVenda, FormaPagamentoId,Desconto,UsuarioId)
+                                 VALUES (@ClienteId, @DataVenda, @TotalVenda, @FormaPagamentoId,@Desconto,@UsuarioId);
                                  SELECT SCOPE_IDENTITY();"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
+                        cmd.Parameters.AddWithValue("@FormaPagamentoId",_venda.FormaPagamentoId);
                         cmd.Parameters.AddWithValue("@ClienteId", _venda.ClienteId);
                         cmd.Parameters.Add("@DataVenda", SqlDbType.DateTime).Value = _venda.DataVenda;
-                        cmd.Parameters.AddWithValue("@FormaPagamentoId",_venda.FormaPagamentoId);
                         cmd.Parameters.Add("@TotalVenda", SqlDbType.Decimal).Value = _venda.TotalVenda;
+                        cmd.Parameters.Add("@Desconto", SqlDbType.Float).Value = _venda.Desconto;
                         cmd.Parameters.AddWithValue("@UsuarioId", Constantes.UsuarioLogado.Id);
                         if (_transaction == null)
                         {
