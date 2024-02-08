@@ -265,9 +265,5 @@ namespace DAL
             compraProduto.ValorTotalNota = (double)rd["ValorTotalNota"];
             compraProduto.ValorTotal = (double)rd["ValorTotal"];
         }
-        private void AtualizarEstoque(CompraProduto compraProduto, SqlDataReader rd)
-        {
-
-        }
     }
 }
