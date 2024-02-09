@@ -9,6 +9,7 @@ namespace Models
     public class CompraProduto
     {
         public int Id { get; set; }
+        public DateTime DataCompra { get; set; }
         public int FornecedorId { get; set; }
         public int FormaPagamentoId { get; set; }
         public double FreteTotal { get; set; }

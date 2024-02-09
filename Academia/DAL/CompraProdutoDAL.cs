@@ -12,12 +12,13 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @FreteTotal, @ValorTotalNota, @ValorTotal) SELECT @@IDENTITY"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(DataCompra, FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @FreteTotal, @ValorTotalNota, @ValorTotal) SELECT @@IDENTITY"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
+                        cmd.Parameters.AddWithValue("@DataCompra", _Compraproduto.DataCompra);
                         cmd.Parameters.AddWithValue("@FornecedorId", _Compraproduto.FornecedorId);
                         cmd.Parameters.AddWithValue("@FormaPagamentoId", _Compraproduto.FormaPagamentoId);
                         cmd.Parameters.AddWithValue("@FreteTotal", _Compraproduto.FreteTotal);
@@ -59,13 +60,14 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE CompraProduto SET FornecedorId = @FornecedorId, FormaPagamento = @FormaPagamento, FreteTotal = @FreteTotal, ValorTotalNota = @ValorTotalNota, ValorTotal = @ValorTotal WHERE Id = @Id"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE CompraProduto SET DataCompra = @DataCompra, FornecedorId = @FornecedorId, FormaPagamento = @FormaPagamento, FreteTotal = @FreteTotal, ValorTotalNota = @ValorTotalNota, ValorTotal = @ValorTotal WHERE Id = @Id"))
                 {
                     try
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@Id", _Compraproduto.Id);
+                        cmd.Parameters.AddWithValue("@DataCompra", _Compraproduto.DataCompra);
                         cmd.Parameters.AddWithValue("@FornecedorId", _Compraproduto.FornecedorId);
                         cmd.Parameters.AddWithValue("@FormaPagamento", _Compraproduto.FormaPagamentoId);
                         cmd.Parameters.AddWithValue("@FreteTotal", _Compraproduto.FreteTotal);
@@ -184,7 +186,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal FROM CompraProduto WHERE Id  = @Id";
+                cmd.CommandText = " SELECT Id, DataCompra, FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal FROM CompraProduto WHERE Id  = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -221,15 +223,15 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota
-                                    CompraProduto.ValorTotal, Fornecedor.Nome AS NomeFornecedor, FormaPagamento.Descricao AS FormaPagamento
-                                    FROM CompraProduto
-                                    INNER JOIN 
-                                    Fornecedor ON CompraProduto.FornecedorId = Fornecedor.Id
-                                    INNER JOIN 
-                                    FormaPagamento ON CompraProduto.FormaPagamentoId = FormaPagamento.Id
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra, CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota
+                            CompraProduto.ValorTotal, Fornecedor.Nome AS NomeFornecedor, FormaPagamento.Descricao AS FormaPagamento
+                            FROM CompraProduto
+                            INNER JOIN 
+                            Fornecedor ON CompraProduto.FornecedorId = Fornecedor.Id
+                            INNER JOIN 
+                            FormaPagamento ON CompraProduto.FormaPagamentoId = FormaPagamento.Id
 
-                                    Where CompraProduto.Id = @Id";
+                            Where CompraProduto.Id = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -256,9 +258,49 @@ namespace DAL
                 cn.Close();
             }
         }
+        public List<CompraProduto> BuscarPorData(DateTime _DataCompra)
+        {
+            List<CompraProduto> compraProdutoList = new List<CompraProduto>();
+            CompraProduto compraProduto;
+
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal FROM CompraProduto";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        compraProduto = new CompraProduto();
+                        PreencherObjeto(compraProduto, rd);
+                        compraProdutoList.Add(compraProduto);
+                    }
+                }
+                return compraProdutoList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar a compra de um produto por data no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
         private static void PreencherObjeto(CompraProduto compraProduto, SqlDataReader rd)
         {
             compraProduto.Id = (int)rd["Id"];
+            compraProduto.DataCompra = (DateTime)rd["DataCompra"];
             compraProduto.FornecedorId = (int)rd["FornecedorId"];
             compraProduto.FormaPagamentoId = (int)rd["FormaPagamentoId"];
             compraProduto.FreteTotal = (double)rd["FreteTotal"];
