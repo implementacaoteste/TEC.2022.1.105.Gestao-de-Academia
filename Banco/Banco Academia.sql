@@ -1,4 +1,5 @@
-﻿use master
+﻿
+use master
 GO
 ALTER DATABASE GestaoDeAcademia SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
@@ -91,6 +92,7 @@ GO
 CREATE TABLE CompraProduto
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
+	DataCompra DateTime,
 	FornecedorId INT,
 	FormaPagamentoId INT,
 	ValorTotal FLOAT,
