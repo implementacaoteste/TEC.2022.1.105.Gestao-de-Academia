@@ -257,10 +257,17 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
-
         private void buttonCliente_Click(object sender, EventArgs e)
         {
             using (FormConsultaCliente frm = new FormConsultaCliente())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using(FormRelatorioDeVendas frm = new FormRelatorioDeVendas())
             {
                 frm.ShowDialog();
             }

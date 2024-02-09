@@ -64,6 +64,7 @@ namespace Models
         public decimal Desconto { get; set; }
         public int QuantidadeTotal { get; set; }
         public decimal PrecoTotal { get; set; }
+        public object ItensVenda { get; set; }
 
         public Venda()
         {

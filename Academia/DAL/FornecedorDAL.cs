@@ -286,8 +286,8 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@NumeroAgencia", _fornecedor.NumeroAgencia);
                 cmd.Parameters.AddWithValue("@NumeroConta", _fornecedor.NumeroConta);
                 cmd.Parameters.AddWithValue("@ChavePix", _fornecedor.ChavePix);
-                cmd.Parameters.AddWithValue("@TipoDeMoedaId", _fornecedor.TipoMoeda.Id);
-                cmd.Parameters.AddWithValue("@TipoContaId", _fornecedor.TipoConta.Id);
+                cmd.Parameters.AddWithValue("@TipoDeMoedaId", _fornecedor.TipoDeMoedaId);
+                cmd.Parameters.AddWithValue("@TipoDeContaId", _fornecedor.TipoDeContaId);
                 cmd.Parameters.AddWithValue("@Iban", _fornecedor.Iban);
                 cmd.Parameters.AddWithValue("@Obs", _fornecedor.Obs);
             }

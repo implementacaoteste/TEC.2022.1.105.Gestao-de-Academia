@@ -62,6 +62,7 @@
             labelValorTotalDaNota = new Label();
             textBoxValorTotalNota = new TextBox();
             pictureBoxCompra = new PictureBox();
+            buttonExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
@@ -267,7 +268,7 @@
             // 
             labelValorTotalDosProdutos.AutoSize = true;
             labelValorTotalDosProdutos.BackColor = Color.Transparent;
-            labelValorTotalDosProdutos.Location = new Point(490, 127);
+            labelValorTotalDosProdutos.Location = new Point(476, 126);
             labelValorTotalDosProdutos.Name = "labelValorTotalDosProdutos";
             labelValorTotalDosProdutos.Size = new Size(211, 20);
             labelValorTotalDosProdutos.TabIndex = 52;
@@ -276,7 +277,7 @@
             // textBoxFrete
             // 
             textBoxFrete.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "FreteTotal", true));
-            textBoxFrete.Location = new Point(386, 124);
+            textBoxFrete.Location = new Point(395, 123);
             textBoxFrete.Name = "textBoxFrete";
             textBoxFrete.Size = new Size(75, 27);
             textBoxFrete.TabIndex = 6;
@@ -287,7 +288,7 @@
             // 
             labelValorDoFrete.AutoSize = true;
             labelValorDoFrete.BackColor = Color.Transparent;
-            labelValorDoFrete.Location = new Point(257, 126);
+            labelValorDoFrete.Location = new Point(266, 127);
             labelValorDoFrete.Name = "labelValorDoFrete";
             labelValorDoFrete.Size = new Size(123, 20);
             labelValorDoFrete.TabIndex = 55;
@@ -325,7 +326,7 @@
             // textBoxValorTotal
             // 
             textBoxValorTotal.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotal", true));
-            textBoxValorTotal.Location = new Point(134, 124);
+            textBoxValorTotal.Location = new Point(157, 124);
             textBoxValorTotal.Name = "textBoxValorTotal";
             textBoxValorTotal.Size = new Size(106, 27);
             textBoxValorTotal.TabIndex = 0;
@@ -335,11 +336,11 @@
             // 
             labelValorDaNota.AutoSize = true;
             labelValorDaNota.BackColor = Color.Transparent;
-            labelValorDaNota.Location = new Point(8, 126);
+            labelValorDaNota.Location = new Point(8, 127);
             labelValorDaNota.Name = "labelValorDaNota";
-            labelValorDaNota.Size = new Size(120, 20);
+            labelValorDaNota.Size = new Size(143, 20);
             labelValorDaNota.TabIndex = 59;
-            labelValorDaNota.Text = "VALOR DA NOTA";
+            labelValorDaNota.Text = "ENTRADA DA NOTA";
             // 
             // FinalizarCompra
             // 
@@ -380,11 +381,22 @@
             pictureBoxCompra.TabIndex = 65;
             pictureBoxCompra.TabStop = false;
             // 
+            // buttonExcluir
+            // 
+            buttonExcluir.Location = new Point(682, 665);
+            buttonExcluir.Name = "buttonExcluir";
+            buttonExcluir.Size = new Size(137, 28);
+            buttonExcluir.TabIndex = 66;
+            buttonExcluir.Text = "&Excluir item";
+            buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click_1;
+            // 
             // FormCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 706);
+            Controls.Add(buttonExcluir);
             Controls.Add(textBoxValorTotalNota);
             Controls.Add(labelValorTotalDaNota);
             Controls.Add(FinalizarCompra);
@@ -456,11 +468,12 @@
         private Button FinalizarCompra;
         private Label labelValorTotalDaNota;
         private TextBox textBoxValorTotalNota;
+        private PictureBox pictureBoxCompra;
+        private Button buttonExcluir;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Marca;
         private DataGridViewTextBoxColumn Quantidade;
         private DataGridViewTextBoxColumn ValorUnitario;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
-        private PictureBox pictureBoxCompra;
     }
 }

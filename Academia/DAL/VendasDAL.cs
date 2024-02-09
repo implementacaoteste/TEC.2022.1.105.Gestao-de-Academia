@@ -72,57 +72,43 @@ namespace DAL
 
         public List<Venda> BuscarTodos()
         {
+            List<Venda> vendas = new List<Venda>();
+            Venda venda;
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
-            List<Venda> vendasList = new List<Venda>();
-
             try
             {
                 SqlCommand cmd = new SqlCommand();
-
                 cmd.Connection = cn;
-                cmd.CommandText = @"SELECT Venda.Id, Venda.UsuarioId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda,
-                                    SUM(ItensVenda.Quantidade) AS QuantidadeTotal, SUM(ItensVenda.PrecoTotal) AS PrecoTotal
-                            FROM Venda
-                            INNER JOIN ItensVenda ON Venda.Id = ItensVenda.VendaId
-                            GROUP BY Venda.Id, Venda.UsuarioId, Venda.DataVenda, Venda.Desconto, Venda.TotalVenda";
-
+                cmd.CommandText = "SELECT Id, UsuarioId,DataVenda,TotalVenda FROM Venda";
                 cmd.CommandType = System.Data.CommandType.Text;
-
                 cn.Open();
-
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                     {
-                        Venda venda = new Venda();
+                        venda = new Venda();
+
                         venda.Id = (int)rd["Id"];
                         venda.UsuarioId = (int)rd["UsuarioId"];
                         venda.DataVenda = (DateTime)rd["DataVenda"];
                         venda.Desconto = (decimal)rd["Desconto"];
                         venda.TotalVenda = (double)rd["TotalVenda"];
-                        venda.QuantidadeTotal = (int)rd["QuantidadeTotal"];
-                        venda.PrecoTotal = (decimal)rd["PrecoTotal"];
-                        venda.Cliente = new ClienteDAL().BuscarPorId((int)rd["IDCliente"]);
-                        venda.Usuario = new UsuarioDAL().BuscarPorId((int)rd["IDTerreno"]);
 
 
-
-
-
-                        vendasList.Add(venda);
+                        vendas.Add(venda);
                     }
+                    return vendas;
                 }
-
-                return vendasList;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao buscar as vendas com detalhes no banco de dados", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar por todas as vendas no banco de dados.", ex);
             }
             finally
             {
                 cn.Close();
             }
+
         }
 
 
