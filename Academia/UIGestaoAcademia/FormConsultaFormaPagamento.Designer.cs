@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             bindingSourceFormaPagamento = new BindingSource(components);
             label2 = new Label();
             textBoxBuscarPor = new TextBox();
@@ -75,7 +75,7 @@
             // buttonExcluirFormaPagamento
             // 
             buttonExcluirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonExcluirFormaPagamento.Location = new Point(846, 96);
+            buttonExcluirFormaPagamento.Location = new Point(946, 96);
             buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
             buttonExcluirFormaPagamento.Size = new Size(94, 29);
             buttonExcluirFormaPagamento.TabIndex = 5;
@@ -86,7 +86,7 @@
             // buttonInserirFormaPagamento
             // 
             buttonInserirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonInserirFormaPagamento.Location = new Point(946, 96);
+            buttonInserirFormaPagamento.Location = new Point(846, 97);
             buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
             buttonInserirFormaPagamento.Size = new Size(94, 29);
             buttonInserirFormaPagamento.TabIndex = 4;
@@ -198,8 +198,8 @@
             // QuantidadeParcelas
             // 
             QuantidadeParcelas.DataPropertyName = "QuantidadeParcelas";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            QuantidadeParcelas.DefaultCellStyle = dataGridViewCellStyle1;
             QuantidadeParcelas.HeaderText = "Quantidade de parcelas";
             QuantidadeParcelas.MinimumWidth = 6;
             QuantidadeParcelas.Name = "QuantidadeParcelas";
