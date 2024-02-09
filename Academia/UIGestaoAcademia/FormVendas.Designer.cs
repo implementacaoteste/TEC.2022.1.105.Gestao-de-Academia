@@ -167,7 +167,6 @@
             buttonExcluir.TabIndex = 1;
             buttonExcluir.Text = "&Excluir item";
             buttonExcluir.UseVisualStyleBackColor = true;
-            buttonExcluir.Click += buttonExcluir_Click;
             // 
             // textBoxProduto
             // 
@@ -380,7 +379,6 @@
             pictureBoxVenda.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxVenda.TabIndex = 31;
             pictureBoxVenda.TabStop = false;
-            pictureBoxVenda.Click += pictureBoxVenda_Click;
             // 
             // FormVendas
             // 
