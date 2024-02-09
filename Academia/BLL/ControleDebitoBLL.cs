@@ -53,7 +53,7 @@ namespace BLL
                 controleDebito.Acrescimo = _controleDebito.Acrescimo;
                 controleDebito.DataPagamento = _controleDebito.DataPagamento;
                 controleDebito.DataLancamento = _controleDebito.DataLancamento;
-                controleDebito.DataVencimento = _controleDebito.DataVencimento;
+                controleDebito.DataVencimento = _controleDebito.DataVencimento.AddMonths(i);
                 controleDebito.Desconto = _controleDebito.Desconto;
                 controleDebito.Juros = _controleDebito.Juros;
                 controleDebito.FormaPagamento = _controleDebito.FormaPagamento;
