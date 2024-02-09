@@ -32,7 +32,7 @@ namespace UIGestaoAcademia
         private int GerarCodigoVenda()
         {
 
-            int codigoVenda = 0;
+            int codigoVenda = 1;
 
             using (SqlConnection connection = new SqlConnection(Conexao.StringDeConexao))
             {
