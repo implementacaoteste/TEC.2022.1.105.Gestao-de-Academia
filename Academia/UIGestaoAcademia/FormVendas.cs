@@ -119,7 +119,7 @@ namespace UIGestaoAcademia
                     valorTotal += item.PrecoTotal;
                 }
             }
-            labelValorTotal.Text = valorTotal.ToString("C");
+            labelValorTotal.Text = valorTotal.ToString();
             ((Venda)vendaBindingSource.Current).TotalVenda = valorTotal;
         }
 
@@ -136,8 +136,7 @@ namespace UIGestaoAcademia
             if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            int id = ((ItensVenda)itensVendaListBindingSource.Current).VendaId;
-            new ItensVendaBLL().Excluir(id);
+            labelValorTotal.Text = (Convert.ToDouble(labelValorTotal.Text) - ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal).ToString();
             itensVendaListBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
         }

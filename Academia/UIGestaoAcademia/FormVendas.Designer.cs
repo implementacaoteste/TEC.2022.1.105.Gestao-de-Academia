@@ -380,7 +380,6 @@
             pictureBoxVenda.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxVenda.TabIndex = 31;
             pictureBoxVenda.TabStop = false;
-            pictureBoxVenda.Click += pictureBoxVenda_Click;
             // 
             // FormVendas
             // 

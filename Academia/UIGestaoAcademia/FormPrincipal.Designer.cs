@@ -44,6 +44,8 @@
             pictureBoxNomeLogo = new PictureBox();
             pictureBoxPrincipal = new PictureBox();
             labelMenu = new Label();
+            buttonRelatorioVenda = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCentral).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogoMenu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxNomeLogo).BeginInit();
@@ -275,12 +277,43 @@
             labelMenu.Text = "MENU";
             labelMenu.TextAlign = ContentAlignment.TopCenter;
             // 
+            // buttonRelatorioVenda
+            // 
+            buttonRelatorioVenda.Anchor = AnchorStyles.Top;
+            buttonRelatorioVenda.BackColor = Color.White;
+            buttonRelatorioVenda.FlatStyle = FlatStyle.Popup;
+            buttonRelatorioVenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonRelatorioVenda.ForeColor = Color.RoyalBlue;
+            buttonRelatorioVenda.Location = new Point(377, 412);
+            buttonRelatorioVenda.Name = "buttonRelatorioVenda";
+            buttonRelatorioVenda.Size = new Size(113, 75);
+            buttonRelatorioVenda.TabIndex = 24;
+            buttonRelatorioVenda.Text = "Relatório Venda";
+            buttonRelatorioVenda.UseVisualStyleBackColor = false;
+            buttonRelatorioVenda.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Top;
+            button2.BackColor = Color.White;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.RoyalBlue;
+            button2.Location = new Point(653, 412);
+            button2.Name = "button2";
+            button2.Size = new Size(113, 75);
+            button2.TabIndex = 24;
+            button2.Text = "Relatório Compra";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(1150, 749);
+            Controls.Add(button2);
+            Controls.Add(buttonRelatorioVenda);
             Controls.Add(labelMenu);
             Controls.Add(buttonCliente);
             Controls.Add(button9);
@@ -333,5 +366,7 @@
         private PictureBox pictureBoxNomeLogo;
         private PictureBox pictureBoxPrincipal;
         private Label labelMenu;
+        private Button buttonRelatorioVenda;
+        private Button button2;
     }
 }
