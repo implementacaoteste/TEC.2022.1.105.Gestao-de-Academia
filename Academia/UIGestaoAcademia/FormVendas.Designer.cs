@@ -167,6 +167,7 @@
             buttonExcluir.TabIndex = 1;
             buttonExcluir.Text = "&Excluir item";
             buttonExcluir.UseVisualStyleBackColor = true;
+            buttonExcluir.Click += buttonExcluir_Click;
             // 
             // textBoxProduto
             // 
