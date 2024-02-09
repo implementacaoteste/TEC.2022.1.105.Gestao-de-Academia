@@ -38,32 +38,20 @@
         public DateTime DataLancamento { get; set; }
         public DateTime DataVencimento { get; set; }
         public DateTime DataPagamento { get; set; }
-        public double Juros
-        {
-            get
-            {
-                double meses = DataVencimento.CompareTo(DateTime.Today);
-                if (meses > 0 && meses < 1)
-                    meses = 1;
-                else
-                    meses = Math.Truncate(((DateTime.Today - DataVencimento).TotalDays) / 30);
-
-                if (DataVencimento < DateTime.Today)
-                    return Math.Pow(1 + juros / 100, meses) * (ValorDebito + Acrescimo - Desconto);
-                return 0;
-            }
-            set
-            {
-                juros = value;
-            }
-        }
+        public double Juros { get; set; }
         public double Desconto { get; set; }
         public double Acrescimo { get; set; }
         public double ValorAPagar
         {
             get
             {
-                return ValorDebito + Acrescimo - Desconto + Juros;
+                double meses = (DateTime.Today - DataVencimento).TotalDays / 30;
+                if (meses > 0 && meses < 1)
+                    meses = 1;
+                else
+                    meses = Math.Truncate((DateTime.Today - DataVencimento).TotalDays / 30);
+
+                return (Math.Pow(1 + Juros / 100, meses) * (ValorDebito + Acrescimo - Desconto));
             }
         }
         public string Descricao { get; set; }
