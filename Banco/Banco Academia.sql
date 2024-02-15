@@ -528,7 +528,6 @@ SELECT*FROM GrupoUsuario
 SELECT*FROM Permissao
 SELECT*FROM PermissaoGrupoUsuario
 GO
-
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Instrutor')
