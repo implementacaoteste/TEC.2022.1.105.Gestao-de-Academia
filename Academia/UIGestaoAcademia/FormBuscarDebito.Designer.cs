@@ -66,10 +66,9 @@
             // 
             comboBoxBuscarPor.FormattingEnabled = true;
             comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Clientes", "Correntes", "Pagos", "Vencidos", "Data de vencimento entre:", "Data de pagamento entre:", "Data de lançamento entre:" });
-            comboBoxBuscarPor.Location = new Point(10, 85);
-            comboBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            comboBoxBuscarPor.Location = new Point(11, 113);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(145, 23);
+            comboBoxBuscarPor.Size = new Size(165, 28);
             comboBoxBuscarPor.TabIndex = 0;
             comboBoxBuscarPor.SelectedIndexChanged += comboBoxBuscarPor_SelectedIndexChanged;
             // 
@@ -83,13 +82,12 @@
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { NomeCliente, valorDebitoDataGridViewTextBoxColumn, NomeFormaPagamento, dataLancamentoDataGridViewTextBoxColumn, dataVencimentoDataGridViewTextBoxColumn, dataPagamentoDataGridViewTextBoxColumn, jurosDataGridViewTextBoxColumn, descontoDataGridViewTextBoxColumn, acrescimoDataGridViewTextBoxColumn, Descricao });
             dataGridViewProduto.DataSource = controleDebitoBindingSource;
-            dataGridViewProduto.Location = new Point(10, 111);
-            dataGridViewProduto.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewProduto.Location = new Point(11, 148);
             dataGridViewProduto.Name = "dataGridViewProduto";
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
-            dataGridViewProduto.Size = new Size(1041, 252);
+            dataGridViewProduto.Size = new Size(1190, 336);
             dataGridViewProduto.TabIndex = 8;
             // 
             // NomeCliente
@@ -196,10 +194,9 @@
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonSelecionar.BackColor = Color.Transparent;
-            buttonSelecionar.Location = new Point(888, 368);
-            buttonSelecionar.Margin = new Padding(3, 2, 3, 2);
+            buttonSelecionar.Location = new Point(1015, 491);
             buttonSelecionar.Name = "buttonSelecionar";
-            buttonSelecionar.Size = new Size(82, 22);
+            buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 9;
             buttonSelecionar.Text = "Se&lecionar";
             buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
@@ -211,9 +208,9 @@
             labelBuscarDebito.BackColor = Color.Transparent;
             labelBuscarDebito.Font = new Font("Swis721 BlkCn BT", 24F, FontStyle.Regular, GraphicsUnit.Point);
             labelBuscarDebito.ForeColor = Color.Black;
-            labelBuscarDebito.Location = new Point(10, 8);
+            labelBuscarDebito.Location = new Point(11, 11);
             labelBuscarDebito.Name = "labelBuscarDebito";
-            labelBuscarDebito.Size = new Size(1041, 50);
+            labelBuscarDebito.Size = new Size(1190, 67);
             labelBuscarDebito.TabIndex = 22;
             labelBuscarDebito.Text = "Buscar débito\r\n";
             labelBuscarDebito.TextAlign = ContentAlignment.MiddleCenter;
@@ -222,10 +219,9 @@
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonCancelar.BackColor = Color.Transparent;
-            buttonCancelar.Location = new Point(974, 368);
-            buttonCancelar.Margin = new Padding(3, 2, 3, 2);
+            buttonCancelar.Location = new Point(1113, 491);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(82, 22);
+            buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 10;
             buttonCancelar.Text = "&Cancelar";
             buttonCancelar.TextAlign = ContentAlignment.TopCenter;
@@ -235,20 +231,18 @@
             // 
             textBoxBuscarPor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxBuscarPor.BackColor = Color.White;
-            textBoxBuscarPor.Location = new Point(160, 85);
-            textBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            textBoxBuscarPor.Location = new Point(183, 113);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(307, 23);
+            textBoxBuscarPor.Size = new Size(350, 27);
             textBoxBuscarPor.TabIndex = 1;
             // 
             // buttonExcluirDebito
             // 
             buttonExcluirDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonExcluirDebito.BackColor = Color.Transparent;
-            buttonExcluirDebito.Location = new Point(970, 86);
-            buttonExcluirDebito.Margin = new Padding(3, 2, 3, 2);
+            buttonExcluirDebito.Location = new Point(1109, 115);
             buttonExcluirDebito.Name = "buttonExcluirDebito";
-            buttonExcluirDebito.Size = new Size(82, 22);
+            buttonExcluirDebito.Size = new Size(94, 29);
             buttonExcluirDebito.TabIndex = 7;
             buttonExcluirDebito.Text = "E&xcluir";
             buttonExcluirDebito.UseVisualStyleBackColor = false;
@@ -258,10 +252,9 @@
             // 
             buttonInserirDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonInserirDebito.BackColor = Color.Transparent;
-            buttonInserirDebito.Location = new Point(883, 86);
-            buttonInserirDebito.Margin = new Padding(3, 2, 3, 2);
+            buttonInserirDebito.Location = new Point(1009, 115);
             buttonInserirDebito.Name = "buttonInserirDebito";
-            buttonInserirDebito.Size = new Size(82, 22);
+            buttonInserirDebito.Size = new Size(94, 29);
             buttonInserirDebito.TabIndex = 6;
             buttonInserirDebito.Text = "&Inserir";
             buttonInserirDebito.UseVisualStyleBackColor = false;
@@ -271,10 +264,9 @@
             // 
             buttonAlterarDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonAlterarDebito.BackColor = Color.Transparent;
-            buttonAlterarDebito.Location = new Point(795, 86);
-            buttonAlterarDebito.Margin = new Padding(3, 2, 3, 2);
+            buttonAlterarDebito.Location = new Point(909, 115);
             buttonAlterarDebito.Name = "buttonAlterarDebito";
-            buttonAlterarDebito.Size = new Size(82, 22);
+            buttonAlterarDebito.Size = new Size(94, 29);
             buttonAlterarDebito.TabIndex = 5;
             buttonAlterarDebito.Text = "&Alterar";
             buttonAlterarDebito.UseVisualStyleBackColor = false;
@@ -284,10 +276,9 @@
             // 
             buttonBuscarDebito.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonBuscarDebito.BackColor = Color.Transparent;
-            buttonBuscarDebito.Location = new Point(716, 86);
-            buttonBuscarDebito.Margin = new Padding(3, 2, 3, 2);
+            buttonBuscarDebito.Location = new Point(818, 115);
             buttonBuscarDebito.Name = "buttonBuscarDebito";
-            buttonBuscarDebito.Size = new Size(75, 22);
+            buttonBuscarDebito.Size = new Size(86, 29);
             buttonBuscarDebito.TabIndex = 4;
             buttonBuscarDebito.Text = "&Buscar";
             buttonBuscarDebito.UseVisualStyleBackColor = false;
@@ -297,29 +288,27 @@
             // 
             labelE.AutoSize = true;
             labelE.BackColor = Color.Transparent;
-            labelE.Location = new Point(585, 90);
+            labelE.Location = new Point(669, 120);
             labelE.Name = "labelE";
-            labelE.Size = new Size(13, 15);
+            labelE.Size = new Size(17, 20);
             labelE.TabIndex = 31;
             labelE.Text = "e";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(473, 85);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker1.Location = new Point(541, 113);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(107, 23);
+            dateTimePicker1.Size = new Size(122, 27);
             dateTimePicker1.TabIndex = 2;
             dateTimePicker1.Value = new DateTime(2024, 1, 29, 0, 0, 0, 0);
             // 
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(605, 85);
-            dateTimePicker2.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker2.Location = new Point(691, 113);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(106, 23);
+            dateTimePicker2.Size = new Size(121, 27);
             dateTimePicker2.TabIndex = 3;
             dateTimePicker2.Value = new DateTime(2024, 1, 29, 0, 0, 0, 0);
             // 
@@ -327,19 +316,20 @@
             // 
             pictureBox3.Dock = DockStyle.Fill;
             pictureBox3.Location = new Point(0, 0);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(1063, 398);
+            pictureBox3.Size = new Size(1215, 531);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 32;
             pictureBox3.TabStop = false;
             // 
             // FormBuscarDebito
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(1063, 398);
+            ClientSize = new Size(1215, 531);
             Controls.Add(dateTimePicker1);
             Controls.Add(dateTimePicker2);
             Controls.Add(buttonExcluirDebito);
@@ -356,9 +346,10 @@
             Controls.Add(pictureBox3);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
-            MinimumSize = new Size(870, 407);
+            MinimumSize = new Size(992, 527);
             Name = "FormBuscarDebito";
             ShowIcon = false;
             ShowInTaskbar = false;

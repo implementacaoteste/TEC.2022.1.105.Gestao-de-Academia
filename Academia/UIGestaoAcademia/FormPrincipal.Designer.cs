@@ -119,7 +119,7 @@
             button10.FlatStyle = FlatStyle.Popup;
             button10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button10.ForeColor = Color.RoyalBlue;
-            button10.Location = new Point(653, 171);
+            button10.Location = new Point(653, 331);
             button10.Name = "button10";
             button10.Size = new Size(113, 75);
             button10.TabIndex = 5;
@@ -164,7 +164,7 @@
             buttonCliente.FlatStyle = FlatStyle.Popup;
             buttonCliente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCliente.ForeColor = Color.RoyalBlue;
-            buttonCliente.Location = new Point(653, 331);
+            buttonCliente.Location = new Point(653, 170);
             buttonCliente.Name = "buttonCliente";
             buttonCliente.Size = new Size(113, 75);
             buttonCliente.TabIndex = 10;
@@ -312,6 +312,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             ClientSize = new Size(1150, 749);
+            Controls.Add(button10);
             Controls.Add(button2);
             Controls.Add(buttonRelatorioVenda);
             Controls.Add(labelMenu);
@@ -327,7 +328,6 @@
             Controls.Add(buttonExercicio);
             Controls.Add(buttonDebito);
             Controls.Add(buttonProduto);
-            Controls.Add(button10);
             Controls.Add(pictureBoxCentral);
             Controls.Add(pictureBoxPrincipal);
             ForeColor = SystemColors.ActiveCaptionText;
