@@ -12,7 +12,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(DataCompra, FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal) VALUES(@FornecedorId, @FormaPagamentoId, @FreteTotal, @ValorTotalNota, @ValorTotal) SELECT @@IDENTITY"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO CompraProduto(DataCompra, FornecedorId, FormaPagamentoId, ValorTotal, FreteTotal, ValorTotalNota) VALUES(@DataCompra, @FornecedorId, @FormaPagamentoId, @ValorTotal, @FreteTotal, @ValorTotalNota) SELECT @@IDENTITY"))
                 {
                     try
                     {
@@ -258,7 +258,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public List<CompraProduto> BuscarPorData(DateTime _DataCompra)
+        public List<CompraProduto> BuscarPorDataCompra(DateTime _dataCompra)
         {
             List<CompraProduto> compraProdutoList = new List<CompraProduto>();
             CompraProduto compraProduto;
@@ -270,10 +270,11 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal FROM CompraProduto";
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal 
+                                    FROM CompraProduto WHERE CompraProduto.DataCompra = @DataCompra";
 
-                cmd.CommandType = System.Data.CommandType.Text;
-
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("DataCompra", _dataCompra);
                 cn.Open();
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -306,6 +307,7 @@ namespace DAL
             compraProduto.FreteTotal = (double)rd["FreteTotal"];
             compraProduto.ValorTotalNota = (double)rd["ValorTotalNota"];
             compraProduto.ValorTotal = (double)rd["ValorTotal"];
+            
         }
     }
 }

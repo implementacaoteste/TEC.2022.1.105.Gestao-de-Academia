@@ -187,11 +187,6 @@ namespace UIGestaoAcademia
                 textBoxValorProduto.Focus();
             }
         }
-        private void buttonExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonExcluir_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -200,6 +195,12 @@ namespace UIGestaoAcademia
             textBoxValorTotalNota.Text = (Convert.ToDouble(textBoxValorTotalNota.Text) - ((ItensCompra)itensCompraBindingSource.Current).ValorTotal).ToString();
             itensCompraBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
+            textBoxValorTotalNota.Clear();
+        }
+
+        private void pictureBoxCompra_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

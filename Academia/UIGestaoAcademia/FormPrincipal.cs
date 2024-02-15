@@ -267,7 +267,15 @@ namespace UIGestaoAcademia
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using(FormRelatorioDeVendas frm = new FormRelatorioDeVendas())
+            using (FormRelatorioDeVendas frm = new FormRelatorioDeVendas())
+            {
+                frm.ShowDialog();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (FormRelatorioCompra frm = new FormRelatorioCompra())
             {
                 frm.ShowDialog();
             }
