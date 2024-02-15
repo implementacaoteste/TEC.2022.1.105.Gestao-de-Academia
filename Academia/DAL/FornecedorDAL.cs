@@ -20,10 +20,10 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = @"INSERT INTO Fornecedor(Nome, CpfCnpj, Email, Telefone, Descricao,
                                             Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
-                                            TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, Iban, Obs) 
+                                            TipoDeMoedaId, TipoDeContaId, NomeBanco, NumeroAgencia, NumeroConta, ChavePix, Iban, Obs) 
                                             VALUES (@Nome, @CpfCnpj, @Email, @Telefone, @Descricao,
                                             @Rua, @CEP, @Bairro, @Complemento, @NumeroCasa, @Pais, @Cidade, @Estado, 
-                                            @TipoDeMoedaId, @TipoContaId, @NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix, @Iban, @Obs)";
+                                            @TipoDeMoedaId, @TipoDeContaId, @NomeBanco, @NumeroAgencia, @NumeroConta, @ChavePix, @Iban, @Obs)";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 PreencherParametros(_fornecedor, cmd, Operacao.Inserir);
@@ -55,7 +55,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
                     Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
-                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    TipoDeMoedaId, TipoDeContaId, NomeBanco, NumeroAgencia, NumeroConta,
                     ChavePix, Iban, Obs FROM Fornecedor";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -80,7 +80,6 @@ namespace DAL
                 cn.Close();
             }
         }
-
         public List<Fornecedor> BuscarPorNome(string _nome)
         {
             List<Fornecedor> fornecedorList = new List<Fornecedor>();
@@ -92,7 +91,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
                     Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
-                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    TipoDeMoedaId, TipoDeContaId, NomeBanco, NumeroAgencia, NumeroConta,
                     ChavePix, Iban, Obs FROM Fornecedor WHERE Nome LIKE @Nome";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@Nome", "%" + _nome + "%");
@@ -129,7 +128,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
                     Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
-                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    TipoDeMoedaId, TipoDeContaId, NomeBanco, NumeroAgencia, NumeroConta,
                     ChavePix, Iban, Obs  FROM Fornecedor WHERE CpfCnpj = @CpfCnpj";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CpfCnpj", _CpfCnpj);
@@ -314,7 +313,7 @@ namespace DAL
             _fornecedor.Cidade = _rd["Cidade"].ToString();
             _fornecedor.Estado = _rd["Estado"].ToString();
             _fornecedor.TipoDeMoedaId = Convert.ToInt32(_rd["TipoDeMoedaId"]);
-            _fornecedor.TipoDeContaId = Convert.ToInt32(_rd["TipoContaId"]);
+            _fornecedor.TipoDeContaId = Convert.ToInt32(_rd["TipoDeContaId"]);
             _fornecedor.NomeBanco = _rd["NomeBanco"].ToString();
             _fornecedor.NumeroAgencia = _rd["NumeroAgencia"].ToString();
             _fornecedor.NumeroConta = _rd["NumeroConta"].ToString();

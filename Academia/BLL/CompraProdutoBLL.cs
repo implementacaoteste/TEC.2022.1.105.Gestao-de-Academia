@@ -34,5 +34,9 @@ namespace BLL
         {
             return new CompraProdutoDAL().BuscarPorIdFornecedor(_FornecedorId);
         }
+        public List<CompraProduto> BuscarPorDataCompra(DateTime _dateTime)
+        {
+            return new CompraProdutoDAL().BuscarPorDataCompra(_dateTime);
+        }
     }
 }
