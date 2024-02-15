@@ -1,4 +1,7 @@
-﻿USE master
+﻿
+
+
+USE master
 GO
 ALTER DATABASE GestaoDeAcademia SET SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
@@ -15,12 +18,12 @@ CREATE TABLE Usuario
 	Nome VARCHAR(100),
 	NomeUsuario VARCHAR(50),
 	Email VARCHAR(60),
-	CPF VARCHAR(15),
+	CPF VARCHAR(15) UNIQUE,
 	Ativo BIT,
 	Senha VARCHAR(50)
 )
 GO
-
+SELECT*FROM usuario
 IF OBJECT_ID('GrupoUsuario', 'U') IS NULL
 CREATE TABLE GrupoUsuario
 (
@@ -57,7 +60,7 @@ CREATE TABLE Cliente
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
 	Aluno BIT,
-	CPF CHAR(14),
+	CPF CHAR(14) UNIQUE,
 	Telefone CHAR(14),
 	Email VARCHAR(60),
 	Endereco VARCHAR(100),
@@ -69,13 +72,13 @@ CREATE TABLE Fornecedor
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
-	CpfCnpj VARCHAR(15),
+	CpfCnpj VARCHAR(15) UNIQUE,
 	Email VARCHAR(200),
 	Telefone CHAR(14),
 	Endereco VARCHAR(100),
 	Descricao VARCHAR(150),
 	TipoDeMoedaId INT,
-	TipoDeContaId INT,
+	TipoContaId INT,
 	FornecedorId INT,
 	NomeBanco VARCHAR(50),
 	NumeroAgencia VARCHAR(6),
@@ -93,7 +96,7 @@ CREATE TABLE CompraProduto
 	FornecedorId INT,
 	FormaPagamentoId INT,
 	ValorTotal FLOAT,
-	FreteTotal FLOAT 
+	FreteTotal Float 
 )
 GO
 CREATE TABLE ItensCompra
@@ -136,7 +139,7 @@ CREATE TABLE ItensVenda
 	PrecoUnitario FLOAT,
 	PrecoTotal FLOAT
 )
-GO
+/*GO
 CREATE TABLE Financas
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
@@ -150,7 +153,7 @@ CREATE TABLE Financas
 	RetencaoDeImposto FLOAT,
 	Conta FLOAT,
 	Saldo FLOAT
-)
+)*/
 GO
 CREATE TABLE ControleDebito
 (
@@ -210,7 +213,7 @@ CREATE TABLE Funcionario
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
 	Nome VARCHAR(100),
-	CPF CHAR(14),
+	CPF CHAR(14) UNIQUE,
 	Cargo Varchar(20),
 	Telefone CHAR(14),
 	Email VARCHAR(60),
@@ -223,7 +226,6 @@ CREATE TABLE TipoDeConta
 	TipoConta VARCHAR(20)
 )
 GO
-SELECT * FROM Fornecedor
 CREATE  TABLE TipoDeMoeda
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
@@ -235,11 +237,11 @@ ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_FormaPagamento
 FOREIGN KEY (FormaPagamentoId)
 REFERENCES FormaPagamento(Id);
-GO
+/*GO
 ALTER TABLE Financas
 ADD CONSTRAINT FK_Financas_FormaPagamento 
 FOREIGN KEY (FormaPagamentoId)
-REFERENCES FormaPagamento(Id);
+REFERENCES FormaPagamento(Id);*/
 GO
 ALTER TABLE PagamentoAluno
 ADD CONSTRAINT FK_PagamentoAluno_FormaPagamento
@@ -280,11 +282,11 @@ ALTER TABLE ItensCompra
 ADD CONSTRAINT FK_ItensCompra_CompraProduto
 FOREIGN KEY (CompraProdutoId)
 REFERENCES CompraProduto(Id);
-GO
+/*GO
 ALTER TABLE Financas
 ADD CONSTRAINT FK_Fornecedor_Financas
 FOREIGN KEY (FornecedorId)
-REFERENCES Fornecedor(ID)
+REFERENCES Fornecedor(ID)*/
 GO
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_Usuario
@@ -321,7 +323,7 @@ ADD CONSTRAINT FK_PagamentoFuncionario_Funcionario
 FOREIGN KEY (FuncionarioId)
 REFERENCES Funcionario(Id);
 GO
-
+--
 ALTER TABLE Fornecedor
 ADD Rua VARCHAR(100)
 GO
@@ -365,9 +367,7 @@ GO
 ALTER TABLE Fornecedor
 ALTER COLUMN Estado VARCHAR(50)
 GO
-
 --
-
 select*from Funcionario
 GO
 
@@ -399,7 +399,6 @@ ALTER TABLE Funcionario
 ALTER COLUMN CEP VARCHAR(9)
 GO
 
-
 ALTER TABLE Funcionario
 ADD Pais VARCHAR(50)
 GO
@@ -415,9 +414,7 @@ GO
 ALTER TABLE Funcionario
 ALTER COLUMN Estado VARCHAR(50)
 GO
-
 --
-
 select*from Cliente
 GO
 
@@ -464,39 +461,28 @@ GO
 ALTER TABLE Cliente
 ALTER COLUMN Estado VARCHAR(50)
 GO
-
 --
-
 ALTER TABLE ControleDebito
 ADD Descricao VARCHAR(200)
 GO
-
 --
-
 ALTER TABLE FormaPagamento
 ADD QuantidadeParcelas INT
 GO
-
-
+--
 ALTER TABLE Venda
 ADD Desconto FLOAT
 GO
-
 --
-
 Alter Table ItensCompra
 Drop column ValorFrete 
 GO
-
 --
-
 ALter table CompraProduto
 ADD ValorTotalNota Float
 Go
-
 --
-
-select*from GrupoUsuario
+SELECT*FROM GrupoUsuario
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
 GO
@@ -526,61 +512,45 @@ GO
 IF COL_LENGTH('Usuario', 'DataCadastro') IS NULL
 ALTER TABLE Usuario ADD DataCadastro DATETIME DEFAULT GETDATE()
 GO
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 1))INSERT INTO Permissao(Id, Descricao)VALUES(1,'Visualizar usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 2))INSERT INTO Permissao(Id, Descricao)VALUES(2,'Cadastrar usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 3))INSERT INTO Permissao(Id, Descricao)VALUES(3,'Alterar usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 4))INSERT INTO Permissao(Id, Descricao)VALUES(4,'Excluir usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 5))INSERT INTO Permissao(Id, Descricao)VALUES(5,'Visualizar grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 6))INSERT INTO Permissao(Id, Descricao)VALUES(6,'Cadastrar grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 7))INSERT INTO Permissao(Id, Descricao)VALUES(7,'Alterar grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 8))INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 9))INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permiss�o a um grupo de usu�rio')
-IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usu�rio a um usu�rio')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 1))INSERT INTO Permissao(Id, Descricao)VALUES(1,'Visualizar usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 2))INSERT INTO Permissao(Id, Descricao)VALUES(2,'Cadastrar usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 3))INSERT INTO Permissao(Id, Descricao)VALUES(3,'Alterar usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 4))INSERT INTO Permissao(Id, Descricao)VALUES(4,'Excluir usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 5))INSERT INTO Permissao(Id, Descricao)VALUES(5,'Visualizar grupo de usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 6))INSERT INTO Permissao(Id, Descricao)VALUES(6,'Cadastrar grupo de usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 7))INSERT INTO Permissao(Id, Descricao)VALUES(7,'Alterar grupo de usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 8))INSERT INTO Permissao(Id, Descricao)VALUES(8,'Excluir grupo de usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 9))INSERT INTO Permissao(Id, Descricao)VALUES(9,'Adicionar permissão a um grupo de usuário')
+IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, Descricao)VALUES(10,'Adicionar grupo de usuário a um usuário')
 GO
 IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Adm'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Administrador da Silva', 'Adm', '123', 1)
-IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Geno'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Genoveva', 'Geno', '123', 1)
-IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Dag'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Dagorlina', 'Dag', '123', 1)
 GO
 SELECT*FROM Usuario
-INSERT INTO Usuario values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
+SELECT*FROM UsuarioGrupoUsuario
+SELECT*FROM GrupoUsuario
+SELECT*FROM Permissao
+SELECT*FROM PermissaoGrupoUsuario
 GO
-
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Instrutor')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Financeiro')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Administrador')
-
 GO
-INSERT INTO UsuarioGrupoUsuario VALUES(2,1)
+INSERT INTO UsuarioGrupoUsuario VALUES(1,1)
 INSERT INTO UsuarioGrupoUsuario VALUES(1,2)
+INSERT INTO UsuarioGrupoUsuario VALUES(1,6)
 GO
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,1)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,2)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(3,5)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,2)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,1)
-INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(4,5)
+--INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(1,1)
 GO
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 1, Id FROM Permissao)
+INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 6, Id FROM Permissao)
 GO
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 1)
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 2)
-INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)VALUES(2, 3)
+INSERT INTO Cliente VALUES('Eloísa',1, '07790087655','(63)99124-9261','genism355@gmail.com',GETDATE(),'Magman','0987654','Lipídios',null,'107','Brasil', 'São Juares', 'Mato Fino')
+INSERT INTO Cliente VALUES('Francisco',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
 GO
-INSERT INTO Cliente VALUES('Genilsom',1, '07790087655','(63)99124-9261','genism355@gmail.com',GETDATE(),'Magman','0987654','Lipídios',null,'107','Brasil', 'São Juares', 'Mato Fino')
-INSERT INTO Cliente VALUES('Cloves',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
-SELECT*FROM FormaPagamento
-SELECT*FROM Cliente
+SELECT*FROM Usuario
 GO
-SELECT*FROM ControleDebito
-GO
-SELECT*FROM ControleDebito
-select*from Usuario
-select *from PlanoAssinatura
-GO
-
 CREATE TRIGGER ATUALIZAR_ESTOQUE
 ON ItensCompra
 AFTER INSERT
@@ -592,20 +562,8 @@ DECLARE	@PRODUTOID INT
 
     UPDATE Produto SET QuantidadeEstoque = QuantidadeEstoque + @QUANTIDADE WHERE Id = @PRODUTOID
 END
-go
-select*from Usuario
-insert into Usuario (Nome, NomeUsuario, Email, CPF, Ativo, Senha, DataCadastro)values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
-go      
-
-select*from GrupoUsuario   
-select * from Usuario    
-select*from Venda
-select*from ItensVenda 
-
-select * from CompraProduto
-
-EXEC sp_rename 'dbo.Fornecedor.TipoContaId', 'TipoDeContaId', 'COLUMN';      
-SELECT*FROM Fornecedor 
-
-select * from CompraProduto  
-select * from ItensCompra                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+GO
+SELECT*FROM Usuario
+INSERT INTO Usuario (Nome, NomeUsuario, Email, CPF, Ativo, Senha, DataCadastro)values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
+GO
+EXEC sp_rename 'dbo.Fornecedor.TipoContaId', 'TipoDeContaId', 'COLUMN';
