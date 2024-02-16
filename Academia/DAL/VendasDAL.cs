@@ -112,7 +112,7 @@ namespace DAL
         }
 
 
-        public List<Venda> BuscarPorNomeFuncionario(string nome)
+        public List<Venda> BuscarPorNomeUsuario(string nome)
         {
             throw new NotImplementedException();
         }

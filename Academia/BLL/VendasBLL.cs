@@ -20,7 +20,7 @@ namespace BLL
         }
         public List<Venda> BuscarPorNomeFuncionario(string _nome)
         {
-            return new VendasDAL().BuscarPorNomeFuncionario(_nome);
+            return new VendasDAL().BuscarPorNomeUsuario(_nome);
 
         }
         public List<Venda> BuscarPorNomeCliente(string _nomeCliente)
