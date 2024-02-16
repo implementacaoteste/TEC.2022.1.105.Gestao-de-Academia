@@ -25,25 +25,27 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarPorCodigoVenda(Convert.ToInt32(textBoxBuscar.Text));
+                        if (String.IsNullOrEmpty(textBoxBuscar.Text))
+                            throw new Exception("Informe um Id para fazer a busca.") { Data = { { "Id", 1238 } } };
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarPorCodigoVenda(Convert.ToInt32(textBoxBuscar.Text));
                         break;
                     case 1:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarPorNomeFuncionario(textBoxBuscar.Text);
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarPorNomeUsuario(textBoxBuscar.Text);
                         break;
                     case 2:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarPorNomeCliente(textBoxBuscar.Text);
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarPorNomeCliente(textBoxBuscar.Text);
                         break;
                     case 3:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarPorCpfCliente(textBoxBuscar.Text);
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarPorCpfCliente(textBoxBuscar.Text);
                         break;
                     case 4:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarPorDataVenda();
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarPorDataVenda();
                         break;
                         case 5:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarTodos();
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarTodos();
                         break;
                     default:
-                        vendasBindingSource.DataSource = new VendasBLL().BuscarTodos();
+                        vendaBindingSource.DataSource = new VendasBLL().BuscarTodos();
                         break;
                 }
             }

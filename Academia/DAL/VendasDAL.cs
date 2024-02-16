@@ -61,9 +61,44 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
-        public void BuscarPorCodigoVenda()
+        public Venda BuscarPorCodigoVenda(int _id)
         {
-            throw new NotImplementedException();
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
+            Venda venda = new Venda();
+            Usuario logado = new Usuario();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandText = @"SELECT Venda.Id, Venda.UsuarioId, Venda.ClienteId, Venda.DataVenda,Venda.Desconto,Venda.TotalVenda FROM Venda
+                                    WHERE Venda.Id = @Id";
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@Id", _id);
+
+                cn.Open();
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        venda = new Venda();
+                        venda.Id = Convert.ToInt32(rd["Id"]);
+                        venda.DataVenda = Convert.ToDateTime(rd["DataVenda"]);
+                        venda.TotalVenda = Convert.ToDouble(rd["TotalVenda"]);
+                        venda.Cliente = new ClienteDAL().BuscarPorId((int)rd["ClienteId"]);
+                        venda.Usuario = new UsuarioDAL().BuscarPorId((int)rd["UsuarioId"]);
+                    }
+                    return venda;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar venda por id no banco de dados", ex) { Data = { { "Id", 2437 } } };
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
         public List<Venda> BuscarPorDataVenda()
         {
@@ -112,17 +147,12 @@ namespace DAL
         }
 
 
-        public List<Venda> BuscarPorNomeFuncionario(string nome)
+        public List<Venda> BuscarPorNomeUsuario(string nome)
         {
             throw new NotImplementedException();
         }
 
         public List<Venda> BuscarPorNomeCliente(string _nomeCliente)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Venda BuscarPorCodigoVenda(int _id)
         {
             throw new NotImplementedException();
         }

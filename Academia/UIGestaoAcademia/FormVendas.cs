@@ -119,7 +119,7 @@ namespace UIGestaoAcademia
                     valorTotal += item.PrecoTotal;
                 }
             }
-            labelValorTotal.Text = valorTotal.ToString();
+            labelValorTotal.Text = valorTotal.ToString("C");
             ((Venda)vendaBindingSource.Current).TotalVenda = valorTotal;
         }
 
