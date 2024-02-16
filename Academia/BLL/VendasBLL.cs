@@ -18,7 +18,7 @@ namespace BLL
         {
             return new VendasDAL().BuscarPorCodigoVenda(_id);
         }
-        public List<Venda> BuscarPorNomeFuncionario(string _nome)
+        public List<Venda> BuscarPorNomeUsuario(string _nome)
         {
             return new VendasDAL().BuscarPorNomeUsuario(_nome);
 
