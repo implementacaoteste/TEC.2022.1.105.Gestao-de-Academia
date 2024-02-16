@@ -30,18 +30,18 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            vendaBindingSource = new BindingSource(components);
-            buttonBuscarVendas = new Button();
-            comboBoxBuscarPor = new ComboBox();
-            textBoxBuscar = new TextBox();
-            buttonCancelar = new Button();
-            label1 = new Label();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Nome = new DataGridViewTextBoxColumn();
             nomeClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             descontoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             totalVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            vendaBindingSource = new BindingSource(components);
+            buttonBuscarVendas = new Button();
+            comboBoxBuscarPor = new ComboBox();
+            textBoxBuscar = new TextBox();
+            buttonCancelar = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -62,56 +62,6 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(928, 279);
             dataGridView1.TabIndex = 0;
-            // 
-            // vendaBindingSource
-            // 
-            vendaBindingSource.DataSource = typeof(Models.Venda);
-            // 
-            // buttonBuscarVendas
-            // 
-            buttonBuscarVendas.Location = new Point(694, 124);
-            buttonBuscarVendas.Name = "buttonBuscarVendas";
-            buttonBuscarVendas.Size = new Size(94, 29);
-            buttonBuscarVendas.TabIndex = 1;
-            buttonBuscarVendas.Text = "&Buscar";
-            buttonBuscarVendas.UseVisualStyleBackColor = true;
-            buttonBuscarVendas.Click += buttonBuscarVendas_Click;
-            // 
-            // comboBoxBuscarPor
-            // 
-            comboBoxBuscarPor.FormattingEnabled = true;
-            comboBoxBuscarPor.Items.AddRange(new object[] { "Código da venda", "Nome do Usuario", "Nome do Cliente", "CPF Cliente", "Data", "Todas" });
-            comboBoxBuscarPor.Location = new Point(16, 127);
-            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(151, 28);
-            comboBoxBuscarPor.TabIndex = 2;
-            // 
-            // textBoxBuscar
-            // 
-            textBoxBuscar.Location = new Point(173, 127);
-            textBoxBuscar.Name = "textBoxBuscar";
-            textBoxBuscar.Size = new Size(515, 27);
-            textBoxBuscar.TabIndex = 3;
-            // 
-            // buttonCancelar
-            // 
-            buttonCancelar.Location = new Point(846, 444);
-            buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
-            buttonCancelar.TabIndex = 1;
-            buttonCancelar.Text = "&Cancelar\r\n";
-            buttonCancelar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(209, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(396, 54);
-            label1.TabIndex = 4;
-            label1.Text = "Relatório de vendas";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -166,6 +116,56 @@
             totalVendaDataGridViewTextBoxColumn.Name = "totalVendaDataGridViewTextBoxColumn";
             totalVendaDataGridViewTextBoxColumn.ReadOnly = true;
             totalVendaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Models.Venda);
+            // 
+            // buttonBuscarVendas
+            // 
+            buttonBuscarVendas.Location = new Point(694, 124);
+            buttonBuscarVendas.Name = "buttonBuscarVendas";
+            buttonBuscarVendas.Size = new Size(94, 29);
+            buttonBuscarVendas.TabIndex = 1;
+            buttonBuscarVendas.Text = "&Buscar";
+            buttonBuscarVendas.UseVisualStyleBackColor = true;
+            buttonBuscarVendas.Click += buttonBuscarVendas_Click;
+            // 
+            // comboBoxBuscarPor
+            // 
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Código da venda", "Nome do Usuario", "Nome do Cliente", "CPF Cliente", "Data", "Todas" });
+            comboBoxBuscarPor.Location = new Point(16, 127);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(151, 28);
+            comboBoxBuscarPor.TabIndex = 2;
+            // 
+            // textBoxBuscar
+            // 
+            textBoxBuscar.Location = new Point(173, 127);
+            textBoxBuscar.Name = "textBoxBuscar";
+            textBoxBuscar.Size = new Size(515, 27);
+            textBoxBuscar.TabIndex = 3;
+            // 
+            // buttonCancelar
+            // 
+            buttonCancelar.Location = new Point(846, 444);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.TabIndex = 1;
+            buttonCancelar.Text = "&Cancelar\r\n";
+            buttonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(209, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(396, 54);
+            label1.TabIndex = 4;
+            label1.Text = "Relatório de vendas";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormRelatorioDeVendas
             // 
