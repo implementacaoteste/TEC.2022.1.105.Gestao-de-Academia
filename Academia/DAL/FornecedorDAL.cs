@@ -172,7 +172,16 @@ namespace DAL
                                         Cidade = @Cidade,
                                         Estado = @Estado,
                                         NumeroCasa = @NumeroCasa,
-                                        Pais = @Pais
+                                        Pais = @Pais,
+                                        Estado = @Estado, 
+                                        TipoDeMoeda = @TipoDeMoedaId, 
+                                        tipoDeContaId = @TipoDeContaId,    
+                                        NomeBanco = @NomeBanco, 
+                                        NumeroAgencia = @NumeroAgencia, 
+                                        NumeroConta = @NumeroConta,    
+                                        ChavePix = @ChavePix, 
+                                        Iban = @Iban, 
+                                        Obs = @Obs,
                                         WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -185,7 +194,7 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao tentar Alterar Fornecedor no banco de dados", ex) { Data = { { "Id", 20 } } };
+                throw new Exception("Erro ao tentar alterar Fornecedor no banco de dados", ex) { Data = { { "Id", 20 } } };
             }
             finally
             {
@@ -228,7 +237,7 @@ namespace DAL
                 cmd.Connection = cn;
                 cmd.CommandText = @"SELECT Id, Nome, CpfCnpj, Email, Telefone, Descricao,
                     Rua, CEP, Bairro, Complemento, NumeroCasa, Pais, Cidade, Estado,
-                    TipoDeMoedaId, TipoContaId, NomeBanco, NumeroAgencia, NumeroConta,
+                    TipoDeMoedaId, TipoDeContaId, NomeBanco, NumeroAgencia, NumeroConta,
                     ChavePix, Iban, Obs FROM Fornecedor WHERE Id = @Id";
                                          
                 cmd.CommandType = System.Data.CommandType.Text;

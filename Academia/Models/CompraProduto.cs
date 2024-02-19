@@ -18,5 +18,23 @@ namespace Models
         public List<ItensCompra> itensCompraList { get; set; }
         public Fornecedor Fornecedor { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
+        public string Nome
+        {
+            get
+            {
+                if (Fornecedor != null)
+                    return Fornecedor.Nome;
+                return "";
+            }
+        }
+        public string FormaDePagamento
+        {
+            get
+            {
+                if (FormaPagamento != null)
+                    return FormaPagamento.Descricao;
+                return "";
+            }
+        }
     }
 }

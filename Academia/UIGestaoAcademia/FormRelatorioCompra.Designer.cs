@@ -33,13 +33,19 @@
             textBoxBuscar = new TextBox();
             comboBoxBuscarPor = new ComboBox();
             buttonBuscarCompras = new Button();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataGridView1 = new DataGridView();
-            DataCompra = new DataGridViewTextBoxColumn();
-            FornecedorId = new DataGridViewTextBoxColumn();
-            ValorTotalNota = new DataGridViewTextBoxColumn();
-            compraProdutoBindingSource = new BindingSource(components);
             labelBuscarPor = new Label();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataCompraDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
+            compraProdutoBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataCompraDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            Nome = new DataGridViewTextBoxColumn();
+            formaDePagamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            freteTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            valorTotalNotaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -48,7 +54,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(405, 9);
+            label1.Location = new Point(228, 9);
             label1.Name = "label1";
             label1.Size = new Size(424, 54);
             label1.TabIndex = 10;
@@ -81,63 +87,6 @@
             buttonBuscarCompras.UseVisualStyleBackColor = true;
             buttonBuscarCompras.Click += buttonBuscarCompras_Click;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, DataCompra, FornecedorId, ValorTotalNota });
-            dataGridView1.DataSource = compraProdutoBindingSource;
-            dataGridView1.Location = new Point(12, 168);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1179, 279);
-            dataGridView1.TabIndex = 5;
-            // 
-            // DataCompra
-            // 
-            DataCompra.DataPropertyName = "DataCompra";
-            DataCompra.HeaderText = "DataCompra";
-            DataCompra.MinimumWidth = 6;
-            DataCompra.Name = "DataCompra";
-            DataCompra.ReadOnly = true;
-            DataCompra.Width = 125;
-            // 
-            // FornecedorId
-            // 
-            FornecedorId.DataPropertyName = "FornecedorId";
-            FornecedorId.HeaderText = "FornecedorId";
-            FornecedorId.MinimumWidth = 6;
-            FornecedorId.Name = "FornecedorId";
-            FornecedorId.ReadOnly = true;
-            FornecedorId.Width = 125;
-            // 
-            // ValorTotalNota
-            // 
-            ValorTotalNota.DataPropertyName = "ValorTotalNota";
-            ValorTotalNota.HeaderText = "ValorTotalNota";
-            ValorTotalNota.MinimumWidth = 6;
-            ValorTotalNota.Name = "ValorTotalNota";
-            ValorTotalNota.ReadOnly = true;
-            ValorTotalNota.Width = 125;
-            // 
-            // compraProdutoBindingSource
-            // 
-            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
-            // 
             // labelBuscarPor
             // 
             labelBuscarPor.AutoSize = true;
@@ -148,17 +97,124 @@
             labelBuscarPor.TabIndex = 32;
             labelBuscarPor.Text = "Buscar por";
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            dataGridViewTextBoxColumn1.HeaderText = "Nome";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataCompraDataGridViewTextBoxColumn
+            // 
+            dataCompraDataGridViewTextBoxColumn.DataPropertyName = "DataCompra";
+            dataCompraDataGridViewTextBoxColumn.HeaderText = "DataCompra";
+            dataCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            dataCompraDataGridViewTextBoxColumn.Name = "dataCompraDataGridViewTextBoxColumn";
+            dataCompraDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn1, dataCompraDataGridViewTextBoxColumn1, Nome, formaDePagamentoDataGridViewTextBoxColumn, valorTotalDataGridViewTextBoxColumn, freteTotalDataGridViewTextBoxColumn, valorTotalNotaDataGridViewTextBoxColumn });
+            dataGridView1.DataSource = compraProdutoBindingSource;
+            dataGridView1.Location = new Point(12, 168);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(914, 306);
+            dataGridView1.TabIndex = 33;
+            // 
+            // compraProdutoBindingSource
+            // 
+            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            idDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            idDataGridViewTextBoxColumn1.ReadOnly = true;
+            idDataGridViewTextBoxColumn1.Width = 90;
+            // 
+            // dataCompraDataGridViewTextBoxColumn1
+            // 
+            dataCompraDataGridViewTextBoxColumn1.DataPropertyName = "DataCompra";
+            dataCompraDataGridViewTextBoxColumn1.HeaderText = "DataCompra";
+            dataCompraDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataCompraDataGridViewTextBoxColumn1.Name = "dataCompraDataGridViewTextBoxColumn1";
+            dataCompraDataGridViewTextBoxColumn1.ReadOnly = true;
+            dataCompraDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // Nome
+            // 
+            Nome.DataPropertyName = "Nome";
+            Nome.HeaderText = "NomeFornecedor";
+            Nome.MinimumWidth = 6;
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            Nome.Width = 130;
+            // 
+            // formaDePagamentoDataGridViewTextBoxColumn
+            // 
+            formaDePagamentoDataGridViewTextBoxColumn.DataPropertyName = "FormaDePagamento";
+            formaDePagamentoDataGridViewTextBoxColumn.HeaderText = "FormaPagamento";
+            formaDePagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            formaDePagamentoDataGridViewTextBoxColumn.Name = "formaDePagamentoDataGridViewTextBoxColumn";
+            formaDePagamentoDataGridViewTextBoxColumn.ReadOnly = true;
+            formaDePagamentoDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // valorTotalDataGridViewTextBoxColumn
+            // 
+            valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
+            valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            valorTotalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // freteTotalDataGridViewTextBoxColumn
+            // 
+            freteTotalDataGridViewTextBoxColumn.DataPropertyName = "FreteTotal";
+            freteTotalDataGridViewTextBoxColumn.HeaderText = "FreteTotal";
+            freteTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            freteTotalDataGridViewTextBoxColumn.Name = "freteTotalDataGridViewTextBoxColumn";
+            freteTotalDataGridViewTextBoxColumn.ReadOnly = true;
+            freteTotalDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // valorTotalNotaDataGridViewTextBoxColumn
+            // 
+            valorTotalNotaDataGridViewTextBoxColumn.DataPropertyName = "ValorTotalNota";
+            valorTotalNotaDataGridViewTextBoxColumn.HeaderText = "ValorTotalNota";
+            valorTotalNotaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            valorTotalNotaDataGridViewTextBoxColumn.Name = "valorTotalNotaDataGridViewTextBoxColumn";
+            valorTotalNotaDataGridViewTextBoxColumn.ReadOnly = true;
+            valorTotalNotaDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormRelatorioCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1217, 535);
+            ClientSize = new Size(957, 494);
+            Controls.Add(dataGridView1);
             Controls.Add(labelBuscarPor);
             Controls.Add(label1);
             Controls.Add(textBoxBuscar);
             Controls.Add(comboBoxBuscarPor);
             Controls.Add(buttonBuscarCompras);
-            Controls.Add(dataGridView1);
             Name = "FormRelatorioCompra";
             Text = "FormRelatorioCompra";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -172,12 +228,18 @@
         private TextBox textBoxBuscar;
         private ComboBox comboBoxBuscarPor;
         private Button buttonBuscarCompras;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridView dataGridView1;
         private Label labelBuscarPor;
-        private DataGridViewTextBoxColumn DataCompra;
-        private DataGridViewTextBoxColumn FornecedorId;
-        private DataGridViewTextBoxColumn ValorTotalNota;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataCompraDataGridViewTextBoxColumn;
+        private DataGridView dataGridView1;
         private BindingSource compraProdutoBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataCompraDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn formaDePagamentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn freteTotalDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn valorTotalNotaDataGridViewTextBoxColumn;
     }
 }

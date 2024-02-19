@@ -34,6 +34,9 @@ namespace UIGestaoAcademia
             FinalizarCompra.Parent = pictureBoxCompra;
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png"))
                 pictureBoxCompra.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png";
+
+            calendario1.Value = DateTime.Now;
+            calendario1.Enabled = false;
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
@@ -169,6 +172,9 @@ namespace UIGestaoAcademia
         {
             try
             {
+                //calendario1.Enabled = true;
+                //((CompraProduto)BindingSourceCompraProduto.Current).DataCompra = calendario1.Value;
+                //calendario1.Enabled = false;
                 CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
                 new CompraProdutoBLL().Inserir(compraProduto);
 

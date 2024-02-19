@@ -65,7 +65,6 @@ namespace DAL
         {
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             Venda venda = new Venda();
-            Usuario logado = new Usuario();
             try
             {
                 SqlCommand cmd = new SqlCommand();
