@@ -41,9 +41,6 @@ namespace UIGestaoAcademia
                     case 4:
                         vendaBindingSource.DataSource = new VendasBLL().BuscarPorDataVenda();
                         break;
-                        case 5:
-                        vendaBindingSource.DataSource = new VendasBLL().BuscarTodos();
-                        break;
                     default:
                         vendaBindingSource.DataSource = new VendasBLL().BuscarTodos();
                         break;

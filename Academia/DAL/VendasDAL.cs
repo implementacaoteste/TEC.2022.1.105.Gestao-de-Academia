@@ -113,7 +113,7 @@ namespace DAL
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT Id, UsuarioId,DataVenda,TotalVenda FROM Venda";
+                cmd.CommandText = "SELECT Id, UsuarioId,FormaPagamentoId,ClienteId,DataVenda,TotalVenda,Desconto FROM Venda";
                 cmd.CommandType = System.Data.CommandType.Text;
                 cn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -122,12 +122,11 @@ namespace DAL
                     {
                         venda = new Venda();
 
-                        venda.Id = (int)rd["Id"];
-                        venda.UsuarioId = (int)rd["UsuarioId"];
-                        venda.DataVenda = (DateTime)rd["DataVenda"];
-                        venda.Desconto = (decimal)rd["Desconto"];
-                        venda.TotalVenda = (double)rd["TotalVenda"];
-
+                        venda.Id = Convert.ToInt32(rd["Id"]);
+                        venda.DataVenda = Convert.ToDateTime(rd["DataVenda"]);
+                        venda.TotalVenda = Convert.ToDouble(rd["TotalVenda"]);
+                        venda.Cliente = new ClienteDAL().BuscarPorId((int)rd["ClienteId"]);
+                        venda.Usuario = new UsuarioDAL().BuscarPorId((int)rd["UsuarioId"]);
 
                         vendas.Add(venda);
                     }
@@ -144,8 +143,6 @@ namespace DAL
             }
 
         }
-
-
         public List<Venda> BuscarPorNomeUsuario(string nome)
         {
             throw new NotImplementedException();
