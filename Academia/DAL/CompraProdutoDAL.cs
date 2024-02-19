@@ -1,6 +1,7 @@
 ﻿using Models;
 using System.Data.SqlClient;
 using System.Data;
+using static NPOI.HSSF.Util.HSSFColor;
 
 namespace DAL
 {
@@ -148,7 +149,8 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal FROM CompraProduto";
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra,CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.ValorTotal, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota
+                                     FROM CompraProduto";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -159,7 +161,13 @@ namespace DAL
                     while (rd.Read())
                     {
                         compraProduto = new CompraProduto();
-                        PreencherObjeto(compraProduto, rd);
+                        compraProduto.Id = Convert.ToInt32(rd["Id"]);
+                        compraProduto.DataCompra = Convert.ToDateTime(rd["DataCompra"]);
+                        compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
+                        compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
+                        compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
+                        compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                         compraProdutoList.Add(compraProduto);
                     }
                 }
@@ -177,7 +185,7 @@ namespace DAL
         }
         public CompraProduto BuscarPorId(int _id)
         {
-            CompraProduto compraProduto;
+            CompraProduto compraProduto = new CompraProduto();
 
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
@@ -186,8 +194,8 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, DataCompra, FornecedorId, FormaPagamentoId, FreteTotal, ValorTotalNota, ValorTotal FROM CompraProduto WHERE Id  = @Id";
-
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra,CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.ValorTotal, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota                               
+                                    FROM CompraProduto WHERE Id = @Id";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Id", _id);
@@ -196,13 +204,19 @@ namespace DAL
 
                 using (SqlDataReader rd = cmd.ExecuteReader())
                 {
-                    compraProduto = new CompraProduto();
-                    if (rd.Read())
+                    while (rd.Read())
                     {
-                        PreencherObjeto(compraProduto, rd);
+                        compraProduto = new CompraProduto();
+                        compraProduto.Id = Convert.ToInt32(rd["Id"]);
+                        compraProduto.DataCompra = Convert.ToDateTime(rd["DataCompra"]);
+                        compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
+                        compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
+                        compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
+                        compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                     }
+                    return compraProduto;
                 }
-                return compraProduto;
             }
             catch (Exception ex)
             {
@@ -223,15 +237,9 @@ namespace DAL
             {
                 SqlCommand cmd = cn.CreateCommand();
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra, CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota
-                            CompraProduto.ValorTotal, Fornecedor.Nome AS NomeFornecedor, FormaPagamento.Descricao AS FormaPagamento
-                            FROM CompraProduto
-                            INNER JOIN 
-                            Fornecedor ON CompraProduto.FornecedorId = Fornecedor.Id
-                            INNER JOIN 
-                            FormaPagamento ON CompraProduto.FormaPagamentoId = FormaPagamento.Id
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra,CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.ValorTotal, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota                               
+                                    FROM CompraProduto";
 
-                            Where CompraProduto.Id = @Id";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -244,7 +252,14 @@ namespace DAL
                     compraProduto = new CompraProduto();
                     if (rd.Read())
                     {
-                        PreencherObjeto(compraProduto, rd);
+                        compraProduto = new CompraProduto();
+                        compraProduto.Id = Convert.ToInt32(rd["Id"]);
+                        compraProduto.DataCompra = Convert.ToDateTime(rd["DataCompra"]);
+                        compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
+                        compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
+                        compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
+                        compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                     }
                 }
                 return compraProduto;
@@ -270,7 +285,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra, Produto.Nome, Produto.Marca, CompraProduto.Quantidade, Produto.Preco AS ValorUnitario, CompraProduto.ValorTotal 
+                cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra,CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.ValorTotal, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota  
                                     FROM CompraProduto WHERE CompraProduto.DataCompra = @DataCompra";
 
                 cmd.CommandType = CommandType.Text;
@@ -282,7 +297,13 @@ namespace DAL
                     while (rd.Read())
                     {
                         compraProduto = new CompraProduto();
-                        PreencherObjeto(compraProduto, rd);
+                        compraProduto.Id = Convert.ToInt32(rd["Id"]);
+                        compraProduto.DataCompra = Convert.ToDateTime(rd["DataCompra"]);
+                        compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
+                        compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
+                        compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
+                        compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                         compraProdutoList.Add(compraProduto);
                     }
                 }
