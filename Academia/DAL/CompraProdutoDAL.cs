@@ -166,6 +166,7 @@ namespace DAL
                         compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
                         compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
                         compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FornecedorId = Convert.ToInt32(rd["FornecedorId"]);
                         compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
                         compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                         compraProdutoList.Add(compraProduto);
@@ -227,7 +228,7 @@ namespace DAL
                 cn.Close();
             }
         }
-        public CompraProduto BuscarPorIdFornecedor(int _FornecedorId)
+        public CompraProduto BuscarPorIdFornecedor(int _fornecedor)
         {
             CompraProduto compraProduto;
 
@@ -238,12 +239,12 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
                 cmd.CommandText = @"SELECT CompraProduto.Id, CompraProduto.DataCompra,CompraProduto.FornecedorId, CompraProduto.FormaPagamentoId, CompraProduto.ValorTotal, CompraProduto.FreteTotal, CompraProduto.ValorTotalNota                               
-                                    FROM CompraProduto";
+                                    FROM CompraProduto WHERE @FornecedorId = FornecedorId";
 
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
-                cmd.Parameters.AddWithValue("@FornecedorId", _FornecedorId);
+                cmd.Parameters.AddWithValue("@FornecedorId", _fornecedor);
 
                 cn.Open();
 
@@ -258,15 +259,17 @@ namespace DAL
                         compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
                         compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
                         compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FornecedorId = Convert.ToInt32(rd["FornecedorId"]);
                         compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
                         compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
+                        
                     }
                 }
                 return compraProduto;
             }
             catch (Exception ex)
             {
-                throw new Exception("Ocorreu um erro ao tentar buscar a compra de produto pelo id do fornecedor no banco de dados.", ex);
+                throw new Exception("Ocorreu um erro ao tentar buscar a compra de produto pelo nome do fornecedor no banco de dados.", ex);
             }
             finally
             {
@@ -328,7 +331,7 @@ namespace DAL
             compraProduto.FreteTotal = (double)rd["FreteTotal"];
             compraProduto.ValorTotalNota = (double)rd["ValorTotalNota"];
             compraProduto.ValorTotal = (double)rd["ValorTotal"];
-            
+
         }
     }
 }

@@ -30,9 +30,9 @@ namespace BLL
         {
             return new CompraProdutoDAL().BuscarPorId(_id);
         }
-        public CompraProduto BuscarPorIdFornecedor(int _FornecedorId)
+        public CompraProduto BuscarPorIdFornecedor(int _IdFornecedor)
         {
-            return new CompraProdutoDAL().BuscarPorIdFornecedor(_FornecedorId);
+            return new CompraProdutoDAL().BuscarPorIdFornecedor(_IdFornecedor);
         }
         public List<CompraProduto> BuscarPorDataCompra(DateTime _dateTime)
         {

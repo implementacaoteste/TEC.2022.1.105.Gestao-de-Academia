@@ -38,14 +38,15 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
-            compraProdutoBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            FornecedorId = new DataGridViewTextBoxColumn();
             Nome = new DataGridViewTextBoxColumn();
             formaDePagamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             freteTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalNotaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            compraProdutoBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(228, 9);
+            label1.Location = new Point(277, 9);
             label1.Name = "label1";
             label1.Size = new Size(424, 54);
             label1.TabIndex = 10;
@@ -71,7 +72,7 @@
             // comboBoxBuscarPor
             // 
             comboBoxBuscarPor.FormattingEnabled = true;
-            comboBoxBuscarPor.Items.AddRange(new object[] { "Id", "Todos", "FornecedorId", "Data" });
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Id", "IdFornecedor", "Data", "Todos" });
             comboBoxBuscarPor.Location = new Point(11, 134);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
             comboBoxBuscarPor.Size = new Size(151, 28);
@@ -128,18 +129,14 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn1, dataCompraDataGridViewTextBoxColumn1, Nome, formaDePagamentoDataGridViewTextBoxColumn, valorTotalDataGridViewTextBoxColumn, freteTotalDataGridViewTextBoxColumn, valorTotalNotaDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn1, dataCompraDataGridViewTextBoxColumn1, FornecedorId, Nome, formaDePagamentoDataGridViewTextBoxColumn, valorTotalDataGridViewTextBoxColumn, freteTotalDataGridViewTextBoxColumn, valorTotalNotaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = compraProdutoBindingSource;
             dataGridView1.Location = new Point(12, 168);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(914, 306);
+            dataGridView1.Size = new Size(909, 675);
             dataGridView1.TabIndex = 33;
-            // 
-            // compraProdutoBindingSource
-            // 
-            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -159,14 +156,23 @@
             dataCompraDataGridViewTextBoxColumn1.ReadOnly = true;
             dataCompraDataGridViewTextBoxColumn1.Width = 125;
             // 
+            // FornecedorId
+            // 
+            FornecedorId.DataPropertyName = "FornecedorId";
+            FornecedorId.HeaderText = "FornecedorId";
+            FornecedorId.MinimumWidth = 6;
+            FornecedorId.Name = "FornecedorId";
+            FornecedorId.ReadOnly = true;
+            FornecedorId.Width = 125;
+            // 
             // Nome
             // 
             Nome.DataPropertyName = "Nome";
-            Nome.HeaderText = "NomeFornecedor";
+            Nome.HeaderText = "Nome";
             Nome.MinimumWidth = 6;
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
-            Nome.Width = 130;
+            Nome.Width = 125;
             // 
             // formaDePagamentoDataGridViewTextBoxColumn
             // 
@@ -204,19 +210,28 @@
             valorTotalNotaDataGridViewTextBoxColumn.ReadOnly = true;
             valorTotalNotaDataGridViewTextBoxColumn.Width = 125;
             // 
+            // compraProdutoBindingSource
+            // 
+            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
+            // 
             // FormRelatorioCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(957, 494);
+            ClientSize = new Size(932, 886);
             Controls.Add(dataGridView1);
             Controls.Add(labelBuscarPor);
             Controls.Add(label1);
             Controls.Add(textBoxBuscar);
             Controls.Add(comboBoxBuscarPor);
             Controls.Add(buttonBuscarCompras);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormRelatorioCompra";
-            Text = "FormRelatorioCompra";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).EndInit();
             ResumeLayout(false);
@@ -236,6 +251,7 @@
         private BindingSource compraProdutoBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataCompraDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn FornecedorId;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn formaDePagamentoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;

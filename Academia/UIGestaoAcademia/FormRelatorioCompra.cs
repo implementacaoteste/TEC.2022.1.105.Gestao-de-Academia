@@ -30,7 +30,7 @@ namespace UIGestaoAcademia
                     case 1:
                         compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorIdFornecedor(Convert.ToInt32(textBoxBuscar.Text));
                         break;
-                    case 3:
+                    case 2:
                         compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorDataCompra(Convert.ToDateTime(textBoxBuscar.Text));
                         break;
                     default:
