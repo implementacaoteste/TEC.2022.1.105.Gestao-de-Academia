@@ -49,7 +49,7 @@
             textBoxFormaDePagamento = new TextBox();
             buttonConsultaCliente = new Button();
             textBoxConsultaCliente = new TextBox();
-            calendario1 = new Calendario();
+            calendarioDataPagamento = new Calendario();
             calendarioDataVencimento = new Calendario();
             formaPagamentoBindingSource = new BindingSource(components);
             label5 = new Label();
@@ -81,7 +81,7 @@
             buttonCancelar.Location = new Point(717, 298);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(94, 29);
-            buttonCancelar.TabIndex = 11;
+            buttonCancelar.TabIndex = 13;
             buttonCancelar.Text = "&Cancelar";
             buttonCancelar.UseVisualStyleBackColor = true;
             // 
@@ -91,7 +91,7 @@
             buttonSalvar.Location = new Point(617, 298);
             buttonSalvar.Name = "buttonSalvar";
             buttonSalvar.Size = new Size(94, 29);
-            buttonSalvar.TabIndex = 10;
+            buttonSalvar.TabIndex = 12;
             buttonSalvar.Text = "&Salvar";
             buttonSalvar.UseVisualStyleBackColor = true;
             buttonSalvar.Click += buttonSalvar_Click_1;
@@ -181,7 +181,7 @@
             textBoxJuros.Location = new Point(539, 175);
             textBoxJuros.Name = "textBoxJuros";
             textBoxJuros.Size = new Size(127, 27);
-            textBoxJuros.TabIndex = 7;
+            textBoxJuros.TabIndex = 9;
             textBoxJuros.TextAlign = HorizontalAlignment.Right;
             // 
             // textBoxDesconto
@@ -190,7 +190,7 @@
             textBoxDesconto.Location = new Point(17, 238);
             textBoxDesconto.Name = "textBoxDesconto";
             textBoxDesconto.Size = new Size(193, 27);
-            textBoxDesconto.TabIndex = 9;
+            textBoxDesconto.TabIndex = 11;
             textBoxDesconto.TextAlign = HorizontalAlignment.Right;
             // 
             // textBoxAcrescimo
@@ -199,7 +199,7 @@
             textBoxAcrescimo.Location = new Point(672, 174);
             textBoxAcrescimo.Name = "textBoxAcrescimo";
             textBoxAcrescimo.Size = new Size(137, 27);
-            textBoxAcrescimo.TabIndex = 8;
+            textBoxAcrescimo.TabIndex = 10;
             textBoxAcrescimo.TextAlign = HorizontalAlignment.Right;
             // 
             // buttonConsultaFormaPagamento
@@ -207,7 +207,7 @@
             buttonConsultaFormaPagamento.Location = new Point(605, 111);
             buttonConsultaFormaPagamento.Name = "buttonConsultaFormaPagamento";
             buttonConsultaFormaPagamento.Size = new Size(30, 29);
-            buttonConsultaFormaPagamento.TabIndex = 2;
+            buttonConsultaFormaPagamento.TabIndex = 3;
             buttonConsultaFormaPagamento.Text = "...";
             buttonConsultaFormaPagamento.UseVisualStyleBackColor = true;
             buttonConsultaFormaPagamento.Click += buttonConsultaFormaPagamento_Click;
@@ -235,7 +235,7 @@
             buttonConsultaCliente.Location = new Point(213, 174);
             buttonConsultaCliente.Name = "buttonConsultaCliente";
             buttonConsultaCliente.Size = new Size(30, 29);
-            buttonConsultaCliente.TabIndex = 4;
+            buttonConsultaCliente.TabIndex = 6;
             buttonConsultaCliente.Text = "...";
             buttonConsultaCliente.UseVisualStyleBackColor = true;
             buttonConsultaCliente.Click += buttonConsultaCliente_Click;
@@ -246,19 +246,19 @@
             textBoxConsultaCliente.Location = new Point(17, 174);
             textBoxConsultaCliente.Name = "textBoxConsultaCliente";
             textBoxConsultaCliente.Size = new Size(193, 27);
-            textBoxConsultaCliente.TabIndex = 3;
+            textBoxConsultaCliente.TabIndex = 5;
             // 
-            // calendario1
+            // calendarioDataPagamento
             // 
-            calendario1.Checked = false;
-            calendario1.CustomFormat = " ";
-            calendario1.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDebito, "DataPagamento", true));
-            calendario1.Format = DateTimePickerFormat.Custom;
-            calendario1.Location = new Point(393, 175);
-            calendario1.Name = "calendario1";
-            calendario1.ShowCheckBox = true;
-            calendario1.Size = new Size(140, 27);
-            calendario1.TabIndex = 6;
+            calendarioDataPagamento.Checked = false;
+            calendarioDataPagamento.CustomFormat = " ";
+            calendarioDataPagamento.DataBindings.Add(new Binding("Text", bindingSourceCadastrarDebito, "DataPagamento", true));
+            calendarioDataPagamento.Format = DateTimePickerFormat.Custom;
+            calendarioDataPagamento.Location = new Point(393, 175);
+            calendarioDataPagamento.Name = "calendarioDataPagamento";
+            calendarioDataPagamento.ShowCheckBox = true;
+            calendarioDataPagamento.Size = new Size(140, 27);
+            calendarioDataPagamento.TabIndex = 8;
             // 
             // calendarioDataVencimento
             // 
@@ -271,7 +271,7 @@
             calendarioDataVencimento.RightToLeftLayout = true;
             calendarioDataVencimento.ShowCheckBox = true;
             calendarioDataVencimento.Size = new Size(140, 27);
-            calendarioDataVencimento.TabIndex = 5;
+            calendarioDataVencimento.TabIndex = 7;
             // 
             // formaPagamentoBindingSource
             // 
@@ -293,7 +293,7 @@
             textBoxDescricão.Location = new Point(641, 112);
             textBoxDescricão.Name = "textBoxDescricão";
             textBoxDescricão.Size = new Size(169, 27);
-            textBoxDescricão.TabIndex = 8;
+            textBoxDescricão.TabIndex = 4;
             // 
             // textBoxQuantidaDeParcelasDesejadas
             // 
@@ -301,7 +301,7 @@
             textBoxQuantidaDeParcelasDesejadas.Location = new Point(340, 111);
             textBoxQuantidaDeParcelasDesejadas.Name = "textBoxQuantidaDeParcelasDesejadas";
             textBoxQuantidaDeParcelasDesejadas.Size = new Size(65, 27);
-            textBoxQuantidaDeParcelasDesejadas.TabIndex = 30;
+            textBoxQuantidaDeParcelasDesejadas.TabIndex = 2;
             textBoxQuantidaDeParcelasDesejadas.TextAlign = HorizontalAlignment.Right;
             // 
             // label11
@@ -322,7 +322,7 @@
             ClientSize = new Size(821, 339);
             Controls.Add(textBoxQuantidaDeParcelasDesejadas);
             Controls.Add(calendarioDataVencimento);
-            Controls.Add(calendario1);
+            Controls.Add(calendarioDataPagamento);
             Controls.Add(buttonConsultaCliente);
             Controls.Add(buttonConsultaFormaPagamento);
             Controls.Add(label2);
@@ -381,7 +381,7 @@
         private TextBox textBoxFormaDePagamento;
         private Button buttonConsultaCliente;
         private TextBox textBoxConsultaCliente;
-        private Calendario calendario1;
+        private Calendario calendarioDataPagamento;
         private Calendario calendarioDataVencimento;
         private Label label5;
         private BindingSource formaPagamentoBindingSource;

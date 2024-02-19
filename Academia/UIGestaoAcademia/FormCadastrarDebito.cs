@@ -34,7 +34,7 @@ namespace UIGestaoAcademia
         {
             try
             {
-                ((ControleDebito)bindingSourceCadastrarDebito.Current).DataPagamento = calendario1.Checked ? calendario1.Value : new DateTime(1900, 1, 1);
+                ((ControleDebito)bindingSourceCadastrarDebito.Current).DataPagamento = calendarioDataPagamento.Checked ? calendarioDataPagamento.Value : new DateTime(1900, 1, 1);
 
                 bindingSourceCadastrarDebito.EndEdit();
 

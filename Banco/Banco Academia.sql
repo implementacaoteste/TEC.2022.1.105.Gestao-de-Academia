@@ -20,7 +20,6 @@ CREATE TABLE Usuario
 	Senha VARCHAR(50)
 )
 GO
-SELECT*FROM usuario
 IF OBJECT_ID('GrupoUsuario', 'U') IS NULL
 CREATE TABLE GrupoUsuario
 (
@@ -43,7 +42,6 @@ CREATE TABLE UsuarioGrupoUsuario
 	CONSTRAINT PK_UsuarioGrupoUsuario PRIMARY KEY (IdUsuario, IdGrupoUsuario)
 )
 GO
-select*from GrupoUsuario
 IF OBJECT_ID('PermissaoGrupoUsuario', 'U') IS NULL
 CREATE TABLE PermissaoGrupoUsuario
 (
@@ -63,7 +61,6 @@ CREATE TABLE Cliente
 	Endereco VARCHAR(100),
 	DataCadastro DATETIME
 )
-select*from Cliente
 GO
 CREATE TABLE Fornecedor
 (
@@ -121,7 +118,7 @@ GO
 CREATE TABLE Venda
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
-	FuncionarioId INT,
+	UsuarioId INT,
 	FormaPagamentoId INT,
 	ClienteId INT,
 	DataVenda DATETIME,
@@ -166,7 +163,6 @@ CREATE TABLE ControleDebito
 	Acrescimo FLOAT	
 )
 GO
-select * from Usuario
 CREATE TABLE FormaPagamento
 (
 	Id INT PRIMARY KEY IDENTITY(1,1),
@@ -287,8 +283,8 @@ REFERENCES Fornecedor(ID)*/
 GO
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_Usuario
-FOREIGN KEY (FuncionarioId)
-REFERENCES Funcionario(Id);
+FOREIGN KEY (UsuarioId)
+REFERENCES Usuario(Id);
 GO
 ALTER TABLE Venda
 ADD CONSTRAINT FK_Venda_Cliente
@@ -365,9 +361,6 @@ ALTER TABLE Fornecedor
 ALTER COLUMN Estado VARCHAR(50)
 GO
 --
-select*from Funcionario
-GO
-
 ALTER TABLE Funcionario
 ADD Rua VARCHAR(100)
 GO
@@ -412,9 +405,6 @@ ALTER TABLE Funcionario
 ALTER COLUMN Estado VARCHAR(50)
 GO
 --
-select*from Cliente
-GO
-
 ALTER TABLE Cliente
 ADD Rua VARCHAR(100)
 GO
@@ -479,7 +469,6 @@ ALter table CompraProduto
 ADD ValorTotalNota Float
 Go
 --
-SELECT*FROM GrupoUsuario
 IF NOT EXISTS (SELECT 1 FROM SYS.INDEXES WHERE object_id = OBJECT_ID('Usuario') AND IS_PRIMARY_KEY = 1)
 ALTER TABLE Usuario ADD CONSTRAINT PK_Usuario PRIMARY KEY (Id)
 GO
@@ -522,11 +511,8 @@ IF(NOT EXISTS(SELECT 1 FROM Permissao WHERE Id = 10))INSERT INTO Permissao(Id, D
 GO
 IF(NOT EXISTS(SELECT 1 FROM Usuario WHERE NomeUsuario = 'Adm'))INSERT INTO Usuario(Nome, NomeUsuario, Senha, Ativo)VALUES('Administrador da Silva', 'Adm', '123', 1)
 GO
-SELECT*FROM Usuario
-SELECT*FROM UsuarioGrupoUsuario
-SELECT*FROM GrupoUsuario
-SELECT*FROM Permissao
-SELECT*FROM PermissaoGrupoUsuario
+INSERT INTO Usuario (Nome, NomeUsuario, Email, CPF, Ativo, Senha, DataCadastro)values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
+INSERT INTO Usuario (Nome, NomeUsuario, Email, CPF, Ativo, Senha, DataCadastro)values('Guilherme','Gui','Gui@gmail.com','00399892788',1,'123',getdate())
 GO
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Gerente')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Vendedor')
@@ -535,8 +521,8 @@ INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Estoquista')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Financeiro')
 INSERT INTO GrupoUsuario(NomeGrupo)VALUES('Administrador')
 GO
-INSERT INTO UsuarioGrupoUsuario VALUES(1,1)
-INSERT INTO UsuarioGrupoUsuario VALUES(1,2)
+INSERT INTO UsuarioGrupoUsuario VALUES(2,2)
+INSERT INTO UsuarioGrupoUsuario VALUES(3,1)
 INSERT INTO UsuarioGrupoUsuario VALUES(1,6)
 GO
 --INSERT INTO PermissaoGrupoUsuario(IdGrupoUsuario, IdPermissao) VALUES(1,1)
@@ -545,8 +531,6 @@ INSERT INTO PermissaoGrupoUsuario (IdGrupoUsuario, IdPermissao)(SELECT 6, Id FRO
 GO
 INSERT INTO Cliente VALUES('Eloísa',1, '07790087655','(63)99124-9261','genism355@gmail.com',GETDATE(),'Magman','0987654','Lipídios',null,'107','Brasil', 'São Juares', 'Mato Fino')
 INSERT INTO Cliente VALUES('Francisco',1, '012309371231','(63)99124-8899','clovis90@gmail.com',GETDATE(),'Milan','09665554','ragnar',null,'097','França', 'Rumiehe', 'Bonjuk')
-GO
-SELECT*FROM Usuario
 GO
 CREATE TRIGGER ATUALIZAR_ESTOQUE
 ON ItensCompra
@@ -560,11 +544,11 @@ DECLARE	@PRODUTOID INT
     UPDATE Produto SET QuantidadeEstoque = QuantidadeEstoque + @QUANTIDADE WHERE Id = @PRODUTOID
 END
 GO
-SELECT*FROM Usuario
-INSERT INTO Usuario (Nome, NomeUsuario, Email, CPF, Ativo, Senha, DataCadastro)values('Robson Souza','Rob','rob@gmail.com','00236512547',1,'123',getdate())
-GO
 EXEC sp_rename 'dbo.Fornecedor.TipoContaId', 'TipoDeContaId', 'COLUMN';
-
-select * from CompraProduto
-
-select*from ControleDebito
+GO
+SELECT*FROM Usuario
+SELECT*FROM UsuarioGrupoUsuario
+SELECT*FROM GrupoUsuario
+SELECT*FROM Permissao
+SELECT*FROM ControleDebito
+GO
