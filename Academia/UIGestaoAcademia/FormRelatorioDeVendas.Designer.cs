@@ -60,7 +60,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(928, 279);
+            dataGridView1.Size = new Size(928, 628);
             dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -79,7 +79,7 @@
             Nome.MinimumWidth = 6;
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
-            Nome.Width = 125;
+            Nome.Width = 200;
             // 
             // nomeClienteDataGridViewTextBoxColumn
             // 
@@ -97,7 +97,7 @@
             dataVendaDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataVendaDataGridViewTextBoxColumn.Name = "dataVendaDataGridViewTextBoxColumn";
             dataVendaDataGridViewTextBoxColumn.ReadOnly = true;
-            dataVendaDataGridViewTextBoxColumn.Width = 125;
+            dataVendaDataGridViewTextBoxColumn.Width = 150;
             // 
             // descontoDataGridViewTextBoxColumn
             // 
@@ -149,7 +149,7 @@
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(846, 444);
+            buttonCancelar.Location = new Point(846, 793);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 1;
@@ -160,19 +160,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(209, 17);
+            label1.Location = new Point(267, 18);
             label1.Name = "label1";
             label1.Size = new Size(396, 54);
             label1.TabIndex = 4;
             label1.Text = "Relatório de vendas";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // FormRelatorioDeVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(950, 486);
+            ClientSize = new Size(950, 834);
             Controls.Add(label1);
             Controls.Add(textBoxBuscar);
             Controls.Add(comboBoxBuscarPor);
@@ -210,12 +210,12 @@
         private DataGridViewTextBoxColumn funcionarioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private BindingSource vendaBindingSource;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Usuario;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataVendaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descontoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn totalVendaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn Nome;
     }
 }

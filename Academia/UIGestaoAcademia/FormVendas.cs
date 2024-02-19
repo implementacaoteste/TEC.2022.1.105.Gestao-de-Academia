@@ -16,14 +16,10 @@ namespace UIGestaoAcademia
         public FormVendas(int _id = 0)
         {
             InitializeComponent();
-
             _id = id;
 
             int codigoVenda = GerarCodigoVenda();
             labelCodigoVenda.Text = codigoVenda.ToString();
-
-
-
         }
         private int GerarCodigoVenda()
         {
@@ -69,9 +65,8 @@ namespace UIGestaoAcademia
         {
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
-                frm.ShowDialog();
 
-                if (frm.FormaPagamento != null)
+                    frm.ShowDialog();
                     if (frm.FormaPagamento != null)
                     {
                         ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
@@ -118,12 +113,38 @@ namespace UIGestaoAcademia
             labelValorTotal.Text = valorTotal.ToString("C");
             ((Venda)vendaBindingSource.Current).TotalVenda = valorTotal;
         }
-
         private void buttonBuscarProduto_Click(object sender, EventArgs e)
         {
-            using (FormBuscarProduto frm = new FormBuscarProduto())
+            try
             {
-                frm.ShowDialog();
+                using (FormBuscarProduto frm = new FormBuscarProduto())
+                {
+                    frm.ShowDialog();
+
+                    if (frm.Produto != null)
+                    {
+                        Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(frm.Produto.CodigoDeBarras);
+
+                        // Adiciona o produto à lista de itens da venda
+                        ItensVenda novoItem = new ItensVenda
+                        {
+                            ProdutoId = produto.Id,
+                            Produto = produto,
+                            Quantidade = 1, // Ou qualquer valor padrão desejado
+                            PrecoUnitario = produto.Preco,
+                            PrecoTotal = produto.Preco
+                        };
+
+                        itensVendaListBindingSource.Add(novoItem);
+
+                        // Atualiza o valor total
+                        AtualizarValorTotal();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -136,7 +157,6 @@ namespace UIGestaoAcademia
             itensVendaListBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
         }
-
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
             try
