@@ -16,7 +16,6 @@ namespace UIGestaoAcademia
         public FormVendas(int _id = 0)
         {
             InitializeComponent();
-            ExibirNomeUsuarioLogado();
 
             _id = id;
 
@@ -24,9 +23,6 @@ namespace UIGestaoAcademia
             labelCodigoVenda.Text = codigoVenda.ToString();
 
 
-        }
-        private void ExibirNomeUsuarioLogado()
-        {
 
         }
         private int GerarCodigoVenda()
@@ -136,38 +132,51 @@ namespace UIGestaoAcademia
             if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
 
-            labelValorTotal.Text = (Convert.ToDouble(labelValorTotal.Text) - ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal).ToString();
+            labelValorTotal.Text = (((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal).ToString("C");
             itensVendaListBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
         }
 
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
+            try
             {
+                Venda venda = (Venda)vendaBindingSource.Current;
 
-                try
+                // Verifica se a DataVenda está dentro do intervalo permitido
+                DateTime dataMinima = new DateTime(1753, 1, 1);
+                DateTime dataMaxima = new DateTime(9999, 12, 31, 23, 59, 59);
+
+                if (venda.DataVenda < dataMinima || venda.DataVenda > dataMaxima)
                 {
-                    Venda venda = (Venda)vendaBindingSource.Current;
-                    new VendasBLL().Inserir(venda);
-
-                    MessageBox.Show("Venda finalizada com sucesso!");
-                    this.Close();
-
+                    MessageBox.Show("A data da venda está fora do intervalo permitido.");
+                    return;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
+                new VendasBLL().Inserir(venda);
+
+                MessageBox.Show("Venda finalizada com sucesso!");
+
+                // Atualiza o código da venda e limpa o formulário
+                int novoCodigoVenda = GerarCodigoVenda();
+                labelCodigoVenda.Text = novoCodigoVenda.ToString();
+                LimparFormulario();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void LimparFormulario()
         {
             vendaBindingSource.AddNew();
+            ((Venda)vendaBindingSource.Current).ItensVendaList = new List<ItensVenda>();
+            vendaBindingSource.EndEdit();
+
             itensVendaListBindingSource.Clear();
             dataGridView1.DataSource = itensVendaListBindingSource;
             labelValorTotal.Text = "0.00";
         }
-
         private void FormVendas_Load(object sender, EventArgs e)
         {
             labeUserVenda.Text = Constantes.UsuarioLogado.Nome;
@@ -181,17 +190,13 @@ namespace UIGestaoAcademia
             labelCodigoVenda.Parent = pictureBoxVenda;
             groupBoxVenda.Parent = pictureBoxVenda;
 
+            ((Venda)vendaBindingSource.Current).DataVenda = DateTime.Now;
+            calendarioDataVencimento.Value = ((Venda)vendaBindingSource.Current).DataVenda;
+            calendarioDataVencimento.Enabled = false;
 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundovenda.png"))
                 pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundovenda.png";
         }
-
-        private void pictureBoxVenda_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
 

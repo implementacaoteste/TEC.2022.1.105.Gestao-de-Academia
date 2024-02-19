@@ -339,7 +339,7 @@
             // 
             calendarioDataVencimento.Checked = false;
             calendarioDataVencimento.CustomFormat = " ";
-            calendarioDataVencimento.DataBindings.Add(new Binding("Text", vendaBindingSource, "DataVenda", true));
+            calendarioDataVencimento.DataBindings.Add(new Binding("Value", vendaBindingSource, "DataVenda", true));
             calendarioDataVencimento.Format = DateTimePickerFormat.Custom;
             calendarioDataVencimento.Location = new Point(771, 26);
             calendarioDataVencimento.Name = "calendarioDataVencimento";
