@@ -35,13 +35,13 @@ namespace UIGestaoAcademia
                         break;
                     case 2:
                         if (textBoxBuscar.Text == "")
-                            MessageBox.Show("Por favor, insira uma data");
+                            throw new Exception("Por favor, insira uma data");
                         compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorDataCompra(Convert.ToDateTime(textBoxBuscar.Text));
                         break;
                     default:
                         if (textBoxBuscar.Text == "")
-                            MessageBox.Show("Por favor, insira um id");
-                            compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
+                            throw new Exception("Por favor, insira um id");
+                        compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
                         break;
                 }
             }
@@ -56,6 +56,19 @@ namespace UIGestaoAcademia
             comboBoxBuscarPor.SelectedIndex = 0;
             buttonBuscarCompras_Click(sender, e);
 
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            buttonSelecionar_Click(sender, e);
+        }
+
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            using (FormItensCompra frm = new FormItensCompra())
+            {
+                frm.ShowDialog();
+            }
         }
     }
 }

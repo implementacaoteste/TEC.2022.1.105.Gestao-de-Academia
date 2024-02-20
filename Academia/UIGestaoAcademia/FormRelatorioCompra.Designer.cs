@@ -50,6 +50,7 @@
             freteTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalNotaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             compraProdutoBindingSource = new BindingSource(components);
+            buttonSelecionar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -140,6 +141,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1010, 675);
             dataGridView1.TabIndex = 33;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -223,11 +225,22 @@
             // 
             compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
             // 
+            // buttonSelecionar
+            // 
+            buttonSelecionar.Location = new Point(928, 849);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 34;
+            buttonSelecionar.Text = "Selecionar";
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
+            // 
             // FormRelatorioCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1034, 886);
+            Controls.Add(buttonSelecionar);
             Controls.Add(dataGridView1);
             Controls.Add(labelBuscarPor);
             Controls.Add(label1);
@@ -267,5 +280,6 @@
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn freteTotalDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalNotaDataGridViewTextBoxColumn;
+        private Button buttonSelecionar;
     }
 }
