@@ -39,6 +39,7 @@
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             comboBoxBuscarPor = new ComboBox();
             dataGridViewProduto = new DataGridView();
             controleDebitoBindingSource = new BindingSource(components);
@@ -55,6 +56,7 @@
             dateTimePicker2 = new DateTimePicker();
             pictureBox3 = new PictureBox();
             NomeCliente = new DataGridViewTextBoxColumn();
+            ValorAPagar = new DataGridViewTextBoxColumn();
             valorDebitoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             NomeFormaPagamento = new DataGridViewTextBoxColumn();
             dataLancamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -87,7 +89,7 @@
             dataGridViewProduto.Anchor = AnchorStyles.None;
             dataGridViewProduto.AutoGenerateColumns = false;
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { NomeCliente, valorDebitoDataGridViewTextBoxColumn, NomeFormaPagamento, dataLancamentoDataGridViewTextBoxColumn, dataVencimentoDataGridViewTextBoxColumn, dataPagamentoDataGridViewTextBoxColumn, jurosDataGridViewTextBoxColumn, descontoDataGridViewTextBoxColumn, acrescimoDataGridViewTextBoxColumn, Descricao });
+            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { NomeCliente, ValorAPagar, valorDebitoDataGridViewTextBoxColumn, NomeFormaPagamento, dataLancamentoDataGridViewTextBoxColumn, dataVencimentoDataGridViewTextBoxColumn, dataPagamentoDataGridViewTextBoxColumn, jurosDataGridViewTextBoxColumn, descontoDataGridViewTextBoxColumn, acrescimoDataGridViewTextBoxColumn, Descricao });
             dataGridViewProduto.DataSource = controleDebitoBindingSource;
             dataGridViewProduto.Location = new Point(11, 148);
             dataGridViewProduto.Name = "dataGridViewProduto";
@@ -245,11 +247,22 @@
             NomeCliente.ReadOnly = true;
             NomeCliente.Width = 125;
             // 
+            // ValorAPagar
+            // 
+            ValorAPagar.DataPropertyName = "ValorAPagar";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ValorAPagar.DefaultCellStyle = dataGridViewCellStyle2;
+            ValorAPagar.HeaderText = "ValorAPagar";
+            ValorAPagar.MinimumWidth = 6;
+            ValorAPagar.Name = "ValorAPagar";
+            ValorAPagar.ReadOnly = true;
+            ValorAPagar.Width = 125;
+            // 
             // valorDebitoDataGridViewTextBoxColumn
             // 
             valorDebitoDataGridViewTextBoxColumn.DataPropertyName = "ValorDebito";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            valorDebitoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            valorDebitoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             valorDebitoDataGridViewTextBoxColumn.HeaderText = "Valor do débito";
             valorDebitoDataGridViewTextBoxColumn.MinimumWidth = 6;
             valorDebitoDataGridViewTextBoxColumn.Name = "valorDebitoDataGridViewTextBoxColumn";
@@ -259,8 +272,8 @@
             // NomeFormaPagamento
             // 
             NomeFormaPagamento.DataPropertyName = "NomeFormaPagamento";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            NomeFormaPagamento.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            NomeFormaPagamento.DefaultCellStyle = dataGridViewCellStyle4;
             NomeFormaPagamento.HeaderText = "Forma de pagamento";
             NomeFormaPagamento.MinimumWidth = 6;
             NomeFormaPagamento.Name = "NomeFormaPagamento";
@@ -270,8 +283,8 @@
             // dataLancamentoDataGridViewTextBoxColumn
             // 
             dataLancamentoDataGridViewTextBoxColumn.DataPropertyName = "DataLancamento";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataLancamentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataLancamentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             dataLancamentoDataGridViewTextBoxColumn.HeaderText = "Data de lancamento";
             dataLancamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataLancamentoDataGridViewTextBoxColumn.Name = "dataLancamentoDataGridViewTextBoxColumn";
@@ -281,8 +294,8 @@
             // dataVencimentoDataGridViewTextBoxColumn
             // 
             dataVencimentoDataGridViewTextBoxColumn.DataPropertyName = "DataVencimento";
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataVencimentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataVencimentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             dataVencimentoDataGridViewTextBoxColumn.HeaderText = "Data de vencimento";
             dataVencimentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataVencimentoDataGridViewTextBoxColumn.Name = "dataVencimentoDataGridViewTextBoxColumn";
@@ -292,8 +305,8 @@
             // dataPagamentoDataGridViewTextBoxColumn
             // 
             dataPagamentoDataGridViewTextBoxColumn.DataPropertyName = "DataPagamento";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataPagamentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataPagamentoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             dataPagamentoDataGridViewTextBoxColumn.HeaderText = "Data de pagamento";
             dataPagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             dataPagamentoDataGridViewTextBoxColumn.Name = "dataPagamentoDataGridViewTextBoxColumn";
@@ -303,8 +316,8 @@
             // jurosDataGridViewTextBoxColumn
             // 
             jurosDataGridViewTextBoxColumn.DataPropertyName = "Juros";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
-            jurosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleRight;
+            jurosDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             jurosDataGridViewTextBoxColumn.HeaderText = "Juros";
             jurosDataGridViewTextBoxColumn.MinimumWidth = 6;
             jurosDataGridViewTextBoxColumn.Name = "jurosDataGridViewTextBoxColumn";
@@ -314,8 +327,8 @@
             // descontoDataGridViewTextBoxColumn
             // 
             descontoDataGridViewTextBoxColumn.DataPropertyName = "Desconto";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleRight;
-            descontoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
+            descontoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             descontoDataGridViewTextBoxColumn.HeaderText = "Desconto";
             descontoDataGridViewTextBoxColumn.MinimumWidth = 6;
             descontoDataGridViewTextBoxColumn.Name = "descontoDataGridViewTextBoxColumn";
@@ -325,8 +338,8 @@
             // acrescimoDataGridViewTextBoxColumn
             // 
             acrescimoDataGridViewTextBoxColumn.DataPropertyName = "Acrescimo";
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
-            acrescimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleRight;
+            acrescimoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             acrescimoDataGridViewTextBoxColumn.HeaderText = "Acréscimo";
             acrescimoDataGridViewTextBoxColumn.MinimumWidth = 6;
             acrescimoDataGridViewTextBoxColumn.Name = "acrescimoDataGridViewTextBoxColumn";
@@ -336,8 +349,8 @@
             // Descricao
             // 
             Descricao.DataPropertyName = "Descricao";
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            Descricao.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            Descricao.DefaultCellStyle = dataGridViewCellStyle11;
             Descricao.HeaderText = "Descricao";
             Descricao.MinimumWidth = 6;
             Descricao.Name = "Descricao";
@@ -401,6 +414,7 @@
         private DateTimePicker dateTimePicker2;
         private PictureBox pictureBox3;
         private DataGridViewTextBoxColumn NomeCliente;
+        private DataGridViewTextBoxColumn ValorAPagar;
         private DataGridViewTextBoxColumn valorDebitoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn NomeFormaPagamento;
         private DataGridViewTextBoxColumn dataLancamentoDataGridViewTextBoxColumn;
