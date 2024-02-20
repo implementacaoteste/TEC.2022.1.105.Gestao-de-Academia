@@ -213,6 +213,7 @@ namespace DAL
                         compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
                         compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
                         compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FornecedorId = Convert.ToInt32(rd["FornecedorId"]);
                         compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
                         compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                     }
@@ -305,6 +306,7 @@ namespace DAL
                         compraProduto.FreteTotal = Convert.ToDouble(rd["FreteTotal"]);
                         compraProduto.ValorTotal = Convert.ToDouble(rd["ValorTotal"]);
                         compraProduto.ValorTotalNota = Convert.ToDouble(rd["ValorTotalNota"]);
+                        compraProduto.FornecedorId = Convert.ToInt32(rd["FornecedorId"]);
                         compraProduto.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
                         compraProduto.Fornecedor = new FornecedorDAL().BuscarPorId((int)rd["FornecedorId"]);
                         compraProdutoList.Add(compraProduto);

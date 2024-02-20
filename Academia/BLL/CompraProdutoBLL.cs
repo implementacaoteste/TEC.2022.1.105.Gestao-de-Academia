@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Models;
+using NPOI.XSSF.UserModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace BLL
             return new CompraProdutoDAL().BuscarTodos();
         }
         public CompraProduto BuscarPorId(int _id)
-        {
+        {       
             return new CompraProdutoDAL().BuscarPorId(_id);
         }
         public CompraProduto BuscarPorIdFornecedor(int _IdFornecedor)

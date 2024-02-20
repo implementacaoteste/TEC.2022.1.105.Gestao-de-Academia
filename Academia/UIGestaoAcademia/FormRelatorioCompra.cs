@@ -25,16 +25,23 @@ namespace UIGestaoAcademia
                 switch (comboBoxBuscarPor.SelectedIndex)
                 {
                     case 0:
-                        compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
+                        compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarTodos();
                         break;
                     case 1:
+                        if (textBoxBuscar.Text == "")
+                            throw new Exception("Por favor, insira um id do fornecedor");
                         compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorIdFornecedor(Convert.ToInt32(textBoxBuscar.Text));
+
                         break;
                     case 2:
+                        if (textBoxBuscar.Text == "")
+                            MessageBox.Show("Por favor, insira uma data");
                         compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorDataCompra(Convert.ToDateTime(textBoxBuscar.Text));
                         break;
                     default:
-                        compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarTodos();
+                        if (textBoxBuscar.Text == "")
+                            MessageBox.Show("Por favor, insira um id");
+                            compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorId(Convert.ToInt32(textBoxBuscar.Text));
                         break;
                 }
             }
@@ -42,6 +49,13 @@ namespace UIGestaoAcademia
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void FormRelatorioCompra_Load(object sender, EventArgs e)
+        {
+            comboBoxBuscarPor.SelectedIndex = 0;
+            buttonBuscarCompras_Click(sender, e);
+
         }
     }
 }
