@@ -204,6 +204,8 @@
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
@@ -231,8 +233,8 @@
             // precoDataGridViewTextBoxColumn
             // 
             precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             precoDataGridViewTextBoxColumn.HeaderText = "Preco";
             precoDataGridViewTextBoxColumn.MinimumWidth = 6;
             precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
@@ -242,8 +244,8 @@
             // quantidadeEstoqueDataGridViewTextBoxColumn
             // 
             quantidadeEstoqueDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeEstoque";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            quantidadeEstoqueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            quantidadeEstoqueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             quantidadeEstoqueDataGridViewTextBoxColumn.HeaderText = "QuantidadeEstoque";
             quantidadeEstoqueDataGridViewTextBoxColumn.MinimumWidth = 6;
             quantidadeEstoqueDataGridViewTextBoxColumn.Name = "quantidadeEstoqueDataGridViewTextBoxColumn";
@@ -253,8 +255,6 @@
             // codigoDeBarrasDataGridViewTextBoxColumn
             // 
             codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
-            codigoDeBarrasDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
             codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
             codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";

@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridViewExercicio = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             exercicioBindingSource = new BindingSource(components);
             comboBoxBuscarPor = new ComboBox();
             textBoxBuscarPor = new TextBox();
@@ -42,6 +41,8 @@
             buttonExcluir = new Button();
             buttonCancelar = new Button();
             buttonSelecionar = new Button();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridViewExercicio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)exercicioBindingSource).BeginInit();
             SuspendLayout();
@@ -73,24 +74,6 @@
             dataGridViewExercicio.RowTemplate.Height = 29;
             dataGridViewExercicio.Size = new Size(805, 236);
             dataGridViewExercicio.TabIndex = 30;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            nomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // exercicioBindingSource
             // 
@@ -171,6 +154,26 @@
             buttonSelecionar.UseVisualStyleBackColor = true;
             buttonSelecionar.Click += buttonSelecionar_Click;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormBuscarExercicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -212,9 +215,9 @@
         private Button buttonAlterar;
         private Button buttonExcluir;
         private Button buttonCancelar;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private BindingSource exercicioBindingSource;
         private Button buttonSelecionar;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
     }
 }

@@ -32,6 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             label1 = new Label();
             textBoxBuscar = new TextBox();
             comboBoxBuscarPor = new ComboBox();
@@ -41,6 +43,8 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
+            compraProdutoBindingSource = new BindingSource(components);
+            buttonSelecionar = new Button();
             idDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             FornecedorId = new DataGridViewTextBoxColumn();
@@ -49,8 +53,6 @@
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             freteTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalNotaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            compraProdutoBindingSource = new BindingSource(components);
-            buttonSelecionar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).BeginInit();
             SuspendLayout();
@@ -143,9 +145,25 @@
             dataGridView1.TabIndex = 33;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
+            // compraProdutoBindingSource
+            // 
+            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
+            // 
+            // buttonSelecionar
+            // 
+            buttonSelecionar.Location = new Point(928, 849);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 34;
+            buttonSelecionar.Text = "Selecionar";
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
+            // 
             // idDataGridViewTextBoxColumn1
             // 
             idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            idDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
             idDataGridViewTextBoxColumn1.HeaderText = "Id";
             idDataGridViewTextBoxColumn1.MinimumWidth = 6;
             idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
@@ -164,6 +182,8 @@
             // FornecedorId
             // 
             FornecedorId.DataPropertyName = "FornecedorId";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            FornecedorId.DefaultCellStyle = dataGridViewCellStyle2;
             FornecedorId.HeaderText = "FornecedorId";
             FornecedorId.MinimumWidth = 6;
             FornecedorId.Name = "FornecedorId";
@@ -191,8 +211,8 @@
             // valorTotalDataGridViewTextBoxColumn
             // 
             valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
             valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
             valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
@@ -202,8 +222,8 @@
             // freteTotalDataGridViewTextBoxColumn
             // 
             freteTotalDataGridViewTextBoxColumn.DataPropertyName = "FreteTotal";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            freteTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            freteTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             freteTotalDataGridViewTextBoxColumn.HeaderText = "FreteTotal";
             freteTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
             freteTotalDataGridViewTextBoxColumn.Name = "freteTotalDataGridViewTextBoxColumn";
@@ -214,26 +234,12 @@
             // 
             valorTotalNotaDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             valorTotalNotaDataGridViewTextBoxColumn.DataPropertyName = "ValorTotalNota";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
-            valorTotalNotaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            valorTotalNotaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             valorTotalNotaDataGridViewTextBoxColumn.HeaderText = "ValorTotalNota";
             valorTotalNotaDataGridViewTextBoxColumn.MinimumWidth = 6;
             valorTotalNotaDataGridViewTextBoxColumn.Name = "valorTotalNotaDataGridViewTextBoxColumn";
             valorTotalNotaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // compraProdutoBindingSource
-            // 
-            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
-            // 
-            // buttonSelecionar
-            // 
-            buttonSelecionar.Location = new Point(928, 849);
-            buttonSelecionar.Name = "buttonSelecionar";
-            buttonSelecionar.Size = new Size(94, 29);
-            buttonSelecionar.TabIndex = 34;
-            buttonSelecionar.Text = "Selecionar";
-            buttonSelecionar.UseVisualStyleBackColor = true;
-            buttonSelecionar.Click += buttonSelecionar_Click;
             // 
             // FormRelatorioCompra
             // 
@@ -272,6 +278,7 @@
         private DataGridViewTextBoxColumn dataCompraDataGridViewTextBoxColumn;
         private DataGridView dataGridView1;
         private BindingSource compraProdutoBindingSource;
+        private Button buttonSelecionar;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataCompraDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn FornecedorId;
@@ -280,6 +287,5 @@
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn freteTotalDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalNotaDataGridViewTextBoxColumn;
-        private Button buttonSelecionar;
     }
 }

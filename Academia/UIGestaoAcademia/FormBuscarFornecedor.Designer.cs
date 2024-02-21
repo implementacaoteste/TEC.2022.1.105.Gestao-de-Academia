@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             buttonSelecionar = new Button();
             labelBuscarPor = new Label();
             labelBuscarFornecedor = new Label();
@@ -41,6 +42,10 @@
             buttonBuscar = new Button();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewProduto = new DataGridView();
+            BindingSourceBuscarFornecedor = new BindingSource(components);
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            comboBoxBuscarPor = new ComboBox();
+            pictureBox1 = new PictureBox();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cpfCnpjDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -55,10 +60,6 @@
             paisDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             cidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             estadoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            BindingSourceBuscarFornecedor = new BindingSource(components);
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            comboBoxBuscarPor = new ComboBox();
-            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceBuscarFornecedor).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -193,9 +194,40 @@
             dataGridViewProduto.TabIndex = 28;
             dataGridViewProduto.DoubleClick += buttonSelecionar_Click;
             // 
+            // BindingSourceBuscarFornecedor
+            // 
+            BindingSourceBuscarFornecedor.DataSource = typeof(Models.Fornecedor);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // comboBoxBuscarPor
+            // 
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Nome", "CPF/CNPJ", "Todos" });
+            comboBoxBuscarPor.Location = new Point(11, 128);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(143, 28);
+            comboBoxBuscarPor.TabIndex = 32;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1086, 562);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
@@ -319,35 +351,6 @@
             estadoDataGridViewTextBoxColumn.ReadOnly = true;
             estadoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // BindingSourceBuscarFornecedor
-            // 
-            BindingSourceBuscarFornecedor.DataSource = typeof(Models.Fornecedor);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // comboBoxBuscarPor
-            // 
-            comboBoxBuscarPor.FormattingEnabled = true;
-            comboBoxBuscarPor.Items.AddRange(new object[] { "Nome", "CPF/CNPJ", "Todos" });
-            comboBoxBuscarPor.Location = new Point(11, 128);
-            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(143, 28);
-            comboBoxBuscarPor.TabIndex = 32;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1086, 562);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 33;
-            pictureBox1.TabStop = false;
-            // 
             // FormBuscarFornecedor
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -398,6 +401,8 @@
         private DataGridView dataGridViewProduto;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private ComboBox comboBoxBuscarPor;
+        private BindingSource BindingSourceBuscarFornecedor;
+        private PictureBox pictureBox1;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cpfCnpjDataGridViewTextBoxColumn;
@@ -412,7 +417,5 @@
         private DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
-        private BindingSource BindingSourceBuscarFornecedor;
-        private PictureBox pictureBox1;
     }
 }

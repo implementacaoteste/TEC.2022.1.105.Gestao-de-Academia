@@ -30,13 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            itensCompraBindingSource = new BindingSource(components);
             compraProdutoIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             marcaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorUnitarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            itensCompraBindingSource = new BindingSource(components);
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
@@ -57,10 +57,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(857, 440);
             dataGridView1.TabIndex = 34;
-            // 
-            // itensCompraBindingSource
-            // 
-            itensCompraBindingSource.DataSource = typeof(Models.ItensCompra);
             // 
             // compraProdutoIdDataGridViewTextBoxColumn
             // 
@@ -116,6 +112,10 @@
             valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // itensCompraBindingSource
+            // 
+            itensCompraBindingSource.DataSource = typeof(Models.ItensCompra);
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -134,8 +134,13 @@
             ClientSize = new Size(893, 641);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormItensCompra";
-            Text = "FormItensCompra";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).EndInit();
             ResumeLayout(false);
