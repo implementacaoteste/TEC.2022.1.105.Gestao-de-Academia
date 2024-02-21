@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             comboBoxBuscarPor = new ComboBox();
             dataGridViewProduto = new DataGridView();
+            bindingSourceProduto = new BindingSource(components);
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
@@ -43,13 +47,12 @@
             buttonAlterar = new Button();
             buttonBuscar = new Button();
             textBoxBuscarPor = new TextBox();
-            bindingSourceProduto = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            marcaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            precoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             quantidadeEstoqueDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             codigoDeBarrasDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            precoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            marcaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourceProduto).BeginInit();
             SuspendLayout();
@@ -58,10 +61,9 @@
             // 
             comboBoxBuscarPor.FormattingEnabled = true;
             comboBoxBuscarPor.Items.AddRange(new object[] { "Nome", "Codigo de barras", "Todos" });
-            comboBoxBuscarPor.Location = new Point(9, 68);
-            comboBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            comboBoxBuscarPor.Location = new Point(10, 91);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(126, 23);
+            comboBoxBuscarPor.Size = new Size(143, 28);
             comboBoxBuscarPor.TabIndex = 0;
             // 
             // dataGridViewProduto
@@ -71,17 +73,20 @@
             dataGridViewProduto.AllowUserToOrderColumns = true;
             dataGridViewProduto.AutoGenerateColumns = false;
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, precoDataGridViewTextBoxColumn, codigoDeBarrasDataGridViewTextBoxColumn, quantidadeEstoqueDataGridViewTextBoxColumn });
+            dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, precoDataGridViewTextBoxColumn, quantidadeEstoqueDataGridViewTextBoxColumn, codigoDeBarrasDataGridViewTextBoxColumn });
             dataGridViewProduto.DataSource = bindingSourceProduto;
-            dataGridViewProduto.Location = new Point(10, 92);
-            dataGridViewProduto.Margin = new Padding(3, 2, 3, 2);
+            dataGridViewProduto.Location = new Point(11, 123);
             dataGridViewProduto.Name = "dataGridViewProduto";
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
-            dataGridViewProduto.Size = new Size(935, 254);
+            dataGridViewProduto.Size = new Size(1069, 339);
             dataGridViewProduto.TabIndex = 17;
             dataGridViewProduto.DoubleClick += buttonSelecionar_Click;
+            // 
+            // bindingSourceProduto
+            // 
+            bindingSourceProduto.DataSource = typeof(Models.Produto);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -104,10 +109,9 @@
             // buttonSelecionar
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelecionar.Location = new Point(775, 351);
-            buttonSelecionar.Margin = new Padding(3, 2, 3, 2);
+            buttonSelecionar.Location = new Point(886, 468);
             buttonSelecionar.Name = "buttonSelecionar";
-            buttonSelecionar.Size = new Size(82, 22);
+            buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 6;
             buttonSelecionar.Text = "Se&lecionar";
             buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
@@ -117,9 +121,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(10, 50);
+            label2.Location = new Point(11, 67);
             label2.Name = "label2";
-            label2.Size = new Size(63, 15);
+            label2.Size = new Size(79, 20);
             label2.TabIndex = 20;
             label2.Text = "Buscar por";
             // 
@@ -129,7 +133,7 @@
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(956, 50);
+            label1.Size = new Size(1093, 67);
             label1.TabIndex = 11;
             label1.Text = "Buscar produto";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -137,10 +141,9 @@
             // buttonCancelar
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(863, 351);
-            buttonCancelar.Margin = new Padding(3, 2, 3, 2);
+            buttonCancelar.Location = new Point(986, 468);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(82, 22);
+            buttonCancelar.Size = new Size(94, 29);
             buttonCancelar.TabIndex = 7;
             buttonCancelar.Text = "&Cancelar";
             buttonCancelar.TextAlign = ContentAlignment.TopCenter;
@@ -149,10 +152,9 @@
             // buttonExcluir
             // 
             buttonExcluir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonExcluir.Location = new Point(651, 66);
-            buttonExcluir.Margin = new Padding(3, 2, 3, 2);
+            buttonExcluir.Location = new Point(744, 88);
             buttonExcluir.Name = "buttonExcluir";
-            buttonExcluir.Size = new Size(82, 22);
+            buttonExcluir.Size = new Size(94, 29);
             buttonExcluir.TabIndex = 5;
             buttonExcluir.Text = "E&xcluir";
             buttonExcluir.UseVisualStyleBackColor = true;
@@ -161,10 +163,9 @@
             // buttonInserir
             // 
             buttonInserir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonInserir.Location = new Point(563, 66);
-            buttonInserir.Margin = new Padding(3, 2, 3, 2);
+            buttonInserir.Location = new Point(643, 88);
             buttonInserir.Name = "buttonInserir";
-            buttonInserir.Size = new Size(82, 22);
+            buttonInserir.Size = new Size(94, 29);
             buttonInserir.TabIndex = 4;
             buttonInserir.Text = "&Inserir";
             buttonInserir.UseVisualStyleBackColor = true;
@@ -173,10 +174,9 @@
             // buttonAlterar
             // 
             buttonAlterar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonAlterar.Location = new Point(476, 67);
-            buttonAlterar.Margin = new Padding(3, 2, 3, 2);
+            buttonAlterar.Location = new Point(544, 89);
             buttonAlterar.Name = "buttonAlterar";
-            buttonAlterar.Size = new Size(82, 22);
+            buttonAlterar.Size = new Size(94, 29);
             buttonAlterar.TabIndex = 3;
             buttonAlterar.Text = "&Alterar";
             buttonAlterar.UseVisualStyleBackColor = true;
@@ -185,10 +185,9 @@
             // buttonBuscar
             // 
             buttonBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            buttonBuscar.Location = new Point(388, 67);
-            buttonBuscar.Margin = new Padding(3, 2, 3, 2);
+            buttonBuscar.Location = new Point(443, 89);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(82, 22);
+            buttonBuscar.Size = new Size(94, 29);
             buttonBuscar.TabIndex = 2;
             buttonBuscar.Text = "&Buscar";
             buttonBuscar.UseVisualStyleBackColor = true;
@@ -197,60 +196,10 @@
             // textBoxBuscarPor
             // 
             textBoxBuscarPor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxBuscarPor.Location = new Point(140, 68);
-            textBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
+            textBoxBuscarPor.Location = new Point(160, 91);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(243, 23);
+            textBoxBuscarPor.Size = new Size(277, 27);
             textBoxBuscarPor.TabIndex = 1;
-            // 
-            // bindingSourceProduto
-            // 
-            bindingSourceProduto.DataSource = typeof(Models.Produto);
-            // 
-            // quantidadeEstoqueDataGridViewTextBoxColumn
-            // 
-            quantidadeEstoqueDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeEstoque";
-            quantidadeEstoqueDataGridViewTextBoxColumn.HeaderText = "QuantidadeEstoque";
-            quantidadeEstoqueDataGridViewTextBoxColumn.MinimumWidth = 6;
-            quantidadeEstoqueDataGridViewTextBoxColumn.Name = "quantidadeEstoqueDataGridViewTextBoxColumn";
-            quantidadeEstoqueDataGridViewTextBoxColumn.ReadOnly = true;
-            quantidadeEstoqueDataGridViewTextBoxColumn.Width = 160;
-            // 
-            // codigoDeBarrasDataGridViewTextBoxColumn
-            // 
-            codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
-            codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
-            codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
-            codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
-            codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
-            codigoDeBarrasDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // precoDataGridViewTextBoxColumn
-            // 
-            precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            precoDataGridViewTextBoxColumn.HeaderText = "Preco";
-            precoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
-            precoDataGridViewTextBoxColumn.ReadOnly = true;
-            precoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            marcaDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            nomeDataGridViewTextBoxColumn.Width = 300;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -261,12 +210,63 @@
             idDataGridViewTextBoxColumn.ReadOnly = true;
             idDataGridViewTextBoxColumn.Width = 80;
             // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            marcaDataGridViewTextBoxColumn.ReadOnly = true;
+            marcaDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // precoDataGridViewTextBoxColumn
+            // 
+            precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            precoDataGridViewTextBoxColumn.HeaderText = "Preco";
+            precoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
+            precoDataGridViewTextBoxColumn.ReadOnly = true;
+            precoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // quantidadeEstoqueDataGridViewTextBoxColumn
+            // 
+            quantidadeEstoqueDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeEstoque";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            quantidadeEstoqueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            quantidadeEstoqueDataGridViewTextBoxColumn.HeaderText = "QuantidadeEstoque";
+            quantidadeEstoqueDataGridViewTextBoxColumn.MinimumWidth = 6;
+            quantidadeEstoqueDataGridViewTextBoxColumn.Name = "quantidadeEstoqueDataGridViewTextBoxColumn";
+            quantidadeEstoqueDataGridViewTextBoxColumn.ReadOnly = true;
+            quantidadeEstoqueDataGridViewTextBoxColumn.Width = 160;
+            // 
+            // codigoDeBarrasDataGridViewTextBoxColumn
+            // 
+            codigoDeBarrasDataGridViewTextBoxColumn.DataPropertyName = "CodigoDeBarras";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            codigoDeBarrasDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            codigoDeBarrasDataGridViewTextBoxColumn.HeaderText = "CodigoDeBarras";
+            codigoDeBarrasDataGridViewTextBoxColumn.MinimumWidth = 6;
+            codigoDeBarrasDataGridViewTextBoxColumn.Name = "codigoDeBarrasDataGridViewTextBoxColumn";
+            codigoDeBarrasDataGridViewTextBoxColumn.ReadOnly = true;
+            codigoDeBarrasDataGridViewTextBoxColumn.Width = 150;
+            // 
             // FormBuscarProduto
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(956, 382);
+            ClientSize = new Size(1093, 509);
             Controls.Add(comboBoxBuscarPor);
             Controls.Add(dataGridViewProduto);
             Controls.Add(buttonSelecionar);
@@ -280,7 +280,6 @@
             Controls.Add(textBoxBuscarPor);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormBuscarProduto";
@@ -309,12 +308,12 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private BindingSource bindingSourceProduto;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn quantidadeEstoqueDataGridViewTextBoxColumn;
-        private BindingSource bindingSourceProduto;
+        private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
     }
 }
