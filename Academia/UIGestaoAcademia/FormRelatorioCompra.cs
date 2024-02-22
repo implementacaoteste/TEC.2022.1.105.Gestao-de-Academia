@@ -32,7 +32,6 @@ namespace UIGestaoAcademia
                         if (textBoxBuscar.Text == "")
                             throw new Exception("Por favor, insira um id do fornecedor");
                         compraProdutoBindingSource.DataSource = new CompraProdutoBLL().BuscarPorIdFornecedor(Convert.ToInt32(textBoxBuscar.Text));
-
                         break;
                     case 2:
                         if (textBoxBuscar.Text == "")
