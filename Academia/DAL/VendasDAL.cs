@@ -9,6 +9,7 @@ namespace DAL
     {
         public void Inserir(Venda _venda, SqlTransaction _transaction = null)
         {
+            object clienteId = (_venda.ClienteId != null) ? (object)_venda.ClienteId : DBNull.Value;
             SqlTransaction transaction = _transaction;
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
@@ -22,7 +23,9 @@ namespace DAL
                         cmd.CommandType = System.Data.CommandType.Text;
 
                         cmd.Parameters.AddWithValue("@FormaPagamentoId",_venda.FormaPagamentoId);
-                        cmd.Parameters.AddWithValue("@ClienteId", _venda.ClienteId);
+
+
+                        cmd.Parameters.Add("@ClienteId", SqlDbType.Int).Value = _venda.ClienteId;
                         cmd.Parameters.Add("@DataVenda", SqlDbType.DateTime).Value = _venda.DataVenda;
                         cmd.Parameters.Add("@TotalVenda", SqlDbType.Decimal).Value = _venda.TotalVenda;
                         cmd.Parameters.Add("@Desconto", SqlDbType.Float).Value = _venda.Desconto;
