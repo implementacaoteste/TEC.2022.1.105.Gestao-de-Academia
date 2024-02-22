@@ -73,7 +73,7 @@
             // 
             // buttonBuscarProduto
             // 
-            buttonBuscarProduto.Location = new Point(927, 293);
+            buttonBuscarProduto.Location = new Point(966, 293);
             buttonBuscarProduto.Name = "buttonBuscarProduto";
             buttonBuscarProduto.Size = new Size(29, 29);
             buttonBuscarProduto.TabIndex = 51;
@@ -95,7 +95,7 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(948, 333);
+            dataGridView1.Size = new Size(987, 333);
             dataGridView1.TabIndex = 50;
             // 
             // Nome
@@ -158,9 +158,9 @@
             labelQuantidade.BackColor = Color.Transparent;
             labelQuantidade.Location = new Point(694, 264);
             labelQuantidade.Name = "labelQuantidade";
-            labelQuantidade.Size = new Size(87, 20);
+            labelQuantidade.Size = new Size(103, 20);
             labelQuantidade.TabIndex = 49;
-            labelQuantidade.Text = "Quantidade";
+            labelQuantidade.Text = "QUANTIDADE";
             // 
             // labelCodigoDeBarras
             // 
@@ -168,30 +168,30 @@
             labelCodigoDeBarras.BackColor = Color.Transparent;
             labelCodigoDeBarras.Location = new Point(8, 264);
             labelCodigoDeBarras.Name = "labelCodigoDeBarras";
-            labelCodigoDeBarras.Size = new Size(124, 20);
+            labelCodigoDeBarras.Size = new Size(147, 20);
             labelCodigoDeBarras.TabIndex = 48;
-            labelCodigoDeBarras.Text = "Código de barras";
+            labelCodigoDeBarras.Text = "CÓDIGO DE BARRAS";
             // 
             // textBoxQuantidade
             // 
             textBoxQuantidade.DataBindings.Add(new Binding("Text", itensCompraBindingSource, "Quantidade", true));
             textBoxQuantidade.Location = new Point(694, 294);
             textBoxQuantidade.Name = "textBoxQuantidade";
-            textBoxQuantidade.Size = new Size(98, 27);
+            textBoxQuantidade.Size = new Size(106, 27);
             textBoxQuantidade.TabIndex = 4;
             textBoxQuantidade.TextAlign = HorizontalAlignment.Right;
             textBoxQuantidade.KeyDown += textBoxQuantidade_KeyDown;
             // 
             // textBoxBuscarFormaPagamento
             // 
-            textBoxBuscarFormaPagamento.Location = new Point(194, 225);
+            textBoxBuscarFormaPagamento.Location = new Point(196, 206);
             textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
             textBoxBuscarFormaPagamento.Size = new Size(117, 27);
             textBoxBuscarFormaPagamento.TabIndex = 2;
             // 
             // buttonFormaDePagamento
             // 
-            buttonFormaDePagamento.Location = new Point(317, 225);
+            buttonFormaDePagamento.Location = new Point(319, 206);
             buttonFormaDePagamento.Name = "buttonFormaDePagamento";
             buttonFormaDePagamento.Size = new Size(33, 29);
             buttonFormaDePagamento.TabIndex = 2;
@@ -201,14 +201,14 @@
             // 
             // textBoxBuscarFornecedor
             // 
-            textBoxBuscarFornecedor.Location = new Point(117, 192);
+            textBoxBuscarFornecedor.Location = new Point(119, 173);
             textBoxBuscarFornecedor.Name = "textBoxBuscarFornecedor";
             textBoxBuscarFornecedor.Size = new Size(194, 27);
             textBoxBuscarFornecedor.TabIndex = 1;
             // 
             // buttonBuscarFornecedor
             // 
-            buttonBuscarFornecedor.Location = new Point(317, 191);
+            buttonBuscarFornecedor.Location = new Point(319, 172);
             buttonBuscarFornecedor.Name = "buttonBuscarFornecedor";
             buttonBuscarFornecedor.Size = new Size(33, 29);
             buttonBuscarFornecedor.TabIndex = 1;
@@ -228,7 +228,7 @@
             // 
             labelFormaPagamento.AutoSize = true;
             labelFormaPagamento.BackColor = Color.Transparent;
-            labelFormaPagamento.Location = new Point(8, 228);
+            labelFormaPagamento.Location = new Point(10, 209);
             labelFormaPagamento.Name = "labelFormaPagamento";
             labelFormaPagamento.Size = new Size(173, 20);
             labelFormaPagamento.TabIndex = 35;
@@ -241,7 +241,7 @@
             labelCompraDeProduto.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelCompraDeProduto.Location = new Point(0, 0);
             labelCompraDeProduto.Name = "labelCompraDeProduto";
-            labelCompraDeProduto.Size = new Size(988, 68);
+            labelCompraDeProduto.Size = new Size(1007, 68);
             labelCompraDeProduto.TabIndex = 27;
             labelCompraDeProduto.Text = "Compra de produto";
             labelCompraDeProduto.TextAlign = ContentAlignment.TopCenter;
@@ -250,7 +250,7 @@
             // 
             labelFornecedor.AutoSize = true;
             labelFornecedor.BackColor = Color.Transparent;
-            labelFornecedor.Location = new Point(8, 197);
+            labelFornecedor.Location = new Point(10, 178);
             labelFornecedor.Name = "labelFornecedor";
             labelFornecedor.Size = new Size(103, 20);
             labelFornecedor.TabIndex = 29;
@@ -261,7 +261,7 @@
             labelValorTotal.AutoSize = true;
             labelValorTotal.BackColor = Color.Transparent;
             labelValorTotal.Font = new Font("Segoe UI", 20.2F, FontStyle.Regular, GraphicsUnit.Point);
-            labelValorTotal.Location = new Point(647, 100);
+            labelValorTotal.Location = new Point(647, 87);
             labelValorTotal.Name = "labelValorTotal";
             labelValorTotal.Size = new Size(0, 46);
             labelValorTotal.TabIndex = 53;
@@ -270,7 +270,7 @@
             // 
             labelValorTotalDosProdutos.AutoSize = true;
             labelValorTotalDosProdutos.BackColor = Color.Transparent;
-            labelValorTotalDosProdutos.Location = new Point(476, 126);
+            labelValorTotalDosProdutos.Location = new Point(476, 113);
             labelValorTotalDosProdutos.Name = "labelValorTotalDosProdutos";
             labelValorTotalDosProdutos.Size = new Size(165, 20);
             labelValorTotalDosProdutos.TabIndex = 52;
@@ -279,7 +279,7 @@
             // textBoxFrete
             // 
             textBoxFrete.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "FreteTotal", true));
-            textBoxFrete.Location = new Point(395, 123);
+            textBoxFrete.Location = new Point(395, 110);
             textBoxFrete.Name = "textBoxFrete";
             textBoxFrete.Size = new Size(75, 27);
             textBoxFrete.TabIndex = 6;
@@ -290,7 +290,7 @@
             // 
             labelValorDoFrete.AutoSize = true;
             labelValorDoFrete.BackColor = Color.Transparent;
-            labelValorDoFrete.Location = new Point(266, 127);
+            labelValorDoFrete.Location = new Point(266, 114);
             labelValorDoFrete.Name = "labelValorDoFrete";
             labelValorDoFrete.Size = new Size(123, 20);
             labelValorDoFrete.TabIndex = 55;
@@ -299,9 +299,9 @@
             // textBoxValorProduto
             // 
             textBoxValorProduto.DataBindings.Add(new Binding("Text", itensCompraBindingSource, "ValorUnitario", true));
-            textBoxValorProduto.Location = new Point(798, 295);
+            textBoxValorProduto.Location = new Point(806, 293);
             textBoxValorProduto.Name = "textBoxValorProduto";
-            textBoxValorProduto.Size = new Size(123, 27);
+            textBoxValorProduto.Size = new Size(155, 27);
             textBoxValorProduto.TabIndex = 5;
             textBoxValorProduto.TextAlign = HorizontalAlignment.Right;
             textBoxValorProduto.KeyDown += textBox2_KeyDown;
@@ -310,11 +310,11 @@
             // 
             labelValorDoProduto.AutoSize = true;
             labelValorDoProduto.BackColor = Color.Transparent;
-            labelValorDoProduto.Location = new Point(798, 264);
+            labelValorDoProduto.Location = new Point(806, 264);
             labelValorDoProduto.Name = "labelValorDoProduto";
-            labelValorDoProduto.Size = new Size(123, 20);
+            labelValorDoProduto.Size = new Size(150, 20);
             labelValorDoProduto.TabIndex = 57;
-            labelValorDoProduto.Text = "Valor do produto";
+            labelValorDoProduto.Text = "VALOR DO PRODUTO";
             // 
             // textBoxNomeProduto
             // 
@@ -328,7 +328,7 @@
             // textBoxValorTotal
             // 
             textBoxValorTotal.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotal", true));
-            textBoxValorTotal.Location = new Point(177, 124);
+            textBoxValorTotal.Location = new Point(177, 111);
             textBoxValorTotal.Name = "textBoxValorTotal";
             textBoxValorTotal.Size = new Size(86, 27);
             textBoxValorTotal.TabIndex = 0;
@@ -338,7 +338,7 @@
             // 
             labelValorDaNota.AutoSize = true;
             labelValorDaNota.BackColor = Color.Transparent;
-            labelValorDaNota.Location = new Point(8, 127);
+            labelValorDaNota.Location = new Point(8, 114);
             labelValorDaNota.Name = "labelValorDaNota";
             labelValorDaNota.Size = new Size(170, 20);
             labelValorDaNota.TabIndex = 59;
@@ -346,7 +346,7 @@
             // 
             // FinalizarCompra
             // 
-            FinalizarCompra.Location = new Point(825, 665);
+            FinalizarCompra.Location = new Point(864, 665);
             FinalizarCompra.Name = "FinalizarCompra";
             FinalizarCompra.Size = new Size(131, 29);
             FinalizarCompra.TabIndex = 62;
@@ -358,7 +358,7 @@
             // 
             labelValorTotalDaNota.AutoSize = true;
             labelValorTotalDaNota.BackColor = Color.Transparent;
-            labelValorTotalDaNota.Location = new Point(356, 195);
+            labelValorTotalDaNota.Location = new Point(358, 176);
             labelValorTotalDaNota.Name = "labelValorTotalDaNota";
             labelValorTotalDaNota.Size = new Size(211, 20);
             labelValorTotalDaNota.TabIndex = 63;
@@ -367,7 +367,7 @@
             // textBoxValorTotalNota
             // 
             textBoxValorTotalNota.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "ValorTotalNota", true));
-            textBoxValorTotalNota.Location = new Point(571, 190);
+            textBoxValorTotalNota.Location = new Point(573, 171);
             textBoxValorTotalNota.Name = "textBoxValorTotalNota";
             textBoxValorTotalNota.Size = new Size(117, 27);
             textBoxValorTotalNota.TabIndex = 64;
@@ -378,14 +378,14 @@
             pictureBoxCompra.Dock = DockStyle.Fill;
             pictureBoxCompra.Location = new Point(0, 0);
             pictureBoxCompra.Name = "pictureBoxCompra";
-            pictureBoxCompra.Size = new Size(988, 706);
+            pictureBoxCompra.Size = new Size(1007, 706);
             pictureBoxCompra.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCompra.TabIndex = 65;
             pictureBoxCompra.TabStop = false;
             // 
             // buttonExcluir
             // 
-            buttonExcluir.Location = new Point(682, 665);
+            buttonExcluir.Location = new Point(721, 665);
             buttonExcluir.Name = "buttonExcluir";
             buttonExcluir.Size = new Size(137, 28);
             buttonExcluir.TabIndex = 66;
@@ -399,7 +399,7 @@
             calendario1.CustomFormat = " ";
             calendario1.DataBindings.Add(new Binding("Value", BindingSourceCompraProduto, "DataCompra", true));
             calendario1.Format = DateTimePickerFormat.Custom;
-            calendario1.Location = new Point(835, 190);
+            calendario1.Location = new Point(837, 171);
             calendario1.Name = "calendario1";
             calendario1.ShowCheckBox = true;
             calendario1.Size = new Size(141, 27);
@@ -409,7 +409,7 @@
             // 
             DataCompra.AutoSize = true;
             DataCompra.BackColor = Color.Transparent;
-            DataCompra.Location = new Point(694, 195);
+            DataCompra.Location = new Point(696, 176);
             DataCompra.Name = "DataCompra";
             DataCompra.Size = new Size(135, 20);
             DataCompra.TabIndex = 71;
@@ -419,7 +419,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(988, 706);
+            ClientSize = new Size(1007, 706);
             Controls.Add(DataCompra);
             Controls.Add(calendario1);
             Controls.Add(buttonExcluir);
