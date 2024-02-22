@@ -259,7 +259,7 @@
             // 
             // buttonSelecionar
             // 
-            buttonSelecionar.Location = new Point(1589, 561);
+            buttonSelecionar.Location = new Point(1589, 550);
             buttonSelecionar.Margin = new Padding(3, 4, 3, 4);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(91, 29);
@@ -271,7 +271,7 @@
             // buttonCancelar
             // 
             buttonCancelar.DialogResult = DialogResult.Cancel;
-            buttonCancelar.Location = new Point(1686, 561);
+            buttonCancelar.Location = new Point(1686, 550);
             buttonCancelar.Margin = new Padding(3, 4, 3, 4);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(75, 29);

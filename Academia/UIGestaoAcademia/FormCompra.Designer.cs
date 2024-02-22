@@ -382,7 +382,6 @@
             pictureBoxCompra.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCompra.TabIndex = 65;
             pictureBoxCompra.TabStop = false;
-            pictureBoxCompra.Click += pictureBoxCompra_Click;
             // 
             // buttonExcluir
             // 

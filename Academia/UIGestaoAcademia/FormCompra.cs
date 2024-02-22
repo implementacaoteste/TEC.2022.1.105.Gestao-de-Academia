@@ -204,10 +204,5 @@ namespace UIGestaoAcademia
             MessageBox.Show("Item excluido com sucesso!");
             textBoxValorTotalNota.Clear();
         }
-
-        private void pictureBoxCompra_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
