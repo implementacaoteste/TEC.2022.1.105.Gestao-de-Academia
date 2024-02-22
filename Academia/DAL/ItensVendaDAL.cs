@@ -49,13 +49,49 @@ namespace DAL
             }
 
         }
-        public void Alterar(ItensVenda _itensVenda)
+        public List<ItensVenda> BuscarPorIdVenda(int _vendaId)
         {
+            List<ItensVenda> itensVendaList = new List<ItensVenda>();
+            ItensVenda itensVenda;
 
-        }
-        public void Excluir(int _id)
-        {
+            SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
 
+            try
+            {
+                SqlCommand cmd = cn.CreateCommand();
+
+
+                cmd.CommandText = " SELECT VendaId, ProdutoId,Quantidade, PrecoUnitario,PrecoTotal FROM ItensVenda WHERE VendaId = @VendaId";
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("VendaId", _vendaId);
+                cn.Open();
+
+                using (SqlDataReader rd = cmd.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        itensVenda = new ItensVenda();
+                        itensVenda.VendaId = (int)rd["VendaId"];
+                        itensVenda.ProdutoId = (int)rd["ProdutoId"];
+                        itensVenda.Quantidade = (int)rd["Quantidade"];
+                        itensVenda.PrecoUnitario = (double)rd["PrecoUnitario"];
+                        itensVenda.PrecoTotal = (double)rd["PrecoTotal"];
+                        itensVenda.Produto = new ProdutoDAL().BuscarPorId((int)rd["ProdutoId"]);
+                        itensVendaList.Add(itensVenda);
+                    }
+                }
+                return itensVendaList;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocorreu um erro ao tentar buscar o produto no banco de dados.", ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
         }
     }
 }

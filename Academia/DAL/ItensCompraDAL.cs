@@ -172,7 +172,6 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
         private static void PreencherObjeto(ItensCompra itensCompra, SqlDataReader rd)
         {
@@ -255,7 +254,6 @@ namespace DAL
                     }
                 }
                 return itensCompraList;
-
             }
             catch (Exception ex)
             {
@@ -265,7 +263,6 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
     }
 }

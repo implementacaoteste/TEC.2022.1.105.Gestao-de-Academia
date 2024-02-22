@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +50,24 @@ namespace UIGestaoAcademia
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            buttonSelecionar_Click(sender, e);
+        }
+
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            if (vendaBindingSource.Count == 0)
+            {
+                return;
+            }
+            int id = ((Venda)vendaBindingSource.Current).Id;
+            using (FormItensVenda frm = new FormItensVenda(id))
+            {
+                frm.ShowDialog();
             }
         }
     }

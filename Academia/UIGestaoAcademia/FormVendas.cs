@@ -1,12 +1,7 @@
 ﻿using BLL;
 using DAL;
 using Models;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing.Text;
-using System.Security.Principal;
-using System;
-using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
@@ -66,13 +61,13 @@ namespace UIGestaoAcademia
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
             {
 
-                    frm.ShowDialog();
-                    if (frm.FormaPagamento != null)
-                    {
-                        ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
-                        ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
-                        textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
-                    }
+                frm.ShowDialog();
+                if (frm.FormaPagamento != null)
+                {
+                    ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
+                    ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                    textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
+                }
             }
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
@@ -88,7 +83,7 @@ namespace UIGestaoAcademia
                 ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
 
                 itensVendaListBindingSource.EndEdit();
-
+                ((Venda)vendaBindingSource.Current).ItensVendaList.Add((ItensVenda)itensVendaListBindingSource.Current);
                 dataGridView1.DataSource = itensVendaListBindingSource;
                 dataGridView1.Refresh();
                 textBoxProduto.Clear();
@@ -126,16 +121,24 @@ namespace UIGestaoAcademia
                         Produto produto = new ProdutoBLL().BuscarPorCodigoDeBarras(frm.Produto.CodigoDeBarras);
 
                         // Adiciona o produto à lista de itens da venda
-                        ItensVenda novoItem = new ItensVenda
-                        {
-                            ProdutoId = produto.Id,
-                            Produto = produto,
-                            Quantidade = 1, // Ou qualquer valor padrão desejado
-                            PrecoUnitario = produto.Preco,
-                            PrecoTotal = produto.Preco
-                        };
+                        itensVendaListBindingSource.AddNew();
+                        ((ItensVenda)itensVendaListBindingSource.Current).ProdutoId = produto.Id;
+                        ((ItensVenda)itensVendaListBindingSource.Current).Produto = produto;
+                        ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = 1;
+                        ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco;
+                        ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
+                        itensVendaListBindingSource.EndEdit();
+                        ((Venda)vendaBindingSource.Current).ItensVendaList.Add((ItensVenda)itensVendaListBindingSource.Current);
+                        //ItensVenda novoItem = new ItensVenda
+                        //{
+                        //    ProdutoId = produto.Id,
+                        //    Produto = produto,
+                        //    Quantidade = 1, // Ou qualquer valor padrão desejado
+                        //    PrecoUnitario = produto.Preco,
+                        //    PrecoTotal = produto.Preco
+                        //};
 
-                        itensVendaListBindingSource.Add(novoItem);
+                        //itensVendaListBindingSource.Add(novoItem);
 
                         // Atualiza o valor total
                         AtualizarValorTotal();
@@ -147,8 +150,30 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonExcluir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            // Obtém o item atual da fonte de dados
+            ItensVenda itemExcluido = (ItensVenda)itensVendaListBindingSource.Current;
+
+            // Obtém o preço total do item a ser excluído
+            decimal precoTotalItem = (decimal)itemExcluido.PrecoTotal;
+
+            // Subtrai o preço total do item excluído do valor total
+            decimal valorTotalAtual = decimal.Parse(labelValorTotal.Text, System.Globalization.NumberStyles.Currency);
+            valorTotalAtual -= precoTotalItem;
+
+            // Define o novo valor total na label
+            labelValorTotal.Text = valorTotalAtual.ToString("C");
+
+            // Remove o item atual da fonte de dados
+            itensVendaListBindingSource.RemoveCurrent();
+
+            MessageBox.Show("Item excluído com sucesso!");
+        }
+        /*private void buttonExcluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir esse item?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
                 return;
@@ -156,22 +181,12 @@ namespace UIGestaoAcademia
             labelValorTotal.Text = (((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal).ToString("C");
             itensVendaListBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
-        }
+        }*/
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
             try
             {
                 Venda venda = (Venda)vendaBindingSource.Current;
-
-                // Verifica se a DataVenda está dentro do intervalo permitido
-                DateTime dataMinima = new DateTime(1753, 1, 1);
-                DateTime dataMaxima = new DateTime(9999, 12, 31, 23, 59, 59);
-
-                if (venda.DataVenda < dataMinima || venda.DataVenda > dataMaxima)
-                {
-                    MessageBox.Show("A data da venda está fora do intervalo permitido.");
-                    return;
-                }
 
                 new VendasBLL().Inserir(venda);
 
@@ -199,6 +214,17 @@ namespace UIGestaoAcademia
         }
         private void FormVendas_Load(object sender, EventArgs e)
         {
+
+            //vendaBindingSource.AddNew();
+            //itensVendaListBindingSource1.AddNew();
+            //((ItensVenda)itensVendaListBindingSource1.Current).PrecoUnitario = 40;
+            //((ItensVenda)itensVendaListBindingSource1.Current).Produto = new Produto() { Nome = "Tale coisa"};
+            //itensVendaListBindingSource1.EndEdit();
+            //vendaBindingSource.EndEdit();
+
+            //Venda Teste = (Venda)vendaBindingSource.Current;
+
+
             labeUserVenda.Text = Constantes.UsuarioLogado.Nome;
             vendaBindingSource.AddNew();
             ((Venda)vendaBindingSource.Current).ItensVendaList = new List<ItensVenda>();
@@ -219,4 +245,3 @@ namespace UIGestaoAcademia
         }
     }
 }
-

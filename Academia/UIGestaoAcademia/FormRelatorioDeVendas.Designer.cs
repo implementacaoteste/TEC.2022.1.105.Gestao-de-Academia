@@ -40,8 +40,8 @@
             buttonBuscarVendas = new Button();
             comboBoxBuscarPor = new ComboBox();
             textBoxBuscar = new TextBox();
-            buttonCancelar = new Button();
             label1 = new Label();
+            buttonSelecionar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -62,6 +62,7 @@
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(928, 628);
             dataGridView1.TabIndex = 0;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -147,15 +148,6 @@
             textBoxBuscar.Size = new Size(515, 27);
             textBoxBuscar.TabIndex = 3;
             // 
-            // buttonCancelar
-            // 
-            buttonCancelar.Location = new Point(846, 793);
-            buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
-            buttonCancelar.TabIndex = 1;
-            buttonCancelar.Text = "&Cancelar\r\n";
-            buttonCancelar.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -167,16 +159,25 @@
             label1.Text = "Relatório de vendas";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
+            // buttonSelecionar
+            // 
+            buttonSelecionar.Location = new Point(846, 796);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 5;
+            buttonSelecionar.Text = "Selecionar";
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
+            // 
             // FormRelatorioDeVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = buttonCancelar;
             ClientSize = new Size(950, 834);
+            Controls.Add(buttonSelecionar);
             Controls.Add(label1);
             Controls.Add(textBoxBuscar);
             Controls.Add(comboBoxBuscarPor);
-            Controls.Add(buttonCancelar);
             Controls.Add(buttonBuscarVendas);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -199,7 +200,6 @@
         private Button buttonBuscarVendas;
         private ComboBox comboBoxBuscarPor;
         private TextBox textBoxBuscar;
-        private Button buttonCancelar;
         private Label label1;
         private DataGridViewTextBoxColumn produtoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
@@ -217,5 +217,6 @@
         private DataGridViewTextBoxColumn dataVendaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn descontoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn totalVendaDataGridViewTextBoxColumn;
+        private Button buttonSelecionar;
     }
 }
