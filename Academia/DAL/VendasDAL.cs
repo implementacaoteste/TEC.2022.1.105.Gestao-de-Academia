@@ -56,7 +56,6 @@ namespace DAL
                 }
             }
         }
-
         public object BuscarPorCPFCliente(string cPF)
         {
             throw new NotImplementedException();
@@ -141,13 +140,11 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
         public List<Venda> BuscarPorNomeUsuario(string nome)
         {
             throw new NotImplementedException();
         }
-
         public List<Venda> BuscarPorNomeCliente(string _nomeCliente)
         {
             throw new NotImplementedException();

@@ -172,7 +172,6 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
         private static void PreencherObjeto(ItensCompra itensCompra, SqlDataReader rd)
         {
@@ -234,7 +233,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = " SELECT Id, CompraProdutoId, Nome, Marca, Quantidade, ValorUnitario, ValorTotal FROM ItensCompra WHERE CompraProdutoId = @CompraProdutoId";
+                cmd.CommandText = " SELECT Id, CompraProdutoId, Marca, Quantidade, ProdutoId, ValorUnitario, ValorTotal FROM ItensCompra WHERE CompraProdutoId = @CompraProdutoId";
 
                 cmd.CommandType = System.Data.CommandType.Text;
                 cmd.Parameters.AddWithValue("@CompraProdutoId", _compraProdutoId);
@@ -245,12 +244,16 @@ namespace DAL
                     while (rd.Read())
                     {
                         itensCompra = new ItensCompra();
-                        PreencherObjeto(itensCompra, rd);
+                        itensCompra.Id = (int)rd["Id"];
+                        itensCompra.CompraProdutoId = (int)rd["CompraProdutoId"];
+                        itensCompra.Quantidade = (int)rd["Quantidade"];
+                        itensCompra.ValorUnitario = (double)rd["ValorUnitario"];
+                        itensCompra.ValorTotal = (double)rd["ValorTotal"];
+                        itensCompra.Produto = new ProdutoDAL().BuscarPorId((int)rd["ProdutoId"]);
                         itensCompraList.Add(itensCompra);
                     }
                 }
                 return itensCompraList;
-
             }
             catch (Exception ex)
             {
@@ -260,7 +263,6 @@ namespace DAL
             {
                 cn.Close();
             }
-
         }
     }
 }

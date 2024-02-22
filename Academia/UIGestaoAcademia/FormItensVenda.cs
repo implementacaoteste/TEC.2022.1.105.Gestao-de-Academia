@@ -1,5 +1,4 @@
-﻿using BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace UIGestaoAcademia
 {
-    public partial class FormItensCompra : Form
+    public partial class FormItensVenda : Form
     {
-        public FormItensCompra(int _idCompra)
+        public FormItensVenda(int _idVenda)
         {
             InitializeComponent();
-            itensCompraBindingSource.DataSource = new ItensCompraBLL().BuscarPorIdCompraProduto(_idCompra);
+            itensVendaBindingSource.DataSource = new ItensVendaBLL().BuscarPorIdVenda(_idVenda);
         }
     }
 }

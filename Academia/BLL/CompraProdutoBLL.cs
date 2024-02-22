@@ -13,6 +13,11 @@ namespace BLL
     {
         public void Inserir(CompraProduto _compraProduto)
         {
+            if ((_compraProduto.FormaPagamentoId == null || _compraProduto.FormaPagamentoId == 0))
+                throw new Exception("Informe uma forma de pagamento válida");
+            if (_compraProduto.FornecedorId == null || _compraProduto.FornecedorId == 0)
+                throw new Exception("Informe um fornecedor");
+
             new CompraProdutoDAL().Inserir(_compraProduto);
         }
         public void Alterar(CompraProduto _Compraproduto)

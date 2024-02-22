@@ -63,8 +63,8 @@
             textBoxValorTotalNota = new TextBox();
             pictureBoxCompra = new PictureBox();
             buttonExcluir = new Button();
-            label1 = new Label();
             calendario1 = new Calendario();
+            DataCompra = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
@@ -382,7 +382,6 @@
             pictureBoxCompra.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCompra.TabIndex = 65;
             pictureBoxCompra.TabStop = false;
-            pictureBoxCompra.Click += pictureBoxCompra_Click;
             // 
             // buttonExcluir
             // 
@@ -393,16 +392,6 @@
             buttonExcluir.Text = "&Excluir item";
             buttonExcluir.UseVisualStyleBackColor = true;
             buttonExcluir.Click += buttonExcluir_Click_1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Location = new Point(694, 195);
-            label1.Name = "label1";
-            label1.Size = new Size(135, 20);
-            label1.TabIndex = 68;
-            label1.Text = "DATA DA COMPRA";
             // 
             // calendario1
             // 
@@ -416,13 +405,23 @@
             calendario1.Size = new Size(141, 27);
             calendario1.TabIndex = 70;
             // 
+            // DataCompra
+            // 
+            DataCompra.AutoSize = true;
+            DataCompra.BackColor = Color.Transparent;
+            DataCompra.Location = new Point(694, 195);
+            DataCompra.Name = "DataCompra";
+            DataCompra.Size = new Size(135, 20);
+            DataCompra.TabIndex = 71;
+            DataCompra.Text = "DATA DA COMPRA";
+            // 
             // FormCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(988, 706);
+            Controls.Add(DataCompra);
             Controls.Add(calendario1);
-            Controls.Add(label1);
             Controls.Add(buttonExcluir);
             Controls.Add(textBoxValorTotalNota);
             Controls.Add(labelValorTotalDaNota);
@@ -502,7 +501,7 @@
         private DataGridViewTextBoxColumn Quantidade;
         private DataGridViewTextBoxColumn ValorUnitario;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
-        private Label label1;
         private Calendario calendario1;
+        private Label DataCompra;
     }
 }

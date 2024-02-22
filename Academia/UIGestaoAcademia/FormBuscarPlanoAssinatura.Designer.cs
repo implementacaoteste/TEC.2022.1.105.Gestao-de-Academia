@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             comboBoxBuscarPor = new ComboBox();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewPlanoAssinatura = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            TipoPlano = new DataGridViewTextBoxColumn();
-            ValorPlano = new DataGridViewTextBoxColumn();
-            Desconto = new DataGridViewTextBoxColumn();
             bindingSourcePlanoAssinatura = new BindingSource(components);
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             buttonBuscar = new Button();
@@ -48,6 +45,10 @@
             buttonAlterar = new Button();
             textBoxBuscarPor = new TextBox();
             buttonSelecionar = new Button();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            TipoPlano = new DataGridViewTextBoxColumn();
+            ValorPlano = new DataGridViewTextBoxColumn();
+            Desconto = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlanoAssinatura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourcePlanoAssinatura).BeginInit();
             SuspendLayout();
@@ -85,42 +86,6 @@
             dataGridViewPlanoAssinatura.RowTemplate.Height = 29;
             dataGridViewPlanoAssinatura.Size = new Size(687, 341);
             dataGridViewPlanoAssinatura.TabIndex = 39;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // TipoPlano
-            // 
-            TipoPlano.DataPropertyName = "TipoPlano";
-            TipoPlano.HeaderText = "TipoPlano";
-            TipoPlano.MinimumWidth = 6;
-            TipoPlano.Name = "TipoPlano";
-            TipoPlano.ReadOnly = true;
-            TipoPlano.Width = 150;
-            // 
-            // ValorPlano
-            // 
-            ValorPlano.DataPropertyName = "ValorPlano";
-            ValorPlano.HeaderText = "ValorPlano";
-            ValorPlano.MinimumWidth = 6;
-            ValorPlano.Name = "ValorPlano";
-            ValorPlano.ReadOnly = true;
-            ValorPlano.Width = 150;
-            // 
-            // Desconto
-            // 
-            Desconto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Desconto.DataPropertyName = "Desconto";
-            Desconto.HeaderText = "Desconto(%)";
-            Desconto.MinimumWidth = 6;
-            Desconto.Name = "Desconto";
-            Desconto.ReadOnly = true;
             // 
             // bindingSourcePlanoAssinatura
             // 
@@ -233,6 +198,44 @@
             buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
             buttonSelecionar.UseVisualStyleBackColor = true;
             buttonSelecionar.Click += buttonSelecionar_Click;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // TipoPlano
+            // 
+            TipoPlano.DataPropertyName = "TipoPlano";
+            TipoPlano.HeaderText = "TipoPlano";
+            TipoPlano.MinimumWidth = 6;
+            TipoPlano.Name = "TipoPlano";
+            TipoPlano.ReadOnly = true;
+            TipoPlano.Width = 150;
+            // 
+            // ValorPlano
+            // 
+            ValorPlano.DataPropertyName = "ValorPlano";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            ValorPlano.DefaultCellStyle = dataGridViewCellStyle1;
+            ValorPlano.HeaderText = "ValorPlano";
+            ValorPlano.MinimumWidth = 6;
+            ValorPlano.Name = "ValorPlano";
+            ValorPlano.ReadOnly = true;
+            ValorPlano.Width = 150;
+            // 
+            // Desconto
+            // 
+            Desconto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Desconto.DataPropertyName = "Desconto";
+            Desconto.HeaderText = "Desconto(%)";
+            Desconto.MinimumWidth = 6;
+            Desconto.Name = "Desconto";
+            Desconto.ReadOnly = true;
             // 
             // FormBuscarPlanoAssinatura
             // 

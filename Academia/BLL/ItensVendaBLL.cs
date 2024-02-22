@@ -14,9 +14,9 @@ namespace BLL
         {
             new ItensVendaDAL().Inserir(_itensvenda);
         }
-        public void Excluir(int _id)
+        public List<ItensVenda> BuscarPorIdVenda(int _vendaId)
         {
-            new ItensVendaDAL().Excluir(_id);
+            return new ItensVendaDAL().BuscarPorIdVenda(_vendaId);
         }
     }
 }

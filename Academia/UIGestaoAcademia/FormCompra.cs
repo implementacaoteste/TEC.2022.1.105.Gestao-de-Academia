@@ -18,6 +18,7 @@ namespace UIGestaoAcademia
             ((CompraProduto)BindingSourceCompraProduto.Current).itensCompraList = new List<ItensCompra>();
             BindingSourceCompraProduto.EndEdit();
 
+            DataCompra.Parent = pictureBoxCompra;
             labelValorDoFrete.Parent = pictureBoxCompra;
             labelValorTotalDaNota.Parent = pictureBoxCompra;
             labelFormaPagamento.Parent = pictureBoxCompra;
@@ -204,7 +205,6 @@ namespace UIGestaoAcademia
             MessageBox.Show("Item excluido com sucesso!");
             textBoxValorTotalNota.Clear();
         }
-
         private void pictureBoxCompra_Click(object sender, EventArgs e)
         {
 

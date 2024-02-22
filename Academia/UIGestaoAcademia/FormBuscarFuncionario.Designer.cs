@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             buttonSelecionar = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -42,6 +43,8 @@
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             bindingSourceFuncionario = new BindingSource(components);
             dataGridViewProduto = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            comboBoxBuscarPor = new ComboBox();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             Cpf = new DataGridViewTextBoxColumn();
@@ -56,8 +59,6 @@
             Pais = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
             Cidade = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            comboBoxBuscarPor = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)bindingSourceFuncionario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProduto).BeginInit();
             SuspendLayout();
@@ -190,9 +191,26 @@
             dataGridViewProduto.Size = new Size(1304, 339);
             dataGridViewProduto.TabIndex = 28;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // comboBoxBuscarPor
+            // 
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Nome", "Cpf", "Todos" });
+            comboBoxBuscarPor.Location = new Point(10, 68);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(143, 28);
+            comboBoxBuscarPor.TabIndex = 32;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             idDataGridViewTextBoxColumn.HeaderText = "Id";
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
@@ -315,21 +333,6 @@
             Cidade.Name = "Cidade";
             Cidade.ReadOnly = true;
             Cidade.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // comboBoxBuscarPor
-            // 
-            comboBoxBuscarPor.FormattingEnabled = true;
-            comboBoxBuscarPor.Items.AddRange(new object[] { "Nome", "Cpf", "Todos" });
-            comboBoxBuscarPor.Location = new Point(10, 68);
-            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(143, 28);
-            comboBoxBuscarPor.TabIndex = 32;
             // 
             // FormBuscarFuncionario
             // 
