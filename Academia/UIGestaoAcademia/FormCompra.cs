@@ -7,9 +7,24 @@ namespace UIGestaoAcademia
     public partial class FormCompra : Form
     {
         int id;
-        public FormCompra()
+        string descricaoParcela;
+        public FormCompra(int _id = 0)
         {
             InitializeComponent();
+            id = _id;
+
+            if (id == 0)
+            {
+                BindingSourceCompraProduto.AddNew();
+                ((CompraProduto)BindingSourceCompraProduto.Current).QuantidadeParcela = 1;
+            }
+            else
+            {
+                CompraProduto compraProduto = new CompraProdutoBLL().BuscarPorId(_id);
+                BindingSourceCompraProduto.DataSource = compraProduto;
+
+
+            }
         }
         private void FormCompra_Load(object sender, EventArgs e)
         {
@@ -35,7 +50,7 @@ namespace UIGestaoAcademia
             FinalizarCompra.Parent = pictureBoxCompra;
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png"))
                 pictureBoxCompra.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundocompraproduto.png";
-            
+
             ((CompraProduto)BindingSourceCompraProduto.Current).DataCompra = DateTime.Now;
             calendario1.Value = ((CompraProduto)BindingSourceCompraProduto.Current).DataCompra;
             calendario1.Enabled = false;
@@ -204,10 +219,6 @@ namespace UIGestaoAcademia
             itensCompraBindingSource.RemoveCurrent();
             MessageBox.Show("Item excluido com sucesso!");
             textBoxValorTotalNota.Clear();
-        }
-        private void pictureBoxCompra_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

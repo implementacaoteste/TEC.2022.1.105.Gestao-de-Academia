@@ -45,6 +45,7 @@
             dataGridView1 = new DataGridView();
             compraProdutoBindingSource = new BindingSource(components);
             buttonSelecionar = new Button();
+            itensCompraListBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             FornecedorId = new DataGridViewTextBoxColumn();
@@ -55,13 +56,14 @@
             valorTotalNotaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)itensCompraListBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(277, 9);
+            label1.Location = new Point(396, 9);
             label1.Name = "label1";
             label1.Size = new Size(424, 54);
             label1.TabIndex = 10;
@@ -141,7 +143,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1010, 675);
+            dataGridView1.Size = new Size(1163, 675);
             dataGridView1.TabIndex = 33;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
@@ -151,13 +153,18 @@
             // 
             // buttonSelecionar
             // 
-            buttonSelecionar.Location = new Point(928, 849);
+            buttonSelecionar.Location = new Point(1081, 849);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 34;
             buttonSelecionar.Text = "Selecionar";
             buttonSelecionar.UseVisualStyleBackColor = true;
             buttonSelecionar.Click += buttonSelecionar_Click;
+            // 
+            // itensCompraListBindingSource
+            // 
+            itensCompraListBindingSource.DataMember = "itensCompraList";
+            itensCompraListBindingSource.DataSource = compraProdutoBindingSource;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -173,7 +180,7 @@
             // dataCompraDataGridViewTextBoxColumn1
             // 
             dataCompraDataGridViewTextBoxColumn1.DataPropertyName = "DataCompra";
-            dataCompraDataGridViewTextBoxColumn1.HeaderText = "DataCompra";
+            dataCompraDataGridViewTextBoxColumn1.HeaderText = "Data da compra";
             dataCompraDataGridViewTextBoxColumn1.MinimumWidth = 6;
             dataCompraDataGridViewTextBoxColumn1.Name = "dataCompraDataGridViewTextBoxColumn1";
             dataCompraDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -184,7 +191,7 @@
             FornecedorId.DataPropertyName = "FornecedorId";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
             FornecedorId.DefaultCellStyle = dataGridViewCellStyle2;
-            FornecedorId.HeaderText = "FornecedorId";
+            FornecedorId.HeaderText = "Id:";
             FornecedorId.MinimumWidth = 6;
             FornecedorId.Name = "FornecedorId";
             FornecedorId.ReadOnly = true;
@@ -193,7 +200,7 @@
             // Nome
             // 
             Nome.DataPropertyName = "Nome";
-            Nome.HeaderText = "NomeFornecedor";
+            Nome.HeaderText = "Nome do fornecedor";
             Nome.MinimumWidth = 6;
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
@@ -202,7 +209,7 @@
             // formaDePagamentoDataGridViewTextBoxColumn
             // 
             formaDePagamentoDataGridViewTextBoxColumn.DataPropertyName = "FormaDePagamento";
-            formaDePagamentoDataGridViewTextBoxColumn.HeaderText = "FormaPagamento";
+            formaDePagamentoDataGridViewTextBoxColumn.HeaderText = "Forma de pagamento";
             formaDePagamentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             formaDePagamentoDataGridViewTextBoxColumn.Name = "formaDePagamentoDataGridViewTextBoxColumn";
             formaDePagamentoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -213,7 +220,7 @@
             valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
             valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            valorTotalDataGridViewTextBoxColumn.HeaderText = "ValorTotal";
+            valorTotalDataGridViewTextBoxColumn.HeaderText = "Valor total";
             valorTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
             valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -224,7 +231,7 @@
             freteTotalDataGridViewTextBoxColumn.DataPropertyName = "FreteTotal";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
             freteTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            freteTotalDataGridViewTextBoxColumn.HeaderText = "FreteTotal";
+            freteTotalDataGridViewTextBoxColumn.HeaderText = "Frete total";
             freteTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
             freteTotalDataGridViewTextBoxColumn.Name = "freteTotalDataGridViewTextBoxColumn";
             freteTotalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -236,7 +243,7 @@
             valorTotalNotaDataGridViewTextBoxColumn.DataPropertyName = "ValorTotalNota";
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
             valorTotalNotaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            valorTotalNotaDataGridViewTextBoxColumn.HeaderText = "ValorTotalNota";
+            valorTotalNotaDataGridViewTextBoxColumn.HeaderText = "Valor total da nota";
             valorTotalNotaDataGridViewTextBoxColumn.MinimumWidth = 6;
             valorTotalNotaDataGridViewTextBoxColumn.Name = "valorTotalNotaDataGridViewTextBoxColumn";
             valorTotalNotaDataGridViewTextBoxColumn.ReadOnly = true;
@@ -245,7 +252,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1034, 886);
+            ClientSize = new Size(1183, 886);
             Controls.Add(buttonSelecionar);
             Controls.Add(dataGridView1);
             Controls.Add(labelBuscarPor);
@@ -263,6 +270,7 @@
             Load += FormRelatorioCompra_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)itensCompraListBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -279,6 +287,7 @@
         private DataGridView dataGridView1;
         private BindingSource compraProdutoBindingSource;
         private Button buttonSelecionar;
+        private BindingSource itensCompraListBindingSource;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataCompraDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn FornecedorId;

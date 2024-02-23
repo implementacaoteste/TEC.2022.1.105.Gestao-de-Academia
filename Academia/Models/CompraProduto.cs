@@ -18,6 +18,7 @@ namespace Models
         public List<ItensCompra> itensCompraList { get; set; }
         public Fornecedor Fornecedor { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
+        public int QuantidadeParcela { get; set; }
         public string Nome
         {
             get
