@@ -44,7 +44,6 @@
             pictureBoxPrincipal = new PictureBox();
             buttonRelatorioVenda = new Button();
             button2 = new Button();
-            labelMenu = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogoMenu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxNomeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).BeginInit();
@@ -280,20 +279,6 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // labelMenu
-            // 
-            labelMenu.Anchor = AnchorStyles.None;
-            labelMenu.BackColor = SystemColors.ButtonHighlight;
-            labelMenu.FlatStyle = FlatStyle.System;
-            labelMenu.Font = new Font("Swis721 BlkCn BT", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMenu.ForeColor = Color.Black;
-            labelMenu.Location = new Point(343, 28);
-            labelMenu.Name = "labelMenu";
-            labelMenu.Size = new Size(457, 95);
-            labelMenu.TabIndex = 23;
-            labelMenu.Text = "MENU";
-            labelMenu.TextAlign = ContentAlignment.TopCenter;
-            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -315,7 +300,6 @@
             Controls.Add(buttonDebito);
             Controls.Add(buttonProduto);
             Controls.Add(pictureBoxNomeLogo);
-            Controls.Add(labelMenu);
             Controls.Add(pictureBoxPrincipal);
             ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -352,6 +336,5 @@
         private PictureBox pictureBoxPrincipal;
         private Button buttonRelatorioVenda;
         private Button button2;
-        private Label labelMenu;
     }
 }
