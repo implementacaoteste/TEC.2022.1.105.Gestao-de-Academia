@@ -4,10 +4,12 @@ using Models;
 namespace BLL
 {
     public class VendasBLL
-    {
-        
+    {        
         public void Inserir(Venda _venda)
         {
+            if ((_venda.FormaPagamentoId == null || _venda.FormaPagamentoId == 0))
+                throw new Exception("Informe uma forma de pagamento válida");
+
             new VendasDAL().Inserir(_venda);
         }
         //public List<Vendas> BuscarPorNomeCliente(string _nome)

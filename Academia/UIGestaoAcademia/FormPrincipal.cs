@@ -29,6 +29,8 @@ namespace UIGestaoAcademia
         {
             try
             {
+
+                pictureBoxNomeLogo.Parent = pictureBoxPrincipal;
                 if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png"))
                     pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
 

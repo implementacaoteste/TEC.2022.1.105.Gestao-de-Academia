@@ -39,14 +39,11 @@
             buttonDebito = new Button();
             buttonProduto = new Button();
             buttonGrupoUsuario = new Button();
-            pictureBoxCentral = new PictureBox();
             pictureBoxLogoMenu = new PictureBox();
             pictureBoxNomeLogo = new PictureBox();
             pictureBoxPrincipal = new PictureBox();
-            labelMenu = new Label();
             buttonRelatorioVenda = new Button();
             button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCentral).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogoMenu).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxNomeLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).BeginInit();
@@ -54,14 +51,14 @@
             // 
             // buttonFuncionario
             // 
-            buttonFuncionario.Anchor = AnchorStyles.Top;
+            buttonFuncionario.Anchor = AnchorStyles.None;
             buttonFuncionario.BackColor = Color.White;
             buttonFuncionario.FlatStyle = FlatStyle.Popup;
             buttonFuncionario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonFuncionario.ForeColor = Color.RoyalBlue;
-            buttonFuncionario.Location = new Point(377, 171);
+            buttonFuncionario.ForeColor = Color.DimGray;
+            buttonFuncionario.Location = new Point(343, 185);
             buttonFuncionario.Name = "buttonFuncionario";
-            buttonFuncionario.Size = new Size(113, 75);
+            buttonFuncionario.Size = new Size(147, 75);
             buttonFuncionario.TabIndex = 3;
             buttonFuncionario.Text = "Funcionários";
             buttonFuncionario.UseVisualStyleBackColor = false;
@@ -69,14 +66,14 @@
             // 
             // buttonFornecedor
             // 
-            buttonFornecedor.Anchor = AnchorStyles.Top;
+            buttonFornecedor.Anchor = AnchorStyles.None;
             buttonFornecedor.BackColor = Color.White;
             buttonFornecedor.FlatStyle = FlatStyle.Popup;
             buttonFornecedor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonFornecedor.ForeColor = Color.RoyalBlue;
-            buttonFornecedor.Location = new Point(377, 251);
+            buttonFornecedor.ForeColor = Color.DimGray;
+            buttonFornecedor.Location = new Point(343, 265);
             buttonFornecedor.Name = "buttonFornecedor";
-            buttonFornecedor.Size = new Size(113, 75);
+            buttonFornecedor.Size = new Size(147, 75);
             buttonFornecedor.TabIndex = 6;
             buttonFornecedor.Text = "Fornecedores";
             buttonFornecedor.UseVisualStyleBackColor = false;
@@ -84,14 +81,14 @@
             // 
             // buttonExercicio
             // 
-            buttonExercicio.Anchor = AnchorStyles.Top;
+            buttonExercicio.Anchor = AnchorStyles.None;
             buttonExercicio.BackColor = Color.White;
             buttonExercicio.FlatStyle = FlatStyle.Popup;
             buttonExercicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonExercicio.ForeColor = Color.RoyalBlue;
-            buttonExercicio.Location = new Point(653, 91);
+            buttonExercicio.ForeColor = Color.DimGray;
+            buttonExercicio.Location = new Point(652, 105);
             buttonExercicio.Name = "buttonExercicio";
-            buttonExercicio.Size = new Size(113, 75);
+            buttonExercicio.Size = new Size(147, 75);
             buttonExercicio.TabIndex = 2;
             buttonExercicio.Text = "Exercícios";
             buttonExercicio.UseVisualStyleBackColor = false;
@@ -99,14 +96,14 @@
             // 
             // button9
             // 
-            button9.Anchor = AnchorStyles.Top;
+            button9.Anchor = AnchorStyles.None;
             button9.BackColor = Color.White;
             button9.FlatStyle = FlatStyle.Popup;
             button9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button9.ForeColor = Color.RoyalBlue;
-            button9.Location = new Point(377, 331);
+            button9.ForeColor = Color.DimGray;
+            button9.Location = new Point(343, 345);
             button9.Name = "button9";
-            button9.Size = new Size(113, 75);
+            button9.Size = new Size(147, 75);
             button9.TabIndex = 9;
             button9.Text = "Vendas";
             button9.UseVisualStyleBackColor = false;
@@ -114,14 +111,14 @@
             // 
             // button10
             // 
-            button10.Anchor = AnchorStyles.Top;
+            button10.Anchor = AnchorStyles.None;
             button10.BackColor = Color.White;
             button10.FlatStyle = FlatStyle.Popup;
             button10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button10.ForeColor = Color.RoyalBlue;
-            button10.Location = new Point(653, 331);
+            button10.ForeColor = Color.DimGray;
+            button10.Location = new Point(653, 345);
             button10.Name = "button10";
-            button10.Size = new Size(113, 75);
+            button10.Size = new Size(147, 75);
             button10.TabIndex = 5;
             button10.Text = "Compras";
             button10.UseVisualStyleBackColor = false;
@@ -129,12 +126,12 @@
             // 
             // buttonAssinatura
             // 
-            buttonAssinatura.Anchor = AnchorStyles.Top;
+            buttonAssinatura.Anchor = AnchorStyles.None;
             buttonAssinatura.BackColor = Color.White;
             buttonAssinatura.FlatStyle = FlatStyle.Popup;
             buttonAssinatura.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonAssinatura.ForeColor = Color.RoyalBlue;
-            buttonAssinatura.Location = new Point(498, 252);
+            buttonAssinatura.ForeColor = Color.DimGray;
+            buttonAssinatura.Location = new Point(496, 266);
             buttonAssinatura.Name = "buttonAssinatura";
             buttonAssinatura.Size = new Size(150, 75);
             buttonAssinatura.TabIndex = 7;
@@ -144,12 +141,12 @@
             // 
             // buttonUsuario
             // 
-            buttonUsuario.Anchor = AnchorStyles.Top;
+            buttonUsuario.Anchor = AnchorStyles.None;
             buttonUsuario.BackColor = Color.White;
             buttonUsuario.FlatStyle = FlatStyle.Popup;
             buttonUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonUsuario.ForeColor = Color.RoyalBlue;
-            buttonUsuario.Location = new Point(497, 171);
+            buttonUsuario.ForeColor = Color.DimGray;
+            buttonUsuario.Location = new Point(496, 184);
             buttonUsuario.Name = "buttonUsuario";
             buttonUsuario.Size = new Size(150, 75);
             buttonUsuario.TabIndex = 4;
@@ -159,14 +156,14 @@
             // 
             // buttonCliente
             // 
-            buttonCliente.Anchor = AnchorStyles.Top;
+            buttonCliente.Anchor = AnchorStyles.None;
             buttonCliente.BackColor = Color.White;
             buttonCliente.FlatStyle = FlatStyle.Popup;
             buttonCliente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCliente.ForeColor = Color.RoyalBlue;
-            buttonCliente.Location = new Point(653, 170);
+            buttonCliente.ForeColor = Color.DimGray;
+            buttonCliente.Location = new Point(652, 184);
             buttonCliente.Name = "buttonCliente";
-            buttonCliente.Size = new Size(113, 75);
+            buttonCliente.Size = new Size(147, 75);
             buttonCliente.TabIndex = 10;
             buttonCliente.Text = "Clientes";
             buttonCliente.UseVisualStyleBackColor = false;
@@ -174,14 +171,14 @@
             // 
             // buttonDebito
             // 
-            buttonDebito.Anchor = AnchorStyles.Top;
+            buttonDebito.Anchor = AnchorStyles.None;
             buttonDebito.BackColor = Color.White;
             buttonDebito.FlatStyle = FlatStyle.Popup;
             buttonDebito.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonDebito.ForeColor = Color.RoyalBlue;
-            buttonDebito.Location = new Point(653, 251);
+            buttonDebito.ForeColor = Color.DimGray;
+            buttonDebito.Location = new Point(652, 266);
             buttonDebito.Name = "buttonDebito";
-            buttonDebito.Size = new Size(113, 75);
+            buttonDebito.Size = new Size(147, 75);
             buttonDebito.TabIndex = 8;
             buttonDebito.Text = "Debitos";
             buttonDebito.UseVisualStyleBackColor = false;
@@ -189,14 +186,14 @@
             // 
             // buttonProduto
             // 
-            buttonProduto.Anchor = AnchorStyles.Top;
+            buttonProduto.Anchor = AnchorStyles.None;
             buttonProduto.BackColor = Color.White;
             buttonProduto.FlatStyle = FlatStyle.Popup;
             buttonProduto.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonProduto.ForeColor = Color.RoyalBlue;
-            buttonProduto.Location = new Point(377, 91);
+            buttonProduto.ForeColor = Color.DimGray;
+            buttonProduto.Location = new Point(343, 105);
             buttonProduto.Name = "buttonProduto";
-            buttonProduto.Size = new Size(113, 75);
+            buttonProduto.Size = new Size(147, 75);
             buttonProduto.TabIndex = 0;
             buttonProduto.Text = "Produtos";
             buttonProduto.UseVisualStyleBackColor = false;
@@ -204,12 +201,12 @@
             // 
             // buttonGrupoUsuario
             // 
-            buttonGrupoUsuario.Anchor = AnchorStyles.Top;
+            buttonGrupoUsuario.Anchor = AnchorStyles.None;
             buttonGrupoUsuario.BackColor = Color.White;
             buttonGrupoUsuario.FlatStyle = FlatStyle.Popup;
             buttonGrupoUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonGrupoUsuario.ForeColor = Color.RoyalBlue;
-            buttonGrupoUsuario.Location = new Point(497, 91);
+            buttonGrupoUsuario.ForeColor = Color.DimGray;
+            buttonGrupoUsuario.Location = new Point(496, 105);
             buttonGrupoUsuario.Name = "buttonGrupoUsuario";
             buttonGrupoUsuario.Size = new Size(150, 75);
             buttonGrupoUsuario.TabIndex = 1;
@@ -217,23 +214,11 @@
             buttonGrupoUsuario.UseVisualStyleBackColor = false;
             buttonGrupoUsuario.Click += buttonGrupoUsuario_Click;
             // 
-            // pictureBoxCentral
-            // 
-            pictureBoxCentral.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            pictureBoxCentral.BackColor = SystemColors.Window;
-            pictureBoxCentral.Location = new Point(305, 0);
-            pictureBoxCentral.Margin = new Padding(3, 4, 3, 4);
-            pictureBoxCentral.Name = "pictureBoxCentral";
-            pictureBoxCentral.Size = new Size(538, 947);
-            pictureBoxCentral.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxCentral.TabIndex = 2;
-            pictureBoxCentral.TabStop = false;
-            // 
             // pictureBoxLogoMenu
             // 
-            pictureBoxLogoMenu.Anchor = AnchorStyles.Top;
+            pictureBoxLogoMenu.Anchor = AnchorStyles.None;
             pictureBoxLogoMenu.BackColor = SystemColors.Window;
-            pictureBoxLogoMenu.Location = new Point(498, 333);
+            pictureBoxLogoMenu.Location = new Point(498, 347);
             pictureBoxLogoMenu.Margin = new Padding(3, 4, 3, 4);
             pictureBoxLogoMenu.Name = "pictureBoxLogoMenu";
             pictureBoxLogoMenu.Size = new Size(149, 173);
@@ -243,9 +228,9 @@
             // 
             // pictureBoxNomeLogo
             // 
-            pictureBoxNomeLogo.Anchor = AnchorStyles.Top;
-            pictureBoxNomeLogo.BackColor = Color.White;
-            pictureBoxNomeLogo.Location = new Point(305, 371);
+            pictureBoxNomeLogo.Anchor = AnchorStyles.None;
+            pictureBoxNomeLogo.BackColor = Color.Transparent;
+            pictureBoxNomeLogo.Location = new Point(305, 385);
             pictureBoxNomeLogo.Margin = new Padding(3, 4, 3, 4);
             pictureBoxNomeLogo.Name = "pictureBoxNomeLogo";
             pictureBoxNomeLogo.Size = new Size(538, 328);
@@ -264,29 +249,16 @@
             pictureBoxPrincipal.TabIndex = 5;
             pictureBoxPrincipal.TabStop = false;
             // 
-            // labelMenu
-            // 
-            labelMenu.Anchor = AnchorStyles.Top;
-            labelMenu.BackColor = SystemColors.Window;
-            labelMenu.Font = new Font("Swis721 BlkCn BT", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            labelMenu.ForeColor = Color.Black;
-            labelMenu.Location = new Point(305, 4);
-            labelMenu.Name = "labelMenu";
-            labelMenu.Size = new Size(538, 76);
-            labelMenu.TabIndex = 23;
-            labelMenu.Text = "MENU";
-            labelMenu.TextAlign = ContentAlignment.TopCenter;
-            // 
             // buttonRelatorioVenda
             // 
-            buttonRelatorioVenda.Anchor = AnchorStyles.Top;
+            buttonRelatorioVenda.Anchor = AnchorStyles.None;
             buttonRelatorioVenda.BackColor = Color.White;
             buttonRelatorioVenda.FlatStyle = FlatStyle.Popup;
             buttonRelatorioVenda.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonRelatorioVenda.ForeColor = Color.RoyalBlue;
-            buttonRelatorioVenda.Location = new Point(377, 412);
+            buttonRelatorioVenda.ForeColor = Color.DimGray;
+            buttonRelatorioVenda.Location = new Point(343, 426);
             buttonRelatorioVenda.Name = "buttonRelatorioVenda";
-            buttonRelatorioVenda.Size = new Size(113, 75);
+            buttonRelatorioVenda.Size = new Size(147, 75);
             buttonRelatorioVenda.TabIndex = 24;
             buttonRelatorioVenda.Text = "Relatório Venda";
             buttonRelatorioVenda.UseVisualStyleBackColor = false;
@@ -294,14 +266,14 @@
             // 
             // button2
             // 
-            button2.Anchor = AnchorStyles.Top;
+            button2.Anchor = AnchorStyles.None;
             button2.BackColor = Color.White;
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.RoyalBlue;
-            button2.Location = new Point(653, 412);
+            button2.ForeColor = Color.DimGray;
+            button2.Location = new Point(653, 426);
             button2.Name = "button2";
-            button2.Size = new Size(113, 75);
+            button2.Size = new Size(147, 75);
             button2.TabIndex = 24;
             button2.Text = "Relatório Compra";
             button2.UseVisualStyleBackColor = false;
@@ -316,11 +288,9 @@
             Controls.Add(button10);
             Controls.Add(button2);
             Controls.Add(buttonRelatorioVenda);
-            Controls.Add(labelMenu);
             Controls.Add(buttonCliente);
             Controls.Add(button9);
             Controls.Add(pictureBoxLogoMenu);
-            Controls.Add(pictureBoxNomeLogo);
             Controls.Add(buttonAssinatura);
             Controls.Add(buttonFornecedor);
             Controls.Add(buttonUsuario);
@@ -329,7 +299,7 @@
             Controls.Add(buttonExercicio);
             Controls.Add(buttonDebito);
             Controls.Add(buttonProduto);
-            Controls.Add(pictureBoxCentral);
+            Controls.Add(pictureBoxNomeLogo);
             Controls.Add(pictureBoxPrincipal);
             ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -343,7 +313,6 @@
             WindowState = FormWindowState.Maximized;
             Load += FormPrincipal_Load;
             KeyDown += FormPrincipal_KeyDown;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCentral).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogoMenu).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxNomeLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).EndInit();
@@ -362,11 +331,9 @@
         private Button buttonDebito;
         private Button buttonProduto;
         private Button buttonGrupoUsuario;
-        private PictureBox pictureBoxCentral;
         private PictureBox pictureBoxLogoMenu;
         private PictureBox pictureBoxNomeLogo;
         private PictureBox pictureBoxPrincipal;
-        private Label labelMenu;
         private Button buttonRelatorioVenda;
         private Button button2;
     }

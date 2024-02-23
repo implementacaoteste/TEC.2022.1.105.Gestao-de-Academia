@@ -18,6 +18,7 @@ namespace UIGestaoAcademia
             {
                 bindingSourceCadastrarDebito.AddNew();
                 ((ControleDebito)bindingSourceCadastrarDebito.Current).QuantidadeParcelas = 1;
+                calendarioDataPagamento.Enabled = false;
             }
             else
             {

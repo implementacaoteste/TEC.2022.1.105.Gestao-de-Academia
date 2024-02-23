@@ -29,19 +29,22 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            Nome = new DataGridViewTextBoxColumn();
-            nomeClienteDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            descontoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            totalVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             vendaBindingSource = new BindingSource(components);
             buttonBuscarVendas = new Button();
             comboBoxBuscarPor = new ComboBox();
             textBoxBuscar = new TextBox();
             label1 = new Label();
             buttonSelecionar = new Button();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            FormaDePagamento = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            NomeCliente = new DataGridViewTextBoxColumn();
+            dataVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            totalVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -53,70 +56,16 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, Nome, nomeClienteDataGridViewTextBoxColumn, dataVendaDataGridViewTextBoxColumn, descontoDataGridViewTextBoxColumn, totalVendaDataGridViewTextBoxColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, FormaDePagamento, dataGridViewTextBoxColumn1, NomeCliente, dataVendaDataGridViewTextBoxColumn, totalVendaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = vendaBindingSource;
             dataGridView1.Location = new Point(12, 159);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(928, 628);
+            dataGridView1.Size = new Size(1074, 628);
             dataGridView1.TabIndex = 0;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Venda";
-            idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // Nome
-            // 
-            Nome.DataPropertyName = "Nome";
-            Nome.HeaderText = "Usuário";
-            Nome.MinimumWidth = 6;
-            Nome.Name = "Nome";
-            Nome.ReadOnly = true;
-            Nome.Width = 200;
-            // 
-            // nomeClienteDataGridViewTextBoxColumn
-            // 
-            nomeClienteDataGridViewTextBoxColumn.DataPropertyName = "NomeCliente";
-            nomeClienteDataGridViewTextBoxColumn.HeaderText = "NomeCliente";
-            nomeClienteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nomeClienteDataGridViewTextBoxColumn.Name = "nomeClienteDataGridViewTextBoxColumn";
-            nomeClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            nomeClienteDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // dataVendaDataGridViewTextBoxColumn
-            // 
-            dataVendaDataGridViewTextBoxColumn.DataPropertyName = "DataVenda";
-            dataVendaDataGridViewTextBoxColumn.HeaderText = "DataVenda";
-            dataVendaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            dataVendaDataGridViewTextBoxColumn.Name = "dataVendaDataGridViewTextBoxColumn";
-            dataVendaDataGridViewTextBoxColumn.ReadOnly = true;
-            dataVendaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // descontoDataGridViewTextBoxColumn
-            // 
-            descontoDataGridViewTextBoxColumn.DataPropertyName = "Desconto";
-            descontoDataGridViewTextBoxColumn.HeaderText = "Desconto";
-            descontoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            descontoDataGridViewTextBoxColumn.Name = "descontoDataGridViewTextBoxColumn";
-            descontoDataGridViewTextBoxColumn.ReadOnly = true;
-            descontoDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // totalVendaDataGridViewTextBoxColumn
-            // 
-            totalVendaDataGridViewTextBoxColumn.DataPropertyName = "TotalVenda";
-            totalVendaDataGridViewTextBoxColumn.HeaderText = "TotalVenda";
-            totalVendaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            totalVendaDataGridViewTextBoxColumn.Name = "totalVendaDataGridViewTextBoxColumn";
-            totalVendaDataGridViewTextBoxColumn.ReadOnly = true;
-            totalVendaDataGridViewTextBoxColumn.Width = 125;
             // 
             // vendaBindingSource
             // 
@@ -124,7 +73,7 @@
             // 
             // buttonBuscarVendas
             // 
-            buttonBuscarVendas.Location = new Point(694, 124);
+            buttonBuscarVendas.Location = new Point(845, 126);
             buttonBuscarVendas.Name = "buttonBuscarVendas";
             buttonBuscarVendas.Size = new Size(94, 29);
             buttonBuscarVendas.TabIndex = 1;
@@ -136,14 +85,14 @@
             // 
             comboBoxBuscarPor.FormattingEnabled = true;
             comboBoxBuscarPor.Items.AddRange(new object[] { "Código da venda", "Nome do Usuario", "Nome do Cliente", "CPF Cliente", "Data", "Todas" });
-            comboBoxBuscarPor.Location = new Point(16, 127);
+            comboBoxBuscarPor.Location = new Point(114, 125);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(151, 28);
+            comboBoxBuscarPor.Size = new Size(202, 28);
             comboBoxBuscarPor.TabIndex = 2;
             // 
             // textBoxBuscar
             // 
-            textBoxBuscar.Location = new Point(173, 127);
+            textBoxBuscar.Location = new Point(324, 126);
             textBoxBuscar.Name = "textBoxBuscar";
             textBoxBuscar.Size = new Size(515, 27);
             textBoxBuscar.TabIndex = 3;
@@ -152,7 +101,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(267, 18);
+            label1.Location = new Point(345, 28);
             label1.Name = "label1";
             label1.Size = new Size(396, 54);
             label1.TabIndex = 4;
@@ -161,7 +110,7 @@
             // 
             // buttonSelecionar
             // 
-            buttonSelecionar.Location = new Point(846, 796);
+            buttonSelecionar.Location = new Point(992, 797);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(94, 29);
             buttonSelecionar.TabIndex = 5;
@@ -169,11 +118,71 @@
             buttonSelecionar.UseVisualStyleBackColor = true;
             buttonSelecionar.Click += buttonSelecionar_Click;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            idDataGridViewTextBoxColumn.HeaderText = "Venda Nº:";
+            idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            idDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // FormaDePagamento
+            // 
+            FormaDePagamento.DataPropertyName = "FormaDePagamento";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            FormaDePagamento.DefaultCellStyle = dataGridViewCellStyle2;
+            FormaDePagamento.HeaderText = "Forma de pagamento";
+            FormaDePagamento.MinimumWidth = 6;
+            FormaDePagamento.Name = "FormaDePagamento";
+            FormaDePagamento.ReadOnly = true;
+            FormaDePagamento.Width = 180;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            dataGridViewTextBoxColumn1.HeaderText = "Usuário";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // NomeCliente
+            // 
+            NomeCliente.DataPropertyName = "NomeCliente";
+            NomeCliente.HeaderText = "Nome do cliente";
+            NomeCliente.MinimumWidth = 6;
+            NomeCliente.Name = "NomeCliente";
+            NomeCliente.ReadOnly = true;
+            NomeCliente.Width = 200;
+            // 
+            // dataVendaDataGridViewTextBoxColumn
+            // 
+            dataVendaDataGridViewTextBoxColumn.DataPropertyName = "DataVenda";
+            dataVendaDataGridViewTextBoxColumn.HeaderText = "Data venda";
+            dataVendaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            dataVendaDataGridViewTextBoxColumn.Name = "dataVendaDataGridViewTextBoxColumn";
+            dataVendaDataGridViewTextBoxColumn.ReadOnly = true;
+            dataVendaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // totalVendaDataGridViewTextBoxColumn
+            // 
+            totalVendaDataGridViewTextBoxColumn.DataPropertyName = "TotalVenda";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            totalVendaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            totalVendaDataGridViewTextBoxColumn.HeaderText = "TotalVenda";
+            totalVendaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            totalVendaDataGridViewTextBoxColumn.Name = "totalVendaDataGridViewTextBoxColumn";
+            totalVendaDataGridViewTextBoxColumn.ReadOnly = true;
+            totalVendaDataGridViewTextBoxColumn.Width = 125;
+            // 
             // FormRelatorioDeVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(950, 834);
+            ClientSize = new Size(1098, 834);
             Controls.Add(buttonSelecionar);
             Controls.Add(label1);
             Controls.Add(textBoxBuscar);
@@ -211,12 +220,13 @@
         private DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private BindingSource vendaBindingSource;
         private DataGridViewTextBoxColumn Usuario;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dataVendaDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn descontoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn totalVendaDataGridViewTextBoxColumn;
         private Button buttonSelecionar;
+        private DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn FormaDePagamento;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn NomeCliente;
+        private DataGridViewTextBoxColumn dataVendaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn totalVendaDataGridViewTextBoxColumn;
     }
 }

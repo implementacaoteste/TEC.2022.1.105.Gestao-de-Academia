@@ -48,6 +48,7 @@ namespace UIGestaoAcademia
                     {
                         ((Venda)vendaBindingSource.Current).Cliente = frm.Cliente;
                         textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
+
                     }
                 }
             }
@@ -58,17 +59,7 @@ namespace UIGestaoAcademia
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
-            {
 
-                frm.ShowDialog();
-                if (frm.FormaPagamento != null)
-                {
-                    ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
-                    ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
-                    textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
-                }
-            }
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
         {
@@ -81,9 +72,9 @@ namespace UIGestaoAcademia
                 ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                 ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco;
                 ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
-
                 itensVendaListBindingSource.EndEdit();
                 ((Venda)vendaBindingSource.Current).ItensVendaList.Add((ItensVenda)itensVendaListBindingSource.Current);
+
                 dataGridView1.DataSource = itensVendaListBindingSource;
                 dataGridView1.Refresh();
                 textBoxProduto.Clear();
@@ -124,9 +115,9 @@ namespace UIGestaoAcademia
                         itensVendaListBindingSource.AddNew();
                         ((ItensVenda)itensVendaListBindingSource.Current).ProdutoId = produto.Id;
                         ((ItensVenda)itensVendaListBindingSource.Current).Produto = produto;
-                        ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = 1;
+                        ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                         ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco;
-                        ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
+                        ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
                         itensVendaListBindingSource.EndEdit();
                         ((Venda)vendaBindingSource.Current).ItensVendaList.Add((ItensVenda)itensVendaListBindingSource.Current);
                         //ItensVenda novoItem = new ItensVenda
@@ -184,18 +175,64 @@ namespace UIGestaoAcademia
         }*/
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+
+                frm.ShowDialog();
+                if (frm.FormaPagamento != null)
+                {
+                    ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
+                    ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                }
+            }
             try
             {
                 Venda venda = (Venda)vendaBindingSource.Current;
 
-                new VendasBLL().Inserir(venda);
+                if (venda != null)
+                {
+                    // Verifica se a venda não possui um cliente associado
+                    if (venda.Cliente == null)
+                    {
+                        // Se não houver cliente associado, pergunte ao usuário se deseja continuar
+                        DialogResult result = MessageBox.Show("Nenhum cliente selecionado. Deseja continuar?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                MessageBox.Show("Venda finalizada com sucesso!");
+                        // Se o usuário desejar continuar mesmo sem um cliente, finalize a venda
+                        if (result == DialogResult.Yes)
+                        {
+                            // Insira a venda no banco de dados
+                            new VendasBLL().Inserir(venda);
 
-                // Atualiza o código da venda e limpa o formulário
-                int novoCodigoVenda = GerarCodigoVenda();
-                labelCodigoVenda.Text = novoCodigoVenda.ToString();
-                LimparFormulario();
+                            MessageBox.Show("Venda finalizada com sucesso!");
+
+                            // Atualiza o código da venda e limpa o formulário
+                            int novoCodigoVenda = GerarCodigoVenda();
+                            labelCodigoVenda.Text = novoCodigoVenda.ToString();
+                            LimparFormulario();
+                        }
+                        // Se o usuário não desejar continuar, retorne sem fazer nada
+                        else
+                        {
+                            return;
+                        }
+                    }
+                    // Se a venda tiver um cliente associado, finalize normalmente
+                    else
+                    {
+                        new VendasBLL().Inserir(venda);
+
+                        MessageBox.Show("Venda finalizada com sucesso!");
+
+                        // Atualiza o código da venda e limpa o formulário
+                        int novoCodigoVenda = GerarCodigoVenda();
+                        labelCodigoVenda.Text = novoCodigoVenda.ToString();
+                        LimparFormulario();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma venda em andamento.");
+                }
             }
             catch (Exception ex)
             {
@@ -214,7 +251,6 @@ namespace UIGestaoAcademia
         }
         private void FormVendas_Load(object sender, EventArgs e)
         {
-
             //vendaBindingSource.AddNew();
             //itensVendaListBindingSource1.AddNew();
             //((ItensVenda)itensVendaListBindingSource1.Current).PrecoUnitario = 40;
@@ -223,7 +259,6 @@ namespace UIGestaoAcademia
             //vendaBindingSource.EndEdit();
 
             //Venda Teste = (Venda)vendaBindingSource.Current;
-
 
             labeUserVenda.Text = Constantes.UsuarioLogado.Nome;
             vendaBindingSource.AddNew();

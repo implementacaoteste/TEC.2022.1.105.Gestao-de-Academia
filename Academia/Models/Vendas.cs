@@ -57,7 +57,6 @@
         public int QuantidadeTotal { get; set; }
         public decimal PrecoTotal { get; set; }
         public object ItensVenda { get; set; }
-
         public Venda()
         {
             this.ItensVendaList = new List<ItensVenda>();
