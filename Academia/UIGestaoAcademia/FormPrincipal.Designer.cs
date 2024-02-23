@@ -122,7 +122,7 @@
             button10.Location = new Point(653, 331);
             button10.Name = "button10";
             button10.Size = new Size(113, 75);
-            button10.TabIndex = 5;
+            button10.TabIndex = 10;
             button10.Text = "Compras";
             button10.UseVisualStyleBackColor = false;
             button10.Click += buttonCompra_Click;
@@ -167,7 +167,7 @@
             buttonCliente.Location = new Point(653, 170);
             buttonCliente.Name = "buttonCliente";
             buttonCliente.Size = new Size(113, 75);
-            buttonCliente.TabIndex = 10;
+            buttonCliente.TabIndex = 5;
             buttonCliente.Text = "Clientes";
             buttonCliente.UseVisualStyleBackColor = false;
             buttonCliente.Click += buttonCliente_Click;
@@ -287,7 +287,7 @@
             buttonRelatorioVenda.Location = new Point(377, 412);
             buttonRelatorioVenda.Name = "buttonRelatorioVenda";
             buttonRelatorioVenda.Size = new Size(113, 75);
-            buttonRelatorioVenda.TabIndex = 24;
+            buttonRelatorioVenda.TabIndex = 11;
             buttonRelatorioVenda.Text = "Relatório Venda";
             buttonRelatorioVenda.UseVisualStyleBackColor = false;
             buttonRelatorioVenda.Click += button1_Click;
@@ -302,7 +302,7 @@
             button2.Location = new Point(653, 412);
             button2.Name = "button2";
             button2.Size = new Size(113, 75);
-            button2.TabIndex = 24;
+            button2.TabIndex = 12;
             button2.Text = "Relatório Compra";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;

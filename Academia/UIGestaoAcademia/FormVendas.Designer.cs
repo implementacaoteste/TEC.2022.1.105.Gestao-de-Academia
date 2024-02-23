@@ -74,7 +74,7 @@
             labelCliente.Location = new Point(208, 31);
             labelCliente.Name = "labelCliente";
             labelCliente.Size = new Size(67, 20);
-            labelCliente.TabIndex = 11;
+            labelCliente.TabIndex = 5;
             labelCliente.Text = "CLIENTE:";
             // 
             // labelUser
@@ -96,7 +96,7 @@
             textBoxBuscarPorCliente.Location = new Point(278, 26);
             textBoxBuscarPorCliente.Name = "textBoxBuscarPorCliente";
             textBoxBuscarPorCliente.Size = new Size(398, 27);
-            textBoxBuscarPorCliente.TabIndex = 2;
+            textBoxBuscarPorCliente.TabIndex = 6;
             // 
             // vendaBindingSource
             // 
@@ -107,8 +107,8 @@
             buttonFinalizarVenda.Location = new Point(765, 128);
             buttonFinalizarVenda.Name = "buttonFinalizarVenda";
             buttonFinalizarVenda.Size = new Size(147, 41);
-            buttonFinalizarVenda.TabIndex = 19;
-            buttonFinalizarVenda.Text = "&Finalizar venda";
+            buttonFinalizarVenda.TabIndex = 4;
+            buttonFinalizarVenda.Text = "&Finalizar pedido";
             buttonFinalizarVenda.UseVisualStyleBackColor = true;
             buttonFinalizarVenda.Click += buttonFinalizarVenda_Click;
             // 
@@ -136,7 +136,7 @@
             buttonBuscarCliente.Location = new Point(682, 25);
             buttonBuscarCliente.Name = "buttonBuscarCliente";
             buttonBuscarCliente.Size = new Size(33, 29);
-            buttonBuscarCliente.TabIndex = 0;
+            buttonBuscarCliente.TabIndex = 7;
             buttonBuscarCliente.Text = "...";
             buttonBuscarCliente.UseVisualStyleBackColor = true;
             buttonBuscarCliente.Click += buttonBuscarCliente_Click;
@@ -163,7 +163,7 @@
             buttonExcluir.Location = new Point(606, 129);
             buttonExcluir.Name = "buttonExcluir";
             buttonExcluir.Size = new Size(153, 40);
-            buttonExcluir.TabIndex = 1;
+            buttonExcluir.TabIndex = 3;
             buttonExcluir.Text = "&Excluir item";
             buttonExcluir.UseVisualStyleBackColor = true;
             buttonExcluir.Click += buttonExcluir_Click;
@@ -173,7 +173,7 @@
             textBoxProduto.Location = new Point(121, 143);
             textBoxProduto.Name = "textBoxProduto";
             textBoxProduto.Size = new Size(161, 27);
-            textBoxProduto.TabIndex = 6;
+            textBoxProduto.TabIndex = 1;
             textBoxProduto.KeyDown += textBoxProduto_KeyDown;
             // 
             // textBoxQuantidade
@@ -181,7 +181,7 @@
             textBoxQuantidade.Location = new Point(9, 142);
             textBoxQuantidade.Name = "textBoxQuantidade";
             textBoxQuantidade.Size = new Size(98, 27);
-            textBoxQuantidade.TabIndex = 8;
+            textBoxQuantidade.TabIndex = 0;
             textBoxQuantidade.Text = "1";
             textBoxQuantidade.TextAlign = HorizontalAlignment.Right;
             // 
@@ -218,7 +218,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.Size = new Size(903, 288);
-            dataGridView1.TabIndex = 2;
+            dataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -275,7 +275,7 @@
             buttonBuscarProduto.Location = new Point(298, 143);
             buttonBuscarProduto.Name = "buttonBuscarProduto";
             buttonBuscarProduto.Size = new Size(29, 29);
-            buttonBuscarProduto.TabIndex = 7;
+            buttonBuscarProduto.TabIndex = 2;
             buttonBuscarProduto.Text = "...";
             buttonBuscarProduto.UseVisualStyleBackColor = true;
             buttonBuscarProduto.Click += buttonBuscarProduto_Click;
@@ -289,7 +289,6 @@
             labelValorTotal.Size = new Size(157, 62);
             labelValorTotal.TabIndex = 23;
             labelValorTotal.Text = "TOTAL";
-            labelValorTotal.Click += labelValorTotal_Click;
             // 
             // labelVenda
             // 
@@ -375,7 +374,7 @@
             pictureBoxVenda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxVenda.Location = new Point(0, 1);
             pictureBoxVenda.Name = "pictureBoxVenda";
-            pictureBoxVenda.Size = new Size(954, 822);
+            pictureBoxVenda.Size = new Size(954, 862);
             pictureBoxVenda.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxVenda.TabIndex = 31;
             pictureBoxVenda.TabStop = false;
@@ -449,7 +448,6 @@
         private Label labeUserVenda;
         private Label labelUser;
         private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
-        private PictureBox pictureBoxVenda;
         private Label Nome;
         private BindingSource itensVendaListBindingSource;
         private BindingSource itensVendaListBindingSource1;
@@ -458,5 +456,6 @@
         private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private PictureBox pictureBoxVenda;
     }
 }

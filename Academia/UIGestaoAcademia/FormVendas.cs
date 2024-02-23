@@ -48,6 +48,7 @@ namespace UIGestaoAcademia
                     {
                         ((Venda)vendaBindingSource.Current).Cliente = frm.Cliente;
                         textBoxBuscarPorCliente.Text = frm.Cliente.Nome;
+
                     }
                 }
             }
@@ -125,7 +126,7 @@ namespace UIGestaoAcademia
                         itensVendaListBindingSource.AddNew();
                         ((ItensVenda)itensVendaListBindingSource.Current).ProdutoId = produto.Id;
                         ((ItensVenda)itensVendaListBindingSource.Current).Produto = produto;
-                        ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = 1;
+                        ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                         ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco;
                         ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
                         itensVendaListBindingSource.EndEdit();
@@ -277,11 +278,6 @@ namespace UIGestaoAcademia
 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundovenda.png"))
                 pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundovenda.png";
-        }
-
-        private void labelValorTotal_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
