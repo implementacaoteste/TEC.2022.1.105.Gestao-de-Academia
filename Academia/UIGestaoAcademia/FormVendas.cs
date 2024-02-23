@@ -59,17 +59,7 @@ namespace UIGestaoAcademia
         }
         private void buttonFormaDePagamento_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
-            {
 
-                frm.ShowDialog();
-                if (frm.FormaPagamento != null)
-                {
-                    ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
-                    ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
-                    textBoxFormaPagamento.Text = frm.FormaPagamento.Descricao;
-                }
-            }
         }
         private void textBoxProduto_KeyDown(object sender, KeyEventArgs e)
         {
@@ -82,7 +72,6 @@ namespace UIGestaoAcademia
                 ((ItensVenda)itensVendaListBindingSource.Current).Quantidade = Convert.ToInt32(textBoxQuantidade.Text);
                 ((ItensVenda)itensVendaListBindingSource.Current).PrecoUnitario = produto.Preco;
                 ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
-
                 itensVendaListBindingSource.EndEdit();
                 ((Venda)vendaBindingSource.Current).ItensVendaList.Add((ItensVenda)itensVendaListBindingSource.Current);
 
@@ -186,6 +175,16 @@ namespace UIGestaoAcademia
         }*/
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            {
+
+                frm.ShowDialog();
+                if (frm.FormaPagamento != null)
+                {
+                    ((Venda)vendaBindingSource.Current).FormaPagamento = frm.FormaPagamento;
+                    ((Venda)vendaBindingSource.Current).FormaPagamentoId = frm.FormaPagamento.Id;
+                }
+            }
             try
             {
                 Venda venda = (Venda)vendaBindingSource.Current;
