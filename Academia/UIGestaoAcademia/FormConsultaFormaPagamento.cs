@@ -53,6 +53,7 @@ namespace UIGestaoAcademia
 
         private void buttonSelecionar_Click_1(object sender, EventArgs e)
         {
+            buttonSelecionar_Click(sender, e);
             try
             {
                 if (bindingSourceFormaPagamento.Count > 0)
@@ -66,6 +67,18 @@ namespace UIGestaoAcademia
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonSelecionar_Click(object sender, EventArgs e)
+        {
+            if (bindingSourceFormaPagamento.Count == 0)
+            {
+                return;
+            }
+            int id = ((FormaPagamento)bindingSourceFormaPagamento.Current).Id;
+            using (FormQrCode frm = new FormQrCode())
+            {
+                frm.ShowDialog();
             }
         }
 

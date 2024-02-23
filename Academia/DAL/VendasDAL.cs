@@ -129,6 +129,7 @@ namespace DAL
                         venda.TotalVenda = Convert.ToDouble(rd["TotalVenda"]);
                         venda.Cliente = new ClienteDAL().BuscarPorId((int)rd["ClienteId"]);
                         venda.Usuario = new UsuarioDAL().BuscarPorId((int)rd["UsuarioId"]);
+                        venda.FormaPagamento = new FormaPagamentoDAL().BuscarPorId((int)rd["FormaPagamentoId"]);
 
                         vendas.Add(venda);
                     }
