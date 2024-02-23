@@ -252,7 +252,7 @@
             ValorAPagar.DataPropertyName = "ValorAPagar";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
             ValorAPagar.DefaultCellStyle = dataGridViewCellStyle2;
-            ValorAPagar.HeaderText = "ValorAPagar";
+            ValorAPagar.HeaderText = "Valor a pagar";
             ValorAPagar.MinimumWidth = 6;
             ValorAPagar.Name = "ValorAPagar";
             ValorAPagar.ReadOnly = true;

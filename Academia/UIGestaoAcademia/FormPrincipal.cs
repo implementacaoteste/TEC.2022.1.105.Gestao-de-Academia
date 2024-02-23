@@ -30,7 +30,7 @@ namespace UIGestaoAcademia
             try
             {
 
-                labelMenu.Parent = pictureBoxPrincipal;
+                pictureBoxNomeLogo.Parent = pictureBoxPrincipal;
                 if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png"))
                     pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
 
