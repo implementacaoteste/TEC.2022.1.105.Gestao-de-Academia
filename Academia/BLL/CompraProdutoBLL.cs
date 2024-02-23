@@ -17,6 +17,8 @@ namespace BLL
                 throw new Exception("Informe uma forma de pagamento válida");
             if (_compraProduto.FornecedorId == null || _compraProduto.FornecedorId == 0)
                 throw new Exception("Informe um fornecedor");
+            if (_compraProduto.FreteTotal == null)
+                throw new Exception("Informe um frete");
 
             new CompraProdutoDAL().Inserir(_compraProduto);
         }
