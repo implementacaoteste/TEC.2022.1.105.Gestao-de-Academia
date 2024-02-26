@@ -120,18 +120,7 @@ namespace UIGestaoAcademia
                         ((ItensVenda)itensVendaListBindingSource.Current).PrecoTotal = produto.Preco * ((ItensVenda)itensVendaListBindingSource.Current).Quantidade;
                         itensVendaListBindingSource.EndEdit();
                         ((Venda)vendaBindingSource.Current).ItensVendaList.Add((ItensVenda)itensVendaListBindingSource.Current);
-                        //ItensVenda novoItem = new ItensVenda
-                        //{
-                        //    ProdutoId = produto.Id,
-                        //    Produto = produto,
-                        //    Quantidade = 1, // Ou qualquer valor padrão desejado
-                        //    PrecoUnitario = produto.Preco,
-                        //    PrecoTotal = produto.Preco
-                        //};
 
-                        //itensVendaListBindingSource.Add(novoItem);
-
-                        // Atualiza o valor total
                         AtualizarValorTotal();
                     }
                 }
@@ -175,12 +164,12 @@ namespace UIGestaoAcademia
         }*/
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
-
             if (itensVendaListBindingSource.Count == 0)
             {
                 MessageBox.Show("Não é possível finalizar a venda sem produtos inseridos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
             {
 
@@ -195,7 +184,7 @@ namespace UIGestaoAcademia
             {
                 Venda venda = (Venda)vendaBindingSource.Current;
 
-                if (venda != null)
+                /*if (venda != null)
                 {
                     // Verifica se a venda não possui um cliente associado
                     if (venda.Cliente == null)
@@ -223,22 +212,16 @@ namespace UIGestaoAcademia
                         }
                     }
                     // Se a venda tiver um cliente associado, finalize normalmente
-                    else
-                    {
-                        new VendasBLL().Inserir(venda);
+                    else*/
 
-                        MessageBox.Show("Venda finalizada com sucesso!");
+                new VendasBLL().Inserir(venda);
 
-                        // Atualiza o código da venda e limpa o formulário
-                        int novoCodigoVenda = GerarCodigoVenda();
-                        labelCodigoVenda.Text = novoCodigoVenda.ToString();
-                        LimparFormulario();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Nenhuma venda em andamento.");
-                }
+                MessageBox.Show("Venda finalizada com sucesso!");
+
+                // Atualiza o código da venda e limpa o formulário
+                int novoCodigoVenda = GerarCodigoVenda();
+                labelCodigoVenda.Text = novoCodigoVenda.ToString();
+                LimparFormulario();
             }
             catch (Exception ex)
             {
@@ -283,6 +266,20 @@ namespace UIGestaoAcademia
 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundovenda.png"))
                 pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundovenda.png";
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns.Count - 1 && e.RowIndex >= 0)
+            {
+                // Verifica se o valor da célula é numérico
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double value))
+                {
+                    // Formata o valor como moeda
+                    e.Value = value.ToString("C");
+                    e.FormattingApplied = true; // Indica que o formato foi aplicado
+                }
+            }
         }
     }
 }
