@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Models;
+using System.Windows.Forms;
 
 namespace UIGestaoAcademia
 {
@@ -9,7 +10,6 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
         }
-
         private void buttonBuscar_Click_1(object sender, EventArgs e)
         {
             try
@@ -40,7 +40,6 @@ namespace UIGestaoAcademia
                     default:
                         controleDebitoBindingSource.DataSource = new ControleDebitoBLL().BuscarPorDataDeLancamento(dateTimePicker1.Text, dateTimePicker2.Text);
                         break;
-
                 }
             }
             catch (Exception ex)
@@ -56,7 +55,6 @@ namespace UIGestaoAcademia
                 frm.ShowDialog();
             }
         }
-
         private void buttonAlterar_Click(object sender, EventArgs e)
         {
             try
@@ -77,7 +75,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void buttonExcluir_Click_1(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir esse registro?", "Atenção", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -88,7 +85,6 @@ namespace UIGestaoAcademia
             controleDebitoBindingSource.RemoveCurrent();
             MessageBox.Show("Registro excluido com sucesso!");
         }
-
         private void FormBuscarDebito_Load(object sender, EventArgs e)
         {
             labelBuscarDebito.Parent = pictureBox3;
@@ -107,7 +103,6 @@ namespace UIGestaoAcademia
             comboBoxBuscarPor.SelectedIndex = 0;
             buttonBuscar_Click_1(sender, e);
         }
-
         private void comboBoxBuscarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxBuscarPor.SelectedIndex <= 4)
@@ -129,5 +124,18 @@ namespace UIGestaoAcademia
                 labelE.Visible = true;
             }
         }
-    }
+        private void dataGridViewProduto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewProduto.Columns.Count - 1 && e.RowIndex >= 0)
+            {
+                // Verifica se o valor da célula é numérico
+                if (e.Value != null && double.TryParse(e.Value.ToString(), out double value))
+                {
+                    // Formata o valor como moeda
+                    e.Value = value.ToString("C");
+                    e.FormattingApplied = true; // Indica que o formato foi aplicado
+                }
+            }
+        }   
+    }    
 }
