@@ -73,7 +73,7 @@ namespace UIGestaoAcademia
 
         private void buttonConsultaFormaPagamento_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(false))
             {
                 frm.ShowDialog();
                 if (frm.FormaPagamento != null)

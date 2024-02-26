@@ -44,7 +44,7 @@ namespace UIGestaoAcademia
         {
             try
             {
-                using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+                using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(false))
                 {
                     frm.ShowDialog();
                     if (frm.FormaPagamento != null)

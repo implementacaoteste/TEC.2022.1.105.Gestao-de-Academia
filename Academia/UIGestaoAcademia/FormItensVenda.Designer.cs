@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             vendaIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -82,8 +82,8 @@
             // quantidadeDataGridViewTextBoxColumn
             // 
             quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleRight;
-            quantidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
+            quantidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
             quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
             quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
@@ -93,8 +93,8 @@
             // precoUnitarioDataGridViewTextBoxColumn
             // 
             precoUnitarioDataGridViewTextBoxColumn.DataPropertyName = "PrecoUnitario";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleRight;
-            precoUnitarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
+            precoUnitarioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             precoUnitarioDataGridViewTextBoxColumn.HeaderText = "Preco unitario";
             precoUnitarioDataGridViewTextBoxColumn.MinimumWidth = 6;
             precoUnitarioDataGridViewTextBoxColumn.Name = "precoUnitarioDataGridViewTextBoxColumn";
@@ -105,8 +105,8 @@
             // 
             precoTotalDataGridViewTextBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             precoTotalDataGridViewTextBoxColumn.DataPropertyName = "PrecoTotal";
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleRight;
-            precoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleRight;
+            precoTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             precoTotalDataGridViewTextBoxColumn.HeaderText = "PrecoTotal";
             precoTotalDataGridViewTextBoxColumn.MinimumWidth = 6;
             precoTotalDataGridViewTextBoxColumn.Name = "precoTotalDataGridViewTextBoxColumn";
@@ -120,11 +120,12 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 22);
+            label1.Location = new Point(335, 9);
             label1.Name = "label1";
-            label1.Size = new Size(321, 60);
+            label1.Size = new Size(264, 60);
             label1.TabIndex = 1;
-            label1.Text = "ITENS VENDA:";
+            label1.Text = "Itens venda";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FormItensVenda
             // 

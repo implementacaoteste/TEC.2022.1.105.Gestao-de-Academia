@@ -33,7 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             labelCliente = new Label();
-            labelUser = new Label();
             textBoxBuscarPorCliente = new TextBox();
             vendaBindingSource = new BindingSource(components);
             buttonFinalizarVenda = new Button();
@@ -45,6 +44,11 @@
             label10 = new Label();
             label12 = new Label();
             dataGridView1 = new DataGridView();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             itensVendaListBindingSource = new BindingSource(components);
             buttonBuscarProduto = new Button();
             labelValorTotal = new Label();
@@ -53,13 +57,9 @@
             groupBoxVenda = new GroupBox();
             calendarioDataVencimento = new Calendario();
             labelCodigoVenda = new Label();
-            labeUserVenda = new Label();
             pictureBoxVenda = new PictureBox();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            nomeProdutoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            labelUser = new Label();
+            labeUserVenda = new Label();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensVendaListBindingSource).BeginInit();
@@ -76,18 +76,6 @@
             labelCliente.Size = new Size(67, 20);
             labelCliente.TabIndex = 5;
             labelCliente.Text = "CLIENTE:";
-            // 
-            // labelUser
-            // 
-            labelUser.AutoSize = true;
-            labelUser.BackColor = Color.Transparent;
-            labelUser.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            labelUser.ForeColor = Color.Black;
-            labelUser.Location = new Point(5, 835);
-            labelUser.Name = "labelUser";
-            labelUser.Size = new Size(45, 20);
-            labelUser.TabIndex = 10;
-            labelUser.Text = "User:";
             // 
             // textBoxBuscarPorCliente
             // 
@@ -195,6 +183,57 @@
             dataGridView1.Size = new Size(909, 288);
             dataGridView1.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "CodigoDeBarras";
+            dataGridViewTextBoxColumn2.HeaderText = "Codigo de barras";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 160;
+            // 
+            // nomeProdutoDataGridViewTextBoxColumn
+            // 
+            nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
+            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "Produto";
+            nomeProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
+            nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeProdutoDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            quantidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            quantidadeDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "PrecoUnitario";
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewTextBoxColumn3.HeaderText = "Preco unitario";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "PrecoTotal";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewTextBoxColumn4.HeaderText = "Total";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Width = 135;
+            // 
             // itensVendaListBindingSource
             // 
             itensVendaListBindingSource.DataMember = "ItensVendaList";
@@ -287,18 +326,6 @@
             labelCodigoVenda.TabIndex = 29;
             labelCodigoVenda.Text = "COD";
             // 
-            // labeUserVenda
-            // 
-            labeUserVenda.AutoSize = true;
-            labeUserVenda.BackColor = Color.Transparent;
-            labeUserVenda.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labeUserVenda.ForeColor = Color.Black;
-            labeUserVenda.Location = new Point(43, 822);
-            labeUserVenda.Name = "labeUserVenda";
-            labeUserVenda.Size = new Size(90, 41);
-            labeUserVenda.TabIndex = 30;
-            labeUserVenda.Text = "USER";
-            // 
             // pictureBoxVenda
             // 
             pictureBoxVenda.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -309,56 +336,29 @@
             pictureBoxVenda.TabIndex = 31;
             pictureBoxVenda.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // labelUser
             // 
-            dataGridViewTextBoxColumn2.DataPropertyName = "CodigoDeBarras";
-            dataGridViewTextBoxColumn2.HeaderText = "Codigo de barras";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 160;
+            labelUser.AutoSize = true;
+            labelUser.BackColor = Color.Transparent;
+            labelUser.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelUser.ForeColor = Color.Black;
+            labelUser.Location = new Point(524, 19);
+            labelUser.Name = "labelUser";
+            labelUser.Size = new Size(45, 20);
+            labelUser.TabIndex = 10;
+            labelUser.Text = "User:";
             // 
-            // nomeProdutoDataGridViewTextBoxColumn
+            // labeUserVenda
             // 
-            nomeProdutoDataGridViewTextBoxColumn.DataPropertyName = "NomeProduto";
-            nomeProdutoDataGridViewTextBoxColumn.HeaderText = "Produto";
-            nomeProdutoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            nomeProdutoDataGridViewTextBoxColumn.Name = "nomeProdutoDataGridViewTextBoxColumn";
-            nomeProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            nomeProdutoDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
-            quantidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            quantidadeDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "PrecoUnitario";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewTextBoxColumn3.HeaderText = "Preco unitario";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Width = 135;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.DataPropertyName = "PrecoTotal";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewTextBoxColumn4.HeaderText = "Total";
-            dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            dataGridViewTextBoxColumn4.Width = 135;
+            labeUserVenda.AutoSize = true;
+            labeUserVenda.BackColor = Color.Transparent;
+            labeUserVenda.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            labeUserVenda.ForeColor = Color.Black;
+            labeUserVenda.Location = new Point(563, 6);
+            labeUserVenda.Name = "labeUserVenda";
+            labeUserVenda.Size = new Size(90, 41);
+            labeUserVenda.TabIndex = 30;
+            labeUserVenda.Text = "USER";
             // 
             // FormVendas
             // 
@@ -420,8 +420,6 @@
         private Calendario calendarioDataVencimento;
         private Label labelCodigoVenda;
         private BindingSource vendaBindingSource;
-        private Label labeUserVenda;
-        private Label labelUser;
         private DataGridViewTextBoxColumn codigoDeBarrasDataGridViewTextBoxColumn;
         private Label Nome;
         private BindingSource itensVendaListBindingSource;
@@ -432,5 +430,7 @@
         private DataGridViewTextBoxColumn quantidadeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private Label labelUser;
+        private Label labeUserVenda;
     }
 }

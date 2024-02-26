@@ -8,13 +8,14 @@ namespace UIGestaoAcademia
         private string ultimaBusca;
         private bool buscou;
 
-        public FormaPagamento FormaPagamento { get;  set; }
-
-        public FormConsultaFormaPagamento()
+        public FormaPagamento FormaPagamento { get; set; }
+        bool mostrarQR;
+        public FormConsultaFormaPagamento(bool _mostrarQR)
         {
             InitializeComponent();
             ultimaBusca = "";
             buscou = false;
+            mostrarQR = _mostrarQR;
         }
 
         private void buttonInserir_Click(object sender, EventArgs e)
@@ -76,10 +77,11 @@ namespace UIGestaoAcademia
                 return;
             }
             int id = ((FormaPagamento)bindingSourceFormaPagamento.Current).Id;
-            using (FormQrCode frm = new FormQrCode())
-            {
-                frm.ShowDialog();
-            }
+            if (mostrarQR && id == 1)
+                using (FormQrCode frm = new FormQrCode())
+                {
+                    frm.ShowDialog();
+                }
         }
 
         private void buttonBuscar_Click_FormaPagamento(object sender, EventArgs e)

@@ -175,7 +175,7 @@ namespace UIGestaoAcademia
         }*/
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
-            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento())
+            using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
             {
 
                 frm.ShowDialog();
