@@ -187,21 +187,26 @@ namespace UIGestaoAcademia
         }
         private void FinalizarCompra_Click(object sender, EventArgs e)
         {
-            try
+            if (itensCompraBindingSource.Count == 0)
             {
-                //calendario1.Enabled = true;
-                //((CompraProduto)BindingSourceCompraProduto.Current).DataCompra = calendario1.Value;
-                //calendario1.Enabled = false;
-                CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
-                new CompraProdutoBLL().Inserir(compraProduto);
+                MessageBox.Show ("Não é possivel finalizar a venda sem produtos inseridos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+                try
+                {
+                    //calendario1.Enabled = true;
+                    //((CompraProduto)BindingSourceCompraProduto.Current).DataCompra = calendario1.Value;
+                    //calendario1.Enabled = false;
+                    CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
+                    new CompraProdutoBLL().Inserir(compraProduto);
 
-                MessageBox.Show("Registro salvo com sucesso!");
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                    MessageBox.Show("Registro salvo com sucesso!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
         }
         private void textBoxQuantidade_KeyDown(object sender, KeyEventArgs e)
         {
