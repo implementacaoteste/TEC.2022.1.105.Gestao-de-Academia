@@ -10,6 +10,9 @@ namespace BLL
             if ((_venda.FormaPagamentoId == null || _venda.FormaPagamentoId == 0))
                 throw new Exception("Informe uma forma de pagamento válida");
 
+            if ((_venda.ItensVendaList == null))
+                throw new Exception("Impossível finalizar venda sem adicionar produtos");
+
             new VendasDAL().Inserir(_venda);
         }
         //public List<Vendas> BuscarPorNomeCliente(string _nome)

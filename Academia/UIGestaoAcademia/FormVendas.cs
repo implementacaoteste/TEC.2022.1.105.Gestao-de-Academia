@@ -175,6 +175,12 @@ namespace UIGestaoAcademia
         }*/
         private void buttonFinalizarVenda_Click(object sender, EventArgs e)
         {
+
+            if (itensVendaListBindingSource.Count == 0)
+            {
+                MessageBox.Show("Não é possível finalizar a venda sem produtos inseridos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             using (FormConsultaFormaPagamento frm = new FormConsultaFormaPagamento(true))
             {
 
