@@ -18,7 +18,6 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
         }
-
         private void buttonBuscarCompras_Click(object sender, EventArgs e)
         {
             try
@@ -50,7 +49,6 @@ namespace UIGestaoAcademia
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void FormRelatorioCompra_Load(object sender, EventArgs e)
         {
             comboBoxBuscarPor.SelectedIndex = 0;

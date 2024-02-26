@@ -41,12 +41,9 @@
             labelQuantidade = new Label();
             labelCodigoDeBarras = new Label();
             textBoxQuantidade = new TextBox();
-            textBoxBuscarFormaPagamento = new TextBox();
-            buttonFormaDePagamento = new Button();
             textBoxBuscarFornecedor = new TextBox();
             buttonBuscarFornecedor = new Button();
             textBoxCodigoDeBarras = new TextBox();
-            labelFormaPagamento = new Label();
             labelCompraDeProduto = new Label();
             labelFornecedor = new Label();
             labelValorTotal = new Label();
@@ -58,13 +55,16 @@
             textBoxNomeProduto = new TextBox();
             textBoxValorTotal = new TextBox();
             labelValorDaNota = new Label();
-            FinalizarCompra = new Button();
             labelValorTotalDaNota = new Label();
             textBoxValorTotalNota = new TextBox();
             pictureBoxCompra = new PictureBox();
             buttonExcluir = new Button();
             calendario1 = new Calendario();
             DataCompra = new Label();
+            labelFormaPagamento = new Label();
+            textBoxBuscarFormaPagamento = new TextBox();
+            buttonFormaDePagamento = new Button();
+            FinalizarCompra = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BindingSourceCompraProduto).BeginInit();
@@ -182,23 +182,6 @@
             textBoxQuantidade.TextAlign = HorizontalAlignment.Right;
             textBoxQuantidade.KeyDown += textBoxQuantidade_KeyDown;
             // 
-            // textBoxBuscarFormaPagamento
-            // 
-            textBoxBuscarFormaPagamento.Location = new Point(196, 206);
-            textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
-            textBoxBuscarFormaPagamento.Size = new Size(117, 27);
-            textBoxBuscarFormaPagamento.TabIndex = 2;
-            // 
-            // buttonFormaDePagamento
-            // 
-            buttonFormaDePagamento.Location = new Point(319, 206);
-            buttonFormaDePagamento.Name = "buttonFormaDePagamento";
-            buttonFormaDePagamento.Size = new Size(33, 29);
-            buttonFormaDePagamento.TabIndex = 2;
-            buttonFormaDePagamento.Text = "...";
-            buttonFormaDePagamento.UseVisualStyleBackColor = true;
-            buttonFormaDePagamento.Click += buttonFormaDePagamento_Click;
-            // 
             // textBoxBuscarFornecedor
             // 
             textBoxBuscarFornecedor.Location = new Point(119, 173);
@@ -223,16 +206,6 @@
             textBoxCodigoDeBarras.Size = new Size(161, 27);
             textBoxCodigoDeBarras.TabIndex = 3;
             textBoxCodigoDeBarras.KeyDown += textBoxProduto_KeyDown;
-            // 
-            // labelFormaPagamento
-            // 
-            labelFormaPagamento.AutoSize = true;
-            labelFormaPagamento.BackColor = Color.Transparent;
-            labelFormaPagamento.Location = new Point(10, 209);
-            labelFormaPagamento.Name = "labelFormaPagamento";
-            labelFormaPagamento.Size = new Size(173, 20);
-            labelFormaPagamento.TabIndex = 35;
-            labelFormaPagamento.Text = "FORMA DE PAGAMENTO";
             // 
             // labelCompraDeProduto
             // 
@@ -344,16 +317,6 @@
             labelValorDaNota.TabIndex = 59;
             labelValorDaNota.Text = "ENTRADA DA NOTA(R$)";
             // 
-            // FinalizarCompra
-            // 
-            FinalizarCompra.Location = new Point(864, 665);
-            FinalizarCompra.Name = "FinalizarCompra";
-            FinalizarCompra.Size = new Size(131, 29);
-            FinalizarCompra.TabIndex = 62;
-            FinalizarCompra.Text = "Finalizar compra";
-            FinalizarCompra.UseVisualStyleBackColor = true;
-            FinalizarCompra.Click += FinalizarCompra_Click;
-            // 
             // labelValorTotalDaNota
             // 
             labelValorTotalDaNota.AutoSize = true;
@@ -415,6 +378,44 @@
             DataCompra.TabIndex = 71;
             DataCompra.Text = "DATA DA COMPRA";
             // 
+            // labelFormaPagamento
+            // 
+            labelFormaPagamento.AutoSize = true;
+            labelFormaPagamento.BackColor = Color.Transparent;
+            labelFormaPagamento.Location = new Point(10, 209);
+            labelFormaPagamento.Name = "labelFormaPagamento";
+            labelFormaPagamento.Size = new Size(173, 20);
+            labelFormaPagamento.TabIndex = 35;
+            labelFormaPagamento.Text = "FORMA DE PAGAMENTO";
+            // 
+            // textBoxBuscarFormaPagamento
+            // 
+            textBoxBuscarFormaPagamento.DataBindings.Add(new Binding("Text", BindingSourceCompraProduto, "QuantidadeParcela", true));
+            textBoxBuscarFormaPagamento.Location = new Point(196, 206);
+            textBoxBuscarFormaPagamento.Name = "textBoxBuscarFormaPagamento";
+            textBoxBuscarFormaPagamento.Size = new Size(117, 27);
+            textBoxBuscarFormaPagamento.TabIndex = 2;
+            // 
+            // buttonFormaDePagamento
+            // 
+            buttonFormaDePagamento.Location = new Point(319, 206);
+            buttonFormaDePagamento.Name = "buttonFormaDePagamento";
+            buttonFormaDePagamento.Size = new Size(33, 29);
+            buttonFormaDePagamento.TabIndex = 2;
+            buttonFormaDePagamento.Text = "...";
+            buttonFormaDePagamento.UseVisualStyleBackColor = true;
+            buttonFormaDePagamento.Click += buttonFormaDePagamento_Click;
+            // 
+            // FinalizarCompra
+            // 
+            FinalizarCompra.Location = new Point(864, 665);
+            FinalizarCompra.Name = "FinalizarCompra";
+            FinalizarCompra.Size = new Size(131, 29);
+            FinalizarCompra.TabIndex = 62;
+            FinalizarCompra.Text = "Finalizar compra";
+            FinalizarCompra.UseVisualStyleBackColor = true;
+            FinalizarCompra.Click += FinalizarCompra_Click;
+            // 
             // FormCompra
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -472,12 +473,9 @@
         private Label labelQuantidade;
         private Label labelCodigoDeBarras;
         private TextBox textBoxQuantidade;
-        private TextBox textBoxBuscarFormaPagamento;
-        private Button buttonFormaDePagamento;
         private TextBox textBoxBuscarFornecedor;
         private Button buttonBuscarFornecedor;
         private TextBox textBoxCodigoDeBarras;
-        private Label labelFormaPagamento;
         private Label labelCompraDeProduto;
         private Label labelFornecedor;
         private BindingSource itensCompraBindingSource;
@@ -491,7 +489,6 @@
         private TextBox textBoxNomeProduto;
         private TextBox textBoxValorTotal;
         private Label labelValorDaNota;
-        private Button FinalizarCompra;
         private Label labelValorTotalDaNota;
         private TextBox textBoxValorTotalNota;
         private PictureBox pictureBoxCompra;
@@ -503,5 +500,9 @@
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private Calendario calendario1;
         private Label DataCompra;
+        private Label labelFormaPagamento;
+        private TextBox textBoxBuscarFormaPagamento;
+        private Button buttonFormaDePagamento;
+        private Button FinalizarCompra;
     }
 }
