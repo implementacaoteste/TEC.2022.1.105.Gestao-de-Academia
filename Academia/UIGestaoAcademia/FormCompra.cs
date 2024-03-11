@@ -189,14 +189,11 @@ namespace UIGestaoAcademia
         {
             if (itensCompraBindingSource.Count == 0)
             {
-                MessageBox.Show ("Não é possivel finalizar a venda sem produtos inseridos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Não é possivel finalizar a compra sem produtos inseridos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
                 try
                 {
-                    //calendario1.Enabled = true;
-                    //((CompraProduto)BindingSourceCompraProduto.Current).DataCompra = calendario1.Value;
-                    //calendario1.Enabled = false;
                     CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
                     new CompraProdutoBLL().Inserir(compraProduto);
 
