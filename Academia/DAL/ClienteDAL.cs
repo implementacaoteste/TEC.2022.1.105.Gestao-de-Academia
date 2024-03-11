@@ -10,6 +10,8 @@ namespace DAL
     {
         public void Inserir(Cliente _cliente)
         {
+            _cliente.Aluno = false;
+
             SqlConnection cn = new SqlConnection(Conexao.StringDeConexao);
             try
             {

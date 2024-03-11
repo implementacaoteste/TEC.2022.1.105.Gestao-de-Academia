@@ -43,9 +43,6 @@
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
-            compraProdutoBindingSource = new BindingSource(components);
-            buttonSelecionar = new Button();
-            itensCompraListBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataCompraDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             FornecedorId = new DataGridViewTextBoxColumn();
@@ -54,6 +51,9 @@
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             freteTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalNotaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            compraProdutoBindingSource = new BindingSource(components);
+            buttonSelecionar = new Button();
+            itensCompraListBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)compraProdutoBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraListBindingSource).BeginInit();
@@ -63,11 +63,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(396, 9);
+            label1.Location = new Point(396, 19);
             label1.Name = "label1";
-            label1.Size = new Size(424, 54);
+            label1.Size = new Size(417, 54);
             label1.TabIndex = 10;
-            label1.Text = "Relatório de compras";
+            label1.Text = "Consulta de compras";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textBoxBuscar
@@ -146,25 +146,6 @@
             dataGridView1.Size = new Size(1163, 675);
             dataGridView1.TabIndex = 33;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
-            // 
-            // compraProdutoBindingSource
-            // 
-            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
-            // 
-            // buttonSelecionar
-            // 
-            buttonSelecionar.Location = new Point(1081, 849);
-            buttonSelecionar.Name = "buttonSelecionar";
-            buttonSelecionar.Size = new Size(94, 29);
-            buttonSelecionar.TabIndex = 34;
-            buttonSelecionar.Text = "Selecionar";
-            buttonSelecionar.UseVisualStyleBackColor = true;
-            buttonSelecionar.Click += buttonSelecionar_Click;
-            // 
-            // itensCompraListBindingSource
-            // 
-            itensCompraListBindingSource.DataMember = "itensCompraList";
-            itensCompraListBindingSource.DataSource = compraProdutoBindingSource;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -247,6 +228,25 @@
             valorTotalNotaDataGridViewTextBoxColumn.MinimumWidth = 6;
             valorTotalNotaDataGridViewTextBoxColumn.Name = "valorTotalNotaDataGridViewTextBoxColumn";
             valorTotalNotaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // compraProdutoBindingSource
+            // 
+            compraProdutoBindingSource.DataSource = typeof(Models.CompraProduto);
+            // 
+            // buttonSelecionar
+            // 
+            buttonSelecionar.Location = new Point(1081, 849);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 34;
+            buttonSelecionar.Text = "Selecionar";
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
+            // 
+            // itensCompraListBindingSource
+            // 
+            itensCompraListBindingSource.DataMember = "itensCompraList";
+            itensCompraListBindingSource.DataSource = compraProdutoBindingSource;
             // 
             // FormRelatorioCompra
             // 

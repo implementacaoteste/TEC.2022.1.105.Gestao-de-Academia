@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             Label nomeLabel;
-            Label rGLabel;
             Label foneLabel;
             Label emailLabel;
             Label label2;
@@ -62,7 +61,6 @@
             textBox8 = new TextBox();
             calendarioDataVencimento = new Calendario();
             nomeLabel = new Label();
-            rGLabel = new Label();
             foneLabel = new Label();
             emailLabel = new Label();
             label2 = new Label();
@@ -86,15 +84,6 @@
             nomeLabel.Size = new Size(50, 20);
             nomeLabel.TabIndex = 1;
             nomeLabel.Text = "Nome";
-            // 
-            // rGLabel
-            // 
-            rGLabel.AutoSize = true;
-            rGLabel.Location = new Point(304, 115);
-            rGLabel.Name = "rGLabel";
-            rGLabel.Size = new Size(48, 20);
-            rGLabel.TabIndex = 5;
-            rGLabel.Text = "Aluno";
             // 
             // foneLabel
             // 
@@ -281,12 +270,12 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.DataBindings.Add(new Binding("Text", clienteBindingSource, "Aluno", true));
+            checkBox1.DataBindings.Add(new Binding("Checked", clienteBindingSource, "Aluno", true));
             checkBox1.Location = new Point(358, 114);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(66, 24);
+            checkBox1.Size = new Size(70, 24);
             checkBox1.TabIndex = 13;
-            checkBox1.Text = "Ativo";
+            checkBox1.Text = "Aluno";
             checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox1
@@ -405,7 +394,6 @@
             Controls.Add(textBox2);
             Controls.Add(foneTextBox);
             Controls.Add(label2);
-            Controls.Add(rGLabel);
             Controls.Add(label11);
             Controls.Add(cPFTextBox);
             Controls.Add(nomeLabel);

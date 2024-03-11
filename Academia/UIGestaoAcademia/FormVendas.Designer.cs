@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             labelCliente = new Label();
             textBoxBuscarPorCliente = new TextBox();
             vendaBindingSource = new BindingSource(components);
@@ -175,6 +175,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, nomeProdutoDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
             dataGridView1.DataSource = itensVendaListBindingSource;
+            dataGridView1.GridColor = SystemColors.AppWorkspace;
             dataGridView1.Location = new Point(11, 186);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -205,8 +206,8 @@
             // quantidadeDataGridViewTextBoxColumn
             // 
             quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            quantidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleRight;
+            quantidadeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
             quantidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
             quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
@@ -216,8 +217,8 @@
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewTextBoxColumn3.DataPropertyName = "PrecoUnitario";
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewTextBoxColumn3.HeaderText = "Preco unitario";
             dataGridViewTextBoxColumn3.MinimumWidth = 6;
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -227,8 +228,8 @@
             // dataGridViewTextBoxColumn4
             // 
             dataGridViewTextBoxColumn4.DataPropertyName = "PrecoTotal";
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewTextBoxColumn4.HeaderText = "Total";
             dataGridViewTextBoxColumn4.MinimumWidth = 6;
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -265,11 +266,11 @@
             labelVenda.AutoSize = true;
             labelVenda.BackColor = Color.Transparent;
             labelVenda.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelVenda.Location = new Point(634, 79);
+            labelVenda.Location = new Point(663, 95);
             labelVenda.Name = "labelVenda";
-            labelVenda.Size = new Size(185, 41);
+            labelVenda.Size = new Size(113, 41);
             labelVenda.TabIndex = 10;
-            labelVenda.Text = "Cod. Venda:";
+            labelVenda.Text = "Venda:";
             // 
             // label4
             // 
@@ -321,7 +322,7 @@
             labelCodigoVenda.AutoSize = true;
             labelCodigoVenda.BackColor = Color.Transparent;
             labelCodigoVenda.Font = new Font("Segoe UI", 28.2F, FontStyle.Bold, GraphicsUnit.Point);
-            labelCodigoVenda.Location = new Point(810, 67);
+            labelCodigoVenda.Location = new Point(786, 83);
             labelCodigoVenda.Name = "labelCodigoVenda";
             labelCodigoVenda.Size = new Size(126, 62);
             labelCodigoVenda.TabIndex = 29;
@@ -343,11 +344,11 @@
             labelUser.BackColor = Color.Transparent;
             labelUser.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labelUser.ForeColor = Color.Black;
-            labelUser.Location = new Point(524, 19);
+            labelUser.Location = new Point(581, 14);
             labelUser.Name = "labelUser";
-            labelUser.Size = new Size(45, 20);
+            labelUser.Size = new Size(66, 20);
             labelUser.TabIndex = 10;
-            labelUser.Text = "User:";
+            labelUser.Text = "Usuário:";
             // 
             // labeUserVenda
             // 
@@ -355,7 +356,7 @@
             labeUserVenda.BackColor = Color.Transparent;
             labeUserVenda.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point);
             labeUserVenda.ForeColor = Color.Black;
-            labeUserVenda.Location = new Point(563, 6);
+            labeUserVenda.Location = new Point(641, 0);
             labeUserVenda.Name = "labeUserVenda";
             labeUserVenda.Size = new Size(90, 41);
             labeUserVenda.TabIndex = 30;

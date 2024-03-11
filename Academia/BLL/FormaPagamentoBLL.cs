@@ -17,6 +17,7 @@ namespace BLL
         public void Excluir(int _id)
         {
             new FormaPagamentoDAL().Excluir(_id);
+            
         }
         public List<FormaPagamento> BuscarTodos()
         {

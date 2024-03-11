@@ -30,21 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             clienteDataGridView = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            Aluno = new DataGridViewTextBoxColumn();
-            Telefone = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            CEP = new DataGridViewTextBoxColumn();
-            Rua = new DataGridViewTextBoxColumn();
-            NumeroCasa = new DataGridViewTextBoxColumn();
-            Complemento = new DataGridViewTextBoxColumn();
-            Bairro = new DataGridViewTextBoxColumn();
-            Cidade = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
-            Pais = new DataGridViewTextBoxColumn();
-            DataCadastro = new DataGridViewTextBoxColumn();
             clienteBindingSource = new BindingSource(components);
             label1 = new Label();
             label2 = new Label();
@@ -56,6 +41,21 @@
             buttonInserir = new Button();
             buttonExcluir = new Button();
             comboBoxBuscarPorCliente = new ComboBox();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            Aluno = new DataGridViewCheckBoxColumn();
+            Telefone = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            CEP = new DataGridViewTextBoxColumn();
+            Rua = new DataGridViewTextBoxColumn();
+            NumeroCasa = new DataGridViewTextBoxColumn();
+            Complemento = new DataGridViewTextBoxColumn();
+            Bairro = new DataGridViewTextBoxColumn();
+            Cidade = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            Pais = new DataGridViewTextBoxColumn();
+            DataCadastro = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)clienteDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)clienteBindingSource).BeginInit();
             SuspendLayout();
@@ -78,141 +78,6 @@
             clienteDataGridView.Size = new Size(1754, 415);
             clienteDataGridView.TabIndex = 1;
             clienteDataGridView.DoubleClick += buttonSelecionar_Click;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            dataGridViewTextBoxColumn1.HeaderText = "Id";
-            dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 350;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.DataPropertyName = "CPF";
-            dataGridViewTextBoxColumn3.HeaderText = "CPF";
-            dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Width = 200;
-            // 
-            // Aluno
-            // 
-            Aluno.DataPropertyName = "Aluno";
-            Aluno.HeaderText = "Aluno";
-            Aluno.MinimumWidth = 6;
-            Aluno.Name = "Aluno";
-            Aluno.ReadOnly = true;
-            Aluno.Width = 125;
-            // 
-            // Telefone
-            // 
-            Telefone.DataPropertyName = "Telefone";
-            Telefone.HeaderText = "Telefone";
-            Telefone.MinimumWidth = 6;
-            Telefone.Name = "Telefone";
-            Telefone.ReadOnly = true;
-            Telefone.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.DataPropertyName = "Email";
-            dataGridViewTextBoxColumn5.HeaderText = "Email";
-            dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            dataGridViewTextBoxColumn5.Width = 250;
-            // 
-            // CEP
-            // 
-            CEP.DataPropertyName = "CEP";
-            CEP.HeaderText = "CEP";
-            CEP.MinimumWidth = 6;
-            CEP.Name = "CEP";
-            CEP.ReadOnly = true;
-            CEP.Width = 125;
-            // 
-            // Rua
-            // 
-            Rua.DataPropertyName = "Rua";
-            Rua.HeaderText = "Rua";
-            Rua.MinimumWidth = 6;
-            Rua.Name = "Rua";
-            Rua.ReadOnly = true;
-            Rua.Width = 300;
-            // 
-            // NumeroCasa
-            // 
-            NumeroCasa.DataPropertyName = "NumeroCasa";
-            NumeroCasa.HeaderText = "NumeroCasa";
-            NumeroCasa.MinimumWidth = 6;
-            NumeroCasa.Name = "NumeroCasa";
-            NumeroCasa.ReadOnly = true;
-            NumeroCasa.Width = 125;
-            // 
-            // Complemento
-            // 
-            Complemento.DataPropertyName = "Complemento";
-            Complemento.HeaderText = "Complemento";
-            Complemento.MinimumWidth = 6;
-            Complemento.Name = "Complemento";
-            Complemento.ReadOnly = true;
-            Complemento.Width = 200;
-            // 
-            // Bairro
-            // 
-            Bairro.DataPropertyName = "Bairro";
-            Bairro.HeaderText = "Bairro";
-            Bairro.MinimumWidth = 6;
-            Bairro.Name = "Bairro";
-            Bairro.ReadOnly = true;
-            Bairro.Width = 200;
-            // 
-            // Cidade
-            // 
-            Cidade.DataPropertyName = "Cidade";
-            Cidade.HeaderText = "Cidade";
-            Cidade.MinimumWidth = 6;
-            Cidade.Name = "Cidade";
-            Cidade.ReadOnly = true;
-            Cidade.Width = 200;
-            // 
-            // Estado
-            // 
-            Estado.DataPropertyName = "Estado";
-            Estado.HeaderText = "Estado";
-            Estado.MinimumWidth = 6;
-            Estado.Name = "Estado";
-            Estado.ReadOnly = true;
-            Estado.Width = 200;
-            // 
-            // Pais
-            // 
-            Pais.DataPropertyName = "Pais";
-            Pais.HeaderText = "Pais";
-            Pais.MinimumWidth = 6;
-            Pais.Name = "Pais";
-            Pais.ReadOnly = true;
-            Pais.Width = 200;
-            // 
-            // DataCadastro
-            // 
-            DataCadastro.DataPropertyName = "DataCadastro";
-            DataCadastro.HeaderText = "DataCadastro";
-            DataCadastro.MinimumWidth = 6;
-            DataCadastro.Name = "DataCadastro";
-            DataCadastro.ReadOnly = true;
-            DataCadastro.Width = 125;
             // 
             // clienteBindingSource
             // 
@@ -323,6 +188,143 @@
             comboBoxBuscarPorCliente.Size = new Size(144, 28);
             comboBoxBuscarPorCliente.TabIndex = 6;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            dataGridViewTextBoxColumn1.HeaderText = "Id";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 350;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "CPF";
+            dataGridViewTextBoxColumn3.HeaderText = "CPF";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // Aluno
+            // 
+            Aluno.DataPropertyName = "Aluno";
+            Aluno.HeaderText = "Aluno";
+            Aluno.MinimumWidth = 6;
+            Aluno.Name = "Aluno";
+            Aluno.ReadOnly = true;
+            Aluno.Resizable = DataGridViewTriState.True;
+            Aluno.SortMode = DataGridViewColumnSortMode.Automatic;
+            Aluno.Width = 125;
+            // 
+            // Telefone
+            // 
+            Telefone.DataPropertyName = "Telefone";
+            Telefone.HeaderText = "Telefone";
+            Telefone.MinimumWidth = 6;
+            Telefone.Name = "Telefone";
+            Telefone.ReadOnly = true;
+            Telefone.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.DataPropertyName = "Email";
+            dataGridViewTextBoxColumn5.HeaderText = "Email";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Width = 250;
+            // 
+            // CEP
+            // 
+            CEP.DataPropertyName = "CEP";
+            CEP.HeaderText = "CEP";
+            CEP.MinimumWidth = 6;
+            CEP.Name = "CEP";
+            CEP.ReadOnly = true;
+            CEP.Width = 125;
+            // 
+            // Rua
+            // 
+            Rua.DataPropertyName = "Rua";
+            Rua.HeaderText = "Rua";
+            Rua.MinimumWidth = 6;
+            Rua.Name = "Rua";
+            Rua.ReadOnly = true;
+            Rua.Width = 300;
+            // 
+            // NumeroCasa
+            // 
+            NumeroCasa.DataPropertyName = "NumeroCasa";
+            NumeroCasa.HeaderText = "NumeroCasa";
+            NumeroCasa.MinimumWidth = 6;
+            NumeroCasa.Name = "NumeroCasa";
+            NumeroCasa.ReadOnly = true;
+            NumeroCasa.Width = 125;
+            // 
+            // Complemento
+            // 
+            Complemento.DataPropertyName = "Complemento";
+            Complemento.HeaderText = "Complemento";
+            Complemento.MinimumWidth = 6;
+            Complemento.Name = "Complemento";
+            Complemento.ReadOnly = true;
+            Complemento.Width = 200;
+            // 
+            // Bairro
+            // 
+            Bairro.DataPropertyName = "Bairro";
+            Bairro.HeaderText = "Bairro";
+            Bairro.MinimumWidth = 6;
+            Bairro.Name = "Bairro";
+            Bairro.ReadOnly = true;
+            Bairro.Width = 200;
+            // 
+            // Cidade
+            // 
+            Cidade.DataPropertyName = "Cidade";
+            Cidade.HeaderText = "Cidade";
+            Cidade.MinimumWidth = 6;
+            Cidade.Name = "Cidade";
+            Cidade.ReadOnly = true;
+            Cidade.Width = 200;
+            // 
+            // Estado
+            // 
+            Estado.DataPropertyName = "Estado";
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.ReadOnly = true;
+            Estado.Width = 200;
+            // 
+            // Pais
+            // 
+            Pais.DataPropertyName = "Pais";
+            Pais.HeaderText = "Pais";
+            Pais.MinimumWidth = 6;
+            Pais.Name = "Pais";
+            Pais.ReadOnly = true;
+            Pais.Width = 200;
+            // 
+            // DataCadastro
+            // 
+            DataCadastro.DataPropertyName = "DataCadastro";
+            DataCadastro.HeaderText = "DataCadastro";
+            DataCadastro.MinimumWidth = 6;
+            DataCadastro.Name = "DataCadastro";
+            DataCadastro.ReadOnly = true;
+            DataCadastro.Width = 125;
+            // 
             // FormConsultaCliente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -375,7 +377,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn Aluno;
+        private DataGridViewCheckBoxColumn Aluno;
         private DataGridViewTextBoxColumn Telefone;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewTextBoxColumn CEP;

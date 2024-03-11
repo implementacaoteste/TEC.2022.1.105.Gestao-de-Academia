@@ -33,18 +33,18 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            FormaDePagamento = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            NomeCliente = new DataGridViewTextBoxColumn();
-            dataVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            totalVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             vendaBindingSource = new BindingSource(components);
             buttonBuscarVendas = new Button();
             comboBoxBuscarPor = new ComboBox();
             textBoxBuscar = new TextBox();
             label1 = new Label();
             buttonSelecionar = new Button();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            FormaDePagamento = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            NomeCliente = new DataGridViewTextBoxColumn();
+            dataVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            totalVendaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
@@ -63,9 +63,60 @@
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1108, 628);
+            dataGridView1.Size = new Size(1058, 628);
             dataGridView1.TabIndex = 0;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Models.Venda);
+            // 
+            // buttonBuscarVendas
+            // 
+            buttonBuscarVendas.Location = new Point(846, 126);
+            buttonBuscarVendas.Name = "buttonBuscarVendas";
+            buttonBuscarVendas.Size = new Size(94, 29);
+            buttonBuscarVendas.TabIndex = 1;
+            buttonBuscarVendas.Text = "&Buscar";
+            buttonBuscarVendas.UseVisualStyleBackColor = true;
+            buttonBuscarVendas.Click += buttonBuscarVendas_Click;
+            // 
+            // comboBoxBuscarPor
+            // 
+            comboBoxBuscarPor.FormattingEnabled = true;
+            comboBoxBuscarPor.Items.AddRange(new object[] { "Código da venda", "Nome do Usuario", "Nome do Cliente", "CPF Cliente", "Data", "Todas" });
+            comboBoxBuscarPor.Location = new Point(115, 125);
+            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
+            comboBoxBuscarPor.Size = new Size(202, 28);
+            comboBoxBuscarPor.TabIndex = 2;
+            // 
+            // textBoxBuscar
+            // 
+            textBoxBuscar.Location = new Point(325, 126);
+            textBoxBuscar.Name = "textBoxBuscar";
+            textBoxBuscar.Size = new Size(515, 27);
+            textBoxBuscar.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(369, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(389, 54);
+            label1.TabIndex = 4;
+            label1.Text = "Consulta de vendas";
+            label1.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // buttonSelecionar
+            // 
+            buttonSelecionar.Location = new Point(1027, 797);
+            buttonSelecionar.Name = "buttonSelecionar";
+            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.TabIndex = 5;
+            buttonSelecionar.Text = "Selecionar";
+            buttonSelecionar.UseVisualStyleBackColor = true;
+            buttonSelecionar.Click += buttonSelecionar_Click;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -76,7 +127,7 @@
             idDataGridViewTextBoxColumn.MinimumWidth = 6;
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             idDataGridViewTextBoxColumn.ReadOnly = true;
-            idDataGridViewTextBoxColumn.Width = 200;
+            idDataGridViewTextBoxColumn.Width = 150;
             // 
             // FormaDePagamento
             // 
@@ -127,62 +178,11 @@
             totalVendaDataGridViewTextBoxColumn.ReadOnly = true;
             totalVendaDataGridViewTextBoxColumn.Width = 125;
             // 
-            // vendaBindingSource
-            // 
-            vendaBindingSource.DataSource = typeof(Models.Venda);
-            // 
-            // buttonBuscarVendas
-            // 
-            buttonBuscarVendas.Location = new Point(845, 126);
-            buttonBuscarVendas.Name = "buttonBuscarVendas";
-            buttonBuscarVendas.Size = new Size(94, 29);
-            buttonBuscarVendas.TabIndex = 1;
-            buttonBuscarVendas.Text = "&Buscar";
-            buttonBuscarVendas.UseVisualStyleBackColor = true;
-            buttonBuscarVendas.Click += buttonBuscarVendas_Click;
-            // 
-            // comboBoxBuscarPor
-            // 
-            comboBoxBuscarPor.FormattingEnabled = true;
-            comboBoxBuscarPor.Items.AddRange(new object[] { "Código da venda", "Nome do Usuario", "Nome do Cliente", "CPF Cliente", "Data", "Todas" });
-            comboBoxBuscarPor.Location = new Point(114, 125);
-            comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(202, 28);
-            comboBoxBuscarPor.TabIndex = 2;
-            // 
-            // textBoxBuscar
-            // 
-            textBoxBuscar.Location = new Point(324, 126);
-            textBoxBuscar.Name = "textBoxBuscar";
-            textBoxBuscar.Size = new Size(515, 27);
-            textBoxBuscar.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(369, 28);
-            label1.Name = "label1";
-            label1.Size = new Size(396, 54);
-            label1.TabIndex = 4;
-            label1.Text = "Relatório de vendas";
-            label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // buttonSelecionar
-            // 
-            buttonSelecionar.Location = new Point(1027, 797);
-            buttonSelecionar.Name = "buttonSelecionar";
-            buttonSelecionar.Size = new Size(94, 29);
-            buttonSelecionar.TabIndex = 5;
-            buttonSelecionar.Text = "Selecionar";
-            buttonSelecionar.UseVisualStyleBackColor = true;
-            buttonSelecionar.Click += buttonSelecionar_Click;
-            // 
             // FormRelatorioDeVendas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1131, 834);
+            ClientSize = new Size(1081, 834);
             Controls.Add(buttonSelecionar);
             Controls.Add(label1);
             Controls.Add(textBoxBuscar);

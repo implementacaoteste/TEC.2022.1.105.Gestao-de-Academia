@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pictureBoxQrCode = new PictureBox();
+            vendaBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxQrCode).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxQrCode
@@ -41,6 +44,10 @@
             pictureBoxQrCode.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBoxQrCode.TabIndex = 1;
             pictureBoxQrCode.TabStop = false;
+            // 
+            // vendaBindingSource
+            // 
+            vendaBindingSource.DataSource = typeof(Models.Venda);
             // 
             // FormQrCode
             // 
@@ -57,11 +64,13 @@
             StartPosition = FormStartPosition.CenterScreen;
             Load += FormQrCode_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxQrCode).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vendaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private PictureBox pictureBoxQrCode;
+        private BindingSource vendaBindingSource;
     }
 }
