@@ -18,7 +18,7 @@ namespace UIGestaoAcademia
         }
 
         private void FormQrCode_Load(object sender, EventArgs e)
-        {
+        { 
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\QrCode.png"))
                 pictureBoxQrCode.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\QrCode.png";
         }

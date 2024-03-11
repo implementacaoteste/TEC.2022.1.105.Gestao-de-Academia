@@ -260,7 +260,7 @@
             buttonRelatorioVenda.Name = "buttonRelatorioVenda";
             buttonRelatorioVenda.Size = new Size(147, 75);
             buttonRelatorioVenda.TabIndex = 24;
-            buttonRelatorioVenda.Text = "Relatório Venda";
+            buttonRelatorioVenda.Text = "Consulta de venda";
             buttonRelatorioVenda.UseVisualStyleBackColor = false;
             buttonRelatorioVenda.Click += button1_Click;
             // 
@@ -275,7 +275,7 @@
             button2.Name = "button2";
             button2.Size = new Size(147, 75);
             button2.TabIndex = 24;
-            button2.Text = "Relatório Compra";
+            button2.Text = "Consulta de compra";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
