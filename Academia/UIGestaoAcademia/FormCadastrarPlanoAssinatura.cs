@@ -19,7 +19,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             id = _id;
-            if (id==0)
+            if (id == 0)
             {
                 bindingSourceCadastrarPlanoAssinatura.AddNew();
                 textBoxValorPlano.Text = "0";
@@ -48,6 +48,18 @@ namespace UIGestaoAcademia
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ((PlanoAssinatura)bindingSourceCadastrarPlanoAssinatura.Current).ValorPlano = Convert.ToDouble(textBoxValorPlano.Text);
+                ((PlanoAssinatura)bindingSourceCadastrarPlanoAssinatura.Current).Desconto = Convert.ToDouble(textBoxDesconto.Text);
+                ((PlanoAssinatura)bindingSourceCadastrarPlanoAssinatura.Current).Total = (textBoxValorPlano * textBoxDesconto) / 100.0; ;
+
+
             }
         }
     }
