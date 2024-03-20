@@ -364,7 +364,7 @@
             labelBuscarDebito.BackColor = Color.Transparent;
             labelBuscarDebito.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             labelBuscarDebito.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            labelBuscarDebito.Font = new Font("Swis721 BlkCn BT", 24F, FontStyle.Regular, GraphicsUnit.Point)
+            labelBuscarDebito.Font = new Font("Swis721 BlkCn BT", 24F, FontStyle.Regular, GraphicsUnit.Point);
             labelBuscarDebito.ForeColor = Color.Black;
             labelBuscarDebito.Location = new Point(11, 11);
             labelBuscarDebito.Name = "labelBuscarDebito";

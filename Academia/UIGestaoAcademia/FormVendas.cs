@@ -267,17 +267,14 @@ namespace UIGestaoAcademia
             if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundovenda.png"))
                 pictureBoxVenda.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundovenda.png";
         }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns.Count - 1 && e.RowIndex >= 0)
             {
-                // Verifica se o valor da célula é numérico
                 if (e.Value != null && double.TryParse(e.Value.ToString(), out double value))
                 {
-                    // Formata o valor como moeda
                     e.Value = value.ToString("C");
-                    e.FormattingApplied = true; // Indica que o formato foi aplicado
+                    e.FormattingApplied = true;
                 }
             }
         }
