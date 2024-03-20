@@ -13,13 +13,6 @@ namespace Models
         public double ValorPlano { get; set; }
         public double Desconto { get; set; }
         public double Total { get; set; }
-        public double ValorComDesconto
-        {
-            get
-            {
 
-                return
-            }
-        }
     }
 }
