@@ -192,18 +192,18 @@ namespace UIGestaoAcademia
                 MessageBox.Show("Não é possivel finalizar a compra sem produtos inseridos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-                try
-                {
-                    CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
-                    new CompraProdutoBLL().Inserir(compraProduto);
+            try
+            {
+                CompraProduto compraProduto = (CompraProduto)BindingSourceCompraProduto.Current;
+                new CompraProdutoBLL().Inserir(compraProduto);
 
-                    MessageBox.Show("Registro salvo com sucesso!");
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                MessageBox.Show("Registro salvo com sucesso!");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void textBoxQuantidade_KeyDown(object sender, KeyEventArgs e)
         {
@@ -222,7 +222,6 @@ namespace UIGestaoAcademia
             MessageBox.Show("Item excluido com sucesso!");
             textBoxValorTotalNota.Clear();
         }
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns.Count - 1 && e.RowIndex >= 0)
@@ -236,5 +235,6 @@ namespace UIGestaoAcademia
                 }
             }
         }
+
     }
 }

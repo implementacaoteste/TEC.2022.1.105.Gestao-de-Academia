@@ -456,6 +456,9 @@ GO
 ALTER TABLE FormaPagamento
 ADD QuantidadeParcelas INT
 GO
+ALTER TABLE PlanoAssinatura
+ADD Total FLOAT
+GO
 --
 ALTER TABLE Venda
 ADD Desconto FLOAT

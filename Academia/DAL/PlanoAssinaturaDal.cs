@@ -17,7 +17,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO PlanoAssinatura(TipoPlano, ValorPlano, Desconto) VALUES(@TipoPlano, @ValorPlano, @Desconto)"))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO PlanoAssinatura(TipoPlano, ValorPlano, Desconto, Total) VALUES(@TipoPlano, @ValorPlano, @Desconto, @Total)"))
                 {
                     try
                     {
@@ -26,6 +26,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@TipoPlano", _PlanoAssinatura.TipoPlano);
                         cmd.Parameters.AddWithValue("@ValorPlano", _PlanoAssinatura.ValorPlano);
                         cmd.Parameters.AddWithValue("@Desconto", _PlanoAssinatura.Desconto);
+                        cmd.Parameters.AddWithValue("@Total", _PlanoAssinatura.Total);
 
                         if (_transaction == null)
                         {
@@ -57,7 +58,7 @@ namespace DAL
 
             using (SqlConnection cn = new SqlConnection(Conexao.StringDeConexao))
             {
-                using (SqlCommand cmd = new SqlCommand("UPDATE PlanoAssinatura SET TipoPlano = @TipoPlano, ValorPlano = @ValorPlano, Descont = @Desconto) WHERE id = @Id)"))
+                using (SqlCommand cmd = new SqlCommand("UPDATE PlanoAssinatura SET TipoPlano = @TipoPlano, ValorPlano = @ValorPlano, Desconto = @Desconto, Total = @Total) WHERE id = @Id)"))
                 {
                     try
                     {
@@ -67,6 +68,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@TipoPlano", _PlanoAssinatura.TipoPlano);
                         cmd.Parameters.AddWithValue("@ValorPlano", _PlanoAssinatura.ValorPlano);
                         cmd.Parameters.AddWithValue("@Desconto", _PlanoAssinatura.Desconto);
+                        cmd.Parameters.AddWithValue("@Total", _PlanoAssinatura.Total);
 
                         if (_transaction == null)
                         {
@@ -143,7 +145,7 @@ namespace DAL
                 SqlCommand cmd = cn.CreateCommand();
 
 
-                cmd.CommandText = @"SELECT PlanoAssinatura.Id, PlanoAssinatura.TipoPlano, PlanoAssinatura.ValorPlano, PlanoAssinatura.Desconto FROM PlanoAssinatura";
+                cmd.CommandText = @"SELECT Id, TipoPlano, ValorPlano, Desconto FROM PlanoAssinatura";
 
                 cmd.CommandType = System.Data.CommandType.Text;
 
@@ -214,6 +216,7 @@ namespace DAL
             PlanoAssinatura.TipoPlano = rd["TipoPlano"].ToString();
             PlanoAssinatura.ValorPlano = Convert.ToDouble(rd["ValorPlano"]);
             PlanoAssinatura.Desconto = Convert.ToDouble(rd["Desconto"]);
+            PlanoAssinatura.Total = Convert.ToDouble(rd["Total"]);
         }
     }
 }

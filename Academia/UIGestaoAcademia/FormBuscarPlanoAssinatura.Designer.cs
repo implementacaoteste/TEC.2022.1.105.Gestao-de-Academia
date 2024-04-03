@@ -49,6 +49,7 @@
             TipoPlano = new DataGridViewTextBoxColumn();
             ValorPlano = new DataGridViewTextBoxColumn();
             Desconto = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridViewPlanoAssinatura).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSourcePlanoAssinatura).BeginInit();
             SuspendLayout();
@@ -77,14 +78,14 @@
             dataGridViewPlanoAssinatura.Anchor = AnchorStyles.None;
             dataGridViewPlanoAssinatura.AutoGenerateColumns = false;
             dataGridViewPlanoAssinatura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPlanoAssinatura.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, TipoPlano, ValorPlano, Desconto });
+            dataGridViewPlanoAssinatura.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, TipoPlano, ValorPlano, Desconto, Total });
             dataGridViewPlanoAssinatura.DataSource = bindingSourcePlanoAssinatura;
-            dataGridViewPlanoAssinatura.Location = new Point(22, 166);
+            dataGridViewPlanoAssinatura.Location = new Point(17, 166);
             dataGridViewPlanoAssinatura.Name = "dataGridViewPlanoAssinatura";
             dataGridViewPlanoAssinatura.ReadOnly = true;
             dataGridViewPlanoAssinatura.RowHeadersWidth = 51;
             dataGridViewPlanoAssinatura.RowTemplate.Height = 29;
-            dataGridViewPlanoAssinatura.Size = new Size(687, 341);
+            dataGridViewPlanoAssinatura.Size = new Size(748, 341);
             dataGridViewPlanoAssinatura.TabIndex = 39;
             // 
             // bindingSourcePlanoAssinatura
@@ -127,7 +128,7 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(-79, 0);
+            label1.Location = new Point(-14, 0);
             label1.Name = "label1";
             label1.Size = new Size(899, 67);
             label1.TabIndex = 33;
@@ -138,7 +139,7 @@
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonCancelar.DialogResult = DialogResult.Cancel;
-            buttonCancelar.Location = new Point(617, 513);
+            buttonCancelar.Location = new Point(673, 513);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(92, 31);
             buttonCancelar.TabIndex = 41;
@@ -190,7 +191,7 @@
             // buttonSelecionar
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelecionar.Location = new Point(517, 513);
+            buttonSelecionar.Location = new Point(570, 513);
             buttonSelecionar.Name = "buttonSelecionar";
             buttonSelecionar.Size = new Size(92, 31);
             buttonSelecionar.TabIndex = 40;
@@ -237,12 +238,21 @@
             Desconto.Name = "Desconto";
             Desconto.ReadOnly = true;
             // 
+            // Total
+            // 
+            Total.DataPropertyName = "Total";
+            Total.HeaderText = "Total";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.ReadOnly = true;
+            Total.Width = 125;
+            // 
             // FormBuscarPlanoAssinatura
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(729, 553);
+            ClientSize = new Size(859, 553);
             Controls.Add(comboBoxBuscarPor);
             Controls.Add(dataGridViewPlanoAssinatura);
             Controls.Add(buttonBuscar);
@@ -289,5 +299,6 @@
         private DataGridViewTextBoxColumn TipoPlano;
         private DataGridViewTextBoxColumn ValorPlano;
         private DataGridViewTextBoxColumn Desconto;
+        private DataGridViewTextBoxColumn Total;
     }
 }

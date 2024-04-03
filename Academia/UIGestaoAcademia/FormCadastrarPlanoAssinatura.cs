@@ -19,7 +19,7 @@ namespace UIGestaoAcademia
         {
             InitializeComponent();
             id = _id;
-            if (id==0)
+            if (id == 0)
             {
                 bindingSourceCadastrarPlanoAssinatura.AddNew();
                 textBoxValorPlano.Text = "0";
@@ -49,6 +49,11 @@ namespace UIGestaoAcademia
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
