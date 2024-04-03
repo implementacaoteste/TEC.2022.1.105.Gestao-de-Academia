@@ -53,14 +53,7 @@ namespace UIGestaoAcademia
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                ((PlanoAssinatura)bindingSourceCadastrarPlanoAssinatura.Current).ValorPlano = Convert.ToDouble(textBoxValorPlano.Text);
-                ((PlanoAssinatura)bindingSourceCadastrarPlanoAssinatura.Current).Desconto = Convert.ToDouble(textBoxDesconto.Text);
-                ((PlanoAssinatura)bindingSourceCadastrarPlanoAssinatura.Current).Total = (textBoxValorPlano * textBoxDesconto) / 100.0; ;
 
-
-            }
         }
     }
 }
