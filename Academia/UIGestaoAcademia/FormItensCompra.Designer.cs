@@ -30,13 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
-            itensCompraBindingSource = new BindingSource(components);
-            label1 = new Label();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             marcaDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorUnitarioDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             quantidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             valorTotalDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            itensCompraBindingSource = new BindingSource(components);
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)itensCompraBindingSource).BeginInit();
             SuspendLayout();
@@ -50,27 +50,13 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nomeDataGridViewTextBoxColumn, marcaDataGridViewTextBoxColumn, valorUnitarioDataGridViewTextBoxColumn, quantidadeDataGridViewTextBoxColumn, valorTotalDataGridViewTextBoxColumn });
             dataGridView1.DataSource = itensCompraBindingSource;
-            dataGridView1.Location = new Point(12, 160);
+            dataGridView1.Location = new Point(10, 120);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(719, 440);
+            dataGridView1.Size = new Size(629, 330);
             dataGridView1.TabIndex = 34;
-            // 
-            // itensCompraBindingSource
-            // 
-            itensCompraBindingSource.DataSource = typeof(Models.ItensCompra);
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(217, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(328, 54);
-            label1.TabIndex = 35;
-            label1.Text = "Itens da compra";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -117,14 +103,30 @@
             valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // itensCompraBindingSource
+            // 
+            itensCompraBindingSource.DataSource = typeof(Models.ItensCompra);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Swis721 Blk BT", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(190, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(306, 39);
+            label1.TabIndex = 35;
+            label1.Text = "Itens da compra";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FormItensCompra
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(748, 619);
+            ClientSize = new Size(654, 464);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormItensCompra";

@@ -56,10 +56,10 @@
             // label2
             // 
             label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Swis721 Blk BT", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(0, 0);
             label2.Name = "label2";
-            label2.Size = new Size(1072, 71);
+            label2.Size = new Size(938, 53);
             label2.TabIndex = 7;
             label2.Text = "Consultar formas de pagamentos";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -67,17 +67,19 @@
             // textBoxBuscarPor
             // 
             textBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBoxBuscarPor.Location = new Point(180, 95);
+            textBoxBuscarPor.Location = new Point(158, 71);
+            textBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
             textBoxBuscarPor.Name = "textBoxBuscarPor";
-            textBoxBuscarPor.Size = new Size(457, 27);
+            textBoxBuscarPor.Size = new Size(400, 23);
             textBoxBuscarPor.TabIndex = 1;
             // 
             // buttonExcluirFormaPagamento
             // 
             buttonExcluirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonExcluirFormaPagamento.Location = new Point(946, 96);
+            buttonExcluirFormaPagamento.Location = new Point(828, 72);
+            buttonExcluirFormaPagamento.Margin = new Padding(3, 2, 3, 2);
             buttonExcluirFormaPagamento.Name = "buttonExcluirFormaPagamento";
-            buttonExcluirFormaPagamento.Size = new Size(94, 29);
+            buttonExcluirFormaPagamento.Size = new Size(82, 22);
             buttonExcluirFormaPagamento.TabIndex = 5;
             buttonExcluirFormaPagamento.Text = "E&xcluir";
             buttonExcluirFormaPagamento.UseVisualStyleBackColor = true;
@@ -86,9 +88,10 @@
             // buttonInserirFormaPagamento
             // 
             buttonInserirFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonInserirFormaPagamento.Location = new Point(846, 97);
+            buttonInserirFormaPagamento.Location = new Point(740, 73);
+            buttonInserirFormaPagamento.Margin = new Padding(3, 2, 3, 2);
             buttonInserirFormaPagamento.Name = "buttonInserirFormaPagamento";
-            buttonInserirFormaPagamento.Size = new Size(94, 29);
+            buttonInserirFormaPagamento.Size = new Size(82, 22);
             buttonInserirFormaPagamento.TabIndex = 4;
             buttonInserirFormaPagamento.Text = "&Inserir";
             buttonInserirFormaPagamento.UseVisualStyleBackColor = true;
@@ -97,9 +100,10 @@
             // buttonBuscarFormaPagamento
             // 
             buttonBuscarFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            buttonBuscarFormaPagamento.Location = new Point(643, 96);
+            buttonBuscarFormaPagamento.Location = new Point(563, 72);
+            buttonBuscarFormaPagamento.Margin = new Padding(3, 2, 3, 2);
             buttonBuscarFormaPagamento.Name = "buttonBuscarFormaPagamento";
-            buttonBuscarFormaPagamento.Size = new Size(97, 29);
+            buttonBuscarFormaPagamento.Size = new Size(85, 22);
             buttonBuscarFormaPagamento.TabIndex = 2;
             buttonBuscarFormaPagamento.Text = "&Buscar";
             buttonBuscarFormaPagamento.UseVisualStyleBackColor = true;
@@ -108,9 +112,10 @@
             // buttonSelecionar
             // 
             buttonSelecionar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonSelecionar.Location = new Point(846, 473);
+            buttonSelecionar.Location = new Point(740, 355);
+            buttonSelecionar.Margin = new Padding(3, 2, 3, 2);
             buttonSelecionar.Name = "buttonSelecionar";
-            buttonSelecionar.Size = new Size(94, 29);
+            buttonSelecionar.Size = new Size(82, 22);
             buttonSelecionar.TabIndex = 39;
             buttonSelecionar.Text = "Se&lecionar";
             buttonSelecionar.TextAlign = ContentAlignment.TopCenter;
@@ -121,18 +126,19 @@
             // 
             label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(29, 71);
+            label1.Location = new Point(25, 53);
             label1.Name = "label1";
-            label1.Size = new Size(79, 20);
+            label1.Size = new Size(63, 15);
             label1.TabIndex = 41;
             label1.Text = "Buscar por";
             // 
             // buttonCancelar
             // 
             buttonCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar.Location = new Point(946, 473);
+            buttonCancelar.Location = new Point(828, 355);
+            buttonCancelar.Margin = new Padding(3, 2, 3, 2);
             buttonCancelar.Name = "buttonCancelar";
-            buttonCancelar.Size = new Size(94, 29);
+            buttonCancelar.Size = new Size(82, 22);
             buttonCancelar.TabIndex = 40;
             buttonCancelar.Text = "&Cancelar";
             buttonCancelar.TextAlign = ContentAlignment.TopCenter;
@@ -141,9 +147,10 @@
             // buttonAlterarFormaPagamento
             // 
             buttonAlterarFormaPagamento.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonAlterarFormaPagamento.Location = new Point(746, 96);
+            buttonAlterarFormaPagamento.Location = new Point(653, 72);
+            buttonAlterarFormaPagamento.Margin = new Padding(3, 2, 3, 2);
             buttonAlterarFormaPagamento.Name = "buttonAlterarFormaPagamento";
-            buttonAlterarFormaPagamento.Size = new Size(94, 29);
+            buttonAlterarFormaPagamento.Size = new Size(82, 22);
             buttonAlterarFormaPagamento.TabIndex = 3;
             buttonAlterarFormaPagamento.Text = "&Alterar";
             buttonAlterarFormaPagamento.UseVisualStyleBackColor = true;
@@ -154,9 +161,10 @@
             comboBoxBuscarPor.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             comboBoxBuscarPor.FormattingEnabled = true;
             comboBoxBuscarPor.Items.AddRange(new object[] { "Todos", "Nome" });
-            comboBoxBuscarPor.Location = new Point(31, 95);
+            comboBoxBuscarPor.Location = new Point(27, 71);
+            comboBoxBuscarPor.Margin = new Padding(3, 2, 3, 2);
             comboBoxBuscarPor.Name = "comboBoxBuscarPor";
-            comboBoxBuscarPor.Size = new Size(143, 28);
+            comboBoxBuscarPor.Size = new Size(126, 23);
             comboBoxBuscarPor.TabIndex = 0;
             // 
             // dataGridViewProduto
@@ -168,12 +176,13 @@
             dataGridViewProduto.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewProduto.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, descricaoDataGridViewTextBoxColumn, QuantidadeParcelas });
             dataGridViewProduto.DataSource = bindingSourceFormaPagamento;
-            dataGridViewProduto.Location = new Point(29, 131);
+            dataGridViewProduto.Location = new Point(25, 98);
+            dataGridViewProduto.Margin = new Padding(3, 2, 3, 2);
             dataGridViewProduto.Name = "dataGridViewProduto";
             dataGridViewProduto.ReadOnly = true;
             dataGridViewProduto.RowHeadersWidth = 51;
             dataGridViewProduto.RowTemplate.Height = 29;
-            dataGridViewProduto.Size = new Size(1011, 336);
+            dataGridViewProduto.Size = new Size(885, 252);
             dataGridViewProduto.TabIndex = 3;
             dataGridViewProduto.DoubleClick += buttonSelecionar_Click_1;
             // 
@@ -208,10 +217,10 @@
             // 
             // FormConsultaFormaPagamento
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(1072, 521);
+            ClientSize = new Size(938, 391);
             Controls.Add(textBoxBuscarPor);
             Controls.Add(buttonExcluirFormaPagamento);
             Controls.Add(buttonInserirFormaPagamento);
@@ -225,6 +234,7 @@
             Controls.Add(label2);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormConsultaFormaPagamento";

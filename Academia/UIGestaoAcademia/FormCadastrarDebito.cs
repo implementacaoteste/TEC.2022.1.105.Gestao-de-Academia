@@ -84,8 +84,6 @@ namespace UIGestaoAcademia
                 }
             }
         }
-
-
     }
 }
 

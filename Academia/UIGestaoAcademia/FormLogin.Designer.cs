@@ -49,11 +49,12 @@
             buttonCancelar.BackColor = Color.Transparent;
             buttonCancelar.DialogResult = DialogResult.Cancel;
             buttonCancelar.FlatStyle = FlatStyle.Popup;
+            buttonCancelar.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCancelar.ForeColor = Color.Black;
-            buttonCancelar.Location = new Point(452, 456);
+            buttonCancelar.Location = new Point(351, 530);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.RightToLeft = RightToLeft.No;
-            buttonCancelar.Size = new Size(75, 27);
+            buttonCancelar.Size = new Size(101, 35);
             buttonCancelar.TabIndex = 3;
             buttonCancelar.Text = "&Cancelar";
             buttonCancelar.UseVisualStyleBackColor = false;
@@ -64,11 +65,12 @@
             buttonEntrar.Anchor = AnchorStyles.None;
             buttonEntrar.BackColor = Color.Transparent;
             buttonEntrar.FlatStyle = FlatStyle.Popup;
+            buttonEntrar.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point);
             buttonEntrar.ForeColor = Color.Black;
-            buttonEntrar.Location = new Point(371, 456);
+            buttonEntrar.Location = new Point(457, 530);
             buttonEntrar.Name = "buttonEntrar";
             buttonEntrar.RightToLeft = RightToLeft.No;
-            buttonEntrar.Size = new Size(75, 27);
+            buttonEntrar.Size = new Size(101, 35);
             buttonEntrar.TabIndex = 2;
             buttonEntrar.Text = "&Entrar";
             buttonEntrar.UseVisualStyleBackColor = false;
@@ -91,7 +93,7 @@
             textBoxUsuario.BackColor = SystemColors.Window;
             textBoxUsuario.BorderStyle = BorderStyle.FixedSingle;
             textBoxUsuario.ForeColor = Color.Black;
-            textBoxUsuario.Location = new Point(295, 355);
+            textBoxUsuario.Location = new Point(295, 410);
             textBoxUsuario.Margin = new Padding(3, 2, 3, 2);
             textBoxUsuario.Name = "textBoxUsuario";
             textBoxUsuario.Size = new Size(320, 23);
@@ -103,7 +105,7 @@
             textBoxSenha.Anchor = AnchorStyles.None;
             textBoxSenha.BorderStyle = BorderStyle.FixedSingle;
             textBoxSenha.ForeColor = Color.Black;
-            textBoxSenha.Location = new Point(295, 414);
+            textBoxSenha.Location = new Point(295, 478);
             textBoxSenha.Margin = new Padding(3, 2, 3, 2);
             textBoxSenha.Name = "textBoxSenha";
             textBoxSenha.PasswordChar = '*';
@@ -116,10 +118,10 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Swis721 BlkCn BT", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(295, 338);
+            label1.Font = new Font("Swis721 BlkCn BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(289, 383);
             label1.Name = "label1";
-            label1.Size = new Size(56, 18);
+            label1.Size = new Size(79, 25);
             label1.TabIndex = 12;
             label1.Text = "Usuário";
             // 
@@ -128,10 +130,10 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Swis721 BlkCn BT", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(295, 396);
+            label2.Font = new Font("Swis721 BlkCn BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(289, 451);
             label2.Name = "label2";
-            label2.Size = new Size(42, 16);
+            label2.Size = new Size(66, 25);
             label2.TabIndex = 12;
             label2.Text = "Senha";
             // 

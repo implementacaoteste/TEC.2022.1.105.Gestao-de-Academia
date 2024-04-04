@@ -83,6 +83,186 @@ namespace UIGestaoAcademia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2362209_chip_chit_lable_mark_sale_icon {
+            get {
+                object obj = ResourceManager.GetObject("2362209_chip_chit_lable_mark_sale_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2362209_chip_chit_lable_mark_sale_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("2362209_chip_chit_lable_mark_sale_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _309041_users_group_people_icon {
+            get {
+                object obj = ResourceManager.GetObject("309041_users_group_people_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _309041_users_group_people_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("309041_users_group_people_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _309042_group_users_people_icon {
+            get {
+                object obj = ResourceManager.GetObject("309042_group_users_people_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _326690_magnify_search_zoom_icon {
+            get {
+                object obj = ResourceManager.GetObject("326690_magnify_search_zoom_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _326690_magnify_search_zoom_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("326690_magnify_search_zoom_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3844432_magnifier_search_zoom_icon {
+            get {
+                object obj = ResourceManager.GetObject("3844432_magnifier_search_zoom_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3844432_magnifier_search_zoom_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("3844432_magnifier_search_zoom_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3844432_magnifier_search_zoom_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("3844432_magnifier_search_zoom_icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _4158620_bank_banking_business_cash_debt_icon {
+            get {
+                object obj = ResourceManager.GetObject("4158620_bank_banking_business_cash_debt_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _657911_user_customer_account_customers_person_icon {
+            get {
+                object obj = ResourceManager.GetObject("657911_user_customer_account_customers_person_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _6617651_cart_commercial_sale_shopping_store_icon {
+            get {
+                object obj = ResourceManager.GetObject("6617651_cart_commercial_sale_shopping_store_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7295023_tag_label_price_sale_discount_icon {
+            get {
+                object obj = ResourceManager.GetObject("7295023_tag_label_price_sale_discount_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _7830741_human_resources_search_employees_icon {
+            get {
+                object obj = ResourceManager.GetObject("7830741_human_resources_search_employees_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9023271_book_bookmark_fill_education_icon {
+            get {
+                object obj = ResourceManager.GetObject("9023271_book_bookmark_fill_education_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9080310_activity_icon {
+            get {
+                object obj = ResourceManager.GetObject("9080310_activity_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundoprincipal {
+            get {
+                object obj = ResourceManager.GetObject("fundoprincipal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagem_do_WhatsApp_de_2024_02_06_à_s__17_22_19_a31afbe8 {
             get {
                 object obj = ResourceManager.GetObject("Imagem do WhatsApp de 2024-02-06 à(s) 17.22.19_a31afbe8", resourceCulture);

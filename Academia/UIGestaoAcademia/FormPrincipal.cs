@@ -30,15 +30,9 @@ namespace UIGestaoAcademia
             try
             {
 
-                pictureBoxNomeLogo.Parent = pictureBoxPrincipal;
                 if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png"))
                     pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
 
-                if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\logomenu.png"))
-                    pictureBoxLogoMenu.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\logomenu.png";
-
-                if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\nomelogo.png"))
-                    pictureBoxNomeLogo.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\nomelogo.png";
 
                 using (FormLogin frm = new FormLogin())
                 {
