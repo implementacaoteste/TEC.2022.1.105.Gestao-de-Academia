@@ -40,7 +40,6 @@
             buttonDebito = new Button();
             buttonProduto = new Button();
             buttonGrupoUsuario = new Button();
-            pictureBoxPrincipal = new PictureBox();
             buttonRelatorioVenda = new Button();
             button2 = new Button();
             panel1 = new Panel();
@@ -58,7 +57,7 @@
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).BeginInit();
+            pictureBoxLogo = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -72,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).BeginInit();
             SuspendLayout();
             // 
             // buttonFuncionario
@@ -81,10 +81,9 @@
             buttonFuncionario.FlatStyle = FlatStyle.Popup;
             buttonFuncionario.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonFuncionario.ForeColor = Color.Black;
-            buttonFuncionario.Location = new Point(25, 412);
-            buttonFuncionario.Margin = new Padding(3, 2, 3, 2);
+            buttonFuncionario.Location = new Point(29, 548);
             buttonFuncionario.Name = "buttonFuncionario";
-            buttonFuncionario.Size = new Size(416, 51);
+            buttonFuncionario.Size = new Size(475, 68);
             buttonFuncionario.TabIndex = 3;
             buttonFuncionario.Text = "Funcionários";
             buttonFuncionario.UseVisualStyleBackColor = false;
@@ -97,10 +96,9 @@
             buttonFornecedor.FlatStyle = FlatStyle.Popup;
             buttonFornecedor.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonFornecedor.ForeColor = Color.Black;
-            buttonFornecedor.Location = new Point(25, 468);
-            buttonFornecedor.Margin = new Padding(3, 2, 3, 2);
+            buttonFornecedor.Location = new Point(29, 623);
             buttonFornecedor.Name = "buttonFornecedor";
-            buttonFornecedor.Size = new Size(416, 51);
+            buttonFornecedor.Size = new Size(475, 68);
             buttonFornecedor.TabIndex = 6;
             buttonFornecedor.Text = "Fornecedores";
             buttonFornecedor.UseVisualStyleBackColor = false;
@@ -113,10 +111,9 @@
             buttonExercicio.FlatStyle = FlatStyle.Popup;
             buttonExercicio.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             buttonExercicio.ForeColor = Color.Black;
-            buttonExercicio.Location = new Point(24, 766);
-            buttonExercicio.Margin = new Padding(3, 2, 3, 2);
+            buttonExercicio.Location = new Point(27, 1020);
             buttonExercicio.Name = "buttonExercicio";
-            buttonExercicio.Size = new Size(416, 51);
+            buttonExercicio.Size = new Size(475, 68);
             buttonExercicio.TabIndex = 2;
             buttonExercicio.Text = "Exercícios";
             buttonExercicio.UseVisualStyleBackColor = false;
@@ -129,10 +126,9 @@
             button9.FlatStyle = FlatStyle.Popup;
             button9.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button9.ForeColor = Color.Black;
-            button9.Location = new Point(25, 191);
-            button9.Margin = new Padding(3, 2, 3, 2);
+            button9.Location = new Point(29, 254);
             button9.Name = "button9";
-            button9.Size = new Size(416, 51);
+            button9.Size = new Size(475, 68);
             button9.TabIndex = 9;
             button9.Text = "Vendas";
             button9.UseVisualStyleBackColor = false;
@@ -145,10 +141,9 @@
             button10.FlatStyle = FlatStyle.Popup;
             button10.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button10.ForeColor = Color.Black;
-            button10.Location = new Point(25, 301);
-            button10.Margin = new Padding(3, 2, 3, 2);
+            button10.Location = new Point(29, 400);
             button10.Name = "button10";
-            button10.Size = new Size(416, 51);
+            button10.Size = new Size(475, 68);
             button10.TabIndex = 5;
             button10.Text = "Compras";
             button10.UseVisualStyleBackColor = false;
@@ -161,10 +156,9 @@
             buttonAssinatura.FlatStyle = FlatStyle.Popup;
             buttonAssinatura.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonAssinatura.ForeColor = Color.Black;
-            buttonAssinatura.Location = new Point(25, 523);
-            buttonAssinatura.Margin = new Padding(3, 2, 3, 2);
+            buttonAssinatura.Location = new Point(29, 696);
             buttonAssinatura.Name = "buttonAssinatura";
-            buttonAssinatura.Size = new Size(416, 51);
+            buttonAssinatura.Size = new Size(475, 68);
             buttonAssinatura.TabIndex = 7;
             buttonAssinatura.Text = "Plano de assinatura";
             buttonAssinatura.UseVisualStyleBackColor = false;
@@ -177,10 +171,9 @@
             buttonUsuario.FlatStyle = FlatStyle.Popup;
             buttonUsuario.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonUsuario.ForeColor = Color.Black;
-            buttonUsuario.Location = new Point(25, 628);
-            buttonUsuario.Margin = new Padding(3, 2, 3, 2);
+            buttonUsuario.Location = new Point(29, 836);
             buttonUsuario.Name = "buttonUsuario";
-            buttonUsuario.Size = new Size(416, 51);
+            buttonUsuario.Size = new Size(475, 68);
             buttonUsuario.TabIndex = 4;
             buttonUsuario.Text = "Usuários";
             buttonUsuario.UseVisualStyleBackColor = false;
@@ -193,10 +186,9 @@
             buttonCliente.FlatStyle = FlatStyle.Popup;
             buttonCliente.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCliente.ForeColor = Color.Black;
-            buttonCliente.Location = new Point(25, 81);
-            buttonCliente.Margin = new Padding(3, 2, 3, 2);
+            buttonCliente.Location = new Point(29, 107);
             buttonCliente.Name = "buttonCliente";
-            buttonCliente.Size = new Size(416, 51);
+            buttonCliente.Size = new Size(475, 68);
             buttonCliente.TabIndex = 10;
             buttonCliente.Text = "Clientes";
             buttonCliente.UseVisualStyleBackColor = false;
@@ -209,10 +201,9 @@
             buttonDebito.FlatStyle = FlatStyle.Popup;
             buttonDebito.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonDebito.ForeColor = Color.Black;
-            buttonDebito.Location = new Point(25, 136);
-            buttonDebito.Margin = new Padding(3, 2, 3, 2);
+            buttonDebito.Location = new Point(29, 180);
             buttonDebito.Name = "buttonDebito";
-            buttonDebito.Size = new Size(416, 51);
+            buttonDebito.Size = new Size(475, 68);
             buttonDebito.TabIndex = 8;
             buttonDebito.Text = "Debitos";
             buttonDebito.UseVisualStyleBackColor = false;
@@ -225,10 +216,9 @@
             buttonProduto.FlatStyle = FlatStyle.Popup;
             buttonProduto.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             buttonProduto.ForeColor = Color.Black;
-            buttonProduto.Location = new Point(24, 821);
-            buttonProduto.Margin = new Padding(3, 2, 3, 2);
+            buttonProduto.Location = new Point(27, 1094);
             buttonProduto.Name = "buttonProduto";
-            buttonProduto.Size = new Size(416, 51);
+            buttonProduto.Size = new Size(475, 68);
             buttonProduto.TabIndex = 0;
             buttonProduto.Text = "Produtos";
             buttonProduto.UseVisualStyleBackColor = false;
@@ -241,23 +231,13 @@
             buttonGrupoUsuario.FlatStyle = FlatStyle.Popup;
             buttonGrupoUsuario.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonGrupoUsuario.ForeColor = Color.Black;
-            buttonGrupoUsuario.Location = new Point(25, 573);
-            buttonGrupoUsuario.Margin = new Padding(3, 2, 3, 2);
+            buttonGrupoUsuario.Location = new Point(29, 763);
             buttonGrupoUsuario.Name = "buttonGrupoUsuario";
-            buttonGrupoUsuario.Size = new Size(416, 51);
+            buttonGrupoUsuario.Size = new Size(475, 68);
             buttonGrupoUsuario.TabIndex = 1;
             buttonGrupoUsuario.Text = "Grupo de usuários";
             buttonGrupoUsuario.UseVisualStyleBackColor = false;
             buttonGrupoUsuario.Click += buttonGrupoUsuario_Click;
-            // 
-            // pictureBoxPrincipal
-            // 
-            pictureBoxPrincipal.Dock = DockStyle.Fill;
-            pictureBoxPrincipal.Location = new Point(0, 0);
-            pictureBoxPrincipal.Name = "pictureBoxPrincipal";
-            pictureBoxPrincipal.Size = new Size(985, 749);
-            pictureBoxPrincipal.TabIndex = 5;
-            pictureBoxPrincipal.TabStop = false;
             // 
             // buttonRelatorioVenda
             // 
@@ -266,10 +246,9 @@
             buttonRelatorioVenda.FlatStyle = FlatStyle.Popup;
             buttonRelatorioVenda.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonRelatorioVenda.ForeColor = Color.Black;
-            buttonRelatorioVenda.Location = new Point(25, 246);
-            buttonRelatorioVenda.Margin = new Padding(3, 2, 3, 2);
+            buttonRelatorioVenda.Location = new Point(29, 327);
             buttonRelatorioVenda.Name = "buttonRelatorioVenda";
-            buttonRelatorioVenda.Size = new Size(416, 51);
+            buttonRelatorioVenda.Size = new Size(475, 68);
             buttonRelatorioVenda.TabIndex = 24;
             buttonRelatorioVenda.Text = "Consulta de venda";
             buttonRelatorioVenda.UseVisualStyleBackColor = false;
@@ -282,10 +261,9 @@
             button2.FlatStyle = FlatStyle.Popup;
             button2.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.Black;
-            button2.Location = new Point(25, 357);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(29, 475);
             button2.Name = "button2";
-            button2.Size = new Size(416, 51);
+            button2.Size = new Size(475, 68);
             button2.TabIndex = 24;
             button2.Text = "Consulta de compra";
             button2.UseVisualStyleBackColor = false;
@@ -322,10 +300,9 @@
             panel1.Controls.Add(buttonDebito);
             panel1.Controls.Add(buttonRelatorioVenda);
             panel1.Controls.Add(button9);
-            panel1.Location = new Point(521, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(595, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(464, 749);
+            panel1.Size = new Size(530, 997);
             panel1.TabIndex = 25;
             // 
             // labelBuscarFornecedor
@@ -333,9 +310,9 @@
             labelBuscarFornecedor.Anchor = AnchorStyles.None;
             labelBuscarFornecedor.BackColor = Color.Transparent;
             labelBuscarFornecedor.Font = new Font("Swis721 Blk BT", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            labelBuscarFornecedor.Location = new Point(25, 0);
+            labelBuscarFornecedor.Location = new Point(29, -1);
             labelBuscarFornecedor.Name = "labelBuscarFornecedor";
-            labelBuscarFornecedor.Size = new Size(416, 75);
+            labelBuscarFornecedor.Size = new Size(475, 100);
             labelBuscarFornecedor.TabIndex = 26;
             labelBuscarFornecedor.Text = "MENU";
             labelBuscarFornecedor.TextAlign = ContentAlignment.MiddleCenter;
@@ -344,9 +321,10 @@
             // 
             pictureBox12.Anchor = AnchorStyles.Right;
             pictureBox12.Image = Properties.Resources._9080310_activity_icon;
-            pictureBox12.Location = new Point(45, 690);
+            pictureBox12.Location = new Point(51, 919);
+            pictureBox12.Margin = new Padding(3, 4, 3, 4);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(43, 37);
+            pictureBox12.Size = new Size(49, 49);
             pictureBox12.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox12.TabIndex = 29;
             pictureBox12.TabStop = false;
@@ -356,9 +334,10 @@
             // 
             pictureBox3.Anchor = AnchorStyles.Right;
             pictureBox3.Image = Properties.Resources._9023271_book_bookmark_fill_education_icon;
-            pictureBox3.Location = new Point(45, 531);
+            pictureBox3.Location = new Point(51, 707);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(43, 37);
+            pictureBox3.Size = new Size(49, 49);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 28;
             pictureBox3.TabStop = false;
@@ -370,10 +349,9 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Swis721 Blk BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(25, 683);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(29, 910);
             button1.Name = "button1";
-            button1.Size = new Size(416, 51);
+            button1.Size = new Size(475, 68);
             button1.TabIndex = 28;
             button1.Text = "Exercícios";
             button1.UseVisualStyleBackColor = false;
@@ -383,9 +361,10 @@
             // 
             pictureBox4.Anchor = AnchorStyles.Right;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(45, 420);
+            pictureBox4.Location = new Point(51, 559);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(43, 37);
+            pictureBox4.Size = new Size(49, 49);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 37;
             pictureBox4.TabStop = false;
@@ -394,9 +373,10 @@
             // 
             pictureBox2.Anchor = AnchorStyles.Right;
             pictureBox2.Image = Properties.Resources._309042_group_users_people_icon;
-            pictureBox2.Location = new Point(45, 635);
+            pictureBox2.Location = new Point(51, 846);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 37);
+            pictureBox2.Size = new Size(49, 49);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 27;
             pictureBox2.TabStop = false;
@@ -405,9 +385,10 @@
             // 
             pictureBox11.Anchor = AnchorStyles.Right;
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(45, 476);
+            pictureBox11.Location = new Point(51, 634);
+            pictureBox11.Margin = new Padding(3, 4, 3, 4);
             pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(43, 37);
+            pictureBox11.Size = new Size(49, 49);
             pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox11.TabIndex = 36;
             pictureBox11.TabStop = false;
@@ -416,9 +397,10 @@
             // 
             pictureBox10.Anchor = AnchorStyles.Right;
             pictureBox10.Image = Properties.Resources._6617651_cart_commercial_sale_shopping_store_icon;
-            pictureBox10.Location = new Point(45, 308);
+            pictureBox10.Location = new Point(51, 410);
+            pictureBox10.Margin = new Padding(3, 4, 3, 4);
             pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(43, 37);
+            pictureBox10.Size = new Size(49, 49);
             pictureBox10.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox10.TabIndex = 35;
             pictureBox10.TabStop = false;
@@ -427,9 +409,10 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources._309041_users_group_people_icon;
-            pictureBox1.Location = new Point(45, 579);
+            pictureBox1.Location = new Point(51, 771);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 37);
+            pictureBox1.Size = new Size(49, 49);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 26;
             pictureBox1.TabStop = false;
@@ -439,9 +422,10 @@
             pictureBox9.Anchor = AnchorStyles.Right;
             pictureBox9.ErrorImage = null;
             pictureBox9.Image = Properties.Resources._3844432_magnifier_search_zoom_icon2;
-            pictureBox9.Location = new Point(45, 254);
+            pictureBox9.Location = new Point(51, 338);
+            pictureBox9.Margin = new Padding(3, 4, 3, 4);
             pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(43, 37);
+            pictureBox9.Size = new Size(49, 49);
             pictureBox9.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox9.TabIndex = 34;
             pictureBox9.TabStop = false;
@@ -450,9 +434,10 @@
             // 
             pictureBox8.Anchor = AnchorStyles.Right;
             pictureBox8.Image = Properties.Resources._2362209_chip_chit_lable_mark_sale_icon;
-            pictureBox8.Location = new Point(45, 198);
+            pictureBox8.Location = new Point(51, 263);
+            pictureBox8.Margin = new Padding(3, 4, 3, 4);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(43, 37);
+            pictureBox8.Size = new Size(49, 49);
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 33;
             pictureBox8.TabStop = false;
@@ -461,9 +446,10 @@
             // 
             pictureBox7.Anchor = AnchorStyles.Right;
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(45, 364);
+            pictureBox7.Location = new Point(51, 484);
+            pictureBox7.Margin = new Padding(3, 4, 3, 4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(43, 37);
+            pictureBox7.Size = new Size(49, 49);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox7.TabIndex = 32;
             pictureBox7.TabStop = false;
@@ -472,9 +458,10 @@
             // 
             pictureBox6.Anchor = AnchorStyles.Right;
             pictureBox6.Image = Properties.Resources._4158620_bank_banking_business_cash_debt_icon;
-            pictureBox6.Location = new Point(45, 144);
+            pictureBox6.Location = new Point(51, 191);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(43, 37);
+            pictureBox6.Size = new Size(49, 49);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox6.TabIndex = 31;
             pictureBox6.TabStop = false;
@@ -483,24 +470,40 @@
             // 
             pictureBox5.Anchor = AnchorStyles.Right;
             pictureBox5.Image = Properties.Resources._657911_user_customer_account_customers_person_icon;
-            pictureBox5.Location = new Point(45, 87);
+            pictureBox5.Location = new Point(51, 115);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(43, 37);
+            pictureBox5.Size = new Size(49, 49);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox5.TabIndex = 30;
             pictureBox5.TabStop = false;
             // 
+            // pictureBoxLogo
+            // 
+            pictureBoxLogo.Anchor = AnchorStyles.None;
+            pictureBoxLogo.BackColor = Color.Transparent;
+            pictureBoxLogo.ErrorImage = null;
+            pictureBoxLogo.Image = Properties.Resources.logologin;
+            pictureBoxLogo.Location = new Point(-75, 63);
+            pictureBoxLogo.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxLogo.Name = "pictureBoxLogo";
+            pictureBoxLogo.Size = new Size(664, 862);
+            pictureBoxLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxLogo.TabIndex = 26;
+            pictureBoxLogo.TabStop = false;
+            // 
             // FormPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Window;
-            ClientSize = new Size(985, 749);
+            BackColor = SystemColors.ButtonFace;
+            ClientSize = new Size(1126, 999);
+            Controls.Add(pictureBoxLogo);
             Controls.Add(panel1);
-            Controls.Add(pictureBoxPrincipal);
             ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormPrincipal";
@@ -509,7 +512,6 @@
             WindowState = FormWindowState.Maximized;
             Load += FormPrincipal_Load;
             KeyDown += FormPrincipal_KeyDown;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxPrincipal).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -523,6 +525,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -538,7 +541,6 @@
         private Button buttonDebito;
         private Button buttonProduto;
         private Button buttonGrupoUsuario;
-        private PictureBox pictureBoxPrincipal;
         private Button buttonRelatorioVenda;
         private Button button2;
         private Panel panel1;
@@ -556,5 +558,6 @@
         private Label labelBuscarFornecedor;
         private PictureBox pictureBox12;
         private Button button1;
+        private PictureBox pictureBoxLogo;
     }
 }

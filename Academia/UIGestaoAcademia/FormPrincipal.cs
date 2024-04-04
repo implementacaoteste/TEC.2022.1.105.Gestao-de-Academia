@@ -29,11 +29,6 @@ namespace UIGestaoAcademia
         {
             try
             {
-
-                if (File.Exists(Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png"))
-                    pictureBoxPrincipal.ImageLocation = Environment.CurrentDirectory + "\\Imagens\\fundoprincipal.png";
-
-
                 using (FormLogin frm = new FormLogin())
                 {
                     frm.ShowDialog();
